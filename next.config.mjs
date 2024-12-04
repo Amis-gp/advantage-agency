@@ -3,8 +3,14 @@ import createNextIntlPlugin from 'next-intl/plugin';
 const withNextIntl = createNextIntlPlugin('./i18n/request.ts');
 
 /** @type {import('next').NextConfig} */
-const config = {
+const nextConfig = {
     output: 'standalone'
 };
 
-export default withNextIntl(config);
+const config = withNextIntl(nextConfig);
+
+config.env = {
+    _next_intl_trailing_slash: '1'
+};
+
+export default config;
