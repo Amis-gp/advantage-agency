@@ -3,26 +3,27 @@ import { notFound } from 'next/navigation';
 import { NextIntlClientProvider } from 'next-intl';
 import { locales, type Locale } from '@/i18n/request';
 import type { ReactNode } from 'react';
+import type { Metadata } from 'next';
 import '../globals.css';
 
 const inter = Inter({ subsets: ['latin'] });
 
+export const metadata: Metadata = {
+  title: 'Next.js i18n',
+  description: 'Next.js i18n example',
+}
+
 type Props = {
   children: ReactNode;
-  params: { locale: Locale };
-};
+  params: Promise<{ locale: Locale }>;
+}
 
 export function generateStaticParams() {
   return locales.map((locale) => ({ locale }));
 }
 
-export const metadata = {
-  title: 'Next.js i18n',
-  description: 'Next.js i18n example',
-}
-
 export default async function LocaleLayout({ children, params }: Props) {
-  const locale = params.locale;
+  const { locale } = await params;
   
   if (!locales.includes(locale)) {
     notFound();
