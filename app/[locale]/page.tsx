@@ -1,16 +1,15 @@
-import { useTranslations } from 'next-intl';
+import { getTranslations } from 'next-intl/server';
 import { setRequestLocale } from 'next-intl/server';
 import LocaleSwitcher from '@/components/LocaleSwitcher';
 import { type Locale } from '@/i18n/request';
 
 type Props = {
-  params: Promise<{ locale: Locale }>;
+  params: { locale: Locale };
 };
 
-export default async function Home({ params }: Props) {
-  const { locale } = await params;
+export default async function Home({ params: { locale } }: Props) {
   setRequestLocale(locale);
-  const t = useTranslations();
+  const t = await getTranslations();
 
   return (
     <div className="min-h-screen flex flex-col items-center justify-center gap-8 p-8">
