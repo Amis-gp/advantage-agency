@@ -1,4 +1,116 @@
 {
-    "title": "Welcome",
-    "description": "This is my multilingual app"
+    "pricing": "Pricing",
+    "hero": {
+        "title": "Unique Offer For You!",
+        "description": "If you've been looking for a reliable partner who can take your marketing to the next level, then our team of professionals is ready to open up new opportunities for you",
+        "reviews": "From 100+ Reviews",
+        "button": "Start Cooperation"
+    },
+    "stats": {
+        "specialists": "Number Of Successful Projects",
+        "budget": "Average Percentage Of Sales Growth In 3 Months",
+        "cases": "Average Cooperation Duration With Clients",
+        "months": "Months"
+    },
+    "introduction": {
+        "headline": "Introduction",
+        "title": "What We Offer To Your Business?",
+        "description": "A personal approach to your marketing, which includes a comprehensive approach to building a lead generation and sales system, and the most relevant advertising models.",
+        "button": "Get a consultation",
+        "steps": {
+            "step1": "Comprehensive Marketing Approach",
+            "step2": "Development of Landing Pages, Websites and Stores",
+            "step3": "Global Marketing Strategies",
+            "step4": "Work with All Advertising Channels",
+            "step5": "Building Lead Generation",
+            "step6": "Parsing and Audience Collection, Lead Database Sales",
+            "step7": "Sales Audit"
+        }
+    },
+    "portfolio": {
+        "headline": "Portfolio",
+        "title": "Our Cases",
+        "companyBudget": "Company Budget",
+        "averageLeadPrice": "Average Lead Price",
+        "numberOfLeads": "Number Of Leads",
+        "numberOfSales": "Number Of Sales",
+        "costPerSale": "Cost Per Sale",
+        "more": "More"
+    },
+    "partners": {
+        "headline": "Companies",
+        "title": "Our Partners & Clients"
+    },
+    "achievements": {
+        "headline": "A Few Numbers",
+        "title": "Our Achievements",
+        "description": "Statistics of our clients on various platforms",
+        "button": "Free Consultation"
+    },
+    "instructions": {
+        "headline": "Instructions",
+        "title": "How the process of cooperation looks like",
+        "description": "Depending on your marketing needs, we develop a working path for your business!",
+        "button": "Start Cooperation",
+        "steps": {
+            "step1": {
+                "title": "Client fills out a brief",
+                "duration": "Duration 1 day"
+            },
+            "step2": {
+                "title": "Marketing research, analysis",
+                "duration": "Duration 2 days"
+            },
+            "step3": {
+                "title": "Our team develops a marketing strategy and calculations",
+                "duration": "Duration 2 days"
+            },
+            "step4": {
+                "title": "Setting up advertising campaigns, developing advertising creatives/keyword selection",
+                "duration": "Duration 7 days"
+            },
+            "step5": {
+                "title": "Launching advertising, working on optimization",
+                "duration": "Duration 3 weeks"
+            },
+            "step6": {
+                "title": "You receive the first leads and purchases",
+                "duration": "Duration individually"
+            }
+        }
+    },
+    "team": {
+        "headline": "Team",
+        "title": "Meet the team",
+        "members": {
+            "member1": {
+                "name": "Stepan",
+                "position": "Founder"
+            },
+            "member2": {
+                "name": "Marko",
+                "position": "Team Lead, Media Buyer Facebook"
+            },
+            "member3": {
+                "name": "Pavlo",
+                "position": "Team Lead, Media Buyer Google"
+            },
+            "member4": {
+                "name": "Pavlo",
+                "position": "developer, Media Buyer Facebook"
+            },
+            "member5": {
+                "name": "Marko",
+                "position": "Team Lead, Media Buyer Facebook"
+            },
+            "member6": {
+                "name": "Pavlo",
+                "position": "Team Lead, Media Buyer Google"
+            },
+            "member7": {
+                "name": "Pavlo",
+                "position": "developer, Media Buyer Facebook"
+            }
+        }
+    }
 }

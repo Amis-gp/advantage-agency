@@ -1,7 +1,16 @@
 import { getTranslations } from 'next-intl/server';
 import { setRequestLocale } from 'next-intl/server';
-import LocaleSwitcher from '@/components/LocaleSwitcher';
 import { type Locale } from '@/i18n/request';
+import Header from '@/components/Header';
+import HeroSection from '@/components/home/HeroSections';
+import StatsSection from '@/components/home/StatsSection';
+import IntroductionSection from '@/components/home/IntroductionSection';
+import PortfolioSection from '@/components/home/PortfolioSection';
+import AchievementsSection from '@/components/home/AchievementsSection';
+import PartnersSection from '@/components/home/PartnersSection';
+import Instructions from '@/components/home/InstructionsSection';
+import TeamSection from '@/components/home/TeamSection';
+import Footer from '@/components/Footer';
 
 type Props = {
   params: Promise<{ locale: Locale }>;
@@ -13,16 +22,18 @@ export default async function Home({ params }: Props) {
   const t = await getTranslations();
 
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center gap-8 p-8">
-      <LocaleSwitcher />
-      
-      <main className="text-center">
-        <h1 className="text-4xl font-bold mb-4">
-          {t('title')}
-        </h1>
-        <p className="text-xl">
-          {t('description')}
-        </p>
+    <div className="bg-black text-white overflow-hidden">
+      <Header />
+      <main>
+        <HeroSection />
+        <StatsSection />
+        <IntroductionSection />
+        <PortfolioSection />
+        <AchievementsSection />
+        <PartnersSection />
+        <Instructions />
+        <TeamSection />
+        <Footer />
       </main>
     </div>
   );
