@@ -1,12 +1,14 @@
 import { useTranslations } from 'next-intl';
 import { setRequestLocale } from 'next-intl/server';
 import LocaleSwitcher from '@/components/LocaleSwitcher';
+import { type Locale } from '@/i18n/request';
 
 type Props = {
-  params: { locale: string }
+  params: Promise<{ locale: Locale }>;
 };
 
-export default function Home({ params: { locale } }: Props) {
+export default async function Home({ params }: Props) {
+  const { locale } = await params;
   setRequestLocale(locale);
   const t = useTranslations();
 
