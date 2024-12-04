@@ -1,7 +1,7 @@
 import { Inter } from 'next/font/google';
 import { notFound } from 'next/navigation';
 import { NextIntlClientProvider } from 'next-intl';
-import { locales } from '@/i18n/request';
+import { locales, type Locale } from '@/i18n/request';
 import type { ReactNode } from 'react';
 import '../globals.css';
 
@@ -9,7 +9,7 @@ const inter = Inter({ subsets: ['latin'] });
 
 type Props = {
   children: ReactNode;
-  params: { locale: string };
+  params: { locale: Locale };
 };
 
 export function generateStaticParams() {
@@ -23,6 +23,10 @@ export const metadata = {
 
 export default async function LocaleLayout({ children, params }: Props) {
   const locale = params.locale;
+  
+  if (!locales.includes(locale)) {
+    notFound();
+  }
   
   let messages;
   try {
