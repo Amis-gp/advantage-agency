@@ -15,7 +15,7 @@ export const metadata: Metadata = {
 
 type Props = {
   children: ReactNode;
-  params: { locale: Locale };
+  params: Promise<{ locale: Locale }>;
 }
 
 export function generateStaticParams() {
@@ -23,7 +23,7 @@ export function generateStaticParams() {
 }
 
 export default async function LocaleLayout({ children, params }: Props) {
-  const { locale } = params;
+  const { locale } = await params;
   
   if (!locales.includes(locale)) {
     notFound();
