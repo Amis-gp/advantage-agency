@@ -1,7 +1,13 @@
 import { useTranslations } from 'next-intl';
+import { setRequestLocale } from 'next-intl/server';
 import LocaleSwitcher from '@/components/LocaleSwitcher';
 
-export default function Home() {
+type Props = {
+  params: { locale: string }
+};
+
+export default function Home({ params: { locale } }: Props) {
+  setRequestLocale(locale);
   const t = useTranslations();
 
   return (
