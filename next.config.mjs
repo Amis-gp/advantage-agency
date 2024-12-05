@@ -4,7 +4,11 @@ const withNextIntl = createNextIntlPlugin('./i18n/request.ts');
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-    output: 'standalone'
+    output: 'standalone',
+    webpack: (config) => {
+        config.resolve.fallback = { fs: false };
+        return config;
+    }
 };
 
 const config = withNextIntl(nextConfig);

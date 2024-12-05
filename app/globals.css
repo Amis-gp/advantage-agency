@@ -157,3 +157,7 @@
       stroke-dasharray: 30000, 30000;
   }
 }
+
+body {
+  font-family: var(--font-clash-grotesk), sans-serif;
+}

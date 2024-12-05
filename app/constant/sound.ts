@@ -31,6 +31,10 @@ export const playSound = (soundName: keyof typeof SOUNDS) => {
     if (soundConfig.audio) {
         soundConfig.audio.currentTime = 0;
         soundConfig.audio.volume = soundConfig.volume;
-        soundConfig.audio.play();
+        soundConfig.audio.play().catch(error => {
+            if (error.name !== 'NotAllowedError') {
+                console.error('Error playing sound:', error);
+            }
+        });
     }
 };

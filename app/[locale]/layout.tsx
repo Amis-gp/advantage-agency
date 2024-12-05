@@ -1,17 +1,24 @@
-import { Inter } from 'next/font/google';
 import { notFound } from 'next/navigation';
 import { NextIntlClientProvider } from 'next-intl';
 import { locales, type Locale } from '@/i18n/request';
 import type { ReactNode } from 'react';
 import type { Metadata } from 'next';
 import '../globals.css';
+import { clashGrotesk } from '@/fonts/ClashGrotesk';
 
-const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  title: 'Next.js i18n',
-  description: 'Next.js i18n example',
-}
+  title: 'Advantage Agency',
+  description: 'Digital marketing agency',
+  icons: {
+    icon: [
+      {
+        url: '/img/favicon.svg',
+        sizes: 'any',
+      },
+    ]
+  }
+};
 
 type Props = {
   children: ReactNode;
@@ -37,8 +44,8 @@ export default async function LocaleLayout({ children, params }: Props) {
   }
 
   return (
-    <html lang={locale}>
-      <body className={inter.className}>
+    <html lang={locale} className={`${clashGrotesk.variable}`}>
+      <body className={`min-h-screen`}>
         <NextIntlClientProvider locale={locale} messages={messages}>
           {children}
         </NextIntlClientProvider>
