@@ -4,11 +4,15 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { useTranslations } from 'next-intl';
 import { playSound } from '@/app/constant/sound';
+import { motion, useTransform, useScroll } from 'framer-motion';
 
 export default function Instructions() {
     const circleRefs = useRef<(HTMLDivElement | null)[]>([]);
     const t = useTranslations('instructions');
     const [strokeWidth, setStrokeWidth] = useState(6);
+    
+    const { scrollY } = useScroll();
+    const rotate2 = useTransform(scrollY, [0, 3000], [0, -360]);
     
     useEffect(() => {
         const updatePath = () => {
@@ -38,14 +42,12 @@ export default function Instructions() {
                         const nextY = nextRect.top - containerRect.top + (nextRect.height / 2);
                         
                         if (isMobile) {
-                            // Мобільна версія: простіші криві
                             const cp1x = x;
                             const cp1y = y + (nextY - y) / 3;
                             const cp2x = nextX;
                             const cp2y = nextY - (nextY - y) / 3;
                             path += ` C ${cp1x} ${cp1y}, ${cp2x} ${cp2y}, ${nextX} ${nextY}`;
                         } else {
-                            // Десктопна версія: оригінальні криві
                             const cp1x = x + 100;
                             const cp1y = y;
                             const cp2x = nextX - 50;
@@ -61,7 +63,6 @@ export default function Instructions() {
                     const nextY = nextRect.top - containerRect.top + (nextRect.height / 2);
                     
                     if (isMobile) {
-                        // Мобільна версія: вертикальніші криві
                         const midY = (y + nextY) / 2;
                         const cp1x = x;
                         const cp1y = midY;
@@ -69,7 +70,6 @@ export default function Instructions() {
                         const cp2y = midY;
                         path += ` C ${cp1x} ${cp1y}, ${cp2x} ${cp2y}, ${nextX} ${nextY}`;
                     } else {
-                        // Десктопна версія: оригінальні криві
                         const direction = index % 2 === 0 ? 1 : -1;
                         const cp1x = x;
                         const cp1y = y + 100;
@@ -102,47 +102,49 @@ export default function Instructions() {
         const handleResize = () => {
             setStrokeWidth(window.innerWidth < 768 ? 4 : 6);
         };
-
-        // Set initial value
         handleResize();
-
-        // Add event listener
         window.addEventListener('resize', handleResize);
 
-        // Cleanup
         return () => window.removeEventListener('resize', handleResize);
     }, []);
 
     return (
-        <section className="bg-black pt-10 md:pt-20">
-            <div className="max-w-[1400px] mx-auto px-6">
-                <span className="text-red uppercase tracking-wider">
-                    {t('headline')}
-                </span>
-                <h2 className="text-white text-3xl md:text-5xl font-bold mt-2">
-                    {t('title')}
-                </h2>
+        <section className="pt-20 md:pt-32">
+            <div className="max-w-[1400px] mx-auto px-6 relative">
+                <div className="md:flex justify-between w-full relative">
+                    <div className="z-10 relative">
+                        <span className="text-red uppercase tracking-wider">{t('headline')}</span>
+                        <h2 className="text-white text-3xl md:text-5xl font-bold mt-2">{t('title')}</h2>
+                        <p className="text-white/70 mt-4 md:text-lg">{t('description')}</p>
+                    </div>
                 
-                <div className="md:flex justify-between w-full">
-                    <p className="text-white/70 mt-4 md:text-lg">{t('description')}</p>
-                
-                    <div className="w-fit mt-4 hover:scale-105 transition-all duration-100">
+                    <div className="w-fit mt-4 hover:scale-105 transition-all duration-100 flex items-end z-10 relative">
                         <Link href="#form" 
                             className="group relative bg-white hover:bg-white/90 transition-all duration-300 text-black px-8 py-4 rounded-full text-lg font-medium flex items-center gap-2" 
                             onMouseEnter={() => playSound('hover_1')}
                         >
-                            <span className="relative z-10">{t('button')}</span>
+                            <span className="relative z-10 whitespace-nowrap">{t('button')}</span>
                             <span className="relative z-10 animate-[bounceX_1s_ease-in-out_infinite]">→</span>
                             <div className="absolute inset-0 rounded-full animate-pulse-border group-hover:animate-none"></div>
                         </Link>
                     </div>
+                    <div className="absolute -rotate-12 sm:rotate-0 -top-20 -right-52 sm:-top-40 sm:-right-80 w-[426px] h-[426px] sm:w-[726px] sm:h-[726px] opacity-40">
+                        <Image src="/img/home/lines.svg" alt="Decorative lines" width={726} height={726} loading="lazy" priority={false} />
+                    </div>
 
+                    <motion.div className="md:hidden absolute top-72 right-24 sm:top-10 lg:right-80 sm:right-[50%] xl:right-64 w-6 h-6 sm:w-8 sm:h-8 xl:w-auto xl:h-auto" style={{ rotate: rotate2 }}>
+                        <Image src="/img/home/star.svg" alt="Star" width={64} height={64} loading="lazy" priority={false} />
+                    </motion.div>
+
+                    <div className="hidden md:block absolute top-0 -right-48 opacity-80">
+                        <Image src="/img/home/gradient-ball-1.svg" alt="Decorative lines" width={426} height={426} loading="lazy" priority={false} />
+                    </div>
                 </div>
 
 
                 <div className="grid grid-cols-2 gap-4 relative mt-32 md:mt-32">
                     <svg 
-                        className="steps-connection-svg absolute inset-0 w-full h-full" 
+                        className="steps-connection-svg absolute inset-0 w-full h-full z-10" 
                         style={{ 
                             stroke: '#D12923',
                             strokeWidth: strokeWidth,
@@ -168,10 +170,10 @@ export default function Instructions() {
                     {[...Array(6)].map((_, index) => (
                         <div 
                             key={index} 
-                            className={`z-10 flex justify-center ${index % 2 === 1 ? 'mt-28 md:mt-80' : '-mt-14'}`} 
+                            className={`flex justify-center ${index % 2 === 1 ? 'mt-28 md:mt-80' : '-mt-14'} relative`} 
                             style={{ animationDelay: `${index * 0.2}s` }}
                         >
-                            <div className="relative rounded-2xl border border-white/90 bg-black p-3 md:p-12 space-y-4 md:space-y-10 animate-fadeIn max-w-[200px] md:max-w-[350px] h-fit w-full">
+                            <div className="z-20 relative rounded-2xl border border-white/90 bg-black p-3 md:p-12 space-y-4 md:space-y-10 animate-fadeIn max-w-[200px] md:max-w-[350px] h-fit w-full">
                                 <p className="text-white text-xs sm:text-base md:text-xl font-semibold">
                                     {t(`steps.step${index + 1}.title`)}
                                 </p>
@@ -198,8 +200,42 @@ export default function Instructions() {
                                     </span>
                                 </div>
                             </div>
+
+                            <div className={`${index === 1 ? '' : 'hidden'} absolute -top-20 right-14 sm:-top-32 md:-top-80 sm:right-40 md:right-22 lg:right-40 xl:right-72 rotate-45 md:rotate-12`}>
+                                <Image src="/img/home/arrow.webp" alt="Decorative lines" className='w-14 h-10 md:w-[250px] md:h-[250px]' width={200} height={200}  loading="lazy" priority={false} />
+                            </div>
+                            <div className={`${index === 2 ? '' : 'hidden'} absolute -top-14 left-0 md:-top-48 md:left-22 lg:left-10 xl:left-20`}>
+                                <Image src="/img/home/rocket.webp" alt="Decorative lines" className='w-10 h-11 md:w-[139px] md:h-[150px]' width={200} height={200}  loading="lazy" priority={false} />
+                            </div>
+                            <div className={`${index === 3 ? '' : 'hidden'} absolute -top-14 right-0 md:-top-48 md:right-22 lg:right-10 xl:right-20`}>
+                                <Image src="/img/home/brain.webp" alt="Decorative lines" className='w-10 h-11 md:w-[139px] md:h-[150px]' width={200} height={200}  loading="lazy" priority={false} />
+                            </div>
+                            <div className={`${index === 4 ? '' : 'hidden'} absolute -top-14 left-0 md:-top-48 md:left-22 lg:left-10 xl:left-20 scale-x-[-1]`}>
+                                <Image src="/img/home/arrow.webp" alt="Decorative lines" className='w-10 h-11 md:w-[139px] md:h-[150px]' width={200} height={200}  loading="lazy" priority={false} />
+                            </div>
+                            <div className={`${index === 4 ? '' : 'hidden'} absolute bottom-14 left-12 md:bottom-16 md:left-44 lg:left-60 xl:left-80`}>
+                                <Image src="/img/home/success.webp" alt="Decorative lines" className='w-24 h-20 md:w-[139px] md:h-[150px]' width={200} height={200}  loading="lazy" priority={false} />
+                            </div>
+                            <div className={`${index === 5 ? '' : 'hidden'} absolute -top-14 left-0 md:-top-48 md:left-22 lg:left-10 xl:left-20`}>
+                                <Image src="/img/home/schedule.webp" alt="Decorative lines" className='w-10 h-11 md:w-[139px] md:h-[150px]' width={200} height={200}  loading="lazy" priority={false} />
+                            </div>
+                            <div className={`${index === 5 ? '' : 'hidden'} absolute -bottom-40 left-24 md:-bottom-40 md:left-44 lg:left-60 xl:left-80 w-[426px] h-[426px] sm:w-[726px] sm:h-[726px] opacity-40`}>
+                                <Image src="/img/home/lines.svg" alt="Decorative lines" width={726} height={726} loading="lazy" priority={false} />
+                            </div>
                         </div>
                     ))}
+                </div>
+                <div className="absolute top-[15%] -left-20 opacity-60 animate-float">
+                    <Image src="/img/home/gradient-ball-1.svg" alt="Decorative lines" className='w-52 h-52 md:w-[450px] md:h-[450px]' width={200} height={200}  loading="lazy" priority={false} />
+                </div>
+                <div className="absolute top-[30%] -right-20 opacity-60">
+                    <Image src="/img/home/gradient-ball-1.svg" alt="Decorative lines" className='w-52 h-52 md:w-[450px] md:h-[450px]' width={266} height={266} loading="lazy" priority={false} />
+                </div>
+                <div className="absolute top-[50%] -left-20 opacity-60">
+                    <Image src="/img/home/gradient-ball-1.svg" alt="Decorative lines" className='w-52 h-52 md:w-[450px] md:h-[450px]' width={300} height={300} loading="lazy" priority={false} />
+                </div>
+                <div className="absolute top-[70%] -right-20 opacity-60 animate-float">
+                    <Image src="/img/home/gradient-ball-1.svg" alt="Decorative lines" className='w-52 h-52 md:w-[450px] md:h-[450px]' width={326} height={326} loading="lazy" priority={false} />
                 </div>
             </div>
         </section>

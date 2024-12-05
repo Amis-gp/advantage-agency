@@ -20,7 +20,7 @@ export default function PortfolioSection() {
     return (
         <section className="bg-black relative py-10 md:py-20 px-6 relative overflow-hidden">
                 
-            <motion.div className="absolute top-32 right-14 w-4 h-4 sm:w-8 sm:h-8" style={{ rotate: rotate2 }}>
+            <motion.div className="absolute top-24 sm:top-32 right-14 w-6 h-6 sm:w-8 sm:h-8" style={{ rotate: rotate2 }}>
                 <Image src="/img/home/star.svg" alt="Star" width={64} height={64} loading="lazy" priority={false} />
             </motion.div>
             <div className="absolute bottom-40 sm:bottom-0 -left-56 opacity-20 md:opacity-80 animate-float">

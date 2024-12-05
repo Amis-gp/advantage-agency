@@ -10,6 +10,7 @@ import AchievementsSection from '@/components/home/AchievementsSection';
 import PartnersSection from '@/components/home/PartnersSection';
 import Instructions from '@/components/home/InstructionsSection';
 import TeamSection from '@/components/home/TeamSection';
+import TrustpilotSection from '@/components/home/TrustpilotSection';
 import Footer from '@/components/Footer';
 
 type Props = {
@@ -33,6 +34,7 @@ export default async function Home({ params }: Props) {
         <PartnersSection />
         <Instructions />
         <TeamSection />
+        <TrustpilotSection />
         <Footer />
       </main>
     </div>
