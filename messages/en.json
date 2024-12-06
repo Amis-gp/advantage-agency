@@ -207,5 +207,38 @@
                 ]
             }
         ]
+    },
+    "contact": {
+        "headline": "Contact Us",
+        "title": "Start Your Journey to Successful Digital Marketing Today",
+        "form": {
+            "name": "Your Name",
+            "email": "Your Email",
+            "company": "Company Name",
+            "purpose": "Tell Us About Your Project",
+            "submit": "Get a Consultation"
+        }
+    },
+    "faq": {
+        "headline": "FAQ",
+        "title": "Questions and Answers",
+        "questions": [
+            {
+                "question": "How much will it cost for me?",
+                "answer": "It depends on the complexity of the project and the number of marketing tools needed for your case. You can get a personalized offer during our call."
+            },
+            {
+                "question": "Which advertising channel should I choose?",
+                "answer": "No need to worry about this, during the call we will analyze your case down to the smallest details, give you a clear understanding of how your competitors advertise, and help you make a decision."
+            },
+            {
+                "question": "Is it safe for me?",
+                "answer": "We are a British company with a branch in Poland. Before starting work, we sign a cooperation agreement that clearly outlines the scope of work and obligations of both parties."
+            },
+            {
+                "question": "When will I see results?",
+                "answer": "Each project requires different time to achieve results. On average, return on investment occurs in the 2-3rd month of work."
+            }
+        ]
     }
 }

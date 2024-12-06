@@ -12,6 +12,8 @@ import Instructions from '@/components/home/InstructionsSection';
 import TeamSection from '@/components/home/TeamSection';
 import TestimonialSection from '@/components/home/TestimonialSection';
 import ServicesSection from '@/components/home/ServicesSection';
+import FormSection from '@/components/home/FormSection';
+import FaqSection from '@/components/home/FAQSection';
 import Footer from '@/components/Footer';
 
 type Props = {
@@ -37,6 +39,8 @@ export default async function Home({ params }: Props) {
         <TeamSection />
         <TestimonialSection />
         <ServicesSection />
+        <FormSection />
+        <FaqSection />
       </main>
       <Footer />
     </div>
