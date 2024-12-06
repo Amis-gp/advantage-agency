@@ -5,7 +5,14 @@ import type { ReactNode } from 'react';
 import type { Metadata } from 'next';
 import '../globals.css';
 import { clashGrotesk } from '@/fonts/ClashGrotesk';
+import { Roboto } from 'next/font/google';
 
+const roboto = Roboto({
+    weight: ['300', '400', '500', '700'],
+    subsets: ['latin', 'cyrillic'],
+    display: 'swap',
+    variable: '--font-roboto',
+});
 
 export const metadata: Metadata = {
   title: 'Advantage Agency',
@@ -44,7 +51,7 @@ export default async function LocaleLayout({ children, params }: Props) {
   }
 
   return (
-    <html lang={locale} className={`${clashGrotesk.variable}`}>
+    <html lang={locale} className={`${clashGrotesk.variable} ${roboto.variable}`}>
       <body className={`min-h-screen`}>
         <NextIntlClientProvider locale={locale} messages={messages}>
           {children}

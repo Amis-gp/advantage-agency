@@ -9,6 +9,7 @@ module.exports = {
     extend: {
       fontFamily: {
         'clash-grotesk': ['var(--font-clash-grotesk)'],
+        roboto: ['var(--font-roboto)'],
       },
       colors: {
         red: "#D12923",

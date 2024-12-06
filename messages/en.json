@@ -112,5 +112,47 @@
                 "position": "developer, Media Buyer Facebook"
             }
         }
+    },
+    "testimonial": {
+        "headline": "Reviews",
+        "title": "What our clients say?",
+        "review": "Reviews",
+        "reviews": [
+            {
+                "title": "Best on the market",
+                "text": "I love this product because the support is great. But...",
+                "author": "Traveler",
+                "daysAgo": "2 days ago",
+                "rating": "4"
+            },
+            {
+                "title": "Great service",
+                "text": "The service is great, I recommend it to everyone!",
+                "author": "Traveler",
+                "daysAgo": "5 days ago",
+                "rating": "5"
+            },
+            {
+                "title": "Great service",
+                "text": "The service is great, I recommend it to everyone!",
+                "author": "Traveler",
+                "daysAgo": "5 days ago",
+                "rating": "4"
+            },
+            {
+                "title": "Great service",
+                "text": "The service is great, I recommend it to everyone!",
+                "author": "Traveler",
+                "daysAgo": "5 days ago",
+                "rating": "5"
+            },
+            {
+                "title": "Great service",
+                "text": "The service is great, I recommend it to everyone!",
+                "author": "Traveler",
+                "daysAgo": "5 days ago",
+                "rating": "5"
+            }
+        ]
     }
 }
