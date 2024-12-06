@@ -164,11 +164,6 @@ body {
 
 .testimonials-swiper .swiper-slide {
   width: 240px !important;
-  height: 260px !important;
+  height: 340px !important;
   flex-shrink: 0;
-}
-
-.testimonials-swiper .swiper-wrapper {
-  display: flex;
-  gap: 20px;
 }

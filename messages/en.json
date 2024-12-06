@@ -119,38 +119,73 @@
         "review": "Reviews",
         "reviews": [
             {
-                "title": "Best on the market",
-                "text": "I love this product because the support is great. But...",
-                "author": "Traveler",
-                "daysAgo": "2 days ago",
-                "rating": "4"
-            },
-            {
-                "title": "Great service",
-                "text": "The service is great, I recommend it to everyone!",
-                "author": "Traveler",
-                "daysAgo": "5 days ago",
+                "title": "Online Coaching Transformation",
+                "text": "I run an online coaching program and initially worked with Instagram producers. Over 4 months, I spent $17k on Facebook ads with zero profit. Fortunately, I decided to give Advantage a chance, and they completely transformed my lead generation efforts. They generate 5 times more leads than my previous team. I wish I had started working with them sooner!",
+                "author": "Mary Hudson",
+                "daysAgo": "3 days ago",
                 "rating": "5"
             },
             {
-                "title": "Great service",
-                "text": "The service is great, I recommend it to everyone!",
-                "author": "Traveler",
+                "title": "Revolution in 3D Visualization",
+                "text": "I run a 3D visualization business and previously relied only on referrals. After several slow months without leads, I turned to Advantage. In a short time, they helped me create an effective cold outreach system targeting key decision-makers. We even hired additional managers to handle the new leads!",
+                "author": "Justin Clark",
                 "daysAgo": "5 days ago",
                 "rating": "4"
             },
             {
-                "title": "Great service",
-                "text": "The service is great, I recommend it to everyone!",
-                "author": "Traveler",
-                "daysAgo": "5 days ago",
+                "title": "Business Doubled in 4.5 Months",
+                "text": "I own a car detailing studio with a franchise. Stepan from Advantage showed us compelling numbers and we decided to try online marketing. We launched campaigns on YouTube, TikTok, Meta, and Google Search, and the results exceeded all expectations. Our new business doubled in just 4.5 months!",
+                "author": "Brian Foster",
+                "daysAgo": "12 days ago",
                 "rating": "5"
             },
             {
-                "title": "Great service",
-                "text": "The service is great, I recommend it to everyone!",
-                "author": "Traveler",
-                "daysAgo": "5 days ago",
+                "title": "Impressive E-commerce Results",
+                "text": "My online furniture store faced fierce competition. Advantage developed a comprehensive strategy that included sales funnel optimization and targeted advertising. In 3 months, our sales increased by 180%. Their approach to analytics and optimization is simply impressive.",
+                "author": "Sophie Miller",
+                "daysAgo": "7 days ago",
+                "rating": "5"
+            },
+            {
+                "title": "Professional B2B Approach",
+                "text": "Our consulting firm was looking to expand its client base. The Advantage team proposed a unique LinkedIn marketing strategy. Result: 45 new B2B clients in the first 6 months. Their understanding of the B2B market and professionalism deserve the highest rating.",
+                "author": "Alexander Cole",
+                "daysAgo": "15 days ago",
+                "rating": "4"
+            },
+            {
+                "title": "Results for Local Business",
+                "text": "Our fast-food restaurant chain needed to increase foot traffic. Advantage developed a local advertising campaign that led to a 75% increase in attendance. Their attention to detail and constant campaign optimization was particularly impressive.",
+                "author": "Maria Peterson",
+                "daysAgo": "8 days ago",
+                "rating": "5"
+            },
+            {
+                "title": "Innovative Approach to SaaS Marketing",
+                "text": "As a SaaS company, we faced the challenge of high customer acquisition costs. Advantage proposed an innovative approach to content marketing and PPC, which reduced our CAC by 40% while increasing conversion. Their expertise in SaaS marketing is simply unmatched.",
+                "author": "Victor Lewis",
+                "daysAgo": "10 days ago",
+                "rating": "5"
+            },
+            {
+                "title": "Scaling Educational Project",
+                "text": "Our online courses needed to increase reach. Advantage developed a comprehensive strategy using various channels. In 4 months, the number of students tripled, and acquisition costs decreased by 35%. Impressive results!",
+                "author": "Anna Wilson",
+                "daysAgo": "6 days ago",
+                "rating": "4"
+            },
+            {
+                "title": "Effectiveness in Crisis Period",
+                "text": "During the economic downturn, our business needed a new marketing strategy. Advantage not only helped us maintain our position but also find new growth opportunities. Their adaptability and strategic thinking helped us emerge from the crisis stronger.",
+                "author": "Igor Robinson",
+                "daysAgo": "4 days ago",
+                "rating": "5"
+            },
+            {
+                "title": "Breakthrough in Digital Marketing",
+                "text": "Our traditional business needed digital transformation. The Advantage team guided us through the entire process, from strategy creation to implementation. The results exceeded expectations: 250% growth in online sales in six months. True professionals!",
+                "author": "Dmitry Cooper",
+                "daysAgo": "9 days ago",
                 "rating": "5"
             }
         ]
