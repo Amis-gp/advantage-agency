@@ -6,6 +6,7 @@ import { useTranslations } from 'next-intl'
 import { playSound } from '@/app/constant/sound'
 import 'swiper/css'
 import 'swiper/css/navigation'
+import { teamMembers } from '@/app/constant/team';
 
 interface TeamSectionProps {
     playSound?: (sound: string) => void
@@ -21,7 +22,7 @@ export default function TeamSection() {
                     <span className="text-red uppercase tracking-wider">{t('team.headline')}</span>
                     <h2 className="text-white text-3xl md:text-5xl font-bold mt-2">{t('team.title')}</h2>
                 </div>
-                <div className="md:flex gap-4 hidden">
+                <div className="md:flex gap-4 hidden z-30">
                     <button 
                         className="team-prev w-[60px] h-[60px] rounded-full border border-white/20 flex items-center justify-center text-white hover:bg-white/10 transition-all duration-300 active:scale-90"
                         onClick={() => playSound('click')}
@@ -74,13 +75,13 @@ export default function TeamSection() {
                     }}
                     className="team-swiper"
                 >
-                    {[1, 2, 3, 4, 5, 6, 7].map((index) => (
-                        <SwiperSlide key={index}>
+                    {teamMembers.map((member) => (
+                        <SwiperSlide key={member.name}>
                             <div className="pt-12 md:pt-16 transition-all duration-300 [&.swiper-slide-active]:scale-125 max-w-[200px] mx-auto sm:transform-none">
                                 <div className="aspect-square relative rounded-full overflow-hidden">
                                     <Image 
-                                        src={`/img/team/${index}.jpg`}
-                                        alt="Team member"
+                                        src={member.image}
+                                        alt={member.name}
                                         fill
                                         className="object-cover"
                                         loading="lazy"
@@ -88,10 +89,10 @@ export default function TeamSection() {
                                 </div>
                                 <div className="text-center mt-3">
                                     <h3 className="text-white text-base md:text-lg font-semibold">
-                                        {t('team.members.member' + index + '.name')}
+                                        {member.name}
                                     </h3>
                                     <p className="text-gray-400 text-sm md:text-base">
-                                        {t('team.members.member' + index + '.position')}
+                                        {member.position}
                                     </p>
                                 </div>
                             </div>

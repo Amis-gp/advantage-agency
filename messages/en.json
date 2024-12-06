@@ -81,37 +81,7 @@
     },
     "team": {
         "headline": "Team",
-        "title": "Meet the team",
-        "members": {
-            "member1": {
-                "name": "Stepan",
-                "position": "Founder"
-            },
-            "member2": {
-                "name": "Marko",
-                "position": "Team Lead, Media Buyer Facebook"
-            },
-            "member3": {
-                "name": "Pavlo",
-                "position": "Team Lead, Media Buyer Google"
-            },
-            "member4": {
-                "name": "Pavlo",
-                "position": "developer, Media Buyer Facebook"
-            },
-            "member5": {
-                "name": "Marko",
-                "position": "Team Lead, Media Buyer Facebook"
-            },
-            "member6": {
-                "name": "Pavlo",
-                "position": "Team Lead, Media Buyer Google"
-            },
-            "member7": {
-                "name": "Pavlo",
-                "position": "developer, Media Buyer Facebook"
-            }
-        }
+        "title": "Meet the team"
     },
     "testimonial": {
         "headline": "Reviews",
@@ -187,6 +157,54 @@
                 "author": "Dmitry Cooper",
                 "daysAgo": "9 days ago",
                 "rating": "5"
+            }
+        ]
+    },
+    "services": {
+        "headline": "Services",
+        "title": "Most Popular Services",
+        "description": "We offer special packages for small businesses, as well as comprehensive solutions for large players.",
+        "items": [
+            {
+                "title": "Google Ads",
+                "subtitle": "Search Advertising, Display, Youtube",
+                "price": "From $400",
+                "button": "Learn More",
+                "features": [
+                    "Careful keyword selection",
+                    "Analytics and conversion setup",
+                    "Ad copy creation",
+                    "Competitor insights",
+                    "Consent mode setup"
+                ]
+            },
+            {
+                "title": "Meta Ads",
+                "subtitle": "Targeted advertising Facebook, Instagram",
+                "price": "From $400",
+                "button": "Learn More",
+                "features": [
+                    "Detailed targeting strategy development",
+                    "AIDA model and other advertising approaches",
+                    "Funnel management",
+                    "Detailed tracking setup",
+                    "Retargeting implementation",
+                    "Custom audiences"
+                ]
+            },
+            {
+                "title": "Landing Page",
+                "subtitle": "Universal web pages, written in code",
+                "price": "From $400",
+                "button": "Learn More",
+                "features": [
+                    "Responsiveness and fast loading",
+                    "Free website hosting",
+                    "CRO implementation",
+                    "Copywriting",
+                    "Modern web design",
+                    "Video analytics session tracking"
+                ]
             }
         ]
     }

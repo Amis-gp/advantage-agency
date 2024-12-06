@@ -81,37 +81,7 @@
     },
     "team": {
         "headline": "Команда",
-        "title": "Познайомтесь з командою",
-        "members": {
-            "member1": {
-                "name": "Степан",
-                "position": "Founder"
-            },
-            "member2": {
-                "name": "Марко",
-                "position": "Team Lead, Media Buyer Facebook"
-            },
-            "member3": {
-                "name": "Павло",
-                "position": "Team Lead, Media Buyer Google"
-            },
-            "member4": {
-                "name": "Павло",
-                "position": "developer, Media Buyer Facebook"
-            },
-            "member5": {
-                "name": "Марко",
-                "position": "Team Lead, Media Buyer Facebook"
-            },
-            "member6": {
-                "name": "Павло",
-                "position": "Team Lead, Media Buyer Google"
-            },
-            "member7": {
-                "name": "Павло",
-                "position": "developer, Media Buyer Facebook"
-            }
-        }
+        "title": "Познайомтесь з командою"
     },
     "testimonial": {
         "headline": "Відгуки",
@@ -187,6 +157,54 @@
                 "author": "Дмитро Коваленко",
                 "daysAgo": "9 днів тому",
                 "rating": "5"
+            }
+        ]
+    },
+    "services": {
+        "headline": "Послуги",
+        "title": "Найпопулярніші послуги",
+        "description": "Ми пропонуємо спеціальні пропозиції для малих бізнесів, а також комплексні рішення для великих гравців.",
+        "items": [
+            {
+                "title": "Google Ads",
+                "subtitle": "Пошукова реклама, Display, Youtube",
+                "price": "Від $400",
+                "button": "Дізнатись більше",
+                "features": [
+                    "Ретельний відбір ключових слів",
+                    "Налаштування аналітики та конверсій",
+                    "Копірайт рекламних оголошень",
+                    "Інсайти по конкурентам",
+                    "Налаштування Consent mode"
+                ]
+            },
+            {
+                "title": "Meta Ads",
+                "subtitle": "Таргетована реклама Facebook, Instagram",
+                "price": "Від $400",
+                "button": "Дізнатись більше",
+                "features": [
+                    "Розробка детальної стратегії націлювання",
+                    "Реклама по моделі AIDA та інших",
+                    "Робота з воронками",
+                    "Налаштування детального трекінгу",
+                    "Робота з ретаргетингом",
+                    "Кастомні аудиторії"
+                ]
+            },
+            {
+                "title": "Landing Page",
+                "subtitle": "Універсальні веб сторінки, написані кодом",
+                "price": "Від $400",
+                "button": "Дізнатись більше",
+                "features": [
+                    "Адаптивність та швидкість загрузки",
+                    "Безкоштовний хостинг сайту",
+                    "Проведення CRO",
+                    "Написання копірайту",
+                    "Сучасний веб-дизайн",
+                    "Відео-аналітика відслідковування сесій"
+                ]
             }
         ]
     }

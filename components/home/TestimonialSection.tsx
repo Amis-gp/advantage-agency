@@ -51,13 +51,13 @@ const ReviewModal = ({ review, isOpen, onClose }: ModalProps) => {
                         <h3 className="text-2xl font-medium mb-4">{review.title}</h3>
                         <div className="flex items-center gap-1 mb-4">
                             {[...Array(Number(review.rating))].map((_, i) => (
-                                <svg width="16" height="16" viewBox="0 0 32 33" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <svg key={`filled-${i}`} width="16" height="16" viewBox="0 0 32 33" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <rect width="32" height="32" transform="translate(0 0.632812)" fill="#219653"/>
                                     <path d="M16 22.9347L21.2143 21.5385L23.3929 28.6328L16 22.9347ZM28 13.7649H18.8214L16 4.63281L13.1786 13.7649H4L11.4286 19.4253L8.60714 28.5573L16.0357 22.897L20.6071 19.4253L28 13.7649Z" fill="#FBFBFB"/>
                                 </svg>
                             ))}
                             {[...Array(5 - Number(review.rating))].map((_, i) => (
-                                <svg width="16" height="16" viewBox="0 0 32 33" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <svg key={`empty-${i}`} width="16" height="16" viewBox="0 0 32 33" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <rect width="32" height="32" transform="translate(0 0.632812)" fill="#dcdce6"/>
                                     <path d="M16 22.9347L21.2143 21.5385L23.3929 28.6328L16 22.9347ZM28 13.7649H18.8214L16 4.63281L13.1786 13.7649H4L11.4286 19.4253L8.60714 28.5573L16.0357 22.897L20.6071 19.4253L28 13.7649Z" fill="#FBFBFB"/>
                                 </svg>
@@ -116,7 +116,7 @@ export default function TestimonialSection() {
                         <span className="text-xl font-semibold text-[#219653]">4.7</span>
                         <div className="flex gap-1">
                             {[1, 2, 3, 4, 5].map(star => (
-                                <svg width="32" height="33" viewBox="0 0 32 33" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <svg key={`rating-${star}`} width="32" height="33" viewBox="0 0 32 33" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <rect width="32" height="32" transform="translate(0 0.632812)" fill="#219653"/>
                                     <path d="M16 22.9347L21.2143 21.5385L23.3929 28.6328L16 22.9347ZM28 13.7649H18.8214L16 4.63281L13.1786 13.7649H4L11.4286 19.4253L8.60714 28.5573L16.0357 22.897L20.6071 19.4253L28 13.7649Z" fill="#FBFBFB"/>
                                 </svg>
@@ -150,13 +150,13 @@ export default function TestimonialSection() {
                                 <h3 className="text-lg font-medium mb-2">{review.title}</h3>
                                 <div className="flex items-center gap-1 mb-2">
                                     {[...Array(Number(review.rating))].map((_, i) => (
-                                        <svg width="16" height="16" viewBox="0 0 32 33" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <svg key={`filled-${i}`} width="16" height="16" viewBox="0 0 32 33" fill="none" xmlns="http://www.w3.org/2000/svg">
                                             <rect width="32" height="32" transform="translate(0 0.632812)" fill="#219653"/>
                                             <path d="M16 22.9347L21.2143 21.5385L23.3929 28.6328L16 22.9347ZM28 13.7649H18.8214L16 4.63281L13.1786 13.7649H4L11.4286 19.4253L8.60714 28.5573L16.0357 22.897L20.6071 19.4253L28 13.7649Z" fill="#FBFBFB"/>
                                         </svg>
                                     ))}
                                     {[...Array(5 - Number(review.rating))].map((_, i) => (
-                                        <svg width="16" height="16" viewBox="0 0 32 33" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <svg key={`empty-${i}`} width="16" height="16" viewBox="0 0 32 33" fill="none" xmlns="http://www.w3.org/2000/svg">
                                             <rect width="32" height="32" transform="translate(0 0.632812)" fill="#dcdce6"/>
                                             <path d="M16 22.9347L21.2143 21.5385L23.3929 28.6328L16 22.9347ZM28 13.7649H18.8214L16 4.63281L13.1786 13.7649H4L11.4286 19.4253L8.60714 28.5573L16.0357 22.897L20.6071 19.4253L28 13.7649Z" fill="#FBFBFB"/>
                                         </svg>

@@ -11,6 +11,7 @@ import PartnersSection from '@/components/home/PartnersSection';
 import Instructions from '@/components/home/InstructionsSection';
 import TeamSection from '@/components/home/TeamSection';
 import TestimonialSection from '@/components/home/TestimonialSection';
+import ServicesSection from '@/components/home/ServicesSection';
 import Footer from '@/components/Footer';
 
 type Props = {
@@ -25,7 +26,7 @@ export default async function Home({ params }: Props) {
   return (
     <div className="bg-black text-white overflow-hidden">
       <Header />
-      <main>
+      <main className="no-select">
         <HeroSection />
         <StatsSection />
         <IntroductionSection />
@@ -35,8 +36,9 @@ export default async function Home({ params }: Props) {
         <Instructions />
         <TeamSection />
         <TestimonialSection />
-        <Footer />
+        <ServicesSection />
       </main>
+      <Footer />
     </div>
   );
 }
