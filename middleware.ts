@@ -1,10 +1,15 @@
 import createMiddleware from 'next-intl/middleware';
+import { locales, defaultLocale } from './i18n/request';
 
 export default createMiddleware({
-    locales: ['en', 'ua'],
-    defaultLocale: 'ua'
+    locales,
+    defaultLocale,
+    localePrefix: 'as-needed'
 });
     
 export const config = {
-    matcher: ['/((?!api|_next|.*\\..*).*)']
+    matcher: [
+        '/((?!api|_next|_vercel|.*\\..*).*)',
+        '/'
+    ]
 };
