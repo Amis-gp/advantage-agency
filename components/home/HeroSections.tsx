@@ -17,6 +17,10 @@ export default function HeroSection() {
     const handlePlayClick = () => {
         playSound('click');
         setIsPlaying(true);
+        const videoElement = document.querySelector('video');
+        if (videoElement) {
+            videoElement.play();
+        }
     };
 
     return (
@@ -41,16 +45,26 @@ export default function HeroSection() {
             </div>
 
             <div className="max-w-6xl mx-auto pt-28 relative">
-                <div className="text-center mb-16">
+                <motion.div 
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.6 }}
+                    className="text-center mb-16"
+                >
                     <h1 className="text-4xl md:text-6xl font-bold mb-6 uppercase">
                         {t('hero.title')}
                     </h1>
                     <p className="text-xl md:text-2xl max-w-3xl mx-auto text-gray-300">
                         {t('hero.description')}
                     </p>
-                </div>
+                </motion.div>
 
-                <div className="relative rounded-2xl md:rounded-3xl overflow-hidden max-w-[740px] mx-auto">
+                <motion.div 
+                    initial={{ opacity: 0, y: 30 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.6, delay: 0.2 }}
+                    className="relative rounded-2xl md:rounded-3xl overflow-hidden max-w-[740px] mx-auto"
+                >
                     <div className="aspect-video flex items-center justify-center relative">
                         <video key={locale} className="w-full h-full object-cover" controls={isPlaying} poster="/img/home/preview.webp" onPlay={() => setIsPlaying(true)}>
                             <source src={`/img/home/video-${locale}.mp4`} type="video/mp4"/>
@@ -68,9 +82,14 @@ export default function HeroSection() {
                             </div>
                         )}
                     </div>
-                </div>
+                </motion.div>
 
-                <div className="flex items-center gap-4 mt-8 justify-center relative">
+                <motion.div 
+                    initial={{ opacity: 0, y: 30 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.6, delay: 0.4 }}
+                    className="flex items-center gap-4 mt-8 justify-center relative"
+                >
                     <div className="flex -space-x-4">
                         <Image src="/img/home/ava-1.jpg" alt="Avatar" width={40} height={40} loading="lazy" priority={false} className="rounded-full" />
                         <Image src="/img/home/ava-2.jpg" alt="Avatar" width={40} height={40} loading="lazy" priority={false} className="rounded-full" />
@@ -90,9 +109,14 @@ export default function HeroSection() {
                     <motion.div className="absolute top-28 left-1 sm:top-10 sm:left-40" style={{ rotate: rotate2 }}>
                         <Image src="/img/home/star.svg" alt="Star" width={24} height={24} loading="lazy" priority={false} />
                     </motion.div>
-                </div>
+                </motion.div>
 
-                <div className="w-fit mx-auto mt-4 hover:scale-105 transition-all duration-100">
+                <motion.div 
+                    initial={{ opacity: 0, y: 30 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.6, delay: 0.6 }}
+                    className="w-fit mx-auto mt-4 hover:scale-105 transition-all duration-100"
+                >
                     <Link href="#form" 
                         className="group relative bg-white hover:bg-white/90 transition-all duration-300 text-black px-8 py-4 rounded-full text-lg font-medium flex items-center gap-2" 
                         onMouseEnter={() => playSound('hover_1')}
@@ -101,9 +125,20 @@ export default function HeroSection() {
                         <span className="relative z-10 animate-[bounceX_1s_ease-in-out_infinite]">→</span>
                         <div className="absolute inset-0 rounded-full animate-pulse-border group-hover:animate-none"></div>
                     </Link>
-                </div>
+                </motion.div>
                 
             </div>
         </section>
     );
 }
+
+
+
+
+
+
+
+
+
+
+

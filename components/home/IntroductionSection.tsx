@@ -4,6 +4,7 @@ import { useTranslations } from 'next-intl';
 import Image from 'next/image';
 import Link from 'next/link';
 import { playSound } from '@/app/constant/sound';
+import { motion } from 'framer-motion';
 
 export default function IntroductionSection() {
     const t = useTranslations("introduction");
@@ -67,21 +68,51 @@ export default function IntroductionSection() {
 
     return (
         <section className="flex flex-col lg:flex-row justify-between max-w-6xl mx-auto px-6 pt-10 md:pt-20 relative">
-            <div className="lg:w-1/2 flex flex-col justify-between">
+            <motion.div 
+                initial={{ opacity: 0, x: -50 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6 }}
+                className="lg:w-1/2 flex flex-col justify-between"
+            >
                 <div className="md:max-w-[440px]">
-                    <p className="text-red md:text-lg font-medium tracking-wide">
+                    <motion.p 
+                        initial={{ opacity: 0 }}
+                        whileInView={{ opacity: 1 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.6, delay: 0.2 }}
+                        className="text-red md:text-lg font-medium tracking-wide"
+                    >
                         {t('headline')}
-                    </p>
+                    </motion.p>
                     
-                    <h1 className="mt-1 text-3xl md:text-5xl font-bold text-white leading-tight">
+                    <motion.h1 
+                        initial={{ opacity: 0 }}
+                        whileInView={{ opacity: 1 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.6, delay: 0.3 }}
+                        className="mt-1 text-3xl md:text-5xl font-bold text-white leading-tight"
+                    >
                         {t('title')}
-                    </h1>
+                    </motion.h1>
                     
-                    <p className="mt-7 text-[#d3d3d3] md:text-lg leading-relaxed">
+                    <motion.p 
+                        initial={{ opacity: 0 }}
+                        whileInView={{ opacity: 1 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.6, delay: 0.4 }}
+                        className="mt-7 text-[#d3d3d3] md:text-lg leading-relaxed"
+                    >
                         {t('description')}
-                    </p>
+                    </motion.p>
 
-                    <div className="w-fit mt-4 hover:scale-105 transition-all duration-100">
+                    <motion.div 
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.6, delay: 0.5 }}
+                        className="w-fit mt-4 hover:scale-105 transition-all duration-100"
+                    >
                         <Link href="#form" 
                             className="group relative bg-white hover:bg-white/90 transition-all duration-300 text-black px-8 py-4 rounded-full text-lg font-medium flex items-center gap-2" 
                             onMouseEnter={() => playSound('hover_1')}
@@ -90,7 +121,7 @@ export default function IntroductionSection() {
                         <span className="relative z-10 animate-[bounceX_1s_ease-in-out_infinite]">→</span>
                         <div className="absolute inset-0 rounded-full animate-pulse-border group-hover:animate-none"></div>
                         </Link>
-                    </div>
+                    </motion.div>
                 </div>
                 {/* PC */}
                 <div ref={desktopRef} className="hidden sm:block relative h-[300px] w-full">
@@ -128,9 +159,15 @@ export default function IntroductionSection() {
                         </div>
                     ))}
                 </div>
-            </div>
+            </motion.div>
 
-            <div className="relative lg:w-1/2 md:ml-5 mt-12 md:mt-0">
+            <motion.div 
+                initial={{ opacity: 0, x: 50 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6 }}
+                className="relative lg:w-1/2 md:ml-5 mt-12 md:mt-0"
+            >
                 <div className="flex flex-col justify-between space-y-10 relative">
                     <svg 
                         className="absolute inset-0 w-full h-full pointer-events-none" 
@@ -174,10 +211,13 @@ export default function IntroductionSection() {
                             title: t('steps.step7')
                         }
                     ].map((step, index) => (
-                        <div 
-                            key={index} 
-                            className={`z-10 flex items-center gap-8 opacity-0 animate-fadeIn ${index % 2 === 1 && index !== 1 ? 'ml-24' : ''} ${index==1 ? 'ml-16' : ''}`} 
-                            style={{ animationDelay: `${index * 0.2}s` }}
+                        <motion.div 
+                            key={index}
+                            initial={{ opacity: 0, x: 50 }}
+                            whileInView={{ opacity: 1, x: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ duration: 0.4, delay: 0.1 * index }}
+                            className={`z-10 flex items-center gap-8 ${index % 2 === 1 && index !== 1 ? 'ml-24' : ''} ${index==1 ? 'ml-16' : ''}`}
                             ref={(el) => {
                                 if (itemRefs.current) {
                                     itemRefs.current[index] = el;
@@ -192,7 +232,7 @@ export default function IntroductionSection() {
                             <h3 className="text-white text-lg md:text-2xl font-semibold">
                                 {step.title}
                             </h3>
-                        </div>
+                        </motion.div>
                     ))}
                 </div>
                 <div className="lg:hidden absolute -top-10 -left-80 opacity-80 animate-float">
@@ -204,11 +244,14 @@ export default function IntroductionSection() {
                 <div className="hidden lg:block absolute -bottom-10 -right-[650px] w-[726px] h-[726px] opacity-40">
                     <Image src="/img/home/lines.svg" alt="Decorative lines" width={726} height={726} loading="lazy" priority={false} />
                 </div>
-            </div>
+            </motion.div>
 
             {/* Mobile */}
-            <div 
+            <motion.div 
                 ref={mobileRef} 
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, amount: 0.3 }}
                 className="block sm:hidden relative h-[300px] w-full"
             >
                 {[
@@ -225,12 +268,28 @@ export default function IntroductionSection() {
                     { text: "Agency", left: "2%", top: "30%", rotate: -12 },
                 ].map((item, index) => {
                     const rotation = item.rotate || 0;
-                    const animationName = `fall-rotate-${rotation}`.replace(/[^a-zA-Z0-9]/g, '_');
                     
                     return (
-                        <div 
+                        <motion.div 
                             key={index}
-                            className={`absolute bg-red hover:bg-red/80 transition-all duration-100 rounded-full text-black opacity-0 ${item.isIcon ? 'w-10 h-10' : 'px-6 py-3'} ${item.istg ? 'pr-1' : ''} opacity-0 ${item.isIcon ? 'w-10 h-10' : 'px-6 py-3'} ${item.istg ? 'pr-1' : ''}`}
+                            variants={{
+                                hidden: { 
+                                    opacity: 0, 
+                                    y: -50,
+                                    rotate: rotation 
+                                },
+                                visible: {
+                                    opacity: 1,
+                                    y: 0,
+                                    rotate: rotation,
+                                    transition: {
+                                        duration: 0.8,
+                                        delay: index * 0.15,
+                                        ease: "easeOut"
+                                    }
+                                }
+                            }}
+                            className={`absolute bg-red hover:bg-red/80 transition-all duration-100 rounded-full text-black ${item.isIcon ? 'w-10 h-10' : 'px-6 py-3'} ${item.istg ? 'pr-1' : ''}`}
                             onMouseEnter={() => playSound('hover_2')}
                             style={{
                                 left: item.left || 'auto',
@@ -240,7 +299,6 @@ export default function IntroductionSection() {
                                 display: 'flex',
                                 alignItems: 'center',
                                 justifyContent: 'center',
-                                animation: `${animationName} 0.5s ease-out forwards ${index * 0.1}s`,
                             }}
                         >
                             {item.isIcon ? (
@@ -254,23 +312,10 @@ export default function IntroductionSection() {
                             ) : ( 
                                 <span className="whitespace-nowrap">{item.text}</span>
                             )}
-                            <style jsx>{`
-                                @keyframes ${animationName} {
-                                    0% {
-                                        opacity: 0;
-                                        transform: translateY(-20px) rotate(${rotation}deg);
-                                    }
-                                    100% {
-                                        opacity: 1;
-                                        transform: translateY(0) rotate(${rotation}deg);
-                                    }
-                                }
-                            `}</style>
-                        </div>
+                        </motion.div>
                     );
                 })}
-            </div>
+            </motion.div>
         </section>
-
     );
 }

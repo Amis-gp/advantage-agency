@@ -50,14 +50,31 @@ export default function Footer() {
                         </div>
 
                         <div className="flex gap-6 md:gap-8">
-                            {['Home', 'Services', 'Portfolio', 'Contact'].map((item) => (
+                            {[
+                                { name: 'Home', href: '/' },
+                                { name: 'Portfolio', href: '#portfolio' },
+                                { name: 'Instructions', href: '#instructions' },
+                                { name: 'Services', href: '#services' }
+                            ].map((item) => (
                                 <Link 
-                                    key={item} 
-                                    href="#"
+                                    key={item.name} 
+                                    href={item.href}
                                     className="text-sm md:text-base hover:text-red transition-colors"
                                     onMouseEnter={() => playSound('hover_1')}
+                                    onClick={(e) => {
+                                        if (item.href.startsWith('#')) {
+                                            e.preventDefault();
+                                            const element = document.getElementById(item.href.substring(1));
+                                            if (element) {
+                                                element.scrollIntoView({ 
+                                                    behavior: 'smooth',
+                                                    block: 'start'
+                                                });
+                                            }
+                                        }
+                                    }}
                                 >
-                                    {item}
+                                    {item.name}
                                 </Link>
                             ))}
                         </div>

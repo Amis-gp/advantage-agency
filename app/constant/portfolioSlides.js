@@ -8,7 +8,10 @@ export const portfolioSlides = [
         numberOfLeads: '93',
         numberOfSales: '',
         costPerSale: '',
-        slug: '/v10',
+        slug: {
+            en: '/v10',
+            ua: '/v10ua'
+        },
     },
     {
         title: 'beauty salon',
@@ -19,7 +22,10 @@ export const portfolioSlides = [
         numberOfLeads: '218',
         numberOfSales: '',
         costPerSale: '',
-        slug: '/v1',
+        slug: {
+            en: '/v1',
+            ua: '/v1ua'
+        },
     },
     {
         title: 'beauty salon 2',
@@ -30,7 +36,10 @@ export const portfolioSlides = [
         numberOfLeads: '142',
         numberOfSales: '',
         costPerSale: '',
-        slug: '/v2',
+        slug: {
+            en: '/v2',
+            ua: '/v2ua'
+        },
     },
     {
         title: 'Car Detaling',
@@ -41,7 +50,10 @@ export const portfolioSlides = [
         numberOfLeads: '76',
         numberOfSales: '',
         costPerSale: '',
-        slug: '/v3',
+        slug: {
+            en: '/v3',
+            ua: '/v3ua'
+        },
     },
     {
         title: 'real estate',
@@ -52,7 +64,10 @@ export const portfolioSlides = [
         numberOfLeads: '95',
         numberOfSales: '',
         costPerSale: '',
-        slug: '/v4',
+        slug: {
+            en: '/v4',
+            ua: '/v4ua'
+        },
     },
     {
         title: 'inferior designer',
@@ -63,7 +78,10 @@ export const portfolioSlides = [
         numberOfLeads: '100',
         numberOfSales: '',
         costPerSale: '',
-        slug: '/v5',
+        slug: {
+            en: '/v5',
+            ua: '/v5ua'
+        },
     },
     {
         title: 'home improvement',
@@ -74,7 +92,10 @@ export const portfolioSlides = [
         numberOfLeads: '',
         numberOfSales: '',
         costPerSale: '',
-        slug: '/v6',
+        slug: {
+            en: '/v6',
+            ua: '/v6ua'
+        },
     },
     {
         title: 'e-commerce',
@@ -85,7 +106,10 @@ export const portfolioSlides = [
         numberOfLeads: '1 354',
         numberOfSales: '',
         costPerSale: '',
-        slug: '/v7',
+        slug: {
+            en: '/v7',
+            ua: '/v7ua'
+        },
     },
     {
         title: 'roofing',
@@ -96,7 +120,10 @@ export const portfolioSlides = [
         numberOfLeads: '18',
         numberOfSales: '$239,6',
         costPerSale: '',
-        slug: '/v8',
+        slug: {
+            en: '/v8',
+            ua: '/v8ua'
+        },
     },
     {
         title: 'INTERIOR DESIGNER',
@@ -107,6 +134,9 @@ export const portfolioSlides = [
         numberOfLeads: '',
         numberOfSales: '',
         costPerSale: '',
-        slug: '/v9',
+        slug: {
+            en: '/v9',
+            ua: '/v9ua'
+        },
     },
 ];

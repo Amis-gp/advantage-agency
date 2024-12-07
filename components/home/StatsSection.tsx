@@ -1,32 +1,46 @@
 'use client';
 import { useTranslations } from 'next-intl';
 import { playSound } from '@/app/constant/sound';
+import { motion, useInView } from 'framer-motion';
+import { useRef } from 'react';
 
 export default function StatsSection() {
     const t = useTranslations();
     const content = "EFFICIENCY GROWTH QUALITY SOLUTIONS INNOVATION CONNECT LEAD";
+    
+    const ref = useRef(null);
+    const isInView = useInView(ref, { once: true, amount: 0.3 });
 
     return (
-        <section className="pt-14">
+        <section className="pt-14" ref={ref}>
             <div className="max-w-6xl mx-auto px-6">
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                    <div 
+                    <motion.div 
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+                        transition={{ duration: 0.6 }}
                         className="bg-zinc-900 p-8 rounded-lg border border-zinc-800 text-center flex flex-col items-center justify-center hover:scale-105 hover:bg-zinc-800 transition-all duration-100"
                         onMouseEnter={() => playSound('hover_2')}
                     >
                         <h3 className="text-6xl font-bold mb-4">72</h3>
                         <p className="text-gray-400">{t('stats.specialists')}</p>
-                    </div>
+                    </motion.div>
                     
-                    <div 
+                    <motion.div 
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+                        transition={{ duration: 0.6, delay: 0.2 }}
                         className="bg-zinc-900 p-8 rounded-lg border border-zinc-800 text-center flex flex-col items-center justify-center hover:scale-105 hover:bg-zinc-800 transition-all duration-100"
                         onMouseEnter={() => playSound('hover_2')}
                     >
                         <h3 className="text-6xl font-bold mb-4">43%</h3>
                         <p className="text-gray-400">{t('stats.budget')}</p>
-                    </div>
+                    </motion.div>
                     
-                    <div 
+                    <motion.div 
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+                        transition={{ duration: 0.6, delay: 0.4 }}
                         className="bg-zinc-900 p-8 rounded-lg border border-zinc-800 text-center flex flex-col items-center justify-center hover:scale-105 hover:bg-zinc-800 transition-all duration-100"
                         onMouseEnter={() => playSound('hover_2')}
                     >
@@ -34,11 +48,16 @@ export default function StatsSection() {
                             7 <span className="text-6xl">{t('stats.months')}</span>
                         </h3>
                         <p className="text-gray-400">{t('stats.cases')}</p>
-                    </div>
+                    </motion.div>
                 </div>
             </div>
 
-            <div className="bg-black w-full overflow-hidden whitespace-nowrap">
+            <motion.div 
+                initial={{ opacity: 0 }}
+                animate={isInView ? { opacity: 1 } : { opacity: 0 }}
+                transition={{ duration: 0.6, delay: 0.6 }}
+                className="bg-black w-full overflow-hidden whitespace-nowrap"
+            >
                 <div className="relative max-w-[1400px] mx-auto">
                     <div className="absolute left-0 top-0 bottom-0 w-20 bg-gradient-to-r from-black to-transparent z-10"></div>
                     <div className="absolute right-0 top-0 bottom-0 w-20 bg-gradient-to-l from-black to-transparent z-10"></div>
@@ -59,7 +78,7 @@ export default function StatsSection() {
                         </div>
                     </div>
                 </div>
-            </div>
+            </motion.div>
         </section>
     );
 }

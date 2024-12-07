@@ -21,7 +21,7 @@ const Formspree = () => {
   };
 
   return (
-    <form action="https://formspree.io/f/mrgnzzpy" className="border rounded-md p-4 sm:p-6 mt-16 mb-8 shadow-[0_1px_8px_0px_rgba(0,0,0,0.08)] w-[600px] text-base" method="post">
+    <form action="https://formspree.io/f/mrgnzzpy" className="border border-gray-200 rounded-md p-4 sm:p-6 mt-16 mb-8 shadow-[0_1px_8px_0px_rgba(0,0,0,0.08)] w-[600px] text-base" method="post">
       <div className="mb-6">
         <label htmlFor="name" className="block font-semibold">
           Name
@@ -30,7 +30,7 @@ const Formspree = () => {
           name="Name"
           id="name"
           type="text"
-          className="shadow appearance-none border rounded w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline"
+          className="shadow appearance-none border border-gray-100 rounded w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline"
           placeholder="Enter your name"
           required/>
       </div>
@@ -43,7 +43,7 @@ const Formspree = () => {
           name="Email"
           id="email"
           type="email"
-          className="shadow appearance-none border rounded w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline"
+          className="shadow appearance-none border border-gray-100 rounded w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline"
           placeholder="Enter your email"
           required/>
       </div>
@@ -56,7 +56,7 @@ const Formspree = () => {
           name="Phone"
           id="phone"
           type="text"
-          className="shadow appearance-none border rounded w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline"
+          className="shadow appearance-none border border-gray-100 rounded w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline"
           placeholder="Enter your phone"
           required/>
       </div>
@@ -68,9 +68,10 @@ const Formspree = () => {
         <select
           name="Have_you_ever_launched_ads_before?"
           id="Have_you_ever_launched_ads_before?"
-          className={`shadow appearance-none border rounded w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline custom-select-arrow ${isSelectAnswer1 ? 'text-gray-500' : 'text-black'}`}
+          className={`shadow appearance-none border border-gray-100 rounded w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline custom-select-arrow ${isSelectAnswer1 ? 'text-gray-500' : 'text-black'}`}
           onChange={handleSelectAnswer1}
-          required>
+          required
+          defaultValue="Select...">
           <option value="" disabled selected >Select...</option>
           <option value="Yes_recently">Yes, recently</option>
           <option value="No_never">No, never</option>
@@ -85,9 +86,10 @@ const Formspree = () => {
         <select
           name="What_is_your_monthly_advertising_budget?"
           id="What_is_your_monthly_advertising_budget?"
-          className={`shadow appearance-none border rounded w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline custom-select-arrow ${isSelectAnswer2 ? 'text-gray-500' : 'text-black'}`}
+          className={`shadow appearance-none border border-gray-100 rounded w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline custom-select-arrow ${isSelectAnswer2 ? 'text-gray-500' : 'text-black'}`}
           onChange={handleSelectAnswer2}
-          required>
+          required
+          defaultValue="Select...">
           <option value="" disabled selected >Select...</option>
           <option value="$500">$500</option>
           <option value="$500-$1200">from $500 to $1200</option>
@@ -104,9 +106,10 @@ const Formspree = () => {
         <select
           name="What_price_are_you_willing_to_pay_per_new_client?"
           id="What_price_are_you_willing_to_pay_per_new_client?"
-          className={`shadow appearance-none border rounded w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline custom-select-arrow ${isSelectAnswer3 ? 'text-gray-500' : 'text-black'}`}
+          className={`shadow appearance-none border border-gray-100 rounded w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline custom-select-arrow ${isSelectAnswer3 ? 'text-gray-500' : 'text-black'}`}
           onChange={handleSelectAnswer3}
-          required>
+          required
+          defaultValue="Select...">
           <option value="" disabled selected >Select...</option>
           <option value="$20">up to $20</option>
           <option value="$20-$50">between $20 and $50</option>
@@ -121,9 +124,10 @@ const Formspree = () => {
         <select
           name="How_many_new_customers_can_you_process_per_day?"
           id="How_many_new_customers_can_you_process_per_day?"
-          className={`shadow appearance-none border rounded w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline custom-select-arrow ${isSelectAnswer4 ? 'text-gray-500' : 'text-black'}`}
+          className={`shadow appearance-none border border-gray-100 rounded w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline custom-select-arrow ${isSelectAnswer4 ? 'text-gray-500' : 'text-black'}`}
           onChange={handleSelectAnswer4}
-          required>
+          required
+          defaultValue="Select...">
           <option value="" disabled selected >Select...</option>
           <option value="1-3">up to 3</option>
           <option value="3-8">up to 8</option>

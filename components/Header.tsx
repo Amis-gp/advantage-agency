@@ -79,7 +79,7 @@ export default function Header(): JSX.Element {
                         )}
                     </div>*/}
 
-                    <Link href={`/${locale}/pricing`} className="bg-white text-black px-4 py-2 border border-white sm:px-12 sm:py-4 rounded-[20px] sm:rounded-[24px] font-medium hover:bg-gray-200 transition-colors">
+                    <Link href={`#services`} className="bg-white text-black px-4 py-2 border border-white sm:px-12 sm:py-4 rounded-[20px] sm:rounded-[24px] font-medium hover:bg-gray-200 transition-colors">
                         {t('pricing')}
                     </Link>
                 </div>

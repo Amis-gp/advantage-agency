@@ -109,16 +109,33 @@ export default function Instructions() {
     }, []);
 
     return (
-        <section className="pt-20 md:pt-32">
+        <section className="pt-20 md:pt-32" id="instructions">
             <div className="max-w-[1400px] mx-auto px-6 relative">
-                <div className="md:flex justify-between w-full relative">
-                    <div className="z-10 relative">
+                <motion.div 
+                    initial={{ opacity: 0 }}
+                    whileInView={{ opacity: 1 }}
+                    viewport={{ once: true }}
+                    className="md:flex justify-between w-full relative"
+                >
+                    <motion.div 
+                        initial={{ opacity: 0, y: 30 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.8, delay: 0.2 }}
+                        className="z-10 relative"
+                    >
                         <span className="text-red uppercase tracking-wider">{t('headline')}</span>
                         <h2 className="text-white text-3xl md:text-5xl font-bold mt-2">{t('title')}</h2>
                         <p className="text-white/70 mt-4 md:text-lg">{t('description')}</p>
-                    </div>
-                
-                    <div className="w-fit mt-4 hover:scale-105 transition-all duration-100 flex items-end z-10 relative">
+                    </motion.div>
+
+                    <motion.div 
+                        initial={{ opacity: 0, y: 30 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.8, delay: 0.4 }}
+                        className="w-fit mt-4 hover:scale-105 transition-all duration-100 flex items-end z-10 relative"
+                    >
                         <Link href="#form" 
                             className="group relative bg-white hover:bg-white/90 transition-all duration-300 text-black px-8 py-4 rounded-full text-lg font-medium flex items-center gap-2" 
                             onMouseEnter={() => playSound('hover_1')}
@@ -127,7 +144,7 @@ export default function Instructions() {
                             <span className="relative z-10 animate-[bounceX_1s_ease-in-out_infinite]">→</span>
                             <div className="absolute inset-0 rounded-full animate-pulse-border group-hover:animate-none"></div>
                         </Link>
-                    </div>
+                    </motion.div>
                     <div className="absolute -rotate-12 sm:rotate-0 -top-20 -right-52 sm:-top-40 sm:-right-80 w-[426px] h-[426px] sm:w-[726px] sm:h-[726px] opacity-40">
                         <Image src="/img/home/lines.svg" alt="Decorative lines" width={726} height={726} loading="lazy" priority={false} />
                     </div>
@@ -139,12 +156,12 @@ export default function Instructions() {
                     <div className="hidden md:block absolute top-0 -right-48 opacity-80">
                         <Image src="/img/home/gradient-ball-1.svg" alt="Decorative lines" width={426} height={426} loading="lazy" priority={false} />
                     </div>
-                </div>
+                </motion.div>
 
 
                 <div className="grid grid-cols-2 gap-4 relative mt-32 md:mt-32">
                     <svg 
-                        className="steps-connection-svg absolute inset-0 w-full h-full z-10" 
+                        className="steps-connection-svg absolute inset-0 w-full h-full" 
                         style={{ 
                             stroke: '#D12923',
                             strokeWidth: strokeWidth,
@@ -168,12 +185,19 @@ export default function Instructions() {
                     </svg>
 
                     {[...Array(6)].map((_, index) => (
-                        <div 
-                            key={index} 
-                            className={`flex justify-center ${index % 2 === 1 ? 'mt-28 md:mt-80' : '-mt-14'} relative`} 
-                            style={{ animationDelay: `${index * 0.2}s` }}
+                        <motion.div 
+                            key={index}
+                            initial={{ opacity: 0, y: 50 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true, amount: 0.3 }}
+                            transition={{ 
+                                duration: 0.8, 
+                                delay: 0.2 + (index * 0.15),
+                                ease: "easeOut"
+                            }}
+                            className={`flex justify-center ${index % 2 === 1 ? 'mt-28 md:mt-80' : '-mt-14'} relative`}
                         >
-                            <div className="z-20 relative rounded-2xl border border-white/90 bg-black p-3 md:p-12 space-y-4 md:space-y-10 animate-fadeIn max-w-[200px] md:max-w-[350px] h-fit w-full">
+                            <div className="z-20 relative rounded-2xl border border-white/90 bg-black p-3 md:p-12 space-y-4 md:space-y-10 max-w-[200px] md:max-w-[350px] h-fit w-full">
                                 <p className="text-white text-xs sm:text-base md:text-xl font-semibold">
                                     {t(`steps.step${index + 1}.title`)}
                                 </p>
@@ -201,9 +225,15 @@ export default function Instructions() {
                                 </div>
                             </div>
 
-                            <div className={`${index === 1 ? '' : 'hidden'} absolute -top-20 right-14 sm:-top-32 md:-top-80 sm:right-40 md:right-22 lg:right-40 xl:right-72 rotate-45 md:rotate-12`}>
+                            <motion.div 
+                                initial={{ opacity: 0, scale: 0.5 }}
+                                whileInView={{ opacity: 1, scale: 1 }}
+                                viewport={{ once: true }}
+                                transition={{ duration: 0.6, delay: 0.4 + (index * 0.15) }}
+                                className={`${index === 1 ? '' : 'hidden'} absolute -top-20 right-14 sm:-top-32 md:-top-80 sm:right-40 md:right-22 lg:right-40 xl:right-72 rotate-45 md:rotate-12`}
+                            >
                                 <Image src="/img/home/arrow.webp" alt="Decorative lines" className='w-14 h-10 md:w-[250px] md:h-[250px]' width={200} height={200}  loading="lazy" priority={false} />
-                            </div>
+                            </motion.div>
                             <div className={`${index === 2 ? '' : 'hidden'} absolute -top-14 left-0 md:-top-48 md:left-22 lg:left-10 xl:left-20`}>
                                 <Image src="/img/home/rocket.webp" alt="Decorative lines" className='w-10 h-11 md:w-[139px] md:h-[150px]' width={200} height={200}  loading="lazy" priority={false} />
                             </div>
@@ -222,12 +252,18 @@ export default function Instructions() {
                             <div className={`${index === 5 ? '' : 'hidden'} absolute -bottom-40 left-24 md:-bottom-40 md:left-44 lg:left-60 xl:left-80 w-[426px] h-[426px] sm:w-[726px] sm:h-[726px] opacity-40`}>
                                 <Image src="/img/home/lines.svg" alt="Decorative lines" width={726} height={726} loading="lazy" priority={false} />
                             </div>
-                        </div>
+                        </motion.div>
                     ))}
                 </div>
-                <div className="absolute top-[15%] -left-20 opacity-60 animate-float">
-                    <Image src="/img/home/gradient-ball-1.svg" alt="Decorative lines" className='w-52 h-52 md:w-[450px] md:h-[450px]' width={200} height={200}  loading="lazy" priority={false} />
-                </div>
+                <motion.div 
+                    initial={{ opacity: 0, x: -50 }}
+                    whileInView={{ opacity: 0.6, x: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 1, delay: 0.2 }}
+                    className="absolute top-[15%] -left-20 animate-float"
+                >
+                    <Image src="/img/home/gradient-ball-1.svg" alt="Decorative lines" className='w-52 h-52 md:w-[450px] md:h-[450px]' width={200} height={200} loading="lazy" priority={false} />
+                </motion.div>
                 <div className="absolute top-[30%] -right-20 opacity-60">
                     <Image src="/img/home/gradient-ball-1.svg" alt="Decorative lines" className='w-52 h-52 md:w-[450px] md:h-[450px]' width={266} height={266} loading="lazy" priority={false} />
                 </div>

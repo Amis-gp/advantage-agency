@@ -1,6 +1,6 @@
 'use client';
 import { useState } from 'react';
-import { useTranslations } from 'next-intl';
+import { useTranslations, useLocale } from 'next-intl';
 import Image from 'next/image';
 import Link from 'next/link';
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -12,13 +12,25 @@ import 'swiper/css/navigation';
 
 export default function PortfolioSection() {
     const t = useTranslations();
+    const locale = useLocale();
     const [flippedCards, setFlippedCards] = useState<{ [key: number]: boolean }>({});
     
     const { scrollY } = useScroll();
     const rotate2 = useTransform(scrollY, [0, 3000], [0, -360]);
 
+    const getSlugForLocale = (slide: any) => {
+        return locale === 'ua' ? slide.slug.ua : slide.slug.en;
+    };
+
     return (
-        <section className="bg-black relative py-10 md:py-20 px-6 relative overflow-hidden">
+        <motion.section 
+            id="portfolio"
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="bg-black relative py-10 md:py-20 px-6 relative overflow-hidden"
+        >
                 
             <motion.div className="absolute top-24 sm:top-32 right-14 w-6 h-6 sm:w-8 sm:h-8" style={{ rotate: rotate2 }}>
                 <Image src="/img/home/star.svg" alt="Star" width={64} height={64} loading="lazy" priority={false} />
@@ -35,15 +47,28 @@ export default function PortfolioSection() {
                     <Image src="/img/home/star.svg" alt="Star" width={64} height={64} loading="lazy" priority={false} />
                 </motion.div>
 
-                <span className="text-red uppercase tracking-wider">{t('portfolio.headline')}</span>
-                <h2 className="text-white text-3xl md:text-5xl font-bold mt-2">{t('portfolio.title')}</h2>
+                <motion.div 
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.6, delay: 0.2 }}
+                >
+                    <span className="text-red uppercase tracking-wider">{t('portfolio.headline')}</span>
+                    <h2 className="text-white text-3xl md:text-5xl font-bold mt-2">{t('portfolio.title')}</h2>
+                </motion.div>
 
-                <div className="relative">
-                    <button className="hidden xl:block swiper-button-prev absolute !-left-16 top-1/2 -translate-y-1/2 z-20 !w-[60px] !h-[60px] rounded-full border border-white/20 flex items-center justify-center !text-white hover:bg-white/10 transition-all duration-100 active:scale-90"
+                <motion.div 
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.6, delay: 0.4 }}
+                    className="relative"
+                >
+                    <button className="invisible xl:visible flex swiper-button-prev absolute !-left-16 top-1/2 -translate-y-1/2 z-20 !w-[60px] !h-[60px] rounded-full border border-white/20 items-center justify-center !text-white hover:bg-white/10 transition-all duration-100 active:scale-90"
                         onClick={() => playSound('click')} >
                         ←
                     </button>
-                    <button className="hidden xl:block swiper-button-next absolute !-right-16 top-1/2 -translate-y-1/2 z-20 !w-[60px] !h-[60px] rounded-full border border-white/20 flex items-center justify-center !text-white hover:bg-white/10 transition-all duration-100 active:scale-90"
+                    <button className="invisible xl:visible flex swiper-button-next absolute !-right-16 top-1/2 -translate-y-1/2 z-20 !w-[60px] !h-[60px] rounded-full border border-white/20 items-center justify-center !text-white hover:bg-white/10 transition-all duration-100 active:scale-90"
                     onClick={() => playSound('click')}>
                         →
                     </button>
@@ -65,11 +90,6 @@ export default function PortfolioSection() {
                             dynamicBullets: true,
                         }}
                         className="!pb-10 sm:!pb-16 !pt-10 sm:!pt-14"
-                        onSlideChange={() => {
-                            if (window.innerWidth < 1280) {
-                                playSound('swoosh');
-                            }
-                        }}
                         
                         breakpoints={{
                             0: { 
@@ -100,7 +120,11 @@ export default function PortfolioSection() {
                     >
                         {portfolioSlides.map((slide, index) => (
                             <SwiperSlide key={index} className="!opacity-50 !scale-75 transition-all duration-300 [&.swiper-slide-active]:!opacity-100 [&.swiper-slide-active]:!scale-100">
-                                <div 
+                                <motion.div 
+                                    initial={{ opacity: 0, y: 20 }}
+                                    whileInView={{ opacity: 1, y: 0 }}
+                                    viewport={{ once: true }}
+                                    transition={{ duration: 0.4, delay: 0.1 * index }}
                                     className="group relative w-full h-full [perspective:1000px] sm:hover:scale-105 transition-all duration-300 hover:cursor-pointer" 
                                     onMouseEnter={() => playSound('hover_1')}
                                     onClick={() => {
@@ -111,7 +135,6 @@ export default function PortfolioSection() {
                                         }));
                                     }}
                                 >
-                                
                                     <div className={`relative aspect-[4/6] transition-all duration-500 [transform-style:preserve-3d] ${
                                         flippedCards[index] ? '[transform:rotateY(180deg)]' : ''
                                     }`}>
@@ -164,7 +187,7 @@ export default function PortfolioSection() {
                                             </div>
                                             <div className="mt-auto">
                                                 <Link 
-                                                    href={`${slide.slug}`}
+                                                    href={getSlugForLocale(slide)}
                                                     className="inline-flex items-center gap-2 text-red hover:text-red/80 transition-colors"
                                                 >
                                                     {t('portfolio.more')}
@@ -173,12 +196,12 @@ export default function PortfolioSection() {
                                             </div>
                                         </div>
                                     </div>
-                                </div>
+                                </motion.div>
                             </SwiperSlide>
                         ))}
                     </Swiper>
-                </div>
+                </motion.div>
             </div>
-        </section>
+        </motion.section>
     );
 }
