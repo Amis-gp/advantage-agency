@@ -214,7 +214,7 @@
         "form": {
             "name": "Your Name",
             "email": "Your Email",
-            "company": "Company Name",
+            "phone": "Phone Number",
             "purpose": "Tell Us About Your Project",
             "submit": "Get a Consultation"
         }
@@ -240,5 +240,11 @@
                 "answer": "Each project requires different time to achieve results. On average, return on investment occurs in the 2-3rd month of work."
             }
         ]
+    },
+    "thankYou": {
+        "headline": "Thank you",
+        "title": "Thank you for your request!",
+        "description": "We will contact you soon to discuss the details of your project",
+        "button": "Back to home"
     }
 }
