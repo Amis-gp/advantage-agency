@@ -187,7 +187,7 @@ export default function PortfolioSection() {
                                             </div>
                                             <div className="mt-auto">
                                                 <Link 
-                                                    href="/cases/v1"
+                                                    href={getSlugForLocale(slide)}
                                                     className="inline-flex items-center gap-2 text-red hover:text-red/80 transition-colors"
                                                 >
                                                     {t('portfolio.more')}
