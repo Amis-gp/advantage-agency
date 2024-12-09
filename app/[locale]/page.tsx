@@ -15,6 +15,7 @@ import ServicesSection from '@/components/home/ServicesSection';
 
 import FaqSection from '@/components/home/FAQSection';
 import Footer from '@/components/Footer';
+import FormSection from '@/components/home/FormSection';
 
 type Props = {
   params: Promise<{ locale: Locale }>;
@@ -39,7 +40,7 @@ export default async function Home({ params }: Props) {
         <TeamSection />
         <TestimonialSection />
         <ServicesSection />
-       
+        <FormSection />
         <FaqSection />
       </main>
       <Footer />
