@@ -4,7 +4,7 @@ import { useLocale, useTranslations } from 'next-intl';
 import Image from 'next/image';
 import Link from 'next/link';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Navigation, Pagination, SwiperOptions } from 'swiper/modules';
+import { Navigation, Pagination } from 'swiper/modules';
 import { motion, useTransform, useScroll } from 'framer-motion';
 import { playSound } from '@/app/constant/sound';
 import { portfolioSlides } from '@/app/constant/portfolioSlides';
@@ -12,7 +12,7 @@ import 'swiper/css/navigation';
 import 'swiper/css';
 import 'swiper/css/pagination';
 
-const swiperConfig: SwiperOptions = {
+const swiperConfig = {
     modules: [Navigation, Pagination],
     slidesPerView: 3,
     centeredSlides: true,
