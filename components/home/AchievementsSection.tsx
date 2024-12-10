@@ -12,6 +12,26 @@ export default function AchievementsSection() {
     const { scrollY } = useScroll();
     const rotate2 = useTransform(scrollY, [0, 3000], [0, -360]);
 
+    const achievementSlides = [
+        { id: 1, src: '/img/home/stata-1.webp', width: 800, height: 500 },
+        { id: 2, src: '/img/home/stata-2.webp', width: 800, height: 500 },
+        { id: 3, src: '/img/home/stata-3.webp', width: 800, height: 500 }
+    ];
+
+    const swiperConfig = {
+        modules: [NavigationModule],
+        slidesPerView: 1,
+        loop: true,
+        navigation: {
+            prevEl: '.achievement-prev',
+            nextEl: '.achievement-next',
+        },
+        autoplay: {
+            delay: 4000,
+            disableOnInteraction: false,
+        }
+    };
+
     return (
         <motion.section 
             initial={{ opacity: 0 }}
@@ -89,32 +109,28 @@ export default function AchievementsSection() {
                         className="mt-10 relative"
                     >
                         <div className="relative">
-                            <Image src="/img/home/macbook.svg" className="w-max" alt="Achievement statistics" width={800} height={500} loading="lazy" />
+                            <Image 
+                                src="/img/home/macbook.svg"
+                                className="w-max" 
+                                alt="Achievement statistics" 
+                                width={800} 
+                                height={500} 
+                                loading="lazy"
+                            />
                             
                             <div className="absolute top-[5%] left-[11.5%] right-[11.5%] lg:right-[10.2vw] xl:right-[12.7%] bottom-[7%] overflow-hidden rounded-[5px]">
-                                <Swiper
-                                    modules={[NavigationModule]}
-                                    slidesPerView={1}
-                                    loop={true}
-                                    className="h-full"
-                                    navigation={{
-                                        prevEl: '.achievement-prev',
-                                        nextEl: '.achievement-next',
-                                    }}
-                                    autoplay={{
-                                        delay: 4000,
-                                        disableOnInteraction: false,
-                                    }}
-                                >
-                                    {[1, 2, 3].map((index) => (
-                                        <SwiperSlide key={index}>
+                                <Swiper {...swiperConfig}>
+                                    {achievementSlides.map(({ id, src, width, height }) => (
+                                        <SwiperSlide key={id}>
                                             <div className="relative h-full">
                                                 <Image 
-                                                    src={`/img/home/stata-${index}.webp`} 
-                                                    alt="Achievement statistics" 
-                                                    fill
-                                                    className="object-cover"
+                                                    src={src}
+                                                    alt={`Achievement statistics ${id}`}
+                                                    width={width}
+                                                    height={height}
+                                                    className="object-cover w-full h-full"
                                                     loading="lazy"
+                                                    quality={75}
                                                 />
                                             </div>
                                         </SwiperSlide>

@@ -65,7 +65,23 @@ export default function HeroSection() {
                     transition={{ duration: 0.6, delay: 0.2 }}
                     className="relative rounded-2xl md:rounded-3xl overflow-hidden max-w-[740px] mx-auto"
                 >
-                    
+                    <div className="aspect-video flex items-center justify-center relative">
+                        <video key={locale} className="w-full h-full object-cover" controls={isPlaying} poster="/img/home/preview.webp" onPlay={() => setIsPlaying(true)}>
+                            <source src={`/img/home/video-${locale}.mp4`} type="video/mp4"/>
+                            Your browser does not support the video tag.
+                        </video>
+                        
+                        {!isPlaying && (
+                            <div onMouseEnter={() => playSound('hover_1')} className=" absolute inset-0 flex items-center justify-center cursor-pointer group" onClick={handlePlayClick}>
+                                <div className="absolute inset-0 bg-black/30 transition-colors duration-300 group-hover:bg-black/50"></div>
+                                <div className="flex items-center justify-center w-16 h-16 rounded-full bg-white z-10 transition-transform duration-300 group-hover:scale-110">
+                                    <svg className="ml-1 transition-transform duration-300" width="19" height="20" viewBox="0 0 86 97" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M80.1258 40.5562L13.9878 2.50912C7.98783 -0.942487 0.5 3.38842 0.5 10.3104V87.4713C0.5 94.4415 8.08185 98.7661 14.0814 95.218L80.2193 56.1042C86.1521 52.5955 86.1003 43.9932 80.1258 40.5562Z" fill="#000"/>
+                                    </svg>
+                                </div>
+                            </div>
+                        )}
+                    </div>
                 </motion.div>
 
                 <motion.div 

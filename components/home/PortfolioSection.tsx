@@ -1,5 +1,5 @@
 'use client';
-import { useState } from 'react';
+import { useState, useMemo } from 'react';
 import { useLocale, useTranslations } from 'next-intl';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -12,23 +12,71 @@ import 'swiper/css/navigation';
 import 'swiper/css';
 import 'swiper/css/pagination';
 
+const swiperConfig = {
+    modules: [Navigation, Pagination],
+    slidesPerView: 3,
+    centeredSlides: true,
+    loop: true,
+    spaceBetween: 20,
+    navigation: {
+        prevEl: '.swiper-button-prev',
+        nextEl: '.swiper-button-next',
+    },
+    pagination: {
+        enabled: true,
+        clickable: true,
+        type: 'bullets',
+        dynamicBullets: true,
+        bulletActiveClass: 'swiper-pagination-bullet-active',
+        bulletClass: 'swiper-pagination-bullet',
+    },
+    breakpoints: {
+        0: { 
+            slidesPerView: 1,
+            pagination: {
+                enabled: true,
+            }
+        },
+        500: {
+            slidesPerView: 2,
+            pagination: {
+                enabled: true,
+            }
+        },
+        1024: { 
+            slidesPerView: 3,
+            pagination: {
+                enabled: false,
+            }
+        }
+    },
+    speed: 600,
+    effect: 'slide',
+};
+
 export default function PortfolioSection() {
     const t = useTranslations();
     const locale = useLocale();
     const [flippedCards, setFlippedCards] = useState<{ [key: number]: boolean }>({});
 
-    const getSlugForLocale = (slide: any) => {
+    const getSlugForLocale = useMemo(() => (slide: any) => {
         return locale === 'ua' ? slide.slug.ua : slide.slug.en;
-    };
+    }, [locale]);
 
     const { scrollY } = useScroll();
     const rotate2 = useTransform(scrollY, [0, 3000], [0, -360]);
 
     return (
         <section className="bg-black relative py-10 md:py-20 px-6 overflow-hidden">
-                
             <motion.div className="absolute top-20 sm:top-32 right-14 w-4 h-4 sm:w-8 sm:h-8" style={{ rotate: rotate2 }}>
-                <Image src="/img/home/star.svg" alt="Star" width={64} height={64} loading="lazy" priority={false} />
+                <Image 
+                    src="/img/home/star.svg" 
+                    alt="Decorative star" 
+                    width={64} 
+                    height={64} 
+                    loading="lazy"
+                    priority={false} 
+                />
             </motion.div>
             <div className="absolute bottom-40 sm:bottom-0 -left-56 opacity-20 md:opacity-80 animate-float">
                 <Image src="/img/home/gradient-ball-1.svg" alt="Decorative lines" width={426} height={426} loading="lazy" priority={false} />
@@ -37,7 +85,6 @@ export default function PortfolioSection() {
                 <Image src="/img/home/gradient-ball-1.svg" alt="Decorative lines" width={226} height={226} loading="lazy" priority={false} />
             </div>
             <div className="max-w-6xl mx-auto relative">
-                
                 <motion.div className="hidden xl:block absolute -top-16 -left-20 w-auto h-auto" style={{ rotate: rotate2 }}>
                     <Image src="/img/home/star.svg" alt="Star" width={64} height={64} loading="lazy" priority={false} />
                 </motion.div>
@@ -55,46 +102,9 @@ export default function PortfolioSection() {
                         →
                     </button>
 
-                    <Swiper
-                        modules={[Navigation, Pagination]}
-                        slidesPerView={3}
-                        centeredSlides={true}
-                        loop={true}
-                        spaceBetween={20}
-                        navigation={{
-                            prevEl: '.swiper-button-prev',
-                            nextEl: '.swiper-button-next',
-                        }}
-                        pagination={{
-                            enabled: true,
-                            clickable: true,
-                            type: 'bullets',
-                            dynamicBullets: true,
-                            bulletActiveClass: 'swiper-pagination-bullet-active',
-                            bulletClass: 'swiper-pagination-bullet',
-                        }}
+                    <Swiper 
+                        {...swiperConfig}
                         className="!pb-10 sm:!pb-16 !pt-10 sm:!pt-14"
-                        
-                        breakpoints={{
-                            0: { 
-                                slidesPerView: 1,
-                                pagination: {
-                                    enabled: true,
-                                }
-                            },
-                            500: {
-                                slidesPerView: 2,
-                                pagination: {
-                                    enabled: true,
-                                }
-                            },
-                            1024: { 
-                                slidesPerView: 3,
-                                pagination: {
-                                    enabled: false,
-                                }
-                            }
-                        }}
                         style={{
                             '--swiper-slide-transform': 'scale(0.8)',
                             '--swiper-pagination-color': '#D12923',
@@ -118,17 +128,21 @@ export default function PortfolioSection() {
                                         }));
                                     }}
                                 >
-                                
                                     <div className={`relative aspect-[4/6] transition-all duration-500 [transform-style:preserve-3d] ${
                                         flippedCards[index] ? '[transform:rotateY(180deg)]' : ''
                                     }`}>
                                         <div className="absolute inset-0 [backface-visibility:hidden]">
-                                            <div className="">
+                                            <div className="relative h-full">
                                                 <Image 
                                                     src={slide.image} 
-                                                    alt={slide.title} 
+                                                    alt={slide.title}
                                                     fill
+                                                    sizes="(max-width: 500px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                                                    quality={75}
+                                                    loading="lazy"
                                                     className="object-cover brightness-[0.7] rounded-[30px]"
+                                                    placeholder="blur"
+                                                    blurDataURL="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAwIiBoZWlnaHQ9IjEyMDAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0iIzIwMjAyMCIvPjwvc3ZnPg=="
                                                 />
                                             </div>
                                             <div className="absolute inset-0 p-10 flex flex-col">
