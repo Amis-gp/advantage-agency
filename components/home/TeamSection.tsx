@@ -95,7 +95,7 @@ export default function TeamSection() {
                     }}
                     className="team-swiper"
                 >
-                    {teamMembers.map((member, index) => (
+                    {teamMembers.map((member) => (
                         <SwiperSlide key={member.name}>
                             <motion.div 
                                 initial={{ opacity: 0, scale: 0.95 }}

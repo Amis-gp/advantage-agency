@@ -129,7 +129,6 @@ export default function PortfolioSection() {
                                                     alt={slide.title} 
                                                     fill
                                                     className="object-cover brightness-[0.7] rounded-[30px]"
-                                                    loading="lazy" 
                                                 />
                                             </div>
                                             <div className="absolute inset-0 p-10 flex flex-col">
