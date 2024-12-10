@@ -1,5 +1,5 @@
 'use client';
-import { useState, useMemo } from 'react';
+import { useState, useMemo, useEffect, useRef } from 'react';
 import { useLocale, useTranslations } from 'next-intl';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -58,17 +58,53 @@ export default function PortfolioSection() {
     const t = useTranslations();
     const locale = useLocale();
     const [flippedCards, setFlippedCards] = useState<{ [key: number]: boolean }>({});
+    const [rotation, setRotation] = useState(0);
+    const requestRef = useRef<number>();
+    const previousTimeRef = useRef<number>();
 
     const getSlugForLocale = useMemo(() => (slide: any) => {
         return locale === 'ua' ? slide.slug.ua : slide.slug.en;
     }, [locale]);
 
-    const { scrollY } = useScroll();
-    const rotate2 = useTransform(scrollY, [0, 3000], [0, -360]);
+    useEffect(() => {
+        if (typeof window === 'undefined') return;
+
+        const animate = (time: number) => {
+            if (previousTimeRef.current !== undefined) {
+                const scrollPercent = window.scrollY / (document.documentElement.scrollHeight - window.innerHeight);
+                const targetRotation = scrollPercent * -360;
+                
+                // Плавна анімація
+                const diff = targetRotation - rotation;
+                const smoothing = 0.1; // Менше значення = плавніша анімація
+                
+                setRotation(prev => prev + diff * smoothing);
+            }
+            previousTimeRef.current = time;
+            requestRef.current = requestAnimationFrame(animate);
+        };
+
+        requestRef.current = requestAnimationFrame(animate);
+        return () => {
+            if (requestRef.current) {
+                cancelAnimationFrame(requestRef.current);
+            }
+        };
+    }, [rotation]);
 
     return (
-        <section className="bg-black relative py-10 md:py-20 px-6 overflow-hidden">
-            <motion.div className="absolute top-20 sm:top-32 right-14 w-4 h-4 sm:w-8 sm:h-8" style={{ rotate: rotate2 }}>
+        <section 
+            className="bg-black relative py-10 md:py-20 px-6 overflow-hidden"
+        >
+            <motion.div 
+                className="absolute top-20 sm:top-32 right-14 w-4 h-4 sm:w-8 sm:h-8"
+                style={{ 
+                    rotate: rotation,
+                    willChange: 'transform',
+                    transform: 'translateZ(0)',
+                    backfaceVisibility: 'hidden',
+                }}
+            >
                 <Image 
                     src="/img/home/star.svg" 
                     alt="Decorative star" 
@@ -85,8 +121,23 @@ export default function PortfolioSection() {
                 <Image src="/img/home/gradient-ball-1.svg" alt="Decorative lines" width={226} height={226} loading="lazy" priority={false} />
             </div>
             <div className="max-w-6xl mx-auto relative">
-                <motion.div className="hidden xl:block absolute -top-16 -left-20 w-auto h-auto" style={{ rotate: rotate2 }}>
-                    <Image src="/img/home/star.svg" alt="Star" width={64} height={64} loading="lazy" priority={false} />
+                <motion.div 
+                    className="hidden xl:block absolute -top-16 -left-20 w-auto h-auto" 
+                    style={{ 
+                        rotate: rotation,
+                        willChange: 'transform',
+                        transform: 'translateZ(0)',
+                        backfaceVisibility: 'hidden',
+                    }}
+                >
+                    <Image 
+                        src="/img/home/star.svg" 
+                        alt="Star" 
+                        width={64} 
+                        height={64} 
+                        loading="lazy" 
+                        priority={false}
+                    />
                 </motion.div>
 
                 <span className="text-red uppercase tracking-wider">{t('portfolio.headline')}</span>
@@ -118,15 +169,7 @@ export default function PortfolioSection() {
                         {portfolioSlides.map((slide, index) => (
                             <SwiperSlide key={index} className="!opacity-50 !scale-75 transition-all duration-300 [&.swiper-slide-active]:!opacity-100 [&.swiper-slide-active]:!scale-100">
                                 <div 
-                                    className="group relative w-full h-full [perspective:1000px] sm:hover:scale-105 transition-all duration-300 hover:cursor-pointer" 
-                                    onMouseEnter={() => playSound('hover_1')}
-                                    onClick={() => {
-                                        playSound('flipCard');
-                                        setFlippedCards(prev => ({
-                                            ...prev,
-                                            [index]: !prev[index]
-                                        }));
-                                    }}
+                                    className="group relative w-full h-full [perspective:1000px] transition-all duration-300 hover:cursor-pointer" 
                                 >
                                     <div className={`relative aspect-[4/6] transition-all duration-500 [transform-style:preserve-3d] ${
                                         flippedCards[index] ? '[transform:rotateY(180deg)]' : ''
