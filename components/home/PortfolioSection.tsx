@@ -1,6 +1,6 @@
 'use client';
 import { useState } from 'react';
-import { useTranslations, useLocale } from 'next-intl';
+import { useLocale, useTranslations } from 'next-intl';
 import Image from 'next/image';
 import Link from 'next/link';
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -9,30 +9,25 @@ import { motion, useTransform, useScroll } from 'framer-motion';
 import { playSound } from '@/app/constant/sound';
 import { portfolioSlides } from '@/app/constant/portfolioSlides';
 import 'swiper/css/navigation';
+import 'swiper/css';
+import 'swiper/css/pagination';
 
 export default function PortfolioSection() {
     const t = useTranslations();
     const locale = useLocale();
     const [flippedCards, setFlippedCards] = useState<{ [key: number]: boolean }>({});
-    
-    const { scrollY } = useScroll();
-    const rotate2 = useTransform(scrollY, [0, 3000], [0, -360]);
 
     const getSlugForLocale = (slide: any) => {
         return locale === 'ua' ? slide.slug.ua : slide.slug.en;
     };
 
+    const { scrollY } = useScroll();
+    const rotate2 = useTransform(scrollY, [0, 3000], [0, -360]);
+
     return (
-        <motion.section 
-            id="portfolio"
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="bg-black relative py-10 md:py-20 px-6 relative overflow-hidden"
-        >
+        <section className="bg-black relative py-10 md:py-20 px-6 overflow-hidden">
                 
-            <motion.div className="absolute top-24 sm:top-32 right-14 w-6 h-6 sm:w-8 sm:h-8" style={{ rotate: rotate2 }}>
+            <motion.div className="absolute top-20 sm:top-32 right-14 w-4 h-4 sm:w-8 sm:h-8" style={{ rotate: rotate2 }}>
                 <Image src="/img/home/star.svg" alt="Star" width={64} height={64} loading="lazy" priority={false} />
             </motion.div>
             <div className="absolute bottom-40 sm:bottom-0 -left-56 opacity-20 md:opacity-80 animate-float">
@@ -47,28 +42,15 @@ export default function PortfolioSection() {
                     <Image src="/img/home/star.svg" alt="Star" width={64} height={64} loading="lazy" priority={false} />
                 </motion.div>
 
-                <motion.div 
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.6, delay: 0.2 }}
-                >
-                    <span className="text-red uppercase tracking-wider">{t('portfolio.headline')}</span>
-                    <h2 className="text-white text-3xl md:text-5xl font-bold mt-2">{t('portfolio.title')}</h2>
-                </motion.div>
+                <span className="text-red uppercase tracking-wider">{t('portfolio.headline')}</span>
+                <h2 className="text-white text-3xl md:text-5xl font-bold mt-2">{t('portfolio.title')}</h2>
 
-                <motion.div 
-                    initial={{ opacity: 0, y: 30 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.6, delay: 0.4 }}
-                    className="relative"
-                >
-                    <button className="invisible xl:visible flex swiper-button-prev absolute !-left-16 top-1/2 -translate-y-1/2 z-20 !w-[60px] !h-[60px] rounded-full border border-white/20 items-center justify-center !text-white hover:bg-white/10 transition-all duration-100 active:scale-90"
+                <div className="relative">
+                    <button className="invisible xl:visible swiper-button-prev absolute !-left-16 top-1/2 -translate-y-1/2 z-20 !w-[60px] !h-[60px] rounded-full border border-white/20 flex items-center justify-center !text-white hover:bg-white/10 transition-all duration-100 active:scale-90"
                         onClick={() => playSound('click')} >
                         ←
                     </button>
-                    <button className="invisible xl:visible flex swiper-button-next absolute !-right-16 top-1/2 -translate-y-1/2 z-20 !w-[60px] !h-[60px] rounded-full border border-white/20 items-center justify-center !text-white hover:bg-white/10 transition-all duration-100 active:scale-90"
+                    <button className="invisible xl:visible swiper-button-next absolute !-right-16 top-1/2 -translate-y-1/2 z-20 !w-[60px] !h-[60px] rounded-full border border-white/20 flex items-center justify-center !text-white hover:bg-white/10 transition-all duration-100 active:scale-90"
                     onClick={() => playSound('click')}>
                         →
                     </button>
@@ -88,6 +70,8 @@ export default function PortfolioSection() {
                             clickable: true,
                             type: 'bullets',
                             dynamicBullets: true,
+                            bulletActiveClass: 'swiper-pagination-bullet-active',
+                            bulletClass: 'swiper-pagination-bullet',
                         }}
                         className="!pb-10 sm:!pb-16 !pt-10 sm:!pt-14"
                         
@@ -116,15 +100,14 @@ export default function PortfolioSection() {
                             '--swiper-pagination-color': '#D12923',
                             '--swiper-pagination-bullet-inactive-color': '#ffffff',
                             '--swiper-pagination-bullet-inactive-opacity': '0.5',
+                            '--swiper-pagination-bullet-size': '9px',
+                            '--swiper-pagination-bullet-horizontal-gap': '7px',
+                            '--swiper-pagination-bottom': '0px',
                         } as any}
                     >
                         {portfolioSlides.map((slide, index) => (
                             <SwiperSlide key={index} className="!opacity-50 !scale-75 transition-all duration-300 [&.swiper-slide-active]:!opacity-100 [&.swiper-slide-active]:!scale-100">
-                                <motion.div 
-                                    initial={{ opacity: 0, y: 20 }}
-                                    whileInView={{ opacity: 1, y: 0 }}
-                                    viewport={{ once: true }}
-                                    transition={{ duration: 0.4, delay: 0.1 * index }}
+                                <div 
                                     className="group relative w-full h-full [perspective:1000px] sm:hover:scale-105 transition-all duration-300 hover:cursor-pointer" 
                                     onMouseEnter={() => playSound('hover_1')}
                                     onClick={() => {
@@ -135,6 +118,7 @@ export default function PortfolioSection() {
                                         }));
                                     }}
                                 >
+                                
                                     <div className={`relative aspect-[4/6] transition-all duration-500 [transform-style:preserve-3d] ${
                                         flippedCards[index] ? '[transform:rotateY(180deg)]' : ''
                                     }`}>
@@ -196,12 +180,12 @@ export default function PortfolioSection() {
                                             </div>
                                         </div>
                                     </div>
-                                </motion.div>
+                                </div>
                             </SwiperSlide>
                         ))}
                     </Swiper>
-                </motion.div>
+                </div>
             </div>
-        </motion.section>
+        </section>
     );
 }

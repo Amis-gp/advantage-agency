@@ -74,7 +74,7 @@ export default function AchievementsSection() {
                                 className="group relative bg-black hover:bg-black/80 transition-all duration-300 text-white px-8 py-4 rounded-full text-lg font-medium flex items-center gap-2" 
                                 onMouseEnter={() => playSound('hover_1')}
                             >
-                                <span className="relative z-10">{t('achievements.button')}</span>
+                                <span className="text-sm sm:text-base relative z-10">{t('achievements.button')}</span>
                                 <span className="relative z-10 animate-[bounceX_1s_ease-in-out_infinite]">→</span>
                                 <div className="absolute inset-0 rounded-full animate-pulse-border-black group-hover:animate-none"></div>
                             </Link>

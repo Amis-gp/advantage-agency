@@ -27,21 +27,21 @@ export default function HeroSection() {
         <section className="px-6 relative" id="hero">
             <div className="absolute top-28 -left-40 xl:left-10 w-64 h-64">
                 <motion.div className="hidden xl:block absolute" style={{ rotate: rotate1 }}>
-                    <Image src="/img/home/star.svg" alt="Star" width={64} height={64} loading="lazy" priority={false} />
+                    <Image src="/img/home/star.svg" alt="Star" width={64} height={64}/>
                 </motion.div>
-                <Image src="/img/home/gradient-ball-1.svg" className="animate-float" alt="Decorative lines" width={726} height={726} loading="lazy" priority={false} />
+                <Image src="/img/home/gradient-ball-1.svg" className="animate-float" alt="Decorative lines" width={726} height={726}/>
             </div>
 
             <div className="absolute -rotate-12 sm:rotate-0 -top-20 -right-52 sm:-top-80 sm:-right-80 w-[426px] h-[426px] sm:w-[726px] sm:h-[726px] opacity-40">
-                <Image src="/img/home/lines.svg" alt="Decorative lines" width={726} height={726} loading="lazy" priority={false} />
+                <Image src="/img/home/lines.svg" alt="Decorative lines" width={726} height={726}/>
             </div>
 
             <motion.div className="absolute top-20 right-4 xl:right-16  w-4 h-4 sm:w-8 sm:h-8 xl:w-auto xl:h-auto" style={{ rotate: rotate2 }}>
-                <Image src="/img/home/star.svg" alt="Star" width={64} height={64} loading="lazy" priority={false} />
+                <Image src="/img/home/star.svg" alt="Star" width={64} height={64}/>
             </motion.div>
 
             <div className="absolute -bottom-10 -right-56 sm:right-10 opacity-80 animate-float">
-                <Image src="/img/home/gradient-ball-1.svg" alt="Decorative lines" width={426} height={426} loading="lazy" priority={false} />
+                <Image src="/img/home/gradient-ball-1.svg" alt="Decorative lines" width={426} height={426}/>
             </div>
 
             <div className="max-w-6xl mx-auto pt-28 relative">
@@ -91,23 +91,23 @@ export default function HeroSection() {
                     className="flex items-center gap-4 mt-8 justify-center relative"
                 >
                     <div className="flex -space-x-4">
-                        <Image src="/img/home/ava-1.jpg" alt="Avatar" width={40} height={40} loading="lazy" priority={false} className="rounded-full" />
-                        <Image src="/img/home/ava-2.jpg" alt="Avatar" width={40} height={40} loading="lazy" priority={false} className="rounded-full" />
-                        <Image src="/img/home/ava-3.jpg" alt="Avatar" width={40} height={40} loading="lazy" priority={false} className="rounded-full" />
-                        <Image src="/img/home/ava-4.jpg" alt="Avatar" width={40} height={40} loading="lazy" priority={false} className="rounded-full" />
+                        <Image src="/img/home/ava-1.jpg" alt="Avatar" width={40} height={40}className="rounded-full" />
+                        <Image src="/img/home/ava-2.jpg" alt="Avatar" width={40} height={40}className="rounded-full" />
+                        <Image src="/img/home/ava-3.jpg" alt="Avatar" width={40} height={40}className="rounded-full" />
+                        <Image src="/img/home/ava-4.jpg" alt="Avatar" width={40} height={40}className="rounded-full" />
                     </div>
                     <div className="">
                         <div className="flex items-center">
                             {[1, 2, 3, 4].map((star) => (
-                                <Image key={star} src="/img/home/star-yellow.svg" alt="Star" width={12} height={12} className='mr-1' loading="lazy" priority={false} />
+                                <Image key={star} src="/img/home/star-yellow.svg" alt="Star" width={12} height={12} className='mr-1'/>
                             ))}
-                            <Image src="/img/home/star-yellow-gray.svg" alt="Star" width={12} height={12} loading="lazy" priority={false} />
+                            <Image src="/img/home/star-yellow-gray.svg" alt="Star" width={12} height={12}/>
                             <span className="ml-2">4.6</span>
                         </div>
                         <span className="mt-3">{t('hero.reviews')}</span>
                     </div>
                     <motion.div className="absolute top-28 left-1 sm:top-10 sm:left-40" style={{ rotate: rotate2 }}>
-                        <Image src="/img/home/star.svg" alt="Star" width={24} height={24} loading="lazy" priority={false} />
+                        <Image src="/img/home/star.svg" alt="Star" width={24} height={24}/>
                     </motion.div>
                 </motion.div>
 

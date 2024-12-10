@@ -175,26 +175,12 @@ export default function Instructions() {
                         <path 
                             className="steps-path-line" 
                             d="" 
-                            style={{
-                                strokeLinecap: 'round',
-                                strokeLinejoin: 'round',
-                                strokeDasharray: '0, 30000',
-                                animation: 'drawPath 2s ease-out forwards',
-                            }}
                         />
                     </svg>
 
                     {[...Array(6)].map((_, index) => (
-                        <motion.div 
+                        <div 
                             key={index}
-                            initial={{ opacity: 0, y: 50 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true, amount: 0.3 }}
-                            transition={{ 
-                                duration: 0.8, 
-                                delay: 0.2 + (index * 0.15),
-                                ease: "easeOut"
-                            }}
                             className={`flex justify-center ${index % 2 === 1 ? 'mt-28 md:mt-80' : '-mt-14'} relative`}
                         >
                             <div className="z-20 relative rounded-2xl border border-white/90 bg-black p-3 md:p-12 space-y-4 md:space-y-10 max-w-[200px] md:max-w-[350px] h-fit w-full">
@@ -225,15 +211,11 @@ export default function Instructions() {
                                 </div>
                             </div>
 
-                            <motion.div 
-                                initial={{ opacity: 0, scale: 0.5 }}
-                                whileInView={{ opacity: 1, scale: 1 }}
-                                viewport={{ once: true }}
-                                transition={{ duration: 0.6, delay: 0.4 + (index * 0.15) }}
+                            <div 
                                 className={`${index === 1 ? '' : 'hidden'} absolute -top-20 right-14 sm:-top-32 md:-top-80 sm:right-40 md:right-22 lg:right-40 xl:right-72 rotate-45 md:rotate-12`}
                             >
                                 <Image src="/img/home/arrow.webp" alt="Decorative lines" className='w-14 h-10 md:w-[250px] md:h-[250px]' width={200} height={200}  loading="lazy" priority={false} />
-                            </motion.div>
+                            </div>
                             <div className={`${index === 2 ? '' : 'hidden'} absolute -top-14 left-0 md:-top-48 md:left-22 lg:left-10 xl:left-20`}>
                                 <Image src="/img/home/rocket.webp" alt="Decorative lines" className='w-10 h-11 md:w-[139px] md:h-[150px]' width={200} height={200}  loading="lazy" priority={false} />
                             </div>
@@ -252,7 +234,7 @@ export default function Instructions() {
                             <div className={`${index === 5 ? '' : 'hidden'} absolute -bottom-40 left-24 md:-bottom-40 md:left-44 lg:left-60 xl:left-80 w-[426px] h-[426px] sm:w-[726px] sm:h-[726px] opacity-40`}>
                                 <Image src="/img/home/lines.svg" alt="Decorative lines" width={726} height={726} loading="lazy" priority={false} />
                             </div>
-                        </motion.div>
+                        </div>
                     ))}
                 </div>
                 <motion.div 

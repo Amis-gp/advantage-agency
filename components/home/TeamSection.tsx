@@ -93,11 +93,6 @@ export default function TeamSection() {
                             spaceBetween: 32
                         }
                     }}
-                    onSlideChange={() => {
-                        if (window.innerWidth < 640) {
-                            playSound('swoosh');
-                        }
-                    }}
                     className="team-swiper"
                 >
                     {teamMembers.map((member, index) => (
@@ -118,7 +113,6 @@ export default function TeamSection() {
                                         alt={member.name}
                                         fill
                                         className="object-cover"
-                                        loading="lazy"
                                     />
                                 </div>
                                 <div className="text-center mt-3">
