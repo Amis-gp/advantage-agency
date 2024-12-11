@@ -6,15 +6,76 @@ import { useTranslations } from 'next-intl'
 import { playSound } from '@/app/constant/sound'
 import 'swiper/css'
 import 'swiper/css/navigation'
-import { teamMembers } from '@/app/constant/team';
-import { motion } from 'framer-motion';
+import { teamMembers } from '@/app/constant/team'
+import { motion } from 'framer-motion'
+import { memo, useMemo } from 'react'
 
-interface TeamSectionProps {
-    playSound?: (sound: string) => void
-}
+const TeamMember = memo(({ member }: { member: typeof teamMembers[0] }) => (
+    <motion.div 
+        initial={{ opacity: 0, scale: 0.95 }}
+        whileInView={{ opacity: 1, scale: 1 }}
+        viewport={{ once: true, margin: "-100px" }}
+        transition={{ duration: 0.4, ease: "easeOut" }}
+        className="pt-12 md:pt-16 transition-all duration-300 [&.swiper-slide-active]:scale-125 max-w-[200px] mx-auto sm:transform-none"
+    >
+        <div className="aspect-square relative rounded-full overflow-hidden">
+            <Image 
+                src={member.image}
+                alt={member.name}
+                fill
+                sizes="(max-width: 640px) 33vw, (max-width: 1024px) 25vw, 200px"
+                loading="lazy"
+                quality={75}
+                className="object-cover"
+                placeholder="blur"
+                blurDataURL="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjMjAyMDIwIi8+PC9zdmc+"
+            />
+        </div>
+        <div className="text-center mt-3">
+            <h3 className="text-white text-base md:text-lg font-semibold">
+                {member.name}
+            </h3>
+            <p className="text-gray-400 text-sm md:text-base">
+                {member.position}
+            </p>
+        </div>
+    </motion.div>
+));
+
+TeamMember.displayName = 'TeamMember';
+
+const swiperConfig = {
+    modules: [NavigationModule],
+    slidesPerView: 4,
+    spaceBetween: 32,
+    loop: true,
+    navigation: {
+        prevEl: '.team-prev',
+        nextEl: '.team-next',
+    },
+    breakpoints: {
+        0: { 
+            slidesPerView: 3,
+            spaceBetween: 32,
+            centeredSlides: true
+        },
+        640: { 
+            slidesPerView: 3,
+            centeredSlides: false,
+            spaceBetween: 32
+        },
+        1024: { 
+            slidesPerView: 4,
+            centeredSlides: false,
+            spaceBetween: 32
+        }
+    }
+};
 
 export default function TeamSection() {
-    const t = useTranslations()
+    const t = useTranslations();
+    
+    const memoizedTeamMembers = useMemo(() => teamMembers, []);
     
     return (
         <motion.section 
@@ -67,69 +128,10 @@ export default function TeamSection() {
                 <div className="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-black to-transparent z-10 pointer-events-none"></div>
                 <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-black to-transparent z-10 pointer-events-none"></div>
 
-                <Swiper
-                    modules={[NavigationModule]}
-                    slidesPerView={4}
-                    spaceBetween={32}
-                    loop={true}
-                    navigation={{
-                        prevEl: '.team-prev',
-                        nextEl: '.team-next',
-                    }}
-                    breakpoints={{
-                        0: { 
-                            slidesPerView: 3,
-                            spaceBetween: 32,
-                            centeredSlides: true
-                        },
-                        640: { 
-                            slidesPerView: 3,
-                            centeredSlides: false,
-                            spaceBetween: 32
-                        },
-                        1024: { 
-                            slidesPerView: 4,
-                            centeredSlides: false,
-                            spaceBetween: 32
-                        }
-                    }}
-                    onSlideChange={() => {
-                        if (window.innerWidth < 640) {
-                            playSound('swoosh');
-                        }
-                    }}
-                    className="team-swiper"
-                >
-                    {teamMembers.map((member, index) => (
+                <Swiper {...swiperConfig} className="team-swiper">
+                    {memoizedTeamMembers.map((member) => (
                         <SwiperSlide key={member.name}>
-                            <motion.div 
-                                initial={{ opacity: 0, scale: 0.95 }}
-                                whileInView={{ opacity: 1, scale: 1 }}
-                                viewport={{ once: true, margin: "-100px" }}
-                                transition={{ 
-                                    duration: 0.4,
-                                    ease: "easeOut"
-                                }}
-                                className="pt-12 md:pt-16 transition-all duration-300 [&.swiper-slide-active]:scale-125 max-w-[200px] mx-auto sm:transform-none"
-                            >
-                                <div className="aspect-square relative rounded-full overflow-hidden">
-                                    <Image 
-                                        src={member.image}
-                                        alt={member.name}
-                                        fill
-                                        className="object-cover"
-                                        loading="lazy"
-                                    />
-                                </div>
-                                <div className="text-center mt-3">
-                                    <h3 className="text-white text-base md:text-lg font-semibold">
-                                        {member.name}
-                                    </h3>
-                                    <p className="text-gray-400 text-sm md:text-base">
-                                        {member.position}
-                                    </p>
-                                </div>
-                            </motion.div>
+                            <TeamMember member={member} />
                         </SwiperSlide>
                     ))}
                 </Swiper>

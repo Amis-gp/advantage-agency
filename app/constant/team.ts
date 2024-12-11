@@ -21,6 +21,11 @@ export const teamMembers: TeamMember[] = [
         image: "/img/team/pavlo.webp"
     },
     {
+        name: "Kostya",
+        position: "Front-end dev",
+        image: "/img/team/kostya.webp"
+    },
+    {
         name: "Anna",
         position: "Web Designer",
         image: "/img/team/anna.webp"

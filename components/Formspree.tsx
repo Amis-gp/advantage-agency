@@ -71,8 +71,8 @@ const Formspree = () => {
           className={`shadow appearance-none border border-gray-100 rounded w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline custom-select-arrow ${isSelectAnswer1 ? 'text-gray-500' : 'text-black'}`}
           onChange={handleSelectAnswer1}
           required
-          defaultValue="Select...">
-          <option value="" disabled selected >Select...</option>
+          defaultValue="">
+          <option value="" disabled>Select...</option>
           <option value="Yes_recently">Yes, recently</option>
           <option value="No_never">No, never</option>
           <option value="No_for_a_long_time">No, for a long time</option>
@@ -89,8 +89,8 @@ const Formspree = () => {
           className={`shadow appearance-none border border-gray-100 rounded w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline custom-select-arrow ${isSelectAnswer2 ? 'text-gray-500' : 'text-black'}`}
           onChange={handleSelectAnswer2}
           required
-          defaultValue="Select...">
-          <option value="" disabled selected >Select...</option>
+          defaultValue="">
+          <option value="" disabled>Select...</option>
           <option value="$500">$500</option>
           <option value="$500-$1200">from $500 to $1200</option>
           <option value="$1200-$2000">from $1200 to $2000</option>
@@ -109,8 +109,8 @@ const Formspree = () => {
           className={`shadow appearance-none border border-gray-100 rounded w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline custom-select-arrow ${isSelectAnswer3 ? 'text-gray-500' : 'text-black'}`}
           onChange={handleSelectAnswer3}
           required
-          defaultValue="Select...">
-          <option value="" disabled selected >Select...</option>
+          defaultValue="">
+          <option value="" disabled>Select...</option>
           <option value="$20">up to $20</option>
           <option value="$20-$50">between $20 and $50</option>
           <option value="$150+">more than $150</option>
@@ -119,7 +119,7 @@ const Formspree = () => {
 
       <div className="mb-6">
         <label htmlFor="How_many_new_customers_can_you_process_per_day?" className="block font-semibold">
-        How many new customers can you process per day?
+          How many new customers can you process per day?
         </label>
         <select
           name="How_many_new_customers_can_you_process_per_day?"
@@ -127,8 +127,8 @@ const Formspree = () => {
           className={`shadow appearance-none border border-gray-100 rounded w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline custom-select-arrow ${isSelectAnswer4 ? 'text-gray-500' : 'text-black'}`}
           onChange={handleSelectAnswer4}
           required
-          defaultValue="Select...">
-          <option value="" disabled selected >Select...</option>
+          defaultValue="">
+          <option value="" disabled>Select...</option>
           <option value="1-3">up to 3</option>
           <option value="3-8">up to 8</option>
           <option value="15+">more than 15</option>

@@ -168,9 +168,3 @@ body {
   flex-shrink: 0;
 }
 
-.no-select {
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-}

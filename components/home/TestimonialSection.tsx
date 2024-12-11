@@ -89,7 +89,7 @@ export default function TestimonialSection() {
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="bg-black py-20 md:py-32 relative overflow-hidden"
+            className="bg-black py-6 md:py-16 xl:py-20 relative overflow-hidden"
         >
             <div className="max-w-6xl mx-auto px-6">
                 <div className="relative flex flex-col md:flex-row justify-between mb-10">
@@ -168,14 +168,7 @@ export default function TestimonialSection() {
                     >
                         {reviews?.map((review, index) => (
                             <SwiperSlide key={index}>
-                                <motion.div 
-                                    initial={{ opacity: 0, scale: 0.95 }}
-                                    whileInView={{ opacity: 1, scale: 1 }}
-                                    viewport={{ once: true, margin: "-100px" }}
-                                    transition={{ 
-                                        duration: 0.4,
-                                        ease: "easeOut"
-                                    }}
+                                <div 
                                     className="bg-white p-6 my-10 rounded-2xl text-black font-roboto hover:scale-105 transition-all duration-300 cursor-pointer"
                                     onClick={() => setSelectedReview(review)}
                                 >
@@ -203,7 +196,7 @@ export default function TestimonialSection() {
                                     <p className="text-sm mb-4 line-clamp-2 font-light">{review.text}</p>
                                     <hr className="my-2 border-t border-[#d9d9d9]" />
                                     <p className="font-semibold">{review.author}</p>
-                                </motion.div>
+                                </div>
                             </SwiperSlide>
                         ))}
                     </Swiper>

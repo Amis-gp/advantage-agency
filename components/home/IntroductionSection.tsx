@@ -211,12 +211,8 @@ export default function IntroductionSection() {
                             title: t('steps.step7')
                         }
                     ].map((step, index) => (
-                        <motion.div 
+                        <div 
                             key={index}
-                            initial={{ opacity: 0, x: 50 }}
-                            whileInView={{ opacity: 1, x: 0 }}
-                            viewport={{ once: true }}
-                            transition={{ duration: 0.4, delay: 0.1 * index }}
                             className={`z-10 flex items-center gap-8 ${index % 2 === 1 && index !== 1 ? 'ml-24' : ''} ${index==1 ? 'ml-16' : ''}`}
                             ref={(el) => {
                                 if (itemRefs.current) {
@@ -232,7 +228,7 @@ export default function IntroductionSection() {
                             <h3 className="text-white text-lg md:text-2xl font-semibold">
                                 {step.title}
                             </h3>
-                        </motion.div>
+                        </div>
                     ))}
                 </div>
                 <div className="lg:hidden absolute -top-10 -left-80 opacity-80 animate-float">
