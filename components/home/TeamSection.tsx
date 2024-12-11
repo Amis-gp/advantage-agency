@@ -16,7 +16,7 @@ const TeamMember = memo(({ member }: { member: typeof teamMembers[0] }) => (
         whileInView={{ opacity: 1, scale: 1 }}
         viewport={{ once: true, margin: "-100px" }}
         transition={{ duration: 0.4, ease: "easeOut" }}
-        className="pt-12 md:pt-16 max-w-[200px] mx-auto"
+        className="pt-12 md:pt-16 max-w-[200px] mx-auto pb-6"
     >
         <div className="aspect-square relative rounded-full overflow-hidden">
             <Image 
@@ -32,10 +32,10 @@ const TeamMember = memo(({ member }: { member: typeof teamMembers[0] }) => (
             />
         </div>
         <div className="text-center mt-3">
-            <h3 className="text-white text-base md:text-lg font-semibold">
+            <h3 className="text-white text-sm md:text-lg font-semibold">
                 {member.name}
             </h3>
-            <p className="text-gray-400 text-sm md:text-base">
+            <p className="text-gray-400 text-xs md:text-base">
                 {member.position}
             </p>
         </div>
@@ -82,7 +82,7 @@ export default function TeamSection() {
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="max-w-6xl mx-auto px-6 py-10 md:py-20"
+            className="max-w-6xl mx-auto px-6 pt-10 md:pt-20 pb-4 md:pb-10"
         >
             <div className="flex justify-between items-center">
                 <motion.div

@@ -80,20 +80,27 @@
 }
 
 @media (max-width: 639px) {
-  .team-swiper .swiper-slide-active > div {
-      transform: scale(1.25);
-      z-index: 10;
+  .team-swiper .swiper-slide {
+    transition: transform 0.3s ease;
+    transform: scale(0.85);
+  }
+  
+  .team-swiper .swiper-slide-active {
+    transform: scale(1.25) !important;
+    z-index: 10;
+    transition: transform 0.3s ease;
   }
 }
 
 @media (min-width: 640px) {
-  .team-swiper .swiper-slide > div {
-      transform: none !important;
+  .team-swiper .swiper-slide {
+    transform: none !important;
   }
 }
 
 .team-swiper .swiper-slide {
   opacity: 1 !important;
+  transition: transform 0.3s ease;
 }
 
 /* button shine animation */
