@@ -16,7 +16,13 @@ const TeamMember = memo(({ member, isActive }: { member: typeof teamMembers[0], 
         whileInView={{ opacity: 1, scale: 1 }}
         viewport={{ once: true, margin: "-100px" }}
         transition={{ duration: 0.4, ease: "easeOut" }}
-        className={`pt-12 md:pt-16 transition-all duration-300 max-w-[200px] mx-auto ${isActive ? 'sm:transform-none scale-[1.25]' : 'scale-[0.85]'}`}
+        className={`
+            pt-12 md:pt-16 
+            transition-all duration-300 
+            max-w-[200px] mx-auto
+            ${isActive ? 'max-sm:scale-[1.25] max-sm:z-10' : 'max-sm:scale-[0.85]'}
+            sm:transform-none
+        `}
     >
         <div className="aspect-square relative rounded-full overflow-hidden">
             <Image 
