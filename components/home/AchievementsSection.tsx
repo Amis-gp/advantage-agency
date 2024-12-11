@@ -15,7 +15,10 @@ export default function AchievementsSection() {
     const achievementSlides = [
         { id: 1, src: '/img/home/stata-1.webp', width: 800, height: 500 },
         { id: 2, src: '/img/home/stata-2.webp', width: 800, height: 500 },
-        { id: 3, src: '/img/home/stata-3.webp', width: 800, height: 500 }
+        { id: 3, src: '/img/home/stata-3.webp', width: 800, height: 500 },
+        { id: 4, src: '/img/home/stata-4.webp', width: 800, height: 500 },
+        { id: 5, src: '/img/home/stata-5.webp', width: 800, height: 500 },
+        { id: 6, src: '/img/home/stata-6.webp', width: 800, height: 500 }
     ];
 
     const swiperConfig = {
