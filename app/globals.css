@@ -167,15 +167,3 @@ body {
   height: 340px !important;
   flex-shrink: 0;
 }
-
-@media (max-width: 640px) {
-  .swiper-slide-active .team-member {
-      transform: scale(1.25);
-  }
-}
-
-@media (min-width: 641px) {
-  .swiper-slide .team-member {
-      transform: none !important;
-  }
-}
