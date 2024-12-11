@@ -10,12 +10,7 @@ import { teamMembers } from '@/app/constant/team'
 import { useEffect, useRef, memo, useMemo } from 'react'
 
 const TeamMember = memo(({ member }: { member: typeof teamMembers[0] }) => (
-    <div 
-        className="pt-12 md:pt-16 transition-all duration-300 !max-w-[200px] mx-auto 
-        sm:max-w-none sm:transform-none 
-        [.swiper-slide-active_&]:sm:transform-none 
-        [.swiper-slide-active_&]:scale-125"
-    >
+    <div className="pt-12 md:pt-16 transition-all duration-300 mx-auto max-w-[200px] md:max-w-none">
         <div className="aspect-square relative rounded-full overflow-hidden">
             <Image 
                 src={member.image}
@@ -54,19 +49,24 @@ const swiperConfig = {
     },
     breakpoints: {
         0: { 
-            slidesPerView: 3,
-            spaceBetween: 32,
+            slidesPerView: 1.5,
+            spaceBetween: 20,
+            centeredSlides: true
+        },
+        480: {
+            slidesPerView: 2,
+            spaceBetween: 24,
             centeredSlides: true
         },
         640: { 
             slidesPerView: 3,
-            centeredSlides: false,
-            spaceBetween: 32
+            spaceBetween: 32,
+            centeredSlides: false
         },
         1024: { 
             slidesPerView: 4,
-            centeredSlides: false,
-            spaceBetween: 32
+            spaceBetween: 32,
+            centeredSlides: false
         }
     }
 };
