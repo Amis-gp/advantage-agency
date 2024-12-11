@@ -30,18 +30,6 @@
     }
 }
 
-.swiper-slide {
-    transition: all 0.3s ease;
-    transform: scale(0.85);
-    opacity: 0.5;
-}
-
-.swiper-slide-active {
-    transform: scale(1);
-    opacity: 1;
-}
-
-
 /* logo marquee */
 @keyframes scroll {
   from {
@@ -97,7 +85,14 @@
       z-index: 10;
   }
 }
-.swiper-slide {
+
+@media (min-width: 640px) {
+  .team-swiper .swiper-slide > div {
+      transform: none !important;
+  }
+}
+
+.team-swiper .swiper-slide {
   opacity: 1 !important;
 }
 
