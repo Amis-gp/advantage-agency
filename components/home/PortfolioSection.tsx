@@ -1,25 +1,84 @@
 'use client';
+<<<<<<< Updated upstream
 import { useState } from 'react';
 import { useTranslations, useLocale } from 'next-intl';
+=======
+import { useState, useMemo } from 'react';
+import { useLocale, useTranslations } from 'next-intl';
+>>>>>>> Stashed changes
 import Image from 'next/image';
 import Link from 'next/link';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination } from 'swiper/modules';
-import { motion, useTransform, useScroll } from 'framer-motion';
 import { playSound } from '@/app/constant/sound';
 import { portfolioSlides } from '@/app/constant/portfolioSlides';
+<<<<<<< Updated upstream
 import 'swiper/css/navigation';
+=======
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+
+const swiperConfig = {
+    modules: [Navigation, Pagination],
+    slidesPerView: 'auto' as const,
+    centeredSlides: true,
+    loop: true,
+    spaceBetween: 30,
+    speed: 800,
+    grabCursor: true,
+    navigation: {
+        prevEl: '.swiper-button-prev',
+        nextEl: '.swiper-button-next',
+    },
+    pagination: {
+        enabled: true,
+        clickable: true,
+    },
+    breakpoints: {
+        0: { 
+            slidesPerView: 1,
+            spaceBetween: 20,
+        },
+        768: {
+            slidesPerView: 2,
+            spaceBetween: 30,
+        },
+        1024: { 
+            slidesPerView: 3,
+            spaceBetween: 40,
+        }
+    }
+};
+>>>>>>> Stashed changes
 
 export default function PortfolioSection() {
     const t = useTranslations();
     const locale = useLocale();
     const [flippedCards, setFlippedCards] = useState<{ [key: number]: boolean }>({});
+<<<<<<< Updated upstream
     
     const { scrollY } = useScroll();
     const rotate2 = useTransform(scrollY, [0, 3000], [0, -360]);
+=======
+
+    const handleCardClick = (index: number) => {
+        try {
+            playSound('flipCard');
+        } catch (error) {
+            console.error('Error playing sound:', error);
+        }
+        
+        setFlippedCards(prev => ({
+            ...prev,
+            [index]: !prev[index]
+        }));
+    };
+>>>>>>> Stashed changes
 
     const getSlugForLocale = (slide: any) => {
         return locale === 'ua' ? slide.slug.ua : slide.slug.en;
+<<<<<<< Updated upstream
     };
 
     return (
@@ -156,12 +215,99 @@ export default function PortfolioSection() {
                                                 <div className="absolute bottom-10 right-10 w-[48px] h-[48px] bg-white rounded-full flex items-center justify-center hover:bg-white/90 transition-colors text-black">
                                                     <span className="inline-block animate-[bounceX-small_1s_ease-in-out_infinite]">→</span>
                                                 </div>
+=======
+    }, [locale]);
+
+    return (
+        <section className="bg-black relative py-10 md:py-20 px-6 overflow-hidden">
+            <div className="max-w-6xl mx-auto relative">
+                <span className="text-red uppercase tracking-wider">{t('portfolio.headline')}</span>
+                <h2 className="text-white text-3xl md:text-5xl font-bold mt-2 mb-10">{t('portfolio.title')}</h2>
+
+                <div className="relative">
+                    <button 
+                        className="hidden lg:flex swiper-button-prev absolute !-left-16 top-1/2 -translate-y-1/2 z-20 !w-[60px] !h-[60px] rounded-full border border-white/20 items-center justify-center !text-white hover:bg-white/10 transition-all duration-100"
+                        onClick={() => {
+                            try {
+                                playSound('click');
+                            } catch (error) {
+                                console.error('Error playing sound:', error);
+                            }
+                        }}
+                    >
+                        ←
+                    </button>
+                    <button 
+                        className="hidden lg:flex swiper-button-next absolute !-right-16 top-1/2 -translate-y-1/2 z-20 !w-[60px] !h-[60px] rounded-full border border-white/20 items-center justify-center !text-white hover:bg-white/10 transition-all duration-100"
+                        onClick={() => {
+                            try {
+                                playSound('click');
+                            } catch (error) {
+                                console.error('Error playing sound:', error);
+                            }
+                        }}
+                    >
+                        →
+                    </button>
+
+                    <Swiper {...swiperConfig} className="!pb-10 sm:!pb-16 !pt-10 !px-10">
+                        {portfolioSlides.map((slide, index) => (
+                            <SwiperSlide key={index}>
+                                <div 
+                                    onClick={() => handleCardClick(index)}
+                                    className="cursor-pointer"
+                                    style={{
+                                        perspective: '1000px',
+                                        transformStyle: 'preserve-3d'
+                                    }}
+                                >
+                                    <div
+                                        style={{
+                                            position: 'relative',
+                                            width: '100%',
+                                            paddingBottom: '150%',
+                                            transition: 'transform 0.6s',
+                                            transformStyle: 'preserve-3d',
+                                            transform: flippedCards[index] ? 'rotateY(180deg)' : 'rotateY(0deg)'
+                                        }}
+                                    >
+                                        <div
+                                            style={{
+                                                position: 'absolute',
+                                                width: '100%',
+                                                height: '100%',
+                                                backfaceVisibility: 'hidden',
+                                                WebkitBackfaceVisibility: 'hidden'
+                                            }}
+                                            className="rounded-[30px] overflow-hidden"
+                                        >
+                                            <Image 
+                                                src={slide.image} 
+                                                alt={slide.title}
+                                                fill
+                                                className="object-cover brightness-75"
+                                                loading="lazy"
+                                            />
+                                            <div className="absolute inset-0 p-8 flex flex-col items-center justify-center">
+                                                <h3 className="text-white text-2xl md:text-3xl font-bold text-center uppercase">{slide.title}</h3>
+                                                <p className="text-white mt-4">{slide.date}</p>
+>>>>>>> Stashed changes
                                             </div>
                                         </div>
-                            
-                                        <div className="absolute inset-0 rounded-[30px] bg-zinc-900 p-10 [transform:rotateY(180deg)] [backface-visibility:hidden] flex flex-col">
-                                            <div className="mt-5">
-                                                <h4 className="text-white text-3xl md:text-4xl font-bold mb-6 uppercase">{slide.title}</h4>
+
+                                        <div
+                                            style={{
+                                                position: 'absolute',
+                                                width: '100%',
+                                                height: '100%',
+                                                backfaceVisibility: 'hidden',
+                                                WebkitBackfaceVisibility: 'hidden',
+                                                transform: 'rotateY(180deg)'
+                                            }}
+                                            className="bg-zinc-900 rounded-[30px] p-8"
+                                        >
+                                            <div className="h-full flex flex-col">
+                                                <h4 className="text-white text-2xl md:text-3xl font-bold mb-6">{slide.title}</h4>
                                                 <div className="space-y-4 text-white/80 text-lg md:text-xl">
                                                     <div className="flex justify-between items-center">
                                                         <span>{t('portfolio.companyBudget')}:</span>
@@ -184,14 +330,11 @@ export default function PortfolioSection() {
                                                         <span>{slide.costPerSale}</span>
                                                     </div>
                                                 </div>
-                                            </div>
-                                            <div className="mt-auto">
                                                 <Link 
                                                     href={getSlugForLocale(slide)}
-                                                    className="inline-flex items-center gap-2 text-red hover:text-red/80 transition-colors"
+                                                    className="mt-auto text-red hover:opacity-80"
                                                 >
-                                                    {t('portfolio.more')}
-                                                    <span className="inline-block animate-[bounceX_1s_ease-in-out_infinite]">→</span>
+                                                    {t('portfolio.more')} →
                                                 </Link>
                                             </div>
                                         </div>

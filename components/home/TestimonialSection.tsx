@@ -64,7 +64,7 @@ const ReviewModal = ({ review, isOpen, onClose }: ModalProps) => {
                             ))}
                             <span className="text-sm ml-2 font-light">{review.daysAgo}</span>
                         </div>
-                        <p className="text-base mb-6">{review.text}</p>
+                        <p className="text-base mb-6 whitespace-pre-line">{review.text}</p>
                         <hr className="my-4 border-t border-[#d9d9d9]" />
                         <p className="font-semibold">{review.author}</p>
                         
@@ -134,7 +134,7 @@ export default function TestimonialSection() {
                 >
                     <div className="flex items-end gap-2">
                         <Image src="/img/home/trustpilot.webp" alt="Trustpilot" width={100} height={20} />
-                        <span className="text-sm md:text-base !leading-none text-[#219653]">234 {t('review')}</span>
+                        <span className="text-sm md:text-base !leading-none text-[#219653]">70 {t('review')}</span>
                     </div>
                     <div className="flex items-center gap-2 mt-2">
                         <span className="text-xl font-semibold text-[#219653]">4.7</span>
