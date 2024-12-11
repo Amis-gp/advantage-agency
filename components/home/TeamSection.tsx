@@ -8,21 +8,15 @@ import 'swiper/css'
 import 'swiper/css/navigation'
 import { teamMembers } from '@/app/constant/team'
 import { motion } from 'framer-motion'
-import { memo, useMemo, useState } from 'react'
+import { memo, useMemo } from 'react'
 
-const TeamMember = memo(({ member, isActive }: { member: typeof teamMembers[0], isActive: boolean }) => (
+const TeamMember = memo(({ member }: { member: typeof teamMembers[0] }) => (
     <motion.div 
         initial={{ opacity: 0, scale: 0.95 }}
         whileInView={{ opacity: 1, scale: 1 }}
         viewport={{ once: true, margin: "-100px" }}
         transition={{ duration: 0.4, ease: "easeOut" }}
-        className={`
-            pt-12 md:pt-16 
-            transition-all duration-300 
-            max-w-[200px] mx-auto
-            ${isActive ? 'max-sm:scale-[1.25] max-sm:z-10' : 'max-sm:scale-[0.85]'}
-            sm:transform-none
-        `}
+        className="pt-12 md:pt-16 max-w-[200px] mx-auto"
     >
         <div className="aspect-square relative rounded-full overflow-hidden">
             <Image 
@@ -52,7 +46,6 @@ TeamMember.displayName = 'TeamMember';
 
 export default function TeamSection() {
     const t = useTranslations();
-    const [activeIndex, setActiveIndex] = useState(0);
     const memoizedTeamMembers = useMemo(() => teamMembers, []);
     
     const swiperConfig = {
@@ -80,9 +73,6 @@ export default function TeamSection() {
                 centeredSlides: false,
                 spaceBetween: 32
             }
-        },
-        onSlideChange: (swiper: any) => {
-            setActiveIndex(swiper.realIndex);
         }
     };
 
@@ -138,12 +128,9 @@ export default function TeamSection() {
                 <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-black to-transparent z-10 pointer-events-none"></div>
 
                 <Swiper {...swiperConfig} className="team-swiper">
-                    {memoizedTeamMembers.map((member, index) => (
+                    {memoizedTeamMembers.map((member) => (
                         <SwiperSlide key={member.name}>
-                            <TeamMember 
-                                member={member} 
-                                isActive={index === activeIndex}
-                            />
+                            <TeamMember member={member} />
                         </SwiperSlide>
                     ))}
                 </Swiper>
