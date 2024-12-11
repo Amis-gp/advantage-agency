@@ -2,6 +2,7 @@
 import { useTranslations } from 'next-intl'
 import { motion } from 'framer-motion'
 import Image from 'next/image'
+import Link from 'next/link'
 
 export default function ServicesSection() {
     const t = useTranslations('services');
@@ -49,13 +50,16 @@ export default function ServicesSection() {
                                     {plan.price}
                                 </span>
                             </div>
-                            <button className={`w-full py-3 rounded-full mt-8 font-medium transition-all duration-300 text-white ${
-                                ['blue', 'white', 'purple'][index] === 'white' ? 
-                                'bg-black/40 hover:bg-black' : 
-                                'bg-white/20 hover:bg-white/30'
-                            }`}>
+                            <Link 
+                                href="#form" 
+                                className={`block w-full py-3 rounded-full mt-8 font-medium transition-all duration-300 text-center text-white ${
+                                    ['blue', 'white', 'purple'][index] === 'white' ? 
+                                    'bg-black/40 hover:bg-black' : 
+                                    'bg-white/20 hover:bg-white/30'
+                                }`}
+                            >
                                 {plan.button}
-                            </button>
+                            </Link>
                             <ul className="mt-8 space-y-4">
                                 {plan.features?.map((feature: string, i: number) => (
                                     <li key={i} className="flex items-center gap-3">

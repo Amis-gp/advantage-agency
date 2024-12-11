@@ -2,7 +2,8 @@
 
 import React, { useState } from 'react';
 import { useTranslations } from 'next-intl';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion } from 'framer-motion';
+import { playSound } from '@/app/constant/sound';
 
 const ChevronIcon = () => (
     <svg 
@@ -25,6 +26,9 @@ const FaqSection = () => {
     const [activeIndex, setActiveIndex] = useState<number | null>(null);
 
     const toggleQuestion = (index: number) => {
+        if (activeIndex !== index) {
+            playSound('click');
+        }
         setActiveIndex(activeIndex === index ? null : index);
     };
 

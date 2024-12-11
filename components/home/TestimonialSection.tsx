@@ -133,7 +133,7 @@ export default function TestimonialSection() {
                     className="bg-white rounded-2xl p-6 inline-block !pr-20 font-roboto"
                 >
                     <div className="flex items-end gap-2">
-                        <Image src="/img/home/trustpilot.webp" alt="Trustpilot" width={100} height={20} />
+                        <Image src="/img/home/trustpilot.webp" alt="Trustpilot" width={100} height={20} priority quality={100} loading="eager"/>
                         <span className="text-sm md:text-base !leading-none text-[#219653]">70 {t('review')}</span>
                     </div>
                     <div className="flex items-center gap-2 mt-2">
