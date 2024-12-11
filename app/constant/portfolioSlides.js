@@ -9,8 +9,8 @@ export const portfolioSlides = [
         numberOfSales: '',
         costPerSale: '',
         slug: {
-            en: '/v10',
-            ua: '/v10ua'
+            en: 'cases/v10',
+            ua: 'cases/v10ua'
         },
     },
     {
@@ -23,8 +23,8 @@ export const portfolioSlides = [
         numberOfSales: '',
         costPerSale: '',
         slug: {
-            en: '/v1',
-            ua: '/v1ua'
+            en: 'cases/v1',
+            ua: 'cases/v1ua'
         },
     },
     {
@@ -37,8 +37,8 @@ export const portfolioSlides = [
         numberOfSales: '',
         costPerSale: '',
         slug: {
-            en: '/v2',
-            ua: '/v2ua'
+            en: 'cases/v2',
+            ua: 'cases/v2ua'
         },
     },
     {
@@ -51,8 +51,8 @@ export const portfolioSlides = [
         numberOfSales: '',
         costPerSale: '',
         slug: {
-            en: '/v3',
-            ua: '/v3ua'
+            en: 'cases/v3',
+            ua: 'cases/v3ua'
         },
     },
     {
@@ -65,8 +65,8 @@ export const portfolioSlides = [
         numberOfSales: '',
         costPerSale: '',
         slug: {
-            en: '/v4',
-            ua: '/v4ua'
+            en: 'cases/v4',
+            ua: 'cases/v4ua'
         },
     },
     {
@@ -79,8 +79,8 @@ export const portfolioSlides = [
         numberOfSales: '',
         costPerSale: '',
         slug: {
-            en: '/v5',
-            ua: '/v5ua'
+            en: 'cases/v5',
+            ua: 'cases/v5ua'
         },
     },
     {
@@ -93,8 +93,8 @@ export const portfolioSlides = [
         numberOfSales: '',
         costPerSale: '',
         slug: {
-            en: '/v6',
-            ua: '/v6ua'
+            en: 'cases/v6',
+            ua: 'cases/v6ua'
         },
     },
     {
@@ -107,8 +107,8 @@ export const portfolioSlides = [
         numberOfSales: '',
         costPerSale: '',
         slug: {
-            en: '/v7',
-            ua: '/v7ua'
+            en: 'cases/v7',
+            ua: 'cases/v7ua'
         },
     },
     {
@@ -121,8 +121,8 @@ export const portfolioSlides = [
         numberOfSales: '$239,6',
         costPerSale: '',
         slug: {
-            en: '/v8',
-            ua: '/v8ua'
+            en: 'cases/v8',
+            ua: 'cases/v8ua'
         },
     },
     {
@@ -135,8 +135,8 @@ export const portfolioSlides = [
         numberOfSales: '',
         costPerSale: '',
         slug: {
-            en: '/v9',
-            ua: '/v9ua'
+            en: 'cases/v9',
+            ua: 'cases/v9ua'
         },
     },
 ];
