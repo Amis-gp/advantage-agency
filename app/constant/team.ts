@@ -12,12 +12,12 @@ export const teamMembers: TeamMember[] = [
     },
     {
         name: "Marko",
-        position: "Admin/Team Lead",
+        position: "Admin / Team Lead",
         image: "/img/team/marko.webp"
     },
     {
         name: "Pavlo",
-        position: "Media Buyer/Front-end dev",
+        position: "Media Buyer / Front-end dev",
         image: "/img/team/pavlo.webp"
     },
     {
@@ -47,7 +47,7 @@ export const teamMembers: TeamMember[] = [
     },
     {
         name: "Nick",
-        position: "Senior PPC/Marketer",
+        position: "Senior PPC / Marketer",
         image: "/img/team/nick.webp"
     },
     {
