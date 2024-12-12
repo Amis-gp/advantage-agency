@@ -8,7 +8,7 @@ import { playSound } from '@/app/constant/sound';
 
 const videoSources = {
     ua: 'img/home/video-ua.mp4',
-    en: 'img/home/video-en.mp4'
+    en: 'img/home/video.mp4'
 };
 
 export default function HeroSection() {
