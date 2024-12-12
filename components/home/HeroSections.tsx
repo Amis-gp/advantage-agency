@@ -6,6 +6,11 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { playSound } from '@/app/constant/sound';
 
+const videoSources = {
+    ua: 'img/home/video-ua.mp4',
+    en: 'img/home/video-en.mp4'
+};
+
 export default function HeroSection() {
     const t = useTranslations();
     const locale = useLocale();
@@ -67,7 +72,7 @@ export default function HeroSection() {
                 >
                     <div className="aspect-video flex items-center justify-center relative">
                         <video key={locale} className="w-full h-full object-cover" controls={isPlaying} poster="/img/home/preview.webp" onPlay={() => setIsPlaying(true)}>
-                            <source src={`/img/home/video-${locale}.mp4`} type="video/mp4"/>
+                            <source src={videoSources[locale as keyof typeof videoSources]} type="video/mp4"/>
                             Your browser does not support the video tag.
                         </video>
                         

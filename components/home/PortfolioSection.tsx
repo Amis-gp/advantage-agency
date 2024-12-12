@@ -34,14 +34,30 @@ const swiperConfig = {
         0: { 
             slidesPerView: 1,
             spaceBetween: 20,
+            pagination: {
+                enabled: true
+            }
         },
         768: {
             slidesPerView: 2,
             spaceBetween: 30,
+            pagination: {
+                enabled: true
+            }
         },
         1024: { 
             slidesPerView: 3,
             spaceBetween: 40,
+            pagination: {
+                enabled: true
+            }
+        },
+        1280: {
+            slidesPerView: 3,
+            spaceBetween: 40,
+            pagination: {
+                enabled: false
+            }
         }
     }
 };
@@ -76,7 +92,7 @@ export default function PortfolioSection() {
 
                 <div className="relative">
                     <button 
-                        className="invisible md:visible swiper-button-prev absolute !-left-16 top-1/2 -translate-y-1/2 z-20 !w-[60px] !h-[60px] rounded-full border border-white/20 items-center justify-center !text-white hover:bg-white/10 transition-all duration-100"
+                        className="invisible xl:visible swiper-button-prev absolute !-left-16 top-1/2 -translate-y-1/2 z-20 !w-[60px] !h-[60px] rounded-full border border-white/20 items-center justify-center !text-white hover:bg-white/10 transition-all duration-100"
                         onClick={() => {
                             try {
                                 playSound('click');
@@ -88,7 +104,7 @@ export default function PortfolioSection() {
                         ←
                     </button>
                     <button 
-                        className="invisible md:visible swiper-button-next absolute !-right-16 top-1/2 -translate-y-1/2 z-20 !w-[60px] !h-[60px] rounded-full border border-white/20 items-center justify-center !text-white hover:bg-white/10 transition-all duration-100"
+                        className="invisible xl:visible swiper-button-next absolute !-right-16 top-1/2 -translate-y-1/2 z-20 !w-[60px] !h-[60px] rounded-full border border-white/20 items-center justify-center !text-white hover:bg-white/10 transition-all duration-100"
                         onClick={() => {
                             try {
                                 playSound('click');
