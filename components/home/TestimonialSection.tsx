@@ -126,14 +126,19 @@ export default function TestimonialSection() {
                 </div>
 
                 <motion.div 
-                    initial={{ opacity: 0, y: 30 }}
-                    whileInView={{ opacity: 1, y: 0 }}
+                    initial={{ opacity: 0, x: -100 }}
+                    whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: true }}
-                    transition={{ duration: 0.8, delay: 0.4 }}
+                    transition={{ 
+                        duration: 0.8, 
+                        delay: 0.4,
+                        type: "spring",
+                        stiffness: 100
+                    }}
                     className="bg-white rounded-2xl p-6 inline-block !pr-20 font-roboto"
                 >
                     <div className="flex items-end gap-2">
-                        <Image src="/img/home/trustpilot.webp" alt="Trustpilot" width={100} height={20} quality={100} loading="eager"/>
+                        <Image src="/img/home/tp-logo.webp" alt="Trustpilot" width={100} height={20} quality={100} loading="eager"/>
                         <span className="text-sm md:text-base !leading-none text-[#219653]">70 {t('review')}</span>
                     </div>
                     <div className="flex items-center gap-2 mt-2">

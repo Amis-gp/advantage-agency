@@ -15,22 +15,8 @@ export const portfolioSlides = [
     },
     {
         title: 'beauty salon',
-        date: '04.01.2024 - 4.02.2024',
-        image: '/img/portfolio/beauty-salon.webp',
-        companyBudget: '',
-        averageLeadPrice: '',
-        numberOfLeads: '218',
-        numberOfSales: '',
-        costPerSale: '',
-        slug: {
-            en: 'cases/v1',
-            ua: 'cases/v1ua'
-        },
-    },
-    {
-        title: 'beauty salon 2',
         date: '02.03.2024 - 02.04.2024',
-        image: '/img/portfolio/beauty-salon-2.webp',
+        image: '/img/portfolio/beauty-salon.webp',
         companyBudget: '£3 836',
         averageLeadPrice: '£27,4',
         numberOfLeads: '142',
@@ -70,7 +56,7 @@ export const portfolioSlides = [
         },
     },
     {
-        title: 'inferior designer',
+        title: 'INTERIOR DESIGNER',
         date: '01.05.2024 - 31.05.2024',
         image: '/img/portfolio/inferior-designer.webp',
         companyBudget: '',
@@ -84,9 +70,9 @@ export const portfolioSlides = [
         },
     },
     {
-        title: 'home improvement',
+        title: '3d rendering',
         date: '01.05.2024 - 31.05.2024',
-        image: '/img/portfolio/home-improvement.webp',
+        image: '/img/portfolio/3d-rendering.webp',
         companyBudget: '',
         averageLeadPrice: '',
         numberOfLeads: '',
@@ -126,9 +112,9 @@ export const portfolioSlides = [
         },
     },
     {
-        title: 'INTERIOR DESIGNER',
+        title: 'home improvement',
         date: '01.05.2024 - 31.05.2024',
-        image: '/img/portfolio/accountant-services.webp',
+        image: '/img/portfolio/home-improvement.webp',
         companyBudget: '',
         averageLeadPrice: '$214,94',
         numberOfLeads: '',
