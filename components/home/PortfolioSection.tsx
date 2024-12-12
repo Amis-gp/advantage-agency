@@ -26,38 +26,27 @@ const swiperConfig = {
     pagination: {
         el: '.swiper-pagination',
         clickable: true,
+        dynamicBullets: false,
         renderBullet: function (index: number, className: string) {
-            return `<span class="${className} w-2 h-2 bg-white/20 rounded-full transition-all duration-300 hover:bg-white"></span>`;
+            return `<span class="${className}"></span>`;
         },
     },
     breakpoints: {
         0: { 
             slidesPerView: 1,
             spaceBetween: 20,
-            pagination: {
-                enabled: true
-            }
         },
         768: {
             slidesPerView: 2,
             spaceBetween: 30,
-            pagination: {
-                enabled: true
-            }
         },
         1024: { 
             slidesPerView: 3,
             spaceBetween: 40,
-            pagination: {
-                enabled: true
-            }
         },
         1280: {
             slidesPerView: 3,
             spaceBetween: 40,
-            pagination: {
-                enabled: false
-            }
         }
     }
 };
@@ -88,7 +77,7 @@ export default function PortfolioSection() {
         <section className="bg-black relative py-10 md:py-20 px-6 overflow-hidden">
             <div className="max-w-6xl mx-auto relative">
                 <span className="text-red uppercase tracking-wider">{t('portfolio.headline')}</span>
-                <h2 className="text-white text-3xl md:text-5xl font-bold mt-2 mb-10">{t('portfolio.title')}</h2>
+                <h2 className="text-white text-3xl md:text-5xl font-bold mt-2 lg:mb-10">{t('portfolio.title')}</h2>
 
                 <div className="relative">
                     <button 
@@ -211,6 +200,8 @@ export default function PortfolioSection() {
                             </SwiperSlide>
                         ))}
                     </Swiper>
+                    
+                    <div className="swiper-pagination !bottom-0"></div>
                 </div>
             </div>
         </section>

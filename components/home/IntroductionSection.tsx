@@ -67,7 +67,7 @@ export default function IntroductionSection() {
     }, []);
 
     return (
-        <section className="flex flex-col lg:flex-row justify-between max-w-6xl mx-auto px-6 pt-10 md:pt-20 relative">
+        <section className="flex flex-col lg:flex-row justify-between max-w-6xl mx-auto px-6 py-10 md:py-20 relative">
             <motion.div 
                 initial={{ opacity: 0, x: -50 }}
                 whileInView={{ opacity: 1, x: 0 }}
