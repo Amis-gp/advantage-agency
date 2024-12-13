@@ -1,7 +1,7 @@
 import { setRequestLocale } from 'next-intl/server';
-import ClientV10ua from './ClientV10ua';
+import ClientV11ua from './ClientV11ua';
 
-export default function V1Page({ 
+export default function V11uaPage({ 
     params: { locale } 
 }: { 
     params: { locale: string } 

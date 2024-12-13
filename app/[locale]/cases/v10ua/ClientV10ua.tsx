@@ -13,7 +13,7 @@ import CasesFooter from '@/components/CasesFooter';
 
 const V10uaPage: NextPage = () => {
   useEffect(() => {
-    document.title = "30+ Sales per day thanks to our e‑commerce strategies!";
+    document.title = "93 Leads for Tax Course in Canada";
   }, []);
   const [isOpenBeforeMeta, setIsOpenBeforeMeta] = useState(false);
   const [isOpenAfterMeta, setIsOpenAfterMeta] = useState(false);

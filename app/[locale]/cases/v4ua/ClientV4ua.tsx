@@ -5,7 +5,9 @@ import { NextPage } from 'next';
 
 import { useState, useEffect } from 'react';
 import { Dialog, Transition } from '@headlessui/react';
-import { Fragment } from 'react';       
+import { Fragment } from 'react';  
+
+import '@/app/styles.css'
 
 import MessengerButton from '@/components/MessengerButton';
 import Formspree from '@/components/Formspree';
