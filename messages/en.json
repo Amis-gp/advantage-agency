@@ -34,24 +34,20 @@
         "stats": {
             "clicks": "Clicks",
             "totalPurchases": "Total Purchases",
-            "pricePerPurchase": "Price Per Purchase",
-            "advertisingCosts": "Advertising Costs",
+            "pricePerPurchase": "Price per Purchase",
+            "adSpend": "Ad Spend",
             "roi": "ROI",
             "totalBookings": "Total Bookings",
             "revenue": "Revenue",
-            "amountOfLeads": "Amount Of Leads",
-            "pricePerLead": "Price Per Lead",
-            "costPerLead": "Cost Per Lead",
-            "totalAdSpend": "Total Ad Spend",
-            "AdSpend": "Advertising Costs",
-            "CTR": "CTR",
             "leads": "Leads",
+            "pricePerLead": "Price per Lead",
+            "costPerLead": "Cost per Lead",
+            "ctr": "CTR",
             "emailResponses": "Email Responses",
             "leadCalls": "Lead Calls",
             "closedDeals": "Closed Deals",
-            "costPerPurchase": "Cost Per Purchase",
-            "highTicketClients": "High Ticket Clients",
-            "linkClicks": "Link Clicks"
+            "costPerPurchase": "Cost per Purchase",
+            "highTicketClients": "High Ticket Clients"
         }
     },
     "partners": {
@@ -135,7 +131,7 @@
             },
             {
                 "title": "Online Coaching",
-                "text": "I initially worked with Instagram producers to promote my online coaching program ⭐. They were responsible for content, advertising, webinars, and overall social media presence.\n\nOver 4 months, I spent $17,000 on Facebook ads, but the result was negative. Although I spoke with Advantage before partnering with producers, I somehow chose a different path.\n\nAfter the unsuccessful experience, I turned to Advantage, and they exceeded all expectations! The team generated 5 times more leads compared to previous results. Now I see real business growth.\n\nI only regret one thing - not starting to work with Advantage earlier. Their professionalism and results speak for themselves. Thank you for the excellent work!",
+                "text": "I initially worked with Instagram producers to promote my online coaching program ⭐. They were responsible for content, advertising, webinars, and overall social media presence.\n\nOver 4 months, I spent $17,000 on Facebook ads, but the result was negative. Although I spoke with Advantage before partnering with producers, I somehow chose a different path.\n\nAfter the unsuccessful experience, I turned to Advantage, and they exceeded all expectations! The team generated 5 times more leads compared to previous results. Now I see real business growth.",
                 "author": "Mary Hudson",
                 "daysAgo": "3 days ago",
                 "rating": "5"

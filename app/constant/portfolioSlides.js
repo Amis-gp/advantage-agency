@@ -7,7 +7,7 @@ export const portfolioSlides = [
             clicks: '1,728',
             totalPurchases: '93',
             pricePerPurchase: '$37.69',
-            advertisingCosts: '$3,108'
+            adSpend: '$3,108'
         },
         slug: {
             en: 'cases/v10',
@@ -22,7 +22,7 @@ export const portfolioSlides = [
         stats: {
             roi: '740%',
             totalBookings: '142',
-            advertisingCosts: '£3,836',
+            adSpend: '£3,836',
             revenue: '£28,400'
         },
         slug: {
@@ -35,9 +35,9 @@ export const portfolioSlides = [
         date: '04.03.2024 - 4.04.2024',
         image: '/img/portfolio/car-detaling.webp',
         stats: {
-            amountOfLeads: '76',
+            leads: '76',
             pricePerLead: '183 PLN',
-            advertisingCosts: '13,908 PLN'
+            adSpend: '13,908 PLN'
         },
         slug: {
             en: 'cases/v3',
@@ -49,9 +49,9 @@ export const portfolioSlides = [
         date: '03.03.2024 - 03.04.2024',
         image: '/img/portfolio/real-estate.webp',
         stats: {
-            amountOfLeads: '95',
+            leads: '95',
             costPerLead: '$45.76',
-            totalAdSpend: '$4,348'
+            adSpend: '$4,348'
         },
         slug: {
             en: 'cases/v4',
@@ -63,10 +63,10 @@ export const portfolioSlides = [
         date: '01.05.2024 - 31.05.2024',
         image: '/img/portfolio/inferior-designer.webp',
         stats: {
-            AdSpend: '$3,321', 
+            adSpend: '$3,321', 
             clicks: '799',
-            CTR: '2.42%',
-            leads: '19',
+            ctr: '2.42%',
+            leads: '19'
         },
         slug: {
             en: 'cases/v5',
@@ -94,7 +94,7 @@ export const portfolioSlides = [
         stats: {
             totalPurchases: '1,354',
             costPerPurchase: '$7.06',
-            advertisingCosts: '$9,569'
+            adSpend: '$9,569'
         },
         slug: {
             en: 'cases/v7',
@@ -106,7 +106,7 @@ export const portfolioSlides = [
         date: '03.04.2024 - 03.05.2024',
         image: '/img/portfolio/roofing.webp',
         stats: {
-            cost: '$4,313',
+            adSpend: '$4,313',
             leads: '18',
             costPerLead: '$227',
             highTicketClients: '7'
@@ -122,7 +122,7 @@ export const portfolioSlides = [
         image: '/img/portfolio/home-improvement.webp',
         stats: {
             adSpend: '$6,309',
-            linkClicks: '1,755',
+            clicks: '1,755',
             leads: '26',
             costPerLead: '$242.65'
         },
