@@ -41,7 +41,6 @@
             "revenue": "Revenue",
             "leads": "Leads",
             "pricePerLead": "Price per Lead",
-            "costPerLead": "Cost per Lead",
             "ctr": "CTR",
             "emailResponses": "Email Responses",
             "leadCalls": "Lead Calls",
@@ -125,7 +124,7 @@
             {
                 "title": "Consulting",
                 "text": "Our consulting firm was looking for ways to expand its client base 📈. The Advantage team proposed a unique LinkedIn marketing strategy. Result: 45 new B2B clients in the first 6 months.",
-                "author": "Alexander Kovalchuk",
+                "author": "Oleg Kovalchuk",
                 "daysAgo": "15 days ago",
                 "rating": "4"
             },

@@ -8,7 +8,7 @@ export default function ServicesSection() {
     const t = useTranslations('services');
 
     return (
-        <section className="bg-black py-10 md:py-14 xl:py-20" id="services">
+        <section className="bg-black py-10 md:py-14" id="services">
             <div className="max-w-6xl mx-auto px-6">
                 <div className="flex justify-between items-center">
                     <span className="text-red uppercase tracking-wider">{t('headline')}</span>

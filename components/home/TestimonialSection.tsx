@@ -89,7 +89,7 @@ export default function TestimonialSection() {
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="bg-black py-6 md:py-16 xl:py-20 relative overflow-hidden"
+            className="bg-black py-6 md:py-16 relative overflow-hidden"
         >
             <div className="max-w-6xl mx-auto px-6">
                 <div className="relative flex flex-col md:flex-row justify-between mb-10">
@@ -200,7 +200,7 @@ export default function TestimonialSection() {
                                     </div>
                                     <p className="text-sm mb-4 line-clamp-2 font-light">{review.text}</p>
                                     <hr className="my-2 border-t border-[#d9d9d9]" />
-                                    <p className="font-semibold">{review.author}</p>
+                                    <p className="line-clamp-1 font-semibold">{review.author}</p>
                                 </div>
                             </SwiperSlide>
                         ))}

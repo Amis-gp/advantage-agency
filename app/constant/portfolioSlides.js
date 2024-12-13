@@ -1,6 +1,6 @@
 export const portfolioSlides = [
     {
-        title: 'accountant services',
+        title: 'Accountant Services',
         date: '01.08.2024 - 01.09.2024',
         image: '/img/portfolio/accountant-services.webp',
         stats: {
@@ -16,14 +16,14 @@ export const portfolioSlides = [
     },
     
     {
-        title: 'beauty salon',
+        title: 'Beauty Salon',
         date: '02.03.2024 - 02.04.2024',
         image: '/img/portfolio/beauty-salon.webp',
         stats: {
-            roi: '740%',
             totalBookings: '142',
             adSpend: '£3,836',
-            revenue: '£28,400'
+            revenue: '£28,400',
+            roi: '740%'
         },
         slug: {
             en: 'cases/v2',
@@ -36,8 +36,8 @@ export const portfolioSlides = [
         image: '/img/portfolio/car-detaling.webp',
         stats: {
             leads: '76',
-            pricePerLead: '183 PLN',
-            adSpend: '13,908 PLN'
+            pricePerLead: 'zł183',
+            adSpend: 'zł13,908'
         },
         slug: {
             en: 'cases/v3',
@@ -45,12 +45,12 @@ export const portfolioSlides = [
         },
     },
     {
-        title: 'real estate',
+        title: 'Real Estate',
         date: '03.03.2024 - 03.04.2024',
         image: '/img/portfolio/real-estate.webp',
         stats: {
             leads: '95',
-            costPerLead: '$45.76',
+            pricePerLead: '$45.76',
             adSpend: '$4,348'
         },
         slug: {
@@ -59,14 +59,14 @@ export const portfolioSlides = [
         },
     },
     {
-        title: 'INTERIOR DESIGNER',
+        title: 'Interior Designer',
         date: '01.05.2024 - 31.05.2024',
         image: '/img/portfolio/inferior-designer.webp',
         stats: {
-            adSpend: '$3,321', 
             clicks: '799',
             ctr: '2.42%',
-            leads: '19'
+            leads: '19',
+            adSpend: '$3,321'
         },
         slug: {
             en: 'cases/v5',
@@ -74,7 +74,7 @@ export const portfolioSlides = [
         },
     },
     {
-        title: '3d rendering',
+        title: '3D Rendering',
         date: '01.05.2024 - 31.05.2024',
         image: '/img/portfolio/3d-rendering.webp',
         stats: {
@@ -88,7 +88,7 @@ export const portfolioSlides = [
         },
     },
     {
-        title: 'e-commerce',
+        title: 'E-commerce',
         date: '01.04.2024 - 01.06.2024',
         image: '/img/portfolio/e-commerce.webp',
         stats: {
@@ -102,14 +102,14 @@ export const portfolioSlides = [
         },
     },
     {
-        title: 'roofing',
+        title: 'Roofing',
         date: '03.04.2024 - 03.05.2024',
         image: '/img/portfolio/roofing.webp',
         stats: {
-            adSpend: '$4,313',
             leads: '18',
-            costPerLead: '$227',
-            highTicketClients: '7'
+            pricePerLead: '$227',
+            highTicketClients: '7',
+            adSpend: '$4,313'
         },
         slug: {
             en: 'cases/v8',
@@ -117,14 +117,14 @@ export const portfolioSlides = [
         },
     },
     {
-        title: 'home improvement',
+        title: 'Home Improvement',
         date: '01.05.2024 - 31.05.2024',
         image: '/img/portfolio/home-improvement.webp',
         stats: {
-            adSpend: '$6,309',
             clicks: '1,755',
             leads: '26',
-            costPerLead: '$242.65'
+            pricePerLead: '$242.65',
+            adSpend: '$6,309'
         },
         slug: {
             en: 'cases/v9',
