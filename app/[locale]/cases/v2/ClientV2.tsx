@@ -10,6 +10,7 @@ import { Fragment } from 'react';
 import '@/app/styles.css'
 import MessengerButton from '@/components/MessengerButton';
 import Formspree from '@/components/Formspree';
+import CasesFooter from '@/components/CasesFooter';
 
 const V2Page: NextPage = () => {
   useEffect(() => {
@@ -458,27 +459,8 @@ const V2Page: NextPage = () => {
         </p>
       </section>
 
-      <section className="bg-gray-100 py-12">
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold mb-8 text-center">Get in Touch with Us</h2>
-          <div className="flex flex-col md:flex-row justify-center items-center space-y-8 md:space-y-0 md:space-x-12">
-            <div className="text-center">
-              <p className="text-lg font-bold mb-2">Call Us</p>
-              <p className="text-rose-600 text-xl">+1 (929) 205-26-10</p>
-            </div>
-            <div className="text-center">
-              <p className="text-lg font-bold mb-2">Email Us</p>
-              <a className="text-rose-600 text-xl" href='mailto:stepan@advantage-agency.co'>stepan@advantage-agency.co</a>
-            </div>
-            {/* <div className="text-center">
-              <p className="text-lg font-bold mb-2">Visit Our Website</p>
-              <a href="https://advantage-agency.co/" target="_blank" rel="noopener noreferrer" className="text-rose-600 text-xl hover:underline">
-                advantage-agency.co
-              </a>
-            </div> */}
-          </div>
-        </div>
-      </section>
+      <CasesFooter />
+
       <MessengerButton
         link="https://m.me/100006500822716"
         text="Chat with us on Messenger"

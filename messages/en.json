@@ -258,5 +258,12 @@
         "title": "Thank you for your request!",
         "description": "We will contact you soon to discuss the details of your project",
         "button": "Back to home"
+    },
+
+
+    "casesFooter": {
+        "title": "Get in Touch with Us",
+        "callUs": "Call Us",
+        "emailUs": "Email Us"
     }
 }

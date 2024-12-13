@@ -9,6 +9,7 @@ import { Fragment } from 'react';
 import '@/app/styles.css'
 import MessengerButton from '@/components/MessengerButton';
 import Formspree from '@/components/Formspree';
+import CasesFooter from '@/components/CasesFooter';
 
 const V9uaPage: NextPage = () => {
   useEffect(() => {
@@ -566,6 +567,8 @@ const V9uaPage: NextPage = () => {
           </div>
         </div>
       </section>
+
+      <CasesFooter />
 
       <MessengerButton
         link="https://m.me/100006500822716"

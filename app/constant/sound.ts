@@ -6,7 +6,7 @@ interface SoundConfig {
 export const SOUNDS: Record<string, SoundConfig> = {
     hover_1: {
         audio: typeof Audio !== 'undefined' ? new Audio('/sound/hover-1.wav') : null,
-        volume: 0.5
+        volume: 0.3
     },
     hover_2: {
         audio: typeof Audio !== 'undefined' ? new Audio('/sound/hover-2.wav') : null,
