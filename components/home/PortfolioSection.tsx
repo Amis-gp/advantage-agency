@@ -166,26 +166,12 @@ export default function PortfolioSection() {
                                             <div className="h-full flex flex-col">
                                                 <h4 className="text-white text-2xl md:text-3xl font-bold mb-6">{slide.title}</h4>
                                                 <div className="space-y-4 text-white/80 text-lg md:text-xl">
-                                                    <div className="flex justify-between items-center">
-                                                        <span>{t('portfolio.companyBudget')}:</span>
-                                                        <span>{slide.companyBudget}</span>
-                                                    </div>
-                                                    <div className="flex justify-between items-center">
-                                                        <span>{t('portfolio.averageLeadPrice')}:</span>
-                                                        <span>{slide.averageLeadPrice}</span>
-                                                    </div>
-                                                    <div className="flex justify-between items-center">
-                                                        <span>{t('portfolio.numberOfLeads')}:</span>
-                                                        <span>{slide.numberOfLeads}</span>
-                                                    </div>
-                                                    <div className="flex justify-between items-center">
-                                                        <span>{t('portfolio.numberOfSales')}:</span>
-                                                        <span>{slide.numberOfSales}</span>
-                                                    </div>
-                                                    <div className="flex justify-between items-center">
-                                                        <span>{t('portfolio.costPerSale')}:</span>
-                                                        <span>{slide.costPerSale}</span>
-                                                    </div>
+                                                    {Object.entries(slide.stats).map(([key, value]) => (
+                                                        <div key={key} className="flex justify-between items-center">
+                                                            <span>{t(`portfolio.stats.${key}`)}:</span>
+                                                            <span>{value}</span>
+                                                        </div>
+                                                    ))}
                                                 </div>
                                                 <Link 
                                                     href={getSlugForLocale(slide)}

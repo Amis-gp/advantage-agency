@@ -30,12 +30,29 @@
     "portfolio": {
         "headline": "Portfolio",
         "title": "Our Cases",
-        "companyBudget": "Company Budget",
-        "averageLeadPrice": "Average Lead Price",
-        "numberOfLeads": "Number Of Leads",
-        "numberOfSales": "Number Of Sales",
-        "costPerSale": "Cost Per Sale",
-        "more": "More"
+        "more": "More",
+        "stats": {
+            "clicks": "Clicks",
+            "totalPurchases": "Total Purchases",
+            "pricePerPurchase": "Price Per Purchase",
+            "advertisingCosts": "Advertising Costs",
+            "roi": "ROI",
+            "totalBookings": "Total Bookings",
+            "revenue": "Revenue",
+            "amountOfLeads": "Amount Of Leads",
+            "pricePerLead": "Price Per Lead",
+            "costPerLead": "Cost Per Lead",
+            "totalAdSpend": "Total Ad Spend",
+            "AdSpend": "Advertising Costs",
+            "CTR": "CTR",
+            "leads": "Leads",
+            "emailResponses": "Email Responses",
+            "leadCalls": "Lead Calls",
+            "closedDeals": "Closed Deals",
+            "costPerPurchase": "Cost Per Purchase",
+            "highTicketClients": "High Ticket Clients",
+            "linkClicks": "Link Clicks"
+        }
     },
     "partners": {
         "headline": "Companies",

@@ -30,12 +30,29 @@
     "portfolio": {
         "headline": "Портфоліо",
         "title": "Наші кейси",
-        "companyBudget": "Бюджет клієнта",
-        "averageLeadPrice": "Середня ціна ліда",
-        "numberOfLeads": "Кількість лідів",
-        "numberOfSales": "Кількість продажів",
-        "costPerSale": "Ціна за продаж",
-        "more": "Детальніше"
+        "more": "Детальніше",
+        "stats": {
+            "clicks": "Кліки",
+            "totalPurchases": "Всього покупок",
+            "pricePerPurchase": "Ціна за покупку",
+            "advertisingCosts": "Витрати на рекламу",
+            "roi": "ROI",
+            "totalBookings": "Всього бронювань",
+            "revenue": "Дохід",
+            "amountOfLeads": "Кількість лідів",
+            "pricePerLead": "Ціна за ліда",
+            "costPerLead": "Вартість за ліда",
+            "totalAdSpend": "Загальні витрати",
+            "AdSpend": "Витрати на рекламу",
+            "CTR": "CTR",
+            "leads": "Ліди",
+            "emailResponses": "Відповіді на емейли",
+            "leadCalls": "Дзвінки з лідами",
+            "closedDeals": "Закриті угоди",
+            "costPerPurchase": "Вартість за покупку",
+            "highTicketClients": "VIP клієнти",
+            "linkClicks": "Кліки по посиланню"
+        }
     },
     "partners": {
         "headline": "Компанії",
