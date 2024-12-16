@@ -1,5 +1,20 @@
 export const portfolioSlides = [
     {
+        title: 'Notary services',
+        date: '01.07.2024 - 01.08.2024',
+        image: '/img/portfolio/notary.webp',
+        stats: {
+            leads: '132',
+            closedDeals: '43',
+            revenue: '$8,600',
+            adSpend: '$2,076'
+        },
+        slug: {
+            en: 'cases/v11',
+            ua: 'cases/v11ua'
+        },
+    },
+    {
         title: 'Accountant Services',
         date: '01.08.2024 - 01.09.2024',
         image: '/img/portfolio/accountant-services.webp',
@@ -28,20 +43,6 @@ export const portfolioSlides = [
         slug: {
             en: 'cases/v2',
             ua: 'cases/v2ua'
-        },
-    },
-    {
-        title: 'Car Detaling',
-        date: '04.03.2024 - 4.04.2024',
-        image: '/img/portfolio/car-detaling.webp',
-        stats: {
-            leads: '76',
-            pricePerLead: 'zł183',
-            adSpend: 'zł13,908'
-        },
-        slug: {
-            en: 'cases/v3',
-            ua: 'cases/v3ua'
         },
     },
     {
@@ -129,6 +130,20 @@ export const portfolioSlides = [
         slug: {
             en: 'cases/v9',
             ua: 'cases/v9ua'
+        },
+    },
+    {
+        title: 'Car Detaling',
+        date: '04.03.2024 - 4.04.2024',
+        image: '/img/portfolio/car-detaling.webp',
+        stats: {
+            leads: '76',
+            pricePerLead: 'zł183',
+            adSpend: 'zł13,908'
+        },
+        slug: {
+            en: 'cases/v3',
+            ua: 'cases/v3ua'
         },
     },
 ];
