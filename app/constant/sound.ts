@@ -6,23 +6,23 @@ interface SoundConfig {
 export const SOUNDS: Record<string, SoundConfig> = {
     hover_1: {
         audio: typeof Audio !== 'undefined' ? new Audio('/sound/hover-1.wav') : null,
-        volume: 0.3
+        volume: 0.15
     },
     hover_2: {
         audio: typeof Audio !== 'undefined' ? new Audio('/sound/hover-2.wav') : null,
-        volume: 0.1
+        volume: 0.05
     },
     flipCard: {
         audio: typeof Audio !== 'undefined' ? new Audio('/sound/flip-card.mp3') : null,
-        volume: 0.3
+        volume: 0.15
     },
     swoosh: {
         audio: typeof Audio !== 'undefined' ? new Audio('/sound/swoosh.mp3') : null,
-        volume: 0.1
+        volume: 0.05
     },
     click: {
         audio: typeof Audio !== 'undefined' ? new Audio('/sound/click.wav') : null,
-        volume: 0.6
+        volume: 0.3
     },
 };
 

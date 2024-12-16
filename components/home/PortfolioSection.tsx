@@ -145,7 +145,7 @@ export default function PortfolioSection() {
                                             />
                                             <div className="absolute inset-0 p-8 flex flex-col items-center justify-center">
                                                 <h3 className="text-white text-2xl md:text-3xl font-bold text-center uppercase">{slide.title}</h3>
-                                                <p className="text-white mt-4">{slide.date}</p>
+                                                <p className="text-sm md:text-base whitespace-nowrap text-white/80 mt-4">{slide.date}</p>
                                             </div>
                                             <div className="absolute bottom-10 right-10 w-[48px] h-[48px] bg-white rounded-full flex items-center justify-center hover:bg-white/90 transition-colors text-black">
                                                 <span className="inline-block animate-[bounceX-small_1s_ease-in-out_infinite]">→</span>
@@ -175,7 +175,7 @@ export default function PortfolioSection() {
                                                 </div>
                                                 <Link 
                                                     href={getSlugForLocale(slide)}
-                                                    className="mt-auto text-red hover:opacity-80"
+                                                    className="mt-auto text-red hover:opacity-80 py-4"
                                                 >
                                                     {t('portfolio.more')} →
                                                 </Link>
