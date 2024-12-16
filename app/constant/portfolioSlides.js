@@ -20,7 +20,7 @@ export const portfolioSlides = [
         image: '/img/portfolio/accountant-services.webp',
         stats: {
             clicks: '1,728',
-            totalPurchases: '93',
+            leads: '93',
             pricePerPurchase: '$37.69',
             adSpend: '$3,108'
         },

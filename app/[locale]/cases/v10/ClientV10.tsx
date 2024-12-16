@@ -159,8 +159,8 @@ const V10Page: NextPage = () => {
               <ul className="space-y-2">
                 <li><strong>Views:</strong> 238 544</li>
                 <li><strong>Clicks:</strong> 1 728 </li>
-                <li><strong>Amount of purchases:</strong> 93</li>
-                <li><strong>Price per purchases:</strong>  $37.69</li>
+                <li><strong>Amount of leads:</strong> 93</li>
+                <li><strong>Price per lead:</strong>  $37.69</li>
                 <li><strong>Advertising costs:</strong> $3 108</li>
               </ul>
             </div>

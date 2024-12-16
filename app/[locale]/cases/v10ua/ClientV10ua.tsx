@@ -165,8 +165,8 @@ const V10uaPage: NextPage = () => {
               <ul className="space-y-2">
                 <li><strong>Переглядів:</strong> 238 544</li>
                 <li><strong>Кліки:</strong> 1 728 </li>
-                <li><strong>Кількість покупок:</strong> 93</li>
-                <li><strong>Ціна покупки:</strong>  $37.69</li>
+                <li><strong>Кількість лідів:</strong> 93</li>
+                <li><strong>Ціна за лід:</strong>  $37.69</li>
                 <li><strong>Витрати на рекламу:</strong> $3 108</li>
               </ul>
             </div>
