@@ -23,7 +23,7 @@
             "step3": "Global Marketing Strategies",
             "step4": "Work with All Advertising Channels",
             "step5": "Building Lead Generation",
-            "step6": "Parsing and Audience Collection, Lead Database Sales",
+            "step6": "Scraping and Audience Collection, Lead Database Sales",
             "step7": "Sales Audit"
         }
     },
@@ -33,11 +33,11 @@
         "more": "More",
         "stats": {
             "clicks": "Clicks",
-            "totalPurchases": "Total Purchases",
+            "amountOfPurchases": "Amount of Purchases",
             "pricePerPurchase": "Price per Purchase",
             "adSpend": "Ad Spend",
             "roi": "ROI",
-            "totalBookings": "Total Bookings",
+            "amountOfBookings": "Amount of Bookings",
             "revenue": "Revenue",
             "leads": "Leads",
             "pricePerLead": "Price per Lead",
@@ -45,7 +45,6 @@
             "emailResponses": "Email Responses",
             "leadCalls": "Lead Calls",
             "closedDeals": "Closed Deals",
-            "costPerPurchase": "Cost per Purchase",
             "highTicketClients": "High Ticket Clients"
         }
     },

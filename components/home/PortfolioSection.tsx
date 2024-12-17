@@ -176,6 +176,8 @@ export default function PortfolioSection() {
                                                 <Link 
                                                     href={getSlugForLocale(slide)}
                                                     className="mt-auto text-red hover:opacity-80 py-4"
+                                                    target="_blank"
+                                                    rel="noopener noreferrer"
                                                 >
                                                     {t('portfolio.more')} →
                                                 </Link>

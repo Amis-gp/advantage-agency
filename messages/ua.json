@@ -33,11 +33,11 @@
         "more": "Детальніше",
         "stats": {
             "clicks": "Кліки",
-            "totalPurchases": "Всього покупок",
+            "amountOfPurchases": "Кількість покупок",
             "pricePerPurchase": "Ціна за покупку",
             "adSpend": "Витрати на рекламу",
             "roi": "ROI",
-            "totalBookings": "Всього бронювань",
+            "amountOfBookings": "Кількість бронювань",
             "revenue": "Дохід",
             "leads": "Кількість лідів",
             "pricePerLead": "Ціна за ліда",
@@ -45,7 +45,6 @@
             "emailResponses": "Відповіді на емейли",
             "leadCalls": "Дзвінки з лідами",
             "closedDeals": "Закриті угоди",
-            "costPerPurchase": "Вартість за покупку",
             "highTicketClients": "VIP клієнти"
         }
     },

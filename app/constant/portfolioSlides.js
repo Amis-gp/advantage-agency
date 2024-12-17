@@ -35,7 +35,7 @@ export const portfolioSlides = [
         date: '02.03.2024 - 02.04.2024',
         image: '/img/portfolio/beauty-salon.webp',
         stats: {
-            totalBookings: '142',
+            amountOfBookings: '142',
             adSpend: '£3,836',
             revenue: '£28,400',
             roi: '740%'
@@ -93,8 +93,8 @@ export const portfolioSlides = [
         date: '01.04.2024 - 01.06.2024',
         image: '/img/portfolio/e-commerce.webp',
         stats: {
-            totalPurchases: '1,354',
-            costPerPurchase: '$7.06',
+            amountOfPurchases: '1,354',
+            pricePerPurchase: '$7.06',
             adSpend: '$9,569'
         },
         slug: {

@@ -6,6 +6,9 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation as NavigationModule } from 'swiper/modules';
 import { motion, useTransform, useScroll } from 'framer-motion';
 import { playSound } from '@/app/constant/sound';
+import { useState } from 'react';
+import { Dialog, Transition } from '@headlessui/react';
+import { Fragment } from 'react';
 
 export default function AchievementsSection() {
     const t = useTranslations();
@@ -33,6 +36,16 @@ export default function AchievementsSection() {
             delay: 4000,
             disableOnInteraction: false,
         }
+    };
+
+    const [selectedImage, setSelectedImage] = useState<string | null>(null);
+
+    const openModal = (src: string) => {
+        setSelectedImage(src);
+    };
+
+    const closeModal = () => {
+        setSelectedImage(null);
     };
 
     return (
@@ -125,7 +138,10 @@ export default function AchievementsSection() {
                                 <Swiper {...swiperConfig}>
                                     {achievementSlides.map(({ id, src, width, height }) => (
                                         <SwiperSlide key={id}>
-                                            <div className="relative h-full">
+                                            <div 
+                                                className="relative h-full cursor-pointer hover:opacity-90 transition-opacity"
+                                                onClick={() => openModal(src)}
+                                            >
                                                 <Image 
                                                     src={src}
                                                     alt={`Achievement statistics ${id}`}
@@ -165,6 +181,82 @@ export default function AchievementsSection() {
                     </motion.div>
                 </div>
             </div>
+
+            <Transition appear show={!!selectedImage} as={Fragment}>
+                <Dialog as="div" className="relative z-50" onClose={closeModal}>
+                    <Transition.Child
+                        as={Fragment}
+                        enter="ease-out duration-300"
+                        enterFrom="opacity-0"
+                        enterTo="opacity-100"
+                        leave="ease-in duration-200"
+                        leaveFrom="opacity-100"
+                        leaveTo="opacity-0"
+                    >
+                        <div className="fixed inset-0 bg-black bg-opacity-80" />
+                    </Transition.Child>
+
+                    <div className="fixed inset-0 overflow-y-auto">
+                        <div className="flex min-h-full items-center justify-center">
+                            <Transition.Child
+                                as={Fragment}
+                                enter="ease-out duration-300"
+                                enterFrom="opacity-0 scale-95"
+                                enterTo="opacity-100 scale-100"
+                                leave="ease-in duration-200"
+                                leaveFrom="opacity-100 scale-100"
+                                leaveTo="opacity-0 scale-95"
+                            >
+                                <Dialog.Panel className="w-full max-w-4xl transform overflow-hidden rounded-2xl bg-transparent p-6 text-left align-middle shadow-xl transition-all relative">
+                                    <div className="relative">
+                                        {selectedImage && (
+                                            <>
+                                                <Image
+                                                    src={selectedImage}
+                                                    alt="Achievement statistics"
+                                                    width={1920}
+                                                    height={1080}
+                                                    className="w-full h-auto rounded-xl"
+                                                    quality={100}
+                                                />
+                                                <div className="flex gap-4 justify-center mt-6">
+                                                    <button 
+                                                        className="w-10 h-10 rounded-full bg-red-600 flex items-center justify-center text-white hover:bg-red-700 active:scale-95 transition-all duration-300"
+                                                        onClick={() => {
+                                                            const currentIndex = achievementSlides.findIndex(slide => slide.src === selectedImage);
+                                                            const prevIndex = currentIndex === 0 ? achievementSlides.length - 1 : currentIndex - 1;
+                                                            setSelectedImage(achievementSlides[prevIndex].src);
+                                                        }}
+                                                    >
+                                                        ←
+                                                    </button>
+                                                    <button 
+                                                        className="w-10 h-10 rounded-full bg-red-600 flex items-center justify-center text-white hover:bg-red-700 active:scale-95 transition-all duration-300"
+                                                        onClick={() => {
+                                                            const currentIndex = achievementSlides.findIndex(slide => slide.src === selectedImage);
+                                                            const nextIndex = currentIndex === achievementSlides.length - 1 ? 0 : currentIndex + 1;
+                                                            setSelectedImage(achievementSlides[nextIndex].src);
+                                                        }}
+                                                    >
+                                                        →
+                                                    </button>
+                                                    <button
+                                                        type="button"
+                                                        className="w-10 h-10 rounded-full bg-red-600 flex items-center justify-center text-white hover:bg-red-700 active:scale-95 transition-all duration-300"
+                                                        onClick={closeModal}
+                                                    >
+                                                        ✕
+                                                    </button>
+                                                </div>
+                                            </>
+                                        )}
+                                    </div>
+                                </Dialog.Panel>
+                            </Transition.Child>
+                        </div>
+                    </div>
+                </Dialog>
+            </Transition>
         </motion.section>
     );
 }

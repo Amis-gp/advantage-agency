@@ -31,7 +31,7 @@ export default function Header(): JSX.Element {
     }, []);
 
     return (
-        <header className="text-white pt-6 px-6 absolute top-0 left-0 w-full z-50">
+        <header className="text-white pt-6 pb-2 px-6 fixed top-0 left-0 w-full z-50 bg-black/80 backdrop-blur-sm">
             <div className="max-w-6xl mx-auto flex justify-between items-left">
                 <Link href={`/${locale}`} className="flex items-center gap-2">
                     <Image src="./img/logo.svg" alt="Advantage Agency" width={243} height={55} loading="lazy" priority={false} className="h-7 sm:h-auto w-fit"/>
