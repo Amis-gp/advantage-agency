@@ -26,9 +26,9 @@ export const teamMembers: TeamMember[] = [
         image: "/img/team/kostya.webp"
     },
     {
-        name: "Anna",
-        position: "Web Designer",
-        image: "/img/team/anna.webp"
+        name: "Anasteysha",
+        position: "Media Buyer Meta",
+        image: "/img/team/anasteysha.webp"
     },
     {
         name: "Orest",
@@ -37,8 +37,13 @@ export const teamMembers: TeamMember[] = [
     },
     {
         name: "Maksym",
-        position: "Lead Generations",
+        position: "Lead Generation Specialist",
         image: "/img/team/maksym.webp"
+    },
+    {
+        name: "Bogdan",
+        position: "Lead Generation Specialist",
+        image: "/img/team/bogdan.webp"
     },
     {
         name: "Sophia",
@@ -51,8 +56,8 @@ export const teamMembers: TeamMember[] = [
         image: "/img/team/nick.webp"
     },
     {
-        name: "Anasteysha",
-        position: "SMM",
-        image: "/img/team/anasteysha.webp"
+        name: "Anna",
+        position: "Web Designer",
+        image: "/img/team/anna.webp"
     }
 ];

@@ -7,7 +7,7 @@
         "button": "Get More Clients"
     },
     "stats": {
-        "specialists": "Number Of Successful Projects",
+        "specialists": "Amount Of Successful Projects",
         "budget": "Average Percentage Of Sales Growth In 3 Months",
         "cases": "Average Cooperation Duration With Clients",
         "months": "Months"
@@ -218,6 +218,12 @@
                 ]
             }
         ]
+    },
+    "guarantee": {
+        "title": "Guarantee",
+        "badge": "Traffic Cost Refund",
+        "description": "After 6 months of cooperation, you can get your money back if you don't get the proper result. We provide this guarantee because we are fully confident in achieving results for your business.",
+        "button": "Book a Consultation"
     },
     "contact": {
         "headline": "Contact Us",
