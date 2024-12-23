@@ -13,7 +13,7 @@ import CasesFooter from '@/components/CasesFooter';
 
 const V12Page: NextPage = () => {
     useEffect(() => {
-        document.title = "Reducing cost per purchase from $63 to $48";
+        document.title = "Reducing purchase cost from $63 to $48";
     }, []);
     const [isOpenBeforeMeta, setIsOpenBeforeMeta] = useState(false);
     const [isOpenAfterMeta, setIsOpenAfterMeta] = useState(false);
@@ -56,38 +56,48 @@ return (
     <div className="text-black bg-white max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         
     <section className="pt-8">
-        <h1 className="text-3xl md:text-4xl font-bold mb-8 text-center">
-            Reducing cost per purchase from <span className='highlight'>$63 to $48</span>
-        </h1>
-        <div className="mb-12">
-            <p className="mb-4"><strong>About client:</strong> Winest - Wine internet distributor of exclusive wines in Israel, more than 3 years in the market, with an online store featuring digital sommelier service for relevant wine selection and fast delivery.</p>
-        </div>
-        <div className="mb-12 flex flex-wrap justify-center items-center">
-            <div className="w-full lg:w-3/5 text-center">
-                <h2 className="text-2xl font-bold mb-4">Challenges:</h2>
-                <ul className="list-disc inline-block text-left pl-6 space-y-2 mr-8">
-                <li>Need to reduce cost per purchase/checkout</li>
+    <h1 className="text-3xl md:text-4xl font-bold mb-8 text-center">
+        Reducing purchase cost from <span className='highlight highlight-red-300 highlight-variant-5'>$63 to $48</span>
+    </h1>
+    <div className="mb-12">
+        <p className="mb-4 text-lg leading-relaxed">
+            <strong>🍷 About client:</strong> <a href='https://winest.store/' className="font-semibold text-[#ff6315] underline">Winest</a> - Wine online distributor of 
+            <span> exclusive wines</span> in Israel, more than <strong>3 years</strong> in the market, 
+            has an online store with <em>digital sommelier</em> service 🥂, for relevant wine selection and 
+            <strong> fast delivery</strong> 🚚.
+        </p>
+    </div>
+    <div className="mb-12 flex flex-wrap justify-center items-center">
+        <div className="w-full lg:w-3/5 text-center">
+            <h2 className="text-2xl font-bold mb-4">Challenges:</h2>
+            <ul className="list-disc inline-block text-left pl-6 space-y-2 mr-8">
+                <li>Need to reduce cost per purchase</li>
                 <li>Fix attribution in tracker and traffic source</li>
                 <li>Improve existing campaigns</li>
-                <li>Prepare advertising for Black Friday</li>
-                </ul>
-            </div>
-            <div className="w-full lg:w-2/5 flex justify-center items-center">
-                <img src="/img/v12/hero.jpeg" alt="Challenges Image" className="w-full max-w-xs md:max-w-sm lg:max-w-md xl:max-w-lg rounded-lg shadow-sm" />
-            </div>
+                <li>Prepare ads for Black Friday</li>
+            </ul>
         </div>
-        <div className="flex justify-center w-full mt-14 mb-8 text-center">
-            <a href="#form" className="bg-red-600 text-white px-8 py-4 text-2xl font-bold rounded hover:bg-red-700 transition duration-300 ease-in-out animate-bounce">
-                Free business consultation
-            </a>
+        <div className="w-full lg:w-2/5 flex justify-center items-center">
+            <img src="/img/v12/hero.jpeg" alt="Challenges Image" className="w-full max-w-xs md:max-w-sm lg:max-w-md xl:max-w-lg rounded-lg shadow-sm" />
         </div>
+    </div>
+    <div className="flex justify-center w-full mt-14 mb-8 text-center">
+        <a href="#form" className="bg-[#ff6315] text-white px-8 py-4 text-2xl font-bold rounded hover:bg-red-700 transition duration-300 ease-in-out animate-bounce">
+            Free consultation for your business
+        </a>
+    </div>
     </section>
 
     <section className="mb-12">
-        <div className="max-w-4xl mx-auto">
+        <div className="">
             <div className="mb-12">
-                <p className="text-lg leading-relaxed mb-4">
-                    After a detailed analysis of all data, we started setting up ads in Google and Facebook. We analyzed the user journey from ads to adding to the cart on the site and the purchase process itself.
+            <p className="text-lg leading-relaxed mb-4">
+                    <strong>📊 After detailed analysis</strong> of all data from advertising campaigns in 
+                    <span className="text-blue-600"> Google</span> and 
+                    <span className="text-[#4267B2]"> Facebook</span>. 
+                    We started to understand <em>the path that users take</em> from ads to 
+                    <strong>adding to cart</strong> 🛒 on the site and 
+                    <strong>the purchase process</strong> 💳.
                 </p>
             </div>
 
@@ -95,7 +105,7 @@ return (
                 <h2 className="text-3xl font-bold mb-6">Our approach:</h2>
                 <div className="bg-white rounded-lg shadow-lg overflow-hidden">
                     <table className="w-full">
-                        <thead className="bg-gradient-to-r from-red-500 to-red-600 text-white">
+                        <thead className="bg-gradient-to-r from-red-500 to-[#ff6315] text-white">
                             <tr>
                                 <th className="px-4 py-2 font-semibold uppercase tracking-wider">Stage</th>
                                 <th className="px-4 py-2 font-semibold uppercase tracking-wider">Action</th>
@@ -104,19 +114,19 @@ return (
                         <tbody className="divide-y divide-gray-200">
                             <tr className="hover:bg-gray-50 transition-colors duration-150">
                                 <td className="px-6 py-4 whitespace-nowrap font-medium text-gray-900">1.</td>
-                                <td className="px-6 py-4 text-gray-700">Conducted client call, discussed current issues</td>
+                                <td className="px-6 py-4 text-gray-700">We called the client, discussed current issues</td>
                             </tr>
                             <tr className="hover:bg-gray-50 transition-colors duration-150">
                                 <td className="px-6 py-4 whitespace-nowrap font-medium text-gray-900">2.</td>
-                                <td className="px-6 py-4 text-gray-700">Performed detailed analysis of target audience and market specifics</td>
+                                <td className="px-6 py-4 text-gray-700">We conducted a detailed analysis of the target audience and market specifics</td>
                             </tr>
                             <tr className="hover:bg-gray-50 transition-colors duration-150">
                                 <td className="px-6 py-4 whitespace-nowrap font-medium text-gray-900">3.</td>
-                                <td className="px-6 py-4 text-gray-700">Created advertising strategy for Meta Ads and Google Ads</td>
+                                <td className="px-6 py-4 text-gray-700">We developed an advertising strategy</td>
                             </tr>
                             <tr className="hover:bg-gray-50 transition-colors duration-150">
                                 <td className="px-6 py-4 whitespace-nowrap font-medium text-gray-900">4.</td>
-                                <td className="px-6 py-4 text-gray-700">Adjusted conversion tracking correctly</td>
+                                <td className="px-6 py-4 text-gray-700">We adjusted conversion tracking</td>
                             </tr>
                         </tbody>
                     </table>
@@ -127,27 +137,35 @@ return (
 
     <section className="mb-8 mt-8">
         <h2 className="text-3xl font-bold mb-4">Meta ADS: <span className='highlight highlight-red-300 highlight-variant-5'>( facebook/instagram )</span></h2>
-        <p className="mb-8">
-            After agreeing on all questions with the client, we started managing active ads and launching new ones. Our first task was to perform mass optimization, for this we disabled ineffective ads, selected the best ads as references, and applied fresh improvements.
+        <p className="mb-8 leading-relaxed">
+            <strong>🎯 After agreeing with the client</strong>, we started managing active ads and launching new ones. <em>Our first task</em> was to optimize mass ads, so we <strong>removed ineffective ads</strong>, selected the best ad creatives.
         </p>
+        <p className="mb-8 leading-relaxed">
+            <strong>⚙️ We corrected UTM tags</strong> in ads, which <em>fixed the data transfer issue</em> from ads to Triplewhale tracker, and we integrated a promo code for additional analytics.
+        </p>
+        <p className="mb-8 leading-relaxed">
+            <strong>🚀 We conducted a successful test</strong> with ads targeting <em>"initiating checkout"</em>, which helped us optimize Facebook ads for the Black Friday campaign, and then added warm users. <strong>We changed our approach to targeting</strong>, focusing on Black Friday and Christmas ads.
+        </p>
+
+        
         <div className="mb-8">
-            <div className="bg-white rounded-lg shadow-lg p-6 border-4 border-red-600 w-fit mx-auto">
-                <h4 className="text-2xl font-bold mb-4 text-red-600">Meta Ads Results</h4>
+            <div className="bg-white rounded-lg shadow-lg p-6 border-4 border-[#ff6315] w-fit mx-auto">
+                <h4 className="text-2xl font-bold mb-4 text-[#ff6315]">Meta Ads Results</h4>
                 <ul className="space-y-2">
-                    <li><strong>Checkouts:</strong> 857</li>
-                    <li><strong>Purchases:</strong> 375</li>
-                    <li><strong>Cost per purchase:</strong> $48.6</li>
+                    <li><strong>Checkouts:</strong> 785</li>
+                    <li><strong>Purchases:</strong> 309</li>
+                    <li><strong>Price per purchase:</strong> $48.6</li>
                     <li><strong>Average check:</strong> $100</li>
-                    <li><strong>Ad budget:</strong> $18,031</li>
+                    <li><strong>Advertising budget:</strong> $15,031</li>
                 </ul>
             </div>
         </div>
 
         <div className="mb-8">
             <h3 className="text-2xl font-bold mb-4">Results:</h3>
-            <div className="grid grid-cols-1 gap-8 border-2 border-red-600 rounded-lg p-6">
+            <div className="grid grid-cols-1 gap-8 border-2 border-[#ff6315] rounded-lg p-6">
                 <div>
-                    <h4 className="text-xl font-bold mb-4 text-center bg-red-600 text-white py-2 rounded-t-lg">After</h4>
+                    <h4 className="text-xl font-bold mb-4 text-center bg-[#ff6315] text-white py-2 rounded-t-lg">After</h4>
                     <img src="/img/v3/facebol-detailing-high_ctr.jpg" alt="After Results Screenshot" onClick={openModalAfterMeta} className="mx-auto border border-gray-300 rounded-lg shadow-md hover:opacity-75 transition duration-300 ease-in-out cursor-pointer" />
                 </div>
             </div>
@@ -188,7 +206,7 @@ return (
                     <div className="mt-4">
                         <button
                         type="button"
-                        className="inline-flex justify-center rounded-md border border-transparent bg-red-600 px-4 py-2 text-sm font-medium text-white hover:bg-red-700 focus:outline-none focus-visible:ring-2 focus-visible:ring-red-500 focus-visible:ring-offset-2"
+                        className="inline-flex justify-center rounded-md border border-transparent bg-[#ff6315] px-4 py-2 text-sm font-medium text-white hover:bg-red-700 focus:outline-none focus-visible:ring-2 focus-visible:ring-red-500 focus-visible:ring-offset-2"
                         onClick={closeModalAfterMeta}
                         >
                         Close
@@ -203,17 +221,22 @@ return (
 
         <div className="mb-8 mt-8">
             <h3 className="text-3xl font-bold mb-4">Google Ads:</h3>
-            <p className="mb-8">
-                For Google Ads, we set up ad campaign structures, performed detailed keyword and negative keyword research, and developed special ads for search engines. We focused on optimizing ad campaigns - disabling ineffective ads and focusing on the most effective ads.
+            <p className="mb-8 text-lg leading-relaxed">
+                <strong>🎯 For Google Ads</strong> we structured ad campaigns, conducted 
+                <em>detailed keyword research</em> and <em>negative keyword research</em> 🔍. 
+                <strong>✨ We developed specialized ad creatives</strong> for search engines. 
+                <span className="text-blue-600">We focused on optimizing ad campaigns</span> - 
+                <strong>removed ineffective ads</strong> 🚫 and 
+                <em>focused on the most effective ads</em> ⭐.
             </p>
             <div className="mb-12">
-                <div className="bg-white rounded-lg shadow-lg p-6 border-4 border-red-600 w-fit mx-auto">
-                    <h4 className="text-2xl font-bold mb-4 text-red-600">Google Ads Results</h4>
+                <div className="bg-white rounded-lg shadow-lg p-6 border-4 border-[#ff6315] w-fit mx-auto">
+                    <h4 className="text-2xl font-bold mb-4 text-[#ff6315]">Google Ads Results</h4>
                     <ul className="space-y-2">
                         <li><strong>Checkouts:</strong> 294</li>
                         <li><strong>Purchases:</strong> 82</li>
-                        <li><strong>Cost per purchase:</strong> $52.2</li>
-                        <li><strong>Additional leads through landing page:</strong> 58</li>
+                        <li><strong>Price per purchase:</strong> $51.6</li>
+                        <li><strong>Advertising budget:</strong> $4238</li>
                     </ul>
                 </div>
             </div>
@@ -221,9 +244,9 @@ return (
         
         <div className="mb-8">
             <h3 className="text-2xl font-bold mb-8">Results:</h3>    
-            <div className="grid grid-cols-1 gap-8 border-2 border-red-600 rounded-lg p-6">
+            <div className="grid grid-cols-1 gap-8 border-2 border-[#ff6315] rounded-lg p-6">
                 <div>
-                    <h4 className="text-xl font-bold mb-4 text-center bg-red-600 text-white py-2 rounded-t-lg">After</h4>
+                    <h4 className="text-xl font-bold mb-4 text-center bg-[#ff6315] text-white py-2 rounded-t-lg">After</h4>
                     <img src="/img/v3/stata_google_en_after_case3.jpg" alt="After Results Screenshot" onClick={openModalAfterGoogle} className="mx-auto border border-gray-300 rounded-lg shadow-md hover:opacity-75 transition duration-300 ease-in-out cursor-pointer" />
                 </div>
             </div>
@@ -264,7 +287,7 @@ return (
                     <div className="mt-4">
                         <button
                         type="button"
-                        className="inline-flex justify-center rounded-md border border-transparent bg-red-600 px-4 py-2 text-sm font-medium text-white hover:bg-red-700 focus:outline-none focus-visible:ring-2 focus-visible:ring-red-500 focus-visible:ring-offset-2"
+                        className="inline-flex justify-center rounded-md border border-transparent bg-[#ff6315] px-4 py-2 text-sm font-medium text-white hover:bg-red-700 focus:outline-none focus-visible:ring-2 focus-visible:ring-red-500 focus-visible:ring-offset-2"
                         onClick={closeModalAfterGoogle}
                         >
                         Close
@@ -280,13 +303,13 @@ return (
         <div className="mb-12">
             <h3 className="text-2xl font-bold mb-8">Overall Results</h3>
             <p className="mt-6 text-lg font-semibol">
-                As a result of our work, we not only <strong>reduced the cost per purchase by 23%</strong>, but also significantly increased sales volume through both advertising channels.
+                As a result of our work, we not only <strong>reduced the cost per purchase by 23%</strong>, but also significantly increased sales through both advertising channels.
             </p>
             <div className="flex justify-center mt-8">
-                <div className="bg-white rounded-lg shadow-lg p-6 border-4 border-red-600">
+                <div className="bg-white rounded-lg shadow-lg p-6 border-4 border-[#ff6315]">
                     <ul className="space-y-2">
                         <li><strong>Total purchases:</strong>391</li>
-                        <li><strong>Average cost per purchase:</strong> $49.28</li>
+                        <li><strong>Average price per purchase:</strong> $49.28</li>
                         <li><strong>Advertising budget</strong> $19,269</li>
                     </ul>
                 </div>
@@ -295,22 +318,22 @@ return (
     </section>
 
     <section className="mb-12 mt-8 px-4 py-8 bg-gray-100">
-        <h2 className="text-3xl font-bold mb-8 text-center"><span className='highlight highlight-red-300 highlight-variant-5'>What Katherine says about cooperation:</span></h2>
+        <h2 className="text-3xl font-bold mb-8 text-center"><span className='highlight highlight-red-300 highlight-variant-5'>What Marina says about cooperation:</span></h2>
         <div className="flex flex-col md:flex-row items-center justify-center">
             <div className="md:w-1/3 mb-4 md:mb-0 text-center">
-                <img src="/img/v12/facephoto.webp" alt="" className="rounded-full w-48 h-48 object-cover mx-auto border-4 border-red-600" />
-                <p className="font-bold">Katherine</p> 
-                <p className="font-bold text-red-600">Business Owner</p>
+                <img src="/img/v12/facephoto.webp" alt="" className="rounded-full w-48 h-48 object-cover mx-auto border-4 border-[#ff6315]" />
+                <p className="font-bold">Katya</p> 
+                <a href="https://winest.store/" className="font-bold text-[#ff6315]">Business Owner</a>
             </div>
             <div className="md:w-2/3 md:px-8">
-                <blockquote className="italic mb-4">
-                    "Overall, I am very satisfied with our cooperation. The Advantage team quickly helped us solve the problems with order tracking and correct operation. The results speak for themselves - we significantly reduced the cost per purchase and increased sales volume."
+                <blockquote className="italic mb-4 text-lg leading-relaxed">
+                    "✨ Overall, I'm very satisfied with our cooperation. The <span className="text-[#ff6315]">Advantage</span> team quickly helped us solve our issues with tracking purchases. <strong>The results speak for themselves</strong> - we significantly reduced the cost per purchase. 📈"
                 </blockquote>
-                <p className="mt-4">
-                    It is especially important that all processes now work like clockwork, and we can clearly see the results of our advertising activity. This gives us confidence in further development.
+                <p className="mt-4 text-lg leading-relaxed">
+                    <strong>It's important</strong>, that all processes now work like clockwork, and we can clearly see the results of our advertising efforts.
                 </p>
-                <p className="mt-4">
-                    Now we have already set new targets for the next year and plan to launch advertising on a new market together. Thank you for your professional approach and excellent results!"
+                <p className="mt-4 text-lg leading-relaxed">
+                    Now we have set new goals for the next year. <span className="text-[#ff6315]">Thank you for the professional approach!</span> 🚀
                 </p>
             </div>
         </div>
@@ -319,31 +342,31 @@ return (
     <section className="mb-12 mt-8">
         <h2 id="form" className="text-3xl font-bold mb-8 text-center">
             Get a professional digital strategy for your business
-            <span className="block mt-2 text-2xl text-red-600">Free consultation</span>
+            <span className="block mt-2 text-2xl text-[#ff6315]">Free consultation</span>
         </h2>
     
         <div className="max-w-3xl mx-auto text-lg">
             <p className="mb-6 text-center leading-relaxed">
-                Our team will help you create an effective system for attracting customers through internet marketing. We focus on three key areas:
+                Our team will help you create an effective customer acquisition system through internet marketing. We focus on three key areas:
             </p>
             
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
-                <div className="bg-white p-6 rounded-lg shadow-md border-t-4 border-red-600">
+                <div className="bg-white p-6 rounded-lg shadow-md border-t-4 border-[#ff6315]">
                     <h3 className="font-bold text-xl mb-2 text-center">Analytics</h3>
                     <p className="text-gray-600 text-center">Detailed analysis of your niche and competitors</p>
                 </div>
-                <div className="bg-white p-6 rounded-lg shadow-md border-t-4 border-red-600">
+                <div className="bg-white p-6 rounded-lg shadow-md border-t-4 border-[#ff6315]">
                     <h3 className="font-bold text-xl mb-2 text-center">Strategy</h3>
-                    <p className="text-gray-600 text-center">Development of comprehensive promotion plan</p>
+                    <p className="text-gray-600 text-center">Development of a comprehensive promotion plan</p>
                 </div>
-                <div className="bg-white p-6 rounded-lg shadow-md border-t-4 border-red-600">
-                    <h3 className="font-bold text-xl mb-2 text-center">Results</h3>
+                <div className="bg-white p-6 rounded-lg shadow-md border-t-4 border-[#ff6315]">
+                    <h3 className="font-bold text-xl mb-2 text-center">Result</h3>
                     <p className="text-gray-600 text-center">Increase in sales and scaling</p>
                 </div>
             </div>
 
             <p className="text-center mb-8">
-                Fill out the form below to get a personalized plan for your business development in the digital environment
+                Fill out the form below to get a personalized development plan for your business in the digital environment
             </p>
 
             <div className="w-fit mx-auto">

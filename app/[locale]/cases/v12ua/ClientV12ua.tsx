@@ -56,11 +56,16 @@ return (
     <div className="text-black bg-white max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         
     <section className="pt-8">
-        <h1 className="text-3xl md:text-4xl font-bold mb-8 text-center">
-            Зниження ціни за покупку з <span className='highlight'>$63 до $48</span>
+    <h1 className="text-3xl md:text-4xl font-bold mb-8 text-center">
+            Зниження ціни за покупку з <span className='highlight highlight-red-300 highlight-variant-5'>$63 до $48</span>
         </h1>
         <div className="mb-12">
-            <p className="mb-4"><strong>Про клієнта:</strong> Winest - Винний інтернет дистрибютор ексклюзивних вин в Ізраїлі, більше 3 років на ринку, в наявності є інтернет магазин з послугою діджитал сомельє, для актуального підбору вин та швидка доставка.</p>
+            <p className="mb-4 text-lg leading-relaxed">
+                <strong>🍷 Про клієнта:</strong> <a href='https://winest.store/' className="font-semibold text-[#ff6315] underline">Winest</a> - Винний інтернет дистрибютор 
+                <span > ексклюзивних вин</span> в Ізраїлі, більше <strong>3 років</strong> на ринку, 
+                в наявності є інтернет магазин з послугою <em>діджитал сомельє</em> 🥂, для актуального підбору вин та 
+                <strong> швидка доставка</strong> 🚚.
+            </p>
         </div>
         <div className="mb-12 flex flex-wrap justify-center items-center">
             <div className="w-full lg:w-3/5 text-center">
@@ -77,17 +82,22 @@ return (
             </div>
         </div>
         <div className="flex justify-center w-full mt-14 mb-8 text-center">
-            <a href="#form" className="bg-red-600 text-white px-8 py-4 text-2xl font-bold rounded hover:bg-red-700 transition duration-300 ease-in-out animate-bounce">
+            <a href="#form" className="bg-[#ff6315] text-white px-8 py-4 text-2xl font-bold rounded hover:bg-red-700 transition duration-300 ease-in-out animate-bounce">
                 Безкоштовна консультація вашого бізнесу
             </a>
         </div>
     </section>
 
     <section className="mb-12">
-        <div className="max-w-4xl mx-auto">
+        <div className="">
             <div className="mb-12">
-                <p className="text-lg leading-relaxed mb-4">
-                    Після детального аналізу всіх даних ми приступили до налаштування реклами в Google і Facebook. Ми проаналізували шлях користувача від реклами до додавання в корзину на сайті і процес самої покупки.
+            <p className="text-lg leading-relaxed mb-4">
+                    <strong>📊 Після детального аналізу</strong> всіх даних з рекламних кампаній в 
+                    <span className="text-blue-600"> Google</span> і 
+                    <span className="text-[#4267B2]"> Facebook</span>. 
+                    Ми почали ознайомлюватись з <em>шляхом який проходить користувач</em> від реклами 
+                    до <strong>додавання в корзину</strong> 🛒 на сайті і 
+                    <strong> процесом самої покупки</strong> 💳.
                 </p>
             </div>
 
@@ -95,7 +105,7 @@ return (
                 <h2 className="text-3xl font-bold mb-6">Наш підхід:</h2>
                 <div className="bg-white rounded-lg shadow-lg overflow-hidden">
                     <table className="w-full">
-                        <thead className="bg-gradient-to-r from-red-500 to-red-600 text-white">
+                        <thead className="bg-gradient-to-r from-red-500 to-[#ff6315] text-white">
                             <tr>
                                 <th className="px-4 py-2 font-semibold uppercase tracking-wider">Етап</th>
                                 <th className="px-4 py-2 font-semibold uppercase tracking-wider">Дія</th>
@@ -127,12 +137,20 @@ return (
 
     <section className="mb-8 mt-8">
         <h2 className="text-3xl font-bold mb-4">Meta ADS: <span className='highlight highlight-red-300 highlight-variant-5'>( facebook/instagram )</span></h2>
-        <p className="mb-8">
-            Після узгодження всіх питань з клієнтом, ми розпочали керування активною рекламою і запускати нову. Першим нашим завданням, було привести масову оптимізацію, для цього ми відключили частина не ефективної реклами, відібрали референси рекламних оголошень які працювали найкраще, застосували свіжі покращення.
+        <p className="mb-8 leading-relaxed">
+            <strong>🎯 Після узгодження всіх питань з клієнтом</strong>, ми розпочали керування активною рекламою і запускати нову. <em>Першим нашим завданням</em>, було привести масову оптимізацію, для цього ми <strong>відключили частина не ефективної реклами</strong>, відібрали референси рекламних оголошень які працювали найкраще.
         </p>
+        <p className="mb-8 leading-relaxed">
+            <strong>⚙️ Поправили UTM мітки</strong> в рекламних кампаніях, тим самим <em>виправили помилку з передачею даних</em> із рекламних кампаній в трекер <strong>Triplewhale</strong>, інтегрували промокод в посилання для додаткової аналітики.
+        </p>
+        <p className="mb-8 leading-relaxed">
+            <strong>🚀 Провели успішний тест</strong> з переведенням частини рекламних кампаній на ціль <em>"ініціація чекаута"</em>, що допомогло нам швидше оптимізувати Facebook під цільову дію, і потім додатково дожати теплих користувачів. <strong>Змінили трішки підхід до аватарів</strong>, на яких ми таргетуємось в рекламі, <em>особливий акцент зробили на Black Friday</em> 🛍️ та новорічній рекламі 🎄.
+        </p>
+
+        
         <div className="mb-8">
-            <div className="bg-white rounded-lg shadow-lg p-6 border-4 border-red-600 w-fit mx-auto">
-                <h4 className="text-2xl font-bold mb-4 text-red-600">Результати Meta Ads</h4>
+            <div className="bg-white rounded-lg shadow-lg p-6 border-4 border-[#ff6315] w-fit mx-auto">
+                <h4 className="text-2xl font-bold mb-4 text-[#ff6315]">Результати Meta Ads</h4>
                 <ul className="space-y-2">
                     <li><strong>Чекаутів:</strong> 785</li>
                     <li><strong>Покупок:</strong> 309</li>
@@ -145,9 +163,9 @@ return (
 
         <div className="mb-8">
             <h3 className="text-2xl font-bold mb-4">Результати:</h3>
-            <div className="grid grid-cols-1 gap-8 border-2 border-red-600 rounded-lg p-6">
+            <div className="grid grid-cols-1 gap-8 border-2 border-[#ff6315] rounded-lg p-6">
                 <div>
-                    <h4 className="text-xl font-bold mb-4 text-center bg-red-600 text-white py-2 rounded-t-lg">Після</h4>
+                    <h4 className="text-xl font-bold mb-4 text-center bg-[#ff6315] text-white py-2 rounded-t-lg">Після</h4>
                     <img src="/img/v3/facebol-detailing-high_ctr.jpg" alt="After Results Screenshot" onClick={openModalAfterMeta} className="mx-auto border border-gray-300 rounded-lg shadow-md hover:opacity-75 transition duration-300 ease-in-out cursor-pointer" />
                 </div>
             </div>
@@ -188,7 +206,7 @@ return (
                     <div className="mt-4">
                         <button
                         type="button"
-                        className="inline-flex justify-center rounded-md border border-transparent bg-red-600 px-4 py-2 text-sm font-medium text-white hover:bg-red-700 focus:outline-none focus-visible:ring-2 focus-visible:ring-red-500 focus-visible:ring-offset-2"
+                        className="inline-flex justify-center rounded-md border border-transparent bg-[#ff6315] px-4 py-2 text-sm font-medium text-white hover:bg-red-700 focus:outline-none focus-visible:ring-2 focus-visible:ring-red-500 focus-visible:ring-offset-2"
                         onClick={closeModalAfterMeta}
                         >
                         Close
@@ -203,12 +221,17 @@ return (
 
         <div className="mb-8 mt-8">
             <h3 className="text-3xl font-bold mb-4">Google Ads:</h3>
-            <p className="mb-8">
-                Для Google Ads ми налаштували структуру рекламних кампаній, провели детальний пошук ключових слів та мінус слів. Розробили спеціальні рекламні креативи для пошукової мережі. Особливу увагу приділили оптимізації рекламних кампаній - відключили неефективну рекламу та зосередились на найбільш результативних оголошеннях.
+            <p className="mb-8 text-lg leading-relaxed">
+                <strong>🎯 Для Google Ads</strong> ми налаштували структуру рекламних кампаній, провели 
+                <em> детальний пошук ключових слів</em> та <em>мінус слів</em> 🔍. 
+                <strong>✨ Розробили спеціальні рекламні креативи</strong> для пошукової мережі. 
+                <span className="text-blue-600">Особливу увагу приділили оптимізації рекламних кампаній</span> - 
+                <strong>відключили неефективну рекламу</strong> 🚫 та 
+                <em> зосередились на найбільш результативних оголошеннях</em> ⭐.
             </p>
             <div className="mb-12">
-                <div className="bg-white rounded-lg shadow-lg p-6 border-4 border-red-600 w-fit mx-auto">
-                    <h4 className="text-2xl font-bold mb-4 text-red-600">Результати Google Ads</h4>
+                <div className="bg-white rounded-lg shadow-lg p-6 border-4 border-[#ff6315] w-fit mx-auto">
+                    <h4 className="text-2xl font-bold mb-4 text-[#ff6315]">Результати Google Ads</h4>
                     <ul className="space-y-2">
                         <li><strong>Чекаутів:</strong> 294</li>
                         <li><strong>Покупок:</strong> 82</li>
@@ -221,9 +244,9 @@ return (
         
         <div className="mb-8">
             <h3 className="text-2xl font-bold mb-8">Результати:</h3>    
-            <div className="grid grid-cols-1 gap-8 border-2 border-red-600 rounded-lg p-6">
+            <div className="grid grid-cols-1 gap-8 border-2 border-[#ff6315] rounded-lg p-6">
                 <div>
-                    <h4 className="text-xl font-bold mb-4 text-center bg-red-600 text-white py-2 rounded-t-lg">Після</h4>
+                    <h4 className="text-xl font-bold mb-4 text-center bg-[#ff6315] text-white py-2 rounded-t-lg">Після</h4>
                     <img src="/img/v3/stata_google_en_after_case3.jpg" alt="After Results Screenshot" onClick={openModalAfterGoogle} className="mx-auto border border-gray-300 rounded-lg shadow-md hover:opacity-75 transition duration-300 ease-in-out cursor-pointer" />
                 </div>
             </div>
@@ -264,7 +287,7 @@ return (
                     <div className="mt-4">
                         <button
                         type="button"
-                        className="inline-flex justify-center rounded-md border border-transparent bg-red-600 px-4 py-2 text-sm font-medium text-white hover:bg-red-700 focus:outline-none focus-visible:ring-2 focus-visible:ring-red-500 focus-visible:ring-offset-2"
+                        className="inline-flex justify-center rounded-md border border-transparent bg-[#ff6315] px-4 py-2 text-sm font-medium text-white hover:bg-red-700 focus:outline-none focus-visible:ring-2 focus-visible:ring-red-500 focus-visible:ring-offset-2"
                         onClick={closeModalAfterGoogle}
                         >
                         Close
@@ -283,7 +306,7 @@ return (
                 В результаті нашої роботи вдалося не тільки <strong>знизити ціну за покупку на 23%</strong>, але й суттєво збільшити об'єм продажів через обидва рекламні канали.
             </p>
             <div className="flex justify-center mt-8">
-                <div className="bg-white rounded-lg shadow-lg p-6 border-4 border-red-600">
+                <div className="bg-white rounded-lg shadow-lg p-6 border-4 border-[#ff6315]">
                     <ul className="space-y-2">
                         <li><strong>Загальна кількість покупок:</strong>391</li>
                         <li><strong>Середня ціна за покупку:</strong> $49.28</li>
@@ -298,19 +321,19 @@ return (
         <h2 className="text-3xl font-bold mb-8 text-center"><span className='highlight highlight-red-300 highlight-variant-5'>Що Марина каже про співпрацю:</span></h2>
         <div className="flex flex-col md:flex-row items-center justify-center">
             <div className="md:w-1/3 mb-4 md:mb-0 text-center">
-                <img src="/img/v12/facephoto.webp" alt="" className="rounded-full w-48 h-48 object-cover mx-auto border-4 border-red-600" />
+                <img src="/img/v12/facephoto.webp" alt="" className="rounded-full w-48 h-48 object-cover mx-auto border-4 border-[#ff6315]" />
                 <p className="font-bold">Катерина</p> 
-                <p className="font-bold text-red-600">Власниця бізнесу</p>
+                <a href="https://winest.store/" className="font-bold text-[#ff6315]">Власниця бізнесу</a>
             </div>
             <div className="md:w-2/3 md:px-8">
-                <blockquote className="italic mb-4">
-                    "Загалом, я дуже задоволена нашою співпрацею. Команда Advantage швидко допомогла вирішити наші проблеми з відслідковуванням покупок та налаштуванням коректної роботи. Результати говорять самі за себе - ми значно знизили вартість за покупку та збільшили об'єм продажів."
+                <blockquote className="italic mb-4 text-lg leading-relaxed">
+                    "✨ Загалом, я дуже задоволена нашою співпрацею. Команда <span className="text-[#ff6315]">Advantage</span> швидко допомогла вирішити наші проблеми з відслідковуванням покупок. <strong>Результати говорять самі за себе</strong> - ми значно знизили вартість за покупку. 📈"
                 </blockquote>
-                <p className="mt-4">
-                    Особливо важливо, що всі процеси тепер працюють як годинник, і ми можемо чітко бачити результати нашої рекламної активності. Це дає нам впевненість у подальшому розвитку.
+                <p className="mt-4 text-lg leading-relaxed">
+                    <strong>Особливо важливо</strong>, що всі процеси тепер працюють як годинник, і ми можемо чітко бачити результати нашої рекламної активності.
                 </p>
-                <p className="mt-4">
-                    Зараз ми вже поставили нові цілі на наступний рік та плануємо разом запускати рекламу на новий ринок. Дякую команді за професійний підхід та відмінні результати!"
+                <p className="mt-4 text-lg leading-relaxed">
+                    Зараз ми вже поставили нові цілі на наступний рік. <span className="text-[#ff6315]">Дякую команді за професійний підхід!</span> 🚀
                 </p>
             </div>
         </div>
@@ -319,7 +342,7 @@ return (
     <section className="mb-12 mt-8">
         <h2 id="form" className="text-3xl font-bold mb-8 text-center">
             Отримайте професійну digital-стратегію для вашого бізнесу
-            <span className="block mt-2 text-2xl text-red-600">Безкоштовна консультація</span>
+            <span className="block mt-2 text-2xl text-[#ff6315]">Безкоштовна консультація</span>
         </h2>
     
         <div className="max-w-3xl mx-auto text-lg">
@@ -328,15 +351,15 @@ return (
             </p>
             
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
-                <div className="bg-white p-6 rounded-lg shadow-md border-t-4 border-red-600">
+                <div className="bg-white p-6 rounded-lg shadow-md border-t-4 border-[#ff6315]">
                     <h3 className="font-bold text-xl mb-2 text-center">Аналітика</h3>
                     <p className="text-gray-600 text-center">Детальний аналіз вашої ніші та конкурентів</p>
                 </div>
-                <div className="bg-white p-6 rounded-lg shadow-md border-t-4 border-red-600">
+                <div className="bg-white p-6 rounded-lg shadow-md border-t-4 border-[#ff6315]">
                     <h3 className="font-bold text-xl mb-2 text-center">Стратегія</h3>
                     <p className="text-gray-600 text-center">Розробка комплексного плану просування</p>
                 </div>
-                <div className="bg-white p-6 rounded-lg shadow-md border-t-4 border-red-600">
+                <div className="bg-white p-6 rounded-lg shadow-md border-t-4 border-[#ff6315]">
                     <h3 className="font-bold text-xl mb-2 text-center">Результат</h3>
                     <p className="text-gray-600 text-center">Збільшення продажів та масштабування</p>
                 </div>
@@ -363,7 +386,7 @@ return (
         text="Chat with us on Messenger"
     />
     </div>
-  );
+    );
 };
 
 export default V12uaPage;
