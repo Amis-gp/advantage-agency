@@ -122,7 +122,7 @@ export default function HeroSection() {
                     transition={{ duration: 0.6, delay: 0.6 }}
                     className="w-fit mx-auto mt-4 hover:scale-105 transition-all duration-100"
                 >
-                    <Link href="#form" 
+                    <Link href="/offers" 
                         className="group relative bg-white hover:bg-white/90 transition-all duration-300 text-black px-8 py-4 rounded-full text-lg font-medium flex items-center gap-2" 
                         onMouseEnter={() => playSound('hover_1')}
                     >

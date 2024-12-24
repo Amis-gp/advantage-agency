@@ -13,7 +13,7 @@ import CasesFooter from '@/components/CasesFooter';
 
 const V12Page: NextPage = () => {
     useEffect(() => {
-        document.title = "Reducing purchase cost from $63 to $48";
+        document.title = "Reducing purchase cost from $72 to $48";
     }, []);
     const [isOpenBeforeMeta, setIsOpenBeforeMeta] = useState(false);
     const [isOpenAfterMeta, setIsOpenAfterMeta] = useState(false);
@@ -57,7 +57,7 @@ return (
         
     <section className="pt-8">
     <h1 className="text-3xl md:text-4xl font-bold mb-8 text-center">
-        Reducing purchase cost from <span className='highlight highlight-red-300 highlight-variant-5'>$63 to $48</span>
+        Reducing purchase cost from <span className='highlight highlight-red-300 highlight-variant-5'>$72 to $48</span>
     </h1>
     <div className="mb-12">
         <p className="mb-4 text-lg leading-relaxed">
@@ -92,12 +92,7 @@ return (
         <div className="">
             <div className="mb-12">
             <p className="text-lg leading-relaxed mb-4">
-                    <strong>📊 After detailed analysis</strong> of all data from advertising campaigns in 
-                    <span className="text-blue-600"> Google</span> and 
-                    <span className="text-[#4267B2]"> Facebook</span>. 
-                    We started to understand <em>the path that users take</em> from ads to 
-                    <strong>adding to cart</strong> 🛒 on the site and 
-                    <strong>the purchase process</strong> 💳.
+                    <strong>📊 After detailed analysis</strong> of all data from advertising campaigns in <span className="text-blue-600"> Google</span> and <span className="text-[#4267B2]"> Facebook</span>. We started to understand <em>the path that users take</em> from ads to <strong>adding to cart</strong> 🛒 on the site and <strong>the purchase process</strong> 💳.
                 </p>
             </div>
 
@@ -114,19 +109,19 @@ return (
                         <tbody className="divide-y divide-gray-200">
                             <tr className="hover:bg-gray-50 transition-colors duration-150">
                                 <td className="px-6 py-4 whitespace-nowrap font-medium text-gray-900">1.</td>
-                                <td className="px-6 py-4 text-gray-700">We called the client, discussed current issues</td>
+                                <td className="px-6 py-4 text-gray-700">Called the client, discussed current issues</td>
                             </tr>
                             <tr className="hover:bg-gray-50 transition-colors duration-150">
                                 <td className="px-6 py-4 whitespace-nowrap font-medium text-gray-900">2.</td>
-                                <td className="px-6 py-4 text-gray-700">We conducted a detailed analysis of the target audience and market specifics</td>
+                                <td className="px-6 py-4 text-gray-700">Conducted a detailed analysis of the target audience and market specifics</td>
                             </tr>
                             <tr className="hover:bg-gray-50 transition-colors duration-150">
                                 <td className="px-6 py-4 whitespace-nowrap font-medium text-gray-900">3.</td>
-                                <td className="px-6 py-4 text-gray-700">We developed an advertising strategy</td>
+                                <td className="px-6 py-4 text-gray-700">Developed an advertising strategy</td>
                             </tr>
                             <tr className="hover:bg-gray-50 transition-colors duration-150">
                                 <td className="px-6 py-4 whitespace-nowrap font-medium text-gray-900">4.</td>
-                                <td className="px-6 py-4 text-gray-700">We adjusted conversion tracking</td>
+                                <td className="px-6 py-4 text-gray-700">Adjusted conversion tracking</td>
                             </tr>
                         </tbody>
                     </table>
@@ -222,12 +217,7 @@ return (
         <div className="mb-8 mt-8">
             <h3 className="text-3xl font-bold mb-4">Google Ads:</h3>
             <p className="mb-8 text-lg leading-relaxed">
-                <strong>🎯 For Google Ads</strong> we structured ad campaigns, conducted 
-                <em>detailed keyword research</em> and <em>negative keyword research</em> 🔍. 
-                <strong>✨ We developed specialized ad creatives</strong> for search engines. 
-                <span className="text-blue-600">We focused on optimizing ad campaigns</span> - 
-                <strong>removed ineffective ads</strong> 🚫 and 
-                <em>focused on the most effective ads</em> ⭐.
+                <strong>🎯 For Google Ads</strong> we structured ad campaigns, conducted <em>detailed keyword research</em> and <em>negative keyword research</em> 🔍. <strong>✨ We developed specialized ad creatives</strong> for search engines. <span className="text-blue-600">We focused on optimizing ad campaigns</span> - <strong>removed ineffective ads</strong> 🚫 and <em>focused on the most effective ads</em> ⭐.
             </p>
             <div className="mb-12">
                 <div className="bg-white rounded-lg shadow-lg p-6 border-4 border-[#ff6315] w-fit mx-auto">
@@ -308,9 +298,9 @@ return (
             <div className="flex justify-center mt-8">
                 <div className="bg-white rounded-lg shadow-lg p-6 border-4 border-[#ff6315]">
                     <ul className="space-y-2">
-                        <li><strong>Total purchases:</strong>391</li>
+                        <li><strong>Total purchases:</strong> 391</li>
                         <li><strong>Average price per purchase:</strong> $49.28</li>
-                        <li><strong>Advertising budget</strong> $19,269</li>
+                        <li><strong>Advertising budget:</strong> $19,269</li>
                     </ul>
                 </div>
             </div>

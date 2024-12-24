@@ -13,7 +13,7 @@ import CasesFooter from '@/components/CasesFooter';
 
 const V12uaPage: NextPage = () => {
     useEffect(() => {
-        document.title = "Зниження ціни за покупку з $63 до $48";
+        document.title = "Зниження ціни за покупку з $72 до $48";
     }, []);
     const [isOpenBeforeMeta, setIsOpenBeforeMeta] = useState(false);
     const [isOpenAfterMeta, setIsOpenAfterMeta] = useState(false);
@@ -57,7 +57,7 @@ return (
         
     <section className="pt-8">
     <h1 className="text-3xl md:text-4xl font-bold mb-8 text-center">
-            Зниження ціни за покупку з <span className='highlight highlight-red-300 highlight-variant-5'>$63 до $48</span>
+            Зниження ціни за покупку з <span className='highlight highlight-red-300 highlight-variant-5'>$72 до $48</span>
         </h1>
         <div className="mb-12">
             <p className="mb-4 text-lg leading-relaxed">
