@@ -91,8 +91,8 @@ return (
     <section className="mb-12">
         <div className="">
             <div className="mb-12">
-            <p className="text-lg leading-relaxed mb-4">
-                    <strong>📊 After detailed analysis</strong> of all data from advertising campaigns in <span className="text-blue-600"> Google</span> and <span className="text-[#4267B2]"> Facebook</span>. We started to understand <em>the path that users take</em> from ads to <strong>adding to cart</strong> 🛒 on the site and <strong>the purchase process</strong> 💳.
+                <p className="text-lg leading-relaxed mb-4">
+                    <strong>📊 After a thorough analysis</strong> of all data from advertising campaigns on <span className="text-blue-600"> Google</span> and <span className="text-[#4267B2]"> Facebook</span>, we began to explore the user's journey—from clicking on an ad to adding items to the cart 🛒 on the website and completing the purchase process 💳.
                 </p>
             </div>
 
