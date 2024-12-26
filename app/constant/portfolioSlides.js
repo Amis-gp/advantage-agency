@@ -146,4 +146,18 @@ export const portfolioSlides = [
             ua: 'cases/v3ua'
         },
     },
+    {
+        title: 'Wine Distributor',
+        date: '04.03.2024 - 4.04.2024',
+        image: '/img/portfolio/wine-distributor.webp',
+        stats: {
+            amountOfPurchases: '391',
+            pricePerPurchase: '$49.28',
+            adSpend: '$19,269'
+        },
+        slug: {
+            en: 'cases/v12',
+            ua: 'cases/v12ua'
+        },
+    },
 ];

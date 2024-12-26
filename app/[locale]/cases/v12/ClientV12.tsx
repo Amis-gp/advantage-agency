@@ -142,10 +142,20 @@ return (
             <strong>🚀 We conducted a successful test</strong> with ads targeting <em>"initiating checkout"</em>, which helped us optimize Facebook ads for the Black Friday campaign, and then added warm users. <strong>We changed our approach to targeting</strong>, focusing on Black Friday and Christmas ads.
         </p>
 
-        
         <div className="mb-8">
-            <div className="bg-white rounded-lg shadow-lg p-6 border-4 border-[#ff6315] w-fit mx-auto">
-                <h4 className="text-2xl font-bold mb-4 text-[#ff6315]">Meta Ads Results</h4>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              <div className="bg-white rounded-lg shadow-lg p-6 border-2 border-gray-300">
+                <h4 className="text-2xl font-bold mb-4 text-gray-600">Раніше</h4>
+                <ul className="space-y-2">
+                    <li><strong>Checkouts:</strong> 633</li>
+                    <li><strong>Purchases:</strong> 259</li>
+                    <li><strong>rice per purchase:</strong> $63.3</li>
+                    <li><strong>Average check:</strong> $90</li>
+                    <li><strong>Advertising budget:</strong> $15,383</li>
+                </ul>
+              </div>
+              <div className="bg-white rounded-lg shadow-lg p-6 border-4 border-[#ff6315]">
+                <h4 className="text-2xl font-bold mb-4 text-[#ff6315]">Після</h4>
                 <ul className="space-y-2">
                     <li><strong>Checkouts:</strong> 785</li>
                     <li><strong>Purchases:</strong> 309</li>
@@ -153,144 +163,263 @@ return (
                     <li><strong>Average check:</strong> $100</li>
                     <li><strong>Advertising budget:</strong> $15,031</li>
                 </ul>
+              </div>
             </div>
         </div>
+        
 
         <div className="mb-8">
             <h3 className="text-2xl font-bold mb-4">Results:</h3>
-            <div className="grid grid-cols-1 gap-8 border-2 border-[#ff6315] rounded-lg p-6">
-                <div>
+                <div className="grid grid-cols-1 gap-8 border-2 border-[#ff6315] rounded-lg p-6">
+                  <div>
+                    <h4 className="text-xl font-bold mb-4 text-center bg-[#ff6315] text-white py-2 rounded-t-lg">Before</h4>
+                    <img src="/img/v12/facebook-before-v12.webp" alt="Before Results Screenshot" onClick={openModalBeforeMeta} className="mx-auto border border-gray-300 rounded-lg shadow-md hover:opacity-75 transition duration-300 ease-in-out cursor-pointer" />
+                  </div>
+                  <div>
                     <h4 className="text-xl font-bold mb-4 text-center bg-[#ff6315] text-white py-2 rounded-t-lg">After</h4>
-                    <img src="/img/v3/facebol-detailing-high_ctr.jpg" alt="After Results Screenshot" onClick={openModalAfterMeta} className="mx-auto border border-gray-300 rounded-lg shadow-md hover:opacity-75 transition duration-300 ease-in-out cursor-pointer" />
+                    <img src="/img/v12/facebook-after-v12.webp" alt="After Results Screenshot" onClick={openModalAfterMeta} className="mx-auto border border-gray-300 rounded-lg shadow-md hover:opacity-75 transition duration-300 ease-in-out cursor-pointer" />
+                  </div>
                 </div>
-            </div>
-        </div>
-        <Transition appear show={isOpenAfterMeta} as={Fragment}>
-            <Dialog as="div" className="relative z-10" onClose={closeModalAfterMeta}>
-            <Transition.Child
-                as={Fragment}
-                enter="ease-out duration-300"
-                enterFrom="opacity-0"
-                enterTo="opacity-100"
-                leave="ease-in duration-200"
-                leaveFrom="opacity-100"
-                leaveTo="opacity-0"
-            >
-                <div className="fixed inset-0 bg-black bg-opacity-50" />
-            </Transition.Child>
 
-            <div className="fixed inset-0 overflow-y-auto">
-                <div className="flex min-h-full items-center justify-center p-4 text-center">
-                <Transition.Child
-                    as={Fragment}
-                    enter="ease-out duration-300"
-                    enterFrom="opacity-0 scale-95"
-                    enterTo="opacity-100 scale-100"
-                    leave="ease-in duration-200"
-                    leaveFrom="opacity-100 scale-100"
-                    leaveTo="opacity-0 scale-95"
-                >
-                    <Dialog.Panel className="w-full max-w-full transform overflow-hidden rounded-2xl bg-white p-6 text-left align-middle shadow-xl transition-all">
-                    <Dialog.Title as="h3" className="text-lg font-medium leading-6 text-gray-900">
-                    After our cooperation.
-                    </Dialog.Title>
-                    <div className="mt-2">
-                        <img src="/img/v3/facebol-detailing-high_ctr.jpg" alt="After Results Screenshot" style={{ width: 'auto', height: 'auto' }} />
-                    </div>
+                <Transition appear show={isOpenBeforeMeta} as={Fragment}>
+                  <Dialog as="div" className="relative z-10" onClose={closeModalBeforeMeta}>
+                    <Transition.Child
+                      as={Fragment}
+                      enter="ease-out duration-300"
+                      enterFrom="opacity-0"
+                      enterTo="opacity-100"
+                      leave="ease-in duration-200"
+                      leaveFrom="opacity-100"
+                      leaveTo="opacity-0"
+                    >
+                      <div className="fixed inset-0 bg-black bg-opacity-50" />
+                    </Transition.Child>
 
-                    <div className="mt-4">
-                        <button
-                        type="button"
-                        className="inline-flex justify-center rounded-md border border-transparent bg-[#ff6315] px-4 py-2 text-sm font-medium text-white hover:bg-red-700 focus:outline-none focus-visible:ring-2 focus-visible:ring-red-500 focus-visible:ring-offset-2"
-                        onClick={closeModalAfterMeta}
+                    <div className="fixed inset-0 overflow-y-auto">
+                      <div className="flex min-h-full items-center justify-center p-4 text-center">
+                        <Transition.Child
+                          as={Fragment}
+                          enter="ease-out duration-300"
+                          enterFrom="opacity-0 scale-95"
+                          enterTo="opacity-100 scale-100"
+                          leave="ease-in duration-200"
+                          leaveFrom="opacity-100 scale-100"
+                          leaveTo="opacity-0 scale-95"
                         >
-                        Close
-                        </button>
+                          <Dialog.Panel className="w-full max-w-full transform overflow-hidden rounded-2xl bg-white p-6 text-left align-middle shadow-xl transition-all">
+                            <Dialog.Title as="h3" className="text-lg font-medium leading-6 text-gray-900">
+                            Prior to our collaboration
+                            </Dialog.Title>
+                            <div className="mt-2">
+                              <img src="/img/v12/facebook-before-v12.webp" alt="Before Results Screenshot" style={{ width: 'auto', height: 'auto' }} />
+                            </div>
+                            <div className="mt-4">
+                              <button
+                                type="button"
+                                className="inline-flex justify-center rounded-md border border-transparent bg-[#ff6315] px-4 py-2 text-sm font-medium text-white hover:bg-[#cb4d0f] focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
+                                onClick={closeModalBeforeMeta}
+                              >
+                                Close
+                              </button>
+                            </div>
+                          </Dialog.Panel>
+                        </Transition.Child>
+                      </div>
                     </div>
-                    </Dialog.Panel>
-                </Transition.Child>
-                </div>
-            </div>
-            </Dialog>
-        </Transition>
+                  </Dialog>
+                </Transition>
+
+                <Transition appear show={isOpenAfterMeta} as={Fragment}>
+                  <Dialog as="div" className="relative z-10" onClose={closeModalAfterMeta}>
+                    <Transition.Child
+                      as={Fragment}
+                      enter="ease-out duration-300"
+                      enterFrom="opacity-0"
+                      enterTo="opacity-100"
+                      leave="ease-in duration-200"
+                      leaveFrom="opacity-100"
+                      leaveTo="opacity-0"
+                    >
+                      <div className="fixed inset-0 bg-black bg-opacity-50" />
+                    </Transition.Child>
+
+                    <div className="fixed inset-0 overflow-y-auto">
+                      <div className="flex min-h-full items-center justify-center p-4 text-center">
+                        <Transition.Child
+                          as={Fragment}
+                          enter="ease-out duration-300"
+                          enterFrom="opacity-0 scale-95"
+                          enterTo="opacity-100 scale-100"
+                          leave="ease-in duration-200"
+                          leaveFrom="opacity-100 scale-100"
+                          leaveTo="opacity-0 scale-95"
+                        >
+                          <Dialog.Panel className="w-full max-w-full transform overflow-hidden rounded-2xl bg-white p-6 text-left align-middle shadow-xl transition-all">
+                            <Dialog.Title as="h3" className="text-lg font-medium leading-6 text-gray-900">
+                            After our cooperation.
+                            </Dialog.Title>
+                            <div className="mt-2">
+                              <img src="/img/v12/facebook-after-v12.webp" alt="After Results Screenshot" style={{ width: 'auto', height: 'auto' }} />
+                            </div>
+
+                            <div className="mt-4">
+                              <button
+                                type="button"
+                                className="inline-flex justify-center rounded-md border border-transparent bg-[#ff6315] px-4 py-2 text-sm font-medium text-white hover:bg-[#cb4d0f] focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
+                                onClick={closeModalAfterMeta}
+                              >
+                                Close
+                              </button>
+                            </div>
+                          </Dialog.Panel>
+                        </Transition.Child>
+                      </div>
+                    </div>
+                  </Dialog>
+                </Transition>
+          </div> 
 
         <div className="mb-8 mt-8">
             <h3 className="text-3xl font-bold mb-4">Google Ads:</h3>
             <p className="mb-8 text-lg leading-relaxed">
                 <strong>🎯 For Google Ads</strong> we structured ad campaigns, conducted <em>detailed keyword research</em> and <em>negative keyword research</em> 🔍. <strong>✨ We developed specialized ad creatives</strong> for search engines. <span className="text-blue-600">We focused on optimizing ad campaigns</span> - <strong>removed ineffective ads</strong> 🚫 and <em>focused on the most effective ads</em> ⭐.
             </p>
-            <div className="mb-12">
-                <div className="bg-white rounded-lg shadow-lg p-6 border-4 border-[#ff6315] w-fit mx-auto">
-                    <h4 className="text-2xl font-bold mb-4 text-[#ff6315]">Google Ads Results</h4>
-                    <ul className="space-y-2">
-                        <li><strong>Checkouts:</strong> 294</li>
-                        <li><strong>Purchases:</strong> 82</li>
-                        <li><strong>Price per purchase:</strong> $51.6</li>
-                        <li><strong>Advertising budget:</strong> $4238</li>
-                    </ul>
-                </div>
+            <div className="mb-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              <div className="bg-white rounded-lg shadow-lg p-6 border-2 border-gray-300">
+                <h4 className="text-2xl font-bold mb-4 text-gray-600">Раніше</h4>
+                <ul className="space-y-2">
+                    <li><strong>Checkouts:</strong> 207</li>
+                    <li><strong>Purchases:</strong> 52</li>
+                    <li><strong>Price per purchase:</strong> $67.2</li>
+                    <li><strong>Advertising budget:</strong> $3529</li>
+                </ul>
+              </div>
+              <div className="bg-white rounded-lg shadow-lg p-6 border-4 border-[#ff6315]">
+                <h4 className="text-2xl font-bold mb-4 text-[#ff6315]">Після</h4>
+                <ul className="space-y-2">
+                    <li><strong>Checkouts:</strong> 294</li>
+                    <li><strong>Purchases:</strong> 82</li>
+                    <li><strong>Price per purchase:</strong> $51.6</li>
+                    <li><strong>Advertising budget:</strong> $4238</li>
+                </ul>
+              </div>
             </div>
+          </div>
         </div>
         
         <div className="mb-8">
-            <h3 className="text-2xl font-bold mb-8">Results:</h3>    
-            <div className="grid grid-cols-1 gap-8 border-2 border-[#ff6315] rounded-lg p-6">
-                <div>
+            <h3 className="text-2xl font-bold mb-4">Results:</h3>
+                <div className="grid grid-cols-1 gap-8 border-2 border-[#ff6315] rounded-lg p-6">
+                  <div>
+                    <h4 className="text-xl font-bold mb-4 text-center bg-[#ff6315] text-white py-2 rounded-t-lg">Before</h4>
+                    <img src="/img/v12/google-before-v12.webp" alt="Before Results Screenshot" onClick={openModalBeforeGoogle} className="mx-auto border border-gray-300 rounded-lg shadow-md hover:opacity-75 transition duration-300 ease-in-out cursor-pointer" />
+                  </div>
+                  <div>
                     <h4 className="text-xl font-bold mb-4 text-center bg-[#ff6315] text-white py-2 rounded-t-lg">After</h4>
-                    <img src="/img/v3/stata_google_en_after_case3.jpg" alt="After Results Screenshot" onClick={openModalAfterGoogle} className="mx-auto border border-gray-300 rounded-lg shadow-md hover:opacity-75 transition duration-300 ease-in-out cursor-pointer" />
+                    <img src="/img/v12/google-after-v12.webp" alt="After Results Screenshot" onClick={openModalAfterGoogle} className="mx-auto border border-gray-300 rounded-lg shadow-md hover:opacity-75 transition duration-300 ease-in-out cursor-pointer" />
+                  </div>
                 </div>
-            </div>
-        </div>
-        <Transition appear show={isOpenAfterGoogle} as={Fragment}>
-            <Dialog as="div" className="relative z-10" onClose={closeModalAfterGoogle}>
-            <Transition.Child
-                as={Fragment}
-                enter="ease-out duration-300"
-                enterFrom="opacity-0"
-                enterTo="opacity-100"
-                leave="ease-in duration-200"
-                leaveFrom="opacity-100"
-                leaveTo="opacity-0"
-            >
-                <div className="fixed inset-0 bg-black bg-opacity-50" />
-            </Transition.Child>
 
-            <div className="fixed inset-0 overflow-y-auto">
-                <div className="flex min-h-full items-center justify-center p-4 text-center">
-                <Transition.Child
-                    as={Fragment}
-                    enter="ease-out duration-300"
-                    enterFrom="opacity-0 scale-95"
-                    enterTo="opacity-100 scale-100"
-                    leave="ease-in duration-200"
-                    leaveFrom="opacity-100 scale-100"
-                    leaveTo="opacity-0 scale-95"
-                >
-                    <Dialog.Panel className="w-full max-w-full transform overflow-hidden rounded-2xl bg-white p-6 text-left align-middle shadow-xl transition-all">
-                    <Dialog.Title as="h3" className="text-lg font-medium leading-6 text-gray-900">
-                    After our cooperation.
-                    </Dialog.Title>
-                    <div className="mt-2">
-                        <img src="/img/v3/stata_google_en_after_case3.jpg" alt="After Results Screenshot" style={{ width: 'auto', height: 'auto' }} />
-                    </div>
+                <Transition appear show={isOpenBeforeGoogle} as={Fragment}>
+                  <Dialog as="div" className="relative z-10" onClose={closeModalBeforeGoogle}>
+                    <Transition.Child
+                      as={Fragment}
+                      enter="ease-out duration-300"
+                      enterFrom="opacity-0"
+                      enterTo="opacity-100"
+                      leave="ease-in duration-200"
+                      leaveFrom="opacity-100"
+                      leaveTo="opacity-0"
+                    >
+                      <div className="fixed inset-0 bg-black bg-opacity-50" />
+                    </Transition.Child>
 
-                    <div className="mt-4">
-                        <button
-                        type="button"
-                        className="inline-flex justify-center rounded-md border border-transparent bg-[#ff6315] px-4 py-2 text-sm font-medium text-white hover:bg-red-700 focus:outline-none focus-visible:ring-2 focus-visible:ring-red-500 focus-visible:ring-offset-2"
-                        onClick={closeModalAfterGoogle}
+                    <div className="fixed inset-0 overflow-y-auto">
+                      <div className="flex min-h-full items-center justify-center p-4 text-center">
+                        <Transition.Child
+                          as={Fragment}
+                          enter="ease-out duration-300"
+                          enterFrom="opacity-0 scale-95"
+                          enterTo="opacity-100 scale-100"
+                          leave="ease-in duration-200"
+                          leaveFrom="opacity-100 scale-100"
+                          leaveTo="opacity-0 scale-95"
                         >
-                        Close
-                        </button>
+                          <Dialog.Panel className="w-full max-w-full transform overflow-hidden rounded-2xl bg-white p-6 text-left align-middle shadow-xl transition-all">
+                            <Dialog.Title as="h3" className="text-lg font-medium leading-6 text-gray-900">
+                            Prior to our collaboration
+                            </Dialog.Title>
+                            <div className="mt-2">
+                              <img src="/img/v12/google-before-v12.webp" alt="Before Results Screenshot" style={{ width: 'auto', height: 'auto' }} />
+                            </div>
+                            <div className="mt-4">
+                              <button
+                                type="button"
+                                className="inline-flex justify-center rounded-md border border-transparent bg-[#ff6315] px-4 py-2 text-sm font-medium text-white hover:bg-[#cb4d0f] focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
+                                onClick={closeModalBeforeGoogle}
+                              >
+                                Close
+                              </button>
+                            </div>
+                          </Dialog.Panel>
+                        </Transition.Child>
+                      </div>
                     </div>
-                    </Dialog.Panel>
-                </Transition.Child>
-                </div>
-            </div>
-            </Dialog>
-        </Transition>
+                  </Dialog>
+                </Transition>
 
-        <div className="mb-12">
+                <Transition appear show={isOpenAfterGoogle} as={Fragment}>
+                  <Dialog as="div" className="relative z-10" onClose={closeModalAfterGoogle}>
+                    <Transition.Child
+                      as={Fragment}
+                      enter="ease-out duration-300"
+                      enterFrom="opacity-0"
+                      enterTo="opacity-100"
+                      leave="ease-in duration-200"
+                      leaveFrom="opacity-100"
+                      leaveTo="opacity-0"
+                    >
+                      <div className="fixed inset-0 bg-black bg-opacity-50" />
+                    </Transition.Child>
+
+                    <div className="fixed inset-0 overflow-y-auto">
+                      <div className="flex min-h-full items-center justify-center p-4 text-center">
+                        <Transition.Child
+                          as={Fragment}
+                          enter="ease-out duration-300"
+                          enterFrom="opacity-0 scale-95"
+                          enterTo="opacity-100 scale-100"
+                          leave="ease-in duration-200"
+                          leaveFrom="opacity-100 scale-100"
+                          leaveTo="opacity-0 scale-95"
+                        >
+                          <Dialog.Panel className="w-full max-w-full transform overflow-hidden rounded-2xl bg-white p-6 text-left align-middle shadow-xl transition-all">
+                            <Dialog.Title as="h3" className="text-lg font-medium leading-6 text-gray-900">
+                            After our cooperation.
+                            </Dialog.Title>
+                            <div className="mt-2">
+                              <img src="/img/v12/google-after-v12.webp" alt="After Results Screenshot" style={{ width: 'auto', height: 'auto' }} />
+                            </div>
+
+                            <div className="mt-4">
+                              <button
+                                type="button"
+                                className="inline-flex justify-center rounded-md border border-transparent bg-[#ff6315] px-4 py-2 text-sm font-medium text-white hover:bg-[#cb4d0f] focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
+                                onClick={closeModalAfterGoogle}
+                              >
+                                Close
+                              </button>
+                            </div>
+                          </Dialog.Panel>
+                        </Transition.Child>
+                      </div>
+                    </div>
+                  </Dialog>
+                </Transition>
+          </div> 
+
+          <div className="mb-12">
             <h3 className="text-2xl font-bold mb-8">Overall Results</h3>
             <p className="mt-6 text-lg font-semibol">
                 As a result of our work, we not only <strong>reduced the cost per purchase by 23%</strong>, but also significantly increased sales through both advertising channels.
@@ -305,6 +434,7 @@ return (
                 </div>
             </div>
         </div>
+
     </section>
 
     <section className="mb-12 mt-8 px-4 py-8 bg-gray-100">
