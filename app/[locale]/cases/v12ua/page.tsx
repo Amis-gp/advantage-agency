@@ -1,7 +1,7 @@
 import { setRequestLocale } from 'next-intl/server';
 import ClientV12ua from './ClientV12ua';
 
-export default function V12Page({ 
+export default function V12uaPage({ 
     params: { locale } 
 }: { 
     params: { locale: string } 
