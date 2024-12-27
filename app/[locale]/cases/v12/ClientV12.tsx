@@ -145,7 +145,7 @@ return (
         <div className="mb-8">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               <div className="bg-white rounded-lg shadow-lg p-6 border-2 border-gray-300">
-                <h4 className="text-2xl font-bold mb-4 text-gray-600">Раніше</h4>
+                <h4 className="text-2xl font-bold mb-4 text-gray-600">Before</h4>
                 <ul className="space-y-2">
                     <li><strong>Checkouts:</strong> 633</li>
                     <li><strong>Purchases:</strong> 259</li>
@@ -155,7 +155,7 @@ return (
                 </ul>
               </div>
               <div className="bg-white rounded-lg shadow-lg p-6 border-4 border-[#ff6315]">
-                <h4 className="text-2xl font-bold mb-4 text-[#ff6315]">Після</h4>
+                <h4 className="text-2xl font-bold mb-4 text-[#ff6315]">After</h4>
                 <ul className="space-y-2">
                     <li><strong>Checkouts:</strong> 785</li>
                     <li><strong>Purchases:</strong> 309</li>
@@ -287,7 +287,7 @@ return (
             <div className="mb-8">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               <div className="bg-white rounded-lg shadow-lg p-6 border-2 border-gray-300">
-                <h4 className="text-2xl font-bold mb-4 text-gray-600">Раніше</h4>
+                <h4 className="text-2xl font-bold mb-4 text-gray-600">Before</h4>
                 <ul className="space-y-2">
                     <li><strong>Checkouts:</strong> 207</li>
                     <li><strong>Purchases:</strong> 52</li>
@@ -296,7 +296,7 @@ return (
                 </ul>
               </div>
               <div className="bg-white rounded-lg shadow-lg p-6 border-4 border-[#ff6315]">
-                <h4 className="text-2xl font-bold mb-4 text-[#ff6315]">Після</h4>
+                <h4 className="text-2xl font-bold mb-4 text-[#ff6315]">After</h4>
                 <ul className="space-y-2">
                     <li><strong>Checkouts:</strong> 294</li>
                     <li><strong>Purchases:</strong> 82</li>
