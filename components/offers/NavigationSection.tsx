@@ -127,6 +127,11 @@ const AudienceSection = () => {
                             <circle cx="636" cy="446" r="10" fill="black"/>
                             <circle cx="682" cy="80" r="16" fill="black"/>
                             <circle cx="848" cy="440" r="16" fill="black"/>
+
+                            <circle cx="387" cy="519" r="10" fill="black"/>
+                            <circle cx="589" cy="529" r="10" fill="black"/>
+                            <circle cx="687" cy="710" r="16" fill="black"/>
+                            <circle cx="291" cy="710.5" r="16" fill="black"/>
                             <path d="M298.691 714.191C224.912 705.704 85.1808 644.038 131 430" stroke="#D12923" stroke-width="14" stroke-linecap="round"/>
                             <path d="M319 91C367.512 26.6315 523.614 -43.142 685 84.1208" stroke="#D12923" stroke-width="14" stroke-linecap="round"/>
                             <path d="M428 268C446.88 248.603 508.669 239.875 546 267.806" stroke="#D12923" stroke-width="8" stroke-linecap="round"/>
@@ -266,6 +271,7 @@ const AudienceSection = () => {
                                 </div>
                             </foreignObject>
 
+                                        
                             <g filter="url(#filter1_i_8011_1025)">
                                 <path d="M252.071 544.139L154.905 487.599C147.374 483.216 138.058 483.26 130.568 487.714L35.7338 544.104C28.4586 548.43 24 556.268 24 564.732V676.108C24 684.622 28.5111 692.499 35.8548 696.808L130.688 752.449C138.118 756.808 147.313 756.851 154.784 752.562L251.95 696.771C259.404 692.491 264 684.552 264 675.958V564.883C264 556.338 259.456 548.437 252.071 544.139Z" fill="#FFCD2B"/>
                             </g>
@@ -300,6 +306,7 @@ const AudienceSection = () => {
                             <circle cx="218" cy="489" r="10" fill="black"/>
                             <circle cx="201" cy="530" r="10" fill="black"/>
                             <circle cx="87" cy="530" r="10" fill="black"/>
+
                             <path d="M187 222.611C207.075 243.159 208.897 266.397 209.944 272.896" stroke="#D12923" stroke-width="8" stroke-linecap="round"/>
                             <path d="M96.5 221.5C49.3112 253.433 22.5305 464.13 90.7457 530.936" stroke="#D12923" stroke-width="8" stroke-linecap="round"/>
                             <path d="M217.501 486.5C218.5 506 208.867 526.754 199 532.5" stroke="#D12923" stroke-width="8" stroke-linecap="round"/>
