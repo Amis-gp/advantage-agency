@@ -1,7 +1,10 @@
 import { setRequestLocale } from 'next-intl/server';
 import Header from '@/components/Header';
-import AudienceSection from '@/components/offers/AudienceSection';
+import NavigationSection from '@/components/offers/NavigationSection';
 import HeroSection from '@/components/offers/HeroSections';
+import OffersSection from '@/components/offers/OffersSections';
+import FormSection from '@/components/home/FormSection';
+import Footer from '@/components/Footer';
 
 export default function OffersPage({ 
     params: { locale } 
@@ -15,7 +18,10 @@ export default function OffersPage({
             <Header />
             <main className="no-select">
                 <HeroSection />
-                <AudienceSection />
+                <NavigationSection />
+                <OffersSection />
+                <FormSection />
+                <Footer />
             </main>
         </div>
     );

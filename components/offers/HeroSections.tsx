@@ -3,18 +3,13 @@ import { useState } from 'react';
 import { useTranslations, useLocale } from 'next-intl';
 import { motion, useTransform, useScroll } from 'framer-motion';
 import Image from 'next/image';
-import Link from 'next/link';
-import { playSound } from '@/app/constant/sound';
 
 
 export default function HeroSection() {
     const t = useTranslations();
-    const locale = useLocale();
-    const [isPlaying, setIsPlaying] = useState(false);
-    const { scrollY } = useScroll();
 
     return (
-        <section className="px-6 relative" id="hero">
+        <section className="px-6 pb-10 relative" id="hero">
             <div className="absolute top-28 -left-40 xl:left-10 w-64 h-64">
                 <motion.div className="hidden xl:block absolute">
                     <Image src="/img/home/star.svg" alt="Star" width={64} height={64}/>
