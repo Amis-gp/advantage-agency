@@ -29,7 +29,7 @@ export default async function Home({ params }: Props) {
   return (
     <div className="bg-black text-white overflow-x-hidden fixed inset-0">
       <Header />
-      <main className="no-select h-full overflow-y-auto">
+      <main className="no-select h-full overflow-y-auto overflow-x-hidden">
         <HeroSection />
         <StatsSection />
         <IntroductionSection />

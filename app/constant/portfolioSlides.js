@@ -165,7 +165,7 @@ export const portfolioSlides = [
             pricePerPurchase: '$49.28',
             adSpend: '$19,269'
         },
-        location: '🇮🇱 Jerusalem',
+        location: '🇮🇱 Israel',
         slug: {
             en: 'cases/v12',
             ua: 'cases/v12ua'
