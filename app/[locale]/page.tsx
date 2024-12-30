@@ -27,9 +27,9 @@ export default async function Home({ params }: Props) {
   const t = await getTranslations();
 
   return (
-    <div className="bg-black text-white overflow-x-hidden fixed inset-0 overflow-auto">
+    <div className="bg-black text-white overflow-x-hidden fixed inset-0">
       <Header />
-      <main className="no-select">
+      <main className="no-select h-full overflow-y-auto">
         <HeroSection />
         <StatsSection />
         <IntroductionSection />

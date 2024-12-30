@@ -9,6 +9,7 @@ export const portfolioSlides = [
             revenue: '$8,600',
             adSpend: '$2,076'
         },
+        location: '🇩🇪 Germany',
         slug: {
             en: 'cases/v11',
             ua: 'cases/v11ua'
@@ -24,6 +25,7 @@ export const portfolioSlides = [
             pricePerPurchase: '$37.69',
             adSpend: '$3,108'
         },
+        location: '🇨🇦 Canada',
         slug: {
             en: 'cases/v10',
             ua: 'cases/v10ua'
@@ -40,6 +42,7 @@ export const portfolioSlides = [
             revenue: '£28,400',
             roi: '740%'
         },
+        location: '🇬🇧 United Kingdom',
         slug: {
             en: 'cases/v2',
             ua: 'cases/v2ua'
@@ -54,6 +57,7 @@ export const portfolioSlides = [
             pricePerLead: '$45.76',
             adSpend: '$4,348'
         },
+        location: '🇺🇸 United States',
         slug: {
             en: 'cases/v4',
             ua: 'cases/v4ua'
@@ -69,6 +73,7 @@ export const portfolioSlides = [
             leads: '19',
             adSpend: '$3,321'
         },
+        location: '🇺🇸 United States',
         slug: {
             en: 'cases/v5',
             ua: 'cases/v5ua'
@@ -83,6 +88,7 @@ export const portfolioSlides = [
             leadCalls: '116',
             closedDeals: '29'
         },
+        location: '🇺🇸 United States',
         slug: {
             en: 'cases/v6',
             ua: 'cases/v6ua'
@@ -97,6 +103,7 @@ export const portfolioSlides = [
             pricePerPurchase: '$7.06',
             adSpend: '$9,569'
         },
+        location: '🇺🇸 United States',
         slug: {
             en: 'cases/v7',
             ua: 'cases/v7ua'
@@ -112,6 +119,7 @@ export const portfolioSlides = [
             highTicketClients: '7',
             adSpend: '$4,313'
         },
+        location: '🇺🇸 United States',
         slug: {
             en: 'cases/v8',
             ua: 'cases/v8ua'
@@ -127,6 +135,7 @@ export const portfolioSlides = [
             pricePerLead: '$242.65',
             adSpend: '$6,309'
         },
+        location: '🇺🇸 United States',
         slug: {
             en: 'cases/v9',
             ua: 'cases/v9ua'
@@ -141,6 +150,7 @@ export const portfolioSlides = [
             pricePerLead: 'zł183',
             adSpend: 'zł13,908'
         },
+        location: '🇵🇱 Poland',
         slug: {
             en: 'cases/v3',
             ua: 'cases/v3ua'
@@ -155,6 +165,7 @@ export const portfolioSlides = [
             pricePerPurchase: '$49.28',
             adSpend: '$19,269'
         },
+        location: '🇮🇱 Jerusalem',
         slug: {
             en: 'cases/v12',
             ua: 'cases/v12ua'

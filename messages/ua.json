@@ -45,7 +45,8 @@
             "emailResponses": "Відповіді на емейли",
             "leadCalls": "Дзвінки з лідами",
             "closedDeals": "Закриті угоди",
-            "highTicketClients": "VIP клієнти"
+            "highTicketClients": "VIP клієнти",
+            "location": "Локація"
         }
     },
     "partners": {

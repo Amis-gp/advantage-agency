@@ -45,7 +45,8 @@
             "emailResponses": "Email Responses",
             "leadCalls": "Lead Calls",
             "closedDeals": "Closed Deals",
-            "highTicketClients": "High Ticket Clients"
+            "highTicketClients": "High Ticket Clients",
+            "location": "Location"
         }
     },
     "partners": {

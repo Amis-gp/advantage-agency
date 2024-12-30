@@ -1,5 +1,6 @@
 'use client';
 
+import { useState } from 'react';
 import { Link } from '@/navigation';
 import { playSound } from '@/app/constant/sound';
 
@@ -41,6 +42,85 @@ const AudienceSection = () => {
         }
     ];
 
+    const [selectedServices, setSelectedServices] = useState<Array<{ name: string; link: string }>>([]);
+    const [isModalOpen, setIsModalOpen] = useState(false);
+
+    const handleShowMore = (services: Array<{ name: string; link: string }>) => {
+        setSelectedServices(services);
+        setIsModalOpen(true);
+        playSound('hover_1');
+    };
+
+    const renderServices = (services: Array<{ name: string; link: string }>, sectionIndex: number, isMobile: boolean) => {
+        if (isMobile) {
+            if (sectionIndex === 0) {
+                return (
+                    <div className="space-y-1">
+                        <div className="grid grid-cols-2 gap-1">
+                            {services.slice(0, 2).map((service, index) => (
+                                <Link
+                                    key={index}
+                                    href={service.link}
+                                    onMouseEnter={() => playSound('hover_1')}
+                                    className="w-full block py-1.5 px-3 rounded-lg border border-black text-center m-auto transition-all duration-200 hover:bg-black/5 hover:scale-105 hover:border-black hover:shadow-lg"
+                                >
+                                    {service.name}
+                                </Link>
+                            ))}
+                        </div>
+                        {services.slice(2).map((service, index) => (
+                            <Link
+                                key={index + 2}
+                                href={service.link}
+                                onMouseEnter={() => playSound('hover_1')}
+                                className="block max-w-[300px] py-1.5 px-3 rounded-lg border border-black text-center m-auto transition-all duration-200 hover:bg-black/5 hover:scale-105 hover:border-black hover:shadow-lg"
+                            >
+                                {service.name}
+                            </Link>
+                        ))}
+                    </div>
+                );
+            }
+
+            if (services.length > 3) {
+                return (
+                    <>
+                        {services.slice(0, 2).map((service, index) => (
+                            <Link
+                                key={index}
+                                href={service.link}
+                                onMouseEnter={() => playSound('hover_1')}
+                                className="block max-w-[300px] py-1.5 px-3 rounded-lg border border-black text-center m-auto transition-all duration-200 hover:bg-black/5 hover:scale-105 hover:border-black hover:shadow-lg"
+                            >
+                                {service.name}
+                            </Link>
+                        ))}
+                        <button
+                            onClick={() => handleShowMore(services)}
+                            className="block w-full max-w-[300px] py-1.5 px-3 rounded-lg border border-black text-center m-auto transition-all duration-200 hover:bg-black/5 hover:scale-105 hover:border-black hover:shadow-lg flex items-center justify-center gap-2"
+                        >
+                            <span>More Services</span>
+                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" className="inline-block ml-1" >
+                                <path d="M8 3L14 8L8 13M2 8H14" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round" />
+                            </svg>
+                        </button>
+                    </>
+                );
+            }
+        }
+
+        return services.map((service, index) => (
+            <Link
+                key={index}
+                href={service.link}
+                onMouseEnter={() => playSound('hover_1')}
+                className="block max-w-[300px] py-1.5 px-3 rounded-lg border border-black text-center m-auto transition-all duration-200 hover:bg-black/5 hover:scale-105 hover:border-black hover:shadow-lg"
+            >
+                {service.name}
+            </Link>
+        ));
+    };
+
     return (
         <section className="relative py-14 overflow-hidden">
             <div className="max-w-7xl mx-auto px-4">
@@ -64,17 +144,9 @@ const AudienceSection = () => {
                             </g>
                             <foreignObject x="0" y="10" width="462" height="528">
                                 <div className="pt-16 text-black">
-                                    <h3 className="text-[70px] font-semibold text-center">B2B</h3>
-                                    <div className="space-y-2">
-                                        {hexagons[0].services.map((service, index) => (
-                                            <Link
-                                                key={index}
-                                                href={service.link}
-                                                onMouseEnter={() => playSound('hover_1')}
-                                                className="block max-w-[300px] py-1.5 px-3 rounded-lg border border-black text-center m-auto transition-all duration-200 hover:bg-black/5 hover:scale-105 hover:border-black hover:shadow-lg">
-                                                {service.name}
-                                            </Link>
-                                        ))}
+                                    <h3 className="text-[70px] font-semibold text-center">B2C</h3>
+                                    <div className="space-y-2 mt-4">
+                                        {renderServices(hexagons[0].services, 0, false)}
                                     </div>
                                 </div>
                             </foreignObject>
@@ -85,16 +157,8 @@ const AudienceSection = () => {
                             <foreignObject x="512" y="10" width="462" height="528">
                                 <div className="pt-16 text-black">
                                     <h3 className="text-[70px] font-semibold text-center">B2B</h3>
-                                    <div className="space-y-2">
-                                        {hexagons[1].services.map((service, index) => (
-                                            <Link
-                                                key={index}
-                                                href={service.link}
-                                                onMouseEnter={() => playSound('hover_1')}
-                                                className="block max-w-[300px] py-1.5 px-3 rounded-lg border border-black text-center m-auto transition-all duration-200 hover:bg-black/5 hover:scale-105 hover:border-black hover:shadow-lg">
-                                                {service.name}
-                                            </Link>
-                                        ))}
+                                    <div className="space-y-2 mt-4">
+                                        {renderServices(hexagons[1].services, 1, false)}
                                     </div>
                                 </div>
                             </foreignObject>
@@ -104,17 +168,9 @@ const AudienceSection = () => {
                             </g>
                             <foreignObject x="256" y="441" width="462" height="528">
                                 <div className="pt-16 text-black">
-                                    <h3 className="text-[70px] font-semibold text-center">B2B</h3>
-                                    <div className="space-y-2">
-                                        {hexagons[2].services.map((service, index) => (
-                                            <Link
-                                                key={index}
-                                                href={service.link}
-                                                onMouseEnter={() => playSound('hover_1')}
-                                                className="block max-w-[300px] py-1.5 px-3 rounded-lg border border-black text-center m-auto transition-all duration-200 hover:bg-black/5 hover:scale-105 hover:border-black hover:shadow-lg">
-                                                {service.name}
-                                            </Link>
-                                        ))}
+                                    <h3 className="text-[70px] font-semibold text-center">Custom</h3>
+                                    <div className="space-y-2 mt-4">
+                                        {renderServices(hexagons[2].services, 2, false)}
                                     </div>
                                 </div>
                             </foreignObject>
@@ -132,15 +188,15 @@ const AudienceSection = () => {
                             <circle cx="589" cy="529" r="10" fill="black"/>
                             <circle cx="687" cy="710" r="16" fill="black"/>
                             <circle cx="291" cy="710.5" r="16" fill="black"/>
-                            <path d="M298.691 714.191C224.912 705.704 85.1808 644.038 131 430" stroke="#D12923" stroke-width="14" stroke-linecap="round"/>
-                            <path d="M319 91C367.512 26.6315 523.614 -43.142 685 84.1208" stroke="#D12923" stroke-width="14" stroke-linecap="round"/>
-                            <path d="M428 268C446.88 248.603 508.669 239.875 546 267.806" stroke="#D12923" stroke-width="8" stroke-linecap="round"/>
-                            <path d="M337.102 441C330.462 463.934 351.625 510.06 390.424 520.382" stroke="#D12923" stroke-width="8" stroke-linecap="round"/>
-                            <path d="M635.825 446C644.789 468.638 627.674 516.976 589.165 530.566" stroke="#D12923" stroke-width="8" stroke-linecap="round"/>
-                            <path d="M682.625 711.501C802.121 704.551 899.563 593.77 848 440" stroke="#D12923" stroke-width="14" stroke-linecap="round"/>
+                            <path d="M298.691 714.191C224.912 705.704 85.1808 644.038 131 430" stroke="#D12923" strokeWidth="14" strokeLinecap="round"/>
+                            <path d="M319 91C367.512 26.6315 523.614 -43.142 685 84.1208" stroke="#D12923" strokeWidth="14" strokeLinecap="round"/>
+                            <path d="M428 268C446.88 248.603 508.669 239.875 546 267.806" stroke="#D12923" strokeWidth="8" strokeLinecap="round"/>
+                            <path d="M337.102 441C330.462 463.934 351.625 510.06 390.424 520.382" stroke="#D12923" strokeWidth="8" strokeLinecap="round"/>
+                            <path d="M635.825 446C644.789 468.638 627.674 516.976 589.165 530.566" stroke="#D12923" strokeWidth="8" strokeLinecap="round"/>
+                            <path d="M682.625 711.501C802.121 704.551 899.563 593.77 848 440" stroke="#D12923" strokeWidth="14" strokeLinecap="round"/>
                             <defs>
-                                <filter id="filter0_i_8008_1024" x="0" y="5.74463" width="462" height="528.652" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-                                    <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+                                <filter id="filter0_i_8008_1024" x="0" y="5.74463" width="462" height="528.652" filterUnits="userSpaceOnUse" colorInterpolationFilters="sRGB">
+                                    <feFlood floodOpacity="0" result="BackgroundImageFix"/>
                                     <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
                                     <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
                                     <feOffset dy="4"/>
@@ -149,8 +205,8 @@ const AudienceSection = () => {
                                     <feColorMatrix type="matrix" values="0 0 0 0 0.896696 0 0 0 0 0.36683 0 0 0 0 0 0 0 0 1 0"/>
                                     <feBlend mode="normal" in2="shape" result="effect1_innerShadow_8008_1024"/>
                                 </filter>
-                                <filter id="filter1_i_8008_1024" x="512" y="5.74463" width="462" height="528.652" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-                                    <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+                                <filter id="filter1_i_8008_1024" x="512" y="5.74463" width="462" height="528.652" filterUnits="userSpaceOnUse" colorInterpolationFilters="sRGB">
+                                    <feFlood floodOpacity="0" result="BackgroundImageFix"/>
                                     <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
                                     <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
                                     <feOffset dy="4"/>
@@ -159,8 +215,8 @@ const AudienceSection = () => {
                                     <feColorMatrix type="matrix" values="0 0 0 0 0.896696 0 0 0 0 0.36683 0 0 0 0 0 0 0 0 1 0"/>
                                     <feBlend mode="normal" in2="shape" result="effect1_innerShadow_8008_1024"/>
                                 </filter>
-                                <filter id="filter2_i_8008_1024" x="256" y="441.745" width="462" height="528.652" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-                                    <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+                                <filter id="filter2_i_8008_1024" x="256" y="441.745" width="462" height="528.652" filterUnits="userSpaceOnUse" colorInterpolationFilters="sRGB">
+                                    <feFlood floodOpacity="0" result="BackgroundImageFix"/>
                                     <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
                                     <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
                                     <feOffset dy="4"/>
@@ -188,57 +244,9 @@ const AudienceSection = () => {
                             </g>
                             <foreignObject x="24" y="3" width="240" height="275">
                                 <div className="pt-8 text-black">
-                                    <h3 className="text-[40px] font-semibold text-center">B2B</h3>
-                                    <div className="space-y-1 px-4">
-                                        <div className="grid grid-cols-2 gap-2">
-                                            <Link
-                                                key={0}
-                                                href={hexagons[0].services[0].link}
-                                                onMouseEnter={() => playSound('hover_1')}
-                                                className="block w-full py-1.5 px-3 
-                                                        rounded-lg border border-black/50 
-                                                        text-center text-sm 
-                                                        transition-all duration-200 
-                                                        hover:bg-black/5 
-                                                        hover:scale-105 
-                                                        hover:border-black 
-                                                        hover:shadow-lg"
-                                            >
-                                                {hexagons[0].services[0].name}
-                                            </Link>
-                                            <Link
-                                                key={1}
-                                                href={hexagons[0].services[1].link}
-                                                onMouseEnter={() => playSound('hover_1')}
-                                                className="block w-full py-1.5 px-3 
-                                                        rounded-lg border border-black/50 
-                                                        text-center text-sm 
-                                                        transition-all duration-200 
-                                                        hover:bg-black/5 
-                                                        hover:scale-105 
-                                                        hover:border-black 
-                                                        hover:shadow-lg"
-                                            >
-                                                {hexagons[0].services[1].name}
-                                            </Link>
-                                        </div>
-                                        {hexagons[0].services.slice(2).map((service, index) => (
-                                            <Link
-                                                key={index + 2}
-                                                href={service.link}
-                                                onMouseEnter={() => playSound('hover_1')}
-                                                className="block w-full py-1.5 px-3 
-                                                        rounded-lg border border-black/50 
-                                                        text-center text-sm 
-                                                        transition-all duration-200 
-                                                        hover:bg-black/5 
-                                                        hover:scale-105 
-                                                        hover:border-black 
-                                                        hover:shadow-lg"
-                                            >
-                                                {service.name}
-                                            </Link>
-                                        ))}
+                                    <h3 className="text-[40px] font-semibold text-center">B2C</h3>
+                                    <div className="text-sm px-4">
+                                        {renderServices(hexagons[0].services, 0, true)}
                                     </div>
                                 </div>
                             </foreignObject>
@@ -249,24 +257,8 @@ const AudienceSection = () => {
                             <foreignObject x="111" y="244" width="240" height="275">
                                 <div className="pt-8 text-black">
                                     <h3 className="text-[40px] font-semibold text-center">B2B</h3>
-                                    <div className="space-y-1 px-4">
-                                        {hexagons[1].services.map((service, index) => (
-                                            <Link
-                                                key={index}
-                                                href={service.link}
-                                                onMouseEnter={() => playSound('hover_1')}
-                                                className="block w-full py-1.5 px-3 
-                                                         rounded-lg border border-black/50 
-                                                         text-center text-sm 
-                                                         transition-all duration-200 
-                                                         hover:bg-black/5 
-                                                         hover:scale-105 
-                                                         hover:border-black 
-                                                         hover:shadow-lg"
-                                            >
-                                                {service.name}
-                                            </Link>
-                                        ))}
+                                    <div className="space-y-1 px-4 text-sm">
+                                        {renderServices(hexagons[1].services, 1, true)}
                                     </div>
                                 </div>
                             </foreignObject>
@@ -277,25 +269,9 @@ const AudienceSection = () => {
                             </g>
                             <foreignObject x="24" y="484" width="240" height="275">
                                 <div className="pt-8 text-black">
-                                    <h3 className="text-[40px] font-semibold text-center">B2B</h3>
-                                    <div className="space-y-1 px-4">
-                                        {hexagons[2].services.map((service, index) => (
-                                            <Link
-                                                key={index}
-                                                href={service.link}
-                                                onMouseEnter={() => playSound('hover_1')}
-                                                className="block w-full py-1.5 px-3 
-                                                         rounded-lg border border-black/50 
-                                                         text-center text-sm 
-                                                         transition-all duration-200 
-                                                         hover:bg-black/5 
-                                                         hover:scale-105 
-                                                         hover:border-black 
-                                                         hover:shadow-lg"
-                                            >
-                                                {service.name}
-                                            </Link>
-                                        ))}
+                                    <h3 className="text-[40px] font-semibold text-center mt-3">Custom</h3>
+                                    <div className="space-y-1 px-4 text-sm">
+                                        {renderServices(hexagons[2].services, 2, true)}
                                     </div>
                                 </div>
                             </foreignObject>
@@ -307,13 +283,13 @@ const AudienceSection = () => {
                             <circle cx="201" cy="530" r="10" fill="black"/>
                             <circle cx="87" cy="530" r="10" fill="black"/>
 
-                            <path d="M187 222.611C207.075 243.159 208.897 266.397 209.944 272.896" stroke="#D12923" stroke-width="8" stroke-linecap="round"/>
-                            <path d="M96.5 221.5C49.3112 253.433 22.5305 464.13 90.7457 530.936" stroke="#D12923" stroke-width="8" stroke-linecap="round"/>
-                            <path d="M217.501 486.5C218.5 506 208.867 526.754 199 532.5" stroke="#D12923" stroke-width="8" stroke-linecap="round"/>
+                            <path d="M187 222.611C207.075 243.159 208.897 266.397 209.944 272.896" stroke="#D12923" strokeWidth="8" strokeLinecap="round"/>
+                            <path d="M96.5 221.5C49.3112 253.433 22.5305 464.13 90.7457 530.936" stroke="#D12923" strokeWidth="8" strokeLinecap="round"/>
+                            <path d="M217.501 486.5C218.5 506 208.867 526.754 199 532.5" stroke="#D12923" strokeWidth="8" strokeLinecap="round"/>
                             
                             <defs>
-                                <filter id="filter0_i_8011_1025" x="24" y="3" width="240" height="275" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-                                    <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+                                <filter id="filter0_i_8011_1025" x="24" y="3" width="240" height="275" filterUnits="userSpaceOnUse" colorInterpolationFilters="sRGB">
+                                    <feFlood floodOpacity="0" result="BackgroundImageFix"/>
                                     <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
                                     <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
                                     <feOffset dy="4"/>
@@ -322,8 +298,8 @@ const AudienceSection = () => {
                                     <feColorMatrix type="matrix" values="0 0 0 0 0.896696 0 0 0 0 0.36683 0 0 0 0 0 0 0 0 1 0"/>
                                     <feBlend mode="normal" in2="shape" result="effect1_innerShadow_8011_1025"/>
                                 </filter>
-                                <filter id="filter2_i_8011_1025" x="111" y="244" width="240" height="275" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-                                    <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+                                <filter id="filter2_i_8011_1025" x="111" y="244" width="240" height="275" filterUnits="userSpaceOnUse" colorInterpolationFilters="sRGB">
+                                    <feFlood floodOpacity="0" result="BackgroundImageFix"/>
                                     <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
                                     <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
                                     <feOffset dy="4"/>
@@ -332,8 +308,8 @@ const AudienceSection = () => {
                                     <feColorMatrix type="matrix" values="0 0 0 0 0.896696 0 0 0 0 0.36683 0 0 0 0 0 0 0 0 1 0"/>
                                     <feBlend mode="normal" in2="shape" result="effect1_innerShadow_8011_1025"/>
                                 </filter>
-                                <filter id="filter1_i_8011_1025" x="24" y="484" width="240" height="275" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-                                    <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+                                <filter id="filter1_i_8011_1025" x="24" y="484" width="240" height="275" filterUnits="userSpaceOnUse" colorInterpolationFilters="sRGB">
+                                    <feFlood floodOpacity="0" result="BackgroundImageFix"/>
                                     <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
                                     <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
                                     <feOffset dy="4"/>
@@ -347,6 +323,47 @@ const AudienceSection = () => {
                     </div>
                 </div>
             </div>
+
+            {isModalOpen && (
+                <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50">
+                    <div 
+                        className="bg-[#ffcd2a] rounded-lg p-6 max-w-md w-full mx-4" 
+                        style={{
+                            boxShadow: 'inset 0 4px 44px rgba(229, 93, 0, 1)'
+                        }}
+                    >
+                        <div className="flex justify-between items-center mb-6">
+                            <h3 className="text-2xl font-bold text-black">All Services</h3>
+                            <button 
+                                onClick={() => setIsModalOpen(false)}
+                                className="text-black/70 hover:text-black transition-colors"
+                            >
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path 
+                                        d="M18 6L6 18M6 6L18 18" 
+                                        stroke="currentColor" 
+                                        strokeWidth="1.5" 
+                                        strokeLinecap="round" 
+                                        strokeLinejoin="round"
+                                    />
+                                </svg>
+                            </button>
+                        </div>
+                        <div className="space-y-2">
+                            {selectedServices.map((service, index) => (
+                                <Link
+                                    key={index}
+                                    href={service.link}
+                                    onMouseEnter={() => playSound('hover_1')}
+                                    className="block text-black w-full py-2 px-4 rounded-lg border border-black text-center transition-all duration-200 hover:bg-black/5 hover:shadow-lg hover:scale-[1.02]"
+                                >
+                                    {service.name}
+                                </Link>
+                            ))}
+                        </div>
+                    </div>
+                </div>
+            )}
         </section>
     );
 };

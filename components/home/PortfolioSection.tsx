@@ -161,11 +161,11 @@ export default function PortfolioSection() {
                                                 WebkitBackfaceVisibility: 'hidden',
                                                 transform: 'rotateY(180deg)'
                                             }}
-                                            className="bg-zinc-900 rounded-[30px] p-8"
+                                            className="bg-zinc-900 rounded-[30px] p-4 md:p-8"
                                         >
                                             <div className="h-full flex flex-col">
-                                                <h4 className="text-white text-2xl md:text-3xl font-bold mb-6">{slide.title}</h4>
-                                                <div className="space-y-4 text-white/80 text-lg md:text-xl">
+                                                <h4 className="text-white text-xl text-center md:text-left md:text-3xl font-bold mb-6">{slide.title}</h4>
+                                                <div className="space-y-4 text-white/80 md:text-xl">
                                                     {Object.entries(slide.stats).map(([key, value]) => (
                                                         <div key={key} className="flex justify-between items-center">
                                                             <span>{t(`portfolio.stats.${key}`)}:</span>
@@ -173,9 +173,13 @@ export default function PortfolioSection() {
                                                         </div>
                                                     ))}
                                                 </div>
+                                                <div className="flex justify-between items-center mt-auto p-3 bg-white/5 rounded-xl border border-white/10 backdrop-blur-sm">
+                                                    <span className="text-white/60 text-sm">{t('portfolio.stats.location')}:</span>
+                                                    <span className="font-medium text-white gap-1">{slide.location}</span>
+                                                </div>
                                                 <Link 
                                                     href={getSlugForLocale(slide)}
-                                                    className="mt-auto text-red hover:opacity-80 py-4"
+                                                    className="md:mt-4 text-red hover:opacity-80 py-4"
                                                     target="_blank"
                                                     rel="noopener noreferrer"
                                                 >
