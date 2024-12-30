@@ -14,7 +14,7 @@ export default function OffersPage({
     setRequestLocale(locale);
 
     return (
-        <div className="bg-black text-white overflow-x-hidden fixed inset-0">
+        <div className="bg-black text-white">
             <Header />
             <main className="no-select h-full overflow-y-auto overflow-x-hidden">
                 <HeroSection />

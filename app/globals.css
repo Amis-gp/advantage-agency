@@ -162,6 +162,7 @@
 
 body {
   font-family: var(--font-clash-grotesk), sans-serif;
+  overscroll-behavior: none;
 }
 
 .testimonials-swiper .swiper-slide {

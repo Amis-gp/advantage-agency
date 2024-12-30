@@ -34,20 +34,13 @@ export default function Header(): JSX.Element {
     }, []);
 
     useEffect(() => {
-        const mainElement = document.querySelector('main');
-        
         const handleScroll = () => {
-            if (mainElement) {
-                setIsScrolled(mainElement.scrollTop > 0);
-            }
+            const scrolled = window.scrollY > 0;
+            setIsScrolled(scrolled);
         };
 
-        mainElement?.addEventListener('scroll', handleScroll);
-        handleScroll();
-
-        return () => {
-            mainElement?.removeEventListener('scroll', handleScroll);
-        };
+        window.addEventListener('scroll', handleScroll);
+        return () => window.removeEventListener('scroll', handleScroll);
     }, []);
 
     return (
@@ -102,10 +95,10 @@ export default function Header(): JSX.Element {
                             </div>
                         )}
                     </div>*/}
-                    <div className="hidden sm:flex gap-4">
+                    <div className="flex gap-4 overflow-hidden h-[30px]">
                         {[
                             { href: "https://www.linkedin.com/company/advantage-agencyuk/posts/?feedView=all", icon: "/img/linkedin.svg", alt: "LinkedIn" },
-                            { href: "https://www.instagram.com/_advantage_agency_/", icon: "/img/instagram.svg", alt: "Instagram" },
+                            { href: "https://www.instagram.com/_advantage_agency_/", icon: "/img/instagram.svg", alt: "Instagram", className: "hidden sm:block" },
                             { href: "https://t.me/stepan_potichnyi", icon: "/img/telegram.svg", alt: "Telegram" }
                         ].map((social) => (
                             <Link 
@@ -113,7 +106,7 @@ export default function Header(): JSX.Element {
                                 href={social.href}
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="hover:scale-110 transition-transform"
+                                className={`flex-shrink-0 hover:scale-110 transition-transform ${social.className}`}
                                 onMouseEnter={() => playSound('hover_2')}
                             >
                                 <Image 
