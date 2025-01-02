@@ -37,11 +37,30 @@ export default function HeroSection() {
                     className="text-center mb-16"
                 >
                     <h1 className="text-4xl md:text-6xl font-bold mb-6 uppercase">
-                        {t('hero.title')}
+                        {t('offers.hero.title')}
                     </h1>
-                    <p className="text-xl md:text-2xl max-w-3xl mx-auto text-gray-300">
-                        {t('hero.description')}
+                    <p className="text-xl md:text-2xl max-w-3xl mx-auto text-gray-300 mb-4">
+                        {t('offers.hero.description')}
                     </p>
+                    <div className="flex items-center justify-center mt-8 gap-6">
+                        <div className="h-[2px] w-24 bg-gradient-to-r from-transparent via-yellow-400 to-yellow-500 opacity-80"></div>
+                        <p className="text-xl md:text-2xl font-light text-yellow-500 italic">
+                            {t('offers.hero.subtitle')}
+                        </p>
+                        <div className="h-[2px] w-24 bg-gradient-to-l from-transparent via-yellow-400 to-yellow-500 opacity-80"></div>
+                    </div>
+                    
+                    <motion.button
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.6, delay: 0.3 }}
+                        className="mt-12 px-8 py-4 bg-white hover:bg-white/90 text-black font-medium animate-bounce rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-yellow-500/20"
+                        onClick={() => {
+                            document.getElementById('navigation')?.scrollIntoView({ behavior: 'smooth' });
+                        }}
+                    >
+                        {t('offers.hero.button')}
+                    </motion.button>
                 </motion.div>
 
                 <motion.div 
@@ -59,14 +78,3 @@ export default function HeroSection() {
         </section>
     );
 }
-
-
-
-
-
-
-
-
-
-
-

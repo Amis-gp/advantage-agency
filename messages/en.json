@@ -267,6 +267,58 @@
     },
 
 
+
+
+    "offers": {
+        "hero": {
+            "title": "Our Offers",
+            "description": "We provide customized solutions across various digital platforms to develop your brand, increase potential customers, and grow sales",
+            "subtitle": "Everything we do is fully customizable",
+            "button": "Discover Your Ideal Marketing Channel"
+        },
+        "audience": {
+            "headline": "TARGET AUDIENCE",
+            "title": "Who Is Your Audience?",
+            "description": "Choose The Right Approach To Reach Your Ideal Customers",
+            "segments": {
+                "b2c": {
+                    "title": "B2C",
+                    "services": [
+                        "Targeted Advertising",
+                        "Search Advertising",
+                        "SEO Optimization",
+                        "Email Marketing",
+                        "Content Marketing"
+                    ]
+                },
+                "b2b": {
+                    "title": "B2B",
+                    "services": [
+                        "LinkedIn Advertising",
+                        "Cold Outreach",
+                        "Account Based Marketing",
+                        "Lead Generation",
+                        "Content Marketing"
+                    ]
+                },
+                "custom": {
+                    "title": "Custom",
+                    "services": [
+                        "Complex Marketing",
+                        "Consulting",
+                        "Analytics",
+                        "Strategy",
+                        "Audit"
+                    ]
+                }
+            }
+        }
+    },
+
+
+
+
+
     "casesFooter": {
         "title": "Get in Touch with Us",
         "callUs": "Call Us",
