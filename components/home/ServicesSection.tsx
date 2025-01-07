@@ -41,7 +41,7 @@ export default function ServicesSection() {
                         <h3 className={`text-2xl font-bold ${['blue', 'white', 'purple']}`}>
                             {plan.title}
                         </h3>
-                        <p className={`mt-2 text-sm ${['blue', 'white', 'purple'][index] === 'white' ? 'text-gray-600' : 'text-gray-400'}`}>
+                        <p className={`mt-2 text-sm text-gray-400`}>
                             {plan.subtitle}
                         </p>
                         <div className="mt-8">
@@ -63,9 +63,7 @@ export default function ServicesSection() {
                             {plan.features?.map((feature: string, i: number) => (
                                 <li key={i} className="flex items-center gap-3">
                                     <span className="text-green-500">✓</span>
-                                    <span className={`${
-                                        ['blue', 'white', 'purple'][index] === 'white' ? 'text-gray-600' : 'text-gray-400'
-                                    }`}>
+                                    <span className="text-gray-400">
                                         {feature}
                                     </span>
                                 </li>

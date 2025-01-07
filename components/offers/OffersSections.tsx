@@ -8,43 +8,26 @@ import { Navigation, Pagination } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
+import { getSlides } from '@/app/constant/offers';
+import { useTranslations } from 'next-intl';
 
-const OffersSection = () => {
-    const slides = [
-        {
-            logo: "/img/offers/meta-logo.svg",
-            background: "/img/offers/1.svg",
-            title: "ВІД $400",
-            subtitle: "Як працює таргетована реклама?",
-            content: [
-                "Користувачі переглядають стрічки Facebook та Instagram, у потрібний момент їм показується наша реклама.",
-                "Завдяки алгоритмам Meta та штучному інтелекту, реклама знаходить вашу аудиторію через аналіз інтересів та ключових слів, які користувач вимовляє біля смартфона, що підвищує шанс отримати ліди чи покупки."
-            ],
-            link: { text: "Дізнатись більше", href: "/services/meta-ads" }
-        },
-        {
-            logo: "/img/offers/meta-logo.svg",
-            background: "/img/offers/2.svg",
-            subtitle: "Чому варто працювати з нами?",
-            list: [
-                "1. Досвід у різних нішах",
-                "2. Чітка структура роботи",
-                "3. Брифування та аналіз бізнесу",
-                "4. Планування та оптимізація рекламних кампаній",
-                "5. Робота з Аудиторією",
-                "6. Більше, ніж трафік"
-            ]
-        },
-        {
-            logo: "/img/offers/meta-logo.svg",
-            background: "/img/offers/3.svg",
-            subtitle: "Соціальне доказ",
-            link1: { text: "ЧИТАТИ КЕЙС", href: "/case-studies" },
-            content: ["Хочете таких результатів? Отримайте безкоштовну стратегію"],
-            link: { text: "Отримати стратегію!", href: "/strategy" }
-        }
-    ];
-
+const OffersSection = async ({ locale }: { locale: string }) => {
+    const t = useTranslations();
+    const slides = await getSlides();
+    
+    const translatedSlides = slides.map(slide => ({
+        ...slide,
+        title: slide.title ? t(slide.title) : undefined,
+        subtitle: slide.subtitle ? t(slide.subtitle) : undefined,
+        content: slide.content ? slide.content.map(key => t(key)) : undefined,
+        link: slide.link ? { ...slide.link, text: t(slide.link.text) } : undefined,
+        link1: slide.link1 ? { ...slide.link1, text: t(slide.link1.text) } : undefined,
+        list: slide.list ? slide.list.map(item => ({
+            title: t(item.title),
+            description: t(item.description)
+        })) : undefined
+    }));
+    
     return (
         <section className="relative pt-14 overflow-hidden">
             <div className="max-w-7xl mx-auto px-4">
@@ -72,9 +55,9 @@ const OffersSection = () => {
                     
                     className="!pb-12"
                 >
-                    {slides.map((slide, index) => (
+                    {translatedSlides.map((slide: any, index: any) => (
                         <SwiperSlide key={index} className="h-auto ">
-                            <div className="bg-[#0B1221] rounded-2xl py-8 relative flex flex-col">
+                            <div className="bg-[#1877F2]/15 border border-[#1877F2]/30 rounded-2xl py-8 relative flex flex-col">
                                 <Image 
                                     src={slide.logo} 
                                     alt="Meta Ads" 
@@ -95,31 +78,32 @@ const OffersSection = () => {
                                             <h3 className="text-white text-3xl md:text-4xl font-bold mb-8 -mt-4">{slide.title}</h3>
                                         )}
                                         <h4 className="text-white text-xl mb-6">{slide.subtitle}</h4>
-                                        
+
+                                        {slide.list && (
+                                            <ul className="space-y-2 text-gray-300">
+                                                {slide.list.map((item: any, i: any) => (
+                                                    <li key={i} className={`${index === 2 ? 'mt-4' : ''}`}>
+                                                        <div className="font-medium text-gray-300">{item.title}</div>
+                                                        <div className="text-sm text-gray-400">{item.description}</div>
+                                                    </li>
+                                                ))}
+                                            </ul>
+                                        )}
+
                                         {slide.link1 && (
                                             <Link 
                                                 href={slide.link1.href}
                                                 onMouseEnter={() => playSound('hover_1')}
-                                                className="mt-12 mb-28 w-fit text-2xl font-semibold inline-block px-6 py-3 text-white border border-yellow rounded-lg hover:bg-white/10 transition-all duration-200"
+                                                className="mt-8 mb-8 w-fit text-2xl font-semibold inline-block px-6 py-3 text-white border border-yellow rounded-lg hover:bg-white/10 transition-all duration-200"
                                             >
                                                 {slide.link1.text}
                                             </Link>
                                         )}
 
-                                        <div className="flex-grow">
-                                            {slide.content && slide.content.map((text, i) => (
-                                                <p key={i} className="text-gray-300 mb-8">{text}</p>
-                                            ))}
-                                            
-                                            {slide.list && (
-                                                <ul className="space-y-4 text-gray-300">
-                                                    {slide.list.map((item, i) => (
-                                                        <li key={i}>{item}</li>
-                                                    ))}
-                                                </ul>
-                                            )}
-                                        </div>
-                                        
+                                        {slide.content && slide.content.map((text: any, i: any) => (
+                                            <p key={i} className="text-gray-300 mb-8">{text}</p>
+                                        ))}
+
                                         <div className="mt-auto">
                                             {slide.link && (
                                                 <Link 

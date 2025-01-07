@@ -284,32 +284,82 @@
                 "b2c": {
                     "title": "B2C",
                     "services": [
-                        "Targeted Advertising",
-                        "Search Advertising",
-                        "SEO Optimization",
-                        "Email Marketing",
-                        "Content Marketing"
+                        "PPS Ads",
+                        "Meta Ads",
+                        "Landing Page Creation"
                     ]
                 },
                 "b2b": {
                     "title": "B2B",
                     "services": [
-                        "LinkedIn Advertising",
-                        "Cold Outreach",
-                        "Account Based Marketing",
-                        "Lead Generation",
-                        "Content Marketing"
+                        "LinkedIn Outreach",
+                        "Email Marketing",
+                        "Manual Email Marketing",
+                        "Sales Audit",
+                        "Lead Databases"
                     ]
                 },
                 "custom": {
                     "title": "Custom",
                     "services": [
-                        "Complex Marketing",
-                        "Consulting",
-                        "Analytics",
-                        "Strategy",
-                        "Audit"
+                        "PPS Ads",
+                        "TikTok Ads",
+                        "Landing Page Creation",
+                        "Reviews"
                     ]
+                }
+            }
+        },
+        "offers": {
+            "meta": {
+                "slide1": {
+                    "title": "FROM $400",
+                    "subtitle": "How does targeted advertising work?",
+                    "content": [
+                        "Users browse Facebook and Instagram feeds, and our ads are shown to them at the right moment.",
+                        "Thanks to Meta algorithms and artificial intelligence, advertising finds your audience through analysis of interests and keywords that users speak near their smartphone, increasing the chance of getting leads or purchases."
+                    ],
+                    "link": "Learn More"
+                },
+                "slide2": {
+                    "subtitle": "Why work with us?",
+                    "list": [
+                        {
+                            "title": "1. Experience in Various Niches",
+                            "description": "We've worked with a wide range of businesses and generated tens of thousands of leads and sales for our clients."
+                        },
+                        {
+                            "title": "2. Clear Work Structure",
+                            "description": "Our work is based on a professional approach"
+                        },
+                        {
+                            "title": "3. Business Briefing and Analysis",
+                            "description": "Strategy formation and target audience portrait"
+                        },
+                        {
+                            "title": "4. Campaign Planning and Optimization",
+                            "description": "We create effective creatives that engage the audience"
+                        },
+                        {
+                            "title": "5. Audience Management",
+                            "description": "Our team skillfully works with custom and Lookalike audiences, narrowing targeting for the best result."
+                        }
+                    ]
+                },
+                "slide3": {
+                    "list": [
+                        {
+                            "title": "6. More Than Traffic",
+                            "description": "We don't just launch ads — we create detailed sales funnels and carefully build the customer's path to the target action."
+                        },
+                        {
+                            "title": "7. Efficiency in Every Step",
+                            "description": "We constantly monitor and optimize advertising campaigns to achieve maximum effectiveness."
+                        }
+                    ],
+                    "caseLink": "READ CASE STUDY",
+                    "content": "Want such results? Get a free strategy",
+                    "strategyLink": "Get Strategy!"
                 }
             }
         }

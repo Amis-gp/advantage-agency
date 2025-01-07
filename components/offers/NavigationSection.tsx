@@ -3,17 +3,20 @@
 import { useState } from 'react';
 import { Link } from '@/navigation';
 import { playSound } from '@/app/constant/sound';
+import { useTranslations } from 'next-intl';
 
 const AudienceSection = () => {
+    const t = useTranslations();
+
     const hexagons = [
         {
             id: 1,
             x: "0",
             y: "10",
             services: [
-                { name: 'PPS Ads', link: '/services/pps-ads' },
-                { name: 'Meta Ads', link: '/services/meta-ads' },
-                { name: 'Landing Page Creation', link: '/services/landing-page' }
+                { name: t("offers.audience.segments.b2c.services.0"), link: '/services/pps-ads' },
+                { name: t("offers.audience.segments.b2c.services.1"), link: '/services/meta-ads' },
+                { name: t("offers.audience.segments.b2c.services.2"), link: '/services/landing-page' }
             ]
         },
         {
@@ -21,11 +24,11 @@ const AudienceSection = () => {
             x: "512",
             y: "10",
             services: [
-                { name: 'LinkedIn Outreach', link: '/services/linkedin' },
-                { name: 'Email Marketing', link: '/services/email' },
-                { name: 'Manual Email Marketing', link: '/services/manual-email' },
-                { name: 'Sales Audit', link: '/services/sales-audit' },
-                { name: 'Lead Databases', link: '/services/leads' }
+                { name: t("offers.audience.segments.b2b.services.0"), link: '/services/linkedin' },
+                { name: t("offers.audience.segments.b2b.services.1"), link: '/services/email' },
+                { name: t("offers.audience.segments.b2b.services.2"), link: '/services/manual-email' },
+                { name: t("offers.audience.segments.b2b.services.3"), link: '/services/sales-audit' },
+                { name: t("offers.audience.segments.b2b.services.4"), link: '/services/leads' }
             ]
         },
         {
@@ -33,10 +36,10 @@ const AudienceSection = () => {
             x: "256",
             y: "441",
             services: [
-                { name: 'PPS Ads', link: '/services/pps-ads' },
-                { name: 'TikTok Ads', link: '/services/tiktok-ads' },
-                { name: 'Landing Page Creation', link: '/services/landing-page' },
-                { name: 'Reviews', link: '/services/reviews' }
+                { name: t("offers.audience.segments.custom.services.0"), link: '/services/pps-ads' },
+                { name: t("offers.audience.segments.custom.services.1"), link: '/services/tiktok-ads' },
+                { name: t("offers.audience.segments.custom.services.2"), link: '/services/landing-page' },
+                { name: t("offers.audience.segments.custom.services.3"), link: '/services/reviews' }
             ]
         }
     ];
@@ -344,6 +347,16 @@ const AudienceSection = () => {
                                 <feComposite in2="hardAlpha" operator="arithmetic" k2="-1" k3="1"/>
                                 <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.7 0"/>
                                 <feBlend mode="normal" in2="shape" result="effect1_innerShadow_8001_307"/>
+                                </filter>
+                                <filter id="filter8_i_8001_307" x="295" y="570.745" width="462" height="528.652" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                                    <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+                                    <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+                                    <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+                                    <feOffset dy="4"/>
+                                    <feGaussianBlur stdDeviation="22"/>
+                                    <feComposite in2="hardAlpha" operator="arithmetic" k2="-1" k3="1"/>
+                                    <feColorMatrix type="matrix" values="0 0 0 0 0.896696 0 0 0 0 0.36683 0 0 0 0 0 0 0 0 1 0"/>
+                                    <feBlend mode="normal" in2="shape" result="effect1_innerShadow_8001_307"/>
                                 </filter>
                                 </defs>
                             </svg>
