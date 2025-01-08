@@ -8,14 +8,109 @@ import { Navigation, Pagination } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
-import { getSlides } from '@/app/constant/offers';
+import { META_SLIDES, GOOGLE_SLIDES, LANDING_SLIDES } from '@/app/constant/offers';
 import { useTranslations } from 'next-intl';
+
+const SliderSection = ({ slides, bgColor, borderColor }: { 
+    slides: any[], 
+    bgColor: string, 
+    borderColor: string 
+}) => {
+    return (
+        <Swiper
+            modules={[Navigation, Pagination]}
+            spaceBetween={30}
+            slidesPerView={1}
+            navigation
+            pagination={{
+                el: '.swiper-pagination',
+                clickable: true,
+                dynamicBullets: false,
+            }}
+            className="!pb-12"
+            breakpoints={{
+                640: {
+                    slidesPerView: 2,
+                },
+                1200: {
+                    slidesPerView: 3,
+                },
+            }}
+        >
+            {slides.map((slide: any, index: any) => (
+                <SwiperSlide key={index} className="h-auto">
+                    <div className={`${bgColor} ${borderColor} rounded-2xl py-8 relative flex flex-col`}>
+                        <Image 
+                            src={slide.logo} 
+                            alt="Service Logo" 
+                            height={28}
+                            width={300}
+                            className="mb-4 px-6 w-fit h-7" 
+                        />
+                        <div className="relative flex-grow">
+                            <Image 
+                                src={slide.background} 
+                                alt="Background" 
+                                width={780} 
+                                height={157} 
+                                className="absolute top-0 left-0 w-[400px]" 
+                            />
+                            <div className="relative z-10 px-6 pt-8 flex flex-col min-h-[500px] md:h-[450px]">
+                                {slide.title && (
+                                    <h3 className="text-white text-3xl md:text-4xl font-bold mb-8 -mt-4">{slide.title}</h3>
+                                )}
+                                <h4 className="text-white text-xl mb-6">{slide.subtitle}</h4>
+
+                                {slide.list && (
+                                    <ul className="space-y-2 text-gray-300">
+                                        {slide.list.map((item: any, i: any) => (
+                                            <li key={i} className={`${index === 2 ? 'mt-4' : ''}`}>
+                                                <div className="font-medium text-gray-300">{item.title}</div>
+                                                <div className="text-sm text-gray-400">{item.description}</div>
+                                            </li>
+                                        ))}
+                                    </ul>
+                                )}
+
+                                {slide.link1 && (
+                                    <Link 
+                                        href={slide.link1.href}
+                                        onMouseEnter={() => playSound('hover_1')}
+                                        className="mt-8 mb-8 w-fit text-2xl font-semibold inline-block px-6 py-3 text-white border border-yellow rounded-lg hover:bg-white/10 transition-all duration-200"
+                                    >
+                                        {slide.link1.text}
+                                    </Link>
+                                )}
+
+                                {slide.content && slide.content.map((text: any, i: any) => (
+                                    <p key={i} className="text-gray-300 mb-8">{text}</p>
+                                ))}
+
+                                <div className="mt-auto">
+                                    {slide.link && (
+                                        <Link 
+                                            href={slide.link.href}
+                                            onMouseEnter={() => playSound('hover_1')}
+                                            className="inline-block px-6 py-3 text-white border border-white/20 rounded-lg hover:bg-white/10 transition-all duration-200"
+                                        >
+                                            {slide.link.text}
+                                        </Link>
+                                    )}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </SwiperSlide>
+            ))}
+            <div className="swiper-pagination !-bottom-4"></div>
+        </Swiper>
+    );
+};
 
 const OffersSection = async ({ locale }: { locale: string }) => {
     const t = useTranslations();
-    const slides = await getSlides();
     
-    const translatedSlides = slides.map(slide => ({
+    const translateSlides = (slides: any[]) => slides.map(slide => ({
         ...slide,
         title: slide.title ? t(slide.title) : undefined,
         subtitle: slide.subtitle ? t(slide.subtitle) : undefined,
@@ -27,101 +122,25 @@ const OffersSection = async ({ locale }: { locale: string }) => {
             description: t(item.description)
         })) : undefined
     }));
-    
+
     return (
         <section className="relative pt-14 overflow-hidden">
-            <div className="max-w-7xl mx-auto px-4">
-                <Swiper
-                    modules={[Navigation, Pagination]}
-                    spaceBetween={30}
-                    slidesPerView={1}
-                    navigation
-                    pagination={{
-                        el: '.swiper-pagination',
-                        clickable: true,
-                        dynamicBullets: false,
-                        renderBullet: function (index: number, className: string) {
-                            return `<span class="${className}"></span>`;
-                        },
-                    }}
-                    breakpoints={{
-                        640: {
-                            slidesPerView: 2,
-                        },
-                        1200: {
-                            slidesPerView: 3,
-                        },
-                    }}
-                    
-                    className="!pb-12"
-                >
-                    {translatedSlides.map((slide: any, index: any) => (
-                        <SwiperSlide key={index} className="h-auto ">
-                            <div className="bg-[#1877F2]/15 border border-[#1877F2]/30 rounded-2xl py-8 relative flex flex-col">
-                                <Image 
-                                    src={slide.logo} 
-                                    alt="Meta Ads" 
-                                    width={300} 
-                                    height={30} 
-                                    className="mb-4 px-6 md:w-64" 
-                                />
-                                <div className="relative flex-grow">
-                                    <Image 
-                                        src={slide.background} 
-                                        alt="Background" 
-                                        width={780} 
-                                        height={157} 
-                                        className="absolute top-0 left-0 w-[400px]" 
-                                    />
-                                    <div className="relative z-10 px-6 pt-8 flex flex-col min-h-[500px] md:h-[450px]">
-                                        {slide.title && (
-                                            <h3 className="text-white text-3xl md:text-4xl font-bold mb-8 -mt-4">{slide.title}</h3>
-                                        )}
-                                        <h4 className="text-white text-xl mb-6">{slide.subtitle}</h4>
-
-                                        {slide.list && (
-                                            <ul className="space-y-2 text-gray-300">
-                                                {slide.list.map((item: any, i: any) => (
-                                                    <li key={i} className={`${index === 2 ? 'mt-4' : ''}`}>
-                                                        <div className="font-medium text-gray-300">{item.title}</div>
-                                                        <div className="text-sm text-gray-400">{item.description}</div>
-                                                    </li>
-                                                ))}
-                                            </ul>
-                                        )}
-
-                                        {slide.link1 && (
-                                            <Link 
-                                                href={slide.link1.href}
-                                                onMouseEnter={() => playSound('hover_1')}
-                                                className="mt-8 mb-8 w-fit text-2xl font-semibold inline-block px-6 py-3 text-white border border-yellow rounded-lg hover:bg-white/10 transition-all duration-200"
-                                            >
-                                                {slide.link1.text}
-                                            </Link>
-                                        )}
-
-                                        {slide.content && slide.content.map((text: any, i: any) => (
-                                            <p key={i} className="text-gray-300 mb-8">{text}</p>
-                                        ))}
-
-                                        <div className="mt-auto">
-                                            {slide.link && (
-                                                <Link 
-                                                    href={slide.link.href}
-                                                    onMouseEnter={() => playSound('hover_1')}
-                                                    className="inline-block px-6 py-3 text-white border border-white/20 rounded-lg hover:bg-white/10 transition-all duration-200"
-                                                >
-                                                    {slide.link.text}
-                                                </Link>
-                                            )}
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </SwiperSlide>
-                    ))}
-                </Swiper>
-                <div className="swiper-pagination !bottom-8"></div>
+            <div className="max-w-7xl mx-auto px-4 space-y-8">
+                <SliderSection 
+                    slides={translateSlides(META_SLIDES)} 
+                    bgColor="bg-[#1877F2]/15" 
+                    borderColor="border border-[#1877F2]/30" 
+                />
+                <SliderSection 
+                    slides={translateSlides(GOOGLE_SLIDES)} 
+                    bgColor="bg-gradient-to-br from-[#4285F4]/10 via-[#DB4437]/20 to-[#F4B400]/10" 
+                    borderColor="border border-[#4285F4]/30" 
+                />
+                <SliderSection 
+                    slides={translateSlides(LANDING_SLIDES)} 
+                    bgColor="bg-gradient-to-br from-[#00B4D8]/20 to-[#0077B6]/20" 
+                    borderColor="border border-[#00B4D8]/30" 
+                />
             </div>
         </section>
     );

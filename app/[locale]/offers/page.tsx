@@ -19,7 +19,7 @@ export default function OffersPage({
             <main className="no-select h-full overflow-y-auto overflow-x-hidden">
                 <HeroSection />
                 <NavigationSection />
-                <OffersSection />
+                <OffersSection locale={locale} />
                 <FormSection />
                 <Footer />
             </main>

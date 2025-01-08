@@ -95,7 +95,7 @@ export default function Header(): JSX.Element {
                             </div>
                         )}
                     </div>*/}
-                    <div className="flex gap-4 overflow-hidden h-[30px]">
+                    <div className="flex gap-4 items-center">
                         {[
                             { href: "https://www.linkedin.com/company/advantage-agencyuk/posts/?feedView=all", icon: "/img/linkedin.svg", alt: "LinkedIn" },
                             { href: "https://www.instagram.com/_advantage_agency_/", icon: "/img/instagram.svg", alt: "Instagram", className: "hidden sm:block" },

@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 274.66 68.88">
+    <defs>
+        <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" style="stop-color:#00B4D8"/>
+            <stop offset="100%" style="stop-color:#0077B6"/>
+        </linearGradient>
+    </defs>
+    <g fill="url(#gradient)">
+        <!-- L -->
+        <path d="M20 15h4v20h16v4H20z"/>
+        <!-- A -->
+        <path d="M48 15l8 24h-4l-2-6H40l-2 6h-4l8-24h6zm-6.5 14h7l-3.5-10z"/>
+        <!-- N -->
+        <path d="M62 15h4l10 16V15h4v24h-4L66 23v16h-4z"/>
+        <!-- D -->
+        <path d="M88 15h8c6 0 10 4 10 12s-4 12-10 12h-8zm4 20h4c4 0 6-3 6-8s-2-8-6-8h-4z"/>
+        <!-- I -->
+        <path d="M114 15h4v24h-4z"/>
+        <!-- N -->
+        <path d="M126 15h4l10 16V15h4v24h-4l-10-16v16h-4z"/>
+        <!-- G -->
+        <path d="M150 27c0-7 5-13 12-13s9 3 11 7l-4 2c-1-3-4-5-7-5-5 0-8 4-8 9s3 9 8 9c3 0 5-2 6-4h-6v-4h11v2c-1 6-6 10-11 10-7 0-12-6-12-13z"/>
+    </g>
+    <!-- Decorative line -->
+    <path d="M170 27h80" stroke="url(#gradient)" stroke-width="2" fill="none"/>
+    <!-- Page icon -->
+    <path d="M260 15v30c0 1.66-1.34 3-3 3h-20c-1.66 0-3-1.34-3-3V15c0-1.66 1.34-3 3-3h14l9 9v-6z" fill="url(#gradient)"/>
+    <path d="M251 12v9h9l-9-9z" fill="url(#gradient)" opacity="0.5"/>
+</svg>

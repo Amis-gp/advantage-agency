@@ -361,6 +361,108 @@
                     "content": "Want such results? Get a free strategy",
                     "strategyLink": "Get Strategy!"
                 }
+            },
+            "google": {
+                "slide1": {
+                    "title": "FROM $400",
+                    "subtitle": "How does search advertising work?",
+                    "content": [
+                        "Users search for products and services on Google, and your ad appears in top search positions at the exact moment when the client is ready to buy.",
+                        "Thanks to precise keywords and user intent, your ads are shown to people who are already looking for your services, ensuring the highest conversion rate among all advertising channels."
+                    ],
+                    "link": "Learn more"
+                },
+                "slide2": {
+                    "subtitle": "Why work with us?",
+                    "list": [
+                        {
+                            "title": "1. Certified Specialists",
+                            "description": "Our team has all necessary certifications and years of experience with Google Ads."
+                        },
+                        {
+                            "title": "2. Full Range of Tools",
+                            "description": "We utilize all Google ecosystem capabilities: search, display ads, YouTube, and remarketing."
+                        },
+                        {
+                            "title": "3. Competitive Analysis",
+                            "description": "We thoroughly study your competitors in search and implement the most effective strategies."
+                        },
+                        {
+                            "title": "4. Precise Targeting",
+                            "description": "We work with negative keywords, geo-targeting, and ad scheduling for maximum budget efficiency."
+                        },
+                        {
+                            "title": "5. Detailed Analytics",
+                            "description": "We set up detailed analytics to track all calls, leads, and sales."
+                        }
+                    ]
+                },
+                "slide3": {
+                    "list": [
+                        {
+                            "title": "6. Transparent Reporting",
+                            "description": "We provide access to statistics and weekly reports with specific performance metrics."
+                        },
+                        {
+                            "title": "Proven Results",
+                            "description": "Want to get hot leads from search? Get a free audit"
+                        }
+                    ],
+                    "caseLink": "VIEW CASES",
+                    "content": "Want to get hot leads from search? Get a free audit",
+                    "strategyLink": "Get Audit!"
+                }
+            },
+            "landing": {
+                "slide1": {
+                    "title": "FROM $400",
+                    "subtitle": "How does landing page creation work?",
+                    "content": [
+                        "A landing page is a standalone web page designed for a specific target action, such as ordering, subscription, or feedback.",
+                        "We create landing pages using the latest technologies and tools to maximize conversion and sales."
+                    ],
+                    "link": "Learn more"
+                },
+                "slide2": {
+                    "subtitle": "Why work with us?",
+                    "list": [
+                        {
+                            "title": "1. Modern Design",
+                            "description": "We create unique and attractive designs that match your brand and target audience."
+                        },
+                        {
+                            "title": "2. Responsiveness",
+                            "description": "Your landing page will look perfect on all devices: computers, tablets, and smartphones."
+                        },
+                        {
+                            "title": "3. Loading Speed",
+                            "description": "We optimize website performance for better conversion and SEO metrics."
+                        },
+                        {
+                            "title": "4. Conversion Elements",
+                            "description": "We use proven UI/UX patterns to maximize visitor-to-client conversion."
+                        },
+                        {
+                            "title": "5. Integrations",
+                            "description": "We connect all necessary services: CRM, analytics, messengers, and payment systems."
+                        }
+                    ]
+                },
+                "slide3": {
+                    "list": [
+                        {
+                            "title": "6. Technical Support",
+                            "description": "We provide ongoing support and updates for your landing page after launch."
+                        },
+                        {
+                            "title": "Proven Results",
+                            "description": "Want a landing page that converts? Get a free consultation"
+                        }
+                    ],
+                    "caseLink": "VIEW CASES",
+                    "content": "Want a landing page that sells? Get a free consultation",
+                    "strategyLink": "Get Consultation!"
+                }
             }
         }
     },
