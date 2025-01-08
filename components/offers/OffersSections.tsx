@@ -11,8 +11,28 @@ import 'swiper/css/pagination';
 import { META_SLIDES, GOOGLE_SLIDES, LANDING_SLIDES } from '@/app/constant/offers';
 import { useTranslations } from 'next-intl';
 
+interface Slide {
+    logo: string;
+    background: string;
+    title?: string;
+    subtitle?: string;
+    content?: string[];
+    link?: {
+        href: string;
+        text: string;
+    };
+    link1?: {
+        href: string;
+        text: string;
+    };
+    list?: Array<{
+        title: string;
+        description: string;
+    }>;
+}
+
 const SliderSection = ({ slides, bgColor, borderColor }: { 
-    slides: any[], 
+    slides: Slide[], 
     bgColor: string, 
     borderColor: string 
 }) => {
@@ -110,11 +130,11 @@ const SliderSection = ({ slides, bgColor, borderColor }: {
 const OffersSection = async ({ locale }: { locale: string }) => {
     const t = useTranslations();
     
-    const translateSlides = (slides: any[]) => slides.map(slide => ({
+    const translateSlides = (slides: Slide[]) => slides.map(slide => ({
         ...slide,
         title: slide.title ? t(slide.title) : undefined,
         subtitle: slide.subtitle ? t(slide.subtitle) : undefined,
-        content: slide.content ? slide.content.map(key => t(key)) : undefined,
+        content: slide.content ? slide.content.map((key: string) => t(key)) : undefined,
         link: slide.link ? { ...slide.link, text: t(slide.link.text) } : undefined,
         link1: slide.link1 ? { ...slide.link1, text: t(slide.link1.text) } : undefined,
         list: slide.list ? slide.list.map(item => ({
