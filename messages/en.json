@@ -368,7 +368,7 @@
                     "subtitle": "How does search advertising work?",
                     "content": [
                         "Users search for products and services on Google, and your ad appears in top search positions at the exact moment when the client is ready to buy.",
-                        "Thanks to precise keywords and user intent, your ads are shown to people who are already looking for your services, ensuring the highest conversion rate among all advertising channels."
+                        "Thanks to precise keywords and user intent targeting, your ads reach people actively searching for your services, which ensures high conversion rates."
                     ],
                     "link": "Learn more"
                 },
@@ -408,7 +408,7 @@
                             "description": "Want to get hot leads from search? Get a free audit"
                         }
                     ],
-                    "caseLink": "VIEW CASES",
+                    "caseLink": "READ CASE STUDY",
                     "content": "Want to get hot leads from search? Get a free audit",
                     "strategyLink": "Get Audit!"
                 }
@@ -459,7 +459,7 @@
                             "description": "Want a landing page that converts? Get a free consultation"
                         }
                     ],
-                    "caseLink": "VIEW CASES",
+                    "caseLink": "READ CASE STUDY",
                     "content": "Want a landing page that sells? Get a free consultation",
                     "strategyLink": "Get Consultation!"
                 }

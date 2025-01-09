@@ -56,7 +56,7 @@ export default function HeroSection() {
                         transition={{ duration: 0.6, delay: 0.3 }}
                         className="mt-12 px-8 py-4 bg-white hover:bg-white/90 text-black font-medium animate-bounce rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-yellow-500/20"
                         onClick={() => {
-                            document.getElementById('navigation')?.scrollIntoView({ behavior: 'smooth' });
+                            document.getElementById('form')?.scrollIntoView({ behavior: 'smooth' });
                         }}
                     >
                         {t('offers.hero.button')}
