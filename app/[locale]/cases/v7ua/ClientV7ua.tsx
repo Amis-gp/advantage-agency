@@ -183,7 +183,7 @@ const V7uaPage: NextPage = () => {
                 <ul className="space-y-2">
                   <li><strong>Переглядів:</strong> 102 197</li>
                   <li><strong>Переходів:</strong> 1 169</li>
-                  <li><strong>Кількість закупівель:</strong> 365</li>
+                  <li><strong>Кількість покупок:</strong> 365</li>
                   <li><strong>Ціна покупки:</strong>  $11.50</li>
                   <li><strong>Витрати на рекламу:</strong> $4 196</li>
                 </ul>
@@ -193,7 +193,7 @@ const V7uaPage: NextPage = () => {
                 <ul className="space-y-2">
                   <li><strong>Переглядів:</strong> 140 414</li>
                   <li><strong>Переходів:</strong> 3 454</li>
-                  <li><strong>Кількість закупівель:</strong> 851</li>
+                  <li><strong>Кількість покупок:</strong> 851</li>
                   <li><strong>Ціна покупки:</strong>  $7.30</li>
                   <li><strong>Витрати на рекламу:</strong> $6 213</li>
                 </ul>
@@ -206,11 +206,11 @@ const V7uaPage: NextPage = () => {
                 <div className="grid grid-cols-1 gap-8 border-2 border-emerald-600 rounded-lg p-6">
                   <div>
                     <h4 className="text-xl font-bold mb-4 text-center bg-emerald-600 text-white py-2 rounded-t-lg">До початку нашої співпраці</h4>
-                    <img src="/img/v7/fb-before-case-7.jpg" alt="Before Results Screenshot" onClick={openModalBeforeMeta} className="mx-auto border border-gray-300 rounded-lg shadow-md hover:opacity-75 transition duration-300 ease-in-out cursor-pointer" />
+                    <img src="/img/v7/fb-before-case-7.webp" alt="Before Results Screenshot" onClick={openModalBeforeMeta} className="mx-auto border border-gray-300 rounded-lg shadow-md hover:opacity-75 transition duration-300 ease-in-out cursor-pointer" />
                   </div>
                   <div>
                     <h4 className="text-xl font-bold mb-4 text-center bg-emerald-600 text-white py-2 rounded-t-lg">Після нашої співпраці</h4>
-                    <img src="/img/v7/fb-after-case-7.jpg" alt="After Results Screenshot" onClick={openModalAfterMeta} className="mx-auto border border-gray-300 rounded-lg shadow-md hover:opacity-75 transition duration-300 ease-in-out cursor-pointer" />
+                    <img src="/img/v7/fb-after-case-7.webp" alt="After Results Screenshot" onClick={openModalAfterMeta} className="mx-auto border border-gray-300 rounded-lg shadow-md hover:opacity-75 transition duration-300 ease-in-out cursor-pointer" />
                   </div>
                 </div>
 
@@ -244,7 +244,7 @@ const V7uaPage: NextPage = () => {
                             Before we started our cooperation
                             </Dialog.Title>
                             <div className="mt-2">
-                              <img src="/img//v7/fb-before-case-7.jpg" alt="Before Results Screenshot" style={{ width: 'auto', height: 'auto' }} />
+                              <img src="/img//v7/fb-before-case-7.webp" alt="Before Results Screenshot" style={{ width: 'auto', height: 'auto' }} />
                             </div>
 
                             <div className="mt-4">
@@ -293,7 +293,7 @@ const V7uaPage: NextPage = () => {
                             After our cooperation
                             </Dialog.Title>
                             <div className="mt-2">
-                              <img src="/img/v7/fb-after-case-7.jpg" alt="After Results Screenshot" style={{ width: 'auto', height: 'auto' }} />
+                              <img src="/img/v7/fb-after-case-7.webp" alt="After Results Screenshot" style={{ width: 'auto', height: 'auto' }} />
                             </div>
 
                             <div className="mt-4">
@@ -332,7 +332,7 @@ const V7uaPage: NextPage = () => {
               <ul className="space-y-2">
                 <li><strong>Перегляди:</strong> 87 202</li>
                 <li><strong>Кліки:</strong> 2 473 </li>
-                <li><strong>кількість закупівель:</strong> 503</li>
+                <li><strong>кількість покупок:</strong> 503</li>
                 <li><strong>ціна покупки:</strong>  $6.67</li>
                 <li><strong>Витрати на рекламу:</strong> $3 356</li>
               </ul>
@@ -408,7 +408,7 @@ const V7uaPage: NextPage = () => {
           <div className="flex justify-center">
             <div className="bg-white rounded-lg shadow-lg p-6 border-4 border-emerald-600">
               <ul className="space-y-2">
-                <li><strong>Загальна сума закупівель:</strong> 1 354</li>
+                <li><strong>Загальна сума покупок:</strong> 1 354</li>
                 <li><strong>Вартість однієї покупки:</strong> $7.06 </li>
                 <li><strong>Витрати на рекламу:</strong> $9 569</li>
               </ul>

@@ -207,11 +207,11 @@ const V2Page: NextPage = () => {
                 <div className="grid grid-cols-1 gap-8 border-2 border-emerald-600 rounded-lg p-6">
                   <div>
                     <h4 className="text-xl font-bold mb-4 text-center bg-emerald-600 text-white py-2 rounded-t-lg">Before we started our cooperation</h4>
-                    <img src="/img/v7/fb-before-case-7.jpg" alt="Before Results Screenshot" onClick={openModalBeforeMeta} className="mx-auto border border-gray-300 rounded-lg shadow-md hover:opacity-75 transition duration-300 ease-in-out cursor-pointer" />
+                    <img src="/img/v7/fb-before-case-7.webp" alt="Before Results Screenshot" onClick={openModalBeforeMeta} className="mx-auto border border-gray-300 rounded-lg shadow-md hover:opacity-75 transition duration-300 ease-in-out cursor-pointer" />
                   </div>
                   <div>
                     <h4 className="text-xl font-bold mb-4 text-center bg-emerald-600 text-white py-2 rounded-t-lg">After our cooperation</h4>
-                    <img src="/img/v7/fb-after-case-7.jpg" alt="After Results Screenshot" onClick={openModalAfterMeta} className="mx-auto border border-gray-300 rounded-lg shadow-md hover:opacity-75 transition duration-300 ease-in-out cursor-pointer" />
+                    <img src="/img/v7/fb-after-case-7.webp" alt="After Results Screenshot" onClick={openModalAfterMeta} className="mx-auto border border-gray-300 rounded-lg shadow-md hover:opacity-75 transition duration-300 ease-in-out cursor-pointer" />
                   </div>
                 </div>
 
@@ -245,7 +245,7 @@ const V2Page: NextPage = () => {
                             Before we started our cooperation
                             </Dialog.Title>
                             <div className="mt-2">
-                              <img src="/img//v7/fb-before-case-7.jpg" alt="Before Results Screenshot" style={{ width: 'auto', height: 'auto' }} />
+                              <img src="/img//v7/fb-before-case-7.webp" alt="Before Results Screenshot" style={{ width: 'auto', height: 'auto' }} />
                             </div>
 
                             <div className="mt-4">
@@ -294,7 +294,7 @@ const V2Page: NextPage = () => {
                             After our cooperation
                             </Dialog.Title>
                             <div className="mt-2">
-                              <img src="/img/v7/fb-after-case-7.jpg" alt="After Results Screenshot" style={{ width: 'auto', height: 'auto' }} />
+                              <img src="/img/v7/fb-after-case-7.webp" alt="After Results Screenshot" style={{ width: 'auto', height: 'auto' }} />
                             </div>
 
                             <div className="mt-4">

@@ -415,52 +415,52 @@
             },
             "landing": {
                 "slide1": {
-                    "title": "FROM $400",
-                    "subtitle": "How does landing page creation work?",
+                    "title": "FROM $500",
+                    "subtitle": "What is a landing page?",
                     "content": [
-                        "A landing page is a standalone web page designed for a specific target action, such as ordering, subscription, or feedback.",
-                        "We create landing pages using the latest technologies and tools to maximize conversion and sales."
+                        "It's a single-page website specifically designed to attract clients, present services, or sell products. It's focused on achieving one specific goal – generating leads or sales.",
+                        "Thanks to proper structure, unique design, and strong copywriting, a landing page can significantly increase your advertising conversion rate."
                     ],
-                    "link": "Learn more"
+                    "link": "VIEW EXAMPLES"
                 },
                 "slide2": {
-                    "subtitle": "Why work with us?",
+                    "subtitle": "Why choose us for your landing page?",
                     "list": [
                         {
-                            "title": "1. Modern Design",
-                            "description": "We create unique and attractive designs that match your brand and target audience."
+                            "title": "1. Sales Funnels",
+                            "description": "We design pages that naturally guide clients towards making a purchase."
                         },
                         {
-                            "title": "2. Responsiveness",
-                            "description": "Your landing page will look perfect on all devices: computers, tablets, and smartphones."
+                            "title": "2. Analytics",
+                            "description": "We implement special tools that show how visitors interact with your site to optimize it."
                         },
                         {
-                            "title": "3. Loading Speed",
-                            "description": "We optimize website performance for better conversion and SEO metrics."
+                            "title": "3. CRO Optimization",
+                            "description": "We continuously improve your landing page to achieve maximum conversion."
                         },
                         {
-                            "title": "4. Conversion Elements",
-                            "description": "We use proven UI/UX patterns to maximize visitor-to-client conversion."
+                            "title": "4. Custom Solutions",
+                            "description": "We create websites without builder limitations, allowing us to implement any functionality."
                         },
                         {
-                            "title": "5. Integrations",
-                            "description": "We connect all necessary services: CRM, analytics, messengers, and payment systems."
+                            "title": "5. Responsiveness",
+                            "description": "Your site will work perfectly on any device."
                         }
                     ]
                 },
                 "slide3": {
                     "list": [
                         {
-                            "title": "6. Technical Support",
-                            "description": "We provide ongoing support and updates for your landing page after launch."
+                            "title": "6. Speed",
+                            "description": "We guarantee fast loading for user convenience."
                         },
                         {
-                            "title": "Proven Results",
-                            "description": "Want a landing page that converts? Get a free consultation"
+                            "title": "7. Free Hosting",
+                            "description": "We provide free hosting for your pages."
                         }
                     ],
-                    "caseLink": "READ CASE STUDY",
-                    "content": "Want a landing page that sells? Get a free consultation",
+                    "caseLink": "VIEW CASE STUDY",
+                    "content": "Our landing pages are perfect for advertising and deliver results. Order development and get a tool that sells.",
                     "strategyLink": "Get Consultation!"
                 }
             }
