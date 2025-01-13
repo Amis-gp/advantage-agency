@@ -468,12 +468,45 @@
     },
 
 
-
+    "cookies": {
+        "content": "We use cookies to enhance your experience on our site.",
+        "accept": "Accept",
+        "decline": "Decline"
+    },
 
 
     "casesFooter": {
         "title": "Get in Touch with Us",
         "callUs": "Call Us",
         "emailUs": "Email Us"
+    },
+
+
+
+    "privacy": {
+        "title": "Privacy Policy",
+        "storage": {
+            "title": "PERSONAL DATA STORAGE PERIOD",
+            "content": "ADvantage Agency stores and processes personal data for an indefinite period to fulfill the purposes defined in the Policy or until receiving a request for personal data deletion."
+        },
+        "cookies": {
+            "title": "USE OF COOKIES",
+            "content": "ADvantage Agency uses cookies to remember browser type and operating system, the page from which the visitor came to the current one, path through pages on this site, internet provider domain in order to understand how Users use the site. ADvantage Agency uses cookies to remember User settings and preferences. Cookies are also used to improve site navigation and provide more relevant information to the User. By checking the appropriate 'consent box', you allow us to use cookies every time you use the ADvantage Agency website."
+        },
+        "security": {
+            "title": "ENSURING CONFIDENTIALITY AND DATA SECURITY. GUARANTEES",
+            "content": "ADvantage Agency guarantees full confidentiality, meaning not to disclose Confidential Information to third parties in any way and to use Confidential Information only for the purposes of providing ADvantage Agency's relevant Services to the User, results of Services provision, regardless of whether such information was disclosed voluntarily or otherwise obtained by ADvantage Agency as a result of providing Services to the User, until such information becomes publicly available by User's decision. ADvantage Agency guarantees that all necessary measures have been taken to protect your personal data from unauthorized access, modification, disclosure or destruction using appropriate technical and organizational tools. We inform you that the information you provided is included in personal data databases owned by ADvantage Agency."
+        },
+        "other": {
+            "title": "OTHER PROVISIONS",
+            "contact": "If you have any questions about our Policy, you can contact us at the following email address:",
+            "email": "contact@marketing-advantage.com",
+            "address": "442 Saffron Lane, Leicester, England, LE2 6SB",
+            "phone": "+48793284320",
+            "disputes": "Any disputes that may arise between the User and ADvantage Agency regarding relations covered by the provisions of this Policy shall be resolved in accordance with UK law. The User has the right to contact ADvantage Agency for peaceful dispute resolution with a corresponding application, by email to: contact@marketing-advantage.com, or by sending a letter to: 442 Saffron Lane 442 Saffron Lane, Leicester, England, LE2 6SB, email contact@marketing-advantage.com, phone +48793284320.",
+            "ageRestriction": "The website https://advantage-agency.co/ is not intended and not designed for children under 14 years of age. Processing of personal data of minors aged 14 to 18 years is carried out only with the consent of parents (adoptive parents) or guardians.",
+            "complaint": "If you have a complaint about any processing of your personal data, you can contact us.",
+            "updates": "This Policy may be updated in the future to comply with national and international legislation governing personal data protection. All changes take effect from the moment of their publication. By continuing to use the website https://advantage-agency.co/, you confirm your agreement with the new terms of the Policy in the version current at the time of using the website https://advantage-agency.co/."
+        }
     }
 }

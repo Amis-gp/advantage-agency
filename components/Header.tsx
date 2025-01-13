@@ -3,7 +3,7 @@ import { useState, useEffect, useRef } from 'react';
 import Image from 'next/image';
 import { Link } from '@/navigation';
 import { useLocale, useTranslations } from 'next-intl';
-import { useRouter } from 'next/navigation';
+import { useRouter, usePathname } from 'next/navigation';
 import { playSound } from '@/app/constant/sound';
 
 export default function Header(): JSX.Element {
@@ -12,6 +12,7 @@ export default function Header(): JSX.Element {
     const locale = useLocale();
     const t = useTranslations();
     const router = useRouter();
+    const pathname = usePathname();
     const dropdownRef = useRef<HTMLDivElement>(null);
     const headerRef = useRef<HTMLDivElement>(null);
 
@@ -42,6 +43,15 @@ export default function Header(): JSX.Element {
         window.addEventListener('scroll', handleScroll);
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
+
+    const handleServicesClick = (e: React.MouseEvent) => {
+        e.preventDefault();
+        if (pathname === '/') {
+            document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' });
+        } else {
+            router.push('/#services');
+        }
+    };
 
     return (
         <header 
@@ -119,7 +129,11 @@ export default function Header(): JSX.Element {
                             </Link>
                         ))}
                     </div>
-                    <Link href={`#services`} className="bg-white text-black px-4 py-2 border border-white sm:px-12 sm:py-4 rounded-[20px] sm:rounded-[24px] font-medium hover:bg-gray-300 transition-colors">
+                    <Link 
+                        href='/#services' 
+                        onClick={handleServicesClick}
+                        className="bg-white text-black px-4 py-2 border border-white sm:px-12 sm:py-4 rounded-[20px] sm:rounded-[24px] font-medium hover:bg-gray-300 transition-colors"
+                    >
                         {t('pricing')}
                     </Link>
                 </div>

@@ -54,7 +54,8 @@ export default function Footer() {
                                 { name: 'Home', href: '/' },
                                 { name: 'Portfolio', href: '#portfolio' },
                                 { name: 'Instructions', href: '#instructions' },
-                                { name: 'Services', href: '#services' }
+                                { name: 'Services', href: '#services' },
+        
                             ].map((item) => (
                                 <Link 
                                     key={item.name} 
@@ -80,36 +81,42 @@ export default function Footer() {
                         </div>
                     </div>
 
-                    <div className="flex gap-4">
-                        {[
-                            { href: "https://www.linkedin.com/company/advantage-agencyuk/posts/?feedView=all", icon: "/img/linkedin.svg", alt: "LinkedIn" },
-                            { href: "https://www.instagram.com/_advantage_agency_/", icon: "/img/instagram.svg", alt: "Instagram" },
-                            { href: "https://t.me/stepan_potichnyi", icon: "/img/telegram.svg", alt: "Telegram" }
-                        ].map((social) => (
-                            <Link 
-                                key={social.alt}
-                                href={social.href}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="hover:scale-110 transition-transform"
-                                onMouseEnter={() => playSound('hover_2')}
-                            >
-                                <Image 
-                                    src={social.icon} 
-                                    alt={social.alt} 
-                                    width={30} 
-                                    height={30}
-                                    className="hover:opacity-80 transition-opacity" 
-                                />
-                            </Link>
-                        ))}
+                    <div className="flex flex-col items-center lg:items-start gap-6 sm:gap-7">
+                        <div className="flex gap-4">
+                            {[
+                                { href: "https://www.linkedin.com/company/advantage-agencyuk/posts/?feedView=all", icon: "/img/linkedin.svg", alt: "LinkedIn" },
+                                { href: "https://www.instagram.com/_advantage_agency_/", icon: "/img/instagram.svg", alt: "Instagram" },
+                                { href: "https://t.me/stepan_potichnyi", icon: "/img/telegram.svg", alt: "Telegram" }
+                            ].map((social) => (
+                                <Link 
+                                    key={social.alt}
+                                    href={social.href}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="hover:scale-110 transition-transform"
+                                    onMouseEnter={() => playSound('hover_2')}
+                                >
+                                    <Image 
+                                        src={social.icon} 
+                                        alt={social.alt} 
+                                        width={30} 
+                                        height={30}
+                                        className="hover:opacity-80 transition-opacity" 
+                                    />
+                                </Link>
+                            ))}
+                        </div>
+                        <Link href="/privacy-policy" className="text-sm md:text-base hover:text-red transition-colors text-center lg:text-left text-gray-300 -mb-4 sm:mb-0">
+                            Privacy Policy
+                        </Link>
                     </div>
                     <p className="sm:hidden text-sm md:text-base text-center lg:text-left text-gray-400">
                         Copyright 2024.<br />
                         Made by <span className='text-red font-bold hover:text-red/80 transition-colors cursor-pointer'>
                             Advantage Agency
-                        </span>
+                        </span><br />
                     </p>
+                    
                 </div>
             </div>
         </footer>

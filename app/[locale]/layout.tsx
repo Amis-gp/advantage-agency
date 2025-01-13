@@ -7,6 +7,7 @@ import '../globals.css';
 import { clashGrotesk } from '@/fonts/ClashGrotesk';
 import { Roboto } from 'next/font/google';
 import GoogleTagManager from '@/components/GoogleTagManager';
+import CookieConsent from '@/components/CookieConsent';
 
 const roboto = Roboto({
     weight: ['300', '400', '500', '700'],
@@ -57,6 +58,7 @@ export default async function LocaleLayout({ children, params }: Props) {
         <GoogleTagManager id="GTM-TVSP68XX" />
         <NextIntlClientProvider locale={locale} messages={messages}>
           {children}
+          <CookieConsent />
         </NextIntlClientProvider>
       </body>
     </html>
