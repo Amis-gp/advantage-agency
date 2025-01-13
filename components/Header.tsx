@@ -49,7 +49,16 @@ export default function Header(): JSX.Element {
         if (pathname === '/') {
             document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' });
         } else {
-            router.push('/#services');
+            window.location.href = '/#services';
+        }
+    };
+
+    const handleLogoClick = (e: React.MouseEvent) => {
+        e.preventDefault();
+        if (pathname === '/') {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        } else {
+            window.location.href = '/';
         }
     };
 
@@ -60,7 +69,11 @@ export default function Header(): JSX.Element {
             ${isScrolled ? 'bg-black/80 backdrop-blur-sm' : 'bg-transparent'}`}
         >
             <div className="max-w-6xl mx-auto flex justify-between items-left">
-                <Link href={`/`} className="flex items-center gap-2">
+                <Link 
+                    href={`/`} 
+                    onClick={handleLogoClick}
+                    className="flex items-center gap-2"
+                >
                     <Image src="/img/logo.svg" alt="Advantage Agency" width={243} height={55} loading="lazy" priority={false} className="h-7 sm:h-auto w-fit"/>
                 </Link>
                 <div className="flex items-center gap-4">

@@ -51,6 +51,7 @@ const swiperConfig = {
     }
 };
 
+
 export default function PortfolioSection() {
     const t = useTranslations();
     const locale = useLocale();
@@ -74,7 +75,26 @@ export default function PortfolioSection() {
     }, [locale]);
 
     return (
+        
         <section className="bg-black relative py-10 md:py-20 px-6 overflow-hidden">
+            <style jsx global>{`
+                .swiper-pagination-bullet {
+                    width: 8px !important;
+                    height: 8px !important;
+                    margin: 0 6px !important;
+                    border-radius: 50% !important;
+                    background: rgba(255, 255, 255, 0.2) !important;
+                    opacity: 1 !important;
+                    transition: all 0.3s ease;
+                }
+                .swiper-pagination {
+                    position: relative !important;    
+                }
+                .swiper-pagination-bullet-active {
+                    background: #fff !important;
+                    transform: scale(1.2);
+                }
+            `}</style>
             <div className="max-w-6xl mx-auto relative">
                 <span className="text-red uppercase tracking-wider">{t('portfolio.headline')}</span>
                 <h2 className="text-white text-3xl md:text-5xl font-bold mt-2 lg:mb-10">{t('portfolio.title')}</h2>

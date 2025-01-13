@@ -171,21 +171,3 @@ body {
   flex-shrink: 0;
 }
 
-.swiper-pagination {
-  position: relative !important;
-}
-
-.swiper-pagination-bullet {
-  width: 8px !important;
-  height: 8px !important;
-  margin: 0 6px !important;
-  border-radius: 50% !important;
-  background: rgba(255, 255, 255, 0.2) !important;
-  opacity: 1 !important;
-  transition: all 0.3s ease;
-}
-
-.swiper-pagination-bullet-active {
-  background: #fff !important;
-  transform: scale(1.2);
-}

@@ -1,5 +1,20 @@
 export const portfolioSlides = [
     {
+        title: 'Email Marketing',
+        date: '01.03.2024 - 31.03.2024',
+        image: '/img/portfolio/email-marketing.webp',
+        stats: {
+            emailsSent: '2921',
+            responses: '56',
+            demoCalls: '31'
+        },
+        location: '🇺🇸 United States',
+        slug: {
+            en: 'cases/v13',
+            ua: 'cases/v13ua'
+        },
+    },
+    {
         title: 'Notary services',
         date: '01.07.2024 - 01.08.2024',
         image: '/img/portfolio/notary.webp',

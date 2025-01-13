@@ -35,9 +35,9 @@ const testimonialImages = [
     '/img/v13/foto-14.webp'
 ];
 
-const V13uaPage: NextPage = () => {
+const V13Page: NextPage = () => {
     useEffect(() => {
-        document.title = "31 демо-дзвінків за 4 тижні через Cold Email";
+        document.title = "31 Demo Calls in 4 Weeks through Cold Email";
     }, []);
     const [isImageOpen, setIsImageOpen] = useState(false);
     const [selectedImage, setSelectedImage] = useState('');
@@ -57,34 +57,34 @@ return (
         
     <section className="mt-12">
         <h1 className="text-4xl md:text-5xl font-bold mb-12 leading-tight">
-            Як ми отримали <span className='highlight highlight-red-300 highlight-variant-5'>31 демо-дзвінків</span> 🎯 
-            для High Ticket послуг 💎
-            за допомогою системи холодних email за 4 тижні! ✨
+            How We Got <span className='highlight highlight-red-300 highlight-variant-5'>31 Demo Calls</span> 🎯 
+            for High Ticket Services 💎
+            Using Cold Email System in 4 Weeks! ✨
         </h1>
 
         <div className="mb-16">
             <h2 className="text-2xl md:text-3xl font-bold mb-8">
-                Cold Email Marketing: чому це складно, але надзвичайно ефективно? 🚀
+                Cold Email Marketing: Why It's Challenging but Extremely Effective? 🚀
             </h2>
             <p className="mb-4 text-xl leading-relaxed text-gray-800">
-                Якщо ви думаєте, що холодна email-розсилка — це просто написати лист і натиснути "Надіслати", ми готові вас здивувати! ✨
+                If you think cold email outreach is just writing an email and hitting "Send", we're about to surprise you! ✨
             </p>
             <p className="mb-4 text-xl leading-relaxed text-gray-800">
-                Cold Email Marketing — це справжнє мистецтво 🎨, яке вимагає поєднання технічного сетапу 🛠️, точності в роботі з поштою 📧 та копірайтингу, що дійсно продає ✍️. Це той інструмент, який може змінити ваш бізнес, але зробити це правильно — дуже складно.
+                Cold Email Marketing is a true art 🎨 that requires a combination of technical setup 🛠️, precision in email handling 📧, and sales-driven copywriting ✍️. It's a tool that can transform your business, but doing it right is very challenging.
             </p>
         </div>
     </section>
 
     <section className="mb-12">
-        <h2 className="text-2xl font-bold mb-6">Ось чому більшість бізнесів зіштовхуються з труднощами:</h2>
+        <h2 className="text-2xl font-bold mb-6">Why Most Businesses Struggle:</h2>
         <div className="mb-12 grid grid-cols-1 md:grid-cols-2 gap-6 items-center">
             <div>
                 <ul className="list-disc pl-6 space-y-2">
-                    <li>📩 Листи потрапляють у спам</li>
-                    <li>🔒 Відсутність контролю над репутацією поштових скриньок</li>
-                    <li>⚙️ Немає системності в процесі розсилки</li>
-                    <li>🧑‍💻 Непідходящі або неякісні ліди</li>
-                    <li>🖋️ Слабкий копірайтинг, який не захоплює увагу</li>
+                    <li>📩 Emails get marked as spam</li>
+                    <li>🔒 Lack of control over email inbox reputation</li>
+                    <li>⚙️ Lack of systematization in email outreach</li>
+                    <li>🎯 Poor lead qualification and targeting</li>
+                    <li>🖋️ Weak copywriting that doesn't engage</li>
                 </ul>
             </div>
             <div className="relative h-[300px]">
@@ -100,45 +100,44 @@ return (
 
     <section className="mb-16 bg-gradient-to-b from-white to-gray-50 rounded-2xl p-6 shadow-sm">
       <p className="text-3xl font-bold mb-8 text-center bg-clip-text">
-          Наш виклик: як побудувати стабільну систему холодної розсилки? 🎯
+          Our Challenge: How to Build a Stable Cold Email System? 🎯
       </p>
 
       <div className="space-y-6 text-gray-800">
           <p className="text-xl leading-relaxed">
-              Наше агентство поставило перед собою мету — масштабувати кількість проєктів та генерувати більше лідів для послуг маркетингу. Ми вирішили заглибитися у Cold Email Marketing, і, чесно кажучи, це був непростий шлях. 😅
+              Our agency set a goal to scale project numbers and generate more leads for marketing services. We dove into Cold Email Marketing, and to be honest, it wasn't easy. 😅
           </p>
 
           <div className="bg-white p-4 rounded-xl shadow-sm border-l-4 border-[#ff6315]">
               <p className="text-xl font-semibold mb-4">
-                  За кілька місяців ми пройшли через десятки технічних і стратегічних випробувань: 🔍
+                  Over the course of a few months, we tested dozens of automation tools: 🔍
               </p>
               <p className="text-lg mb-3">
-                  Тестували <span className="font-bold text-[#ff6315]">30+</span> різних сервісів для автоматизації розсилки.
-                  Багато з них були:
+                  Many of them were:
               </p>
               <ul className="space-y-3 pl-4">
                   <li className="flex items-center gap-2 text-lg">
-                      <span className="text-red-500">❌</span> Надто дорогими
+                      <span className="text-red-500">❌</span> Too expensive
                   </li>
                   <li className="flex items-center gap-2 text-lg">
-                      <span className="text-red-500">❌</span> Нестабільними (глюки, помилки)
+                      <span className="text-red-500">❌</span> Unstable (bugs, errors)
                   </li>
                   <li className="flex items-center gap-2 text-lg">
-                      <span className="text-red-500">❌</span> Без потрібного функціоналу
+                      <span className="text-red-500">❌</span> Missing necessary features
                   </li>
               </ul>
           </div>
 
           <div className="bg-white p-4 rounded-xl shadow-sm border-l-4 border-yellow-400">
               <p className="text-lg leading-relaxed">
-                  <span className="font-semibold">⚠️ Критичний момент:</span> Вибір правильного email-провайдера та налаштування серверів забрав у нас тижні.
-                  У якийсь момент <span className="font-bold text-red-500">45 поштових скриньок</span> потрапили в чорний список, і нам довелося повністю змінювати підхід.
+                  <span className="font-semibold">⚠️ Critical Moment:</span> Choosing the right email provider and server setup took weeks.
+                  At some point, <span className="font-bold text-red-500">45 email accounts</span> were blacklisted, and we had to completely change our approach.
               </p>
           </div>
 
           <div className="bg-white p-4 rounded-xl shadow-sm border-l-4 border-green-500">
               <p className="text-lg leading-relaxed">
-                  <span className="font-semibold">🎉 Результат:</span> Щоб побудувати систему, яка гарантовано доставляє листи у вхідні скриньки, ми витратили понад <span className="font-bold text-[#ff6315]">4 місяці</span> тестувань, аналізу та оптимізації. Але ми створили сетап, який працює стабільно, і тепер можемо з упевненістю заявити: <span className="font-bold">ми знаємо, як працює Cold Email Marketing</span>.
+                  <span className="font-semibold">🎉 Result:</span> To build a system that reliably delivers emails to inboxes, we spent over <span className="font-bold text-[#ff6315]">4 months</span> testing, analyzing, and optimizing. But we created a setup that works consistently, and now we can confidently say: <span className="font-bold">we know how Cold Email Marketing works</span>.
               </p>
           </div>
       </div>
@@ -146,10 +145,10 @@ return (
 
     <section className="mb-16">
         <h2 className="text-3xl font-bold mb-8 text-center text-gray-900">
-            Наш підхід до генерації лідів
+            Our Approach to Generating Leads
         </h2>
         <p className="mb-8 text-xl text-center text-gray-700">
-            Ось що ми зробили, щоб отримати <span className="font-bold text-blue-600">31 демо-дзвінків</span> за 4 тижні:
+            Here's what we did to get <span className="font-bold text-blue-600">31 Demo Calls</span> in 4 weeks:
         </p>
         
         <div className="">
@@ -157,9 +156,9 @@ return (
                 <li className="flex items-start gap-4 p-4 bg-gray-50 rounded-xl hover:bg-gray-100 transition-all">
                     <span className="text-2xl">🎯</span>
                     <div>
-                        <h3 className="font-semibold text-lg mb-2">Чітко визначили свою цільову аудиторію</h3>
+                        <h3 className="font-semibold text-lg mb-2">Clearly Defined Target Audience</h3>
                         <div className="text-gray-600 pl-4 border-l-2 border-gray-200">
-                            <p>Які ніші? Які посади людей приймають рішення?</p>
+                            <p>What niches? What job titles do decision-makers have?</p>
                         </div>
                     </div>
                 </li>
@@ -167,38 +166,38 @@ return (
                 <li className="flex items-start gap-4 p-4 bg-gray-50 rounded-xl hover:bg-gray-100 transition-all">
                     <span className="text-2xl">🔥</span>
                     <div>
-                        <h3 className="font-semibold text-lg">Налаштували поштові скриньки та прогрівали їх для підвищення репутації</h3>
+                        <h3 className="font-semibold text-lg">Set up email accounts and warm up their reputation</h3>
                     </div>
                 </li>
 
                 <li className="flex items-start gap-4 p-4 bg-gray-50 rounded-xl hover:bg-gray-100 transition-all">
                     <span className="text-2xl">⚙️</span>
                     <div>
-                        <h3 className="font-semibold text-lg">Підготували поштовий сервер та всі необхідні інструменти</h3>
+                        <h3 className="font-semibold text-lg">Prepared email server and necessary tools</h3>
                     </div>
                 </li>
 
                 <li className="flex items-start gap-4 p-4 bg-gray-50 rounded-xl hover:bg-gray-100 transition-all">
                     <span className="text-2xl">📋</span>
                     <div>
-                        <h3 className="font-semibold text-lg">Зібрали контакти осіб, які приймають рішення</h3>
+                        <h3 className="font-semibold text-lg">Collected contact information of decision-makers</h3>
                     </div>
                 </li>
 
                 <li className="flex items-start gap-4 p-4 bg-gray-50 rounded-xl hover:bg-gray-100 transition-all">
                     <span className="text-2xl">✉️</span>
                     <div>
-                        <h3 className="font-semibold text-lg">Створили 50+ шаблонів листів з унікальними офферами та меседжами</h3>
+                        <h3 className="font-semibold text-lg mb-2">Created 50+ unique offer and message templates</h3>
                     </div>
                 </li>
 
                 <li className="flex items-start gap-4 p-4 bg-gray-50 rounded-xl hover:bg-gray-100 transition-all">
                     <span className="text-2xl">📈</span>
                     <div>
-                        <h3 className="font-semibold text-lg mb-2">Розробили стратегію послідовності із 3-4 листів</h3>
+                        <h3 className="font-semibold text-lg mb-2">Developed a 3-4 email sequence strategy</h3>
                         <ul className="pl-4 text-gray-600 space-y-2 border-l-2 border-gray-200">
-                            <li>• Різні маркетингові підходи</li>
-                            <li>• Чіткий call-to-action (CTA)</li>
+                            <li>• Different marketing approaches</li>
+                            <li>• Clear call-to-action (CTA)</li>
                         </ul>
                     </div>
                 </li>
@@ -206,18 +205,18 @@ return (
                 <li className="flex items-start gap-4 p-4 bg-gray-50 rounded-xl hover:bg-gray-100 transition-all">
                     <span className="text-2xl">🚀</span>
                     <div>
-                        <h3 className="font-semibold text-lg">Запустили кампанії та провели детальний аналіз ефективності</h3>
+                        <h3 className="font-semibold text-lg">Launched campaigns and conducted thorough analysis</h3>
                     </div>
                 </li>
 
                 <li className="flex items-start gap-4 p-4 bg-gray-50 rounded-xl hover:bg-gray-100 transition-all">
                     <span className="text-2xl">🛠️</span>
                     <div>
-                        <h3 className="font-semibold text-lg mb-2">Моніторили систему</h3>
+                        <h3 className="font-semibold text-lg mb-2">Monitored the system</h3>
                         <ul className="pl-4 text-gray-600 space-y-2 border-l-2 border-gray-200">
-                            <li>• Репутація доменів</li>
-                            <li>• Якість сендерів</li>
-                            <li>• Конверсії з листів</li>
+                            <li>• Domain reputation</li>
+                            <li>• Email sender quality</li>
+                            <li>• Conversion rates from emails</li>
                         </ul>
                     </div>
                 </li>
@@ -227,66 +226,66 @@ return (
 
     <section className="mb-16">
     <h2 className="text-3xl font-bold mb-12 text-center text-gray-900">
-        Наш підхід до генерації лідів
+        Our Approach to Generating Leads
     </h2>
     
     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         <div className="bg-gradient-to-br from-gray-50 to-white rounded-2xl shadow-xl p-6 border border-gray-100 hover:shadow-2xl transition-all duration-300">
             <div className="mb-6 border-b-2 border-blue-500 pb-4">
-                <h4 className="text-2xl font-bold text-gray-800">Що ми зробили:</h4>
+                <h4 className="text-2xl font-bold text-gray-800">What We Did:</h4>
             </div>
             <ul className="space-y-4">
                 <li className="flex items-center gap-3 text-lg text-gray-700 hover:text-gray-900 transition-colors">
                     <span className="text-2xl">🎯</span>
-                    <span>Чітко визначили цільову аудиторію</span>
+                    <span>Clearly Defined Target Audience</span>
                 </li>
                 <li className="flex items-center gap-3 text-lg text-gray-700 hover:text-gray-900 transition-colors">
                     <span className="text-2xl">🔥</span>
-                    <span>Налаштували та прогріли поштові скриньки</span>
+                    <span>Set up email accounts and warm up their reputation</span>
                 </li>
                 <li className="flex items-center gap-3 text-lg text-gray-700 hover:text-gray-900 transition-colors">
                     <span className="text-2xl">⚙️</span>
-                    <span>Підготували поштовий сервер</span>
+                    <span>Prepared email server</span>
                 </li>
                 <li className="flex items-center gap-3 text-lg text-gray-700 hover:text-gray-900 transition-colors">
                     <span className="text-2xl">📋</span>
-                    <span>Зібрали контакти ОПР</span>
+                    <span>Collected contact information of decision-makers</span>
                 </li>
                 <li className="flex items-center gap-3 text-lg text-gray-700 hover:text-gray-900 transition-colors">
                     <span className="text-2xl">✉️</span>
-                    <span>Створили 50+ шаблонів листів</span>
+                    <span>Created 50+ email templates</span>
                 </li>
                 <li className="flex items-center gap-3 text-lg text-gray-700 hover:text-gray-900 transition-colors">
                     <span className="text-2xl">📈</span>
-                    <span>Розробили стратегію послідовності</span>
+                    <span>Developed a sequence strategy</span>
                 </li>
                 <li className="flex items-center gap-3 text-lg text-gray-700 hover:text-gray-900 transition-colors">
                     <span className="text-2xl">🚀</span>
-                    <span>Запустили кампанії</span>
+                    <span>Launched campaigns</span>
                 </li>
                 <li className="flex items-center gap-3 text-lg text-gray-700 hover:text-gray-900 transition-colors">
                     <span className="text-2xl">🛠️</span>
-                    <span>Налаштували моніторинг системи</span>
+                    <span>Set up monitoring</span>
                 </li>
             </ul>
         </div>
         
         <div className="bg-gradient-to-br from-gray-50 to-white rounded-2xl shadow-xl p-6 border border-gray-100 hover:shadow-2xl transition-all duration-300">
             <div className="mb-6 border-b-2 border-green-500 pb-4">
-                <h4 className="text-2xl font-bold text-gray-800">Результати за 4 тижні:</h4>
+                <h4 className="text-2xl font-bold text-gray-800">Results in 4 Weeks:</h4>
             </div>
             <ul className="space-y-6">
                 <li className="flex items-center gap-4 text-lg">
                     <span className="text-3xl font-bold text-blue-600">2921</span>
-                    <span className="text-gray-700">Відправлено листів</span>
+                    <span className="text-gray-700">Emails Sent</span>
                 </li>
                 <li className="flex items-center gap-4 text-lg">
                     <span className="text-3xl font-bold text-blue-600">56</span>
-                    <span className="text-gray-700">Відповідей</span>
+                    <span className="text-gray-700">Responses</span>
                 </li>
                 <li className="flex items-center gap-4 text-lg">
                     <span className="text-3xl font-bold text-blue-600">31</span>
-                    <span className="text-gray-700">демо-дзвінків</span>
+                    <span className="text-gray-700">Demo Calls</span>
                 </li>
             </ul>
         </div>
@@ -294,7 +293,7 @@ return (
 </section>
 
     <section className="mb-12">
-        <h2 className="text-2xl font-bold mb-6">Відповіді від потенційних клієнтів:</h2>
+        <h2 className="text-2xl font-bold mb-6">Responses from Potential Clients:</h2>
         <div className="mb-12 relative">
             <button 
                 className="swiper-button-prev absolute !left-4 top-1/2 -translate-y-1/2 z-20 !w-[60px] !h-[60px] rounded-full bg-white shadow-md border border-gray-100 md:!flex !hidden items-center justify-center text-[#ff6315] hover:bg-gray-300 transition-all duration-100"
@@ -356,7 +355,7 @@ return (
             <div className="swiper-pagination md:mt-4"></div>
         </div>
 
-        <h2 className="text-2xl font-bold mb-6">Результати:</h2>
+        <h2 className="text-2xl font-bold mb-6">Results:</h2>
         <div className="relative h-[400px] mb-12">
             <Image 
                 src="/img/v13/stats.webp" 
@@ -369,32 +368,32 @@ return (
 
     <section className="mb-12 mt-8">
         <h2 id="form" className="text-3xl font-bold mb-8 text-center">
-            Отримайте професійну digital-стратегію для вашого бізнесу
-            <span className="block mt-2 text-2xl text-[#ff6315]">Безкоштовна консультація</span>
+            Get a Professional Digital-Marketing Strategy for Your Business
+            <span className="block mt-2 text-2xl text-[#ff6315]">Free Consultation</span>
         </h2>
     
         <div className="max-w-3xl mx-auto text-lg">
             <p className="mb-6 text-center leading-relaxed">
-                Наша команда допоможе вам створити ефективну систему залучення клієнтів через інтернет-маркетинг. Ми фокусуємось на трьох ключових напрямках:
+                Our team will help you create an effective customer acquisition system through digital marketing. We focus on three key areas:
             </p>
             
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
                 <div className="bg-white p-4 rounded-lg shadow-md border-t-4 border-[#ff6315]">
-                    <h3 className="font-bold text-xl mb-2 text-center">Аналітика</h3>
-                    <p className="text-gray-600 text-center">Детальний аналіз вашої ніші та конкурентів</p>
+                    <h3 className="font-bold text-xl mb-2 text-center">Analytics</h3>
+                    <p className="text-gray-600 text-center">Detailed analysis of your niche and competitors</p>
                 </div>
                 <div className="bg-white p-4 rounded-lg shadow-md border-t-4 border-[#ff6315]">
-                    <h3 className="font-bold text-xl mb-2 text-center">Стратегія</h3>
-                    <p className="text-gray-600 text-center">Розробка комплексного плану просування</p>
+                    <h3 className="font-bold text-xl mb-2 text-center">Strategy</h3>
+                    <p className="text-gray-600 text-center">Developing a comprehensive marketing plan</p>
                 </div>
                 <div className="bg-white p-4 rounded-lg shadow-md border-t-4 border-[#ff6315]">
-                    <h3 className="font-bold text-xl mb-2 text-center">Результат</h3>
-                    <p className="text-gray-600 text-center">Збільшення продажів та масштабування</p>
+                    <h3 className="font-bold text-xl mb-2 text-center">Result</h3>
+                    <p className="text-gray-600 text-center">Increasing sales and scaling</p>
                 </div>
             </div>
 
             <p className="text-center mb-8">
-                Заповніть форму нижче, щоб отримати персональний план розвитку вашого бізнесу в digital-середовищі
+                Fill out the form below to get a personalized growth plan for your business in the digital space
             </p>
 
             <div className="w-fit mx-auto">
@@ -402,7 +401,7 @@ return (
             </div>
 
             <p className="mt-8 text-center text-gray-600">
-                Залиште заявку зараз та отримайте <strong>безкоштовний аудит</strong> вашої поточної маркетингової стратегії
+                Submit your request now to get a <strong>free audit</strong> of your current marketing strategy
             </p>
         </div>
     </section>
@@ -460,4 +459,4 @@ return (
     );
 };
 
-export default V13uaPage;
+export default V13Page;
