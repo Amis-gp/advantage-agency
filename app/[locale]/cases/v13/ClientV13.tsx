@@ -35,7 +35,7 @@ const testimonialImages = [
     '/img/v13/foto-14.webp'
 ];
 
-const V13uaPage: NextPage = () => {
+const V13Page: NextPage = () => {
     useEffect(() => {
         document.title = "31 Demo Calls in 4 Weeks through Cold Email";
     }, []);
