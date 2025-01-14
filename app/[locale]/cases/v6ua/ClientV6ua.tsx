@@ -479,7 +479,7 @@ const v6uaPage: NextPage = () => {
           <div className="md:w-1/3 mb-4 md:mb-0">
             <img src="/img/v6/facephoto.jpg" alt="Костянтин" className="rounded-full w-48 h-48 object-cover mx-auto border-4 border-amber-600" />
             <p className="font-bold text-center">Костянтин</p>
-            <p className="text-center">власник <a href="https://www.render.market" target="_blank" rel="noopener noreferrer" className="text-amber-600"><strong><u>Studio Render Market</u></strong></a></p>
+            <p className="text-center">власник <a href="" target="_blank" rel="noopener noreferrer" className="text-amber-600"><strong><u>Studio Render Market</u></strong></a></p>
           </div>
           <div className="md:w-2/3 md:px-8">
             <blockquote className="text-xl italic mb-4">"Чесно кажучи, у мене не було великих очікувань щодо маркетингу електронною поштою, тому що мій фахівець з продажу намагався надсилати електронні листи вручну, але це не працювало належним чином, не було жодної відповіді на 1000 надісланих листів. Я не сподівався знайти інший але, на щастя, ви переконали мене, що це досить хороше джерело потенційних клієнтів для мого бізнесу. Тепер я планую розширити його до значно більшого обсягу, а також нових ніш, що потенційно відкриє нові можливості."</blockquote>

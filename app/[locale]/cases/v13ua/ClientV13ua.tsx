@@ -75,6 +75,11 @@ return (
         </div>
     </section>
 
+    <div className="flex justify-center w-full mt-14 mb-8 text-center">
+        <a href="#form" className="bg-[#ff6315] text-white px-8 py-4 text-2xl font-bold rounded hover:bg-red-700 transition duration-300 ease-in-out animate-bounce">
+            Безкоштовна консультація вашого бізнесу
+        </a>
+    </div>
     <section className="mb-12">
         <h2 className="text-2xl font-bold mb-6">Ось чому більшість бізнесів зіштовхуються з труднощами:</h2>
         <div className="mb-12 grid grid-cols-1 md:grid-cols-2 gap-6 items-center">
@@ -143,6 +148,12 @@ return (
           </div>
       </div>
     </section>
+
+    <div className="flex justify-center w-full mt-14 mb-8 text-center">
+        <a href="#form" className="bg-[#ff6315] text-white px-8 py-4 text-2xl font-bold rounded hover:bg-red-700 transition duration-300 ease-in-out animate-bounce">
+            Безкоштовна консультація вашого бізнесу
+        </a>
+    </div>
 
     <section className="mb-16">
         <h2 className="text-3xl font-bold mb-8 text-center text-gray-900">
@@ -225,6 +236,8 @@ return (
         </div>
     </section>
 
+    
+
     <section className="mb-16">
     <h2 className="text-3xl font-bold mb-12 text-center text-gray-900">
         Наш підхід до генерації лідів
@@ -293,6 +306,13 @@ return (
     </div>
 </section>
 
+    <div className="flex justify-center w-full mt-14 mb-8 text-center">
+        <a href="#form" className="bg-[#ff6315] text-white px-8 py-4 text-2xl font-bold rounded hover:bg-red-700 transition duration-300 ease-in-out animate-bounce">
+            Безкоштовна консультація вашого бізнесу
+        </a>
+    </div>
+
+
     <section className="mb-12">
         <h2 className="text-2xl font-bold mb-6">Відповіді від потенційних клієнтів:</h2>
         <div className="mb-12 relative">
@@ -340,7 +360,8 @@ return (
                             <Image
                                 src={image}
                                 alt={`Email Response ${index + 1}`}
-                                fill
+                                width={590}
+                                height={735}
                                 className="!w-fit mx-auto object-cover rounded-lg shadow-lg sm:hover:scale-105 transition-all duration-300 cursor-pointer"
                                 priority={index < 4}
                                 onClick={(e) => {
@@ -355,14 +376,16 @@ return (
             </Swiper>
             <div className="swiper-pagination md:mt-4"></div>
         </div>
-
+        
+        
         <h2 className="text-2xl font-bold mb-6">Результати:</h2>
-        <div className="relative h-[400px] mb-12">
+        <div className="relative h-full w-full mb-12">
             <Image 
-                src="/img/v13/stats.webp" 
-                fill
+                src="/img/v13/stats.webp"
                 alt="Campaign Results"
-                className="object-contain rounded-lg border border-gray-200"
+                width={1280}
+                height={620}
+                className="h-full w-full object-contain rounded-lg border border-gray-200"
             />
         </div>
     </section>

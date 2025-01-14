@@ -475,7 +475,7 @@ const v6Page: NextPage = () => {
           <div className="md:w-1/3 mb-4 md:mb-0">
             <img src="/img/v6/facephoto.jpg" alt="Konstantin" className="rounded-full w-48 h-48 object-cover mx-auto border-4 border-amber-600" />
             <p className="font-bold text-center">Konstantin</p> 
-            <p className="text-center">owner of <a href="https://www.render.market" target="_blank" rel="noopener noreferrer" className="text-amber-600"><strong><u>Studio Render Market</u></strong></a></p>
+            <p className="text-center">owner of <a href="" target="_blank" rel="noopener noreferrer" className="text-amber-600"><strong><u>Studio Render Market</u></strong></a></p>
           </div>
           <div className="md:w-2/3 md:px-8">
             <blockquote className="text-xl italic mb-4">"To be honest, I didn't have high expectations for email marketing because my sales specialist was trying to send emails manually but it didn't work well, there were no replies from 1000 emails sent. I wasn't hoping to find another way, but luckily found you guys. You convinced me that it's a pretty good source of leads for my business. Now I'm planning to scale it up to a much bigger volume, and also new niches, which will potentially open up new opportunities."</blockquote>
