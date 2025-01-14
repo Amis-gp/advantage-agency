@@ -7,6 +7,7 @@ import { Dialog, Transition } from '@headlessui/react';
 import Image from 'next/image';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination } from 'swiper/modules';
+import type { Swiper as SwiperType } from 'swiper';
 
 import '@/app/styles.css'
 import MessengerButton from '@/components/MessengerButton';
@@ -41,8 +42,8 @@ const V13uaPage: NextPage = () => {
     const [isImageOpen, setIsImageOpen] = useState(false);
     const [selectedImage, setSelectedImage] = useState('');
 
-    const thumbnailsRef = useRef(null);
-    const galleryRef = useRef(null);
+    const thumbnailsRef = useRef<SwiperType | null>(null);
+    const galleryRef = useRef<SwiperType | null>(null);
 
     const syncing = useRef(false);
 
@@ -481,7 +482,7 @@ return (
                             </button>
                             <div className="relative h-[80vh]">
                                 <Swiper
-                                    modules={[ Pagination]}
+                                    modules={[Pagination]}
                                     spaceBetween={20}
                                     slidesPerView={1}
                                     pagination={{ 
