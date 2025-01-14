@@ -1,10 +1,9 @@
 "use client"
 
-import React from 'react';
+import React, { Fragment, useRef } from 'react';
 import { NextPage } from 'next';
 import { useState, useEffect } from 'react';
 import { Dialog, Transition } from '@headlessui/react';
-import { Fragment } from 'react';       
 import Image from 'next/image';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination } from 'swiper/modules';
@@ -42,6 +41,11 @@ const V13uaPage: NextPage = () => {
     const [isImageOpen, setIsImageOpen] = useState(false);
     const [selectedImage, setSelectedImage] = useState('');
 
+    const thumbnailsRef = useRef(null);
+    const galleryRef = useRef(null);
+
+    const syncing = useRef(false);
+
     function openImage(image: string) {
         console.log('Opening image:', image);
         setSelectedImage(image);
@@ -77,7 +81,7 @@ return (
 
     <div className="flex justify-center w-full mt-14 mb-8 text-center">
         <a href="#form" className="bg-[#ff6315] text-white px-8 py-4 text-2xl font-bold rounded hover:bg-red-700 transition duration-300 ease-in-out animate-bounce">
-            Безкоштовна консультація вашого бізнесу
+            Замовте безкоштовну консультацію зараз
         </a>
     </div>
     <section className="mb-12">
@@ -103,7 +107,7 @@ return (
         </div>
     </section>
 
-    <section className="mb-16 bg-gradient-to-b from-white to-gray-50 rounded-2xl p-6 shadow-sm">
+    <section className="mb-16 bg-gradient-to-b from-white to-gray-50 rounded-2xl shadow-sm">
       <p className="text-3xl font-bold mb-8 text-center bg-clip-text">
           Наш виклик: як побудувати стабільну систему холодної розсилки? 🎯
       </p>
@@ -151,7 +155,7 @@ return (
 
     <div className="flex justify-center w-full mt-14 mb-8 text-center">
         <a href="#form" className="bg-[#ff6315] text-white px-8 py-4 text-2xl font-bold rounded hover:bg-red-700 transition duration-300 ease-in-out animate-bounce">
-            Безкоштовна консультація вашого бізнесу
+            Замовте безкоштовну консультацію зараз
         </a>
     </div>
 
@@ -308,7 +312,7 @@ return (
 
     <div className="flex justify-center w-full mt-14 mb-8 text-center">
         <a href="#form" className="bg-[#ff6315] text-white px-8 py-4 text-2xl font-bold rounded hover:bg-red-700 transition duration-300 ease-in-out animate-bounce">
-            Безкоштовна консультація вашого бізнесу
+            Замовте безкоштовну консультацію зараз
         </a>
     </div>
 
@@ -345,6 +349,16 @@ return (
                     1024: { slidesPerView: 3 },
                 }}
                 className="h-[400px] w-full"
+                onSwiper={(swiper) => {
+                    thumbnailsRef.current = swiper;
+                }}
+                onSlideChange={(swiper) => {
+                    if (!syncing.current) {
+                        syncing.current = true;
+                        galleryRef.current?.slideTo(swiper.activeIndex);
+                        syncing.current = false;
+                    }
+                }}
             >
                 {testimonialImages.map((image, index) => (
                     <SwiperSlide key={index} className="sm:pt-4 pb-12 sm:pb-8 px-2">
@@ -437,48 +451,76 @@ return (
         text="Chat with us on Messenger"
     />
 
-    <Transition.Root show={isImageOpen} as={Fragment}>
-        <Dialog 
-            as="div" 
-            className="relative z-50" 
-            onClose={closeImage}
-            open={isImageOpen}
-        >
-            <Transition.Child
-                as={Fragment}
-                enter="ease-out duration-300"
-                enterFrom="opacity-0"
-                enterTo="opacity-100"
-                leave="ease-in duration-200"
-                leaveFrom="opacity-100"
-                leaveTo="opacity-0"
+        <Transition.Root show={isImageOpen} as={Fragment}>
+            <Dialog 
+                as="div" 
+                className="relative z-50" 
+                onClose={closeImage}
+                open={isImageOpen}
             >
-                <div className="fixed inset-0 bg-black/80" />
-            </Transition.Child>
+                <Transition.Child
+                    as={Fragment}
+                    enter="ease-out duration-300"
+                    enterFrom="opacity-0"
+                    enterTo="opacity-100"
+                    leave="ease-in duration-200"
+                    leaveFrom="opacity-100"
+                    leaveTo="opacity-0"
+                >
+                    <div className="fixed inset-0 bg-black/80" />
+                </Transition.Child>
 
-            <div className="fixed inset-0 overflow-y-auto">
-                <div className="flex min-h-full items-center justify-center p-4">
-                    <Dialog.Panel className="relative max-w-4xl w-full">
-                        <button
-                            onClick={closeImage}
-                            className="absolute -top-12 right-0 text-white text-4xl hover:text-gray-300 transition-colors"
-                        >
-                            ×
-                        </button>
-                        <div className="relative h-[80vh]">
-                            <Image
-                                src={selectedImage}
-                                alt="Enlarged view"
-                                fill
-                                className="object-contain"
-                                priority
-                            />
-                        </div>
-                    </Dialog.Panel>
+                <div className="fixed inset-0 overflow-y-auto">
+                    <div className="flex min-h-full items-center justify-center p-4">
+                        <Dialog.Panel className="relative max-w-4xl w-full">
+                            <button
+                                onClick={closeImage}
+                                className="absolute -top-12 right-0 text-white text-4xl hover:text-gray-300 transition-colors z-50"
+                            >
+                                ×
+                            </button>
+                            <div className="relative h-[80vh]">
+                                <Swiper
+                                    modules={[ Pagination]}
+                                    spaceBetween={20}
+                                    slidesPerView={1}
+                                    pagination={{ 
+                                        el: '.swiper-pagination',
+                                        clickable: true
+                                    }}
+                                    loop={true}
+                                    initialSlide={testimonialImages.indexOf(selectedImage)}
+                                    className="h-full w-full"
+                                    onSwiper={(swiper) => {
+                                        galleryRef.current = swiper;
+                                    }}
+                                    onSlideChange={(swiper) => {
+                                        if (!syncing.current) {
+                                            syncing.current = true;
+                                            thumbnailsRef.current?.slideTo(swiper.activeIndex);
+                                            syncing.current = false;
+                                        }
+                                    }}
+                                >
+                                    {testimonialImages.map((image, index) => (
+                                        <SwiperSlide key={index}>
+                                            <Image
+                                                src={image}
+                                                alt={`Email Response ${index + 1}`}
+                                                fill
+                                                className="object-contain"
+                                                priority
+                                            />
+                                        </SwiperSlide>
+                                    ))}
+                                </Swiper>
+                                <div className="swiper-pagination absolute bottom-4 w-full"></div>
+                            </div>
+                        </Dialog.Panel>
+                    </div>
                 </div>
-            </div>
-        </Dialog>
-    </Transition.Root>
+            </Dialog>
+        </Transition.Root>
     </div>
     );
 };

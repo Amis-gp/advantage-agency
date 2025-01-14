@@ -7,15 +7,11 @@ import "../app/globals.css";
 const Formspree = () => {
   const t = useTranslations('form');
   const [isSelectAnswer1, setIsSelectAnswer1] = useState(true);
-  const [isSelectAnswer2, setIsSelectAnswer2] = useState(true);
   const [isSelectAnswer3, setIsSelectAnswer3] = useState(true);
   const [isSelectAnswer4, setIsSelectAnswer4] = useState(true);
 
   const handleSelectAnswer1 = () => {
     setIsSelectAnswer1(false);
-  };
-  const handleSelectAnswer2 = () => {
-    setIsSelectAnswer2(false);
   };
   const handleSelectAnswer3 = () => {
     setIsSelectAnswer3(false);
@@ -79,27 +75,6 @@ const Formspree = () => {
           <option value="" disabled>{t('select')}</option>
           <option value="Yes_recently">{t('adsExperience.recently')}</option>
           <option value="No_never">{t('adsExperience.never')}</option>
-          <option value="No_for_a_long_time">{t('adsExperience.longTime')}</option>
-        </select>
-      </div>
-
-      <div className="mb-6">
-        <label htmlFor="What_is_your_monthly_advertising_budget?" className="block font-semibold">
-          {t('budget.question')}
-        </label>
-        <select
-          name="What_is_your_monthly_advertising_budget?"
-          id="What_is_your_monthly_advertising_budget?"
-          className={`shadow appearance-none border border-gray-100 rounded w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline custom-select-arrow ${isSelectAnswer2 ? 'text-gray-500' : 'text-black'}`}
-          onChange={handleSelectAnswer2}
-          required
-          defaultValue="">
-          <option value="" disabled>{t('select')}</option>
-          <option value="$500">{t('budget.500')}</option>
-          <option value="$500-$1200">{t('budget.500to1200')}</option>
-          <option value="$1200-$2000">{t('budget.1200to2000')}</option>
-          <option value="$2000-$5000">{t('budget.2000to5000')}</option>
-          <option value="$10000+">{t('budget.10000plus')}</option>
         </select>
       </div>
 
@@ -117,7 +92,7 @@ const Formspree = () => {
           <option value="" disabled>{t('select')}</option>
           <option value="$20">{t('pricePerClient.upto20')}</option>
           <option value="$20-$50">{t('pricePerClient.20to50')}</option>
-          <option value="$150+">{t('pricePerClient.150plus')}</option>
+          <option value="$50+">{t('pricePerClient.50plus')}</option>
         </select>
       </div>
 
@@ -133,9 +108,9 @@ const Formspree = () => {
           required
           defaultValue="">
           <option value="" disabled>{t('select')}</option>
-          <option value="1-3">{t('customersPerDay.upto3')}</option>
-          <option value="3-8">{t('customersPerDay.upto8')}</option>
-          <option value="15+">{t('customersPerDay.15plus')}</option>
+          <option value="50">{t('customersPerDay.upto50')}</option>
+          <option value="100">{t('customersPerDay.upto100')}</option>
+          <option value="100+">{t('customersPerDay.100plus')}</option>
         </select>
       </div>
 

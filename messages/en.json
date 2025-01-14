@@ -492,28 +492,19 @@
         "adsExperience": {
             "question": "Have you ever launched ads before?",
             "recently": "Yes, recently",
-            "never": "No, never",
-            "longTime": "No, for a long time"
-        },
-        "budget": {
-            "question": "What is your monthly advertising budget?",
-            "500": "$500",
-            "500to1200": "from $500 to $1200",
-            "1200to2000": "from $1200 to $2000",
-            "2000to5000": "from $2000 to $5000",
-            "10000plus": "from $10000 and above"
+            "never": "No, never"
         },
         "pricePerClient": {
             "question": "What price are you willing to pay per new client?",
             "upto20": "up to $20",
             "20to50": "from $20 to $50",
-            "150plus": "more than $150"
+            "50plus": "more than $50"
         },
         "customersPerDay": {
-            "question": "How many new customers can you process per day?",
-            "upto3": "up to 3",
-            "upto8": "up to 8",
-            "15plus": "more than 15"
+            "question": "How many new customers can you process per month?",
+            "upto50": "up to 50",
+            "upto100": "up to 100",
+            "100plus": "more than 100"
         },
         "submit": "Submit"
     },
