@@ -287,7 +287,7 @@
                 "b2c": {
                     "title": "B2C",
                     "services": [
-                        "PPS Ads",
+                        "PPC Ads",
                         "Meta Ads",
                         "Landing Page Creation"
                     ]
@@ -305,7 +305,7 @@
                 "custom": {
                     "title": "Custom",
                     "services": [
-                        "PPS Ads",
+                        "PPC Ads",
                         "TikTok Ads",
                         "Landing Page Creation",
                         "Reviews"
@@ -316,7 +316,7 @@
         "offers": {
             "meta": {
                 "slide1": {
-                    "title": "FROM $400",
+                    "title": "FROM $999",
                     "subtitle": "How does targeted advertising work?",
                     "content": [
                         "Users browse Facebook and Instagram feeds, and our ads are shown to them at the right moment.",
@@ -367,7 +367,7 @@
             },
             "google": {
                 "slide1": {
-                    "title": "FROM $400",
+                    "title": "FROM $999",
                     "subtitle": "How does search advertising work?",
                     "content": [
                         "Users search for products and services on Google, and your ad appears in top search positions at the exact moment when the client is ready to buy.",
@@ -418,7 +418,7 @@
             },
             "landing": {
                 "slide1": {
-                    "title": "FROM $500",
+                    "title": "FROM $999",
                     "subtitle": "What is a landing page?",
                     "content": [
                         "It's a single-page website specifically designed to attract clients, present services, or sell products. It's focused on achieving one specific goal – generating leads or sales.",

@@ -7,8 +7,14 @@ import Link from 'next/link';
 import { playSound } from '@/app/constant/sound';
 
 const videoSources = {
-    ua: 'img/home/video-ua.mp4',
-    en: 'img/home/video.mp4'
+    ua: {
+        full: 'img/home/video-ua.mp4',
+        preview: 'img/home/preview-ua.mp4'
+    },
+    en: {
+        full: 'img/home/video-en.mp4',
+        preview: 'img/home/preview-en.mp4'
+    }
 };
 
 export default function HeroSection() {
@@ -22,10 +28,6 @@ export default function HeroSection() {
     const handlePlayClick = () => {
         playSound('click');
         setIsPlaying(true);
-        const videoElement = document.querySelector('video');
-        if (videoElement) {
-            videoElement.play();
-        }
     };
 
     return (
@@ -71,13 +73,35 @@ export default function HeroSection() {
                     className="relative rounded-2xl md:rounded-3xl overflow-hidden max-w-[740px] mx-auto"
                 >
                     <div className="aspect-video flex items-center justify-center relative">
-                        <video key={locale} className="w-full h-full object-cover" controls={isPlaying} poster="/img/home/preview.webp" onPlay={() => setIsPlaying(true)}>
-                            <source src={videoSources[locale as keyof typeof videoSources]} type="video/mp4"/>
-                            Your browser does not support the video tag.
-                        </video>
+                        {!isPlaying ? (
+                            <video 
+                                key={`preview-${locale}`} 
+                                className="absolute inset-0 w-full h-full object-cover"
+                                autoPlay 
+                                muted 
+                                loop 
+                                playsInline
+                            >
+                                <source src={videoSources[locale as keyof typeof videoSources].preview} type="video/mp4"/>
+                            </video>
+                        ) : (
+                            <video 
+                                key={`full-${locale}`} 
+                                className="w-full h-full object-cover" 
+                                controls={true} 
+                                autoPlay
+                            >
+                                <source src={videoSources[locale as keyof typeof videoSources].full} type="video/mp4"/>
+                                Your browser does not support the video tag.
+                            </video>
+                        )}
                         
                         {!isPlaying && (
-                            <div onMouseEnter={() => playSound('hover_1')} className=" absolute inset-0 flex items-center justify-center cursor-pointer group" onClick={handlePlayClick}>
+                            <div 
+                                onMouseEnter={() => playSound('hover_1')} 
+                                className="absolute inset-0 flex items-center justify-center cursor-pointer group" 
+                                onClick={handlePlayClick}
+                            >
                                 <div className="absolute inset-0 bg-black/30 transition-colors duration-300 group-hover:bg-black/50"></div>
                                 <div className="flex items-center justify-center w-16 h-16 rounded-full bg-white z-10 transition-transform duration-300 group-hover:scale-110">
                                     <svg className="ml-1 transition-transform duration-300" width="19" height="20" viewBox="0 0 86 97" fill="none" xmlns="http://www.w3.org/2000/svg">

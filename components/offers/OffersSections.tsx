@@ -145,22 +145,46 @@ const OffersSection = async ({ locale }: { locale: string }) => {
 
     return (
         <section className="relative pt-14 overflow-hidden">
-            <div className="max-w-7xl mx-auto px-4 space-y-8">
+            <div className="max-w-7xl mx-auto px-4">
+
+                <div className="flex items-center gap-4 my-12">
+                    <div className="flex-grow h-[1px] bg-gradient-to-r from-transparent via-gray-300 to-transparent"></div>
+                    <div className="text-gray-400 text-sm font-medium">Meta Ads</div>
+                    <div className="flex-grow h-[1px] bg-gradient-to-r from-transparent via-gray-300 to-transparent"></div>
+                </div>
                 <SliderSection 
                     slides={translateSlides(META_SLIDES)} 
                     bgColor="bg-[#1877F2]/15" 
                     borderColor="border border-[#1877F2]/30" 
                 />
+                
+                <div className="flex items-center gap-4 my-12">
+                    <div className="flex-grow h-[1px] bg-gradient-to-r from-transparent via-gray-300 to-transparent"></div>
+                    <div className="text-gray-400 text-sm font-medium">Google Ads</div>
+                    <div className="flex-grow h-[1px] bg-gradient-to-r from-transparent via-gray-300 to-transparent"></div>
+                </div>
                 <SliderSection 
                     slides={translateSlides(GOOGLE_SLIDES)} 
                     bgColor="bg-gradient-to-br from-[#4285F4]/10 via-[#DB4437]/20 to-[#F4B400]/10" 
                     borderColor="border border-[#4285F4]/30" 
                 />
+                
+                <div className="flex items-center gap-4 my-12">
+                    <div className="flex-grow h-[1px] bg-gradient-to-r from-transparent via-gray-300 to-transparent"></div>
+                    <div className="text-gray-400 text-sm font-medium">Landing Page</div>
+                    <div className="flex-grow h-[1px] bg-gradient-to-r from-transparent via-gray-300 to-transparent"></div>
+                </div>
                 <SliderSection 
                     slides={translateSlides(LANDING_SLIDES)} 
                     bgColor="bg-gradient-to-br from-[#00B4D8]/20 to-[#0077B6]/20" 
                     borderColor="border border-[#00B4D8]/30" 
                 />
+                <div className="w-full h-12 my-8 opacity-50" style={{
+                    backgroundImage: "url(\"data:image/svg+xml,%3Csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0,25 C150,75 350,-25 500,25 C650,75 850,-25 1000,25' stroke='%23CBD5E0' fill='none' /%3E%3C/svg%3E\")",
+                    backgroundRepeat: "repeat-x",
+                    backgroundSize: "1000px"
+                }}></div>
+                
             </div>
         </section>
     );
