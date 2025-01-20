@@ -4,6 +4,13 @@ import { useState } from 'react'
 import { useRouter } from 'next/navigation'
 import { useLocale } from 'next-intl'
 
+interface BudgetDistribution {
+  googleAds: number | null;
+  facebookAds: number | null;
+  tiktokAds: number | null;
+  emailMarketing: number | null;
+}
+
 const BriefPage = () => {
   const locale = useLocale()
   const router = useRouter()
@@ -13,10 +20,10 @@ const BriefPage = () => {
       overview: '',
       marketingGoals: '',
       budgetDistribution: {
-        googleAds: 0,
-        facebookAds: 0,
-        tiktokAds: 0,
-        emailMarketing: 0
+        googleAds: null,
+        facebookAds: null,
+        tiktokAds: null,
+        emailMarketing: null
       }
     },
     targetAudience: {
@@ -78,6 +85,19 @@ const BriefPage = () => {
     }))
   }
 
+  const handleBudgetChange = (field: keyof BudgetDistribution, value: string) => {
+    setFormData(prev => ({
+      ...prev,
+      companyInfo: {
+        ...prev.companyInfo,
+        budgetDistribution: {
+          ...prev.companyInfo.budgetDistribution,
+          [field]: value ? Number(value) : null
+        }
+      }
+    }))
+  }
+
   const sendToTelegram = async (message: string) => {
     const BOT_TOKEN = process.env.NEXT_PUBLIC_BOT_TOKEN;
     const CHAT_ID = process.env.NEXT_PUBLIC_CHAT_ID;
@@ -105,6 +125,25 @@ const BriefPage = () => {
     }
   };
 
+  const formatBudget = (value: number | null): string => {
+    return value ? `$${value}` : 'Не вказано';
+  };
+
+  const handleKeyDown = (e: React.KeyboardEvent) => {
+    // Для textarea дозволяємо Shift+Enter
+    if (e.target instanceof HTMLTextAreaElement) {
+      if (e.key === 'Enter' && !e.shiftKey) {
+        e.preventDefault();
+      }
+    } 
+    // Для input забороняємо будь-який Enter
+    else if (e.target instanceof HTMLInputElement) {
+      if (e.key === 'Enter') {
+        e.preventDefault();
+      }
+    }
+  };
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
@@ -117,10 +156,10 @@ const BriefPage = () => {
         📝 Огляд: ${formData.companyInfo.overview}
         🎯 Маркетингові цілі: ${formData.companyInfo.marketingGoals}
         💰 Розподіл бюджету:
-        - Google Ads: ${formData.companyInfo.budgetDistribution.googleAds}%
-        - Facebook Ads: ${formData.companyInfo.budgetDistribution.facebookAds}%
-        - TikTok Ads: ${formData.companyInfo.budgetDistribution.tiktokAds}%
-        - Email Marketing: ${formData.companyInfo.budgetDistribution.emailMarketing}%
+        - Google Ads: ${formatBudget(formData.companyInfo.budgetDistribution.googleAds)}
+        - Facebook Ads: ${formatBudget(formData.companyInfo.budgetDistribution.facebookAds)}
+        - TikTok Ads: ${formatBudget(formData.companyInfo.budgetDistribution.tiktokAds)}
+        - Email Marketing: ${formatBudget(formData.companyInfo.budgetDistribution.emailMarketing)}
 
         2️⃣ <b>Цільова аудиторія</b>
         👥 Ідеальний клієнт: ${formData.targetAudience.idealCustomer}
@@ -206,6 +245,7 @@ const BriefPage = () => {
                   <textarea 
                     value={formData.companyInfo.overview}
                     onChange={(e) => handleChange('companyInfo', 'overview', e.target.value)}
+                    onKeyDown={handleKeyDown}
                     className="w-full p-3 bg-gray-900/50 border border-gray-700 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
                     rows={4}
                     placeholder="Опишіть вашу компанію, продукти та послуги..."
@@ -244,13 +284,11 @@ const BriefPage = () => {
                         <input 
                           type="number"
                           min="0"
-                          value={formData.companyInfo.budgetDistribution.googleAds}
-                          onChange={(e) => handleChange('companyInfo', 'budgetDistribution', JSON.stringify({
-                            ...formData.companyInfo.budgetDistribution,
-                            googleAds: Number(e.target.value)
-                          }))}
+                          value={formData.companyInfo.budgetDistribution.googleAds || ''}
+                          onChange={(e) => handleBudgetChange('googleAds', e.target.value)}
+                          onKeyDown={handleKeyDown}
                           className="w-full pl-8 p-3 bg-gray-900/50 border border-gray-700 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
-                          placeholder="0"
+                          placeholder="Введіть суму"
                         />
                       </div>
                     </div>
@@ -263,13 +301,45 @@ const BriefPage = () => {
                         <input 
                           type="number"
                           min="0"
-                          value={formData.companyInfo.budgetDistribution.facebookAds}
-                          onChange={(e) => handleChange('companyInfo', 'budgetDistribution', JSON.stringify({
-                            ...formData.companyInfo.budgetDistribution,
-                            facebookAds: Number(e.target.value)
-                          }))}
+                          value={formData.companyInfo.budgetDistribution.facebookAds || ''}
+                          onChange={(e) => handleBudgetChange('facebookAds', e.target.value)}
+                          onKeyDown={handleKeyDown}
                           className="w-full pl-8 p-3 bg-gray-900/50 border border-gray-700 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
-                          placeholder="0"
+                          placeholder="Введіть суму"
+                        />
+                      </div>
+                    </div>
+                    <div className="relative">
+                      <label className="block text-sm font-medium text-gray-400 mb-2">TikTok Ads (USD)</label>
+                      <div className="relative rounded-lg shadow-sm">
+                        <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                          <span className="text-gray-500">$</span>
+                        </div>
+                        <input 
+                          type="number"
+                          min="0"
+                          value={formData.companyInfo.budgetDistribution.tiktokAds || ''}
+                          onChange={(e) => handleBudgetChange('tiktokAds', e.target.value)}
+                          onKeyDown={handleKeyDown}
+                          className="w-full pl-8 p-3 bg-gray-900/50 border border-gray-700 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
+                          placeholder="Введіть суму"
+                        />
+                      </div>
+                    </div>
+                    <div className="relative">
+                      <label className="block text-sm font-medium text-gray-400 mb-2">Email Marketing (USD)</label>
+                      <div className="relative rounded-lg shadow-sm">
+                        <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                          <span className="text-gray-500">$</span>
+                        </div>
+                        <input 
+                          type="number"
+                          min="0"
+                          value={formData.companyInfo.budgetDistribution.emailMarketing || ''}
+                          onChange={(e) => handleBudgetChange('emailMarketing', e.target.value)}
+                          onKeyDown={handleKeyDown}
+                          className="w-full pl-8 p-3 bg-gray-900/50 border border-gray-700 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
+                          placeholder="Введіть суму"
                         />
                       </div>
                     </div>
@@ -295,6 +365,7 @@ const BriefPage = () => {
                   <textarea 
                     value={formData.targetAudience.idealCustomer}
                     onChange={(e) => handleChange('targetAudience', 'idealCustomer', e.target.value)}
+                    onKeyDown={handleKeyDown}
                     className="w-full p-3 bg-gray-900/50 border border-gray-700 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
                     rows={4}
                     placeholder="Опишіть вашого ідеального клієнта..."
@@ -309,6 +380,7 @@ const BriefPage = () => {
                     type="text"
                     value={formData.targetAudience.locations}
                     onChange={(e) => handleChange('targetAudience', 'locations', e.target.value)}
+                    onKeyDown={handleKeyDown}
                     className="w-full p-3 bg-gray-900/50 border border-gray-700 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
                     placeholder="Введіть локації"
                   />
@@ -321,6 +393,7 @@ const BriefPage = () => {
                   <textarea 
                     value={formData.targetAudience.brandSafety}
                     onChange={(e) => handleChange('targetAudience', 'brandSafety', e.target.value)}
+                    onKeyDown={handleKeyDown}
                     className="w-full p-3 bg-gray-900/50 border border-gray-700 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
                     rows={3}
                     placeholder="Опишіть обмеження щодо безпеки бренду..."
@@ -438,6 +511,7 @@ const BriefPage = () => {
                   <textarea 
                     value={formData.currentMarketing.previousResults}
                     onChange={(e) => handleChange('currentMarketing', 'previousResults', e.target.value)}
+                    onKeyDown={handleKeyDown}
                     className="w-full p-3 bg-gray-900/50 border border-gray-700 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
                     rows={4}
                     placeholder="Опишіть ваші попередні маркетингові результати..."
@@ -529,6 +603,7 @@ const BriefPage = () => {
                     <textarea 
                       value={formData.competitors.analysis}
                       onChange={(e) => handleChange('competitors', 'analysis', e.target.value)}
+                      onKeyDown={handleKeyDown}
                       className="w-full p-3 bg-gray-900/50 border border-gray-700 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
                       rows={4}
                       placeholder="Назвіть конкурентів та опишіть їхні особливості..."
@@ -544,6 +619,7 @@ const BriefPage = () => {
                     <textarea 
                       value={formData.competitors.research}
                       onChange={(e) => handleChange('competitors', 'research', e.target.value)}
+                      onKeyDown={handleKeyDown}
                       className="w-full p-3 bg-gray-900/50 border border-gray-700 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
                       rows={4}
                       placeholder="Поділіться результатами ваших досліджень..."
@@ -559,6 +635,7 @@ const BriefPage = () => {
                     <textarea 
                       value={formData.competitors.strategies}
                       onChange={(e) => handleChange('competitors', 'strategies', e.target.value)}
+                      onKeyDown={handleKeyDown}
                       className="w-full p-3 bg-gray-900/50 border border-gray-700 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
                       rows={4}
                       placeholder="Опишіть стратегії конкурентів..."
@@ -586,6 +663,7 @@ const BriefPage = () => {
                   <textarea 
                     value={formData.usp.features}
                     onChange={(e) => handleChange('usp', 'features', e.target.value)}
+                    onKeyDown={handleKeyDown}
                     className="w-full p-3 bg-gray-900/50 border border-gray-700 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
                     rows={4}
                     placeholder="Опишіть унікальні особливості та переваги вашого продукту чи послуги..."
@@ -599,6 +677,7 @@ const BriefPage = () => {
                   <textarea 
                     value={formData.usp.messages}
                     onChange={(e) => handleChange('usp', 'messages', e.target.value)}
+                    onKeyDown={handleKeyDown}
                     className="w-full p-3 bg-gray-900/50 border border-gray-700 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
                     rows={4}
                     placeholder="Опишіть ключові рекламні повідомлення та спеціальні пропозиції..."
@@ -612,6 +691,7 @@ const BriefPage = () => {
                   <textarea 
                     value={formData.usp.brandGuidelines}
                     onChange={(e) => handleChange('usp', 'brandGuidelines', e.target.value)}
+                    onKeyDown={handleKeyDown}
                     className="w-full p-3 bg-gray-900/50 border border-gray-700 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
                     rows={4}
                     placeholder="Опишіть ваші брендові рекомендації, тон комунікації та візуальні вимоги..."
@@ -638,6 +718,7 @@ const BriefPage = () => {
                   <textarea 
                     value={formData.website.otherAssets}
                     onChange={(e) => handleChange('website', 'otherAssets', e.target.value)}
+                    onKeyDown={handleKeyDown}
                     className="w-full p-3 bg-gray-900/50 border border-gray-700 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
                     rows={4}
                     placeholder="Опишіть ваші додаткові цифрові ресурси..."
@@ -651,6 +732,7 @@ const BriefPage = () => {
                   <textarea 
                     value={formData.website.tracking}
                     onChange={(e) => handleChange('website', 'tracking', e.target.value)}
+                    onKeyDown={handleKeyDown}
                     className="w-full p-3 bg-gray-900/50 border border-gray-700 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
                     rows={4}
                     placeholder="Опишіть ваші можливості щодо впровадження відстеження..."
@@ -664,6 +746,7 @@ const BriefPage = () => {
                   <textarea 
                     value={formData.website.restrictions}
                     onChange={(e) => handleChange('website', 'restrictions', e.target.value)}
+                    onKeyDown={handleKeyDown}
                     className="w-full p-3 bg-gray-900/50 border border-gray-700 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
                     rows={4}
                     placeholder="Опишіть будь-які обмеження або вимоги..."
@@ -690,6 +773,7 @@ const BriefPage = () => {
                   <textarea 
                     value={formData.content.existingCreatives}
                     onChange={(e) => handleChange('content', 'existingCreatives', e.target.value)}
+                    onKeyDown={handleKeyDown}
                     className="w-full p-3 bg-gray-900/50 border border-gray-700 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
                     rows={4}
                     placeholder="Опишіть наявні креативи або потреби в їх розробці..."
@@ -703,6 +787,7 @@ const BriefPage = () => {
                   <textarea 
                     value={formData.content.designPreferences}
                     onChange={(e) => handleChange('content', 'designPreferences', e.target.value)}
+                    onKeyDown={handleKeyDown}
                     className="w-full p-3 bg-gray-900/50 border border-gray-700 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
                     rows={4}
                     placeholder="Опишіть ваші преференції щодо дизайну..."
@@ -716,6 +801,7 @@ const BriefPage = () => {
                   <textarea 
                     value={formData.content.rights}
                     onChange={(e) => handleChange('content', 'rights', e.target.value)}
+                    onKeyDown={handleKeyDown}
                     className="w-full p-3 bg-gray-900/50 border border-gray-700 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
                     rows={4}
                     placeholder="Опишіть статус прав на використання контенту..."
@@ -742,6 +828,7 @@ const BriefPage = () => {
                   <textarea 
                     value={formData.legal.requirements}
                     onChange={(e) => handleChange('legal', 'requirements', e.target.value)}
+                    onKeyDown={handleKeyDown}
                     className="w-full p-3 bg-gray-900/50 border border-gray-700 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
                     rows={4}
                     placeholder="Опишіть юридичні та нормативні вимоги..."
@@ -755,6 +842,7 @@ const BriefPage = () => {
                   <textarea 
                     value={formData.legal.restrictions}
                     onChange={(e) => handleChange('legal', 'restrictions', e.target.value)}
+                    onKeyDown={handleKeyDown}
                     className="w-full p-3 bg-gray-900/50 border border-gray-700 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
                     rows={4}
                     placeholder="Опишіть обмеження щодо контенту..."
@@ -781,6 +869,7 @@ const BriefPage = () => {
                   <textarea 
                     value={formData.communication.frequency}
                     onChange={(e) => handleChange('communication', 'frequency', e.target.value)}
+                    onKeyDown={handleKeyDown}
                     className="w-full p-3 bg-gray-900/50 border border-gray-700 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
                     rows={4}
                     placeholder="Опишіть бажану частоту та формат комунікації..."
@@ -794,6 +883,7 @@ const BriefPage = () => {
                   <textarea 
                     value={formData.communication.reporting}
                     onChange={(e) => handleChange('communication', 'reporting', e.target.value)}
+                    onKeyDown={handleKeyDown}
                     className="w-full p-3 bg-gray-900/50 border border-gray-700 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
                     rows={4}
                     placeholder="Опишіть ваші вимоги до звітності..."
@@ -807,6 +897,7 @@ const BriefPage = () => {
                   <textarea 
                     value={formData.communication.contact}
                     onChange={(e) => handleChange('communication', 'contact', e.target.value)}
+                    onKeyDown={handleKeyDown}
                     className="w-full p-3 bg-gray-900/50 border border-gray-700 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
                     rows={4}
                     placeholder="Вкажіть контактну особу та її дані..."
@@ -833,6 +924,7 @@ const BriefPage = () => {
                   <textarea 
                     value={formData.expectations.success}
                     onChange={(e) => handleChange('expectations', 'success', e.target.value)}
+                    onKeyDown={handleKeyDown}
                     className="w-full p-3 bg-gray-900/50 border border-gray-700 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
                     rows={4}
                     placeholder="Опишіть ваші очікування від співпраці..."
@@ -846,6 +938,7 @@ const BriefPage = () => {
                   <textarea 
                     value={formData.expectations.kpi}
                     onChange={(e) => handleChange('expectations', 'kpi', e.target.value)}
+                    onKeyDown={handleKeyDown}
                     className="w-full p-3 bg-gray-900/50 border border-gray-700 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
                     rows={4}
                     placeholder="Вкажіть важливі для вас KPI..."
@@ -859,6 +952,7 @@ const BriefPage = () => {
                   <textarea 
                     value={formData.expectations.measurement}
                     onChange={(e) => handleChange('expectations', 'measurement', e.target.value)}
+                    onKeyDown={handleKeyDown}
                     className="w-full p-3 bg-gray-900/50 border border-gray-700 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
                     rows={4}
                     placeholder="Опишіть методи вимірювання успіху та довгострокові цілі..."
