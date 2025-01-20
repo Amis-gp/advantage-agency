@@ -188,7 +188,7 @@ const BriefPage = () => {
         
         <form onSubmit={handleSubmit} className="space-y-12">
           <div className="space-y-12">
-            <section className="bg-gray-800/50 rounded-xl p-6 backdrop-blur-sm border border-gray-700/50 shadow-xl">
+            <section className="bg-gray-800/50 rounded-xl p-6 border border-gray-700/50 shadow-xl">
               <div className="flex items-center mb-6">
                 <div className="flex-shrink-0 h-8 w-8 flex items-center justify-center rounded-full bg-blue-500 text-white font-bold">
                   1
@@ -277,7 +277,7 @@ const BriefPage = () => {
               </div>
             </section>
 
-            <section className="bg-gray-800/50 rounded-xl p-6 backdrop-blur-sm border border-gray-700/50 shadow-xl">
+            <section className="bg-gray-800/50 rounded-xl p-6 border border-gray-700/50 shadow-xl">
               <div className="flex items-center mb-6">
                 <div className="flex-shrink-0 h-8 w-8 flex items-center justify-center rounded-full bg-blue-500 text-white font-bold">
                   2
@@ -328,7 +328,7 @@ const BriefPage = () => {
               </div>
             </section>
 
-            <section className="bg-gray-800/50 rounded-xl p-6 backdrop-blur-sm border border-gray-700/50 shadow-xl">
+            <section className="bg-gray-800/50 rounded-xl p-6 border border-gray-700/50 shadow-xl">
               <div className="flex items-center mb-6">
                 <div className="flex-shrink-0 h-8 w-8 flex items-center justify-center rounded-full bg-blue-500 text-white font-bold">
                   3
@@ -509,7 +509,7 @@ const BriefPage = () => {
               </div>
             </section>
 
-            <section className="bg-gray-800/50 rounded-xl p-6 backdrop-blur-sm border border-gray-700/50 shadow-xl">
+            <section className="bg-gray-800/50 rounded-xl p-6 border border-gray-700/50 shadow-xl">
               <div className="flex items-center mb-6">
                 <div className="flex-shrink-0 h-8 w-8 flex items-center justify-center rounded-full bg-blue-500 text-white font-bold">
                   4
@@ -567,7 +567,7 @@ const BriefPage = () => {
               </div>
             </section>
 
-            <section className="bg-gray-800/50 rounded-xl p-6 backdrop-blur-sm border border-gray-700/50 shadow-xl">
+            <section className="bg-gray-800/50 rounded-xl p-6 border border-gray-700/50 shadow-xl">
               <div className="flex items-center mb-6">
                 <div className="flex-shrink-0 h-8 w-8 flex items-center justify-center rounded-full bg-blue-500 text-white font-bold">
                   5
@@ -619,7 +619,7 @@ const BriefPage = () => {
               </div>
             </section>
 
-            <section className="bg-gray-800/50 rounded-xl p-6 backdrop-blur-sm border border-gray-700/50 shadow-xl">
+            <section className="bg-gray-800/50 rounded-xl p-6 border border-gray-700/50 shadow-xl">
               <div className="flex items-center mb-6">
                 <div className="flex-shrink-0 h-8 w-8 flex items-center justify-center rounded-full bg-blue-500 text-white font-bold">
                   6
@@ -671,7 +671,7 @@ const BriefPage = () => {
               </div>
             </section>
 
-            <section className="bg-gray-800/50 rounded-xl p-6 backdrop-blur-sm border border-gray-700/50 shadow-xl">
+            <section className="bg-gray-800/50 rounded-xl p-6 border border-gray-700/50 shadow-xl">
               <div className="flex items-center mb-6">
                 <div className="flex-shrink-0 h-8 w-8 flex items-center justify-center rounded-full bg-blue-500 text-white font-bold">
                   7
@@ -723,7 +723,7 @@ const BriefPage = () => {
               </div>
             </section>
 
-            <section className="bg-gray-800/50 rounded-xl p-6 backdrop-blur-sm border border-gray-700/50 shadow-xl">
+            <section className="bg-gray-800/50 rounded-xl p-6 border border-gray-700/50 shadow-xl">
               <div className="flex items-center mb-6">
                 <div className="flex-shrink-0 h-8 w-8 flex items-center justify-center rounded-full bg-blue-500 text-white font-bold">
                   8
@@ -762,7 +762,7 @@ const BriefPage = () => {
               </div>
             </section>
 
-            <section className="bg-gray-800/50 rounded-xl p-6 backdrop-blur-sm border border-gray-700/50 shadow-xl">
+            <section className="bg-gray-800/50 rounded-xl p-6 border border-gray-700/50 shadow-xl">
               <div className="flex items-center mb-6">
                 <div className="flex-shrink-0 h-8 w-8 flex items-center justify-center rounded-full bg-blue-500 text-white font-bold">
                   9
@@ -814,7 +814,7 @@ const BriefPage = () => {
               </div>
             </section>
 
-            <section className="bg-gray-800/50 rounded-xl p-6 backdrop-blur-sm border border-gray-700/50 shadow-xl">
+            <section className="bg-gray-800/50 rounded-xl p-6 border border-gray-700/50 shadow-xl">
               <div className="flex items-center mb-6">
                 <div className="flex-shrink-0 h-8 w-8 flex items-center justify-center rounded-full bg-blue-500 text-white font-bold">
                   10
