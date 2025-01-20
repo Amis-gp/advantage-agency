@@ -2,7 +2,7 @@
 
 import { useState } from 'react'
 import { useRouter } from 'next/navigation'
-import { useLocale } from 'next-intl'
+import { useLocale, useTranslations } from 'next-intl'
 
 interface BudgetDistribution {
   googleAds: number | null;
@@ -14,6 +14,7 @@ interface BudgetDistribution {
 const BriefPage = () => {
   const locale = useLocale()
   const router = useRouter()
+  const t = useTranslations('brief')
   
   const [formData, setFormData] = useState({
     companyInfo: {
@@ -172,7 +173,7 @@ const BriefPage = () => {
         📊 Аналітика: ${formData.currentMarketing.analytics}
 
         4️⃣ <b>Конкуренти</b>
-        🔍 Дослідження: ${formData.competitors.research}
+        🔍 Дослідження: ${formData.competitors.analysis}
         📋 Стратегії: ${formData.competitors.strategies}
 
         5️⃣ <b>УТП та повідомлення</b>
@@ -220,10 +221,10 @@ const BriefPage = () => {
     <div className="min-h-screen bg-gray-900 text-gray-100">
       <div className="max-w-7xl mx-auto px-4 py-12">
         <h1 className="text-5xl font-bold text-center mb-4  bg-blue-500 text-transparent bg-clip-text">
-          Маркетинговий бриф
+          {t('title')}
         </h1>
         <p className="text-gray-400 text-center mb-12">
-          Заповніть форму нижче, щоб ми могли краще зрозуміти ваші потреби
+          {t('subtitle')}
         </p>
         
         <form onSubmit={handleSubmit} className="space-y-12">
@@ -234,13 +235,13 @@ const BriefPage = () => {
                   1
                 </div>
                 <h2 className="ml-4 text-2xl font-bold text-gray-100">
-                  Загальна інформація про компанію та цілі
+                  {t('sections.1.title')}
                 </h2>
               </div>
               <div className="space-y-6">
                 <div>
                   <label className="block mb-2 text-gray-300 font-medium">
-                    Надайте огляд вашої компанії:
+                    {t('sections.1.overview.label')}
                   </label>
                   <textarea 
                     value={formData.companyInfo.overview}
@@ -248,35 +249,35 @@ const BriefPage = () => {
                     onKeyDown={handleKeyDown}
                     className="w-full p-3 bg-gray-900/50 border border-gray-700 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
                     rows={4}
-                    placeholder="Опишіть вашу компанію, продукти та послуги..."
+                    placeholder={t('sections.1.overview.placeholder')}
                   />
                 </div>
                 
                 <div>
                   <label className="block mb-2 text-gray-300 font-medium">
-                    Ваші основні маркетингові цілі:
+                    {t('sections.1.marketingGoals.label')}
                   </label>
                   <select 
                     value={formData.companyInfo.marketingGoals}
                     onChange={(e) => handleChange('companyInfo', 'marketingGoals', e.target.value)}
                     className="w-full p-3 bg-gray-900/50 border border-gray-700 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
                   >
-                    <option value="">Оберіть ціль</option>
-                    <option value="brandAwareness">Впізнаваність бренду</option>
-                    <option value="leadGeneration">Генерація лідів</option>
-                    <option value="sales">Продажі</option>
-                    <option value="retention">Утримання клієнтів</option>
-                    <option value="multiple">Декілька цілей</option>
+                    <option value="">{t('sections.1.marketingGoals.options.empty')}</option>
+                    <option value="brandAwareness">{t('sections.1.marketingGoals.options.brandAwareness')}</option>
+                    <option value="leadGeneration">{t('sections.1.marketingGoals.options.leadGeneration')}</option>
+                    <option value="sales">{t('sections.1.marketingGoals.options.sales')}</option>
+                    <option value="retention">{t('sections.1.marketingGoals.options.retention')}</option>
+                    <option value="multiple">{t('sections.1.marketingGoals.options.multiple')}</option>
                   </select>
                 </div>
 
                 <div>
                   <label className="block mb-4 text-gray-300 font-medium">
-                    Розподіл маркетингового бюджету:
+                    {t('sections.1.budget.title')}
                   </label>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div className="relative">
-                      <label className="block text-sm font-medium text-gray-400 mb-2">Google Ads (USD)</label>
+                      <label className="block text-sm font-medium text-gray-400 mb-2">{t('sections.1.budget.googleAds')}</label>
                       <div className="relative rounded-lg shadow-sm">
                         <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
                           <span className="text-gray-500">$</span>
@@ -288,12 +289,12 @@ const BriefPage = () => {
                           onChange={(e) => handleBudgetChange('googleAds', e.target.value)}
                           onKeyDown={handleKeyDown}
                           className="w-full pl-8 p-3 bg-gray-900/50 border border-gray-700 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
-                          placeholder="Введіть суму"
+                          placeholder={t('sections.1.budget.placeholder')}
                         />
                       </div>
                     </div>
                     <div className="relative">
-                      <label className="block text-sm font-medium text-gray-400 mb-2">Facebook Ads (USD)</label>
+                      <label className="block text-sm font-medium text-gray-400 mb-2">{t('sections.1.budget.facebookAds')}</label>
                       <div className="relative rounded-lg shadow-sm">
                         <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
                           <span className="text-gray-500">$</span>
@@ -305,12 +306,12 @@ const BriefPage = () => {
                           onChange={(e) => handleBudgetChange('facebookAds', e.target.value)}
                           onKeyDown={handleKeyDown}
                           className="w-full pl-8 p-3 bg-gray-900/50 border border-gray-700 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
-                          placeholder="Введіть суму"
+                          placeholder={t('sections.1.budget.placeholder')}
                         />
                       </div>
                     </div>
                     <div className="relative">
-                      <label className="block text-sm font-medium text-gray-400 mb-2">TikTok Ads (USD)</label>
+                      <label className="block text-sm font-medium text-gray-400 mb-2">{t('sections.1.budget.tiktokAds')}</label>
                       <div className="relative rounded-lg shadow-sm">
                         <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
                           <span className="text-gray-500">$</span>
@@ -322,12 +323,12 @@ const BriefPage = () => {
                           onChange={(e) => handleBudgetChange('tiktokAds', e.target.value)}
                           onKeyDown={handleKeyDown}
                           className="w-full pl-8 p-3 bg-gray-900/50 border border-gray-700 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
-                          placeholder="Введіть суму"
+                          placeholder={t('sections.1.budget.placeholder')}
                         />
                       </div>
                     </div>
                     <div className="relative">
-                      <label className="block text-sm font-medium text-gray-400 mb-2">Email Marketing (USD)</label>
+                      <label className="block text-sm font-medium text-gray-400 mb-2">{t('sections.1.budget.emailMarketing')}</label>
                       <div className="relative rounded-lg shadow-sm">
                         <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
                           <span className="text-gray-500">$</span>
@@ -339,7 +340,7 @@ const BriefPage = () => {
                           onChange={(e) => handleBudgetChange('emailMarketing', e.target.value)}
                           onKeyDown={handleKeyDown}
                           className="w-full pl-8 p-3 bg-gray-900/50 border border-gray-700 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
-                          placeholder="Введіть суму"
+                          placeholder={t('sections.1.budget.placeholder')}
                         />
                       </div>
                     </div>
@@ -354,13 +355,13 @@ const BriefPage = () => {
                   2
                 </div>
                 <h2 className="ml-4 text-2xl font-bold text-gray-100">
-                  Цільова аудиторія
+                  {t('sections.2.title')}
                 </h2>
               </div>
               <div className="space-y-6">
                 <div>
                   <label className="block mb-2 text-gray-300 font-medium">
-                    Опишіть вашого ідеального клієнта (демографія, інтереси, поведінка):
+                    {t('sections.2.idealCustomer.label')}
                   </label>
                   <textarea 
                     value={formData.targetAudience.idealCustomer}
@@ -368,13 +369,13 @@ const BriefPage = () => {
                     onKeyDown={handleKeyDown}
                     className="w-full p-3 bg-gray-900/50 border border-gray-700 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
                     rows={4}
-                    placeholder="Опишіть вашого ідеального клієнта..."
+                    placeholder={t('sections.2.idealCustomer.placeholder')}
                   />
                 </div>
 
                 <div>
                   <label className="block mb-2 text-gray-300 font-medium">
-                    Цільові локації (міста, регіони, країни):
+                    {t('sections.2.locations.label')}
                   </label>
                   <input 
                     type="text"
@@ -382,13 +383,13 @@ const BriefPage = () => {
                     onChange={(e) => handleChange('targetAudience', 'locations', e.target.value)}
                     onKeyDown={handleKeyDown}
                     className="w-full p-3 bg-gray-900/50 border border-gray-700 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
-                    placeholder="Введіть локації"
+                    placeholder={t('sections.2.locations.placeholder')}
                   />
                 </div>
 
                 <div>
                   <label className="block mb-2 text-gray-300 font-medium">
-                    Обмеження щодо безпеки бренду:
+                    {t('sections.2.brandSafety.label')}
                   </label>
                   <textarea 
                     value={formData.targetAudience.brandSafety}
@@ -396,7 +397,7 @@ const BriefPage = () => {
                     onKeyDown={handleKeyDown}
                     className="w-full p-3 bg-gray-900/50 border border-gray-700 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
                     rows={3}
-                    placeholder="Опишіть обмеження щодо безпеки бренду..."
+                    placeholder={t('sections.2.brandSafety.placeholder')}
                   />
                 </div>
               </div>
@@ -408,105 +409,37 @@ const BriefPage = () => {
                   3
                 </div>
                 <h2 className="ml-4 text-2xl font-bold text-gray-100">
-                  Поточні та минулі маркетингові зусилля
+                  {t('sections.3.title')}
                 </h2>
               </div>
               <div className="space-y-6">
                 <div>
                   <label className="block mb-2 text-gray-300 font-medium">
-                    Які маркетингові канали або платформи ви зараз використовуєте або використовували в минулому?
+                    {t('sections.3.channels.label')}
                   </label>
                   <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
-                    <label className="flex items-center space-x-2">
-                      <input
-                        type="checkbox"
-                        checked={formData.currentMarketing.channels.includes('google')}
-                        onChange={(e) => {
-                          const value = e.target.checked ? 
-                            [...formData.currentMarketing.channels.split(','), 'google'].filter(Boolean).join(',') :
-                            formData.currentMarketing.channels.split(',').filter(c => c !== 'google').join(',')
-                          handleChange('currentMarketing', 'channels', value)
-                        }}
-                        className="rounded border-gray-300"
-                      />
-                      <span>Google Ads</span>
-                    </label>
-                    <label className="flex items-center space-x-2">
-                      <input
-                        type="checkbox"
-                        checked={formData.currentMarketing.channels.includes('facebook')}
-                        onChange={(e) => {
-                          const value = e.target.checked ?
-                            [...formData.currentMarketing.channels.split(','), 'facebook'].filter(Boolean).join(',') :
-                            formData.currentMarketing.channels.split(',').filter(c => c !== 'facebook').join(',')
-                          handleChange('currentMarketing', 'channels', value)
-                        }}
-                        className="rounded border-gray-300"
-                      />
-                      <span>Facebook Ads</span>
-                    </label>
-                    <label className="flex items-center space-x-2">
-                      <input
-                        type="checkbox"
-                        checked={formData.currentMarketing.channels.includes('instagram')}
-                        onChange={(e) => {
-                          const value = e.target.checked ?
-                            [...formData.currentMarketing.channels.split(','), 'instagram'].filter(Boolean).join(',') :
-                            formData.currentMarketing.channels.split(',').filter(c => c !== 'instagram').join(',')
-                          handleChange('currentMarketing', 'channels', value)
-                        }}
-                        className="rounded border-gray-300"
-                      />
-                      <span>Instagram</span>
-                    </label>
-                    <label className="flex items-center space-x-2">
-                      <input
-                        type="checkbox"
-                        checked={formData.currentMarketing.channels.includes('tiktok')}
-                        onChange={(e) => {
-                          const value = e.target.checked ?
-                            [...formData.currentMarketing.channels.split(','), 'tiktok'].filter(Boolean).join(',') :
-                            formData.currentMarketing.channels.split(',').filter(c => c !== 'tiktok').join(',')
-                          handleChange('currentMarketing', 'channels', value)
-                        }}
-                        className="rounded border-gray-300"
-                      />
-                      <span>TikTok</span>
-                    </label>
-                    <label className="flex items-center space-x-2">
-                      <input
-                        type="checkbox"
-                        checked={formData.currentMarketing.channels.includes('email')}
-                        onChange={(e) => {
-                          const value = e.target.checked ?
-                            [...formData.currentMarketing.channels.split(','), 'email'].filter(Boolean).join(',') :
-                            formData.currentMarketing.channels.split(',').filter(c => c !== 'email').join(',')
-                          handleChange('currentMarketing', 'channels', value)
-                        }}
-                        className="rounded border-gray-300"
-                      />
-                      <span>Email Marketing</span>
-                    </label>
-                    <label className="flex items-center space-x-2">
-                      <input
-                        type="checkbox"
-                        checked={formData.currentMarketing.channels.includes('other')}
-                        onChange={(e) => {
-                          const value = e.target.checked ?
-                            [...formData.currentMarketing.channels.split(','), 'other'].filter(Boolean).join(',') :
-                            formData.currentMarketing.channels.split(',').filter(c => c !== 'other').join(',')
-                          handleChange('currentMarketing', 'channels', value)
-                        }}
-                        className="rounded border-gray-300"
-                      />
-                      <span>Інше</span>
-                    </label>
+                    {Object.entries(t.raw('sections.3.channels.options')).map(([key, value]) => (
+                      <label key={key} className="flex items-center space-x-2">
+                        <input
+                          type="checkbox"
+                          checked={formData.currentMarketing.channels.includes(key)}
+                          onChange={(e) => {
+                            const value = e.target.checked ? 
+                              [...formData.currentMarketing.channels.split(','), key].filter(Boolean).join(',') :
+                              formData.currentMarketing.channels.split(',').filter(c => c !== key).join(',')
+                            handleChange('currentMarketing', 'channels', value)
+                          }}
+                          className="rounded border-gray-300"
+                        />
+                        <span>{value}</span>
+                      </label>
+                    ))}
                   </div>
                 </div>
 
                 <div>
                   <label className="block mb-2 text-gray-300 font-medium">
-                    Поділіться даними, інсайтами або звітами про ваші попередні маркетингові зусилля, включаючи успіхи та виклики:
+                    {t('sections.3.previousResults.label')}
                   </label>
                   <textarea 
                     value={formData.currentMarketing.previousResults}
@@ -514,71 +447,31 @@ const BriefPage = () => {
                     onKeyDown={handleKeyDown}
                     className="w-full p-3 bg-gray-900/50 border border-gray-700 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
                     rows={4}
-                    placeholder="Опишіть ваші попередні маркетингові результати..."
+                    placeholder={t('sections.3.previousResults.placeholder')}
                   />
                 </div>
 
                 <div>
                   <label className="block mb-2 text-gray-300 font-medium">
-                    Які інструменти аналітики у вас встановлені?
+                    {t('sections.3.analytics.label')}
                   </label>
                   <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
-                    <label className="flex items-center space-x-2">
-                      <input
-                        type="checkbox"
-                        checked={formData.currentMarketing.analytics.includes('ga4')}
-                        onChange={(e) => {
-                          const value = e.target.checked ?
-                            [...formData.currentMarketing.analytics.split(','), 'ga4'].filter(Boolean).join(',') :
-                            formData.currentMarketing.analytics.split(',').filter(c => c !== 'ga4').join(',')
-                          handleChange('currentMarketing', 'analytics', value)
-                        }}
-                        className="rounded border-gray-300"
-                      />
-                      <span>Google Analytics 4</span>
-                    </label>
-                    <label className="flex items-center space-x-2">
-                      <input
-                        type="checkbox"
-                        checked={formData.currentMarketing.analytics.includes('pixel')}
-                        onChange={(e) => {
-                          const value = e.target.checked ?
-                            [...formData.currentMarketing.analytics.split(','), 'pixel'].filter(Boolean).join(',') :
-                            formData.currentMarketing.analytics.split(',').filter(c => c !== 'pixel').join(',')
-                          handleChange('currentMarketing', 'analytics', value)
-                        }}
-                        className="rounded border-gray-300"
-                      />
-                      <span>Facebook Pixel</span>
-                    </label>
-                    <label className="flex items-center space-x-2">
-                      <input
-                        type="checkbox"
-                        checked={formData.currentMarketing.analytics.includes('gtm')}
-                        onChange={(e) => {
-                          const value = e.target.checked ?
-                            [...formData.currentMarketing.analytics.split(','), 'gtm'].filter(Boolean).join(',') :
-                            formData.currentMarketing.analytics.split(',').filter(c => c !== 'gtm').join(',')
-                          handleChange('currentMarketing', 'analytics', value)
-                        }}
-                        className="rounded border-gray-300"
-                      />
-                      <span>Google Tag Manager</span>
-                    </label>
-                    <label className="flex items-center space-x-2">
-                      <input
-                        type="checkbox"
-                        checked={formData.currentMarketing.analytics.includes('crm')}
-                        onChange={(e) => {
-                          const value = e.target.checked ?
-                            [...formData.currentMarketing.analytics.split(','), 'crm'].filter(Boolean).join(',') :
-                            formData.currentMarketing.analytics.split(',').filter(c => c !== 'crm').join(',')
-                          handleChange('currentMarketing', 'analytics', value)
-                        }}
-                        className="rounded border-gray-300"
-                      />
-                      <span>CRM System</span>
-                    </label>
+                    {Object.entries(t.raw('sections.3.analytics.options')).map(([key, value]) => (
+                      <label key={key} className="flex items-center space-x-2">
+                        <input
+                          type="checkbox"
+                          checked={formData.currentMarketing.analytics.includes(key)}
+                          onChange={(e) => {
+                            const value = e.target.checked ?
+                              [...formData.currentMarketing.analytics.split(','), key].filter(Boolean).join(',') :
+                              formData.currentMarketing.analytics.split(',').filter(c => c !== key).join(',')
+                            handleChange('currentMarketing', 'analytics', value)
+                          }}
+                          className="rounded border-gray-300"
+                        />
+                        <span>{value}</span>
+                      </label>
+                    ))}
                   </div>
                 </div>
               </div>
@@ -590,57 +483,51 @@ const BriefPage = () => {
                   4
                 </div>
                 <h2 className="ml-4 text-2xl font-bold text-gray-100">
-                  Конкурентний аналіз
+                  {t('sections.4.title')}
                 </h2>
               </div>
               
               <div className="space-y-6">
                 <div>
                   <label className="block mb-2 text-gray-300 font-medium">
-                    Опишіть ваших основних конкурентів та їхні сильні/слабкі сторони:
+                    {t('sections.4.analysis.label')}
                   </label>
-                  <div className="space-y-4">
-                    <textarea 
-                      value={formData.competitors.analysis}
-                      onChange={(e) => handleChange('competitors', 'analysis', e.target.value)}
-                      onKeyDown={handleKeyDown}
-                      className="w-full p-3 bg-gray-900/50 border border-gray-700 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
-                      rows={4}
-                      placeholder="Назвіть конкурентів та опишіть їхні особливості..."
-                    />
-                  </div>
+                  <textarea 
+                    value={formData.competitors.analysis}
+                    onChange={(e) => handleChange('competitors', 'analysis', e.target.value)}
+                    onKeyDown={handleKeyDown}
+                    className="w-full p-3 bg-gray-900/50 border border-gray-700 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
+                    rows={4}
+                    placeholder={t('sections.4.analysis.placeholder')}
+                  />
                 </div>
 
                 <div>
                   <label className="block mb-2 text-gray-300 font-medium">
-                    Чи проводили ви будь-які ринкові дослідження або аналіз конкурентів? Якщо так, чи можете ви поділитися висновками?:
+                    {t('sections.4.research.label')}
                   </label>
-                  <div className="space-y-4">
-                    <textarea 
-                      value={formData.competitors.research}
-                      onChange={(e) => handleChange('competitors', 'research', e.target.value)}
-                      onKeyDown={handleKeyDown}
-                      className="w-full p-3 bg-gray-900/50 border border-gray-700 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
-                      rows={4}
-                      placeholder="Поділіться результатами ваших досліджень..."
-                    />
-                  </div>
+                  <textarea 
+                    value={formData.competitors.research}
+                    onChange={(e) => handleChange('competitors', 'research', e.target.value)}
+                    onKeyDown={handleKeyDown}
+                    className="w-full p-3 bg-gray-900/50 border border-gray-700 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
+                    rows={4}
+                    placeholder={t('sections.4.research.placeholder')}
+                  />
                 </div>
 
                 <div>
                   <label className="block mb-2 text-gray-300 font-medium">
-                    Стратегії конкурентів, які ви хотіли б наслідувати або від яких хотіли б відрізнятися:
+                    {t('sections.4.strategies.label')}
                   </label>
-                  <div className="space-y-4">
-                    <textarea 
-                      value={formData.competitors.strategies}
-                      onChange={(e) => handleChange('competitors', 'strategies', e.target.value)}
-                      onKeyDown={handleKeyDown}
-                      className="w-full p-3 bg-gray-900/50 border border-gray-700 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
-                      rows={4}
-                      placeholder="Опишіть стратегії конкурентів..."
-                    />
-                  </div>
+                  <textarea 
+                    value={formData.competitors.strategies}
+                    onChange={(e) => handleChange('competitors', 'strategies', e.target.value)}
+                    onKeyDown={handleKeyDown}
+                    className="w-full p-3 bg-gray-900/50 border border-gray-700 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
+                    rows={4}
+                    placeholder={t('sections.4.strategies.placeholder')}
+                  />
                 </div>
               </div>
             </section>
@@ -651,14 +538,14 @@ const BriefPage = () => {
                   5
                 </div>
                 <h2 className="ml-4 text-2xl font-bold text-gray-100">
-                  Унікальна торгова пропозиція (УТП) та ключові повідомлення
+                  {t('sections.5.title')}
                 </h2>
               </div>
               
               <div className="space-y-6">
                 <div>
                   <label className="block mb-2 text-gray-300 font-medium">
-                    Які унікальні особливості, переваги або ціннісні пропозиції відрізняють ваш продукт або послугу від конкурентів?
+                    {t('sections.5.features.label')}
                   </label>
                   <textarea 
                     value={formData.usp.features}
@@ -666,13 +553,13 @@ const BriefPage = () => {
                     onKeyDown={handleKeyDown}
                     className="w-full p-3 bg-gray-900/50 border border-gray-700 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
                     rows={4}
-                    placeholder="Опишіть унікальні особливості та переваги вашого продукту чи послуги..."
+                    placeholder={t('sections.5.features.placeholder')}
                   />
                 </div>
 
                 <div>
                   <label className="block mb-2 text-gray-300 font-medium">
-                    Які конкретні повідомлення або акції ви хочете підкреслити у своїй рекламі?
+                    {t('sections.5.messages.label')}
                   </label>
                   <textarea 
                     value={formData.usp.messages}
@@ -680,13 +567,13 @@ const BriefPage = () => {
                     onKeyDown={handleKeyDown}
                     className="w-full p-3 bg-gray-900/50 border border-gray-700 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
                     rows={4}
-                    placeholder="Опишіть ключові рекламні повідомлення та спеціальні пропозиції..."
+                    placeholder={t('sections.5.messages.placeholder')}
                   />
                 </div>
 
                 <div>
                   <label className="block mb-2 text-gray-300 font-medium">
-                    Чи є у вас документ з брендовими рекомендаціями? Опишіть вашу візуальну ідентичність, тон голосу та творчі уподобання:
+                    {t('sections.5.brandGuidelines.label')}
                   </label>
                   <textarea 
                     value={formData.usp.brandGuidelines}
@@ -694,7 +581,7 @@ const BriefPage = () => {
                     onKeyDown={handleKeyDown}
                     className="w-full p-3 bg-gray-900/50 border border-gray-700 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
                     rows={4}
-                    placeholder="Опишіть ваші брендові рекомендації, тон комунікації та візуальні вимоги..."
+                    placeholder={t('sections.5.brandGuidelines.placeholder')}
                   />
                 </div>
               </div>
@@ -706,14 +593,14 @@ const BriefPage = () => {
                   6
                 </div>
                 <h2 className="ml-4 text-2xl font-bold text-gray-100">
-                  Веб-сайт та онлайн присутність
+                  {t('sections.6.title')}
                 </h2>
               </div>
               
               <div className="space-y-6">
                 <div>
                   <label className="block mb-2 text-gray-300 font-medium">
-                    Крім вашого основного веб-сайту, чи є у вас інші цифрові ресурси (наприклад, блоги, додатки, цільові сторінки), які ви хочете просувати або інтегрувати в кампанію?
+                    {t('sections.6.otherAssets.label')}
                   </label>
                   <textarea 
                     value={formData.website.otherAssets}
@@ -721,13 +608,13 @@ const BriefPage = () => {
                     onKeyDown={handleKeyDown}
                     className="w-full p-3 bg-gray-900/50 border border-gray-700 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
                     rows={4}
-                    placeholder="Опишіть ваші додаткові цифрові ресурси..."
+                    placeholder={t('sections.6.otherAssets.placeholder')}
                   />
                 </div>
 
                 <div>
                   <label className="block mb-2 text-gray-300 font-medium">
-                    Чи готові ви впроваджувати на своєму веб-сайті відстеження посилань і тегів для вимірювання ефективності кампанії?
+                    {t('sections.6.tracking.label')}
                   </label>
                   <textarea 
                     value={formData.website.tracking}
@@ -735,13 +622,13 @@ const BriefPage = () => {
                     onKeyDown={handleKeyDown}
                     className="w-full p-3 bg-gray-900/50 border border-gray-700 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
                     rows={4}
-                    placeholder="Опишіть ваші можливості щодо впровадження відстеження..."
+                    placeholder={t('sections.6.tracking.placeholder')}
                   />
                 </div>
 
                 <div>
                   <label className="block mb-2 text-gray-300 font-medium">
-                    Чи маєте ви будь-які особливі вимоги або обмеження щодо змін на веб-сайті або впровадження відстеження?
+                    {t('sections.6.restrictions.label')}
                   </label>
                   <textarea 
                     value={formData.website.restrictions}
@@ -749,7 +636,7 @@ const BriefPage = () => {
                     onKeyDown={handleKeyDown}
                     className="w-full p-3 bg-gray-900/50 border border-gray-700 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
                     rows={4}
-                    placeholder="Опишіть будь-які обмеження або вимоги..."
+                    placeholder={t('sections.6.restrictions.placeholder')}
                   />
                 </div>
               </div>
@@ -761,28 +648,14 @@ const BriefPage = () => {
                   7
                 </div>
                 <h2 className="ml-4 text-2xl font-bold text-gray-100">
-                  Контент і креативи
+                  {t('sections.7.title')}
                 </h2>
               </div>
               
               <div className="space-y-6">
                 <div>
                   <label className="block mb-2 text-gray-300 font-medium">
-                    Чи є у вас існуючі рекламні креативи (наприклад, зображення, відео, текст) або вам потрібна допомога з розробкою креативів?
-                  </label>
-                  <textarea 
-                    value={formData.content.existingCreatives}
-                    onChange={(e) => handleChange('content', 'existingCreatives', e.target.value)}
-                    onKeyDown={handleKeyDown}
-                    className="w-full p-3 bg-gray-900/50 border border-gray-700 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
-                    rows={4}
-                    placeholder="Опишіть наявні креативи або потреби в їх розробці..."
-                  />
-                </div>
-
-                <div>
-                  <label className="block mb-2 text-gray-300 font-medium">
-                    Чи є якісь конкретні елементи дизайну, кольори або стилі, яким ви надаєте перевагу?
+                    {t('sections.7.designPreferences.label')}
                   </label>
                   <textarea 
                     value={formData.content.designPreferences}
@@ -790,13 +663,13 @@ const BriefPage = () => {
                     onKeyDown={handleKeyDown}
                     className="w-full p-3 bg-gray-900/50 border border-gray-700 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
                     rows={4}
-                    placeholder="Опишіть ваші преференції щодо дизайну..."
+                    placeholder={t('sections.7.designPreferences.placeholder')}
                   />
                 </div>
 
                 <div>
                   <label className="block mb-2 text-gray-300 font-medium">
-                    Чи маєте ви необхідні права та дозволи на контент, який використовується у вашій рекламі?
+                    {t('sections.7.rights.label')}
                   </label>
                   <textarea 
                     value={formData.content.rights}
@@ -804,7 +677,7 @@ const BriefPage = () => {
                     onKeyDown={handleKeyDown}
                     className="w-full p-3 bg-gray-900/50 border border-gray-700 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
                     rows={4}
-                    placeholder="Опишіть статус прав на використання контенту..."
+                    placeholder={t('sections.7.rights.placeholder')}
                   />
                 </div>
               </div>
@@ -816,14 +689,14 @@ const BriefPage = () => {
                   8
                 </div>
                 <h2 className="ml-4 text-2xl font-bold text-gray-100">
-                  Юридичні питання та відповідність
+                  {t('sections.8.title')}
                 </h2>
               </div>
               
               <div className="space-y-6">
                 <div>
                   <label className="block mb-2 text-gray-300 font-medium">
-                    Чи є якісь юридичні, галузеві або нормативні вимоги, про які нам потрібно знати при створенні та розміщенні реклами?
+                    {t('sections.8.requirements.label')}
                   </label>
                   <textarea 
                     value={formData.legal.requirements}
@@ -831,13 +704,13 @@ const BriefPage = () => {
                     onKeyDown={handleKeyDown}
                     className="w-full p-3 bg-gray-900/50 border border-gray-700 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
                     rows={4}
-                    placeholder="Опишіть юридичні та нормативні вимоги..."
+                    placeholder={t('sections.8.requirements.placeholder')}
                   />
                 </div>
 
                 <div>
                   <label className="block mb-2 text-gray-300 font-medium">
-                    Чи є у вас будь-які особливі рекомендації або обмеження щодо типу контенту або повідомлень, що використовуються у вашій рекламі?
+                    {t('sections.8.restrictions.label')}
                   </label>
                   <textarea 
                     value={formData.legal.restrictions}
@@ -845,7 +718,7 @@ const BriefPage = () => {
                     onKeyDown={handleKeyDown}
                     className="w-full p-3 bg-gray-900/50 border border-gray-700 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
                     rows={4}
-                    placeholder="Опишіть обмеження щодо контенту..."
+                    placeholder={t('sections.8.restrictions.placeholder')}
                   />
                 </div>
               </div>
@@ -857,14 +730,14 @@ const BriefPage = () => {
                   9
                 </div>
                 <h2 className="ml-4 text-2xl font-bold text-gray-100">
-                  Комунікація та звітність
+                  {t('sections.9.title')}
                 </h2>
               </div>
               
               <div className="space-y-6">
                 <div>
                   <label className="block mb-2 text-gray-300 font-medium">
-                    Який ваш бажаний режим і частота спілкування з нашою командою?
+                    {t('sections.9.frequency.label')}
                   </label>
                   <textarea 
                     value={formData.communication.frequency}
@@ -872,13 +745,13 @@ const BriefPage = () => {
                     onKeyDown={handleKeyDown}
                     className="w-full p-3 bg-gray-900/50 border border-gray-700 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
                     rows={4}
-                    placeholder="Опишіть бажану частоту та формат комунікації..."
+                    placeholder={t('sections.9.frequency.placeholder')}
                   />
                 </div>
 
                 <div>
                   <label className="block mb-2 text-gray-300 font-medium">
-                    Як часто ви очікуєте отримувати звіти та яку ключову інформацію ви хотіли б бачити в цих звітах?
+                    {t('sections.9.reporting.label')}
                   </label>
                   <textarea 
                     value={formData.communication.reporting}
@@ -886,13 +759,13 @@ const BriefPage = () => {
                     onKeyDown={handleKeyDown}
                     className="w-full p-3 bg-gray-900/50 border border-gray-700 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
                     rows={4}
-                    placeholder="Опишіть ваші вимоги до звітності..."
+                    placeholder={t('sections.9.reporting.placeholder')}
                   />
                 </div>
 
                 <div>
                   <label className="block mb-2 text-gray-300 font-medium">
-                    Хто буде нашою основною контактною особою у вашій організації для цього проекту?
+                    {t('sections.9.contact.label')}
                   </label>
                   <textarea 
                     value={formData.communication.contact}
@@ -900,7 +773,7 @@ const BriefPage = () => {
                     onKeyDown={handleKeyDown}
                     className="w-full p-3 bg-gray-900/50 border border-gray-700 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
                     rows={4}
-                    placeholder="Вкажіть контактну особу та її дані..."
+                    placeholder={t('sections.9.contact.placeholder')}
                   />
                 </div>
               </div>
@@ -912,42 +785,14 @@ const BriefPage = () => {
                   10
                 </div>
                 <h2 className="ml-4 text-2xl font-bold text-gray-100">
-                  Очікування та показники успіху
+                  {t('sections.10.title')}
                 </h2>
               </div>
               
               <div className="space-y-6">
                 <div>
                   <label className="block mb-2 text-gray-300 font-medium">
-                    Які ваші очікування від маркетингового агентства і що ви вважатимете успішною співпрацею?
-                  </label>
-                  <textarea 
-                    value={formData.expectations.success}
-                    onChange={(e) => handleChange('expectations', 'success', e.target.value)}
-                    onKeyDown={handleKeyDown}
-                    className="w-full p-3 bg-gray-900/50 border border-gray-700 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
-                    rows={4}
-                    placeholder="Опишіть ваші очікування від співпраці..."
-                  />
-                </div>
-
-                <div>
-                  <label className="block mb-2 text-gray-300 font-medium">
-                    Чи є якісь конкретні показники або ключові показники ефективності (KPI), на яких ви хочете, щоб ми зосередилися та регулярно звітували?
-                  </label>
-                  <textarea 
-                    value={formData.expectations.kpi}
-                    onChange={(e) => handleChange('expectations', 'kpi', e.target.value)}
-                    onKeyDown={handleKeyDown}
-                    className="w-full p-3 bg-gray-900/50 border border-gray-700 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
-                    rows={4}
-                    placeholder="Вкажіть важливі для вас KPI..."
-                  />
-                </div>
-
-                <div>
-                  <label className="block mb-2 text-gray-300 font-medium">
-                    Як ви плануєте вимірювати успіх маркетингової кампанії та які ваші довгострокові цілі?
+                    {t('sections.10.measurement.label')}
                   </label>
                   <textarea 
                     value={formData.expectations.measurement}
@@ -955,7 +800,7 @@ const BriefPage = () => {
                     onKeyDown={handleKeyDown}
                     className="w-full p-3 bg-gray-900/50 border border-gray-700 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
                     rows={4}
-                    placeholder="Опишіть методи вимірювання успіху та довгострокові цілі..."
+                    placeholder={t('sections.10.measurement.placeholder')}
                   />
                 </div>
               </div>
@@ -968,7 +813,7 @@ const BriefPage = () => {
               className="px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white font-medium rounded-lg hover:from-blue-700 hover:to-purple-700 transform hover:scale-105 transition-all duration-200 shadow-lg"
               disabled={isSubmitting}
             >
-              {isSubmitting ? 'Відправляємо...' : 'Відправити бриф'}
+              {isSubmitting ? t('submitButton.submitting') : t('submitButton.default')}
             </button>
           </div>
         </form>
@@ -992,17 +837,17 @@ const BriefPage = () => {
                 </div>
                 
                 <h3 className="text-2xl font-bold mb-2">
-                  Дякуємо за заповнення брифу!
+                  Thank you for submitting the brief!
                 </h3>
                 <p className="text-gray-300 mb-6">
-                  Ми отримали вашу інформацію та зв'яжемося з вами найближчим часом.
+                  We have received your information and will contact you soon.
                 </p>
                 
                 <button
                   onClick={() => setShowModal(false)}
                   className="px-6 py-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white font-medium rounded-lg hover:from-blue-700 hover:to-purple-700 transform hover:scale-105 transition-all duration-200"
                 >
-                  Закрити
+                  Close
                 </button>
               </div>
             </div>

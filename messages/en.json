@@ -221,7 +221,8 @@
                     "Video analytics session tracking"
                 ]
             }
-        ]
+        ],
+        "button": "All offers"
     },
     "guarantee": {
         "title": "Guarantee",
@@ -540,6 +541,176 @@
             "ageRestriction": "The website https://advantage-agency.co/ is not intended and not designed for children under 14 years of age. Processing of personal data of minors aged 14 to 18 years is carried out only with the consent of parents (adoptive parents) or guardians.",
             "complaint": "If you have a complaint about any processing of your personal data, you can contact us.",
             "updates": "This Policy may be updated in the future to comply with national and international legislation governing personal data protection. All changes take effect from the moment of their publication. By continuing to use the website https://advantage-agency.co/, you confirm your agreement with the new terms of the Policy in the version current at the time of using the website https://advantage-agency.co/."
+        }
+    },
+
+
+
+    "brief": {
+        "title": "Marketing Brief",
+        "subtitle": "Fill out the form below so we can better understand your needs",
+        "sections": {
+            "1": {
+                "title": "Company Overview and Objectives",
+                "overview": {
+                    "label": "Provide an overview of your company:",
+                    "placeholder": "Describe your company, products and services..."
+                },
+                "marketingGoals": {
+                    "label": "Your main marketing goals:",
+                    "options": {
+                    "empty": "Select goal",
+                    "brandAwareness": "Brand Awareness",
+                    "leadGeneration": "Lead Generation", 
+                    "sales": "Sales",
+                    "retention": "Customer Retention",
+                    "multiple": "Multiple Goals"
+                    }
+                },
+                "budget": {
+                    "title": "Marketing Budget Distribution:",
+                    "googleAds": "Google Ads (USD)",
+                    "facebookAds": "Facebook Ads (USD)", 
+                    "tiktokAds": "TikTok Ads (USD)",
+                    "emailMarketing": "Email Marketing (USD)",
+                    "placeholder": "Enter amount"
+                }
+            },
+            "2": {
+                "title": "Target Audience",
+                "idealCustomer": {
+                    "label": "Describe your ideal customer (demographics, interests, behavior):",
+                    "placeholder": "Describe your ideal customer..."
+                },
+                "locations": {
+                    "label": "Target locations (cities, regions, countries):",
+                    "placeholder": "Enter locations"
+                },
+                "brandSafety": {
+                    "label": "Brand safety restrictions:",
+                    "placeholder": "Describe brand safety restrictions..."
+                }
+            },
+            "3": {
+                "title": "Current and Past Marketing Efforts",
+                "channels": {
+                    "label": "What marketing channels or platforms do you currently use or have used in the past?",
+                    "options": {
+                    "google": "Google Ads",
+                    "facebook": "Facebook Ads",
+                    "instagram": "Instagram",
+                    "tiktok": "TikTok",
+                    "email": "Email Marketing",
+                    "other": "Other"
+                    }
+                },
+                "previousResults": {
+                    "label": "Share data, insights or reports about your previous marketing efforts, including successes and challenges:",
+                    "placeholder": "Describe your previous marketing results..."
+                },
+                "analytics": {
+                    "label": "What analytics tools do you have installed?",
+                    "options": {
+                    "ga4": "Google Analytics 4",
+                    "pixel": "Facebook Pixel",
+                    "gtm": "Google Tag Manager", 
+                    "crm": "CRM System"
+                    }
+                }
+            },
+            "4": {
+                "title": "Competitive Analysis",
+                "analysis": {
+                    "label": "Describe your main competitors and their strengths/weaknesses:",
+                    "placeholder": "Name competitors and describe their features..."
+                },
+                "research": {
+                    "label": "Have you conducted any market research or competitor analysis? If so, can you share the findings?",
+                    "placeholder": "Share your research results..."
+                },
+                "strategies": {
+                    "label": "Competitor strategies you'd like to emulate or differentiate from:",
+                    "placeholder": "Describe competitor strategies..."
+                }
+            },
+            "5": {
+                "title": "Unique Selling Proposition (USP) and Key Messages",
+                "features": {
+                    "label": "What unique features, benefits or value propositions differentiate your product or service from competitors?",
+                    "placeholder": "Describe unique features and benefits of your product or service..."
+                },
+                "messages": {
+                    "label": "What specific messages or promotions do you want to emphasize in your advertising?",
+                    "placeholder": "Describe key advertising messages and special offers..."
+                },
+                "brandGuidelines": {
+                    "label": "Do you have a brand guidelines document? Describe your visual identity, tone of voice and creative preferences:",
+                    "placeholder": "Describe your brand guidelines, communication tone and visual requirements..."
+                }
+            },
+            "6": {
+                "title": "Website and Online Presence",
+                "otherAssets": {
+                    "label": "Besides your main website, do you have other digital assets (e.g. blogs, apps, landing pages) that you want to promote or integrate into the campaign?",
+                    "placeholder": "Describe your additional digital assets..."
+                },
+                "tracking": {
+                    "label": "Are you ready to implement link tracking and tags on your website to measure campaign effectiveness?",
+                    "placeholder": "Describe your tracking implementation capabilities..."
+                },
+                "restrictions": {
+                    "label": "Do you have any special requirements or restrictions regarding website changes or tracking implementation?",
+                    "placeholder": "Describe any restrictions or requirements..."
+                }
+            },
+            "7": {
+                "title": "Content and Creatives",
+                "designPreferences": {
+                    "label": "Are there any specific design elements, colors or styles that you prefer?",
+                    "placeholder": "Describe your design preferences..."
+                },
+                "rights": {
+                    "label": "Do you have the necessary rights and permissions for the content used in your advertising?",
+                    "placeholder": "Describe the status of content usage rights..."
+                }
+            },
+            "8": {
+                "title": "Legal Issues and Compliance",
+                "requirements": {
+                    "label": "Are there any legal, industry or regulatory requirements we need to know about when creating and placing ads?",
+                    "placeholder": "Describe legal and regulatory requirements..."
+                },
+                "restrictions": {
+                    "label": "Do you have any special guidelines or restrictions regarding the type of content or messages used in your advertising?",
+                    "placeholder": "Describe content restrictions..."
+                }
+            },
+            "9": {
+                "title": "Communication and Reporting",
+                "frequency": {
+                    "label": "What is your preferred mode and frequency of communication with our team?",
+                    "placeholder": "Describe desired communication frequency and format..."
+                },
+                "reporting": {
+                    "label": "How often do you expect to receive reports and what key information would you like to see in these reports?",
+                    "placeholder": "Describe your reporting requirements..."
+                },
+                "contact": {
+                    "label": "Who will be our main contact person in your organization for this project?",
+                    "placeholder": "Specify contact person and their details..."
+                }
+            },
+            "10": {
+                "title": "Expectations and Goals",
+                "measurement": {
+                    "label": "How do you plan to measure marketing campaign success and what are your long-term goals?",
+                    "placeholder": "Describe success measurement methods and long-term goals..."
+                }
+            }
+        },
+        "submitButton": {
+            "default": "Submit Brief",
+            "submitting": "Submitting..."
         }
     }
 }

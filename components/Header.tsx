@@ -40,6 +40,8 @@ export default function Header(): JSX.Element {
             setIsScrolled(scrolled);
         };
 
+        handleScroll();
+
         window.addEventListener('scroll', handleScroll);
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);

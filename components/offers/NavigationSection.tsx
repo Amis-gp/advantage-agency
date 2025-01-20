@@ -14,9 +14,9 @@ const AudienceSection = () => {
             x: "0",
             y: "10",
             services: [
-                { name: t("offers.audience.segments.b2c.services.0"), link: '/services/pps-ads' },
-                { name: t("offers.audience.segments.b2c.services.1"), link: '/services/meta-ads' },
-                { name: t("offers.audience.segments.b2c.services.2"), link: '/services/landing-page' }
+                { name: t("offers.audience.segments.b2c.services.0"), link: '/offers#google' },
+                { name: t("offers.audience.segments.b2c.services.1"), link: '/offers#meta' },
+                { name: t("offers.audience.segments.b2c.services.2"), link: '/offers#landing' }
             ]
         },
         {
@@ -24,11 +24,11 @@ const AudienceSection = () => {
             x: "512",
             y: "10",
             services: [
-                { name: t("offers.audience.segments.b2b.services.0"), link: '/services/linkedin' },
-                { name: t("offers.audience.segments.b2b.services.1"), link: '/services/email' },
-                { name: t("offers.audience.segments.b2b.services.2"), link: '/services/manual-email' },
-                { name: t("offers.audience.segments.b2b.services.3"), link: '/services/sales-audit' },
-                { name: t("offers.audience.segments.b2b.services.4"), link: '/services/leads' }
+                { name: t("offers.audience.segments.b2b.services.0"), link: '/offers#form' },
+                { name: t("offers.audience.segments.b2b.services.1"), link: '/offers#form' },
+                { name: t("offers.audience.segments.b2b.services.2"), link: '/offers#form' },
+                { name: t("offers.audience.segments.b2b.services.3"), link: '/offers#form' },
+                { name: t("offers.audience.segments.b2b.services.4"), link: '/offers#form' }
             ]
         },
         {
@@ -36,10 +36,10 @@ const AudienceSection = () => {
             x: "256",
             y: "441",
             services: [
-                { name: t("offers.audience.segments.custom.services.0"), link: '/services/pps-ads' },
-                { name: t("offers.audience.segments.custom.services.1"), link: '/services/tiktok-ads' },
-                { name: t("offers.audience.segments.custom.services.2"), link: '/services/landing-page' },
-                { name: t("offers.audience.segments.custom.services.3"), link: '/services/reviews' }
+                { name: t("offers.audience.segments.custom.services.0"), link: '/offers#form' },
+                { name: t("offers.audience.segments.custom.services.1"), link: '/offers#form' },
+                { name: t("offers.audience.segments.custom.services.2"), link: '/offers#landing' },
+                { name: t("offers.audience.segments.custom.services.3"), link: '/offers#form' }
             ]
         }
     ];
@@ -265,7 +265,7 @@ const AudienceSection = () => {
                                 <feOffset dy="4"/>
                                 <feGaussianBlur stdDeviation="22"/>
                                 <feComposite in2="hardAlpha" operator="arithmetic" k2="-1" k3="1"/>
-                                <feColorMatrix type="matrix" values="0 0 0 0 0.896696 0 0 0 0 0.36683 0 0 0 0 0 0 0 0 1 0"/>
+                                <feColorMatrix type="matrix" values="0 0 0 0 0.896696 0 0 0 0 0.36683 0 0 0 0 0 0 0 0 0 1 0"/>
                                 <feBlend mode="normal" in2="shape" result="effect1_innerShadow_8001_307"/>
                                 </filter>
                                 <filter id="filter7_i_8001_307" x="39" y="134.745" width="462" height="528.652" filterUnits="userSpaceOnUse" colorInterpolationFilters="sRGB">
@@ -475,21 +475,21 @@ const AudienceSection = () => {
                                 <filter id="filter6_i_8003_307" x="24" y="65.8442" width="240" height="275.406" filterUnits="userSpaceOnUse" colorInterpolationFilters="sRGB">
                                     <feFlood floodOpacity="0" result="BackgroundImageFix"/>
                                     <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
-                                    <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+                                    <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
                                     <feOffset dy="4"/>
                                     <feGaussianBlur stdDeviation="22"/>
                                     <feComposite in2="hardAlpha" operator="arithmetic" k2="-1" k3="1"/>
-                                    <feColorMatrix type="matrix" values="0 0 0 0 0.896696 0 0 0 0 0.36683 0 0 0 0 0 0 0 0 1 0"/>
+                                    <feColorMatrix type="matrix" values="0 0 0 0 0.896696 0 0 0 0 0.36683 0 0 0 0 0 0 0 0 0 0 1 0"/>
                                     <feBlend mode="normal" in2="shape" result="effect1_innerShadow_8003_307"/>
                                 </filter>
                                 <filter id="filter7_i_8003_307" x="24" y="546.342" width="240" height="275.406" filterUnits="userSpaceOnUse" colorInterpolationFilters="sRGB">
                                     <feFlood floodOpacity="0" result="BackgroundImageFix"/>
                                     <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
-                                    <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+                                    <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
                                     <feOffset dy="4"/>
                                     <feGaussianBlur stdDeviation="22"/>
                                     <feComposite in2="hardAlpha" operator="arithmetic" k2="-1" k3="1"/>
-                                    <feColorMatrix type="matrix" values="0 0 0 0 0.896696 0 0 0 0 0.36683 0 0 0 0 0 0 0 0 1 0"/>
+                                    <feColorMatrix type="matrix" values="0 0 0 0 0.896696 0 0 0 0 0.36683 0 0 0 0 0 0 0 0 0 0 0 1 0"/>
                                     <feBlend mode="normal" in2="shape" result="effect1_innerShadow_8003_307"/>
                                 </filter>
                                 <filter id="filter8_i_8003_307" x="111" y="306.844" width="240" height="275.406" filterUnits="userSpaceOnUse" colorInterpolationFilters="sRGB">
@@ -499,13 +499,13 @@ const AudienceSection = () => {
                                     <feOffset dy="4"/>
                                     <feGaussianBlur stdDeviation="22"/>
                                     <feComposite in2="hardAlpha" operator="arithmetic" k2="-1" k3="1"/>
-                                    <feColorMatrix type="matrix" values="0 0 0 0 0.819608 0 0 0 0 0.160784 0 0 0 0 0.137255 0 0 0 1 0"/>
+                                    <feColorMatrix type="matrix" values="0 0 0 0 0.819608 0 0 0 0 0.160784 0 0 0 0 0 0 0.137255 0 0 0 1 0"/>
                                     <feBlend mode="normal" in2="shape" result="effect1_innerShadow_8003_307"/>
                                 </filter>
                                 <filter id="filter9_i_8003_307" x="42.5605" y="284" width="55.4395" height="316" filterUnits="userSpaceOnUse" colorInterpolationFilters="sRGB">
                                     <feFlood floodOpacity="0" result="BackgroundImageFix"/>
                                     <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
-                                    <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+                                    <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
                                     <feOffset dy="4"/>
                                     <feGaussianBlur stdDeviation="2"/>
                                     <feComposite in2="hardAlpha" operator="arithmetic" k2="-1" k3="1"/>

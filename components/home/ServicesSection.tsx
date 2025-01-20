@@ -73,6 +73,12 @@ export default function ServicesSection() {
                 ))}
             </div>
 
+            <div className="flex justify-center mt-4">
+                <Link href="/offers"  className="px-10 py-4 text-red hover:text-red/70 font-medium transition-all duration-300 text-lg group flex items-center gap-2">
+                    {t('button')} →
+                </Link>
+            </div>
+
             <div className="flex flex-col md:flex-row items-center justify-center gap-8 mt-14">
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
@@ -107,6 +113,9 @@ export default function ServicesSection() {
                         priority
                     />
                 </motion.div>
+
+
+                
             </div>
         </section>
     )

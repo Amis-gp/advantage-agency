@@ -85,7 +85,7 @@ const FormSection = () => {
     };
 
     return (
-        <section className="py-0 md:py-20 relative" id="form">
+        <section className="py-0 md:py-16 relative" id="form">
             <div className="max-w-6xl mx-auto px-6">
                 <div className="flex flex-col lg:flex-row gap-16 relative md:px-16 overflow-hidden p-6">
                     <div className="lg:w-1/2 relative md:mt-20">
