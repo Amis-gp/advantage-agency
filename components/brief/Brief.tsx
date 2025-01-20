@@ -65,7 +65,8 @@ const BriefPage = () => {
     }
   })
 
-  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false)
+  const [showModal, setShowModal] = useState(false)
 
   const handleChange = (section: string, field: string, value: string) => {
     setFormData(prev => ({
@@ -110,65 +111,65 @@ const BriefPage = () => {
 
     try {
       const message = `
-      🎯 <b>Новий бриф отримано!</b>
+        🎯 <b>Новий бриф отримано!</b>
 
-      1️⃣ <b>Інформація про компанію</b>
-      📝 Огляд: ${formData.companyInfo.overview}
-      🎯 Маркетингові цілі: ${formData.companyInfo.marketingGoals}
-      💰 Розподіл бюджету:
-      - Google Ads: ${formData.companyInfo.budgetDistribution.googleAds}%
-      - Facebook Ads: ${formData.companyInfo.budgetDistribution.facebookAds}%
-      - TikTok Ads: ${formData.companyInfo.budgetDistribution.tiktokAds}%
-      - Email Marketing: ${formData.companyInfo.budgetDistribution.emailMarketing}%
+        1️⃣ <b>Інформація про компанію</b>
+        📝 Огляд: ${formData.companyInfo.overview}
+        🎯 Маркетингові цілі: ${formData.companyInfo.marketingGoals}
+        💰 Розподіл бюджету:
+        - Google Ads: ${formData.companyInfo.budgetDistribution.googleAds}%
+        - Facebook Ads: ${formData.companyInfo.budgetDistribution.facebookAds}%
+        - TikTok Ads: ${formData.companyInfo.budgetDistribution.tiktokAds}%
+        - Email Marketing: ${formData.companyInfo.budgetDistribution.emailMarketing}%
 
-      2️⃣ <b>Цільова аудиторія</b>
-      👥 Ідеальний клієнт: ${formData.targetAudience.idealCustomer}
-      📍 Локації: ${formData.targetAudience.locations}
-      ⚠️ Безпека бренду: ${formData.targetAudience.brandSafety}
+        2️⃣ <b>Цільова аудиторія</b>
+        👥 Ідеальний клієнт: ${formData.targetAudience.idealCustomer}
+        📍 Локації: ${formData.targetAudience.locations}
+        ⚠️ Безпека бренду: ${formData.targetAudience.brandSafety}
 
-      3️⃣ <b>Поточний маркетинг</b>
-      📊 Канали: ${formData.currentMarketing.channels}
-      📈 Попередні результати: ${formData.currentMarketing.previousResults}
-      📊 Аналітика: ${formData.currentMarketing.analytics}
+        3️⃣ <b>Поточний маркетинг</b>
+        📊 Канали: ${formData.currentMarketing.channels}
+        📈 Попередні результати: ${formData.currentMarketing.previousResults}
+        📊 Аналітика: ${formData.currentMarketing.analytics}
 
-      4️⃣ <b>Конкуренти</b>
-      🔍 Дослідження: ${formData.competitors.research}
-      📋 Стратегії: ${formData.competitors.strategies}
+        4️⃣ <b>Конкуренти</b>
+        🔍 Дослідження: ${formData.competitors.research}
+        📋 Стратегії: ${formData.competitors.strategies}
 
-      5️⃣ <b>УТП та повідомлення</b>
-      ✨ Особливості: ${formData.usp.features}
-      💬 Повідомлення: ${formData.usp.messages}
-      🎨 Брендинг: ${formData.usp.brandGuidelines}
+        5️⃣ <b>УТП та повідомлення</b>
+        ✨ Особливості: ${formData.usp.features}
+        💬 Повідомлення: ${formData.usp.messages}
+        🎨 Брендинг: ${formData.usp.brandGuidelines}
 
-      6️⃣ <b>Веб-сайт</b>
-      🌐 Інші ресурси: ${formData.website.otherAssets}
-      📊 Відстеження: ${formData.website.tracking}
-      ⚠️ Обмеження: ${formData.website.restrictions}
+        6️⃣ <b>Веб-сайт</b>
+        🌐 Інші ресурси: ${formData.website.otherAssets}
+        📊 Відстеження: ${formData.website.tracking}
+        ⚠️ Обмеження: ${formData.website.restrictions}
 
-      7️⃣ <b>Контент</b>
-      🎨 Креативи: ${formData.content.existingCreatives}
-      🎯 Дизайн: ${formData.content.designPreferences}
-      📜 Права: ${formData.content.rights}
+        7️⃣ <b>Контент</b>
+        🎨 Креативи: ${formData.content.existingCreatives}
+        🎯 Дизайн: ${formData.content.designPreferences}
+        📜 Права: ${formData.content.rights}
 
-      8️⃣ <b>Юридичні питання</b>
-      📋 Вимоги: ${formData.legal.requirements}
-      ⚠️ Обмеження: ${formData.legal.restrictions}
+        8️⃣ <b>Юридичні питання</b>
+        📋 Вимоги: ${formData.legal.requirements}
+        ⚠️ Обмеження: ${formData.legal.restrictions}
 
-      9️⃣ <b>Комунікація</b>
-      📅 Частота: ${formData.communication.frequency}
-      📊 Звітність: ${formData.communication.reporting}
-      👤 Контакт: ${formData.communication.contact}
+        9️⃣ <b>Комунікація</b>
+        📅 Частота: ${formData.communication.frequency}
+        📊 Звітність: ${formData.communication.reporting}
+        👤 Контакт: ${formData.communication.contact}
 
-      🎯 <b>Очікування</b>
-      ✨ Успіх: ${formData.expectations.success}
-      📊 KPI: ${formData.expectations.kpi}
-      📈 Вимірювання: ${formData.expectations.measurement}
+        🎯 <b>Очікування</b>
+        ✨ Успіх: ${formData.expectations.success}
+        📊 KPI: ${formData.expectations.kpi}
+        📈 Вимірювання: ${formData.expectations.measurement}
 
-      📅 Дата: ${new Date().toLocaleString('uk-UA')}
-      `;
+        📅 Дата: ${new Date().toLocaleString('uk-UA')}
+        `;
 
       await sendToTelegram(message);
-      router.push('/thank-you');
+      setShowModal(true);
     } catch (error) {
       console.error('Error submitting form:', error);
     } finally {
@@ -877,6 +878,42 @@ const BriefPage = () => {
             </button>
           </div>
         </form>
+
+        {/* Модальне вікно */}
+        {showModal && (
+          <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+            <div className="bg-gray-800 p-8 rounded-xl shadow-xl max-w-md w-full mx-4 relative">
+              <button 
+                onClick={() => setShowModal(false)}
+                className="absolute top-4 right-4 text-gray-400 hover:text-white"
+              >
+                ✕
+              </button>
+              
+              <div className="text-center">
+                <div className="w-16 h-16 bg-green-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                  </svg>
+                </div>
+                
+                <h3 className="text-2xl font-bold mb-2">
+                  Дякуємо за заповнення брифу!
+                </h3>
+                <p className="text-gray-300 mb-6">
+                  Ми отримали вашу інформацію та зв'яжемося з вами найближчим часом.
+                </p>
+                
+                <button
+                  onClick={() => setShowModal(false)}
+                  className="px-6 py-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white font-medium rounded-lg hover:from-blue-700 hover:to-purple-700 transform hover:scale-105 transition-all duration-200"
+                >
+                  Закрити
+                </button>
+              </div>
+            </div>
+          </div>
+        )}
       </div>
     </div>
   )
