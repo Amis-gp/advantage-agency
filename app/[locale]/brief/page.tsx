@@ -2,8 +2,12 @@
 
 import { useState } from 'react'
 import { useRouter } from 'next/navigation'
+import { useLocale } from 'next-intl'
 
 const BriefPage = () => {
+  const locale = useLocale()
+  const router = useRouter()
+  
   const [formData, setFormData] = useState({
     companyInfo: {
       overview: '',
@@ -62,8 +66,6 @@ const BriefPage = () => {
   })
 
   const [isSubmitting, setIsSubmitting] = useState(false);
-
-  const router = useRouter();
 
   const handleChange = (section: string, field: string, value: string) => {
     setFormData(prev => ({
