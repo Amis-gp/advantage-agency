@@ -50,7 +50,7 @@ export default function ServicesSection() {
                             </span>
                         </div>
                         <Link 
-                            href="#form" 
+                            href="/offers" 
                             className={`block w-full py-3 rounded-full mt-8 font-medium transition-all duration-300 text-center text-white ${
                                 ['blue', 'white', 'purple'][index] === 'white' ? 
                                 'bg-black/40 hover:bg-black' : 

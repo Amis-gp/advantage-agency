@@ -418,7 +418,7 @@ const BriefPage = () => {
                     {t('sections.3.channels.label')}
                   </label>
                   <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
-                    {Object.entries(t.raw('sections.3.channels.options')).map(([key, value]) => (
+                    {Object.entries(t.raw('sections.3.channels.options') as Record<string, string>).map(([key, value]) => (
                       <label key={key} className="flex items-center space-x-2">
                         <input
                           type="checkbox"
@@ -456,7 +456,7 @@ const BriefPage = () => {
                     {t('sections.3.analytics.label')}
                   </label>
                   <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
-                    {Object.entries(t.raw('sections.3.analytics.options')).map(([key, value]) => (
+                    {Object.entries(t.raw('sections.3.analytics.options') as Record<string, string>).map(([key, value]) => (
                       <label key={key} className="flex items-center space-x-2">
                         <input
                           type="checkbox"
