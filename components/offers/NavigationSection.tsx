@@ -64,7 +64,7 @@ const AudienceSection = () => {
             //                         key={index}
             //                         href={service.link}
             //                         onMouseEnter={() => playSound('hover_1')}
-            //                         className="w-full block py-1.5 px-3 rounded-lg border border-black text-center m-auto transition-all duration-200 hover:bg-black/5 hover:scale-105 hover:border-black hover:shadow-lg"
+            //                         className="w-full block py-1.5 px-3 rounded-lg border border-black text-center m-auto transition-all duration-200 hover:bg-black/5 hover:border-black hover:shadow-lg"
             //                     >
             //                         {service.name}
             //                     </Link>
@@ -75,7 +75,7 @@ const AudienceSection = () => {
             //                     key={index + 2}
             //                     href={service.link}
             //                     onMouseEnter={() => playSound('hover_1')}
-            //                     className="block max-w-[300px] py-1.5 px-3 rounded-lg border border-black text-center m-auto transition-all duration-200 hover:bg-black/5 hover:scale-105 hover:border-black hover:shadow-lg"
+            //                     className="block max-w-[300px] py-1.5 px-3 rounded-lg border border-black text-center m-auto transition-all duration-200 hover:bg-black/5 hover:border-black hover:shadow-lg"
             //                 >
             //                     {service.name}
             //                 </Link>
@@ -92,14 +92,14 @@ const AudienceSection = () => {
                                 key={index}
                                 href={service.link}
                                 onMouseEnter={() => playSound('hover_1')}
-                                className="block max-w-[300px] py-1.5 px-3 rounded-lg border border-black text-center m-auto transition-all duration-200 hover:bg-black/5 hover:scale-105 hover:border-black hover:shadow-lg"
+                                className="block max-w-[300px] py-1.5 px-3 rounded-lg border border-black text-center m-auto transition-all duration-200 hover:bg-black/5 hover:border-black hover:shadow-lg"
                             >
                                 {service.name}
                             </Link>
                         ))}
                         <button
                             onClick={() => handleShowMore(services)}
-                            className="block w-full max-w-[300px] py-1.5 px-3 rounded-lg border border-black text-center m-auto transition-all duration-200 hover:bg-black/5 hover:scale-105 hover:border-black hover:shadow-lg flex items-center justify-center gap-2"
+                            className="block w-full max-w-[300px] py-1.5 px-3 rounded-lg border border-black text-center m-auto transition-all duration-200 hover:bg-black/5 hover:border-black hover:shadow-lg flex items-center justify-center gap-2"
                         >
                             <span>More Services</span>
                             <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" className="inline-block ml-1" >
@@ -116,7 +116,7 @@ const AudienceSection = () => {
                 key={index}
                 href={service.link}
                 onMouseEnter={() => playSound('hover_1')}
-                className="block max-w-[300px] py-1.5 px-3 rounded-lg border border-black text-center m-auto transition-all duration-200 hover:bg-black/5 hover:scale-105 hover:border-black hover:shadow-lg"
+                className="block max-w-[300px] py-1.5 px-3 rounded-lg border border-black text-center m-auto transition-all duration-200 hover:bg-black/5 hover:border-black hover:shadow-lg"
             >
                 {service.name}
             </Link>
