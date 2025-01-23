@@ -72,7 +72,7 @@ interface Campaign {
 
 const Campaigns = () => {
   return (
-    <div className="flex flex-col h-[calc(100vh-100px)]">
+    <div className="flex flex-col h-[calc(100vh-64px)]">
       <div className="p-4 bg-white">
         <div className="flex justify-between mb-6">
           <div className="flex gap-3">
