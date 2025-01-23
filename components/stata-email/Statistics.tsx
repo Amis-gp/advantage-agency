@@ -68,9 +68,9 @@ const StataEmail: React.FC<StatisticsProps> = ({ campaignId }) => {
     <div className="space-y-6 px-6 pt-6">
       
       <div className="grid grid-cols-6 gap-4">
-        <div className="bg-purple-50 p-4 rounded-lg">
+        <div className="bg-gray-50 p-4 rounded-lg">
           <div className="flex items-center gap-2 mb-2">
-            <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5 text-purple-600" viewBox="0 0 20 20" fill="currentColor">
+            <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5 text-gray-600" viewBox="0 0 20 20" fill="currentColor">
               <path d="M9 6a3 3 0 11-6 0 3 3 0 016 0zM17 6a3 3 0 11-6 0 3 3 0 016 0zM12.93 17c.046-.327.07-.66.07-1a6.97 6.97 0 00-1.5-4.33A5 5 0 0119 16v1h-6.07zM6 11a5 5 0 015 5v1H1v-1a5 5 0 015-5z" />
             </svg>
             <span>Total recipients</span>
@@ -78,9 +78,9 @@ const StataEmail: React.FC<StatisticsProps> = ({ campaignId }) => {
           <div className="text-2xl font-bold">{campaign?.totalRecipients}</div>
         </div>
 
-        <div className="bg-purple-50 p-4 rounded-lg">
+        <div className="bg-gray-50 p-4 rounded-lg">
           <div className="flex items-center gap-2 mb-2">
-            <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5 text-purple-600" viewBox="0 0 20 20" fill="currentColor">
+            <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5 text-gray-600" viewBox="0 0 20 20" fill="currentColor">
               <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
             </svg>
             <span>Contacted</span>
@@ -89,9 +89,9 @@ const StataEmail: React.FC<StatisticsProps> = ({ campaignId }) => {
           <div className="text-sm text-gray-500">({stats.contacted.count} recipients)</div>
         </div>
 
-        <div className="bg-purple-50 p-4 rounded-lg">
+        <div className="bg-gray-50 p-4 rounded-lg">
           <div className="flex items-center gap-2 mb-2">
-            <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5 text-purple-600" viewBox="0 0 20 20" fill="currentColor">
+            <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5 text-gray-600" viewBox="0 0 20 20" fill="currentColor">
               <path fillRule="evenodd" d="M18 10c0 3.866-3.582 7-8 7a8.841 8.841 0 01-4.083-.98L2 17l1.338-3.123C2.493 12.767 2 11.434 2 10c0-3.866 3.582-7 8-7s8 3.134 8 7zM7 9H5v2h2V9zm8 0h-2v2h2V9zM9 9h2v2H9V9z" clipRule="evenodd" />
             </svg>
             <span>Replied</span>
@@ -100,9 +100,9 @@ const StataEmail: React.FC<StatisticsProps> = ({ campaignId }) => {
           <div className="text-sm text-gray-500">({stats.replies.count} recipients)</div>
         </div>
 
-        <div className="bg-purple-50 p-4 rounded-lg">
+        <div className="bg-gray-50 p-4 rounded-lg">
           <div className="flex items-center gap-2 mb-2">
-            <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5 text-purple-600" viewBox="0 0 20 20" fill="currentColor">
+            <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5 text-gray-600" viewBox="0 0 20 20" fill="currentColor">
               <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
             </svg>
             <span>Interested</span>
@@ -111,9 +111,9 @@ const StataEmail: React.FC<StatisticsProps> = ({ campaignId }) => {
           <div className="text-sm text-gray-500">({stats.interested.count} recipients)</div>
         </div>
 
-        <div className="bg-purple-50 p-4 rounded-lg">
+        <div className="bg-gray-50 p-4 rounded-lg">
           <div className="flex items-center gap-2 mb-2">
-            <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5 text-purple-600" viewBox="0 0 20 20" fill="currentColor">
+            <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5 text-gray-600" viewBox="0 0 20 20" fill="currentColor">
               <path fillRule="evenodd" d="M13.477 14.89A6 6 0 015.11 6.524l8.367 8.368zm1.414-1.414L6.524 5.11a6 6 0 018.367 8.367zM18 10a8 8 0 11-16 0 8 8 0 0116 0z" clipRule="evenodd" />
             </svg>
             <span>Unsubscribed</span>
@@ -122,9 +122,9 @@ const StataEmail: React.FC<StatisticsProps> = ({ campaignId }) => {
           <div className="text-sm text-gray-500">({stats.unsubscribed.count} recipients)</div>
         </div>
 
-        <div className="bg-purple-50 p-4 rounded-lg">
+        <div className="bg-gray-50 p-4 rounded-lg">
           <div className="flex items-center gap-2 mb-2">
-            <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5 text-purple-600" viewBox="0 0 20 20" fill="currentColor">
+            <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5 text-gray-600" viewBox="0 0 20 20" fill="currentColor">
               <path fillRule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z" clipRule="evenodd" />
             </svg>
             <span>Not reached</span>
