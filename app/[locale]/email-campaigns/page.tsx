@@ -2,11 +2,12 @@ import { setRequestLocale } from 'next-intl/server'
 import Campaigns from '@/components/stata-email/Campaigns'
 import Sidebar from '@/components/stata-email/Sidebar'
 import Nav from '@/components/stata-email/Nav'
+
 interface Props {
   params: { locale: string }
 }
 
-export default function BriefPage({ params: { locale } }: Props) {
+export default function EmailCampaignsPage({ params: { locale } }: Props) {
   setRequestLocale(locale)
 
   return (
