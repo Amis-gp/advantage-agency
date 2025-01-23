@@ -11,6 +11,7 @@ import {
   Tooltip,
   Legend
 } from 'recharts';
+import { CAMPAIGNS, CAMPAIGN_CHART_DATA } from '@/app/constant/emailStats';
 
 interface EmailStats {
   totalRecipients: number;
@@ -18,7 +19,7 @@ interface EmailStats {
     percentage: number;
     count: number;
   };
-  replied: {
+  replies: {
     percentage: number;
     count: number;
   };
@@ -43,46 +44,25 @@ interface ChartDataPoint {
   bounced: number;
 }
 
-const StataEmail: React.FC = () => {
-  const stats: EmailStats = {
-    totalRecipients: 3005,
-    contacted: {
-      percentage: 94,
-      count: 2921,
-    },
-    replied: {
-      percentage: 2,
-      count: 56,
-    },
-    interested: {
-      percentage: 0,
-      count: 0,
-    },
-    unsubscribed: {
-      percentage: 1,
-      count: 14,
-    },
-    notReached: {
-      percentage: 0,
-      count: 1,
-    },
+interface StatisticsProps {
+  campaignId: string
+}
+
+const StataEmail: React.FC<StatisticsProps> = ({ campaignId }) => {
+  const campaign = CAMPAIGNS.find(c => c.id === campaignId);
+  const stats = campaign?.stats || {
+    sent: { count: 0, percentage: 0 },
+    opens: { count: 0, percentage: 0 },
+    clicks: { count: 0, percentage: 0 },
+    replies: { count: 0, percentage: 0 },
+    bounces: { count: 0, percentage: 0 },
+    interested: { count: 0, percentage: 0 },
+    contacted: { count: 0, percentage: 0 },
+    unsubscribed: { count: 0, percentage: 0 },
+    notReached: { count: 0, percentage: 0 }
   };
 
-  const chartData: ChartDataPoint[] = [
-    { date: '8 Mar 2024', sent: 200, replied: 4, bounced: 0 },
-    { date: '9 Mar 2024', sent: 195, replied: 3, bounced: 0 },
-    { date: '10 Mar 2024', sent: 190, replied: 5, bounced: 0 },
-    { date: '11 Mar 2024', sent: 185, replied: 4, bounced: 0 },
-    { date: '12 Mar 2024', sent: 180, replied: 3, bounced: 0 },
-    { date: '13 Mar 2024', sent: 150, replied: 4, bounced: 0 },
-    { date: '14 Mar 2024', sent: 145, replied: 3, bounced: 0 },
-    { date: '15 Mar 2024', sent: 140, replied: 4, bounced: 0 },
-    { date: '16 Mar 2024', sent: 135, replied: 3, bounced: 0 },
-    { date: '17 Mar 2024', sent: 130, replied: 3, bounced: 0 },
-    { date: '18 Mar 2024', sent: 95, replied: 2, bounced: 0 },
-    { date: '19 Mar 2024', sent: 70, replied: 2, bounced: 0 },
-    { date: '20 Mar 2024', sent: 45, replied: 1, bounced: 0 },
-  ];
+  const chartData = CAMPAIGN_CHART_DATA[campaignId] || [];
 
   return (
     <div className="space-y-6 px-6 pt-6">
@@ -95,7 +75,7 @@ const StataEmail: React.FC = () => {
             </svg>
             <span>Total recipients</span>
           </div>
-          <div className="text-2xl font-bold">{stats.totalRecipients}</div>
+          <div className="text-2xl font-bold">{campaign?.totalRecipients}</div>
         </div>
 
         <div className="bg-purple-50 p-4 rounded-lg">
@@ -116,8 +96,8 @@ const StataEmail: React.FC = () => {
             </svg>
             <span>Replied</span>
           </div>
-          <div className="text-2xl font-bold">{stats.replied.percentage}%</div>
-          <div className="text-sm text-gray-500">({stats.replied.count} recipients)</div>
+          <div className="text-2xl font-bold">{stats.replies.percentage}%</div>
+          <div className="text-sm text-gray-500">({stats.replies.count} recipients)</div>
         </div>
 
         <div className="bg-purple-50 p-4 rounded-lg">
@@ -255,7 +235,7 @@ const StataEmail: React.FC = () => {
             </svg>
             <div>
               <div className="text-sm text-gray-500">Sent emails</div>
-              <div className="font-semibold">6450</div>
+              <div className="font-semibold">{stats.sent.count}</div>
             </div>
           </div>
 
@@ -265,17 +245,17 @@ const StataEmail: React.FC = () => {
             </svg>
             <div>
               <div className="text-sm text-gray-500">Replies</div>
-              <div className="font-semibold">2% <span className="text-sm text-gray-500">(56 recipients)</span></div>
+              <div className="font-semibold">{stats.replies.percentage}% <span className="text-sm text-gray-500">({stats.replies.count} recipients)</span></div>
             </div>
           </div>
 
           <div className="flex items-center space-x-4">
             <svg className="w-5 h-5 text-yellow-400" viewBox="0 0 20 20" fill="currentColor">
-              <path fillRule="evenodd" d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z" clipRule="evenodd" />
+              <path fillRule="evenodd" d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z" clipRule="evenodd" />
             </svg>
             <div>
               <div className="text-sm text-gray-500">Bounces</div>
-              <div className="font-semibold">0% <span className="text-sm text-gray-500">(0 recipients)</span></div>
+              <div className="font-semibold">{stats.bounces.percentage}% <span className="text-sm text-gray-500">({stats.bounces.count} recipients)</span></div>
             </div>
           </div>
         </div>
