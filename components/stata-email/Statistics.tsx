@@ -273,7 +273,7 @@ const StataEmail: React.FC<StatisticsProps> = ({ campaignId }) => {
             <div className="text-gray-500 flex-1">721</div>
             <div className="text-gray-400 flex-1">Disabled</div>
             <div className="text-gray-400 flex-1">Disabled</div>
-            <div className="text-blue-500 flex-1">1% (4)</div>
+            <div className="text-blue-500 flex-1">5% (36)</div>
           </div>
 
           <div className="flex items-center gap-4 p-4 hover:bg-gray-50 rounded-lg">
@@ -287,7 +287,7 @@ const StataEmail: React.FC<StatisticsProps> = ({ campaignId }) => {
             <div className="text-gray-500 flex-1">641</div>
             <div className="text-gray-400 flex-1">Disabled</div>
             <div className="text-gray-400 flex-1">Disabled</div>
-            <div className="text-blue-500 flex-1">0% (1)</div>
+            <div className="text-blue-500 flex-1">4% (23)</div>
           </div>
 
           <div className="flex items-center gap-4 p-4 hover:bg-gray-50 rounded-lg">
@@ -301,7 +301,7 @@ const StataEmail: React.FC<StatisticsProps> = ({ campaignId }) => {
             <div className="text-gray-500 flex-1">608</div>
             <div className="text-gray-400 flex-1">Disabled</div>
             <div className="text-gray-400 flex-1">Disabled</div>
-            <div className="text-blue-500 flex-1">0% (1)</div>
+            <div className="text-blue-500 flex-1">2% (14)</div>
           </div>
         </div>
       </div>
