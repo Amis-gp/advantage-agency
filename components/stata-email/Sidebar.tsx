@@ -5,7 +5,7 @@ import Link from 'next/link';
 
 const Sidebar = () => {
   return (
-    <div className="w-64 bg-black min-h-screen text-white p-4">
+    <div className="min-w-64 bg-black min-h-screen text-white p-4">
       <div className="mb-6">
         <img src="/img/logo.svg" alt="logo" className="w-full h-8" />
         <Link href="/email-campaigns" className="mt-4 flex items-center gap-2 hover:bg-gray-700 rounded-lg p-2">
@@ -106,7 +106,7 @@ const Sidebar = () => {
         </Link>
       </div>
 
-      <div className="absolute bottom-0 left-0 w-64 p-4 border-t border-gray-500">
+      <div className="absolute bottom-0 left-0 p-4 border-t border-gray-500">
         <div className="flex items-center justify-between">
           <Link href="#" className="flex items-center gap-2 text-sm hover:text-gray-200">
             <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
