@@ -154,7 +154,7 @@ const Campaigns = () => {
                       </div>
                       <div className="text-sm text-gray-500">
                         Total recipients: {campaign.totalRecipients}
-                        <div className="w-24 h-1 bg-green-500 rounded mt-1"></div>
+                        <div className="w-24 h-[1px] bg-green-500 rounded mb-1"></div>
                       </div>
                       <div className="text-sm text-gray-500">{campaign.date}</div>
                     </div>
@@ -169,13 +169,13 @@ const Campaigns = () => {
                 <td className="w-[120px]">{campaign.stats.opens.count}</td>
                 <td className="w-[120px]">{campaign.stats.clicks.count}</td>
                 <td className="w-[120px]">
-                  {campaign.stats.replies.count} <span className="text-gray-500">{campaign.stats.replies.percentage}%</span>
+                  {campaign.stats.replies.count} <span className="text-gray-500 ml-2">{campaign.stats.replies.percentage}%</span>
                 </td>
                 <td className="w-[120px]">
-                  {campaign.stats.bounces.count} <span className="text-gray-500">{campaign.stats.bounces.percentage}%</span>
+                  {campaign.stats.bounces.count} <span className="text-gray-500 ml-2">{campaign.stats.bounces.percentage}%</span>
                 </td>
                 <td className="w-[120px]">
-                  {campaign.stats.interested.count} <span className="text-gray-500">{campaign.stats.interested.percentage}%</span>
+                  {campaign.stats.interested.count} <span className="text-gray-500 ml-2a">{campaign.stats.interested.percentage}%</span>
                 </td>
                 <td className="w-[60px]">
                   <button className="text-gray-400 hover:text-gray-600">

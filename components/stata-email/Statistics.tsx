@@ -12,6 +12,7 @@ import {
   Legend
 } from 'recharts';
 import { CAMPAIGNS, CAMPAIGN_CHART_DATA } from '@/app/constant/emailStats';
+import Link from 'next/link';
 
 interface EmailStats {
   totalRecipients: number;
@@ -262,7 +263,10 @@ const StataEmail: React.FC<StatisticsProps> = ({ campaignId }) => {
         </div>
         
         <div className="space-y-2 bg-gray-50 rounded-lg p-4 pr-20">
-          <div className="flex items-center gap-4 p-4 hover:bg-gray-50 rounded-lg">
+          <Link 
+            href="/email-answer" 
+            className="flex items-center gap-4 p-4 hover:bg-gray-100 rounded-lg transition-colors"
+          >
             <div className="text-gray-400">
               <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5" viewBox="0 0 20 20" fill="currentColor">
                 <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" />
@@ -274,9 +278,13 @@ const StataEmail: React.FC<StatisticsProps> = ({ campaignId }) => {
             <div className="text-gray-400 flex-1">Disabled</div>
             <div className="text-gray-400 flex-1">Disabled</div>
             <div className="text-blue-500 flex-1">5% (36)</div>
-          </div>
+          </Link>
+          <div className="mx-4 border-b border-gray-100"></div>
 
-          <div className="flex items-center gap-4 p-4 hover:bg-gray-50 rounded-lg">
+          <Link 
+            href="/email-answer"
+            className="flex items-center gap-4 p-4 hover:bg-gray-100 rounded-lg transition-colors"
+          >
             <div className="text-gray-400">
               <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5" viewBox="0 0 20 20" fill="currentColor">
                 <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" />
@@ -288,9 +296,13 @@ const StataEmail: React.FC<StatisticsProps> = ({ campaignId }) => {
             <div className="text-gray-400 flex-1">Disabled</div>
             <div className="text-gray-400 flex-1">Disabled</div>
             <div className="text-blue-500 flex-1">4% (23)</div>
-          </div>
+          </Link>
+          <div className="mx-4 border-b border-gray-100"></div>
 
-          <div className="flex items-center gap-4 p-4 hover:bg-gray-50 rounded-lg">
+          <Link 
+            href="/email-answer"
+            className="flex items-center gap-4 p-4 hover:bg-gray-100 rounded-lg transition-colors"
+          >
             <div className="text-gray-400">
               <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5" viewBox="0 0 20 20" fill="currentColor">
                 <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" />
@@ -302,7 +314,7 @@ const StataEmail: React.FC<StatisticsProps> = ({ campaignId }) => {
             <div className="text-gray-400 flex-1">Disabled</div>
             <div className="text-gray-400 flex-1">Disabled</div>
             <div className="text-blue-500 flex-1">2% (14)</div>
-          </div>
+          </Link>
         </div>
       </div>
     </div>

@@ -59,8 +59,8 @@ interface ChartDataPoint {
 export const CAMPAIGNS: Campaign[] = [
   {
     id: '1',
-    name: 'Roofing #1 - copy',
-    list: 'Roofing USA 926',
+    name: 'Advantage #1 - copy',
+    list: 'Advantage USA 926',
     senderAccounts: {
       main: 'yulia@advantageadver.c...',
       additional: 3
@@ -72,8 +72,8 @@ export const CAMPAIGNS: Campaign[] = [
       opens: { count: '-', percentage: '-' },
       clicks: { count: '-', percentage: '-' },
       replies: { count: 56, percentage: 2 },
-      bounces: { count: 0, percentage: 0 },
-      interested: { count: 0, percentage: 0 },
+      bounces: { count: 10, percentage: 1 },
+      interested: { count: 21, percentage: 1 },
       contacted: { count: 2921, percentage: 94 },
       unsubscribed: { count: 14, percentage: 1 },
       notReached: { count: 1, percentage: 0 }
@@ -82,8 +82,8 @@ export const CAMPAIGNS: Campaign[] = [
   },
   {
     id: '2',
-    name: 'Roofing #1',
-    list: 'Roofing USA 926',
+    name: 'Advantage #1',
+    list: 'Advantage USA 926',
     senderAccounts: {
       main: 'oliver@advantageinbox...',
       additional: 3
@@ -95,8 +95,8 @@ export const CAMPAIGNS: Campaign[] = [
       opens: { count: '-', percentage: '-' },
       clicks: { count: '-', percentage: '-' },
       replies: { count: 115, percentage: 5 },
-      bounces: { count: 0, percentage: 0 },
-      interested: { count: 0, percentage: 0 },
+      bounces: { count: 12, percentage: 1 },
+      interested: { count: 15, percentage: 1 },
       contacted: { count: 2194, percentage: 95 },
       unsubscribed: { count: 44, percentage: 2 },
       notReached: { count: 3, percentage: 0 }
@@ -105,95 +105,95 @@ export const CAMPAIGNS: Campaign[] = [
   },
   {
     id: '3',
-    name: 'Roofing #1',
-    list: 'Roofing USA 926',
+    name: 'Advantage #2',
+    list: 'Advantage USA 927',
     senderAccounts: {
-      main: 'oliver@advantageinbox...',
-      additional: 3
+      main: 'mark@advantageinbox...',
+      additional: 2
     },
     status: 'Archived',
-    totalRecipients: 150,
+    totalRecipients: 450,
     stats: {
-      sent: { count: 292, percentage: 39 },
+      sent: { count: 892, percentage: 82 },
       opens: { count: '-', percentage: '-' },
       clicks: { count: '-', percentage: '-' },
-      replies: { count: 0, percentage: 0 },
-      bounces: { count: 0, percentage: 0 },
-      interested: { count: 0, percentage: 0 },
-      contacted: { count: 299, percentage: 39 },
-      unsubscribed: { count: 0, percentage: 0 },
-      notReached: { count: 468, percentage: 61 }
+      replies: { count: 25, percentage: 3 },
+      bounces: { count: 12, percentage: 1 },
+      interested: { count: 8, percentage: 1 },
+      contacted: { count: 399, percentage: 89 },
+      unsubscribed: { count: 15, percentage: 2 },
+      notReached: { count: 36, percentage: 8 }
     },
-    date: '5 Nov 2024, 10:13 AM'
+    date: '1 Nov 2024, 11:45 AM'
   },
   {
     id: '4',
-    name: 'Roofing #1',
-    list: 'Roofing USA 926',
+    name: 'Advantage #3 - test',
+    list: 'Advantage USA 928',
     senderAccounts: {
-      main: 'oliver@advantageinbox...',
-      additional: 3
+      main: 'sarah@advantageinbox...',
+      additional: 1
     },
     status: 'Archived',
-    totalRecipients: 150,
+    totalRecipients: 250,
     stats: {
-      sent: { count: 72, percentage: 39 },
+      sent: { count: 472, percentage: 76 },
       opens: { count: '-', percentage: '-' },
       clicks: { count: '-', percentage: '-' },
-      replies: { count: 0, percentage: 0 },
-      bounces: { count: 0, percentage: 0 },
-      interested: { count: 0, percentage: 0 },
-      contacted: { count: 299, percentage: 39 },
-      unsubscribed: { count: 0, percentage: 0 },
-      notReached: { count: 468, percentage: 61 }
+      replies: { count: 18, percentage: 4 },
+      bounces: { count: 5, percentage: 1 },
+      interested: { count: 6, percentage: 1 },
+      contacted: { count: 199, percentage: 80 },
+      unsubscribed: { count: 8, percentage: 3 },
+      notReached: { count: 43, percentage: 17 }
     },
-    date: '5 Nov 2024, 10:13 AM'
+    date: '29 Oct 2024, 09:20 AM'
   },
   {
     id: '5',
-    name: 'Roofing #1',
-    list: 'Roofing USA 926',
+    name: 'Advantage Fb',
+    list: 'Advantage Commercial Leads 100',
     senderAccounts: {
-      main: 'oliver@advantageinbox...',
-      additional: 3
+      main: 'peter@advantageinbox...',
+      additional: 4
     },
     status: 'Archived',
-    totalRecipients: 150,
+    totalRecipients: 850,
     stats: {
-      sent: { count: 1362, percentage: 39 },
+      sent: { count: 1862, percentage: 88 },
       opens: { count: '-', percentage: '-' },
       clicks: { count: '-', percentage: '-' },
-      replies: { count: 0, percentage: 0 },
-      bounces: { count: 0, percentage: 0 },
-      interested: { count: 0, percentage: 0 },
-      contacted: { count: 299, percentage: 39 },
-      unsubscribed: { count: 0, percentage: 0 },
-      notReached: { count: 468, percentage: 61 }
+      replies: { count: 42, percentage: 5 },
+      bounces: { count: 15, percentage: 2 },
+      interested: { count: 12, percentage: 1 },
+      contacted: { count: 699, percentage: 82 },
+      unsubscribed: { count: 25, percentage: 3 },
+      notReached: { count: 99, percentage: 12 }
     },
-    date: '5 Nov 2024, 10:13 AM'
+    date: '25 Oct 2024, 14:30 PM'
   },
   {
     id: '6',
-    name: 'Roofing #1',
-    list: 'Roofing USA 926',
+    name: 'Advantage Google',
+    list: 'Advantage Industrial Network 50',
     senderAccounts: {
-      main: 'oliver@advantageinbox...',
-      additional: 3
+      main: 'alex@advantageinbox...',
+      additional: 2
     },
     status: 'Archived',
-    totalRecipients: 150,
+    totalRecipients: 350,
     stats: {
-      sent: { count: 299, percentage: 39 },
+      sent: { count: 699, percentage: 85 },
       opens: { count: '-', percentage: '-' },
       clicks: { count: '-', percentage: '-' },
-      replies: { count: 0, percentage: 0 },
-      bounces: { count: 0, percentage: 0 },
-      interested: { count: 0, percentage: 0 },
-      contacted: { count: 299, percentage: 39 },
-      unsubscribed: { count: 0, percentage: 0 },
-      notReached: { count: 468, percentage: 61 }
+      replies: { count: 28, percentage: 4 },
+      bounces: { count: 8, percentage: 1 },
+      interested: { count: 9, percentage: 1 },
+      contacted: { count: 289, percentage: 83 },
+      unsubscribed: { count: 12, percentage: 3 },
+      notReached: { count: 49, percentage: 14 }
     },
-    date: '5 Nov 2024, 10:13 AM'
+    date: '22 Oct 2024, 16:15 PM'
   },
 ];
 
