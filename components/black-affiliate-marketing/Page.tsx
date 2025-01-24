@@ -15,19 +15,19 @@ export default function BlackAffiliateMarketing() {
         CRACK THE CODE OF BLACK AFFILIATE MARKETING
         </h2>
 
-        <h1 className="text-4xl md:text-6xl font-bold leading-tight">
+        <h1 className="text-4xl md:text-6xl font-bold leading-tight mt-4">
         Master Algorithm-Busting Strategies to Rule{' '}
         <span className="underline">The Market Unopposed!</span>
         </h1>
 
-        <div className="text-2xl md:text-3xl">
+        <div className="text-2xl md:text-3xl mt-8">
         Enroll Today and{' '}
         <span className="text-red-600">
             Transform into a Marketing Specialist with Endless Opportunities
         </span>{' '}
         in the Modern Digital World
         </div>
-        <p className="text-lg md:text-xl text-gray-300 max-w-3xl mx-auto">
+        <p className="text-lg md:text-xl text-gray-300 max-w-3xl mx-auto mt-8">
         Elevate Your Future: Master a Skill for Endless Earnings, Be Your Own Boss, or Join Forces with Fellow Hustlers from Our Course to 4X Your Income
         </p>
 
