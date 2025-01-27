@@ -10,7 +10,7 @@ export default function ServicesSection() {
     return (
         <section className="max-w-6xl mx-auto px-6 py-10 md:py-14" id="services">
             <div className="flex justify-between items-center">
-                <span className="text-red uppercase tracking-wider">{t('headline')}</span>
+                <span className="text-red-500 uppercase tracking-wider">{t('headline')}</span>
                 <Image className="absolute right-14 md:hidden" src="/img/home/25-percent.svg" alt="25%" width={100} height={50} />
             </div>
 
@@ -74,7 +74,7 @@ export default function ServicesSection() {
             </div>
 
             <div className="flex justify-center mt-4">
-                <Link href="/offers"  className="px-10 py-4 text-red hover:text-red/70 font-medium transition-all duration-300 text-lg group flex items-center gap-2">
+                <Link href="/offers"  className="px-10 py-4 text-red-500 hover:text-red/70 font-medium transition-all duration-300 text-lg group flex items-center gap-2">
                     {t('button')} →
                 </Link>
             </div>

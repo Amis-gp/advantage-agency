@@ -19,7 +19,7 @@ export default function Footer() {
                         />
                         <p className="hidden sm:block mt-4 text-sm md:text-base text-center lg:text-left text-gray-400">
                             Copyright 2024.<br />
-                            Made by <span className='text-red font-bold hover:text-red/80 transition-colors cursor-pointer'>
+                            Made by <span className='text-red-500font-bold hover:text-red/80 transition-colors cursor-pointer'>
                                 Advantage Agency
                             </span>
                         </p>
@@ -29,7 +29,7 @@ export default function Footer() {
                         <div className="flex flex-col sm:flex-row items-center gap-4 sm:gap-8">
                             <Link 
                                 href="mailto:stepan@advantage-agency.co"
-                                className="flex items-center gap-2 hover:text-red transition-colors group"
+                                className="flex items-center gap-2 hover:text-red-500transition-colors group"
                                 onMouseEnter={() => playSound('hover_1')}
                             >
                                 <svg width="20" height="19" viewBox="0 0 20 19" fill="none" xmlns="http://www.w3.org/2000/svg" className="group-hover:scale-110 transition-transform">
@@ -39,7 +39,7 @@ export default function Footer() {
                             </Link>
                             <Link 
                                 href="tel:+19292052610"
-                                className="flex items-center gap-2 hover:text-red transition-colors group"
+                                className="flex items-center gap-2 hover:text-red-500transition-colors group"
                                 onMouseEnter={() => playSound('hover_1')}
                             >
                                 <svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg" className="group-hover:scale-110 transition-transform">
@@ -60,7 +60,7 @@ export default function Footer() {
                                 <Link 
                                     key={item.name} 
                                     href={item.href}
-                                    className="text-sm md:text-base hover:text-red transition-colors"
+                                    className="text-sm md:text-base hover:text-red-500transition-colors"
                                     onMouseEnter={() => playSound('hover_1')}
                                     onClick={(e) => {
                                         if (item.href.startsWith('#')) {
@@ -106,13 +106,13 @@ export default function Footer() {
                                 </Link>
                             ))}
                         </div>
-                        <Link href="/privacy-policy" className="text-sm md:text-base hover:text-red transition-colors text-center lg:text-left text-gray-300 -mb-4 sm:mb-0">
+                        <Link href="/privacy-policy" className="text-sm md:text-base hover:text-red-500transition-colors text-center lg:text-left text-gray-300 -mb-4 sm:mb-0">
                             Privacy Policy
                         </Link>
                     </div>
                     <p className="sm:hidden text-sm md:text-base text-center lg:text-left text-gray-400">
                         Copyright 2024.<br />
-                        Made by <span className='text-red font-bold hover:text-red/80 transition-colors cursor-pointer'>
+                        Made by <span className='text-red-500font-bold hover:text-red/80 transition-colors cursor-pointer'>
                             Advantage Agency
                         </span><br />
                     </p>

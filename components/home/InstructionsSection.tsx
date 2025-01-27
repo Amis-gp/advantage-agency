@@ -124,7 +124,7 @@ export default function Instructions() {
                         transition={{ duration: 0.8, delay: 0.2 }}
                         className="z-10 relative"
                     >
-                        <span className="text-red uppercase tracking-wider">{t('headline')}</span>
+                        <span className="text-red-500 uppercase tracking-wider">{t('headline')}</span>
                         <h2 className="text-white text-3xl md:text-5xl font-bold mt-2">{t('title')}</h2>
                         <p className="text-white/70 mt-4 md:text-lg">{t('description')}</p>
                     </motion.div>
@@ -193,7 +193,7 @@ export default function Instructions() {
                                             circleRefs.current[index] = el;
                                         }
                                     }}
-                                    className={`absolute ${index % 2 === 0 ? 'left-16' : 'right-16'} ${index === 0 ? '!top-8 md:!top-28 !left-auto -right-6 md:!-right-12' : ''} -top-11  md:-top-20 xl:-top-28 flex justify-center items-center w-10 h-10 md:w-20 md:h-20 xl:w-24 xl:h-24 z-30 bg-red rounded-full`}
+                                    className={`absolute ${index % 2 === 0 ? 'left-16' : 'right-16'} ${index === 0 ? '!top-8 md:!top-28 !left-auto -right-6 md:!-right-12' : ''} -top-11  md:-top-20 xl:-top-28 flex justify-center items-center w-10 h-10 md:w-20 md:h-20 xl:w-24 xl:h-24 z-30 bg-red-500 rounded-full`}
                                 >
                                     <span className="text-sm md:text-xl xl:text-4xl font-semibold">{`${index + 1}`}</span>
                                 </div>

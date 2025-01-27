@@ -81,7 +81,7 @@ export default function IntroductionSection() {
                         whileInView={{ opacity: 1 }}
                         viewport={{ once: true }}
                         transition={{ duration: 0.6, delay: 0.2 }}
-                        className="text-red md:text-lg font-medium tracking-wide"
+                        className="text-red-500 md:text-lg font-medium tracking-wide"
                     >
                         {t('headline')}
                     </motion.p>
@@ -140,7 +140,7 @@ export default function IntroductionSection() {
                         { icon: "/img/home/instagram.svg", left: "90%", top: "15%", rotate: 10, isIcon: true }
                     ].map((item, index) => (
                         <div key={index}
-                            className={`absolute bg-red hover:bg-red/80 transition-all duration-100 rounded-full text-black animate-fall ${isDesktopVisible ? 'visible' : ''} ${item.isIcon ? 'flex items-center justify-center w-10 h-10' : 'rounded-[30px] px-6 py-3'} ${item.istg ? 'pr-1' : ''}`}
+                            className={`absolute bg-red-500 hover:bg-red/80 transition-all duration-100 rounded-full text-black animate-fall ${isDesktopVisible ? 'visible' : ''} ${item.isIcon ? 'flex items-center justify-center w-10 h-10' : 'rounded-[30px] px-6 py-3'} ${item.istg ? 'pr-1' : ''}`}
                             onMouseEnter={() => playSound('hover_2')}
                             style={{
                                 left: item.left,
@@ -221,7 +221,7 @@ export default function IntroductionSection() {
                             }}
                         >
                             <div>
-                                <div className="w-16 h-16 rounded-full bg-red flex items-center justify-center z-10 relative">
+                                <div className="w-16 h-16 rounded-full bg-red-500 flex items-center justify-center z-10 relative">
                                     <Image src={step.icon} alt={step.title} width={32} height={32} loading="lazy" />
                                 </div>    
                             </div>
@@ -285,7 +285,7 @@ export default function IntroductionSection() {
                                     }
                                 }
                             }}
-                            className={`absolute bg-red hover:bg-red/80 transition-all duration-100 rounded-full text-black ${item.isIcon ? 'w-10 h-10' : 'px-6 py-3'} ${item.istg ? 'pr-1' : ''}`}
+                            className={`absolute bg-red-500 hover:bg-red/80 transition-all duration-100 rounded-full text-black ${item.isIcon ? 'w-10 h-10' : 'px-6 py-3'} ${item.istg ? 'pr-1' : ''}`}
                             onMouseEnter={() => playSound('hover_2')}
                             style={{
                                 left: item.left || 'auto',

@@ -10,7 +10,7 @@ export default function PartnersSection() {
         <section className="bg-black pt-10 md:pt-20">
             <div className="max-w-[1400px] mx-auto px-6">
                 <div className="sm:text-center">
-                    <span className="text-red uppercase tracking-wider">{t('partners.headline')}</span>
+                    <span className="text-red-500 uppercase tracking-wider">{t('partners.headline')}</span>
                     <h2 className="text-white text-3xl md:text-5xl font-bold mt-2">{t('partners.title')}</h2>
                 </div>
 

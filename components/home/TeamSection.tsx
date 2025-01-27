@@ -91,7 +91,7 @@ export default function TeamSection() {
                     viewport={{ once: true }}
                     transition={{ duration: 0.8, delay: 0.2 }}
                 >
-                    <span className="text-red uppercase tracking-wider">{t('team.headline')}</span>
+                    <span className="text-red-500 uppercase tracking-wider">{t('team.headline')}</span>
                     <h2 className="text-white text-3xl md:text-5xl font-bold mt-2">{t('team.title')}</h2>
                 </motion.div>
                 
@@ -129,7 +129,7 @@ export default function TeamSection() {
 
                 <Swiper {...swiperConfig} className="team-swiper">
                     {memoizedTeamMembers.map((member) => (
-                        <SwiperSlide key={member.name}>
+                        <SwiperSlide key={member.id}>
                             <TeamMember member={member} />
                         </SwiperSlide>
                     ))}

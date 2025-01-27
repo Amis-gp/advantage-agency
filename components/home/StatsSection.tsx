@@ -70,7 +70,7 @@ export default function StatsSection() {
                                             <span className="text-white text-2xl md:text-4xl font-bold px-4 md:px-8">
                                                 {word}
                                             </span>
-                                            <div className="w-3 h-3 md:w-6 md:h-6 bg-red rotate-45" />
+                                            <div className="w-3 h-3 md:w-6 md:h-6 bg-red-500 rotate-45" />
                                         </div>
                                     ))}
                                 </div>

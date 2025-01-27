@@ -96,7 +96,7 @@ export default function PortfolioSection() {
                 }
             `}</style>
             <div className="max-w-6xl mx-auto relative">
-                <span className="text-red uppercase tracking-wider">{t('portfolio.headline')}</span>
+                <span className="text-red-500 uppercase tracking-wider">{t('portfolio.headline')}</span>
                 <h2 className="text-white text-3xl md:text-5xl font-bold mt-2 lg:mb-10">{t('portfolio.title')}</h2>
 
                 <div className="relative">
@@ -199,7 +199,7 @@ export default function PortfolioSection() {
                                                 </div>
                                                 <Link 
                                                     href={getSlugForLocale(slide)}
-                                                    className="md:mt-4 text-red hover:opacity-80 py-4"
+                                                    className="md:mt-4 text-red-500 hover:opacity-80 py-4"
                                                     target="_blank"
                                                     rel="noopener noreferrer"
                                                 >

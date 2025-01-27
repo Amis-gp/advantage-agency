@@ -94,7 +94,7 @@ export default function AchievementsSection() {
                             viewport={{ once: true }}
                             transition={{ duration: 0.8, delay: 0.3 }}
                         >
-                            <p className="text-red uppercase tracking-wider">{t('achievements.headline')}</p>
+                            <p className="text-red-500 uppercase tracking-wider">{t('achievements.headline')}</p>
                             <h2 className="text-3xl md:text-5xl font-bold mt-2">{t('achievements.title')}</h2>
                             <p className="text-xl text-gray-600 mt-4">{t('achievements.description')}</p>
                         </motion.div>

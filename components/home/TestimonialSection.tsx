@@ -99,7 +99,7 @@ export default function TestimonialSection() {
                         viewport={{ once: true }}
                         transition={{ duration: 0.8, delay: 0.2 }}
                     >
-                        <span className="text-red uppercase tracking-wider">{t('headline')}</span>
+                        <span className="text-red-500 uppercase tracking-wider">{t('headline')}</span>
                         <h2 className="text-3xl md:text-5xl font-bold mt-2">{t('title')}</h2>
                     </motion.div>
                     

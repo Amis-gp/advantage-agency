@@ -36,7 +36,7 @@ const FaqSection = () => {
         <section className="bg-black py-20">
             <div className="max-w-6xl mx-auto px-6">
                 <div className="flex justify-between items-center">
-                    <span className="text-red uppercase tracking-wider">{t('headline')}</span>
+                    <span className="text-red-500 uppercase tracking-wider">{t('headline')}</span>
                 </div>
 
                 <h2 className="text-4xl md:text-5xl font-bold text-white mt-4 mb-12">{t('title')}</h2>

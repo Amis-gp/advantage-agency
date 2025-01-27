@@ -89,7 +89,7 @@ const FormSection = () => {
             <div className="max-w-6xl mx-auto px-6">
                 <div className="flex flex-col lg:flex-row gap-16 relative md:px-16 overflow-hidden p-6">
                     <div className="lg:w-1/2 relative md:mt-20">
-                        <span className="text-red uppercase tracking-wider">{t('headline')}</span>
+                        <span className="text-red-500 uppercase tracking-wider">{t('headline')}</span>
                         <h2 className="text-3xl md:text-5xl font-bold text-white mt-2 leading-tight">{t('title')}</h2>
                     </div>
 
