@@ -75,6 +75,13 @@ export async function generateMetadata({ params }: { params: { locale: string } 
         ].join(', '),
     robots: 'index, follow',
     openGraph: {
+      images: [
+        {
+          url: 'img/og-image.jpg',
+          width: 1000,
+          height: 700,
+        },
+      ],
       type: 'website',
       title: isUkrainian
         ? 'Advantage Agency | Повний Спектр Цифрового Маркетингу'
@@ -84,9 +91,10 @@ export async function generateMetadata({ params }: { params: { locale: string } 
         : 'Expert digital marketing services including Google & Facebook Ads, Pre-landing Development, Email Marketing, and Data Parsing solutions.',
       url: `https://www.advantage-agency.co/${params.locale}`,
       siteName: 'Advantage Agency',
-      locale: isUkrainian ? 'uk_UA' : 'en_US',
+      locale: isUkrainian ? 'ua_UA' : 'en_US',
     },
     twitter: {
+      images: ['img/og-image.jpg'],
       card: 'summary_large_image',
       title: isUkrainian
         ? 'Advantage Agency | Повний Спектр Цифрового Маркетингу'
@@ -100,11 +108,8 @@ export async function generateMetadata({ params }: { params: { locale: string } 
       canonical: `https://www.advantage-agency.co/${params.locale}`,
       languages: {
         'en': 'https://www.advantage-agency.co/en',
-        'uk': 'https://www.advantage-agency.co/uk',
+        'uk': 'https://www.advantage-agency.co/ua',
       },
-    },
-    verification: {
-      google: 'your-google-verification-code',
     },
     authors: [
       { name: 'Advantage Agency Team' }
@@ -117,8 +122,8 @@ export async function generateMetadata({ params }: { params: { locale: string } 
     other: {
       'og:site_name': 'Advantage Agency',
       'og:type': 'website',
-      'og:locale': isUkrainian ? 'uk_UA' : 'en_US',
-      'og:locale:alternate': isUkrainian ? ['en_US'] : ['uk_UA'],
+      'og:locale': isUkrainian ? 'ua_UA' : 'en_US',
+      'og:locale:alternate': isUkrainian ? ['en_US'] : ['ua_UA'],
       'business:contact_data:locality': 'Ukraine',
       'business:contact_data:email': 'contact@advantage-agency.co',
       'business:contact_data:website': 'https://www.advantage-agency.co',

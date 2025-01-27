@@ -18,12 +18,13 @@ const roboto = Roboto({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://www.advantage-agency.co'),
   title: 'Advantage Agency',
   description: 'Digital marketing agency',
   icons: {
     icon: [
       {
-        url: '/img/favicon.svg',
+        url: 'img/favicon.svg',
         sizes: 'any',
       },
     ]
