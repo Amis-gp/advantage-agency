@@ -1,21 +1,21 @@
-# *       - означає всіх роботів
-# Allow   - дозволяє індексацію
-# Disallow - забороняє індексацію
+# *       - means all robots
+# Allow   - allows indexing
+# Disallow - forbids indexing
 
 User-agent: *
 Allow: /
 Allow: /uk/
 Allow: /en/
 
-# Заборонити індексацію адмін-панелі чи інших службових сторінок
+# Disallow indexing of admin panel and other service pages
 Disallow: /admin/
 Disallow: /private/
-Disallow: /*?*  # Заборонити індексацію URL з параметрами
+Disallow: /*?*  # Disallow indexing URLs with parameters
 
-# Вказуємо розташування карти сайту
-Sitemap: https://advantage-agency.com/sitemap.xml
+# Specify sitemap location
+Sitemap: https://www.advantage-agency.co/sitemap.xml
 
-# Специфічні правила для різних роботів
+# Specific rules for different robots
 User-agent: Googlebot
 Allow: /
 
@@ -23,5 +23,5 @@ User-agent: Googlebot-Image
 Allow: /img/
 Allow: /public/img/
 
-# Встановлюємо частоту сканування (необов'язково)
+# Set crawl frequency
 Crawl-delay: 10
