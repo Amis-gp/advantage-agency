@@ -4,7 +4,7 @@
 
 User-agent: *
 Allow: /
-Allow: /uk/
+Allow: /ua/
 Allow: /en/
 
 # Disallow indexing of admin panel and other service pages
@@ -23,5 +23,13 @@ User-agent: Googlebot-Image
 Allow: /img/
 Allow: /public/img/
 
-# Set crawl frequency
-Crawl-delay: 10
+# Замість Crawl-delay використовуємо max-image-preview
+User-agent: *
+Max-image-preview: large
+
+# Додаємо правила для інших ботів
+User-agent: Bingbot
+Allow: /
+
+User-agent: YandexBot
+Allow: /
