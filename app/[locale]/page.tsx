@@ -10,12 +10,30 @@ import PortfolioSection from '@/components/home/PortfolioSection'
 import AchievementsSection from '@/components/home/AchievementsSection'
 import PartnersSection from '@/components/home/PartnersSection'
 import Instructions from '@/components/home/InstructionsSection'
-import TeamSection from '@/components/home/TeamSection'
-import TestimonialSection from '@/components/home/TestimonialSection'
-import ServicesSection from '@/components/home/ServicesSection'
-import FaqSection from '@/components/home/FAQSection'
-import Footer from '@/components/Footer'
-import FormSection from '@/components/home/FormSection'
+import dynamic from 'next/dynamic'
+
+const TeamSection = dynamic(() => import('@/components/home/TeamSection'), {
+  loading: () => <div>Loading...</div>
+})
+const TestimonialSection = dynamic(() => import('@/components/home/TestimonialSection'), {
+  loading: () => <div>Loading...</div>
+})
+const ServicesSection = dynamic(() => import('@/components/home/ServicesSection'), {
+  loading: () => <div>Loading...</div>,
+  ssr: false
+})
+const FormSection = dynamic(() => import('@/components/home/FormSection'), {
+  loading: () => <div>Loading...</div>,
+  ssr: false
+})
+const FaqSection = dynamic(() => import('@/components/home/FAQSection'), {
+  loading: () => <div>Loading...</div>
+})
+const Footer = dynamic(() => import('@/components/Footer'), {
+  loading: () => <div>Loading...</div>
+})
+
+
 
 export async function generateMetadata({ params }: { params: { locale: string } }): Promise<Metadata> {
   const isUkrainian = params.locale === 'ua'
@@ -23,8 +41,8 @@ export async function generateMetadata({ params }: { params: { locale: string } 
   return {
     metadataBase: new URL('https://www.advantage-agency.co'),
     title: isUkrainian 
-      ? 'Advantage Agency | Агенція Цифрового Маркетингу, Розробки та Email Маркетингу'
-      : 'Advantage Agency | Digital Marketing, Development & Email Marketing Agency',
+      ? 'Advantage Agency | Агенція Цифрового Маркетингу'
+      : 'Advantage Agency | Digital Marketing Agency',
     description: isUkrainian
       ? 'Повний спектр digital-послуг: Google Ads, Facebook Ads, Black Affiliate Marketing, розробка прелендінгів, email маркетинг та парсинг даних. Досягайте результатів з нашою експертною командою та комплексними маркетинговими рішеннями.'
       : 'Full-service digital agency specializing in Google Ads, Facebook Ads, Black Affiliate Marketing, Pre-landing Development, Email Marketing, and Data Parsing. Drive results with our expert team and comprehensive marketing solutions.',
@@ -91,7 +109,8 @@ export async function generateMetadata({ params }: { params: { locale: string } 
         : 'Expert digital marketing services including Google & Facebook Ads, Pre-landing Development, Email Marketing, and Data Parsing solutions.',
       url: `https://www.advantage-agency.co/${params.locale}`,
       siteName: 'Advantage Agency',
-      locale: isUkrainian ? 'ua_UA' : 'en_US',
+      locale: isUkrainian ? 'uk_UA' : 'en_US',
+      alternateLocale: isUkrainian ? ['en_US'] : ['uk_UA'],
     },
     twitter: {
       images: ['img/og-image.jpg'],
@@ -105,10 +124,10 @@ export async function generateMetadata({ params }: { params: { locale: string } 
       creator: '@advantageagency',
     },
     alternates: {
-      canonical: `https://www.advantage-agency.co/${params.locale}`,
+      canonical: 'https://www.advantage-agency.co',
       languages: {
-        'en': 'https://www.advantage-agency.co/en',
-        'uk': 'https://www.advantage-agency.co/ua',
+        'en-US': 'https://www.advantage-agency.co/en',
+        'uk-UA': 'https://www.advantage-agency.co/ua',
       },
     },
     authors: [
@@ -122,8 +141,8 @@ export async function generateMetadata({ params }: { params: { locale: string } 
     other: {
       'og:site_name': 'Advantage Agency',
       'og:type': 'website',
-      'og:locale': isUkrainian ? 'ua_UA' : 'en_US',
-      'og:locale:alternate': isUkrainian ? ['en_US'] : ['ua_UA'],
+      'og:locale': isUkrainian ? 'uk_UA' : 'en_US',
+      'og:locale:alternate': isUkrainian ? ['en_US'] : ['uk_UA'],
       'business:contact_data:locality': 'Ukraine',
       'business:contact_data:email': 'contact@advantage-agency.co',
       'business:contact_data:website': 'https://www.advantage-agency.co',

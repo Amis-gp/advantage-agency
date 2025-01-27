@@ -5,11 +5,34 @@
   <!-- Homepage -->
   <url>
     <loc>https://www.advantage-agency.co</loc>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://www.advantage-agency.co/en"/>
+    <xhtml:link rel="alternate" hreflang="uk-UA" href="https://www.advantage-agency.co/ua"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.advantage-agency.co"/>
     <lastmod>2025-01-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.advantage-agency.co/en"/>
-    <xhtml:link rel="alternate" hreflang="uk" href="https://www.advantage-agency.co/uk"/>
+  </url>
+
+  <!-- English version -->
+  <url>
+    <loc>https://www.advantage-agency.co/en</loc>
+    <xhtml:link rel="alternate" hreflang="uk-UA" href="https://www.advantage-agency.co/ua"/>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://www.advantage-agency.co/en"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.advantage-agency.co"/>
+    <lastmod>2025-01-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  
+  <!-- Ukrainian version -->
+  <url>
+    <loc>https://www.advantage-agency.co/ua</loc>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://www.advantage-agency.co/en"/>
+    <xhtml:link rel="alternate" hreflang="uk-UA" href="https://www.advantage-agency.co/ua"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.advantage-agency.co"/>
+    <lastmod>2025-01-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
   </url>
 
   <!-- Cases -->
