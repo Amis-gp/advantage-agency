@@ -126,10 +126,6 @@ export async function generateMetadata({ params }: { params: { locale: string } 
       { name: 'Advantage Agency Team' }
     ],
     category: isUkrainian ? 'Цифровий Маркетинг' : 'Digital Marketing',
-    icons: {
-      icon: '/favicon.svg',
-      apple: '/apple-touch-icon.png',
-    },
     other: {
       'og:site_name': 'Advantage Agency',
       'og:type': 'website',
