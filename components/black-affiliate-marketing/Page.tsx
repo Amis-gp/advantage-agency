@@ -232,7 +232,7 @@ export default function BlackAffiliateMarketing() {
 
               <li className="">
                 <span className="text-red-600 font-bold">Consulted for over 2,000 businesses worldwide </span>
-                <span>on behalf of industry giants like Google and Volume.</span>
+                <span>on behalf of industry giants like Google and Voluum.</span>
               </li>
 
               <li className="">

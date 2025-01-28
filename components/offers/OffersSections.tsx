@@ -127,7 +127,7 @@ const SliderSection = ({ slides, bgColor, borderColor }: {
     );
 };
 
-const OffersSection = async ({ locale }: { locale: string }) => {
+const OffersSection = ({ locale }: { locale: string }) => {
     const t = useTranslations();
     
     const translateSlides = (slides: Slide[]) => slides.map(slide => ({
