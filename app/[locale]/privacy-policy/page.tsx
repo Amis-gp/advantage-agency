@@ -19,25 +19,25 @@ export default function PrivacyPolicyPage({
                 
                 <div className="space-y-8">
                     <section className="bg-gray-900/50 rounded-2xl p-6 md:p-8 backdrop-blur-sm">
-                        <h2 className="text-2xl font-bold mb-4 text-[#ff6315]">{t('storage.title')}</h2>
+                        <h2 className="text-2xl font-bold mb-4 text-red-500">{t('storage.title')}</h2>
                         <p className="text-gray-300 leading-relaxed">{t('storage.content')}</p>
                     </section>
 
                     <section className="bg-gray-900/50 rounded-2xl p-6 md:p-8 backdrop-blur-sm">
-                        <h2 className="text-2xl font-bold mb-4 text-[#ff6315]">{t('cookies.title')}</h2>
+                        <h2 className="text-2xl font-bold mb-4 text-red-500">{t('cookies.title')}</h2>
                         <p className="text-gray-300 leading-relaxed">{t('cookies.content')}</p>
                     </section>
 
                     <section className="bg-gray-900/50 rounded-2xl p-6 md:p-8 backdrop-blur-sm">
-                        <h2 className="text-2xl font-bold mb-4 text-[#ff6315]">{t('security.title')}</h2>
+                        <h2 className="text-2xl font-bold mb-4 text-red-500">{t('security.title')}</h2>
                         <p className="text-gray-300 leading-relaxed">{t('security.content')}</p>
                     </section>
 
                     <section className="bg-gray-900/50 rounded-2xl p-6 md:p-8 backdrop-blur-sm">
-                        <h2 className="text-2xl font-bold mb-4 text-[#ff6315]">{t('other.title')}</h2>
+                        <h2 className="text-2xl font-bold mb-4 text-red-500">{t('other.title')}</h2>
                         <div className="space-y-4 text-gray-300 leading-relaxed">
                             <p>{t('other.contact')}</p>
-                            <p className="text-[#ff6315]">{t('other.email')}</p>
+                            <p className="text-red-500">{t('other.email')}</p>
                             <p>{t('other.address')}</p>
                             <p>{t('other.phone')}</p>
                             <p>{t('other.disputes')}</p>
@@ -53,5 +53,5 @@ export default function PrivacyPolicyPage({
 }
 
 export function generateStaticParams() {
-    return [{ locale: 'en' }, { locale: 'ua' }];
+    return [{ locale: 'en' }, { locale: 'uk' }];
 }
