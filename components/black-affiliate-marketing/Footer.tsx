@@ -46,10 +46,10 @@ const Footer = () => {
           </p>
 
         <div className="flex justify-center gap-6">
-          <a href="https://www.instagram.com/stepan_knows" target="_blank" className="hover:scale-110 transition-all duration-300">
+          <a href="https://www.linkedin.com/in/stepan-potichnyi/" target="_blank" className="hover:scale-110 transition-all duration-300">
             <Image src="/img/black-affiliate-marketing/linkedin.avif" alt="LinkedIn" width={40} height={40} />
           </a>
-          <a href="https://www.instagram.com/steve_4_real/" target="_blank" className="hover:scale-110 transition-all duration-300">
+          <a href="https://www.instagram.com/stepan_knows" target="_blank" className="hover:scale-110 transition-all duration-300">
             <Image src="/img/black-affiliate-marketing/instagram.avif" alt="Instagram" width={40} height={40} />
           </a>
           <a href="https://www.facebook.com/profile.php?id=100006500822716&locale=uk_UA" target="_blank" className="hover:scale-110 transition-all duration-300">

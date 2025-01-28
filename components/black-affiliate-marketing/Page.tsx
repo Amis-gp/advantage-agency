@@ -252,10 +252,10 @@ export default function BlackAffiliateMarketing() {
             </ul>
           </div>
           <div className="flex justify-center gap-6 mt-6 md:col-span-2">
-              <a href="https://www.instagram.com/stepan_knows" target="_blank" className="hover:scale-110 transition-all duration-300">
+              <a href="https://www.linkedin.com/in/stepan-potichnyi/" target="_blank" className="hover:scale-110 transition-all duration-300">
                 <Image src="/img/black-affiliate-marketing/linkedin.avif" alt="LinkedIn" width={40} height={40} />
               </a>
-              <a href="https://www.instagram.com/steve_4_real/" target="_blank" className="hover:scale-110 transition-all duration-300">
+              <a href="https://www.instagram.com/stepan_knows" target="_blank" className="hover:scale-110 transition-all duration-300">
                 <Image src="/img/black-affiliate-marketing/instagram.avif" alt="Instagram" width={40} height={40} />
               </a>
               <a href="https://www.facebook.com/profile.php?id=100006500822716&locale=uk_UA" target="_blank" className="hover:scale-110 transition-all duration-300">
@@ -338,7 +338,7 @@ export default function BlackAffiliateMarketing() {
                 "After leaving Google, I ventured into freelancing, managing Google ads for clients, website development, and assisting businesses with their digital transformation 💼. It had its upsides - I had <span className="font-bold">many clients from word of mouth</span>. However, I was a one-person show, working tirelessly throughout the day, without the confines of a traditional 9-5 schedule. It was more like a <span className="text-red-600 font-bold">9 am to 9 pm routine</span>. 
               </p>
               <p>
-                Around the six-month mark, I recognized the need for change. Freelancing wasn't providing the stability I desired, and the income was far from substantial, averaging between $1,500 to $2,000 💰. I decided to rent a room in a shared flat with 3 other people, a significant improvement from my previous situation. Subsequently, I dedicated an entire month to a <span className="font-bold">relentless job hunt, participating in over 27 job interviews</span> 🎯. I received numerous offers and chose to take on <span className="text-red-600 font-bold">two demanding corporate sales positions</span> ( Voluum and BenefitHub ), you can verify it on my <Link href="https://www.instagram.com/stepan_knows" target="_blank" className="text-blue-500 font-bold">LinkedIn profile</Link>.
+                Around the six-month mark, I recognized the need for change. Freelancing wasn't providing the stability I desired, and the income was far from substantial, averaging between $1,500 to $2,000 💰. I decided to rent a room in a shared flat with 3 other people, a significant improvement from my previous situation. Subsequently, I dedicated an entire month to a <span className="font-bold">relentless job hunt, participating in over 27 job interviews</span> 🎯. I received numerous offers and chose to take on <span className="text-red-600 font-bold">two demanding corporate sales positions</span> ( Voluum and BenefitHub ), you can verify it on my <Link href="https://www.linkedin.com/in/stepan-potichnyi/" target="_blank" className="text-blue-500 font-bold">LinkedIn profile</Link>.
               </p>
               <p>
                 Reflecting on that period, it was nothing short of a whirlwind 🌪️. Each day was filled with stress, as I bore the responsibility for the revenue in two IT SaaS companies. I sustained this lifestyle for <span className="font-bold">nearly three years</span>, which took a toll on my health, and life became synonymous with work. I had no days off, along with multiple side projects and tests conducted during my spare time. However, the income improved to a range of <span className="text-red-600 font-bold">$3,000 to $4,000 per month</span> from both jobs, and I managed to save. 💪
