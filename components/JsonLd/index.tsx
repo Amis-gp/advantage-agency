@@ -1,8 +1,8 @@
 import JsonLdEn from './en'
-import JsonLdUk from './ua'
+import JsonLdUk from './uk'
 
 export default function JsonLd({ locale }: { locale: string }) {
-  if (locale === 'ua') {
+  if (locale === 'uk') {
     return <JsonLdUk />
   }
   return <JsonLdEn />

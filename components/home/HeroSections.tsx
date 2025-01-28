@@ -7,9 +7,9 @@ import Link from 'next/link';
 import { playSound } from '@/app/constant/sound';
 
 const videoSources = {
-    ua: {
-        full: 'img/home/video-ua.mp4',
-        preview: 'img/home/preview-ua.mp4'
+    uk: {
+        full: 'img/home/video-uk.mp4',
+        preview: 'img/home/preview-uk.mp4'
     },
     en: {
         full: 'img/home/video-en.mp4',

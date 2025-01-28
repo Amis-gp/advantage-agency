@@ -11,7 +11,7 @@ export const portfolioSlides = [
         location: '🇺🇸 United States',
         slug: {
             en: 'cases/v13',
-            ua: 'cases/v13ua'
+            uk: 'cases/v13uk'
         },
     },
     {
@@ -27,7 +27,7 @@ export const portfolioSlides = [
         location: '🇩🇪 Germany',
         slug: {
             en: 'cases/v11',
-            ua: 'cases/v11ua'
+            uk: 'cases/v11uk'
         },
     },
     {
@@ -43,7 +43,7 @@ export const portfolioSlides = [
         location: '🇨🇦 Canada',
         slug: {
             en: 'cases/v10',
-            ua: 'cases/v10ua'
+            uk: 'cases/v10uk'
         },
     },
     
@@ -60,7 +60,7 @@ export const portfolioSlides = [
         location: '🇬🇧 United Kingdom',
         slug: {
             en: 'cases/v2',
-            ua: 'cases/v2ua'
+            uk: 'cases/v2uk'
         },
     },
     {
@@ -75,7 +75,7 @@ export const portfolioSlides = [
         location: '🇺🇸 United States',
         slug: {
             en: 'cases/v4',
-            ua: 'cases/v4ua'
+            uk: 'cases/v4uk'
         },
     },
     {
@@ -91,7 +91,7 @@ export const portfolioSlides = [
         location: '🇺🇸 United States',
         slug: {
             en: 'cases/v5',
-            ua: 'cases/v5ua'
+            uk: 'cases/v5uk'
         },
     },
     {
@@ -106,7 +106,7 @@ export const portfolioSlides = [
         location: '🇺🇸 United States',
         slug: {
             en: 'cases/v6',
-            ua: 'cases/v6ua'
+            uk: 'cases/v6uk'
         },
     },
     {
@@ -121,7 +121,7 @@ export const portfolioSlides = [
         location: '🇺🇸 United States',
         slug: {
             en: 'cases/v7',
-            ua: 'cases/v7ua'
+            uk: 'cases/v7uk'
         },
     },
     {
@@ -137,7 +137,7 @@ export const portfolioSlides = [
         location: '🇺🇸 United States',
         slug: {
             en: 'cases/v8',
-            ua: 'cases/v8ua'
+            uk: 'cases/v8uk'
         },
     },
     {
@@ -153,7 +153,7 @@ export const portfolioSlides = [
         location: '🇺🇸 United States',
         slug: {
             en: 'cases/v9',
-            ua: 'cases/v9ua'
+            uk: 'cases/v9uk'
         },
     },
     {
@@ -168,7 +168,7 @@ export const portfolioSlides = [
         location: '🇵🇱 Poland',
         slug: {
             en: 'cases/v3',
-            ua: 'cases/v3ua'
+            uk: 'cases/v3uk'
         },
     },
     {
@@ -183,7 +183,7 @@ export const portfolioSlides = [
         location: '🇮🇱 Israel',
         slug: {
             en: 'cases/v12',
-            ua: 'cases/v12ua'
+            uk: 'cases/v12uk'
         },
     },
 ];

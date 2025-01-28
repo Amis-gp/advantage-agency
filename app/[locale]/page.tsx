@@ -36,7 +36,7 @@ const Footer = dynamic(() => import('@/components/Footer'), {
 
 
 export async function generateMetadata({ params }: { params: { locale: string } }): Promise<Metadata> {
-  const isUkrainian = params.locale === 'ua'
+  const isUkrainian = params.locale === 'uk'
 
   return {
     metadataBase: new URL('https://www.advantage-agency.co'),
@@ -44,8 +44,8 @@ export async function generateMetadata({ params }: { params: { locale: string } 
       ? 'Advantage Agency | Агенція Цифрового Маркетингу'
       : 'Advantage Agency | Digital Marketing Agency',
     description: isUkrainian
-      ? 'Повний спектр digital-послуг: Google Ads, Facebook Ads, Black Affiliate Marketing, розробка прелендінгів, email маркетинг та парсинг даних. Досягайте результатів з нашою експертною командою та комплексними маркетинговими рішеннями.'
-      : 'Full-service digital agency specializing in Google Ads, Facebook Ads, Black Affiliate Marketing, Pre-landing Development, Email Marketing, and Data Parsing. Drive results with our expert team and comprehensive marketing solutions.',
+      ? 'Повний спектр digital-послуг: Google Ads, Facebook Ads, Black Affiliate Marketing, розробка прелендінгів, email маркетинг та парсинг даних. Досягайте результатів з нашою командою та комплексними маркетинговими рішеннями.'
+      : 'Full-service digital agency specializing in Google Ads, Facebook Ads, Black Affiliate Marketing, Pre-landing Development, Email Marketing, and Data Parsing. Drive results with our team and comprehensive marketing solutions.',
     keywords: isUkrainian
       ? [
           'digital агенція',
@@ -93,13 +93,6 @@ export async function generateMetadata({ params }: { params: { locale: string } 
         ].join(', '),
     robots: 'index, follow',
     openGraph: {
-      images: [
-        {
-          url: 'img/og-image.jpg',
-          width: 1000,
-          height: 700,
-        },
-      ],
       type: 'website',
       title: isUkrainian
         ? 'Advantage Agency | Повний Спектр Цифрового Маркетингу'
@@ -113,7 +106,6 @@ export async function generateMetadata({ params }: { params: { locale: string } 
       alternateLocale: isUkrainian ? ['en_US'] : ['uk_UA'],
     },
     twitter: {
-      images: ['img/og-image.jpg'],
       card: 'summary_large_image',
       title: isUkrainian
         ? 'Advantage Agency | Повний Спектр Цифрового Маркетингу'
@@ -127,7 +119,7 @@ export async function generateMetadata({ params }: { params: { locale: string } 
       canonical: 'https://www.advantage-agency.co',
       languages: {
         'en-US': 'https://www.advantage-agency.co/en',
-        'uk-UA': 'https://www.advantage-agency.co/ua',
+        'uk-UA': 'https://www.advantage-agency.co/uk',
       },
     },
     authors: [

@@ -71,7 +71,7 @@ export default function PortfolioSection() {
     };
 
     const getSlugForLocale = useMemo(() => (slide: any) => {
-        return locale === 'ua' ? slide.slug.ua : slide.slug.en;
+        return locale === 'uk' ? slide.slug.uk : slide.slug.en;
     }, [locale]);
 
     return (
