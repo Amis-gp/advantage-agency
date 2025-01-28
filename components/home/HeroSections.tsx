@@ -40,7 +40,7 @@ export default function HeroSection() {
             </div>
 
             <div className="absolute -rotate-12 sm:rotate-0 -top-20 -right-52 sm:-top-80 sm:-right-80 w-[426px] h-[426px] sm:w-[726px] sm:h-[726px] opacity-40">
-                <Image src="/img/home/lines.svg" alt="Decorative lines" width={726} height={726}/>
+                <Image src="/img/home/lines.svg" alt="Decorative lines" width={726} height={726} priority/>
             </div>
 
             <motion.div className="absolute top-20 right-4 xl:right-16  w-4 h-4 sm:w-8 sm:h-8 xl:w-auto xl:h-auto" style={{ rotate: rotate2 }}>

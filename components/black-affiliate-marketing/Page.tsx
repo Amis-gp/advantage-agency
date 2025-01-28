@@ -102,7 +102,7 @@ export default function BlackAffiliateMarketing() {
   };
 
   return (
-    <div className="min-h-screen bg-black text-white text-center px-4 py-16 overflow-hidden font-sans relative">
+    <div className="min-h-screen bg-black text-white text-center px-4 py-14 overflow-hidden font-sans relative">
 
       <div 
         className="absolute left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] md:w-[700px] md:h-[700px] rounded-full bg-red-600/30 blur-[150px] -z-10"
@@ -113,40 +113,29 @@ export default function BlackAffiliateMarketing() {
 
         <section className="">
           <h2 className="text-2xl uppercase tracking-wider">
-          CRACK THE CODE OF BLACK AFFILIATE MARKETING
+            UNLOCK THE SECRETS OF HIGH-PERFORMANCE AFFILIATE MARKETING
           </h2>
 
           <h1 className="text-4xl md:text-6xl font-bold leading-tight mt-4">
-          Master Algorithm-Busting Strategies to Rule{' '}
-          <span className="underline">The Market Unopposed!</span>
+            Master the craft of overcoming any limitations on your ads, to keep your ROI{' '} 
+            <span className="underline"> always positive!</span>
           </h1>
 
           <div className="text-2xl md:text-3xl mt-8">
-          Enroll Today and{' '}
-          <span className="text-red-600">
-              Transform into a Marketing Specialist with Endless Opportunities
-          </span>{' '}
-          in the Modern Digital World
+            Jump into the world of{' '}
+            <span className="text-red-600">
+              Black-Hat marketing and become an expert in your game
+            </span>
           </div>
           <p className="text-lg md:text-xl text-gray-300 max-w-3xl mx-auto mt-8">
-          Elevate Your Future: Master a Skill for Endless Earnings, Be Your Own Boss, or Join Forces with Fellow Hustlers from Our Course to 4X Your Income
+            Boost Your Future: Master a Skill for Endless Earnings, Be Your Own Boss, or Team Up with Fellow Hustlers from Our Course to 4X Your Income
           </p>
 
           <div className="mx-auto h-[360px] w-full md:w-[560px] mt-8">
-            <iframe 
-              width="560" 
-              height="315" 
-              src="https://www.youtube.com/embed/PeUYZkd1KhU?si=4IKhZ4t5Jv0-leTR" 
-              title="YouTube video player" 
-              frameBorder="0" 
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-              referrerPolicy="strict-origin-when-cross-origin" 
-              allowFullScreen={true} 
-              className="mx-auto w-full"
-            />
+            <VideoPlayer videoUrl="/img/black-affiliate-marketing/video-vsl.mp4" />
           </div>
 
-          <div className="pt-8 animate-bounce">
+          <div className="!mt-6 pt-8 animate-bounce">
             <Link href="/black-affiliate-marketing/form" className="bg-red-800 hover:bg-red-700 text-white text-xl font-bold py-4 px-8 uppercase">
               SECURE YOUR SPOT NOW
             </Link>
@@ -158,42 +147,42 @@ export default function BlackAffiliateMarketing() {
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
             <div className="space-y-4 bg-black/40 backdrop-blur-sm p-6 rounded-xl border border-red-600/30 hover:border-red-600/50 transition-all duration-300">
               <div className="w-28 h-28 mx-auto">
-                  <Image src="/img/black-affiliate-marketing/1.avif" alt="1" width={100} height={100} priority/>
+                <Image src="/img/black-affiliate-marketing/1.avif" alt="1" width={100} height={100} priority/>
               </div>
               <p className="">
-              This course is for those who are fed up with their current life, and{' '}
-              <span className="text-red-600">current 9-5 job</span> and want to make a change!
+                This course is for anyone ready to leave the{' '}
+                <span className="text-red-600">9-to-5 grind</span> and make a real change!
               </p>
             </div>
 
             <div className="space-y-4 bg-black/40 backdrop-blur-sm p-6 rounded-xl border border-red-600/30 hover:border-red-600/50 transition-all duration-300">
               <div className="w-28 h-28 mx-auto">
-              <Image src="/img/black-affiliate-marketing/2.png" alt="2" width={100} height={100} priority/>
+                <Image src="/img/black-affiliate-marketing/2.png" alt="2" width={100} height={100} priority/>
               </div>
               <p className="">
-              For those who are looking for a way to have an{' '}
-              <span className="text-red-600">online income, which is not depended</span> on anything else but your skills, which I'm going to teach you in this course.
+                If you want an{' '}
+                <span className="text-red-600">online income that's based on your skills</span>, not luck, this course is for you
               </p>
             </div>
 
             <div className="space-y-4 bg-black/40 backdrop-blur-sm p-6 rounded-xl border border-red-600/30 hover:border-red-600/50 transition-all duration-300">
               <div className="w-28 h-28 mx-auto">
-                  <Image src="/img/black-affiliate-marketing/3.avif" alt="3" width={100} height={100} priority/>
+                <Image src="/img/black-affiliate-marketing/3.avif" alt="3" width={100} height={100} priority/>
               </div>
               <p className="">
-              For students, looking for additional streams of income, and start to live on their own terms,{' '}
-              <span className="text-red-600">not depended on a job, boss, economical circumstances</span>, or parents.
+                Ideal for students or anyone wanting to live life on their own terms,{' '}
+                <span className="text-red-600">free from a boss or financial worries</span>
               </p>
             </div>
 
             <div className="space-y-4 bg-black/40 backdrop-blur-sm p-6 rounded-xl border border-red-600/30 hover:border-red-600/50 transition-all duration-300">
               <div className="w-28 h-28 mx-auto">
-              <Image src="/img/black-affiliate-marketing/4.avif" alt="4" width={100} height={100} priority/>
+                <Image src="/img/black-affiliate-marketing/4.avif" alt="4" width={100} height={100} priority/>
               </div>
               <p className="">
-              For anyone who wants to establish their business, passive income, and turn it into an agency to run ads for the clients.{' '}
-              <span className="text-red-600">The methods introduced in this course on by passing algorithms will pay</span>{' '}
-              you off forever in the digital marketing world.
+                Perfect for those looking to build a business and passive income,{' '}
+                <span className="text-red-600">with strategies that keep paying off</span>{' '}
+                in digital marketing
               </p>
             </div>
           </div>
@@ -704,9 +693,11 @@ export default function BlackAffiliateMarketing() {
               
               <div className="text-5xl font-bold mb-8 group-hover:text-red-500 transition-colors">$499</div>
               
-              <Link href="/black-affiliate-marketing/form" className="w-full bg-red-800 hover:bg-red-700 text-white py-3 px-6 rounded-lg mb-8 transition-colors">
-                BUY NOW
-              </Link>
+               <div className="mt-6 mb-8 text-center">
+                <Link href="/black-affiliate-marketing/form" className="w-full bg-red-800 hover:bg-red-700 text-white py-3 px-6 rounded-lg transition-colors">
+                  BUY NOW
+                </Link>
+              </div>
 
               <ul className="space-y-4 text-sm">
                 <li className="flex items-start gap-2">
@@ -743,9 +734,11 @@ export default function BlackAffiliateMarketing() {
               
               <div className="text-5xl font-bold mb-8 group-hover:text-red-500 transition-colors">$999</div>
               
-              <Link href="/black-affiliate-marketing/form" className="w-full bg-red-800 hover:bg-red-700 text-white py-3 px-6 rounded-lg mb-8 transition-colors">
-                BUY NOW
-              </Link>
+              <div className="mt-6 mb-8 text-center">
+                <Link href="/black-affiliate-marketing/form" className="w-full bg-red-800 hover:bg-red-700 text-white py-3 px-6 rounded-lg transition-colors">
+                  BUY NOW
+                </Link>
+              </div>
 
               <ul className="space-y-4 text-sm">
                 <li className="flex items-start gap-2">
@@ -794,9 +787,11 @@ export default function BlackAffiliateMarketing() {
               
               <div className="text-5xl font-bold mb-8 group-hover:text-red-500 transition-colors">$2499</div>
               
-              <Link href="/black-affiliate-marketing/form" className="w-full bg-red-800 hover:bg-red-700 text-white py-3 px-6 rounded-lg mb-8 transition-colors">
-                BUY NOW
-              </Link>
+               <div className="mt-6 mb-8 text-center">
+                <Link href="/black-affiliate-marketing/form" className="w-full bg-red-800 hover:bg-red-700 text-white py-3 px-6 rounded-lg transition-colors">
+                  BUY NOW
+                </Link>
+              </div>
 
               <ul className="space-y-4 text-sm">
                 <li className="flex items-start gap-2">
@@ -825,9 +820,11 @@ export default function BlackAffiliateMarketing() {
               
               <div className="text-5xl font-bold mb-8 group-hover:text-red-500 transition-colors">$4999</div>
               
-              <Link href="/black-affiliate-marketing/form" className="w-full bg-red-800 hover:bg-red-700 text-white py-3 px-6 rounded-lg mb-8 transition-colors">
-                BUY NOW
-              </Link>
+               <div className="mt-6 mb-8 text-center">
+                <Link href="/black-affiliate-marketing/form" className="w-full bg-red-800 hover:bg-red-700 text-white py-3 px-6 rounded-lg transition-colors">
+                  BUY NOW
+                </Link>
+              </div>
 
               <ul className="space-y-4 text-sm">
                 <li className="flex items-start gap-2">
