@@ -712,5 +712,85 @@
             "default": "Submit Brief",
             "submitting": "Submitting..."
         }
+    },
+
+
+
+
+    "brief-email": {
+        "title": "Cold Email Marketing Brief",
+        "sections": {
+        "1": {
+            "title": "About Business",
+            "description": {
+            "label": "Business Description",
+            "placeholder": "Briefly describe your business..."
+            },
+            "problemSolution": {
+            "label": "What problem do you solve?",
+            "placeholder": "Describe the customer problem..."
+            },
+            "products": {
+            "label": "Products and Services",
+            "placeholder": "List your main products/services..."
+            }
+        },
+        "2": {
+            "title": "Target Audience",
+            "idealClient": {
+            "label": "Who is your ideal client?",
+            "placeholder": "Describe your target audience (position, industry, company size)..."
+            },
+            "painPoints": {
+            "label": "What are the main pain points of your target audience?",
+            "placeholder": "Describe the main problems and pain points of your target audience..."
+            },
+            "selectionCriteria": {
+            "label": "What's important for them when choosing a solution?",
+            "placeholder": "Describe selection criteria (price, quality, speed, reliability)..."
+            }
+        },
+        "3": {
+            "title": "Unique Selling Proposition (USP)",
+            "competitive": {
+            "label": "How is your product/service better than competitors?",
+            "placeholder": "Describe your competitive advantages..."
+            },
+            "results": {
+            "label": "What specific results do your clients get after working with you?",
+            "placeholder": "Describe results and benefits for clients..."
+            }
+        },
+        "4": {
+            "title": "Cold Email Goals",
+            "callToAction": {
+            "label": "What action do you want the recipient to take after reading the email?",
+            "placeholder": "Describe desired action (call, meeting, registration)..."
+            }
+        },
+        "5": {
+            "title": "Success Examples",
+            "cases": {
+            "label": "Do you have case studies or success stories that can be used in emails?",
+            "placeholder": "Describe successful cases and results..."
+            }
+        },
+        "6": {
+            "title": "Additional Information",
+            "extraInfo": {
+            "label": "Is there anything else we should know about your business or audience?",
+            "placeholder": "Additional important information..."
+            }
+        }
+        },
+        "submitButton": {
+        "default": "Submit Brief",
+        "submitting": "Submitting..."
+        },
+        "modal": {
+        "title": "Thank you for submitting the brief!",
+        "description": "We have received your information and will contact you soon.",
+        "closeButton": "Close"
+        }
     }
 }
