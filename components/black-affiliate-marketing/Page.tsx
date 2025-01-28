@@ -147,7 +147,7 @@ export default function BlackAffiliateMarketing() {
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
             <div className="space-y-4 bg-black/40 backdrop-blur-sm p-6 rounded-xl border border-red-600/30 hover:border-red-600/50 transition-all duration-300">
               <div className="w-28 h-28 mx-auto">
-                <Image src="/img/black-affiliate-marketing/1.avif" alt="1" width={100} height={100} loading='lazy'/>
+                <Image src="/img/black-affiliate-marketing/1.avif" alt="1" width={100} height={100} loading='eager'/>
               </div>
               <p className="">
                 This course is for anyone ready to leave the{' '}
@@ -157,7 +157,7 @@ export default function BlackAffiliateMarketing() {
 
             <div className="space-y-4 bg-black/40 backdrop-blur-sm p-6 rounded-xl border border-red-600/30 hover:border-red-600/50 transition-all duration-300">
               <div className="w-28 h-28 mx-auto">
-                <Image src="/img/black-affiliate-marketing/2.png" alt="2" width={100} height={100} loading='lazy'/>
+                <Image src="/img/black-affiliate-marketing/2.png" alt="2" width={100} height={100} loading='eager'/>
               </div>
               <p className="">
                 If you want an{' '}
@@ -167,7 +167,7 @@ export default function BlackAffiliateMarketing() {
 
             <div className="space-y-4 bg-black/40 backdrop-blur-sm p-6 rounded-xl border border-red-600/30 hover:border-red-600/50 transition-all duration-300">
               <div className="w-28 h-28 mx-auto">
-                <Image src="/img/black-affiliate-marketing/3.avif" alt="3" width={100} height={100} loading='lazy'/>
+                <Image src="/img/black-affiliate-marketing/3.avif" alt="3" width={100} height={100} loading='eager'/>
               </div>
               <p className="">
                 Ideal for students or anyone wanting to live life on their own terms,{' '}
@@ -177,7 +177,7 @@ export default function BlackAffiliateMarketing() {
 
             <div className="space-y-4 bg-black/40 backdrop-blur-sm p-6 rounded-xl border border-red-600/30 hover:border-red-600/50 transition-all duration-300">
               <div className="w-28 h-28 mx-auto">
-                <Image src="/img/black-affiliate-marketing/4.avif" alt="4" width={100} height={100} loading='lazy'/>
+                <Image src="/img/black-affiliate-marketing/4.avif" alt="4" width={100} height={100} loading='eager'/>
               </div>
               <p className="">
                 Perfect for those looking to build a business and passive income,{' '}
