@@ -4,8 +4,10 @@
 
 User-agent: *
 Allow: /
-Allow: /ua/
+Allow: /uk/
 Allow: /en/
+Allow: /uk/*
+Allow: /en/*
 
 # Disallow indexing of admin panel and other service pages
 Disallow: /admin/
@@ -18,6 +20,8 @@ Sitemap: https://www.advantage-agency.co/sitemap.xml
 # Specific rules for different robots
 User-agent: Googlebot
 Allow: /
+Allow: /uk/
+Allow: /en/
 
 User-agent: Googlebot-Image
 Allow: /img/
