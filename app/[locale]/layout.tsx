@@ -19,6 +19,9 @@ const roboto = Roboto({
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://www.advantage-agency.co'),
+  verification: {
+    google: '4lR1cZDBVKJEz9oki0kUTsJQmuUGSjK0VkP4FuZeRuE',
+  },
   title: 'Advantage Agency',
   description: 'Digital marketing agency',
   icons: {
