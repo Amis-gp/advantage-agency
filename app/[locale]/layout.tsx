@@ -63,7 +63,7 @@ export default async function LocaleLayout({ children, params }: Props) {
         <JsonLd locale={locale} />
       </head>
       <body className={`min-h-screen`}>
-        <GoogleTagManager id="GTM-TVSP68XX" />
+        <GoogleTagManager id="GTM-KHS9QXFM" />
         <NextIntlClientProvider locale={locale} messages={messages}>
           {children}
           <CookieConsent />
