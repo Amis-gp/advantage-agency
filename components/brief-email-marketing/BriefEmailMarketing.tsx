@@ -172,30 +172,30 @@ const BriefEmailMarketing = () => {
       const message = `
         🎯 <b>Новий бриф Email Marketing отримано!</b>
 
-        1️⃣ <b>Про бізнес</b>
-        📝 Опис: ${formData.businessInfo.description}
-        🎯 Проблема: ${formData.businessInfo.problemSolution}
-        🛍️ Продукти: ${formData.businessInfo.products}
+1️⃣ <b>Про бізнес</b>
+Опис: ${formData.businessInfo.description}
+Проблема: ${formData.businessInfo.problemSolution}
+Продукти: ${formData.businessInfo.products}
 
-        2️⃣ <b>Цільова аудиторія</b>
-        👥 Ідеальний клієнт: ${formData.targetAudience.idealClient}
-        😰 Болі: ${formData.targetAudience.painPoints}
-        ✅ Критерії вибору: ${formData.targetAudience.selectionCriteria}
+2️⃣ <b>Цільова аудиторія</b>
+Ідеальний клієнт: ${formData.targetAudience.idealClient}
+Болі: ${formData.targetAudience.painPoints}
+Критерії вибору: ${formData.targetAudience.selectionCriteria}
 
-        3️⃣ <b>УТП</b>
-        💪 Переваги: ${formData.uniqueValue.competitive}
-        🎯 Результати: ${formData.uniqueValue.results}
+3️⃣ <b>УТП</b>
+Переваги: ${formData.uniqueValue.competitive}
+Результати: ${formData.uniqueValue.results}
 
-        4️⃣ <b>Цілі розсилки</b>
-        🎯 Бажана дія: ${formData.emailGoals.callToAction}
+4️⃣ <b>Цілі розсилки</b>
+Бажана дія: ${formData.emailGoals.callToAction}
 
-        5️⃣ <b>Приклади успіху</b>
-        📈 Кейси: ${formData.successStories.cases}
+5️⃣ <b>Приклади успіху</b>
+Кейси: ${formData.successStories.cases}
 
-        6️⃣ <b>Додаткова інформація</b>
-        ℹ️ Інфо: ${formData.additional.extraInfo}
+6️⃣ <b>Додаткова інформація</b>
+Інфо: ${formData.additional.extraInfo}
 
-        📅 Дата: ${new Date().toLocaleString('uk-UA')}
+📅 Дата: ${new Date().toLocaleString('uk-UA')}
       `;
 
       await sendToTelegram(message);

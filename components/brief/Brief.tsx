@@ -153,59 +153,59 @@ const BriefPage = () => {
       const message = `
         🎯 <b>Новий бриф отримано!</b>
 
-        1️⃣ <b>Інформація про компанію</b>
-        📝 Огляд: ${formData.companyInfo.overview}
-        🎯 Маркетингові цілі: ${formData.companyInfo.marketingGoals}
-        💰 Розподіл бюджету:
-        - Google Ads: ${formatBudget(formData.companyInfo.budgetDistribution.googleAds)}
-        - Facebook Ads: ${formatBudget(formData.companyInfo.budgetDistribution.facebookAds)}
-        - TikTok Ads: ${formatBudget(formData.companyInfo.budgetDistribution.tiktokAds)}
-        - Email Marketing: ${formatBudget(formData.companyInfo.budgetDistribution.emailMarketing)}
+1️⃣ <b>Інформація про компанію</b>
+Огляд: ${formData.companyInfo.overview}
+Маркетингові цілі: ${formData.companyInfo.marketingGoals}
+Розподіл бюджету:
+- Google Ads: ${formatBudget(formData.companyInfo.budgetDistribution.googleAds)}
+- Facebook Ads: ${formatBudget(formData.companyInfo.budgetDistribution.facebookAds)}
+- TikTok Ads: ${formatBudget(formData.companyInfo.budgetDistribution.tiktokAds)}
+- Email Marketing: ${formatBudget(formData.companyInfo.budgetDistribution.emailMarketing)}
 
-        2️⃣ <b>Цільова аудиторія</b>
-        👥 Ідеальний клієнт: ${formData.targetAudience.idealCustomer}
-        📍 Локації: ${formData.targetAudience.locations}
-        ⚠️ Безпека бренду: ${formData.targetAudience.brandSafety}
+2️⃣ <b>Цільова аудиторія</b>
+Ідеальний клієнт: ${formData.targetAudience.idealCustomer}
+Локації: ${formData.targetAudience.locations}
+Безпека бренду: ${formData.targetAudience.brandSafety}
 
-        3️⃣ <b>Поточний маркетинг</b>
-        📊 Канали: ${formData.currentMarketing.channels}
-        📈 Попередні результати: ${formData.currentMarketing.previousResults}
-        📊 Аналітика: ${formData.currentMarketing.analytics}
+3️⃣ <b>Поточний маркетинг</b>
+Канали: ${formData.currentMarketing.channels}
+Попередні результати: ${formData.currentMarketing.previousResults}
+Аналітика: ${formData.currentMarketing.analytics}
 
-        4️⃣ <b>Конкуренти</b>
-        🔍 Дослідження: ${formData.competitors.analysis}
-        📋 Стратегії: ${formData.competitors.strategies}
+4️⃣ <b>Конкуренти</b>
+Дослідження: ${formData.competitors.analysis}
+Стратегії: ${formData.competitors.strategies}
 
-        5️⃣ <b>УТП та повідомлення</b>
-        ✨ Особливості: ${formData.usp.features}
-        💬 Повідомлення: ${formData.usp.messages}
-        🎨 Брендинг: ${formData.usp.brandGuidelines}
+5️⃣ <b>УТП та повідомлення</b>
+Особливості: ${formData.usp.features}
+Повідомлення: ${formData.usp.messages}
+Брендинг: ${formData.usp.brandGuidelines}
 
-        6️⃣ <b>Веб-сайт</b>
-        🌐 Інші ресурси: ${formData.website.otherAssets}
-        📊 Відстеження: ${formData.website.tracking}
-        ⚠️ Обмеження: ${formData.website.restrictions}
+6️⃣ <b>Веб-сайт</b>
+Інші ресурси: ${formData.website.otherAssets}
+Відстеження: ${formData.website.tracking}
+Обмеження: ${formData.website.restrictions}
 
-        7️⃣ <b>Контент</b>
-        🎨 Креативи: ${formData.content.existingCreatives}
-        🎯 Дизайн: ${formData.content.designPreferences}
-        📜 Права: ${formData.content.rights}
+7️⃣ <b>Контент</b>
+Креативи: ${formData.content.existingCreatives}
+Дизайн: ${formData.content.designPreferences}
+Права: ${formData.content.rights}
 
-        8️⃣ <b>Юридичні питання</b>
-        📋 Вимоги: ${formData.legal.requirements}
-        ⚠️ Обмеження: ${formData.legal.restrictions}
+8️⃣ <b>Юридичні питання</b>
+Вимоги: ${formData.legal.requirements}
+Обмеження: ${formData.legal.restrictions}
 
-        9️⃣ <b>Комунікація</b>
-        📅 Частота: ${formData.communication.frequency}
-        📊 Звітність: ${formData.communication.reporting}
-        👤 Контакт: ${formData.communication.contact}
+9️⃣ <b>Комунікація</b>
+Частота: ${formData.communication.frequency}
+Звітність: ${formData.communication.reporting}
+Контакт: ${formData.communication.contact}
 
-        🎯 <b>Очікування</b>
-        ✨ Успіх: ${formData.expectations.success}
-        📊 KPI: ${formData.expectations.kpi}
-        📈 Вимірювання: ${formData.expectations.measurement}
+1️⃣1️⃣<b>Очікування</b>
+Успіх: ${formData.expectations.success}
+KPI: ${formData.expectations.kpi}
+Вимірювання: ${formData.expectations.measurement}
 
-        📅 Дата: ${new Date().toLocaleString('uk-UA')}
+📅 Дата: ${new Date().toLocaleString('uk-UA')}
         `;
 
       await sendToTelegram(message);

@@ -64,16 +64,14 @@ const FormSection = () => {
         setIsSubmitting(true);
 
         try {
-            const message = `
-                🔥 <b>Нова заявка з сайту!</b>
+            const message = `<b>Нова заявка з сайту advantage-agency.co!</b>
 
-                👤 Ім'я: ${formData.name}
-                📧 Email: ${formData.email}
-                📞 Телефон: ${formData.phone}
-                📝 Опис проєкту: ${formData.purpose || 'Не вказано'}
+<b>Ім'я:</b> ${formData.name}
+<b>Email:</b> ${formData.email}
+<b>Телефон:</b> ${formData.phone}
+<b>Опис проєкту:</b> ${formData.purpose || 'Не вказано'}
 
-                🌐 Дата: ${new Date().toLocaleString('uk-UA')}
-            `;
+<b>Дата:</b> ${new Date().toLocaleString('uk-UA')}`;
 
             await sendToTelegram(message);
             router.push('/thank-you');

@@ -92,17 +92,17 @@ export default function FormPage() {
     const url = `https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`;
 
     const message = `
-    New Quiz Submission:
+    New Lead black affiliate:
           
-    Name: ${formData.name}
-    Email: ${formData.email}
-    Phone: ${formData.phone}
+Name: ${formData.name}
+Email: ${formData.email}
+Phone: ${formData.phone}
 
-    Quiz Answers:
-    ${questions.map((q, i) => `
-    ${i + 1}. ${q.question}
-    Answer: ${formData.quizAnswers[i]}`).join('\n')}
-        `;
+Quiz Answers:
+${questions.map((q, i) => `
+${i + 1}. ${q.question}
+Answer: ${formData.quizAnswers[i]}`).join('\n')}
+    `;
 
     try {
       const response = await fetch(url, {
