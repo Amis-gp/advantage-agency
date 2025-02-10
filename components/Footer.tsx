@@ -38,14 +38,14 @@ export default function Footer() {
                                 <span className="text-sm md:text-base">stepan@advantage-agency.co</span>
                             </Link>
                             <Link 
-                                href="tel:+19292052610"
+                                href="tel:+13393688255"
                                 className="flex items-center gap-2 hover:text-red-500transition-colors group"
                                 onMouseEnter={() => playSound('hover_1')}
                             >
                                 <svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg" className="group-hover:scale-110 transition-transform">
                                     <path fillRule="evenodd" clipRule="evenodd" d="M11.5317 13.1052C15.5208 17.0932 16.4258 12.4795 18.9656 15.0176C21.4143 17.4656 22.8216 17.956 19.7192 21.0575C19.3306 21.3698 16.8616 25.1271 8.1846 16.4525C-0.493478 7.77681 3.26158 5.30526 3.57397 4.91676C6.68387 1.80666 7.16586 3.2222 9.61449 5.67014C12.1544 8.20931 7.54266 9.11723 11.5317 13.1052Z" fill="currentColor"/>
                                 </svg>
-                                <span className="text-sm md:text-base">+1 (929) 205-26-10</span>
+                                <span className="text-sm md:text-base">+1 (339) 368-82-55</span>
                             </Link>
                         </div>
 
