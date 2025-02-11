@@ -21,27 +21,72 @@ export default function ParticlesBackground() {
         <Particles
             init={particlesInit}
             options={{
+                fullScreen: false,
                 particles: {
                     number: {
-                        value: 15,
+                        value: 30,
                         density: {
                             enable: true,
-                            value_area: 1000
+                            value_area: 900
                         }
                     },
-                    move: {
-                        speed: 0.5
+                    color: {
+                        value: "#D12923"
+                    },
+                    shape: {
+                        type: "circle"
                     },
                     opacity: {
-                        value: 0.3
+                        value: 0.6,
+                        random: false
                     },
                     size: {
-                        value: 2
+                        value: 2,
+                        random: true
+                    },
+                    links: {
+                        enable: true,
+                        distance: 150,
+                        color: "#D12923",
+                        opacity: 0.5,
+                        width: 1
+                    },
+                    move: {
+                        enable: true,
+                        speed: 1,
+                        direction: "none",
+                        random: true,
+                        straight: false,
+                        outModes: {
+                            default: "bounce"
+                        }
                     }
                 },
-                fps_limit: 30,
-                retina_detect: false,
-                detectRetina: false
+                interactivity: {
+                    events: {
+                        onHover: {
+                            enable: true,
+                            mode: "grab"
+                        }
+                    },
+                    modes: {
+                        grab: {
+                            distance: 140,
+                            links: {
+                                opacity: 0.4
+                            }
+                        }
+                    }
+                },
+                background: {
+                    color: "#000"
+                }
+            }}
+            className="absolute inset-0 z-0"
+            style={{
+                position: 'absolute',
+                width: '100%',
+                height: '100%'
             }}
         />
     );

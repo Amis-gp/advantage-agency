@@ -82,7 +82,7 @@ export default function Process() {
                                             fill="none" 
                                             viewBox="0 0 24 24" 
                                             stroke="currentColor"
-                                            style={{ opacity: 0.3 }}
+                                            style={{ opacity: 0.5 }}
                                         >
                                             <path 
                                                 strokeLinecap="round" 
