@@ -5,7 +5,7 @@ import { motion, useTransform, useScroll } from 'framer-motion';
 import Image from 'next/image';
 import Link from 'next/link';
 import { playSound } from '@/app/constant/sound';
- 
+
 const videoSources = {
     uk: {
         full: 'img/home/video-uk.mp4',
