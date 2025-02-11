@@ -15,28 +15,28 @@ const testimonials: Testimonial[] = [
         position: "CEO",
         company: "Growth & Brains",
         text: "Helped Growth & Brains consistently get 25-40 hot leads every month for the last 8 months",
-        image: "/img/cold-email/testimonials/andy.jpg"
+        image: "/img/cold-email/testimonial-1.webp"
     },
     {
         name: "Joe S",
         position: "Founder",
         company: "Laser Sight Digital",
         text: "From trying with 4+ lead gen companies and still stuck with no leads… to filling his calendar & added $15k MRR in revenue",
-        image: "/img/cold-email/testimonials/joe.jpg"
+        image: "/img/cold-email/testimonial-2.webp"
     },
     {
         name: "Hristo Arakliev",
         position: "COO/Co-founder",
         company: "Hyperzon",
         text: "Generated $350K in revenue in 4 months through optimized sales processes and booked sales opportunities",
-        image: "/img/cold-email/testimonials/hristo.jpg"
+        image: "/img/cold-email/testimonial-3.webp"
     },
     {
         name: "Tina Nathani",
         position: "Co-Founder",
         company: "Trex Agency",
         text: "Secured their first $30k deal within 2 weeks of outreach as they expanded into the U.S.",
-        image: "/img/cold-email/testimonials/tina.jpg"
+        image: "/img/cold-email/testimonial-4.webp"
     }
 ];
 
@@ -89,7 +89,7 @@ export default function ClientResults() {
                         href="#all-results"
                         className="inline-flex items-center text-white hover:text-[#D12923] transition-colors duration-300"
                     >
-                        <span className="mr-2">View All Clients Results</span>
+                        <span className="mr-2">View case studies</span>
                         <svg 
                             className="w-5 h-5" 
                             fill="none" 

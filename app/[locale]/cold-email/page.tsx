@@ -7,6 +7,7 @@ import Pricing from '@/components/cold-email/Pricing';
 import Process from '@/components/cold-email/Process';
 import Footer from '@/components/cold-email/Footer';
 import ParticlesBackground from '@/components/cold-email/ParticlesBackground';
+import Results from '@/components/cold-email/Results';
 
 export default function OffersPage({ 
     params: { locale } 
@@ -24,6 +25,7 @@ export default function OffersPage({
             <div className="relative z-10">
                 <Hero />
                 <Testimonials />
+                <Results />
                 <HowItWorks />
                 <FAQ />
                 <Pricing />
