@@ -269,10 +269,6 @@
         "description": "We will contact you soon to discuss the details of your project",
         "button": "Back to home"
     },
-
-
-
-
     "offers": {
         "hero": {
             "title": "Our Offers",
@@ -470,18 +466,11 @@
             }
         }
     },
-
-
     "cookies": {
         "content": "We use cookies to enhance your experience on our site.",
         "accept": "Accept",
         "decline": "Decline"
     },
-
-
-
-
-
     "form": {
         "name": "Name",
         "namePlaceholder": "Enter your name",
@@ -514,9 +503,6 @@
         "callUs": "Call Us",
         "emailUs": "Email Us"
     },
-
-
-
     "privacy": {
         "title": "Privacy Policy",
         "storage": {
@@ -543,9 +529,6 @@
             "updates": "This Policy may be updated in the future to comply with national and international legislation governing personal data protection. All changes take effect from the moment of their publication. By continuing to use the website https://advantage-agency.co/, you confirm your agreement with the new terms of the Policy in the version current at the time of using the website https://advantage-agency.co/."
         }
     },
-
-
-
     "brief": {
         "title": "Marketing Brief",
         "subtitle": "Fill out the form below so we can better understand your needs",
@@ -713,10 +696,6 @@
             "submitting": "Submitting..."
         }
     },
-
-
-
-
     "brief-email": {
         "title": "Cold Email Marketing Brief",
         "sections": {
@@ -791,6 +770,273 @@
         "title": "Thank you for submitting the brief!",
         "description": "We have received your information and will contact you soon.",
         "closeButton": "Close"
+        }
+    },
+    "cold-email": {
+        "hero": {
+            "subtitle": "For Marketing & Lead Generation Agencies:",
+            "title": {
+            "part1": "Book 20+ Qualified Calls",
+            "part2": "Every Month"
+            },
+            "buttons": {
+            "book": "Book Your Growth Call",
+            "results": "View Client Results"
+            },
+            "stats": {
+            "deliverability": {
+                "value": "95%",
+                "label": "Email Deliverability"
+            },
+            "revenue": {
+                "value": "$250K+",
+                "label": "Revenue Generated"
+            },
+            "setup": {
+                "value": "14 Days",
+                "label": "Average Setup Time"
+            }
+            },
+            "video": {
+            "error": {
+                "preview": "Preview video is unavailable",
+                "full": "Full video is unavailable"
+            }
+            }
+        },
+        "how-it-works": {
+            "title": {
+                "part1": "How it",
+                "part2": "works"
+            },
+            "subtitle": "Our proven process to generate qualified leads and convert them into paying clients",
+            "steps": [
+                {
+                    "title": "Trigger-based lead lists",
+                    "description": "We scrape relevant data to target companies that need your services asap. Whether it's hiring triggers if they're looking for a CMO, or a sudden decline in organic traffic - we build lists so when they jump on the call, they have a marketing problem that needs fixing."
+                },
+                {
+                    "title": "Building a relevant offer",
+                    "description": "You don't need a crazy offer with money back guarantees. With your help and AI market research, we'll build a relevant, hyper-specific offer that resonates only with them and cut through the noise."
+                },
+                {
+                    "title": "Attention generation",
+                    "description": "Regardless of how good your offer/service is, you need more eyeballs on it. Outbound is literally ads, but way cheaper and you can directly choose who you want to target. Each month to hit KPI's we're sending 5-10,000 new contacts each month."
+                },
+                {
+                    "title": "Sales/Conversions System",
+                    "description": "It's easy to book calls. The hard part is actually converting, especially in this broken economy where your prospects have been burnt. We'll build you systems with sales assets & automated follow ups to make sure you close 20%+ of these calls."
+                }
+            ],
+            "cta": "Book Your Growth Call"
+        },
+        "process": {
+            "title": {
+                "part1": "Simple",
+                "part2": "6-Step",
+                "part3": "Process"
+            },
+            "subtitle": "From strategy to execution in just 7 days",
+            "steps": [
+                {
+                    "number": "01",
+                    "title": "Warming up the system for mailing",
+                    "description": "We prepare and optimize the email infrastructure to ensure maximum deliverability.",
+                    "duration": "4 weeks"
+                },
+                {
+                    "number": "02",
+                    "title": "Set up campaigns, add texts",
+                    "description": "We create compelling email templates and set up your campaign structure.",
+                    "duration": "2-3 days"
+                },
+                {
+                    "number": "03",
+                    "title": "Scraping 3,000 contacts",
+                    "description": "We gather and verify your target audience contact information.",
+                    "duration": "5-7 days"
+                },
+                {
+                    "number": "04",
+                    "title": "Upload contacts & launch",
+                    "description": "We import the contacts and initiate your campaign with careful monitoring.",
+                    "duration": "1 day"
+                },
+                {
+                    "number": "05",
+                    "title": "Track performance",
+                    "description": "We monitor 4-8% response rate (approximately 120 responses).",
+                    "duration": "Ongoing"
+                },
+                {
+                    "number": "06",
+                    "title": "Generate leads",
+                    "description": "We convert responses into approximately 50 interested leads and 30 demo calls.",
+                    "duration": "Ongoing"
+                }
+            ],
+            "cta": {
+                "question": "Ready to start?",
+                "button": "Book Your Call"
+            }
+        },
+        "results": {
+            "title": {
+                "case": "Case Study:",
+                "name": "Justin Collins"
+            },
+            "subtitle": {
+                "main": "Our results in numbers",
+                "description": "Justin Collins - our client from the USA, he's been over 15 years in the affiliate marketing industry, made 20M+ online."
+            },
+            "stats": [
+                {
+                    "number": "4-8%",
+                    "label": "Average Reply Rate",
+                    "description": "On average 4-8 replies per 100 sent emails"
+                },
+                {
+                    "number": "15-20",
+                    "label": "Qualified Calls/Month",
+                    "description": "Qualified sales calls monthly"
+                },
+                {
+                    "number": "40%",
+                    "label": "Close Rate",
+                    "description": "Percentage of closed deals from qualified calls"
+                },
+                {
+                    "number": "6-8",
+                    "label": "New Clients/Month",
+                    "description": "New clients every month"
+                }
+            ],
+            "images": {
+                "instagram": "Client Instagram Post",
+                "video": {
+                    "poster": "Video testimonial poster",
+                    "alt": "Video testimonial"
+                }
+            }
+        },
+        "testimonials": {
+            "title": {
+                "part1": "Client",
+                "part2": "Results"
+            },
+            "subtitle": "See how we've helped agencies like yours achieve remarkable growth through our proven cold email strategies",
+            "items": [
+                {
+                    "name": "Andy Redfern",
+                    "position": "CEO",
+                    "company": "Growth & Brains",
+                    "text": "Helped Growth & Brains consistently get 25-40 hot leads every month for the last 8 months",
+                    "image_alt": "Andy Redfern photo"
+                },
+                {
+                    "name": "Joe S",
+                    "position": "Founder",
+                    "company": "Laser Sight Digital",
+                    "text": "From trying with 4+ lead gen companies and still stuck with no leads… to filling his calendar & added $15k MRR in revenue",
+                    "image_alt": "Joe S photo"
+                },
+                {
+                    "name": "Hristo Arakliev",
+                    "position": "COO/Co-founder",
+                    "company": "Hyperzon",
+                    "text": "Generated $350K in revenue in 4 months through optimized sales processes and booked sales opportunities",
+                    "image_alt": "Hristo Arakliev photo"
+                },
+                {
+                    "name": "Tina Nathani",
+                    "position": "Co-Founder",
+                    "company": "Trex Agency",
+                    "text": "Secured their first $30k deal within 2 weeks of outreach as they expanded into the U.S.",
+                    "image_alt": "Tina Nathani photo"
+                }
+            ],
+            "cta": "View case studies"
+        },
+        "pricing": {
+            "title_part1": "Choose a Plan",
+            "title_emphasis": "That's Right",
+            "title_part2": "For You",
+            "subtitle": "Flexible pricing options to match your needs",
+            "popular": "Popular",
+            "standard": {
+                "title": "Standard Package",
+                "description": "One-time fee, then only maintenance cost",
+                "features": [
+                "3,000 contacts",
+                "18 Senders",
+                "6 Campaigns",
+                "Spintax",
+                "Analytics",
+                "Email warmup included"
+                ]
+            },
+            "performance": {
+                "title": "Pay-on-Performance",
+                "description": "Covering only infrastructure and then paying per leads or calls",
+                "extra": "+ Pay per qualified lead",
+                "features": [
+                "3,000 contacts",
+                "18 Senders",
+                "6 Campaigns",
+                "Spintax",
+                "Analytics",
+                "Email warmup included"
+                ]
+            },
+            "getStarted": "Get Started"
+        },
+        "faq": {
+            "title_part1": "Frequently Asked",
+            "title_emphasis": "Questions",
+            "subtitle": "Get answers to common questions about our cold email marketing service",
+            "items": [
+                {
+                    "question": "How do you guarantee results?",
+                    "answer": "We work on a performance basis, meaning we only get paid when we deliver results. Our proven system has consistently delivered qualified leads to agencies like yours."
+                },
+                {
+                    "question": "What do you need from me?",
+                    "answer": "The majority of the service is done-for-you, however the 15-30 days we'll need your support with understanding who you want to target, case studies and basically becoming your fractional sales team."
+                },
+                {
+                    "question": "What makes you different from lead gen agencies?",
+                    "answer": "Unlike traditional lead gen agencies, we focus on quality over quantity. We use trigger-based targeting to reach companies actively looking for your services, resulting in higher conversion rates and better ROI."
+                },
+                {
+                    "question": "How long until we start to see results?",
+                    "answer": "Most clients start seeing qualified leads within the first week of launching. Our setup takes only 7 days, and we prioritize speed to ensure you start getting results as quickly as possible."
+                }
+            ],
+            "cta": {
+                "title": "Ready to grow?",
+                "button": "Book a growth call"
+            }
+        },
+        "footer": {
+            "description": "We help marketing agencies book more qualified calls through our proven cold email system.",
+            "quick_links": {
+                "title": "Quick Links",
+                "how_it_works": "How it Works",
+                "pricing": "Pricing",
+                "client_results": "Client Results",
+                "faq": "FAQ"
+            },
+            "contact": {
+                "title": "Contact",
+                "email": "stepan@advantage-agency.co",
+                "phone": "+1 (339) 368-82-55"
+            },
+            "copyright": {
+                "text": "Copyright",
+                "made_by": "Made by",
+                "company": "Advantage Agency"
+            },
+            "privacy_policy": "Privacy Policy"
         }
     }
 }

@@ -1,20 +1,79 @@
 'use client';
 import { motion } from 'framer-motion';
-import CalendlyEmbed from '@/components/CalendlyEmbed';
+import dynamic from 'next/dynamic';
+import { Suspense } from 'react';
+import { useTranslations } from 'next-intl';
 
-const features = [
-    "3,000 contacts",
-    "18 Senders",
-    "6 Campaigns",
-    "Spintax",
-    "Analytics",
-    "Email warmup included",
-];
+
+const DynamicCalendlyEmbed = dynamic(() => import('@/components/CalendlyEmbed'), {
+    loading: () => (
+        <div className="w-full h-[600px] flex items-center justify-center bg-black/20 backdrop-blur-sm">
+            <div className="flex flex-col items-center gap-4">
+                <div className="w-8 h-8 border-2 border-[#4F46E5] border-t-transparent rounded-full animate-spin" />
+                <p className="text-gray-400">Loading calendar...</p>
+            </div>
+        </div>
+    ),
+    ssr: false
+});
 
 export default function Pricing() {
+    const t = useTranslations('cold-email.pricing');
+    
+    // Отримуємо масиви features з перекладів
+    const standardFeatures = t.raw('standard.features') as string[];
+    const performanceFeatures = t.raw('performance.features') as string[];
+    
     return (
-        <section className="bg-[#111019] pt-20">
-            <div className="container mx-auto px-4">
+        <section className="relative bg-[#111019] pt-20">
+            {/* Background Elements */}
+            <div className="absolute inset-0">
+                {/* Circular gradient mesh */}
+                <div className="absolute inset-0">
+                    <div className="absolute top-0 left-1/4 w-[800px] h-[800px] bg-[radial-gradient(circle_at_center,#4F46E5_0%,transparent_50%)] opacity-[0.03] blur-[80px]" />
+                    <div className="absolute bottom-0 right-1/4 w-[800px] h-[800px] bg-[radial-gradient(circle_at_center,#06B6D4_0%,transparent_50%)] opacity-[0.03] blur-[80px]" />
+                </div>
+
+                {/* Animated lines pattern */}
+                <div className="absolute inset-0">
+                    {/* Vertical lines */}
+                    <div className="absolute left-1/4 top-0 h-full w-px bg-gradient-to-b from-transparent via-[#4F46E5]/20 to-transparent animate-pulse-slow" />
+                    <div className="absolute right-1/4 top-0 h-full w-px bg-gradient-to-b from-transparent via-[#06B6D4]/20 to-transparent animate-pulse-slow" />
+                    
+                    {/* Diagonal lines */}
+                    <div className="absolute inset-0 overflow-hidden">
+                        <div 
+                            className="absolute w-full h-[1px] top-1/4 bg-gradient-to-r from-transparent via-[#4F46E5]/10 to-transparent transform -rotate-[30deg] origin-left"
+                        />
+                        <div 
+                            className="absolute w-full h-[1px] bottom-1/4 bg-gradient-to-r from-transparent via-[#06B6D4]/10 to-transparent transform rotate-[30deg] origin-right"
+                        />
+                    </div>
+                </div>
+
+                {/* Subtle dot matrix */}
+                <div 
+                    className="absolute inset-0 opacity-[0.05]"
+                    style={{
+                        backgroundImage: `
+                            radial-gradient(#4F46E5 1px, transparent 1px),
+                            radial-gradient(#06B6D4 1px, transparent 1px)
+                        `,
+                        backgroundSize: '40px 40px, 30px 30px',
+                        backgroundPosition: '0 0, 20px 20px'
+                    }}
+                />
+
+                {/* Floating elements */}
+                <div className="absolute inset-0 overflow-hidden">
+                    {/* Price tag shapes */}
+                    <div className="absolute top-20 left-10 w-16 h-8 border-2 border-[#4F46E5]/20 rounded-lg transform -rotate-12 animate-float" />
+                    <div className="absolute top-40 right-20 w-12 h-6 border-2 border-[#06B6D4]/20 rounded-lg transform rotate-12 animate-float-slow" />
+                    <div className="absolute bottom-32 left-1/4 w-14 h-7 border-2 border-[#4F46E5]/20 rounded-lg transform rotate-45 animate-float-slower" />
+                </div>
+            </div>
+
+            <div className="relative container mx-auto px-4">
                 <motion.div 
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
@@ -23,10 +82,10 @@ export default function Pricing() {
                     className="text-center mb-16"
                 >
                     <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-                        Choose a Plan <span className="text-[#4F46E5]">That's Right</span> For You
+                        {t('title_part1')} <span className="text-[#4F46E5]">{t('title_emphasis')}</span> {t('title_part2')}
                     </h2>
                     <p className="text-gray-400 text-lg max-w-2xl mx-auto">
-                        Flexible pricing options to match your needs
+                        {t('subtitle')}
                     </p>
                 </motion.div>
 
@@ -43,25 +102,21 @@ export default function Pricing() {
                             <div className="relative bg-black/40 backdrop-blur-xl rounded-3xl p-8 border border-[#4F46E5]/20 h-full flex flex-col">
                                 <div className="absolute -top-3 right-4">
                                     <div className="bg-[#4F46E5] px-4 py-1 rounded-full text-sm font-medium text-white">
-                                        Popular
+                                        {t('popular')}
                                     </div>
                                 </div>
                                 <div className="flex flex-col gap-8 flex-grow">
                                     <div>
                                         <h3 className="text-3xl font-bold text-[#4F46E5] mb-4">
-                                            Standard Package
+                                            {t('standard.title')}
                                         </h3>
                                         <div className="flex items-baseline gap-2">
-                                            <span className="text-5xl font-bold text-white">$2,990</span>
-                                            <span className="text-gray-400">one-time</span>
+                                            <span className="text-xl font-medium text-white">{t('standard.description')}</span>
                                         </div>
-                                        <p className="mt-4 text-gray-400">
-                                            One-time payment for setting up and launching the system
-                                        </p>
                                     </div>
 
                                     <div className="space-y-4 flex-grow">
-                                        {features.map((feature, index) => (
+                                        {standardFeatures.map((feature: string, index: number) => (
                                             <div key={index} className="flex items-center gap-3">
                                                 <div className="w-5 h-5 rounded-full bg-[#4F46E5]/20 flex items-center justify-center">
                                                     <svg className="w-3 h-3 text-[#4F46E5]" fill="currentColor" viewBox="0 0 20 20">
@@ -77,7 +132,7 @@ export default function Pricing() {
                                         href="#calendly"
                                         className="block w-full py-4 px-6 bg-[#4F46E5] hover:bg-[#4F46E5]/90 rounded-2xl text-white text-center font-medium transition-all duration-300 hover:scale-[1.02] active:scale-[0.98]"
                                     >
-                                        Get Started
+                                        {t('getStarted')}
                                     </a>
                                 </div>
                             </div>
@@ -88,29 +143,26 @@ export default function Pricing() {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ duration: 0.6, delay: 0.3 }}
-                            className="relative h-full"
+                            className="relative group h-full"
                         >
-                            <div className="relative bg-black/40 backdrop-blur-xl rounded-3xl p-8 border border-white/5 h-full flex flex-col">
+                            <div className="absolute inset-0 bg-[#06B6D4]/5 rounded-3xl blur-2xl group-hover:bg-[#06B6D4]/10 transition-all duration-500" />
+                            <div className="relative bg-black/40 backdrop-blur-xl rounded-3xl p-8 border border-[#06B6D4]/20 group-hover:border-[#06B6D4]/30 transition-all duration-300 h-full flex flex-col">
                                 <div className="flex flex-col gap-8 flex-grow">
                                     <div>
                                         <h3 className="text-3xl font-bold text-white mb-4">
-                                            Pay-on-Performance
+                                            {t('performance.title')}
                                         </h3>
                                         <div className="flex items-baseline gap-2">
-                                            <span className="text-5xl font-bold text-white">$1,500</span>
-                                            <span className="text-gray-400">one-time</span>
+                                            <span className="text-xl font-medium text-white">{t('performance.description')}</span>
                                         </div>
-                                        <p className="mt-2 text-[#06B6D4] font-medium">+ $40 per qualified lead</p>
-                                        <p className="mt-4 text-gray-400">
-                                            One-time payment for setting up and launching the system + $40 per lead
-                                        </p>
+                                        <p className="mt-2 text-[#06B6D4] font-medium">{t('performance.extra')}</p>
                                     </div>
 
                                     <div className="space-y-4 flex-grow">
-                                        {features.map((feature, index) => (
+                                        {performanceFeatures.map((feature: string, index: number) => (
                                             <div key={index} className="flex items-center gap-3">
-                                                <div className="w-5 h-5 rounded-full bg-black/50 flex items-center justify-center">
-                                                    <svg className="w-3 h-3 text-[#4F46E5]" fill="currentColor" viewBox="0 0 20 20">
+                                                <div className="w-5 h-5 rounded-full bg-[#06B6D4]/20 flex items-center justify-center">
+                                                    <svg className="w-3 h-3 text-[#06B6D4]" fill="currentColor" viewBox="0 0 20 20">
                                                         <path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"/>
                                                     </svg>
                                                 </div>
@@ -121,9 +173,9 @@ export default function Pricing() {
 
                                     <a 
                                         href="#calendly"
-                                        className="block w-full py-4 px-6 bg-black/50 hover:bg-black/70 border border-white/10 rounded-2xl text-white text-center font-medium transition-all duration-300 hover:scale-[1.02] active:scale-[0.98]"
+                                        className="block w-full py-4 px-6 bg-[#06B6D4] hover:bg-[#06B6D4]/90 rounded-2xl text-white text-center font-medium transition-all duration-300 hover:scale-[1.02] active:scale-[0.98]"
                                     >
-                                        Get Started
+                                        {t('getStarted')}
                                     </a>
                                 </div>
                             </div>
@@ -132,7 +184,11 @@ export default function Pricing() {
                 </div>
             </div>
 
-            <CalendlyEmbed url="https://calendly.com/advantage-agency-contact/30min?month=2025-01" />
+            <Suspense fallback={null}>
+                <div id="calendly">
+                    <DynamicCalendlyEmbed url="https://calendly.com/advantage-agency-contact/30min?month=2025-01" />
+                </div>
+            </Suspense>
         </section>
     );
 }

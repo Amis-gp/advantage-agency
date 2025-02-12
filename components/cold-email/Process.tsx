@@ -1,46 +1,17 @@
 'use client';
 import { motion } from 'framer-motion';
-
-const steps = [
-    {
-        number: "01",
-        title: "Warming up the system for mailing",
-        description: "We prepare and optimize the email infrastructure to ensure maximum deliverability.",
-        duration: "4 weeks"
-    },
-    {
-        number: "02",
-        title: "Set up campaigns, add texts",
-        description: "We create compelling email templates and set up your campaign structure.",
-        duration: "2-3 days"
-    },
-    {
-        number: "03",
-        title: "Scraping 3,000 contacts",
-        description: "We gather and verify your target audience contact information.",
-        duration: "5-7 days"
-    },
-    {
-        number: "04",
-        title: "Upload contacts & launch",
-        description: "We import the contacts and initiate your campaign with careful monitoring.",
-        duration: "1 day"
-    },
-    {
-        number: "05",
-        title: "Track performance",
-        description: "We monitor 4-8% response rate (approximately 120 responses).",
-        duration: "Ongoing"
-    },
-    {
-        number: "06",
-        title: "Generate leads",
-        description: "We convert responses into approximately 50 interested leads and 30 demo calls.",
-        duration: "Ongoing"
-    }
-];
+import { useTranslations } from 'next-intl';
 
 export default function Process() {
+    const t = useTranslations('cold-email.process');
+    
+    const steps = Array.from({ length: 6 }, (_, i) => ({
+        number: t(`steps.${i}.number`),
+        title: t(`steps.${i}.title`),
+        description: t(`steps.${i}.description`),
+        duration: t(`steps.${i}.duration`)
+    }));
+
     return (
         <section className="py-20">
             <div className="container mx-auto px-4">
@@ -52,10 +23,10 @@ export default function Process() {
                     className="text-center mb-16"
                 >
                     <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-                        Simple <span className="text-[#4F46E5]">4-Step</span> Process
+                        {t('title.part1')} <span className="text-[#4F46E5]">{t('title.part2')}</span> {t('title.part3')}
                     </h2>
                     <p className="text-gray-400 text-lg max-w-2xl mx-auto">
-                        From strategy to execution in just 7 days
+                        {t('subtitle')}
                     </p>
                 </motion.div>
 
@@ -140,13 +111,13 @@ export default function Process() {
                 >
                     <div className="inline-flex items-center bg-black/30 rounded-full p-1 border border-zinc-800">
                         <span className="text-gray-400 px-4">
-                            Ready to start?
+                            {t('cta.question')}
                         </span>
                         <a 
                             href="#calendly"
                             className="inline-flex items-center px-6 py-2 bg-[#4F46E5] text-white rounded-full font-medium hover:bg-[#4338CA] transition-all duration-300"
                         >
-                            Book Your Call
+                            {t('cta.button')}
                             <span className="ml-2">→</span>
                         </a>
                     </div>

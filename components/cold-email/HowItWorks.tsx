@@ -1,11 +1,10 @@
 'use client';
 import { useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
+import { useTranslations } from 'next-intl';
 
-const steps = [
+const stepIcons = [
     {
-        title: "Trigger-based lead lists",
-        description: "We scrape relevant data to target companies that need your services asap. Whether it's hiring triggers if they're looking for a CMO, or a sudden decline in organic traffic - we build lists so when they jump on the call, they have a marketing problem that needs fixing.",
         icon: (
             <svg className="w-8 h-8" viewBox="0 0 24 24" fill="none">
                 <path d="M20 6L9 17L4 12" stroke="#4F46E5" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
@@ -13,8 +12,6 @@ const steps = [
         )
     },
     {
-        title: "Building a relevant offer",
-        description: "You don't need a crazy offer with money back guarantees. With your help and AI market research, we'll build a relevant, hyper-specific offer that resonates only with them and cut through the noise.",
         icon: (
             <svg className="w-8 h-8" viewBox="0 0 24 24" fill="none">
                 <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="#06B6D4" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
@@ -24,8 +21,6 @@ const steps = [
         )
     },
     {
-        title: "Attention generation",
-        description: "Regardless of how good your offer/service is, you need more eyeballs on it. Outbound is literally ads, but way cheaper and you can directly choose who you want to target. Each month to hit KPI's we're sending 5-10,000 new contacts each month.",
         icon: (
             <svg className="w-8 h-8" viewBox="0 0 24 24" fill="none">
                 <path d="M15 3H19C19.5304 3 20.0391 3.21071 20.4142 3.58579C20.7893 3.96086 21 4.46957 21 5V19C21 19.5304 20.7893 20.0391 20.4142 20.4142C20.0391 20.7893 19.5304 21 19 21H15" stroke="#7C3AED" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
@@ -35,8 +30,6 @@ const steps = [
         )
     },
     {
-        title: "Sales/Conversions System",
-        description: "It's easy to book calls. The hard part is actually converting, especially in this broken economy where your prospects have been burnt. We'll build you systems with sales assets & automated follow ups to make sure you close 20%+ of these calls.",
         icon: (
             <svg className="w-8 h-8" viewBox="0 0 24 24" fill="none">
                 <path d="M22 12H18L15 21L9 3L6 12H2" stroke="#4F46E5" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
@@ -46,15 +39,41 @@ const steps = [
 ];
 
 export default function HowItWorks() {
+    const t = useTranslations('cold-email.how-it-works');
+    
+    const steps = Array.from({ length: 4 }, (_, i) => ({
+        title: t(`steps.${i}.title`),
+        description: t(`steps.${i}.description`),
+        icon: stepIcons[i].icon
+    }));
+
     return (
         <section className="relative bg-[#111019] py-20 overflow-hidden">
+            {/* Background Elements */}
             <div className="absolute inset-0">
-                <div className="absolute w-[1px] h-full left-1/4 top-0 bg-gradient-to-b from-transparent via-[#4F46E5] to-transparent opacity-20" />
-                <div className="absolute w-[1px] h-full left-2/4 top-0 bg-gradient-to-b from-transparent via-[#06B6D4] to-transparent opacity-20" />
-                <div className="absolute w-[1px] h-full left-3/4 top-0 bg-gradient-to-b from-transparent via-[#7C3AED] to-transparent opacity-20" />
+                {/* Enhanced Grid Pattern */}
+                <div className="absolute inset-0">
+                    {/* Base grid */}
+                    <div className="absolute inset-0 bg-[linear-gradient(to_right,#1f223130_1px,transparent_1px),linear-gradient(to_bottom,#1f223130_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black_70%)]" />
+                    
+                    {/* Overlay grid with different size */}
+                    <div className="absolute inset-0 bg-[linear-gradient(to_right,#1f223110_1px,transparent_1px),linear-gradient(to_bottom,#1f223110_1px,transparent_1px)] bg-[size:8rem_8rem] [mask-image:radial-gradient(ellipse_at_center,transparent_30%,black_70%)]" />
+                </div>
+
+                {/* Glowing orbs with enhanced blur */}
+                <div className="absolute top-20 left-10 w-72 h-72 bg-[#4F46E5] rounded-full opacity-[0.07] blur-[160px] animate-pulse-slow" />
+                <div className="absolute bottom-20 right-10 w-72 h-72 bg-[#7C3AED] rounded-full opacity-[0.01] blur-[160px] animate-pulse-slow" />
+                
+                {/* Subtle radial gradient */}
+                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-[#4F46E5]/5 to-transparent opacity-30" />
             </div>
 
             <div className="relative container mx-auto px-4">
+                {/* Floating elements */}
+                <div className="absolute -top-10 left-1/4 w-20 h-20 rounded-full border border-[#4F46E5]/20 animate-float" />
+                <div className="absolute top-1/2 right-1/4 w-32 h-32 rounded-full border-2 border-[#06B6D4]/20 animate-float-slow" />
+                <div className="absolute bottom-20 left-1/3 w-16 h-16 rounded-full border border-[#7C3AED]/20 animate-float-slower" />
+
                 <motion.div 
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
@@ -63,10 +82,10 @@ export default function HowItWorks() {
                     className="text-center mb-16"
                 >
                     <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-                        How it <span className="text-[#4F46E5]">works</span>
+                        {t('title.part1')} <span className="text-[#4F46E5]">{t('title.part2')}</span>
                     </h2>
                     <p className="text-gray-400 text-lg max-w-2xl mx-auto">
-                        Our proven process to generate qualified leads and convert them into paying clients
+                        {t('subtitle')}
                     </p>
                 </motion.div>
 
@@ -106,13 +125,13 @@ export default function HowItWorks() {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.6, delay: 0.8 }}
-                    className="text-center mt-16"
+                    className="text-center mt-16 z-10 relative"
                 >
                     <a 
                         href="#calendly"
                         className="btn-primary inline-flex items-center gap-2"
                     >
-                        Book Your Growth Call
+                        {t('cta')}
                         <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none">
                             <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                         </svg>

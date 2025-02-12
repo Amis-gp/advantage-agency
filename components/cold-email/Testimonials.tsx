@@ -1,55 +1,28 @@
 'use client';
 import Image from 'next/image';
-
-interface Testimonial {
-    name: string;
-    position: string;
-    company: string;
-    text: string;
-    image: string;
-}
-
-const testimonials: Testimonial[] = [
-    {
-        name: "Andy Redfern",
-        position: "CEO",
-        company: "Growth & Brains",
-        text: "Helped Growth & Brains consistently get 25-40 hot leads every month for the last 8 months",
-        image: "/img/cold-email/testimonial-1.webp"
-    },
-    {
-        name: "Joe S",
-        position: "Founder",
-        company: "Laser Sight Digital",
-        text: "From trying with 4+ lead gen companies and still stuck with no leads… to filling his calendar & added $15k MRR in revenue",
-        image: "/img/cold-email/testimonial-2.webp"
-    },
-    {
-        name: "Hristo Arakliev",
-        position: "COO/Co-founder",
-        company: "Hyperzon",
-        text: "Generated $350K in revenue in 4 months through optimized sales processes and booked sales opportunities",
-        image: "/img/cold-email/testimonial-3.webp"
-    },
-    {
-        name: "Tina Nathani",
-        position: "Co-Founder",
-        company: "Trex Agency",
-        text: "Secured their first $30k deal within 2 weeks of outreach as they expanded into the U.S.",
-        image: "/img/cold-email/testimonial-4.webp"
-    }
-];
+import { useTranslations } from 'next-intl';
 
 export default function ClientResults() {
+    const t = useTranslations('cold-email.testimonials');
+
+    const testimonials = Array.from({ length: 4 }, (_, i) => ({
+        name: t(`items.${i}.name`),
+        position: t(`items.${i}.position`),
+        company: t(`items.${i}.company`),
+        text: t(`items.${i}.text`),
+        image: `/img/cold-email/testimonial-${i + 1}.webp`,
+        imageAlt: t(`items.${i}.image_alt`)
+    }));
+
     return (
-        <section id="client-results" className=" py-20">
+        <section id="testimonials" className="py-20">
             <div className="container mx-auto px-4">
                 <div className="text-center mb-16">
                     <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-                        Client <span className="text-[#4F46E5]">Results</span>
+                        {t('title.part1')} <span className="text-[#4F46E5]">{t('title.part2')}</span>
                     </h2>
                     <p className="text-gray-400 text-lg max-w-2xl mx-auto">
-                        See how we've helped agencies like yours achieve remarkable growth through our proven cold email strategies
+                        {t('subtitle')}
                     </p>
                 </div>
 
@@ -64,7 +37,7 @@ export default function ClientResults() {
                                     <div className="relative w-16 h-16 flex-shrink-0">
                                         <Image
                                             src={testimonial.image}
-                                            alt={testimonial.name}
+                                            alt={testimonial.imageAlt}
                                             fill
                                             className="rounded-full object-cover"
                                         />
@@ -86,27 +59,14 @@ export default function ClientResults() {
                     ))}
                 </div>
 
-                <div className="text-center mt-12">
-                    <a 
-                        href="#all-results"
-                        className="inline-flex items-center text-white hover:text-[#4F46E5] transition-colors duration-300"
-                    >
-                        <span className="mr-2">View case studies</span>
-                        <svg 
-                            className="w-5 h-5" 
-                            fill="none" 
-                            stroke="currentColor" 
-                            viewBox="0 0 24 24"
-                        >
-                            <path 
-                                strokeLinecap="round" 
-                                strokeLinejoin="round" 
-                                strokeWidth={2} 
-                                d="M9 5l7 7-7 7"
-                            />
+                {/* <div className="text-center mt-12">
+                    <a href="#all-results" className="inline-flex items-center text-white hover:text-[#4F46E5] transition-colors duration-300">
+                        <span className="mr-2">{t('cta')}</span>
+                        <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7"/>
                         </svg>
                     </a>
-                </div>
+                </div> */}
             </div>
         </section>
     );

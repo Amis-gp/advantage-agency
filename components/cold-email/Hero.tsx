@@ -1,7 +1,6 @@
 'use client';
 import { useState } from 'react';
-import { useLocale } from 'next-intl';
-
+import { useLocale, useTranslations } from 'next-intl';
 
 const videoSources = {
     en: {
@@ -18,6 +17,7 @@ export default function Hero() {
     const [isPlaying, setIsPlaying] = useState(false);
     const [videoError, setVideoError] = useState(false);
     const locale = useLocale();
+    const t = useTranslations('cold-email.hero');
 
     const handlePlayClick = () => {
         setIsPlaying(true);
@@ -40,11 +40,11 @@ export default function Hero() {
                     <div className="max-w-4xl mx-auto text-center">
                         <div className="mb-8">
                             <span className="text-[#4F46E5] text-lg font-medium mb-4 block">
-                                For Marketing & Lead Generation Agencies:
+                                {t('subtitle')}
                             </span>
                             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
-                                Book 20+ Qualified Calls
-                                <span className="text-[#7C3AED]"> Every Month</span>
+                                {t('title.part1')}
+                                <span className="text-[#7C3AED]"> {t('title.part2')}</span>
                             </h1>
                         </div>
 
@@ -63,7 +63,7 @@ export default function Hero() {
                                         />
                                         {videoError && (
                                             <div className="absolute inset-0 flex items-center justify-center bg-black/50 rounded-lg">
-                                                <p className="text-white text-center">Preview video is unavailable</p>
+                                                <p className="text-white text-center">{t('video.error.preview')}</p>
                                             </div>
                                         )}
                                     </>
@@ -77,7 +77,7 @@ export default function Hero() {
                                         />
                                         {videoError && (
                                             <div className="absolute inset-0 flex items-center justify-center bg-black/50 rounded-lg">
-                                                <p className="text-white text-center">Full video is unavailable</p>
+                                                <p className="text-white text-center">{t('video.error.full')}</p>
                                             </div>
                                         )}
                                     </>
@@ -89,10 +89,27 @@ export default function Hero() {
                                         onClick={handlePlayClick}
                                     >
                                         <div className="absolute inset-0 bg-black/30 transition-colors duration-300 group-hover:bg-black/50"></div>
-                                        <div className="flex items-center justify-center w-16 h-16 rounded-full bg-[#6db4c0] z-10 transition-transform duration-300 group-hover:scale-110">
-                                            <svg className="ml-1" width="19" height="20" viewBox="0 0 86 97" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                <path d="M80.1258 40.5562L13.9878 2.50912C7.98783 -0.942487 0.5 3.38842 0.5 10.3104V87.4713C0.5 94.4415 8.08185 98.7661 14.0814 95.218L80.2193 56.1042C86.1521 52.5955 86.1003 43.9932 80.1258 40.5562Z" fill="#fff"/>
-                                            </svg>
+                                        
+                                        {/* Play Button Container */}
+                                        <div className="relative">
+                                            {/* Ripple Effects */}
+                                            <div className="absolute -inset-2 bg-[#6db4c0]/30 rounded-full animate-ping" />
+                                            
+                                            {/* Play Button */}
+                                            <div className="relative w-16 h-16 rounded-full bg-[#6db4c0] flex items-center justify-center shadow-lg shadow-[#6db4c0]/50 transition-all duration-300 group-hover:scale-110">
+                                                <svg 
+                                                    className="ml-1 w-6 h-6 relative z-10" 
+                                                    viewBox="0 0 86 97" 
+                                                    fill="none" 
+                                                    xmlns="http://www.w3.org/2000/svg"
+                                                >
+                                                    <path 
+                                                        d="M80.1258 40.5562L13.9878 2.50912C7.98783 -0.942487 0.5 3.38842 0.5 10.3104V87.4713C0.5 94.4415 8.08185 98.7661 14.0814 95.218L80.2193 56.1042C86.1521 52.5955 86.1003 43.9932 80.1258 40.5562Z" 
+                                                        fill="currentColor" 
+                                                        className="text-white"
+                                                    />
+                                                </svg>
+                                            </div>
                                         </div>
                                     </div>
                                 )}
@@ -103,26 +120,26 @@ export default function Hero() {
                             <a href="#calendly"
                                 className="btn-primary"
                             >
-                                Book Your Growth Call
+                                {t('buttons.book')}
                             </a>
-                            <a href="#client-results"
+                            <a href="#results"
                                 className="px-8 py-3 border border-[#06B6D4] text-[#06B6D4] rounded-full font-medium hover:bg-[#06B6D4] hover:text-white transition-all duration-300">
-                                View Client Results
+                                {t('buttons.results')}
                             </a>
                         </div>
 
                         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-white">
                             <div className="text-center">
-                                <h3 className="text-3xl font-bold mb-2 text-[#7C3AED]">95%</h3>
-                                <p className="text-gray-400">Email Deliverability</p>
+                                <h3 className="text-3xl font-bold mb-2 text-[#7C3AED]">{t('stats.deliverability.value')}</h3>
+                                <p className="text-gray-400">{t('stats.deliverability.label')}</p>
                             </div>
                             <div className="text-center">
-                                <h3 className="text-3xl font-bold mb-2 text-[#06B6D4]">$250K+</h3>
-                                <p className="text-gray-400">Revenue Generated</p>
+                                <h3 className="text-3xl font-bold mb-2 text-[#06B6D4]">{t('stats.revenue.value')}</h3>
+                                <p className="text-gray-400">{t('stats.revenue.label')}</p>
                             </div>
                             <div className="text-center">
-                                <h3 className="text-3xl font-bold mb-2 text-[#4F46E5]">14 Days</h3>
-                                <p className="text-gray-400">Average Setup Time</p>
+                                <h3 className="text-3xl font-bold mb-2 text-[#4F46E5]">{t('stats.setup.value')}</h3>
+                                <p className="text-gray-400">{t('stats.setup.label')}</p>
                             </div>
                         </div>
                     </div>

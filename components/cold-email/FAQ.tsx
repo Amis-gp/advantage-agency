@@ -1,28 +1,13 @@
 'use client';
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-
-const faqs = [
-    {
-        question: "How do you guarantee results?",
-        answer: "We work on a performance basis, meaning we only get paid when we deliver results. Our proven system has consistently delivered qualified leads to agencies like yours."
-    },
-    {
-        question: "What do you need from me?",
-        answer: "The majority of the service is done-for-you, however the 15-30 days we'll need your support with understanding who you want to target, case studies and basically becoming your fractional sales team."
-    },
-    {
-        question: "What makes you different from lead gen agencies?",
-        answer: "Unlike traditional lead gen agencies, we focus on quality over quantity. We use trigger-based targeting to reach companies actively looking for your services, resulting in higher conversion rates and better ROI."
-    },
-    {
-        question: "How long until we start to see results?",
-        answer: "Most clients start seeing qualified leads within the first week of launching. Our setup takes only 7 days, and we prioritize speed to ensure you start getting results as quickly as possible."
-    }
-];
+import { useTranslations } from 'next-intl';
 
 export default function FAQ() {
+    const t = useTranslations('cold-email.faq');
     const [activeIndex, setActiveIndex] = useState<number | null>(null);
+    
+    const faqs = t.raw('items') as Array<{ question: string; answer: string }>;
 
     return (
         <section className="relative py-20 overflow-hidden">
@@ -35,10 +20,10 @@ export default function FAQ() {
                     className="text-center mb-16"
                 >
                     <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-                        Frequently Asked <span className="text-[#4F46E5]">Questions</span>
+                        {t('title_part1')} <span className="text-[#4F46E5]">{t('title_emphasis')}</span>
                     </h2>
                     <p className="text-gray-400 text-lg max-w-2xl mx-auto">
-                        Get answers to common questions about our cold email marketing service
+                        {t('subtitle')}
                     </p>
                 </motion.div>
 
@@ -106,13 +91,13 @@ export default function FAQ() {
                 >
                     <div className="inline-flex flex-col items-center">
                         <h3 className="text-2xl font-bold text-white mb-4">
-                            Ready to grow?
+                            {t('cta.title')}
                         </h3>
                         <a 
                             href="#calendly"
                             className="btn-primary"
                         >
-                            Book a growth call
+                            {t('cta.button')}
                             <span className="ml-2">→</span>
                         </a>
                     </div>
