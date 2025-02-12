@@ -131,7 +131,7 @@ export default function Results() {
                                 className="h-full w-auto rounded-xl shadow-lg"
                             />
                         </div>
-                        <div className="absolute mx-auto w-full md:w-auto md:top-4 md:right-4 rounded-xl overflow-hidden">
+                        <div className="md:absolute mx-auto w-fit md:w-auto md:top-4 md:right-8 rounded-xl overflow-hidden">
                             <div className="relative group">
                                 <video
                                     ref={videoRef}
