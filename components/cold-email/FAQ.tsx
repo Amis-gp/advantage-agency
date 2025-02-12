@@ -25,8 +25,7 @@ export default function FAQ() {
     const [activeIndex, setActiveIndex] = useState<number | null>(null);
 
     return (
-        <section className="relative bg-black py-20 overflow-hidden">
-
+        <section className="relative py-20 overflow-hidden">
             <div className="relative container mx-auto px-4">
                 <motion.div 
                     initial={{ opacity: 0, y: 20 }}
@@ -36,7 +35,7 @@ export default function FAQ() {
                     className="text-center mb-16"
                 >
                     <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-                        Frequently Asked <span className="text-[#D12923]">Questions</span>
+                        Frequently Asked <span className="text-[#4F46E5]">Questions</span>
                     </h2>
                     <p className="text-gray-400 text-lg max-w-2xl mx-auto">
                         Get answers to common questions about our cold email marketing service
@@ -55,15 +54,16 @@ export default function FAQ() {
                         >
                             <button
                                 onClick={() => setActiveIndex(activeIndex === index ? null : index)}
-                                className="w-full text-left p-6 rounded-xl bg-zinc-900/50 border border-zinc-800 hover:border-[#D12923] transition-all duration-300"
+                                className="w-full text-left p-6 rounded-xl bg-[#111019] border border-zinc-800 hover:border-[#4F46E5] transition-all duration-300 group relative"
                             >
+                                <div className="absolute inset-0 rounded-xl bg-gradient-to-r from-[#4F46E5] to-[#7C3AED] opacity-0 group-hover:opacity-10 transition-opacity duration-300" />
                                 <div className="flex justify-between items-center">
                                     <h3 className="text-xl font-semibold text-white">
                                         {faq.question}
                                     </h3>
                                     <div className={`transform transition-transform duration-300 ${activeIndex === index ? 'rotate-180' : ''}`}>
                                         <svg 
-                                            className="w-6 h-6 text-[#D12923]" 
+                                            className="w-6 h-6 text-[#06B6D4]" 
                                             fill="none" 
                                             viewBox="0 0 24 24" 
                                             stroke="currentColor"
@@ -109,15 +109,11 @@ export default function FAQ() {
                             Ready to grow?
                         </h3>
                         <a 
-                            href="/form"
-                            className="group relative inline-flex items-center px-8 py-3 bg-[#D12923] text-white rounded-full font-medium overflow-hidden transition-all duration-300"
+                            href="#calendly"
+                            className="btn-primary"
                         >
-                            {/* Неоновий ефект при наведенні */}
-                            <div className="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300" />
-                            <span className="relative">
-                                Book a growth call
-                                <span className="ml-2">→</span>
-                            </span>
+                            Book a growth call
+                            <span className="ml-2">→</span>
                         </a>
                     </div>
                 </motion.div>

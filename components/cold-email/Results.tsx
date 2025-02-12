@@ -4,9 +4,9 @@ import Image from 'next/image';
 
 const stats = [
     {
-        number: "35%",
+        number: "4-8%",
         label: "Average Reply Rate",
-        description: "On average 35 replies per 100 sent emails"
+        description: "On average 4-8 replies per 100 sent emails"
     },
     {
         number: "15-20",
@@ -27,7 +27,7 @@ const stats = [
 
 export default function Results() {
     return (
-        <section className="bg-zinc-900 py-20">
+        <section className="bg-[#111019] py-20">
             <div className="container mx-auto px-4">
                 <motion.div 
                     initial={{ opacity: 0, y: 20 }}
@@ -37,25 +37,29 @@ export default function Results() {
                     className="text-center mb-16"
                 >
                     <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-                        Real <span className="text-[#D12923]">Numbers</span>
+                        Real <span className="text-[#4F46E5]">Numbers</span>
                     </h2>
                     <p className="text-gray-400 text-lg max-w-2xl mx-auto">
                         Our results in numbers
                     </p>
                 </motion.div>
 
-                <div className="grid md:grid-cols-2 gap-12 max-w-6xl mx-auto mb-20">
+                <div className="grid md:grid-cols-2 gap-12 max-w-6xl mx-auto mb-12 md:mb-20">
                     <motion.div
                         initial={{ opacity: 0, x: -20 }}
                         whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ once: true }}
                         transition={{ duration: 0.6 }}
-                        className="bg-black rounded-2xl p-8"
+                        className="bg-black/30 rounded-2xl p-8 border border-[#4F46E5] transition-all duration-300"
                     >
-                        <div className="grid grid-cols-2 gap-8">
+                        <div className="grid grid-cols-2 gap-8 relative">
                             {stats.map((stat, index) => (
                                 <div key={index} className="text-center">
-                                    <h3 className="text-3xl md:text-4xl font-bold text-[#D12923] mb-2">
+                                    <h3 className={`text-3xl md:text-4xl font-bold mb-2 ${
+                                        index % 3 === 0 ? 'text-[#4F46E5]' :
+                                        index % 3 === 1 ? 'text-[#06B6D4]' :
+                                        'text-[#7C3AED]'
+                                    }`}>
                                         {stat.number}
                                     </h3>
                                     <p className="text-white font-medium mb-2">
@@ -74,10 +78,10 @@ export default function Results() {
                         whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ once: true }}
                         transition={{ duration: 0.6 }}
-                        className="relative h-full aspect-[16/9] overflow-hidden"
+                        className="relative h-[400px] md:h-full md:aspect-[16/9] overflow-hidden"
                     >
                         <video
-                            className="h-full rounded-2xl mx-auto"
+                            className="h-[400px] md:h-full rounded-2xl mx-auto"
                             controls
                             poster="/img/cold-email/video-testimonial-poster.webp"
                         >

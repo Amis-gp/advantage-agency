@@ -17,19 +17,19 @@ export default function OffersPage({
     setRequestLocale(locale);
 
     return (
-        <div className="relative min-h-screen bg-black">
+        <div className="relative min-h-screen bg-[#0F172A] overflow-x-hidden">
             <div className="fixed inset-0 z-0">
                 <ParticlesBackground />
             </div>
             
             <div className="relative z-10">
                 <Hero />
-                <Testimonials />
-                <Results />
                 <HowItWorks />
-                <FAQ />
-                <Pricing />
                 <Process />
+                <Results />
+                <Testimonials />
+                <Pricing />
+                <FAQ />
                 <Footer />
             </div>
         </div>

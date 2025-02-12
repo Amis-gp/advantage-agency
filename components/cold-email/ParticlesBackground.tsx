@@ -31,13 +31,13 @@ export default function ParticlesBackground() {
                         }
                     },
                     color: {
-                        value: "#D12923"
+                        value: ["#4F46E5", "#06B6D4", "#7C3AED"]
                     },
                     shape: {
                         type: "circle"
                     },
                     opacity: {
-                        value: 0.6,
+                        value: 0.9,
                         random: false
                     },
                     size: {
@@ -47,8 +47,8 @@ export default function ParticlesBackground() {
                     links: {
                         enable: true,
                         distance: 150,
-                        color: "#D12923",
-                        opacity: 0.5,
+                        color: "#4F46E5",
+                        opacity: 0.7,
                         width: 1
                     },
                     move: {
@@ -73,14 +73,11 @@ export default function ParticlesBackground() {
                         grab: {
                             distance: 140,
                             links: {
-                                opacity: 0.4
+                                opacity: 0.3
                             }
                         }
                     }
                 },
-                background: {
-                    color: "#000"
-                }
             }}
             className="absolute inset-0 z-0"
             style={{

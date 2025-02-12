@@ -72,6 +72,8 @@ module.exports = {
         'bounce-x': 'bounce-x 1s ease-in-out infinite',
         'shine': 'shine 3s linear infinite',
         'fadeIn': 'fadeIn 1s ease forwards',
+        'glow': 'glow 2s ease-in-out infinite',
+        'shimmer': 'shimmer 3s linear infinite',
       },
       keyframes: {
         marquee: {
@@ -94,6 +96,19 @@ module.exports = {
           '0%': { opacity: '0', transform: 'translateY(10px)' },
           '100%': { opacity: '1', transform: 'translateY(0)' },
         },
+        glow: {
+          '0%, 100%': { 
+            'box-shadow': '0 0 15px rgba(79, 70, 229, 0.3)' 
+          },
+          '50%': { 
+            'box-shadow': '0 0 30px rgba(79, 70, 229, 0.6)' 
+          },
+        },
+        shimmer: {
+          '0%': { transform: 'translateX(-100%)' },
+          '10%': { transform: 'translateX(100%)' },
+          '100%': { transform: 'translateX(100%)' }
+        }
       }
     },
   },
