@@ -20,7 +20,6 @@ const DynamicCalendlyEmbed = dynamic(() => import('@/components/CalendlyEmbed'),
 export default function Pricing() {
     const t = useTranslations('cold-email.pricing');
     
-    // Отримуємо масиви features з перекладів
     const standardFeatures = t.raw('standard.features') as string[];
     const performanceFeatures = t.raw('performance.features') as string[];
     

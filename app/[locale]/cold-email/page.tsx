@@ -17,7 +17,7 @@ export default function OffersPage({
     setRequestLocale(locale);
 
     return (
-        <div className="relative min-h-screen bg-[#0F172A] overflow-x-hidden">
+        <div className="relative min-h-screen bg-black overflow-x-hidden">
             <div className="fixed inset-0 z-0">
                 <ParticlesBackground />
             </div>
