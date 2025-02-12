@@ -208,7 +208,7 @@ export default function Results() {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.6 }}
-                    className="relative aspect-[1400/773] w-full"
+                    className="relative aspect-[1400/773] w-full max-w-6xl mx-auto"
                 >
                     <Image
                         src="/img/cold-email/results.webp"
