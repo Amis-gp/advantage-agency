@@ -181,6 +181,7 @@
         "description": "We offer special packages for small businesses, as well as comprehensive solutions for large players.",
         "items": [
             {
+                "type": "google",
                 "title": "Google Ads",
                 "subtitle": "Search Advertising, Display, Youtube",
                 "price": "From $999",
@@ -194,6 +195,7 @@
                 ]
             },
             {
+                "type": "facebook",
                 "title": "Meta Ads",
                 "subtitle": "Targeted advertising Facebook, Instagram",
                 "price": "From $999",
@@ -208,6 +210,7 @@
                 ]
             },
             {
+                "type": "web",
                 "title": "Landing Page",
                 "subtitle": "Universal web pages, written in code",
                 "price": "From $999",
@@ -219,6 +222,21 @@
                     "Copywriting",
                     "Modern web design",
                     "Video analytics session tracking"
+                ]
+            },
+            {
+                "type": "email",
+                "title": "Cold Email",
+                "subtitle": "B2B Lead Generation",
+                "price": "From $1499",
+                "button": "Learn More",
+                "features": [
+                    "Proven cold email system",
+                    "Qualified leads generation",
+                    "Performance-based pricing",
+                    "7-day setup process",
+                    "Trigger-based targeting",
+                    "High conversion rates"
                 ]
             }
         ],
@@ -462,6 +480,53 @@
                     "caseLink": "VIEW CASE STUDY",
                     "content": "Our landing pages are perfect for advertising and deliver results. Order development and get a tool that sells.",
                     "strategyLink": "Get Consultation!"
+                }
+            },
+            "email": {
+                "slide1": {
+                    "title": "FROM $1499",
+                    "subtitle": "How does cold emailing work?",
+                    "content": {
+                        "0": "Your target audience receives an email in their inbox that motivates them to move further along the sales or partnership funnel.",
+                        "1": "We set up mass mailing that reaches a large volume of potential clients while ensuring delivery of your emails directly to the inbox, bypassing spam filters through careful compliance with all email provider rules."
+                    },
+                    "link": "Get a consultation"
+                },
+                "slide2": {
+                    "subtitle": "Why work with us?",
+                    "list": [
+                        {
+                            "title": "1. We know how to bypass spam filters",
+                            "description": "Our strategies ensure email delivery straight to the inbox, even with the strictest providers."
+                        },
+                        {
+                            "title": "2. We build smart automation",
+                            "description": "We create effective automated systems that work continuously, ensuring maximum efficiency."
+                        },
+                        {
+                            "title": "3. We know what content engages the audience",
+                            "description": "We write emails that grab attention and motivate action, creating genuine interest."
+                        },
+                        {
+                            "title": "4. Cold email expertise",
+                            "description": "We have extensive experience with cold emails - having sent around 50k cold emails."
+                        },
+                        {
+                            "title": "5. We scrape your target audience contacts",
+                            "description": "We collect contact data from various platforms, giving us additional flexibility in campaign setup."
+                        }
+                    ]
+                },
+                "slide3": {
+                    "list": [
+                        {
+                            "title": "6. We follow clear timelines",
+                            "description": "We spend a month preparing the system, warming up email accounts, and then launch the system to achieve results."
+                        }
+                    ],
+                    "content": "We are ready to help you achieve maximum results in email marketing",
+                    "caseLink": "View case studies",
+                    "strategyLink": "Learn about strategy"
                 }
             }
         }

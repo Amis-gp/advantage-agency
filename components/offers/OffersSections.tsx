@@ -8,7 +8,7 @@ import { Navigation, Pagination } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
-import { META_SLIDES, GOOGLE_SLIDES, LANDING_SLIDES } from '@/app/constant/offers';
+import { META_SLIDES, GOOGLE_SLIDES, LANDING_SLIDES, EMAIL_SLIDES } from '@/app/constant/offers';
 import { useTranslations } from 'next-intl';
 
 interface Slide {
@@ -31,10 +31,11 @@ interface Slide {
     }>;
 }
 
-const SliderSection = ({ slides, bgColor, borderColor }: { 
+const SliderSection = ({ slides, bgColor, borderColor, locale }: { 
     slides: Slide[], 
     bgColor: string, 
-    borderColor: string 
+    borderColor: string,
+    locale: string 
 }) => {
     return (
         <Swiper
@@ -94,7 +95,7 @@ const SliderSection = ({ slides, bgColor, borderColor }: {
 
                                 {slide.link1 && (
                                     <Link 
-                                        href={slide.link1.href}
+                                        href={`${slide.link1.href}${locale}`}
                                         onMouseEnter={() => playSound('hover_1')}
                                         className="mt-8 mb-8 w-fit text-2xl font-semibold inline-block px-6 py-3 text-white border border-yellow rounded-lg hover:bg-white/10 transition-all duration-200"
                                     >
@@ -155,7 +156,8 @@ const OffersSection = ({ locale }: { locale: string }) => {
                     <SliderSection 
                         slides={translateSlides(META_SLIDES)} 
                         bgColor="bg-[#1877F2]/15" 
-                        borderColor="border border-[#1877F2]/30" 
+                        borderColor="border border-[#1877F2]/30"
+                        locale={locale}
                     />
                 </div>
                 
@@ -168,7 +170,8 @@ const OffersSection = ({ locale }: { locale: string }) => {
                     <SliderSection 
                         slides={translateSlides(GOOGLE_SLIDES)} 
                         bgColor="bg-gradient-to-br from-[#4285F4]/10 via-[#DB4437]/20 to-[#F4B400]/10" 
-                        borderColor="border border-[#4285F4]/30" 
+                        borderColor="border border-[#4285F4]/30"
+                        locale={locale}
                     />
                 </div>
                 
@@ -181,9 +184,25 @@ const OffersSection = ({ locale }: { locale: string }) => {
                     <SliderSection 
                         slides={translateSlides(LANDING_SLIDES)} 
                         bgColor="bg-gradient-to-br from-[#00B4D8]/20 to-[#0077B6]/20" 
-                        borderColor="border border-[#00B4D8]/30" 
+                        borderColor="border border-[#00B4D8]/30"
+                        locale={locale}
                     />
                 </div>
+
+                <div id="email" className="scroll-mt-20">
+                    <div className="flex items-center gap-4 my-12">
+                        <div className="flex-grow h-[1px] bg-gradient-to-r from-transparent via-gray-300 to-transparent"></div>
+                        <div className="text-gray-400 text-sm font-medium">Cold Email Automatization</div>
+                        <div className="flex-grow h-[1px] bg-gradient-to-r from-transparent via-gray-300 to-transparent"></div>
+                    </div>
+                    <SliderSection 
+                        slides={translateSlides(EMAIL_SLIDES)} 
+                        bgColor="bg-gradient-to-br from-[#7C3AED]/20 via-[#5B21B6]/20 to-[#4C1D95]/20" 
+                        borderColor="border border-[#7C3AED]/30"
+                        locale={locale}
+                    />
+                </div>
+
                 <div className="w-full h-12 my-8 opacity-50" style={{
                     backgroundImage: "url(\"data:image/svg+xml,%3Csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0,25 C150,75 350,-25 500,25 C650,75 850,-25 1000,25' stroke='%23CBD5E0' fill='none' /%3E%3C/svg%3E\")",
                     backgroundRepeat: "repeat-x",

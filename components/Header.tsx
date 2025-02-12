@@ -67,10 +67,10 @@ export default function Header(): JSX.Element {
     return (
         <header 
             ref={headerRef}
-            className={`text-white py-4 px-6 fixed top-0 left-0 w-full z-50 transition-all duration-300 
+            className={`text-white py-4  fixed top-0 left-0 w-full z-50 transition-all duration-300 
             ${isScrolled ? 'bg-black/80 backdrop-blur-sm' : 'bg-transparent'}`}
         >
-            <div className="max-w-6xl mx-auto flex justify-between items-left">
+            <div className="max-w-6xl px-6 mx-auto flex justify-between items-left">
                 <Link 
                     href={`/`} 
                     onClick={handleLogoClick}
