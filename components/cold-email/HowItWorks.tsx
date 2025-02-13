@@ -97,12 +97,12 @@ export default function HowItWorks() {
                             whileInView={{ opacity: 1, x: 0 }}
                             viewport={{ once: true }}
                             transition={{ duration: 0.6, delay: index * 0.2 }}
-                            className="relative group"
+                            className="relative group h-full"
                         >
-                            <div className="bg-black/30 rounded-2xl p-8 border border-zinc-800 hover:border-[#4F46E5] transition-all duration-300">
+                            <div className="bg-black/30 rounded-2xl p-8 border border-zinc-800 hover:border-[#4F46E5] transition-all duration-300 h-full">
                                 <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-[#4F46E5] to-[#7C3AED] opacity-0 group-hover:opacity-10 transition-opacity duration-300" />
                                 
-                                <div className="relative">
+                                <div className="relative h-full flex flex-col">
                                     <div className="flex items-center gap-4 mb-4">
                                         <div className="w-12 h-12 rounded-full bg-black/50 flex items-center justify-center">
                                             {step.icon}
@@ -111,7 +111,7 @@ export default function HowItWorks() {
                                             {step.title}
                                         </h3>
                                     </div>
-                                    <p className="text-gray-400 leading-relaxed">
+                                    <p className="text-gray-400 leading-relaxed flex-grow">
                                         {step.description}
                                     </p>
                                 </div>

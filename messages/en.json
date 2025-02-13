@@ -839,10 +839,11 @@
     },
     "cold-email": {
         "hero": {
-            "subtitle": "For Marketing & Lead Generation Agencies:",
+            "subtitle": "WE BUILD OUTBOUND SYSTEMS THAT SELL FOR YOU ON AUTOPILOT",
             "title": {
-            "part1": "Book 20+ Qualified Calls",
-            "part2": "Every Month"
+                "part1": "Add 15-40 Qualified Sales Meetings",
+                "part2": "To Your Calendar Each Month On A Performance Basis",
+                "part3": "Completely Done-For-You"
             },
             "buttons": {
             "book": "Book Your Growth Call",
@@ -877,8 +878,8 @@
             "subtitle": "Our proven process to generate qualified leads and convert them into paying clients",
             "steps": [
                 {
-                    "title": "Trigger-based lead lists",
-                    "description": "We scrape relevant data to target companies that need your services asap. Whether it's hiring triggers if they're looking for a CMO, or a sudden decline in organic traffic - we build lists so when they jump on the call, they have a marketing problem that needs fixing."
+                    "title": "Learn and research your ideal customer.",
+                    "description": "You fill out our onboarding questionnaire to help us learn about your ICP. We conduct additional research to gain insights into your targets' motivations and pain points. The goal? Putting the right message in front of the right person. Then we scrape this audience from all the channels tailored to your requirements."
                 },
                 {
                     "title": "Building a relevant offer",
@@ -952,7 +953,7 @@
             },
             "subtitle": {
                 "main": "Our results in numbers",
-                "description": "Justin Collins - our client from the USA, he's been over 15 years in the affiliate marketing industry, made 20M+ online."
+                "description": "Justin Collins - our client from the USA, he's been over 15 years in the affiliate marketing industry, made $20M+ online."
             },
             "stats": [
                 {
@@ -992,32 +993,46 @@
             "subtitle": "See how we've helped agencies like yours achieve remarkable growth through our proven cold email strategies",
             "items": [
                 {
+                    "name": "Alexy Joven",
+                    "position": "CEO",
+                    "company": "Modjo",
+                    "text": "I have been client of Stepan for a bit less than a year. During this time, we generated over a hundred meetings that resulted in 14 client projects and over 400k€ generated",
+                    "image_alt": "Alexy Joven photo"
+                },
+                {
+                    "name": "Niklas Konstantin Rabanus",
+                    "position": "CEO",
+                    "company": "KONUS",
+                    "text": "Stepan is a lead generation wizard! Thanks to his skills, I was able to land big contracts with important affiliates for Podly. Highly recommend his services!",
+                    "image_alt": "Niklas Konstantin Rabanus photo"
+                },
+                {
+                    "name": "Philip Smith",
+                    "position": "Founder, CEO",
+                    "company": "Podly",
+                    "text": "Stepan taught me b2b lead gen - the tools, the method, everything. It's a skillset for life, that goes further than just outbound b2b. What's more, his tips save money by connecting the right apps together.",
+                    "image_alt": "Philip Smith photo"
+                },
+                {
+                    "name": "Oceane Demol",
+                    "position": "Founder",
+                    "company": "GrowthFlow Agency",
+                    "text": "I wanted to express my gratitude to Stepan for being an amazing mentor who has greatly assisted me in mastering prospecting tools. His support has had a significant impact on enhancing my skills.",
+                    "image_alt": "Oceane Demol photo"
+                },
+                {
+                    "name": "Holly P.",
+                    "position": "Lead Generation Specialist",
+                    "company": "Convatec",
+                    "text": "Stepan is my go-to person for lead generation projects. Unlike many vendors, he doesn't rely on a lazy mass emailing approach. He explains the logic behind his actions and doesn't delegate the work to junior staff, which sets him apart.",
+                    "image_alt": "Holly P. photo"
+                },
+                {
                     "name": "Andy Redfern",
                     "position": "CEO",
                     "company": "Growth & Brains",
-                    "text": "Helped Growth & Brains consistently get 25-40 hot leads every month for the last 8 months",
+                    "text": "Helped Growth & Brains consistently get 25-40 hot leads every month for the last 8 months. His approach to lead generation is systematic and data-driven.",
                     "image_alt": "Andy Redfern photo"
-                },
-                {
-                    "name": "Joe S",
-                    "position": "Founder",
-                    "company": "Laser Sight Digital",
-                    "text": "From trying with 4+ lead gen companies and still stuck with no leads… to filling his calendar & added $15k MRR in revenue",
-                    "image_alt": "Joe S photo"
-                },
-                {
-                    "name": "Hristo Arakliev",
-                    "position": "COO/Co-founder",
-                    "company": "Hyperzon",
-                    "text": "Generated $350K in revenue in 4 months through optimized sales processes and booked sales opportunities",
-                    "image_alt": "Hristo Arakliev photo"
-                },
-                {
-                    "name": "Tina Nathani",
-                    "position": "Co-Founder",
-                    "company": "Trex Agency",
-                    "text": "Secured their first $30k deal within 2 weeks of outreach as they expanded into the U.S.",
-                    "image_alt": "Tina Nathani photo"
                 }
             ],
             "cta": "View case studies"

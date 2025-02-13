@@ -5,7 +5,7 @@ import { useTranslations } from 'next-intl';
 export default function ClientResults() {
     const t = useTranslations('cold-email.testimonials');
 
-    const testimonials = Array.from({ length: 4 }, (_, i) => ({
+    const testimonials = Array.from({ length: 6 }, (_, i) => ({
         name: t(`items.${i}.name`),
         position: t(`items.${i}.position`),
         company: t(`items.${i}.company`),
@@ -26,7 +26,7 @@ export default function ClientResults() {
                     </p>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
                     {testimonials.map((testimonial, index) => (
                         <div 
                             key={index}
