@@ -147,16 +147,17 @@ const OffersSection = ({ locale }: { locale: string }) => {
     return (
         <section className="relative pt-14 overflow-hidden">
             <div className="max-w-7xl mx-auto px-4">
-                <div id="meta" className="scroll-mt-20">
+
+                <div id="email" className="scroll-mt-20">
                     <div className="flex items-center gap-4 my-12">
                         <div className="flex-grow h-[1px] bg-gradient-to-r from-transparent via-gray-300 to-transparent"></div>
-                        <div className="text-gray-400 text-sm font-medium">Meta Ads</div>
+                        <div className="text-gray-400 text-sm font-medium">Cold Email Automatization</div>
                         <div className="flex-grow h-[1px] bg-gradient-to-r from-transparent via-gray-300 to-transparent"></div>
                     </div>
                     <SliderSection 
-                        slides={translateSlides(META_SLIDES)} 
-                        bgColor="bg-[#1877F2]/15" 
-                        borderColor="border border-[#1877F2]/30"
+                        slides={translateSlides(EMAIL_SLIDES)} 
+                        bgColor="bg-gradient-to-br from-[#7C3AED]/20 via-[#5B21B6]/20 to-[#4C1D95]/20" 
+                        borderColor="border border-[#7C3AED]/30"
                         locale={locale}
                     />
                 </div>
@@ -174,6 +175,20 @@ const OffersSection = ({ locale }: { locale: string }) => {
                         locale={locale}
                     />
                 </div>
+
+                <div id="meta" className="scroll-mt-20">
+                    <div className="flex items-center gap-4 my-12">
+                        <div className="flex-grow h-[1px] bg-gradient-to-r from-transparent via-gray-300 to-transparent"></div>
+                        <div className="text-gray-400 text-sm font-medium">Meta Ads</div>
+                        <div className="flex-grow h-[1px] bg-gradient-to-r from-transparent via-gray-300 to-transparent"></div>
+                    </div>
+                    <SliderSection 
+                        slides={translateSlides(META_SLIDES)} 
+                        bgColor="bg-[#1877F2]/15" 
+                        borderColor="border border-[#1877F2]/30"
+                        locale={locale}
+                    />
+                </div>
                 
                 <div id="landing" className="scroll-mt-20">
                     <div className="flex items-center gap-4 my-12">
@@ -185,20 +200,6 @@ const OffersSection = ({ locale }: { locale: string }) => {
                         slides={translateSlides(LANDING_SLIDES)} 
                         bgColor="bg-gradient-to-br from-[#00B4D8]/20 to-[#0077B6]/20" 
                         borderColor="border border-[#00B4D8]/30"
-                        locale={locale}
-                    />
-                </div>
-
-                <div id="email" className="scroll-mt-20">
-                    <div className="flex items-center gap-4 my-12">
-                        <div className="flex-grow h-[1px] bg-gradient-to-r from-transparent via-gray-300 to-transparent"></div>
-                        <div className="text-gray-400 text-sm font-medium">Cold Email Automatization</div>
-                        <div className="flex-grow h-[1px] bg-gradient-to-r from-transparent via-gray-300 to-transparent"></div>
-                    </div>
-                    <SliderSection 
-                        slides={translateSlides(EMAIL_SLIDES)} 
-                        bgColor="bg-gradient-to-br from-[#7C3AED]/20 via-[#5B21B6]/20 to-[#4C1D95]/20" 
-                        borderColor="border border-[#7C3AED]/30"
                         locale={locale}
                     />
                 </div>

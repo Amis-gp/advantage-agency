@@ -129,7 +129,7 @@ export const LANDING_SLIDES = [
 
 export const EMAIL_SLIDES = [
     {
-        logo: "/img/offers/email-logo.svg",
+        logo: "/img/offers/cold-email-logo.svg",
         background: "/img/offers/1.svg",
         title: "offers.offers.email.slide1.title",
         subtitle: "offers.offers.email.slide1.subtitle",
@@ -143,7 +143,7 @@ export const EMAIL_SLIDES = [
         }
     },
     {
-        logo: "/img/offers/email-logo.svg",
+        logo: "/img/offers/cold-email-logo.svg",
         background: "/img/offers/2.svg",
         subtitle: "offers.offers.email.slide2.subtitle",
         list: Array.from({ length: 5 }, (_, i) => ({
@@ -152,7 +152,7 @@ export const EMAIL_SLIDES = [
         }))
     },
     {
-        logo: "/img/offers/email-logo.svg",
+        logo: "/img/offers/cold-email-logo.svg",
         background: "/img/offers/3.svg",
         list: Array.from({ length: 1 }, (_, i) => ({
             title: `offers.offers.email.slide3.list.${i}.title`,

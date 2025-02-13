@@ -181,6 +181,21 @@
         "description": "We offer special packages for small businesses, as well as comprehensive solutions for large players.",
         "items": [
             {
+                "type": "email",
+                "title": "Cold Email",
+                "subtitle": "B2B Lead Generation",
+                "price": "From $1499",
+                "button": "Learn More",
+                "features": [
+                    "Proven cold email system",
+                    "Qualified leads generation",
+                    "Performance-based pricing",
+                    "4-week setup process",
+                    "Trigger-based targeting",
+                    "High conversion rates"
+                ]
+            },
+            {
                 "type": "google",
                 "title": "Google Ads",
                 "subtitle": "Search Advertising, Display, Youtube",
@@ -222,21 +237,6 @@
                     "Copywriting",
                     "Modern web design",
                     "Video analytics session tracking"
-                ]
-            },
-            {
-                "type": "email",
-                "title": "Cold Email",
-                "subtitle": "B2B Lead Generation",
-                "price": "From $1499",
-                "button": "Learn More",
-                "features": [
-                    "Proven cold email system",
-                    "Qualified leads generation",
-                    "Performance-based pricing",
-                    "4-week setup process",
-                    "Trigger-based targeting",
-                    "High conversion rates"
                 ]
             }
         ],
@@ -858,8 +858,8 @@
                 "label": "Revenue Generated"
             },
             "setup": {
-                "value": "14 Days",
-                "label": "Average Setup Time"
+                "value": "65%",
+                "label": "Email Open rate"
             }
             },
             "video": {
