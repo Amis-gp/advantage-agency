@@ -1,5 +1,5 @@
 'use client';
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import { useTranslations, useLocale } from 'next-intl';
 import { motion, useTransform, useScroll } from 'framer-motion';
 import Image from 'next/image';
@@ -21,6 +21,8 @@ export default function HeroSection() {
     const t = useTranslations();
     const locale = useLocale();
     const [isPlaying, setIsPlaying] = useState(false);
+    const [isVideoPaused, setIsVideoPaused] = useState(false);
+    const videoRef = useRef<HTMLVideoElement>(null);
     const { scrollY } = useScroll();
     const rotate1 = useTransform(scrollY, [0, 3000], [0, 360]);
     const rotate2 = useTransform(scrollY, [0, 3000], [0, -360]);
@@ -28,6 +30,16 @@ export default function HeroSection() {
     const handlePlayClick = () => {
         playSound('click');
         setIsPlaying(true);
+    };
+
+    const toggleVideoPlayback = () => {
+        if (videoRef.current) {
+            if (videoRef.current.paused) {
+                videoRef.current.play();
+            } else {
+                videoRef.current.pause();
+            }
+        }
     };
 
     return (
@@ -85,15 +97,41 @@ export default function HeroSection() {
                                 <source src={videoSources[locale as keyof typeof videoSources].preview} type="video/mp4"/>
                             </video>
                         ) : (
-                            <video 
-                                key={`full-${locale}`} 
-                                className="w-full h-full object-cover" 
-                                controls={true} 
-                                autoPlay
-                            >
-                                <source src={videoSources[locale as keyof typeof videoSources].full} type="video/mp4"/>
-                                Your browser does not support the video tag.
-                            </video>
+                            <>
+                                <video 
+                                    key={`full-${locale}`} 
+                                    ref={videoRef}
+                                    className="w-full h-full object-cover" 
+                                    autoPlay 
+                                    playsInline
+                                    onClick={toggleVideoPlayback}
+                                    onPlay={() => setIsVideoPaused(false)}
+                                    onPause={() => setIsVideoPaused(true)}
+                                >
+                                    <source src={videoSources[locale as keyof typeof videoSources].full} type="video/mp4"/>
+                                    Your browser does not support the video tag.
+                                </video>
+                                {isVideoPaused && (
+                                    <div 
+                                        className="absolute inset-0 flex items-center justify-center"
+                                        onClick={toggleVideoPlayback}
+                                    >
+                                        <button 
+                                            onClick={(e) => { e.stopPropagation(); toggleVideoPlayback(); }} 
+                                            className="bg-black/40 p-4 rounded-full"
+                                        >
+                                            <svg 
+                                                className="w-8 h-8 text-white" 
+                                                viewBox="0 0 24 24" 
+                                                fill="currentColor" 
+                                                xmlns="http://www.w3.org/2000/svg"
+                                            >
+                                                <path d="M8 5v14l11-7z" />
+                                            </svg>
+                                        </button>
+                                    </div>
+                                )}
+                            </>
                         )}
                         
                         {!isPlaying && (
@@ -120,15 +158,15 @@ export default function HeroSection() {
                     className="flex items-center gap-4 mt-8 justify-center relative"
                 >
                     <div className="flex -space-x-4">
-                        <Image src="/img/home/ava-1.jpg" alt="Avatar" width={40} height={40}className="rounded-full" />
-                        <Image src="/img/home/ava-2.jpg" alt="Avatar" width={40} height={40}className="rounded-full" />
-                        <Image src="/img/home/ava-3.jpg" alt="Avatar" width={40} height={40}className="rounded-full" />
-                        <Image src="/img/home/ava-4.jpg" alt="Avatar" width={40} height={40}className="rounded-full" />
+                        <Image src="/img/home/ava-1.jpg" alt="Avatar" width={40} height={40} className="rounded-full" />
+                        <Image src="/img/home/ava-2.jpg" alt="Avatar" width={40} height={40} className="rounded-full" />
+                        <Image src="/img/home/ava-3.jpg" alt="Avatar" width={40} height={40} className="rounded-full" />
+                        <Image src="/img/home/ava-4.jpg" alt="Avatar" width={40} height={40} className="rounded-full" />
                     </div>
                     <div className="">
                         <div className="flex items-center">
                             {[1, 2, 3, 4].map((star) => (
-                                <Image key={star} src="/img/home/star-yellow.svg" alt="Star" width={12} height={12} className='mr-1'/>
+                                <Image key={star} src="/img/home/star-yellow.svg" alt="Star" width={12} height={12} className="mr-1"/>
                             ))}
                             <Image src="/img/home/star-yellow-gray.svg" alt="Star" width={12} height={12}/>
                             <span className="ml-2">4.6</span>
@@ -160,14 +198,3 @@ export default function HeroSection() {
         </section>
     );
 }
-
-
-
-
-
-
-
-
-
-
-

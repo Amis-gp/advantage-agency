@@ -1,5 +1,5 @@
 'use client';
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import { useLocale, useTranslations } from 'next-intl';
 
 const videoSources = {
@@ -9,15 +9,19 @@ const videoSources = {
     },
     uk: {
         preview: '/img/cold-email/video-preview-uk.mp4',
-        full: 'https://www.youtube.com/embed/1V7nF0gnDvA?autoplay=1&rel=0&showinfo=0'
+        full: 'https://www.youtube.com/embed/1V7nF0gnDvA?autoplay=1&controls=0&rel=0&showinfo=0'
     },
 };
 
 export default function Hero() {
     const [isPlaying, setIsPlaying] = useState(false);
     const [videoError, setVideoError] = useState(false);
+    const [isVideoPaused, setIsVideoPaused] = useState(false);
     const locale = useLocale();
     const t = useTranslations('cold-email.hero');
+    const currentLocale = locale as keyof typeof videoSources;
+    const sources = videoSources[currentLocale] || videoSources.en;
+    const videoRef = useRef<HTMLVideoElement>(null);
 
     const handlePlayClick = () => {
         setIsPlaying(true);
@@ -29,12 +33,18 @@ export default function Hero() {
         setVideoError(true);
     };
 
-    const currentLocale = locale as keyof typeof videoSources;
-    const sources = videoSources[currentLocale] || videoSources.en;
+    const toggleVideoPlayback = () => {
+        if (videoRef.current) {
+            if (videoRef.current.paused) {
+                videoRef.current.play();
+            } else {
+                videoRef.current.pause();
+            }
+        }
+    };
 
     return (
         <div className="relative min-h-screen overflow-hidden">
-            
             <div className="relative z-10">
                 <div className="container mx-auto px-4 pt-8 md:pt-12 pb-16">
                     <div className="max-w-4xl mx-auto text-center">
@@ -69,15 +79,49 @@ export default function Hero() {
                                     </>
                                 ) : (
                                     <>
-                                        <iframe 
-                                            className="w-full h-full rounded-lg"
-                                            src={sources.full}
-                                            allow="autoplay"
-                                            allowFullScreen
-                                        />
+                                        {currentLocale === 'uk' ? (
+                                            <iframe 
+                                                className="w-full h-full rounded-lg"
+                                                src={sources.full}
+                                                allow="autoplay"
+                                                allowFullScreen
+                                            />
+                                        ) : (
+                                            <video 
+                                                ref={videoRef}
+                                                className="w-full h-full object-cover rounded-lg"
+                                                autoPlay 
+                                                playsInline
+                                                onClick={toggleVideoPlayback}
+                                                onError={handleVideoError}
+                                                onPlay={() => setIsVideoPaused(false)}
+                                                onPause={() => setIsVideoPaused(true)}
+                                                src={sources.full}
+                                            />
+                                        )}
                                         {videoError && (
                                             <div className="absolute inset-0 flex items-center justify-center bg-black/50 rounded-lg">
                                                 <p className="text-white text-center">{t('video.error.full')}</p>
+                                            </div>
+                                        )}
+                                        {currentLocale !== 'uk' && isVideoPaused && (
+                                            <div 
+                                                className="absolute inset-0 flex items-center justify-center"
+                                                onClick={toggleVideoPlayback}
+                                            >
+                                                <button 
+                                                    onClick={(e) => { e.stopPropagation(); toggleVideoPlayback(); }} 
+                                                    className="bg-black/40 p-4 rounded-full"
+                                                >
+                                                    <svg 
+                                                        className="w-8 h-8 text-white" 
+                                                        viewBox="0 0 24 24" 
+                                                        fill="currentColor" 
+                                                        xmlns="http://www.w3.org/2000/svg"
+                                                    >
+                                                        <path d="M8 5v14l11-7z" />
+                                                    </svg>
+                                                </button>
                                             </div>
                                         )}
                                     </>
@@ -90,12 +134,9 @@ export default function Hero() {
                                     >
                                         <div className="absolute inset-0 bg-black/30 transition-colors duration-300 group-hover:bg-black/50"></div>
                                         
-                                        {/* Play Button Container */}
                                         <div className="relative">
-                                            {/* Ripple Effects */}
                                             <div className="absolute -inset-2 bg-[#6db4c0]/30 rounded-full animate-ping" />
                                             
-                                            {/* Play Button */}
                                             <div className="relative w-16 h-16 rounded-full bg-[#6db4c0] flex items-center justify-center shadow-lg shadow-[#6db4c0]/50 transition-all duration-300 group-hover:scale-110">
                                                 <svg 
                                                     className="ml-1 w-6 h-6 relative z-10" 
@@ -117,13 +158,13 @@ export default function Hero() {
                         </div>
 
                         <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
-                            <a href="#calendly"
-                                className="btn-primary"
-                            >
+                            <a href="#calendly" className="btn-primary">
                                 {t('buttons.book')}
                             </a>
-                            <a href="#results"
-                                className="px-8 py-3 border border-[#06B6D4] text-[#06B6D4] rounded-full font-medium hover:bg-[#06B6D4] hover:text-white transition-all duration-300">
+                            <a 
+                                href="#results"
+                                className="px-8 py-3 border border-[#06B6D4] text-[#06B6D4] rounded-full font-medium hover:bg-[#06B6D4] hover:text-white transition-all duration-300"
+                            >
                                 {t('buttons.results')}
                             </a>
                         </div>

@@ -6,9 +6,10 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import type { Swiper as SwiperType } from 'swiper'
-import { Navigation } from 'swiper/modules'
+import { Navigation, Pagination } from 'swiper/modules'
 import 'swiper/css'
 import 'swiper/css/navigation'
+import 'swiper/css/pagination'
 import { playSound } from '@/app/constant/sound'
 
 const serviceStyles = {
@@ -41,7 +42,26 @@ export default function ServicesSection() {
     };
 
     return (
-        <section className="max-w-6xl mx-auto px-6 py-10 md:py-14" id="services">
+        <section className="max-w-6xl mx-auto px-6 py-10 md:py-14 relative" id="services">
+            <style jsx global>{`
+                .swiper-pagination-bullet {
+                    width: 8px !important;
+                    height: 8px !important;
+                    margin-top: 30px !important;
+                    border-radius: 50% !important;
+                    background: rgba(255, 255, 255, 0.2) !important;
+                    opacity: 1 !important;
+                    transition: all 0.3s ease;
+                }
+                .swiper-pagination {
+                    position: relative !important;
+                }
+                .swiper-pagination-bullet-active {
+                    background: #fff !important;
+                    transform: scale(1.2);
+                }
+            `}</style>
+
             <div className="flex justify-between items-center">
                 <span className="text-red-500 uppercase tracking-wider">{t('headline')}</span>
                 <Image className="absolute right-14 md:hidden" src="/img/home/25-percent.svg" alt="25%" width={100} height={50} />
@@ -54,33 +74,43 @@ export default function ServicesSection() {
                 </div>
                 <div className="flex items-start gap-8">
                     <Image className="hidden md:block" src="/img/home/25-percent.svg" alt="25%" width={200} height={100} />
-                    <div className="hidden md:flex justify-end gap-4">
-                        <button 
-                            onClick={handlePrev}
-                            className="w-[60px] h-[60px] rounded-full border border-white/20 flex items-center justify-center text-white hover:bg-white/10 transition-all duration-300 active:scale-90 disabled:opacity-50 disabled:cursor-not-allowed"
-                        >
-                            ←
-                        </button>
-                        <button 
-                            onClick={handleNext}
-                            className="w-[60px] h-[60px] rounded-full border border-white/20 flex items-center justify-center text-white hover:bg-white/10 transition-all duration-300 active:scale-90 disabled:opacity-50 disabled:cursor-not-allowed"
-                        >
-                            →
-                        </button>
-                    </div>
                 </div>
             </div>
 
             {/* Desktop view with horizontal scroll */}
-            <div className="hidden md:block mt-16">
+            <div className="hidden md:block mt-16 relative">
+                <button 
+                    className="invisible xl:visible absolute !-left-20 top-1/2 -translate-y-1/2 z-20 !w-[60px] !h-[60px] rounded-full border border-white/20 flex items-center justify-center !text-white hover:bg-white/10 transition-all duration-100"
+                    onClick={handlePrev}
+                >
+                    ←
+                </button>
+                <button 
+                    className="invisible xl:visible absolute !-right-20 top-1/2 -translate-y-1/2 z-20 !w-[60px] !h-[60px] rounded-full border border-white/20 flex items-center justify-center !text-white hover:bg-white/10 transition-all duration-100"
+                    onClick={handleNext}
+                >
+                    →
+                </button>
+
                 <Swiper
-                    modules={[Navigation]}
+                    modules={[Navigation, Pagination]}
                     spaceBetween={32}
                     slidesPerView={3}
                     onBeforeInit={(swiper) => {
                         swiperRef.current = swiper;
                     }}
-                    className="services-swiper"
+                    navigation={{
+                        prevEl: '.swiper-button-prev',
+                        nextEl: '.swiper-button-next',
+                    }}
+                    pagination={{
+                        clickable: true,
+                        dynamicBullets: false,
+                        renderBullet: function (index: number, className: string) {
+                            return `<span class="${className}"></span>`;
+                        }
+                    }}
+                    className=""
                     breakpoints={{
                         768: {
                             slidesPerView: 2,
@@ -133,6 +163,7 @@ export default function ServicesSection() {
                         </SwiperSlide>
                     ))}
                 </Swiper>
+                
             </div>
 
             {/* Mobile view with vertical stack */}
@@ -183,7 +214,7 @@ export default function ServicesSection() {
                 </Link>
             </div>
 
-            <div className="flex flex-col md:flex-row items-center justify-center gap-8 mt-14">
+            <div className="flex flex-col md:flex-row items-center justify-center gap-8 mt-10">
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
