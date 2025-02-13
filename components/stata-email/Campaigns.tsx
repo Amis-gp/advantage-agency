@@ -25,10 +25,6 @@ interface Campaign {
     count: number;
     percentage: number;
   };
-  interested: {
-    count: number;
-    percentage: number;
-  };
   date: string;
   stats: {
     sent: {
@@ -48,10 +44,6 @@ interface Campaign {
       percentage: number;
     };
     bounces: {
-      count: number;
-      percentage: number;
-    };
-    interested: {
       count: number;
       percentage: number;
     };
@@ -124,7 +116,6 @@ const Campaigns = () => {
               <th className="pb-4 w-[120px]">LINK CLICKS</th>
               <th className="pb-4 w-[120px]">EMAIL REPLIES</th>
               <th className="pb-4 w-[120px]">BOUNCES</th>
-              <th className="pb-4 w-[120px]">INTERESTED</th>
               <th className="pb-4 w-[60px]"></th>
             </tr>
           </thead>
@@ -174,9 +165,7 @@ const Campaigns = () => {
                 <td className="w-[120px]">
                   {campaign.stats.bounces.count} <span className="text-gray-500 ml-2">{campaign.stats.bounces.percentage}%</span>
                 </td>
-                <td className="w-[120px]">
-                  {campaign.stats.interested.count} <span className="text-gray-500 ml-2a">{campaign.stats.interested.percentage}%</span>
-                </td>
+                
                 <td className="w-[60px]">
                   <button className="text-gray-400 hover:text-gray-600">
                     <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">

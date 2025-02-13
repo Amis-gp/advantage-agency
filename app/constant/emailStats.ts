@@ -29,10 +29,6 @@ interface Campaign {
       count: number;
       percentage: number;
     };
-    interested: {
-      count: number;
-      percentage: number;
-    };
     contacted: {
       count: number;
       percentage: number;
@@ -73,7 +69,6 @@ export const CAMPAIGNS: Campaign[] = [
       clicks: { count: '-', percentage: '-' },
       replies: { count: 56, percentage: 2 },
       bounces: { count: 10, percentage: 1 },
-      interested: { count: 21, percentage: 1 },
       contacted: { count: 2921, percentage: 94 },
       unsubscribed: { count: 14, percentage: 1 },
       notReached: { count: 1, percentage: 0 }
@@ -96,7 +91,6 @@ export const CAMPAIGNS: Campaign[] = [
       clicks: { count: '-', percentage: '-' },
       replies: { count: 115, percentage: 5 },
       bounces: { count: 12, percentage: 1 },
-      interested: { count: 15, percentage: 1 },
       contacted: { count: 2194, percentage: 95 },
       unsubscribed: { count: 44, percentage: 2 },
       notReached: { count: 3, percentage: 0 }
@@ -105,24 +99,23 @@ export const CAMPAIGNS: Campaign[] = [
   },
   {
     id: '3',
-    name: 'Advantage #2',
+    name: 'Crypto offer - Justin',
     list: 'Advantage USA 927',
     senderAccounts: {
       main: 'mark@advantageinbox...',
       additional: 2
     },
     status: 'Archived',
-    totalRecipients: 450,
+    totalRecipients: 10739,
     stats: {
-      sent: { count: 892, percentage: 82 },
+      sent: { count: 21478, percentage: 82 },
       opens: { count: '-', percentage: '-' },
       clicks: { count: '-', percentage: '-' },
-      replies: { count: 25, percentage: 3 },
-      bounces: { count: 12, percentage: 1 },
-      interested: { count: 8, percentage: 1 },
-      contacted: { count: 399, percentage: 89 },
-      unsubscribed: { count: 15, percentage: 2 },
-      notReached: { count: 36, percentage: 8 }
+      replies: { count: 1073, percentage: 5 },
+      bounces: { count: 82, percentage: 1 },
+      contacted: { count: 15960, percentage: 65 },
+      unsubscribed: { count: 241, percentage: 2 },
+      notReached: { count: 368, percentage: 3 }
     },
     date: '1 Nov 2024, 11:45 AM'
   },
@@ -142,7 +135,6 @@ export const CAMPAIGNS: Campaign[] = [
       clicks: { count: '-', percentage: '-' },
       replies: { count: 18, percentage: 4 },
       bounces: { count: 5, percentage: 1 },
-      interested: { count: 6, percentage: 1 },
       contacted: { count: 199, percentage: 80 },
       unsubscribed: { count: 8, percentage: 3 },
       notReached: { count: 43, percentage: 17 }
@@ -165,7 +157,6 @@ export const CAMPAIGNS: Campaign[] = [
       clicks: { count: '-', percentage: '-' },
       replies: { count: 42, percentage: 5 },
       bounces: { count: 15, percentage: 2 },
-      interested: { count: 12, percentage: 1 },
       contacted: { count: 699, percentage: 82 },
       unsubscribed: { count: 25, percentage: 3 },
       notReached: { count: 99, percentage: 12 }
@@ -188,7 +179,6 @@ export const CAMPAIGNS: Campaign[] = [
       clicks: { count: '-', percentage: '-' },
       replies: { count: 28, percentage: 4 },
       bounces: { count: 8, percentage: 1 },
-      interested: { count: 9, percentage: 1 },
       contacted: { count: 289, percentage: 83 },
       unsubscribed: { count: 12, percentage: 3 },
       notReached: { count: 49, percentage: 14 }
@@ -196,9 +186,6 @@ export const CAMPAIGNS: Campaign[] = [
     date: '22 Oct 2024, 16:15 PM'
   },
 ];
-
-
-
 
 export const CAMPAIGN_CHART_DATA: Record<string, ChartDataPoint[]> = {
   '1': [
@@ -268,37 +255,98 @@ export const CAMPAIGN_CHART_DATA: Record<string, ChartDataPoint[]> = {
     { date: '31 Mar 2024', sent: 166, replied: 4, bounced: 0 }
   ],
   '3': [
-    { date: '1 Mar 2024', sent: 10, replied: 0, bounced: 0 },
-    { date: '2 Mar 2024', sent: 10, replied: 0, bounced: 0 },
-    { date: '3 Mar 2024', sent: 10, replied: 0, bounced: 0 },
-    { date: '4 Mar 2024', sent: 10, replied: 0, bounced: 0 },
-    { date: '5 Mar 2024', sent: 10, replied: 0, bounced: 0 },
-    { date: '6 Mar 2024', sent: 10, replied: 0, bounced: 0 },
-    { date: '7 Mar 2024', sent: 10, replied: 0, bounced: 0 },
-    { date: '8 Mar 2024', sent: 10, replied: 0, bounced: 0 },
-    { date: '9 Mar 2024', sent: 10, replied: 0, bounced: 0 },
-    { date: '10 Mar 2024', sent: 10, replied: 0, bounced: 0 },
-    { date: '11 Mar 2024', sent: 9, replied: 0, bounced: 0 },
-    { date: '12 Mar 2024', sent: 9, replied: 0, bounced: 0 },
-    { date: '13 Mar 2024', sent: 9, replied: 0, bounced: 0 },
-    { date: '14 Mar 2024', sent: 9, replied: 0, bounced: 0 },
-    { date: '15 Mar 2024', sent: 9, replied: 0, bounced: 0 },
-    { date: '16 Mar 2024', sent: 9, replied: 0, bounced: 0 },
-    { date: '17 Mar 2024', sent: 9, replied: 0, bounced: 0 },
-    { date: '18 Mar 2024', sent: 9, replied: 0, bounced: 0 },
-    { date: '19 Mar 2024', sent: 9, replied: 0, bounced: 0 },
-    { date: '20 Mar 2024', sent: 9, replied: 0, bounced: 0 },
-    { date: '21 Mar 2024', sent: 10, replied: 0, bounced: 0 },
-    { date: '22 Mar 2024', sent: 10, replied: 0, bounced: 0 },
-    { date: '23 Mar 2024', sent: 10, replied: 0, bounced: 0 },
-    { date: '24 Mar 2024', sent: 10, replied: 0, bounced: 0 },
-    { date: '25 Mar 2024', sent: 10, replied: 0, bounced: 0 },
-    { date: '26 Mar 2024', sent: 10, replied: 0, bounced: 0 },
-    { date: '27 Mar 2024', sent: 10, replied: 0, bounced: 0 },
-    { date: '28 Mar 2024', sent: 10, replied: 0, bounced: 0 },
-    { date: '29 Mar 2024', sent: 10, replied: 0, bounced: 0 },
-    { date: '30 Mar 2024', sent: 10, replied: 0, bounced: 0 },
-    { date: '31 Mar 2024', sent: 9, replied: 0, bounced: 0 }
+    { date: '1 Nov 2024', sent: 114, replied: 6, bounced: 4 },
+    { date: '2 Nov 2024', sent: 116, replied: 5, bounced: 1 },
+    { date: '3 Nov 2024', sent: 230, replied: 12, bounced: 0 },
+    { date: '4 Nov 2024', sent: 232, replied: 14, bounced: 4 },
+    { date: '5 Nov 2024', sent: 230, replied: 10, bounced: 2 },
+    { date: '6 Nov 2024', sent: 232, replied: 12, bounced: 0 },
+    { date: '7 Nov 2024', sent: 230, replied: 12, bounced: 0 },
+    { date: '8 Nov 2024', sent: 232, replied: 10, bounced: 2 },
+    { date: '9 Nov 2024', sent: 230, replied: 12, bounced: 0 },
+    { date: '10 Nov 2024', sent: 232, replied: 14, bounced: 4 },
+    { date: '11 Nov 2024', sent: 230, replied: 10, bounced: 2 },
+    { date: '12 Nov 2024', sent: 232, replied: 12, bounced: 0 },
+    { date: '13 Nov 2024', sent: 230, replied: 10, bounced: 2 },
+    { date: '14 Nov 2024', sent: 232, replied: 14, bounced: 0 },
+    { date: '15 Nov 2024', sent: 230, replied: 10, bounced: 2 },
+    { date: '16 Nov 2024', sent: 232, replied: 12, bounced: 0 },
+    { date: '17 Nov 2024', sent: 230, replied: 10, bounced: 2 },
+    { date: '18 Nov 2024', sent: 232, replied: 14, bounced: 0 },
+    { date: '19 Nov 2024', sent: 230, replied: 10, bounced: 2 },
+    { date: '20 Nov 2024', sent: 232, replied: 12, bounced: 0 },
+    { date: '21 Nov 2024', sent: 230, replied: 10, bounced: 2 },
+    { date: '22 Nov 2024', sent: 232, replied: 14, bounced: 0 },
+    { date: '23 Nov 2024', sent: 230, replied: 10, bounced: 2 },
+    { date: '24 Nov 2024', sent: 232, replied: 12, bounced: 0 },
+    { date: '25 Nov 2024', sent: 230, replied: 10, bounced: 2 },
+    { date: '26 Nov 2024', sent: 232, replied: 12, bounced: 0 },
+    { date: '27 Nov 2024', sent: 230, replied: 10, bounced: 2 },
+    { date: '28 Nov 2024', sent: 232, replied: 14, bounced: 0 },
+    { date: '29 Nov 2024', sent: 230, replied: 10, bounced: 4 },
+    { date: '30 Nov 2024', sent: 232, replied: 12, bounced: 0 },
+    { date: '1 Dec 2024', sent: 256, replied: 14, bounced: 0 },
+    { date: '2 Dec 2024', sent: 254, replied: 12, bounced: 2 },
+    { date: '3 Dec 2024', sent: 256, replied: 14, bounced: 0 },
+    { date: '4 Dec 2024', sent: 254, replied: 12, bounced: 0 },
+    { date: '5 Dec 2024', sent: 256, replied: 14, bounced: 2 },
+    { date: '6 Dec 2024', sent: 254, replied: 12, bounced: 0 },
+    { date: '7 Dec 2024', sent: 256, replied: 14, bounced: 6 },
+    { date: '8 Dec 2024', sent: 254, replied: 12, bounced: 2 },
+    { date: '9 Dec 2024', sent: 256, replied: 14, bounced: 0 },
+    { date: '10 Dec 2024', sent: 254, replied: 12, bounced: 0 },
+    { date: '11 Dec 2024', sent: 256, replied: 14, bounced: 0 },
+    { date: '12 Dec 2024', sent: 254, replied: 12, bounced: 2 },
+    { date: '13 Dec 2024', sent: 256, replied: 14, bounced: 0 },
+    { date: '14 Dec 2024', sent: 254, replied: 12, bounced: 4 },
+    { date: '15 Dec 2024', sent: 256, replied: 14, bounced: 2 },
+    { date: '16 Dec 2024', sent: 254, replied: 12, bounced: 0 },
+    { date: '17 Dec 2024', sent: 256, replied: 14, bounced: 0 },
+    { date: '18 Dec 2024', sent: 254, replied: 12, bounced: 2 },
+    { date: '19 Dec 2024', sent: 256, replied: 14, bounced: 0 },
+    { date: '20 Dec 2024', sent: 254, replied: 12, bounced: 0 },
+    { date: '21 Dec 2024', sent: 256, replied: 14, bounced: 0 },
+    { date: '22 Dec 2024', sent: 254, replied: 12, bounced: 2 },
+    { date: '23 Dec 2024', sent: 256, replied: 14, bounced: 0 },
+    { date: '24 Dec 2024', sent: 254, replied: 12, bounced: 0 },
+    { date: '25 Dec 2024', sent: 256, replied: 14, bounced: 2 },
+    { date: '26 Dec 2024', sent: 254, replied: 12, bounced: 2 },
+    { date: '27 Dec 2024', sent: 256, replied: 14, bounced: 2 },
+    { date: '28 Dec 2024', sent: 254, replied: 12, bounced: 2 },
+    { date: '29 Dec 2024', sent: 254, replied: 12, bounced: 2 },
+    { date: '30 Dec 2024', sent: 254, replied: 12, bounced: 2 },
+    { date: '31 Dec 2024', sent: 254, replied: 12, bounced: 2 },
+    { date: '1 Jan 2025', sent: 230, replied: 12, bounced: 0 },
+    { date: '2 Jan 2025', sent: 232, replied: 10, bounced: 2 },
+    { date: '3 Jan 2025', sent: 230, replied: 12, bounced: 0 },
+    { date: '4 Jan 2025', sent: 232, replied: 14, bounced: 6 },
+    { date: '5 Jan 2025', sent: 230, replied: 10, bounced: 2 },
+    { date: '6 Jan 2025', sent: 232, replied: 12, bounced: 0 },
+    { date: '7 Jan 2025', sent: 230, replied: 12, bounced: 0 },
+    { date: '8 Jan 2025', sent: 232, replied: 10, bounced: 2 },
+    { date: '9 Jan 2025', sent: 230, replied: 12, bounced: 0 },
+    { date: '10 Jan 2025', sent: 232, replied: 14, bounced: 4 },
+    { date: '11 Jan 2025', sent: 230, replied: 10, bounced: 2 },
+    { date: '12 Jan 2025', sent: 232, replied: 12, bounced: 0 },
+    { date: '13 Jan 2025', sent: 230, replied: 10, bounced: 2 },
+    { date: '14 Jan 2025', sent: 232, replied: 14, bounced: 0 },
+    { date: '15 Jan 2025', sent: 230, replied: 10, bounced: 2 },
+    { date: '16 Jan 2025', sent: 232, replied: 12, bounced: 0 },
+    { date: '17 Jan 2025', sent: 230, replied: 10, bounced: 2 },
+    { date: '18 Jan 2025', sent: 232, replied: 14, bounced: 0 },
+    { date: '19 Jan 2025', sent: 230, replied: 10, bounced: 2 },
+    { date: '20 Jan 2025', sent: 232, replied: 12, bounced: 0 },
+    { date: '21 Jan 2025', sent: 230, replied: 10, bounced: 2 },
+    { date: '22 Jan 2025', sent: 232, replied: 14, bounced: 0 },
+    { date: '23 Jan 2025', sent: 230, replied: 10, bounced: 2 },
+    { date: '24 Jan 2025', sent: 232, replied: 12, bounced: 0 },
+    { date: '25 Jan 2025', sent: 230, replied: 10, bounced: 2 },
+    { date: '26 Jan 2025', sent: 232, replied: 12, bounced: 0 },
+    { date: '27 Jan 2025', sent: 230, replied: 10, bounced: 2 },
+    { date: '28 Jan 2025', sent: 232, replied: 14, bounced: 0 },
+    { date: '29 Jan 2025', sent: 230, replied: 10, bounced: 4 },
+    { date: '30 Jan 2025', sent: 232, replied: 12, bounced: 0 },
+    { date: '31 Jan 2025', sent: 230, replied: 10, bounced: 2 }
   ],
   '4': [
     { date: '1 Mar 2024', sent: 10, replied: 0, bounced: 0 },

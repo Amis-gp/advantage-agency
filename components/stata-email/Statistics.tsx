@@ -24,10 +24,6 @@ interface EmailStats {
     percentage: number;
     count: number;
   };
-  interested: {
-    percentage: number;
-    count: number;
-  };
   unsubscribed: {
     percentage: number;
     count: number;
@@ -57,7 +53,6 @@ const StataEmail: React.FC<StatisticsProps> = ({ campaignId }) => {
     clicks: { count: 0, percentage: 0 },
     replies: { count: 0, percentage: 0 },
     bounces: { count: 0, percentage: 0 },
-    interested: { count: 0, percentage: 0 },
     contacted: { count: 0, percentage: 0 },
     unsubscribed: { count: 0, percentage: 0 },
     notReached: { count: 0, percentage: 0 }
@@ -65,10 +60,23 @@ const StataEmail: React.FC<StatisticsProps> = ({ campaignId }) => {
 
   const chartData = CAMPAIGN_CHART_DATA[campaignId] || [];
 
+  const formatDate = (date: Date) => {
+    return date.toLocaleDateString('en-US', {
+      day: '2-digit',
+      month: 'short',
+      year: 'numeric'
+    }).replace(',', '');
+  };
+
+  // Отримуємо першу і останню дату з масиву даних
+  const dates = chartData.map(item => new Date(item.date));
+  const startDate = dates[0];
+  const endDate = dates[dates.length - 1];
+
   return (
     <div className="flex flex-col h-[calc(100vh-64px)] overflow-y-auto">
       <div className="space-y-6 px-6 py-6 bg-gray-200">
-        <div className="grid grid-cols-6 gap-4 rounded-3xl">
+        <div className="grid grid-cols-5 gap-4 rounded-3xl">
           <div className="bg-gray-50 p-4 rounded-lg">
             <div className="flex items-center gap-2 mb-2">
               <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5 text-gray-600" viewBox="0 0 20 20" fill="currentColor">
@@ -84,7 +92,7 @@ const StataEmail: React.FC<StatisticsProps> = ({ campaignId }) => {
               <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5 text-gray-600" viewBox="0 0 20 20" fill="currentColor">
                 <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
               </svg>
-              <span>Contacted</span>
+              <span>Open rate</span>
             </div>
             <div className="text-2xl font-bold">{stats.contacted.percentage}%</div>
             <div className="text-sm text-gray-500">({stats.contacted.count} recipients)</div>
@@ -99,17 +107,6 @@ const StataEmail: React.FC<StatisticsProps> = ({ campaignId }) => {
             </div>
             <div className="text-2xl font-bold">{stats.replies.percentage}%</div>
             <div className="text-sm text-gray-500">({stats.replies.count} recipients)</div>
-          </div>
-
-          <div className="bg-gray-50 p-4 rounded-lg">
-            <div className="flex items-center gap-2 mb-2">
-              <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5 text-gray-600" viewBox="0 0 20 20" fill="currentColor">
-                <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-              </svg>
-              <span>Interested</span>
-            </div>
-            <div className="text-2xl font-bold">{stats.interested.percentage}%</div>
-            <div className="text-sm text-gray-500">({stats.interested.count} recipients)</div>
           </div>
 
           <div className="bg-gray-50 p-4 rounded-lg">
@@ -154,7 +151,9 @@ const StataEmail: React.FC<StatisticsProps> = ({ campaignId }) => {
                 <button className="px-3 py-1.5 text-sm rounded-md hover:bg-gray-100">Week</button>
                 <button className="px-3 py-1.5 text-sm rounded-md hover:bg-gray-100">Month</button>
                 <button className="px-3 py-1.5 text-sm rounded-md hover:bg-gray-100">All time</button>
-                <button className="px-3 py-1.5 text-sm border rounded-md">01 Mar - 31 Mar 2024</button>
+                <button className="px-3 py-1.5 text-sm border rounded-md">
+                  {`${formatDate(startDate)} - ${formatDate(endDate)}`}
+                </button>
               </div>
             </div>
           </div>
