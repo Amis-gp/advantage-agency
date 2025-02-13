@@ -798,51 +798,11 @@ export default function BlackAffiliateMarketing() {
             Choose Your Path to Success
           </h2>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
             {/* Basic Package */}
+            
             <div className="bg-black/40 backdrop-blur-sm p-8 rounded-2xl border border-white/10 hover:border-red-600/50 transition-all duration-300 hover:shadow-2xl hover:shadow-red-600/20 group">
               <h3 className="text-2xl font-bold mb-2">Basic</h3>
-              <p className="text-gray-400 mb-8 h-12">Your Gateway to Affiliate Success Starts Here</p>
-              
-              <div className="text-5xl font-bold mb-8 group-hover:text-red-500 transition-colors">$499</div>
-              
-               <div className="mt-6 mb-8 text-center">
-                <Link href="/black-affiliate-marketing/form" className="w-full bg-red-800 hover:bg-red-700 text-white py-3 px-6 rounded-lg transition-colors">
-                  BUY NOW
-                </Link>
-              </div>
-
-              <ul className="space-y-4 text-sm">
-                <li className="flex items-start gap-2">
-                  <span className="text-red-500 mt-1">•</span>
-                  Push ads academy
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="text-red-500 mt-1">•</span>
-                  Basic affiliate marketing knowledge
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="text-red-500 mt-1">•</span>
-                  Working with affiliate networks
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="text-red-500 mt-1">•</span>
-                  Online marketing principles
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="text-red-500 mt-1">•</span>
-                  Manuals on how to work with different tools
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="text-red-500 mt-1">•</span>
-                  Traffic sources sheet
-                </li>
-              </ul>
-            </div>
-
-            {/* Black Affiliate Package */}
-            <div className="bg-black/40 backdrop-blur-sm p-8 rounded-2xl border border-white/10 hover:border-red-600/50 transition-all duration-300 hover:shadow-2xl hover:shadow-red-600/20 group">
-              <h3 className="text-2xl font-bold mb-2">Black Affiliate</h3>
               <p className="text-gray-400 mb-8 h-12">Become a Black Belt in Affiliate Marketing</p>
               
               <div className="text-5xl font-bold mb-8 group-hover:text-red-500 transition-colors">$999</div>
@@ -893,14 +853,14 @@ export default function BlackAffiliateMarketing() {
               </div>
             </div>
 
-            {/* Pro Package */}
+            {/* Black Affiliate Package */}
             <div className="bg-black/40 backdrop-blur-sm p-8 rounded-2xl border border-white/10 hover:border-red-600/50 transition-all duration-300 hover:shadow-2xl hover:shadow-red-600/20 group">
-              <h3 className="text-2xl font-bold mb-2">Pro</h3>
+              <h3 className="text-2xl font-bold mb-2">Black Affiliate</h3>
               <p className="text-gray-400 mb-8 h-12">Master Affiliate Marketing with Pro Mentorship</p>
               
-              <div className="text-5xl font-bold mb-8 group-hover:text-red-500 transition-colors">$2499</div>
+              <div className="text-5xl font-bold mb-8 group-hover:text-red-500 transition-colors">$2990</div>
               
-               <div className="mt-6 mb-8 text-center">
+              <div className="mt-6 mb-8 text-center">
                 <Link href="/black-affiliate-marketing/form" className="w-full bg-red-800 hover:bg-red-700 text-white py-3 px-6 rounded-lg transition-colors">
                   BUY NOW
                 </Link>
