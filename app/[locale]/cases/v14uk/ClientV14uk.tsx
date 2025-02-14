@@ -1,6 +1,7 @@
   "use client"
 
   import { NextPage } from 'next';
+  import { useEffect } from 'react';
   import Image from 'next/image';
   import '@/app/styles.css'
   import MessengerButton from '@/components/MessengerButton';
@@ -9,6 +10,9 @@
 
 
   const V14ukPage: NextPage = () => {
+    useEffect(() => {
+      document.title = "10 739 листів для крипто-проекту | Кейс";
+    }, []);
   return (    
     <div className="text-black bg-white max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         
