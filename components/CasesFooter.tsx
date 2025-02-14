@@ -16,9 +16,9 @@ export default function CasesFooter() {
                         <p className="text-lg font-bold mb-2">{t('callUs')}</p>
                         <a 
                             className="text-orange-600 text-xl transition-all duration-300 hover:text-orange-700 hover:underline" 
-                            href="tel:+19292052610"
+                            href="tel:+13393688255"
                         >
-                            +1 (929) 205-26-10
+                            +1 (339) 368-82-55
                         </a>
                     </div>
                     <div className="text-center">
