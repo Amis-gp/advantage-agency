@@ -4,9 +4,9 @@ export const portfolioSlides = [
         date: '01.11.2024 - 31.01.2025',
         image: '/img/portfolio/crypto-offer.webp',
         stats: {
-            emailsSent: '21478',
-            responses: '-',
-            demoCalls: '-'
+            emailsSent: '+20k',
+            openRate: '65%',
+            replyRate: '5%'
         },
         location: '🇺🇸 United States',
         slug: {
@@ -27,6 +27,22 @@ export const portfolioSlides = [
         slug: {
             en: 'cases/v13',
             uk: 'cases/v13uk'
+        },
+    },
+    {
+        title: 'Build Scraper',
+        date: '01.11.2024 - 31.01.2025',
+        image: '/img/portfolio/build-scraper.webp',
+        stats: {
+            instagram: 'Yes',
+            facebook: 'Yes',
+            linkedin: 'Yes',
+            other: 'Yes'
+        },
+        location: '🌎 Worldwide',
+        slug: {
+            en: 'cases/v14',
+            uk: 'cases/v14uk'
         },
     },
     {

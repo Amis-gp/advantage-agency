@@ -49,7 +49,13 @@
             "location": "Location",
             "emailsSent": "Emails Sent",
             "responses": "Responses",
-            "demoCalls": "Demo Calls"
+            "demoCalls": "Demo Calls",
+            "openRate": "Open Rate",
+            "replyRate": "Reply Rate",
+            "instagram": "Instagram",
+            "facebook": "Facebook",
+            "linkedin": "LinkedIn",
+            "other": "Other Platforms"
         }
     },
     "partners": {
@@ -1037,6 +1043,7 @@
             ],
             "cta": "View case studies"
         },
+       
         "pricing": {
             "title_part1": "Choose a Plan",
             "title_emphasis": "That's Right",
@@ -1117,6 +1124,45 @@
                 "company": "Advantage Agency"
             },
             "privacy_policy": "Privacy Policy"
+        },
+        "case-studies": {
+            "title": {
+                "part1": "Our Success",
+                "part2": "Stories"
+            },
+            "subtitle": "Discover how we've helped businesses achieve remarkable results through our proven strategies",
+            "cases": [
+                {
+                "title": "E-commerce Lead Generation",
+                "description": "How we helped an online store increase their customer base through targeted email campaigns",
+                "link": "/cases/ecommerce",
+                "stats": {
+                    "leads": "2,500+",
+                    "conversion": "12%",
+                    "revenue": "$180K"
+                }
+                },
+                {
+                "title": "SaaS Sales Expansion",
+                "description": "Scaling a B2B software company's outreach to enterprise clients",
+                "link": "/cases/saas",
+                "stats": {
+                    "leads": "1,800+",
+                    "conversion": "15%",
+                    "revenue": "$250K"
+                }
+                },
+                {
+                "title": "Agency Client Acquisition",
+                "description": "Helping a marketing agency attract high-ticket clients through cold outreach",
+                "link": "/cases/agency",
+                "stats": {
+                    "leads": "950+",
+                    "conversion": "18%",
+                    "revenue": "$320K"
+                }
+                }
+            ]
         }
     }
 }

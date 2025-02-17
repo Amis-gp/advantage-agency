@@ -248,7 +248,7 @@
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
           <div className="border-l-4 border-blue-400 pl-6 py-4">
-            <div className="text-4xl font-bold text-gray-800 mb-2">10,000</div>
+            <div className="text-4xl font-bold text-gray-800 mb-2">20,000</div>
             <div className="text-gray-600">emails sent</div>
           </div>
 
@@ -258,7 +258,7 @@
           </div>
 
           <div className="border-l-4 border-purple-400 pl-6 py-4">
-            <div className="text-4xl font-bold text-gray-800 mb-2">62%</div>
+            <div className="text-4xl font-bold text-gray-800 mb-2">65%</div>
             <div className="text-gray-600">Open Rate</div>
           </div>
 

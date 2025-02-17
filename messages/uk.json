@@ -49,7 +49,13 @@
             "location": "Локація",
             "emailsSent": "Відправлено листів",
             "responses": "Відповіді",
-            "demoCalls": "демо-дзвінків"
+            "demoCalls": "демо-дзвінків",
+            "openRate": "Відсоток відкриттів",
+            "replyRate": "Відсоток відповідей",
+            "instagram": "Instagram",
+            "facebook": "Facebook",
+            "linkedin": "LinkedIn",
+            "other": "Інші платформи"
         }
     },
     "partners": {
@@ -1147,6 +1153,45 @@
                 "company": "Advantage Agency"
             },
             "privacy_policy": "Політика конфіденційності"
+        },
+        "case-studies": {
+            "title": {
+                "part1": "Історії",
+                "part2": "успіху"
+            },
+            "subtitle": "Дізнайтеся, як ми допомогли бізнесам досягти вражаючих результатів за допомогою наших перевірених стратегій",
+            "cases": [
+                {
+                    "title": "Лідогенерація для E-commerce",
+                    "description": "Як ми допомогли інтернет-магазину збільшити клієнтську базу через таргетовані email-кампанії",
+                    "link": "/cases/ecommerce",
+                    "stats": {
+                        "leads": "2,500+",
+                        "conversion": "12%",
+                        "revenue": "180K$"
+                    }
+                },
+                {
+                    "title": "Розширення продажів SaaS",
+                    "description": "Масштабування охоплення B2B компанії програмного забезпечення для корпоративних клієнтів",
+                    "link": "/cases/saas",
+                    "stats": {
+                        "leads": "1,800+",
+                        "conversion": "15%",
+                        "revenue": "250K$"
+                    }
+                },
+                {
+                    "title": "Залучення клієнтів для агентства",
+                    "description": "Допомога маркетинговому агентству залучати високобюджетних клієнтів через холодні розсилки",
+                    "link": "/cases/agency",
+                    "stats": {
+                        "leads": "950+",
+                        "conversion": "18%",
+                        "revenue": "320K$"
+                    }
+                }
+            ]
         }
     }
 }
