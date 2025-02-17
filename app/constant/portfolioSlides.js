@@ -30,7 +30,7 @@ export const portfolioSlides = [
         },
     },
     {
-        title: 'Build Scraper',
+        title: 'Our Scrapping Software',
         date: '01.11.2024 - 31.01.2025',
         image: '/img/portfolio/build-scraper.webp',
         stats: {

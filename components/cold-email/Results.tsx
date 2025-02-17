@@ -2,10 +2,13 @@
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 import { useState, useRef } from 'react';
-import { useTranslations } from 'next-intl';
+import { useLocale, useTranslations } from 'next-intl';
+import CaseStudies from './CaseStudies';
+import Link from 'next/link';
 
 export default function Results() {
     const t = useTranslations('cold-email.results');
+    const locale = useLocale();
     const videoRef = useRef<HTMLVideoElement>(null);
     const [isPlaying, setIsPlaying] = useState(false);
 
@@ -92,7 +95,7 @@ export default function Results() {
                         transition={{ duration: 0.6 }}
                         className="bg-black/30 rounded-2xl p-8 border border-[#4F46E5] transition-all duration-300"
                     >
-                        <div className="grid grid-cols-2 gap-8 relative">
+                        <div className="grid grid-cols-2 gap-8 relative mb-8">
                             {stats.map((stat, index) => (
                                 <div key={index} className="text-center">
                                     <h3 className={`text-3xl md:text-4xl font-bold mb-2 ${
@@ -111,6 +114,27 @@ export default function Results() {
                                 </div>
                             ))}
                         </div>
+                        <Link 
+                            href={`/cases/v14${locale}`} 
+                            className="flex items-center justify-center gap-3 text-white bg-gradient-to-r from-[#4F46E5] via-[#7C3AED] to-[#06B6D4] p-3 rounded-xl hover:opacity-90 transition-all duration-300 group mt-8"
+                        >
+                            <span className="text-sm font-medium tracking-wide">
+                                {t('viewCase')}
+                            </span>
+                            <svg 
+                                className="w-4 h-4 transform group-hover:translate-x-1 transition-transform duration-300" 
+                                fill="none" 
+                                viewBox="0 0 24 24" 
+                                stroke="currentColor"
+                            >
+                                <path 
+                                    strokeLinecap="round" 
+                                    strokeLinejoin="round" 
+                                    strokeWidth={2} 
+                                    d="M13 7l5 5m0 0l-5 5m5-5H6" 
+                                />
+                            </svg>
+                        </Link>
                     </motion.div>
 
                     <motion.div
@@ -223,6 +247,7 @@ export default function Results() {
                     />
                 </motion.div>
             </div>
+            <CaseStudies />
         </section>
     );
 }

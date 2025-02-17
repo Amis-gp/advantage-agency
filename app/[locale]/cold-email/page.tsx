@@ -8,7 +8,6 @@ import Process from '@/components/cold-email/Process';
 import Footer from '@/components/cold-email/Footer';
 import ParticlesBackground from '@/components/cold-email/ParticlesBackground';
 import Results from '@/components/cold-email/Results';
-import CaseStudies from '@/components/cold-email/CaseStudies';
 
 export default function OffersPage({ 
     params: { locale } 
@@ -28,7 +27,6 @@ export default function OffersPage({
                 <HowItWorks />
                 <Process />
                 <Results />
-                <CaseStudies />
                 <Testimonials />
                 <Pricing />
                 <FAQ />

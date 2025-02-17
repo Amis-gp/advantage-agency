@@ -1013,6 +1013,7 @@
                     "description": "Нових клієнтів щомісяця"
                 }
             ],
+            "viewCase": "Переглянути кейс",
             "images": {
                 "instagram": "Пост клієнта в Instagram",
                 "video": {
@@ -1162,36 +1163,48 @@
             "subtitle": "Дізнайтеся, як ми допомогли бізнесам досягти вражаючих результатів за допомогою наших перевірених стратегій",
             "cases": [
                 {
-                    "title": "Лідогенерація для E-commerce",
-                    "description": "Як ми допомогли інтернет-магазину збільшити клієнтську базу через таргетовані email-кампанії",
-                    "link": "/cases/ecommerce",
+                    "title": "Наш парсер даних",
+                    "description": "Мультиплатформне рішення для збору даних з глобальним охопленням",
+                    "link": "/cases/v14uk",
                     "stats": {
-                        "leads": "2,500+",
-                        "conversion": "12%",
-                        "revenue": "180K$"
+                        "instagram": "Так",
+                        "facebook": "Так",
+                        "linkedin": "Так"
                     }
                 },
                 {
-                    "title": "Розширення продажів SaaS",
-                    "description": "Масштабування охоплення B2B компанії програмного забезпечення для корпоративних клієнтів",
-                    "link": "/cases/saas",
+                    "title": "3D Візуалізація",
+                    "description": "Високоякісна візуалізація для архітектури та нерухомості",
+                    "link": "/cases/v6uk",
                     "stats": {
-                        "leads": "1,800+",
-                        "conversion": "15%",
-                        "revenue": "250K$"
+                        "emailResponses": "174",
+                        "leadCalls": "116",
+                        "closedDeals": "29"
                     }
                 },
                 {
-                    "title": "Залучення клієнтів для агентства",
-                    "description": "Допомога маркетинговому агентству залучати високобюджетних клієнтів через холодні розсилки",
-                    "link": "/cases/agency",
+                    "title": "Email маркетинг",
+                    "description": "Високоефективна email кампанія для B2B сектору",
+                    "link": "/cases/v13uk",
                     "stats": {
-                        "leads": "950+",
-                        "conversion": "18%",
-                        "revenue": "320K$"
+                        "emailsSent": "2921",
+                        "responses": "56",
+                        "demoCalls": "31"
                     }
                 }
-            ]
+            ],
+            "stats": {
+                "instagram": "Instagram",
+                "facebook": "Facebook",
+                "linkedin": "LinkedIn",
+                "emailResponses": "Відповіді",
+                "leadCalls": "Дзвінки",
+                "closedDeals": "Угоди",
+                "emailsSent": "Відправлено",
+                "responses": "Відповіді",
+                "demoCalls": "Демо"
+            },
+            "viewCase": "Переглянути кейс"
         }
     }
 }

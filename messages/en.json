@@ -983,6 +983,7 @@
                     "description": "New clients every month"
                 }
             ],
+            "viewCase": "View Case",
             "images": {
                 "instagram": "Client Instagram Post",
                 "video": {
@@ -1133,36 +1134,48 @@
             "subtitle": "Discover how we've helped businesses achieve remarkable results through our proven strategies",
             "cases": [
                 {
-                "title": "E-commerce Lead Generation",
-                "description": "How we helped an online store increase their customer base through targeted email campaigns",
-                "link": "/cases/ecommerce",
+                "title": "Our Scrapping Software",
+                "description": "Multi-platform data collection solution with global reach",
+                "link": "/cases/v14",
                 "stats": {
-                    "leads": "2,500+",
-                    "conversion": "12%",
-                    "revenue": "$180K"
+                    "instagram": "Yes",
+                    "facebook": "Yes",
+                    "linkedin": "Yes"
                 }
                 },
                 {
-                "title": "SaaS Sales Expansion",
-                "description": "Scaling a B2B software company's outreach to enterprise clients",
-                "link": "/cases/saas",
+                "title": "3D Rendering",
+                "description": "High-end visualization services for architecture and real estate",
+                "link": "/cases/v6",
                 "stats": {
-                    "leads": "1,800+",
-                    "conversion": "15%",
-                    "revenue": "$250K"
+                    "emailResponses": "174",
+                    "leadCalls": "116",
+                    "closedDeals": "29"
                 }
                 },
                 {
-                "title": "Agency Client Acquisition",
-                "description": "Helping a marketing agency attract high-ticket clients through cold outreach",
-                "link": "/cases/agency",
+                "title": "Email Marketing",
+                "description": "High-converting email marketing campaign for B2B sector",
+                "link": "/cases/v13",
                 "stats": {
-                    "leads": "950+",
-                    "conversion": "18%",
-                    "revenue": "$320K"
+                    "emailsSent": "2921",
+                    "responses": "56",
+                    "demoCalls": "31"
                 }
                 }
-            ]
+            ],
+            "stats": {
+                "instagram": "Instagram",
+                "facebook": "Facebook",
+                "linkedin": "LinkedIn",
+                "emailResponses": "Responses",
+                "leadCalls": "Calls",
+                "closedDeals": "Deals",
+                "emailsSent": "Sent",
+                "responses": "Responses",
+                "demoCalls": "Demos"
+            },
+            "viewCase": "View Case"
         }
     }
 }
