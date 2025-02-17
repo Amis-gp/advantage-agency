@@ -80,13 +80,13 @@ export default function ServicesSection() {
             {/* Desktop view with horizontal scroll */}
             <div className="hidden md:block mt-16 relative">
                 <button 
-                    className="invisible xl:visible absolute !-left-20 top-1/2 -translate-y-1/2 z-20 !w-[60px] !h-[60px] rounded-full border border-white/20 flex items-center justify-center !text-white hover:bg-white/10 transition-all duration-100"
+                    className="invisible xl:visible absolute !-left-20 top-1/2 -translate-y-1/2 z-20 !w-[60px] !h-[60px] rounded-full border border-white/20 flex items-center justify-center !text-white hover:bg-white/10 transition-all duration-100 custom-prev-button"
                     onClick={handlePrev}
                 >
                     ←
                 </button>
                 <button 
-                    className="invisible xl:visible absolute !-right-20 top-1/2 -translate-y-1/2 z-20 !w-[60px] !h-[60px] rounded-full border border-white/20 flex items-center justify-center !text-white hover:bg-white/10 transition-all duration-100"
+                    className="invisible xl:visible absolute !-right-20 top-1/2 -translate-y-1/2 z-20 !w-[60px] !h-[60px] rounded-full border border-white/20 flex items-center justify-center !text-white hover:bg-white/10 transition-all duration-100 custom-next-button"
                     onClick={handleNext}
                 >
                     →
@@ -100,8 +100,8 @@ export default function ServicesSection() {
                         swiperRef.current = swiper;
                     }}
                     navigation={{
-                        prevEl: '.swiper-button-prev',
-                        nextEl: '.swiper-button-next',
+                        prevEl: '.custom-prev-button',
+                        nextEl: '.custom-next-button',
                     }}
                     pagination={{
                         clickable: true,

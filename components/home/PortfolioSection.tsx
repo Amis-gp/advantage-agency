@@ -125,7 +125,7 @@ export default function PortfolioSection() {
                         →
                     </button>
 
-                    <Swiper {...swiperConfig} className="!pb-10 sm:!pb-16 !pt-10 !px-10">
+                    <Swiper {...swiperConfig} className="!pb-4 !pt-10 !px-10">
                         {portfolioSlides.map((slide, index) => (
                             <SwiperSlide key={index}>
                                 <div 

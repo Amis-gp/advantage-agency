@@ -1,8 +1,8 @@
 export const portfolioSlides = [
     {
-        title: 'Crypto Niches',
+        title: 'Crypto Offer',
         date: '01.11.2024 - 31.01.2025',
-        image: '/img/portfolio/crypto-niches.webp',
+        image: '/img/portfolio/crypto-offer.webp',
         stats: {
             emailsSent: '21478',
             responses: '-',
