@@ -40,14 +40,17 @@ export default function ClientResults() {
                                             alt={testimonial.imageAlt}
                                             fill
                                             className="rounded-full object-cover"
+                                            loading="lazy"
+                                            sizes="(max-width: 250px) 64px, 64px"
+                                            quality={75}
                                         />
                                     </div>
                                     <div>
                                         <h3 className="text-white font-semibold text-lg">
                                             {testimonial.name}
                                         </h3>
-                                        <p className="text-gray-400">
-                                            {testimonial.position} @ {testimonial.company}
+                                        <p className="text-gray-400 ">
+                                            {testimonial.position} @{testimonial.company}
                                         </p>
                                     </div>
                                 </div>
