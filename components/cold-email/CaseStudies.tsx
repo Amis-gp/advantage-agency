@@ -44,7 +44,7 @@ export default function CaseStudies() {
     ];
 
     return (
-        <section className="pt-28 pb-8 relative">
+        <section className="pt-28 pb-8 relative max-w-7xl mx-auto">
             <div className="container mx-auto px-4">
                 <motion.div 
                     initial={{ opacity: 0, y: 20 }}
