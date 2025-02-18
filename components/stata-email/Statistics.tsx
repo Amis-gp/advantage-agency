@@ -49,7 +49,7 @@ const StataEmail: React.FC<StatisticsProps> = ({ campaignId }) => {
   const campaign = CAMPAIGNS.find(c => c.id === campaignId);
   const stats = campaign?.stats || {
     sent: { count: 0, percentage: 0 },
-    opens: { count: 0, percentage: 0 },
+    deliverability: { count: 0, percentage: 0 },
     clicks: { count: 0, percentage: 0 },
     replies: { count: 0, percentage: 0 },
     bounces: { count: 0, percentage: 0 },
@@ -92,7 +92,7 @@ const StataEmail: React.FC<StatisticsProps> = ({ campaignId }) => {
               <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5 text-gray-600" viewBox="0 0 20 20" fill="currentColor">
                 <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
               </svg>
-              <span>Open rate</span>
+              <span>Deliverability</span>
             </div>
             <div className="text-2xl font-bold">{stats.contacted.percentage}%</div>
             <div className="text-sm text-gray-500">({stats.contacted.count} recipients)</div>

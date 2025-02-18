@@ -13,7 +13,7 @@ interface Campaign {
       count: number;
       percentage: number;
     };
-    opens: {
+    deliverability: {
       count: number | '-';
       percentage: number | '-';
     };
@@ -65,7 +65,7 @@ export const CAMPAIGNS: Campaign[] = [
     totalRecipients: 3005,
     stats: {
       sent: { count: 6450, percentage: 94 },
-      opens: { count: '-', percentage: '-' },
+      deliverability: { count: '-', percentage: '-' },
       clicks: { count: '-', percentage: '-' },
       replies: { count: 56, percentage: 2 },
       bounces: { count: 10, percentage: 1 },
@@ -87,7 +87,7 @@ export const CAMPAIGNS: Campaign[] = [
     totalRecipients: 2310,
     stats: {
       sent: { count: 5293, percentage: 93 },
-      opens: { count: '-', percentage: '-' },
+      deliverability: { count: '-', percentage: '-' },
       clicks: { count: '-', percentage: '-' },
       replies: { count: 115, percentage: 5 },
       bounces: { count: 12, percentage: 1 },
@@ -109,11 +109,11 @@ export const CAMPAIGNS: Campaign[] = [
     totalRecipients: 10739,
     stats: {
       sent: { count: 21478, percentage: 82 },
-      opens: { count: '-', percentage: '-' },
+      deliverability: { count: '-', percentage: '-' },
       clicks: { count: '-', percentage: '-' },
       replies: { count: 1073, percentage: 5 },
       bounces: { count: 82, percentage: 1 },
-      contacted: { count: 15960, percentage: 65 },
+      contacted: { count: 20618, percentage: 96 },
       unsubscribed: { count: 241, percentage: 2 },
       notReached: { count: 368, percentage: 3 }
     },
@@ -131,7 +131,7 @@ export const CAMPAIGNS: Campaign[] = [
     totalRecipients: 250,
     stats: {
       sent: { count: 472, percentage: 76 },
-      opens: { count: '-', percentage: '-' },
+      deliverability: { count: '-', percentage: '-' },
       clicks: { count: '-', percentage: '-' },
       replies: { count: 18, percentage: 4 },
       bounces: { count: 5, percentage: 1 },
@@ -153,7 +153,7 @@ export const CAMPAIGNS: Campaign[] = [
     totalRecipients: 850,
     stats: {
       sent: { count: 1862, percentage: 88 },
-      opens: { count: '-', percentage: '-' },
+      deliverability: { count: '-', percentage: '-' },
       clicks: { count: '-', percentage: '-' },
       replies: { count: 42, percentage: 5 },
       bounces: { count: 15, percentage: 2 },
@@ -175,7 +175,7 @@ export const CAMPAIGNS: Campaign[] = [
     totalRecipients: 350,
     stats: {
       sent: { count: 699, percentage: 85 },
-      opens: { count: '-', percentage: '-' },
+      deliverability: { count: '-', percentage: '-' },
       clicks: { count: '-', percentage: '-' },
       replies: { count: 28, percentage: 4 },
       bounces: { count: 8, percentage: 1 },

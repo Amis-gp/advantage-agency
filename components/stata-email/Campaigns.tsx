@@ -15,7 +15,7 @@ interface Campaign {
   status: 'Archived' | 'Active';
   totalRecipients: number;
   sentEmails: number;
-  emailOpens: number | '-';
+  deliverability: number | '-';
   linkClicks: number | '-';
   emailReplies: {
     count: number;
@@ -31,7 +31,7 @@ interface Campaign {
       count: number;
       percentage: number;
     };
-    opens: {
+    deliverability: {
       count: number | '-';
       percentage: number | '-';
     };
@@ -112,7 +112,7 @@ const Campaigns = () => {
               <th className="pb-4 w-[400px]">CAMPAIGN</th>
               <th className="pb-4 w-[100px]">STATUS</th>
               <th className="pb-4 w-[120px]">SENT EMAILS</th>
-              <th className="pb-4 w-[120px]">EMAIL OPENS</th>
+              <th className="pb-4 w-[120px]">DELIVERABILITY</th>
               <th className="pb-4 w-[120px]">LINK CLICKS</th>
               <th className="pb-4 w-[120px]">EMAIL REPLIES</th>
               <th className="pb-4 w-[120px]">BOUNCES</th>
@@ -157,7 +157,7 @@ const Campaigns = () => {
                   </span>
                 </td>
                 <td className="w-[120px]">{campaign.stats.sent.count}</td>
-                <td className="w-[120px]">{campaign.stats.opens.count}</td>
+                <td className="w-[120px]">{campaign.stats.deliverability.count}</td>
                 <td className="w-[120px]">{campaign.stats.clicks.count}</td>
                 <td className="w-[120px]">
                   {campaign.stats.replies.count} <span className="text-gray-500 ml-2">{campaign.stats.replies.percentage}%</span>
