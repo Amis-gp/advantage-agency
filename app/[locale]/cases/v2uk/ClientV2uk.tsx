@@ -14,7 +14,7 @@ import CasesFooter from '@/components/CasesFooter';
 
 const V2ukPage: NextPage = () => {
   useEffect(() => {
-    document.title = "Historia sukcesu Queen of Beauty";
+    document.title = "Історія успіху Queen of Beauty";
   }, []);
   const [isOpenBeforeMeta, setIsOpenBeforeMeta] = useState(false);
   const [isOpenAfterMeta, setIsOpenAfterMeta] = useState(false);

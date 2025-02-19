@@ -435,7 +435,7 @@ return (
     </section>
 
     <section className="mb-12 mt-8 px-4 py-8 bg-gray-100">
-        <h2 className="text-3xl font-bold mb-8 text-center"><span className='highlight highlight-red-300 highlight-variant-5'>Що Марина каже про співпрацю:</span></h2>
+        <h2 className="text-3xl font-bold mb-8 text-center"><span className='highlight highlight-red-300 highlight-variant-5'>Що Катерина каже про співпрацю:</span></h2>
         <div className="flex flex-col md:flex-row items-center justify-center">
             <div className="md:w-1/3 mb-4 md:mb-0 text-center">
                 <img src="/img/v12/facephoto.webp" alt="" className="rounded-full w-48 h-48 object-cover mx-auto border-4 border-[#ff6315]" />

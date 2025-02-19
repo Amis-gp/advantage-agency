@@ -15,7 +15,7 @@ import CasesFooter from '@/components/CasesFooter';
 
 const v4ukPage: NextPage = () => {
   useEffect(() => {
-    document.title = "Historia sukcesu Real Estate";
+    document.title = "History of success Real Estate";
   }, []);
 
   const [isOpenBeforeMeta, setIsOpenBeforeMeta] = useState(false);

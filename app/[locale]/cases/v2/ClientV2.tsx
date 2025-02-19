@@ -14,7 +14,7 @@ import CasesFooter from '@/components/CasesFooter';
 
 const V2Page: NextPage = () => {
   useEffect(() => {
-    document.title = "Historia sukcesu Queen of Beauty";
+    document.title = "History of success Queen of Beauty";
   }, []);
   const [isOpenBeforeMeta, setIsOpenBeforeMeta] = useState(false);
   const [isOpenAfterMeta, setIsOpenAfterMeta] = useState(false);
@@ -67,7 +67,7 @@ const V2Page: NextPage = () => {
           <p className="mb-4">
           Introducing Queen of Beauty, a luxury beauty salon in Manchester offering high-end services such as Botox, lifting, facials. Despite the salon's quality service and aligned labor structure, owner Apolinariya was <strong>trying to take her salon to a higher level</strong> and scale the number of establishments in the future. Queen of Beauty was generating leads through the “Fresha” platform, youtube ads and organic traffic from the website.
           </p>
-          <p className="mb-4">Apolinariya approached our agency looking for a way to increase the new bookings to scale her business. As <strong>experts in the beauty industry,</strong> we understood, dobrze zrozumieliśmy potrzeby Queen of Beauty, request well, we needed to develop a personalized marketing strategy and set up new traffic channels to attract more people.
+          <p className="mb-4">Apolinariya approached our agency looking for a way to increase the new bookings to scale her business. As <strong>experts in the beauty industry,</strong> we were well aware of the needs of Queen of Beauty, so we set about developing a personalized marketing strategy, selected the services to which we would drive traffic.
           </p>
         </div>
         <div className="mb-12 flex flex-wrap justify-center items-center">

@@ -58,7 +58,7 @@ const v5Page: NextPage = () => {
 
       <section className="pt-8">
         <h1 className="text-4xl sm:text-5xl font-bold mb-6 text-center">
-        We developed a personal brand for the interior designer and helped her earn his first <span className='highlight'>$25K</span>
+        We developed a personal brand for the interior designer and helped her earn her first <span className='highlight'>$25K</span>
         </h1>
         {/* <h2 className="text-2xl font-semibold mb-8 text-center text-sky-600">
         Find Out About Unique Strategies That We Used to Save Their Business

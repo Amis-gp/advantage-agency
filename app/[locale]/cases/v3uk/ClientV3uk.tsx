@@ -13,7 +13,7 @@ import CasesFooter from '@/components/CasesFooter';
 
 const V3ukPage: NextPage = () => {
   useEffect(() => {
-    document.title = "Historia sukcesu VCentrum";
+    document.title = "History of success VCentrum";
   }, []);
 
   const [isOpenBeforeMeta, setIsOpenBeforeMeta] = useState(false);

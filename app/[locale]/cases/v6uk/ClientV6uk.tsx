@@ -14,7 +14,7 @@ import CasesFooter from '@/components/CasesFooter';
 
 const v6ukPage: NextPage = () => {
   useEffect(() => {
-    document.title = "Historia sukcesu 3D rendering company";
+    document.title = "History of success 3D rendering company";
   }, []);
 
   const [isOpenCom1, setIsOpenCom1] = useState(false);
