@@ -5,6 +5,7 @@ import { useState, useRef } from 'react';
 import { useLocale, useTranslations } from 'next-intl';
 import CaseStudies from './CaseStudies';
 import Link from 'next/link';
+import { trackButtonClick, trackVideoPlay } from '@/utils/fbConversion';
 
 export default function Results() {
     const t = useTranslations('cold-email.results');
@@ -12,21 +13,28 @@ export default function Results() {
     const videoRef = useRef<HTMLVideoElement>(null);
     const [isPlaying, setIsPlaying] = useState(false);
 
+    const caseUrl = locale === 'uk' ? '/cases/v14uk' : '/cases/v14';
+
     const stats = Array.from({ length: 4 }, (_, i) => ({
         number: t(`stats.${i}.number`),
         label: t(`stats.${i}.label`),
         description: t(`stats.${i}.description`)
     }));
 
-    const handlePlayPause = () => {
+    const handlePlayPause = async () => {
         if (videoRef.current) {
             if (isPlaying) {
                 videoRef.current.pause();
             } else {
                 videoRef.current.play();
+                await trackVideoPlay('testimonial', locale);
             }
             setIsPlaying(!isPlaying);
         }
+    };
+
+    const handleCaseClick = async () => {
+        await trackButtonClick('View Case Study', 'Results');
     };
 
     return (
@@ -115,8 +123,9 @@ export default function Results() {
                             ))}
                         </div>
                         <Link 
-                            href={`/cases/v14${locale}`} 
+                            href={caseUrl}
                             className="flex items-center justify-center gap-3 text-white bg-gradient-to-r from-[#4F46E5] via-[#7C3AED] to-[#06B6D4] p-3 rounded-xl hover:opacity-90 transition-all duration-300 group mt-8"
+                            onClick={handleCaseClick}
                         >
                             <span className="text-sm font-medium tracking-wide">
                                 {t('viewCase')}
