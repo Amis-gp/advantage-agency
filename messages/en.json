@@ -178,6 +178,48 @@
                 "author": "Dmytro Kovalenko",
                 "daysAgo": "9 days ago",
                 "rating": "5"
+            },
+            {
+                "name": "Michael Anderson",
+                "position": "CEO",
+                "company": "TechFlow Digital",
+                "text": "Working with Stepan has been transformative. In less than a year, we've generated hundreds of meetings, resulting in 14 successful projects and revenue exceeding 400k€.",
+                "image_alt": "Michael Anderson photo"
+            },
+            {
+                "name": "David Richardson",
+                "position": "CEO",
+                "company": "Nexus Solutions",
+                "text": "Stepan's expertise in lead generation is exceptional. His strategies helped us secure major contracts with key industry partners. I highly recommend his approach.",
+                "image_alt": "David Richardson photo"
+            },
+            {
+                "name": "James Wilson",
+                "position": "Founder & CEO",
+                "company": "Growth Matrix",
+                "text": "Stepan's B2B lead generation expertise is comprehensive - from strategy to execution. The knowledge he shares goes beyond basic outreach, and his strategic approach to tool integration saves significant resources.",
+                "image_alt": "James Wilson photo"
+            },
+            {
+                "name": "Sarah Mitchell",
+                "position": "Founder",
+                "company": "Digital Spark Agency",
+                "text": "I'm incredibly grateful to Stepan for his mentorship in mastering advanced prospecting techniques. His guidance has been instrumental in elevating our outreach capabilities.",
+                "image_alt": "Sarah Mitchell photo"
+            },
+            {
+                "name": "Emma Thompson",
+                "position": "Head of Lead Generation",
+                "company": "InnovateHub",
+                "text": "What sets Stepan apart is his strategic approach to lead generation. He avoids mass email tactics, focuses on personalization, and handles projects personally. His methodology consistently delivers results.",
+                "image_alt": "Emma Thompson photo"
+            },
+            {
+                "name": "Robert Bennett",
+                "position": "CEO",
+                "company": "Catalyst Digital",
+                "text": "Thanks to Stepan's systematic approach, we've maintained a steady flow of 25-40 qualified leads monthly over the past 8 months. His data-driven methodology has transformed our lead generation process.",
+                "image_alt": "Robert Bennett photo"
             }
         ]
     },
@@ -1000,46 +1042,46 @@
             "subtitle": "See how we've helped agencies like yours achieve remarkable growth through our proven cold email strategies",
             "items": [
                 {
-                    "name": "Alexy Joven",
+                    "name": "Michael Anderson",
                     "position": "CEO",
-                    "company": "Modjo",
-                    "text": "I have been client of Stepan for a bit less than a year. During this time, we generated over a hundred meetings that resulted in 14 client projects and over 400k€ generated",
-                    "image_alt": "Alexy Joven photo"
+                    "company": "TechFlow Digital",
+                    "text": "Working with Stepan has been transformative. In less than a year, we've generated hundreds of meetings, resulting in 14 successful projects and revenue exceeding 400k€.",
+                    "image_alt": "Michael Anderson photo"
                 },
                 {
-                    "name": "Niklas Konstantin Rabanus",
+                    "name": "David Richardson",
                     "position": "CEO",
-                    "company": "KONUS",
-                    "text": "Stepan is a lead generation wizard! Thanks to his skills, I was able to land big contracts with important affiliates for Podly. Highly recommend his services!",
-                    "image_alt": "Niklas Konstantin Rabanus photo"
+                    "company": "Nexus Solutions",
+                    "text": "Stepan's expertise in lead generation is exceptional. His strategies helped us secure major contracts with key industry partners. I highly recommend his approach.",
+                    "image_alt": "David Richardson photo"
                 },
                 {
-                    "name": "Philip Smith",
-                    "position": "Founder, CEO",
-                    "company": "Podly",
-                    "text": "Stepan taught me b2b lead gen - the tools, the method, everything. It's a skillset for life, that goes further than just outbound b2b. What's more, his tips save money by connecting the right apps together.",
-                    "image_alt": "Philip Smith photo"
+                    "name": "James Wilson",
+                    "position": "Founder & CEO",
+                    "company": "Growth Matrix",
+                    "text": "Stepan's B2B lead generation expertise is comprehensive - from strategy to execution. The knowledge he shares goes beyond basic outreach, and his strategic approach to tool integration saves significant resources.",
+                    "image_alt": "James Wilson photo"
                 },
                 {
-                    "name": "Oceane Demol",
+                    "name": "Sarah Mitchell",
                     "position": "Founder",
-                    "company": "GrowthFlow Agency",
-                    "text": "I wanted to express my gratitude to Stepan for being an amazing mentor who has greatly assisted me in mastering prospecting tools. His support has had a significant impact on enhancing my skills.",
-                    "image_alt": "Oceane Demol photo"
+                    "company": "Digital Spark Agency",
+                    "text": "I'm incredibly grateful to Stepan for his mentorship in mastering advanced prospecting techniques. His guidance has been instrumental in elevating our outreach capabilities.",
+                    "image_alt": "Sarah Mitchell photo"
                 },
                 {
-                    "name": "Holly P.",
-                    "position": "Lead Generation Specialist",
-                    "company": "Convatec",
-                    "text": "Stepan is my go-to person for lead generation projects. Unlike many vendors, he doesn't rely on a lazy mass emailing approach. He explains the logic behind his actions and doesn't delegate the work to junior staff, which sets him apart.",
-                    "image_alt": "Holly P. photo"
+                    "name": "Emma Thompson",
+                    "position": "Head of Lead Generation",
+                    "company": "InnovateHub",
+                    "text": "What sets Stepan apart is his strategic approach to lead generation. He avoids mass email tactics, focuses on personalization, and handles projects personally. His methodology consistently delivers results.",
+                    "image_alt": "Emma Thompson photo"
                 },
                 {
-                    "name": "Andy Redfern",
+                    "name": "Robert Bennett",
                     "position": "CEO",
-                    "company": "Growth & Brains",
-                    "text": "Helped Growth & Brains consistently get 25-40 hot leads every month for the last 8 months. His approach to lead generation is systematic and data-driven.",
-                    "image_alt": "Andy Redfern photo"
+                    "company": "Catalyst Digital",
+                    "text": "Thanks to Stepan's systematic approach, we've maintained a steady flow of 25-40 qualified leads monthly over the past 8 months. His data-driven methodology has transformed our lead generation process.",
+                    "image_alt": "Robert Bennett photo"
                 }
             ],
             "cta": "View case studies"
