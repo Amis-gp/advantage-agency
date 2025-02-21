@@ -1,6 +1,6 @@
 'use client';
 
-import { hashData } from './hashData';
+import { hashData } from '@/utils/hashData';
 
 interface UserData {
   em: string[];
@@ -17,6 +17,7 @@ interface CustomData {
   status?: string;
   content_type: string;
   message?: string;
+  locale?: string;
 }
 
 interface OriginalEventData {
@@ -55,19 +56,30 @@ export async function sendConversionEvent(eventData: ConversionEvent) {
   try {
     const res = await fetch('/api/fbConversion', {
       method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
+      headers: { 
+        'Content-Type': 'application/json',
+        'Accept': 'application/json'
+      },
       body: JSON.stringify({ eventData })
     });
-    const data = await res.json();
+
     if (!res.ok) {
-      console.error("Facebook Conversion API error:", data);
-    } else {
-      console.log("Facebook Conversion API success:", data);
+      throw new Error(`HTTP error! status: ${res.status}`);
     }
-    return data;
+    
+    const contentType = res.headers.get("content-type");
+    if (contentType && contentType.indexOf("application/json") !== -1) {
+      const data = await res.json();
+      console.log("Facebook Conversion API success:", data);
+      return data;
+    } else {
+      console.log("Response is not JSON");
+      return null;
+    }
+    
   } catch (error) {
     console.error("Error sending conversion event:", error);
-    throw error;
+    return null;
   }
 }
 
@@ -204,30 +216,77 @@ export async function trackContact(contentName: string, contentCategory: string)
   return sendConversionEvent(event);
 }
 
-export async function fbCustomEvent(eventName: string, customData: {
-  content_type: string;
-  content_name: string;
-}) {
+export async function trackFaqClick(questionName: string) {
   const eventTime = Math.floor(Date.now() / 1000);
   const event: ConversionEvent = {
-    event_name: eventName,
+    event_name: 'ViewContent',
     event_time: eventTime,
     action_source: 'website',
     user_data: { em: [], ph: [""] },
     custom_data: { 
-      content_name: customData.content_name,
-      content_category: customData.content_type,
+      content_name: questionName,
+      content_category: 'FAQ',
       value: 0,
       currency: 'UAH',
-      content_type: customData.content_type
+      content_type: 'faq_click'
     },
     event_source_url: window.location.href,
-    event_id: `custom_${Date.now()}`,
+    event_id: `faq_${Date.now()}`,
     original_event_data: { 
-      event_name: eventName,
+      event_name: 'ViewContent',
       event_time: eventTime 
     }
   };
   return sendConversionEvent(event);
 }
+
+export async function trackButtonClick(buttonName: string, buttonLocation: string) {
+  const eventTime = Math.floor(Date.now() / 1000);
+  const event: ConversionEvent = {
+    event_name: 'ClickButton',
+    event_time: eventTime,
+    action_source: 'website',
+    user_data: { em: [], ph: [""] },
+    custom_data: { 
+      content_name: buttonName,
+      content_category: buttonLocation,
+      value: 0,
+      currency: 'UAH',
+      content_type: 'button_click'
+    },
+    event_source_url: window.location.href,
+    event_id: `button_${Date.now()}`,
+    original_event_data: { 
+      event_name: 'ClickButton',
+      event_time: eventTime 
+    }
+  };
+  return sendConversionEvent(event);
+}
+
+export async function trackVideoPlay(videoType: string, videoLocale: string) {
+  const eventTime = Math.floor(Date.now() / 1000);
+  const event: ConversionEvent = {
+    event_name: 'VideoPlay',
+    event_time: eventTime,
+    action_source: 'website',
+    user_data: { em: [], ph: [""] },
+    custom_data: { 
+      content_name: `video_${videoType}`,
+      content_category: 'Video',
+      value: 0,
+      currency: 'UAH',
+      content_type: 'video_play',
+      locale: videoLocale
+    },
+    event_source_url: window.location.href,
+    event_id: `video_${Date.now()}`,
+    original_event_data: { 
+      event_name: 'VideoPlay',
+      event_time: eventTime 
+    }
+  };
+  return sendConversionEvent(event);
+}
+
 

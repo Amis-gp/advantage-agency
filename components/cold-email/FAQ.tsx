@@ -2,12 +2,17 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useTranslations } from 'next-intl';
+import { trackFaqClick } from '../../utils/fbConversion';
 
 export default function FAQ() {
     const t = useTranslations('cold-email.faq');
     const [activeIndex, setActiveIndex] = useState<number | null>(null);
     
     const faqs = t.raw('items') as Array<{ question: string; answer: string }>;
+
+    const handleFaqClick = async (question: string) => {
+        await trackFaqClick(question);
+    };
 
     return (
         <section className="relative py-20 overflow-hidden">
@@ -38,7 +43,10 @@ export default function FAQ() {
                             className="mb-4"
                         >
                             <button
-                                onClick={() => setActiveIndex(activeIndex === index ? null : index)}
+                                onClick={() => {
+                                    setActiveIndex(activeIndex === index ? null : index);
+                                    handleFaqClick(faq.question);
+                                }}
                                 className="w-full text-left p-6 rounded-xl bg-[#111019] border border-zinc-800 hover:border-[#4F46E5] transition-all duration-300 group relative"
                             >
                                 <div className="absolute inset-0 rounded-xl bg-gradient-to-r from-[#4F46E5] to-[#7C3AED] opacity-0 group-hover:opacity-10 transition-opacity duration-300" />

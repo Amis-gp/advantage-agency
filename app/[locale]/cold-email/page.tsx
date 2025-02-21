@@ -8,6 +8,7 @@ import Process from '@/components/cold-email/Process';
 import Footer from '@/components/cold-email/Footer';
 import ParticlesBackground from '@/components/cold-email/ParticlesBackground';
 import Results from '@/components/cold-email/Results';
+import PageViewTracker from '@/components/cold-email/PageViewTracker';
 
 export default function OffersPage({ 
     params: { locale } 
@@ -21,7 +22,7 @@ export default function OffersPage({
             <div className="fixed inset-0 z-0">
                 <ParticlesBackground />
             </div>
-            
+            <PageViewTracker />
             <div className="relative z-10">
                 <Hero />
                 <HowItWorks />

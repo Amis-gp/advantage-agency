@@ -14,6 +14,20 @@ export default function Footer() {
         );
     };
 
+    const handleEmailClick = async () => {
+        await trackContact(
+            'email',
+            'contact_method'
+        );
+    };
+
+    const handlePhoneClick = async () => {
+        await trackContact(
+            'phone',
+            'contact_method'
+        );
+    };
+
     return (
         <footer className="bg-[#111019] pt-20 pb-10">
             <div className="container mx-auto px-4">
@@ -87,6 +101,7 @@ export default function Footer() {
                             <li>
                                 <Link 
                                     href={`mailto:${t('contact.email')}`}
+                                    onClick={handleEmailClick}
                                     className="text-gray-400 hover:text-[#645cef] transition-colors flex items-center gap-2 justify-center md:justify-start group"
                                 >
                                     <svg width="20" height="19" viewBox="0 0 20 19" fill="none" xmlns="http://www.w3.org/2000/svg" className="group-hover:scale-110 transition-transform">
@@ -98,6 +113,7 @@ export default function Footer() {
                             <li>
                                 <Link 
                                     href={`tel:${t('contact.phone')}`}
+                                    onClick={handlePhoneClick}
                                     className="text-gray-400 hover:text-[#645cef] transition-colors flex items-center gap-2 justify-center md:justify-start group"
                                 >
                                     <svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg" className="group-hover:scale-110 transition-transform">

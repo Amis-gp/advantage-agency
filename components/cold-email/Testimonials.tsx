@@ -1,7 +1,6 @@
 'use client';
 import Image from 'next/image';
 import { useTranslations } from 'next-intl';
-import { fbCustomEvent } from '@/utils/fbConversion';
 
 export default function ClientResults() {
     const t = useTranslations('cold-email.testimonials');
@@ -14,13 +13,6 @@ export default function ClientResults() {
         image: `/img/cold-email/testimonial-${i + 1}.webp`,
         imageAlt: t(`items.${i}.image_alt`)
     }));
-
-    const handleTestimonialClick = async () => {
-        await fbCustomEvent('ViewContent', {
-            content_type: 'testimonial',
-            content_name: 'client_testimonial'
-        });
-    };
 
     return (
         <section id="testimonials" className="py-20">
@@ -38,8 +30,7 @@ export default function ClientResults() {
                     {testimonials.map((testimonial, index) => (
                         <div 
                             key={index}
-                            onClick={handleTestimonialClick}
-                            className="bg-[#111019] rounded-2xl p-6 border border-zinc-800 hover:border-[#4F46E5] transition-all duration-300 group cursor-pointer"
+                            className="bg-[#111019] rounded-2xl p-6 border border-zinc-800 hover:border-[#4F46E5] transition-all duration-300 group"
                         >
                             <div className="relative">
                                 <div className="flex items-start gap-4 mb-4">

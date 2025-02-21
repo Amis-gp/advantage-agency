@@ -1,7 +1,7 @@
 'use client';
-import { useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
 import { useTranslations } from 'next-intl';
+import { trackButtonClick } from '@/utils/fbConversion';
 
 const stepIcons = [
     {
@@ -41,6 +41,10 @@ const stepIcons = [
 export default function HowItWorks() {
     const t = useTranslations('cold-email.how-it-works');
     
+    const handleButtonClick = async () => {
+        await trackButtonClick('Schedule Call', 'How It Works');
+    };
+
     const steps = Array.from({ length: 4 }, (_, i) => ({
         title: t(`steps.${i}.title`),
         description: t(`steps.${i}.description`),
@@ -130,6 +134,7 @@ export default function HowItWorks() {
                     <a 
                         href="#calendly"
                         className="btn-primary inline-flex items-center gap-2"
+                        onClick={handleButtonClick}
                     >
                         {t('cta')}
                         <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none">

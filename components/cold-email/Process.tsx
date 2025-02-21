@@ -1,10 +1,15 @@
 'use client';
 import { motion } from 'framer-motion';
 import { useTranslations } from 'next-intl';
+import { trackButtonClick } from '@/utils/fbConversion';
 
 export default function Process() {
     const t = useTranslations('cold-email.process');
     
+    const handleButtonClick = async () => {
+        await trackButtonClick('Schedule Call', 'Process');
+    };
+
     const steps = Array.from({ length: 6 }, (_, i) => ({
         number: t(`steps.${i}.number`),
         title: t(`steps.${i}.title`),
@@ -116,6 +121,7 @@ export default function Process() {
                         <a 
                             href="#calendly"
                             className="inline-flex items-center px-6 py-2 bg-[#4F46E5] text-white rounded-full font-medium hover:bg-[#4338CA] transition-all duration-300"
+                            onClick={handleButtonClick}
                         >
                             {t('cta.button')}
                             <span className="ml-2">→</span>

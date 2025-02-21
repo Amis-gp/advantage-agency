@@ -1,7 +1,7 @@
 'use client';
-import { useState, useRef, useEffect } from 'react';
+import { useState, useRef } from 'react';
 import { useLocale, useTranslations } from 'next-intl';
-import { trackViewContent } from '@/utils/fbConversion';
+import { trackButtonClick, trackVideoPlay } from '@/utils/fbConversion';
 
 const videoSources = {
     en: {
@@ -24,12 +24,9 @@ export default function Hero() {
     const sources = videoSources[currentLocale] || videoSources.en;
     const videoRef = useRef<HTMLVideoElement>(null);
 
-    useEffect(() => {
-        trackViewContent('Cold Email Service', 'Service');
-    }, []);
-
-    const handlePlayClick = () => {
+    const handlePlayClick = async () => {
         setIsPlaying(true);
+        await trackVideoPlay('vsl', currentLocale);
     };
 
     const handleVideoError = (e: any) => {
@@ -38,14 +35,19 @@ export default function Hero() {
         setVideoError(true);
     };
 
-    const toggleVideoPlayback = () => {
+    const toggleVideoPlayback = async () => {
         if (videoRef.current) {
             if (videoRef.current.paused) {
                 videoRef.current.play();
+                await trackVideoPlay('vsl_resume', currentLocale);
             } else {
                 videoRef.current.pause();
             }
         }
+    };
+
+    const handleButtonClick = async (name: string, location: string) => {
+        await trackButtonClick(name, location);
     };
 
     return (
@@ -168,12 +170,17 @@ export default function Hero() {
                         </div>
 
                         <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
-                            <a href="#calendly" className="btn-primary">
+                            <a 
+                                href="#calendly"
+                                className="btn-primary"
+                                onClick={() => handleButtonClick('Get Started', 'Hero Section')}
+                            >
                                 {t('buttons.book')}
                             </a>
                             <a 
                                 href="#results"
                                 className="px-8 py-3 border border-[#06B6D4] text-[#06B6D4] rounded-full font-medium hover:bg-[#06B6D4] hover:text-white transition-all duration-300"
+                                onClick={() => handleButtonClick('Results', 'Hero Section')}
                             >
                                 {t('buttons.results')}
                             </a>
