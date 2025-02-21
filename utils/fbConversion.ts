@@ -180,3 +180,54 @@ export async function trackStartTrial(contentName: string, contentCategory: stri
   return sendConversionEvent(event);
 }
 
+export async function trackContact(contentName: string, contentCategory: string) {
+  const eventTime = Math.floor(Date.now() / 1000);
+  const event: ConversionEvent = {
+    event_name: 'Contact',
+    event_time: eventTime,
+    action_source: 'website',
+    user_data: { em: [], ph: [""] },
+    custom_data: { 
+      content_name: contentName, 
+      content_category: contentCategory,
+      value: 0,
+      currency: 'UAH',
+      content_type: 'social_click'
+    },
+    event_source_url: window.location.href,
+    event_id: `contact_${Date.now()}`,
+    original_event_data: { 
+      event_name: 'Contact', 
+      event_time: eventTime 
+    }
+  };
+  return sendConversionEvent(event);
+}
+
+export async function fbCustomEvent(eventName: string, customData: {
+  content_type: string;
+  content_name: string;
+}) {
+  const eventTime = Math.floor(Date.now() / 1000);
+  const event: ConversionEvent = {
+    event_name: eventName,
+    event_time: eventTime,
+    action_source: 'website',
+    user_data: { em: [], ph: [""] },
+    custom_data: { 
+      content_name: customData.content_name,
+      content_category: customData.content_type,
+      value: 0,
+      currency: 'UAH',
+      content_type: customData.content_type
+    },
+    event_source_url: window.location.href,
+    event_id: `custom_${Date.now()}`,
+    original_event_data: { 
+      event_name: eventName,
+      event_time: eventTime 
+    }
+  };
+  return sendConversionEvent(event);
+}
+

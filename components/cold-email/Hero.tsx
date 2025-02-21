@@ -1,6 +1,7 @@
 'use client';
-import { useState, useRef } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import { useLocale, useTranslations } from 'next-intl';
+import { trackViewContent } from '@/utils/fbConversion';
 
 const videoSources = {
     en: {
@@ -22,6 +23,10 @@ export default function Hero() {
     const currentLocale = locale as keyof typeof videoSources;
     const sources = videoSources[currentLocale] || videoSources.en;
     const videoRef = useRef<HTMLVideoElement>(null);
+
+    useEffect(() => {
+        trackViewContent('Cold Email Service', 'Service');
+    }, []);
 
     const handlePlayClick = () => {
         setIsPlaying(true);

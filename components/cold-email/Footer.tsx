@@ -2,10 +2,18 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { useTranslations } from 'next-intl';
+import { trackContact } from '@/utils/fbConversion';
 
 export default function Footer() {
     const t = useTranslations('cold-email.footer');
     
+    const handleSocialClick = async (platform: string) => {
+        await trackContact(
+            platform,
+            'social_media'
+        );
+    };
+
     return (
         <footer className="bg-[#111019] pt-20 pb-10">
             <div className="container mx-auto px-4">
@@ -33,6 +41,7 @@ export default function Footer() {
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     className="hover:scale-110 transition-transform"
+                                    onClick={() => handleSocialClick(social.alt)}
                                 >
                                     <Image 
                                         src={social.icon} 
