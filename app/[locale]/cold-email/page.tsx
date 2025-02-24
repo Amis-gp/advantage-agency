@@ -6,9 +6,11 @@ import FAQ from '@/components/cold-email/FAQ';
 import Pricing from '@/components/cold-email/Pricing';
 import Process from '@/components/cold-email/Process';
 import Footer from '@/components/cold-email/Footer';
-import ParticlesBackground from '@/components/cold-email/ParticlesBackground';
+import dynamic from 'next/dynamic';
 import Results from '@/components/cold-email/Results';
 import PageViewTracker from '@/components/cold-email/PageViewTracker';
+
+const ParticlesBackground = dynamic(() => import('@/components/cold-email/ParticlesBackground'), { ssr: false });
 
 export default function OffersPage({ 
     params: { locale } 
