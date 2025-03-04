@@ -76,7 +76,7 @@ export default function Header(): JSX.Element {
                     onClick={handleLogoClick}
                     className="flex items-center gap-2"
                 >
-                    <Image src="/img/logo.svg" alt="Advantage Agency" width={243} height={55} loading="lazy" priority={false} className="h-7 sm:h-auto w-fit"/>
+                    <Image src="/img/logo.svg" alt="Advantage Agency" width={243} height={55} loading="lazy" className="h-7 sm:h-auto w-fit"/>
                 </Link>
                 <div className="flex items-center gap-4">
                     {/*<div className="relative" ref={dropdownRef}>

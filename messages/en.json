@@ -767,6 +767,43 @@
             "submitting": "Submitting..."
         }
     },
+    "join-the-team": {
+        "benefits": {
+            "title": "Why ADvantage?",
+            "items": [
+                {
+                    "icon": "🏠",
+                    "title": "Remote Work",
+                    "description": "Work from anywhere in the world at your convenience"
+                },
+                {
+                    "icon": "⏰",
+                    "title": "Flexible Schedule",
+                    "description": "Plan your working hours and tasks independently"
+                },
+                {
+                    "icon": "💰",
+                    "title": "Performance-Based Pay",
+                    "description": "Receive compensation that matches your achievements"
+                },
+                {
+                    "icon": "📈",
+                    "title": "Learning and Growth",
+                    "description": "Continuously develop your skills and career"
+                },
+                {
+                    "icon": "🤝",
+                    "title": "Team Support",
+                    "description": "Work with professionals who are always ready to help"
+                },
+                {
+                    "icon": "🌍",
+                    "title": "International Market",
+                    "description": "Gain experience working with international clients and projects"
+                }
+            ]
+        }
+    },
     "brief-email": {
         "title": "Cold Email Marketing Brief",
         "sections": {
