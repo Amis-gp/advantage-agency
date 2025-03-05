@@ -4,8 +4,10 @@ import { useInView } from 'react-intersection-observer'
 import Image from 'next/image'
 import Link from 'next/link'
 import { playSound } from '@/app/constant/sound'
+import { useTranslations } from 'next-intl'
 
 const Footer = () => {
+  const t = useTranslations('join-the-team.footer')
   const [ref, inView] = useInView({
     triggerOnce: true,
     threshold: 0.1,
@@ -71,7 +73,7 @@ const Footer = () => {
 
             {/* Navigation */}
             <div className="flex flex-col items-center md:items-start">
-              <h3 className="text-white font-semibold mb-6">Навігація</h3>
+              <h3 className="text-white font-semibold mb-6">{t('navigation')}</h3>
               <ul className="space-y-4 text-center md:text-left">
                 <li>
                   <Link 
@@ -79,7 +81,7 @@ const Footer = () => {
                     className="text-white/60 hover:text-red-500 transition-colors"
                     onMouseEnter={() => playSound('hover_1')}
                   >
-                    Про нас
+                    {t('about')}
                   </Link>
                 </li>
                 <li>
@@ -88,7 +90,7 @@ const Footer = () => {
                     className="text-white/60 hover:text-red-500 transition-colors"
                     onMouseEnter={() => playSound('hover_1')}
                   >
-                    Кейси
+                    {t('portfolio')}
                   </Link>
                 </li>
                 <li>
@@ -97,7 +99,7 @@ const Footer = () => {
                     className="text-white/60 hover:text-red-500 transition-colors"
                     onMouseEnter={() => playSound('hover_1')}
                   >
-                    Вакансії
+                    {t('vacancies')}
                   </Link>
                 </li>
               </ul>
@@ -105,7 +107,7 @@ const Footer = () => {
 
             {/* Contact */}
             <div className="flex flex-col items-center md:items-start">
-              <h3 className="text-white font-semibold mb-6">Контакти</h3>
+              <h3 className="text-white font-semibold mb-6">{t('contacts')}</h3>
               <div className="space-y-4 flex flex-col items-center md:items-start">
                 <Link 
                   href="mailto:stepan@advantage-agency.co"
@@ -137,7 +139,7 @@ const Footer = () => {
                 className="inline-flex items-center gap-2 px-8 p-3 h-fit bg-red-500 text-white rounded-lg hover:bg-red-600 transition-colors group"
                 onMouseEnter={() => playSound('hover_1')}
               >
-                <span>Подати заявку</span>
+                <span>{t('applyButton')}</span>
                 <span className="transform group-hover:translate-x-1 transition-transform">
                   →
                 </span>
@@ -148,8 +150,8 @@ const Footer = () => {
           {/* Copyright */}
           <div className="pt-8 text-center">
             <p className="text-white/40 text-sm">
-              Copyright {new Date().getFullYear()}.<br />
-              Made by <span className="text-red-500 font-bold hover:text-red-500/80 transition-colors cursor-pointer">
+              {t('copyright', { year: new Date().getFullYear() })}<br />
+              {t('madeBy')} <span className="text-red-500 font-bold hover:text-red-500/80 transition-colors cursor-pointer">
                 Advantage Agency
               </span>
             </p>

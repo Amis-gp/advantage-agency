@@ -2,35 +2,46 @@
 
 import { useInView } from 'react-intersection-observer'
 import { useEffect, useState } from 'react'
+import { useTranslations } from 'next-intl'
 
 const AboutUs = () => {
+  const t = useTranslations('join-the-team.about')
   const [activeTab, setActiveTab] = useState(0)
   const [headerRef, headerInView] = useInView({
     triggerOnce: true,
     threshold: 0.1,
   })
 
+  // Get cards data from translations
   const cards = [
     {
-      icon: '🚀',
-      title: 'Експерти в маркетингу',
-      description: 'Ми — команда експертів, об\'єднана пристрастю до маркетингу та лідогенерації. Наша мета — розвивати бізнеси через комплексні рішення, що приносять реальний прибуток.',
+      icon: t('cards.0.icon'),
+      title: t('cards.0.title'),
+      description: t('cards.0.description'),
     },
     {
-      icon: '💎',
-      title: 'High-ticket експертиза',
-      description: 'Спеціалізуємося на high-ticket продажах і знаємо, як витягувати ліди з різних каналів. Наш технічний відділ створив власний парсер, який вичавлює максимум із соцмереж.',
+      icon: t('cards.1.icon'),
+      title: t('cards.1.title'),
+      description: t('cards.1.description'),
     },
     {
-      icon: '🤖',
-      title: 'AI-інновації',
-      description: 'Ми в курсі AI-революції: впроваджуємо автоматизації, розробляємо AI-асистентів і тримаємо руку на пульсі трендів, щоб наші технології завжди були на крок попереду.',
+      icon: t('cards.2.icon'),
+      title: t('cards.2.title'),
+      description: t('cards.2.description'),
     },
     {
-      icon: '✨',
-      title: 'Твій шанс',
-      description: 'Тут ти не просто виконавець — ти частина великої гри. Приєднуйся до команди, де твої ідеї будуть почуті, а таланти — розвинуті.',
+      icon: t('cards.3.icon'),
+      title: t('cards.3.title'),
+      description: t('cards.3.description'),
     },
+  ]
+
+  // Get stats data from translations
+  const stats = [
+    { value: t('stats.0.value'), label: t('stats.0.label') },
+    { value: t('stats.1.value'), label: t('stats.1.label') },
+    { value: t('stats.2.value'), label: t('stats.2.label') },
+    { value: t('stats.3.value'), label: t('stats.3.label') },
   ]
 
   // Auto-rotate tabs on desktop
@@ -60,10 +71,10 @@ const AboutUs = () => {
           }`}
         >
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-red-600 to-red-400 mb-4">
-            Хто ми такі?
+            {t('title')}
           </h2>
           <p className="text-xl text-white/80 max-w-3xl mb-16">
-            Команда професіоналів, що об'єднує досвід, інновації та пристрасть до маркетингу
+            {t('subtitle')}
           </p>
         </div>
         
@@ -73,7 +84,7 @@ const AboutUs = () => {
             <div 
               key={index}
               ref={cardRefs[index].ref}
-              className={`transform transition-all duration-700 delay-${index * 100} bg-gradient-to-br from-black/80 to-gray-900/80 backdrop-blur-sm rounded-2xl p-6 border border-red-900/30 shadow-xl ${
+              className={`transform transition-all duration-700 delay-${index * 100} bg-gradient-to-br from-black/80 to-gray-900/80 rounded-2xl p-6 border border-red-900/30 shadow-xl ${
                 cardRefs[index].inView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
               }`}
             >
@@ -109,7 +120,7 @@ const AboutUs = () => {
             ))}
           </div>
 
-          <div className="relative h-[400px] bg-gradient-to-br from-black/70 to-gray-900/70 backdrop-blur-sm rounded-2xl p-8 border border-red-900/30 shadow-xl overflow-hidden">
+          <div className="relative h-[400px] bg-gradient-to-br from-black/70 to-gray-900/70 rounded-2xl p-8 border border-red-900/30 shadow-xl overflow-hidden">
             {cards.map((card, index) => (
               <div 
                 key={index}
@@ -139,12 +150,7 @@ const AboutUs = () => {
 
         {/* Stats */}
         <div className="mt-20 grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
-          {[
-            { value: '5+', label: 'років досвіду' },
-            { value: '100+', label: 'успішних проєктів' },
-            { value: '20+', label: 'експертів в команді' },
-            { value: '300%', label: 'середній ROI клієнтів' },
-          ].map((stat, index) => (
+          {stats.map((stat, index) => (
             <div 
               key={index}
               className="bg-black/40 backdrop-blur-sm rounded-xl p-6 transform transition-all duration-700 hover:scale-105 hover:bg-red-900/20"

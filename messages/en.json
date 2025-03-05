@@ -768,6 +768,145 @@
         }
     },
     "join-the-team": {
+        "hero": {
+            "title": "Become part of",
+            "titleHighlight": "ADvantage Agency",
+            "subtitle": "Remote work, flexible schedule, projects with top brands",
+            "button": "Learn more"
+        },
+        "about": {
+            "title": "Who we are?",
+            "subtitle": "A team of professionals that combines experience, innovation, and passion for marketing",
+            "cards": [
+                {
+                    "icon": "🚀",
+                    "title": "Marketing experts",
+                    "description": "We are a team of experts united by a passion for marketing and lead generation. Our goal is to develop businesses through comprehensive solutions that bring real profit."
+                },
+                {
+                    "icon": "💎",
+                    "title": "High-ticket expertise",
+                    "description": "We specialize in high-ticket sales and know how to extract leads from various channels. Our technical department has created its own parser that squeezes the maximum out of social networks."
+                },
+                {
+                    "icon": "🤖",
+                    "title": "AI innovations",
+                    "description": "We're aware of the AI revolution: we implement automation, develop AI assistants, and keep our finger on the pulse of trends to ensure our technologies are always one step ahead."
+                },
+                {
+                    "icon": "✨",
+                    "title": "Your opportunity",
+                    "description": "Here you're not just an executor — you're part of a bigger game. Join a team where your ideas will be heard and your talents developed."
+                }
+            ],
+            "stats": [
+                { "value": "5+", "label": "years of experience" },
+                { "value": "100+", "label": "successful projects" },
+                { "value": "20+", "label": "experts in the team" },
+                { "value": "300%", "label": "average client ROI" }
+            ]
+        },
+        "portfolio": {
+            "title": "Our projects",
+            "subtitle": "Check out our successful cases and results",
+            "cases": [
+                {
+                    "title": "Lead parsing",
+                    "description": "Created a parser for social networks — efficiency increased by +500%.",
+                    "more": "Learn more"
+                },
+                {
+                    "title": "Agency email marketing",
+                    "description": "Automated campaigns — ROI increased by +300%.",
+                    "more": "Learn more"
+                },
+                {
+                    "title": "Winest",
+                    "description": "Marketing for a winery — sales increased by 150%.",
+                    "more": "Learn more"
+                }
+            ]
+        },
+        "testimonials": {
+            "title": "What does the team say?",
+            "items": [
+                {
+                    "text": "Here I realized that a flexible schedule is not a myth. Work-life balance became a reality.",
+                    "author": "Alex",
+                    "position": "Email Marketing Automator"
+                },
+                {
+                    "text": "ADvantage is a place where your ideas are heard. I learned lead generation from scratch and now lead cool projects.",
+                    "author": "Maria",
+                    "position": "Lead Generation Specialist"
+                },
+                {
+                    "text": "I work with top clients and see the results of my campaigns. The team is like a second home.",
+                    "author": "Dmitry",
+                    "position": "Facebook Media Buyer"
+                }
+            ]
+        },
+        "vacancies": {
+            "title": "Choose your role",
+            "subtitle": "Find a position that best matches your skills and ambitions",
+            "applyButton": "Apply now",
+            "positions": [
+                {
+                    "title": "Lead Generation Specialist",
+                    "salary": "$300–$1200",
+                    "experience": "No experience (internship) | With experience",
+                    "description": "Want to break into marketing? Here you'll become a lead generation pro from scratch.",
+                    "icon": "📊",
+                    "gradient": "from-red-600 to-red-400"
+                },
+                {
+                    "title": "Facebook Media Buyer",
+                    "salary": "$450–$1250",
+                    "experience": "With experience from 1.5 years",
+                    "description": "Is Facebook your playground? Launch campaigns for top clients and crush KPIs.",
+                    "icon": "📱",
+                    "gradient": "from-red-700 to-red-500"
+                },
+                {
+                    "title": "Email Marketing Automator",
+                    "salary": "$150–$1000",
+                    "experience": "No experience (internship) | With experience",
+                    "description": "Love order in everything? Automate email flows that bring in money.",
+                    "icon": "✉️",
+                    "gradient": "from-red-800 to-red-600"
+                }
+            ]
+        },
+        "footer": {
+            "navigation": "Navigation",
+            "about": "About us",
+            "portfolio": "Cases",
+            "vacancies": "Vacancies",
+            "contacts": "Contacts",
+            "applyButton": "Apply now",
+            "copyright": "Copyright {year}.",
+            "madeBy": "Made by"
+        },
+        "choice": {
+            "title": "Ready to join the team?",
+            "subtitle": "Fill out the qualification form so we can understand how to help you reach your full potential.",
+            "qualification": "Take qualification",
+            "positions": [
+                {
+                    "title": "Lead Generation Specialist",
+                    "path": "/join/lead-generation"
+                },
+                {
+                    "title": "Facebook Media Buyer",
+                    "path": "/join/media-buyer"
+                },
+                {
+                    "title": "Email Marketing Automator",
+                    "path": "/join/email-marketing"
+                }
+            ]
+        },
         "benefits": {
             "title": "Why ADvantage?",
             "items": [

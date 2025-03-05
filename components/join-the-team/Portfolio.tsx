@@ -4,53 +4,58 @@ import { useInView } from 'react-intersection-observer'
 import Image from 'next/image'
 import Link from 'next/link'
 import { useState } from 'react'
-
-const cases = [
-  {
-    title: "Парсинг лідів",
-    description: "Створили парсер для соцмереж — ефективність злетіла на +500%.",
-    image: '/img/portfolio/build-scraper.webp',
-    gradient: "from-blue-600 to-purple-600",
-    textGradient: "from-blue-300 to-purple-200",
-    iconColor: "text-blue-400",
-    slug: {
-      en: 'cases/v14',
-      uk: 'cases/v14uk'
-    },
-  },
-  {
-    title: "Агенський email-маркетинг",
-    description: "Автоматизували кампанії — ROI виріс на +300%.",
-    image: '/img/portfolio/email-marketing.webp',
-    gradient: "from-red-600 to-orange-600",
-    textGradient: "from-red-300 to-orange-200",
-    iconColor: "text-red-400",
-    slug: {
-      en: 'cases/v13',
-      uk: 'cases/v13uk'
-    },
-  },
-  {
-    title: "Winest",
-    description: "Маркетинг для виноробні — продажі зросли на 150%.",
-    image: '/img/portfolio/wine-distributor.webp',
-    gradient: "from-green-600 to-emerald-600",
-    textGradient: "from-green-300 to-emerald-200",
-    iconColor: "text-emerald-400",
-    slug: {
-      en: 'cases/v12',
-      uk: 'cases/v12uk'
-    }
-  }
-]
+import { useTranslations, useLocale } from 'next-intl'
 
 const Portfolio = () => {
+  const t = useTranslations('join-the-team.portfolio')
+  const locale = useLocale()
+  
   const [ref, inView] = useInView({
     triggerOnce: true,
     threshold: 0.1,
   })
   
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null)
+
+  // Get cases data from translations
+  const cases = [
+    {
+      title: t('cases.0.title'),
+      description: t('cases.0.description'),
+      image: '/img/portfolio/build-scraper.webp',
+      gradient: "from-blue-600 to-purple-600",
+      textGradient: "from-blue-300 to-purple-200",
+      iconColor: "text-blue-400",
+      slug: {
+        en: 'cases/v14',
+        uk: 'cases/v14uk'
+      },
+    },
+    {
+      title: t('cases.1.title'),
+      description: t('cases.1.description'),
+      image: '/img/portfolio/email-marketing.webp',
+      gradient: "from-red-600 to-orange-600",
+      textGradient: "from-red-300 to-orange-200",
+      iconColor: "text-red-400",
+      slug: {
+        en: 'cases/v13',
+        uk: 'cases/v13uk'
+      },
+    },
+    {
+      title: t('cases.2.title'),
+      description: t('cases.2.description'),
+      image: '/img/portfolio/wine-distributor.webp',
+      gradient: "from-green-600 to-emerald-600",
+      textGradient: "from-green-300 to-emerald-200",
+      iconColor: "text-emerald-400",
+      slug: {
+        en: 'cases/v12',
+        uk: 'cases/v12uk'
+      }
+    }
+  ]
 
   return (
     <section id="portfolio" className="bg-gradient-to-b from-black to-gray-950 py-16 md:py-28 relative overflow-hidden">
@@ -68,10 +73,10 @@ const Portfolio = () => {
           }`}
         >
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-red-600 to-red-400 mb-6 relative inline-block">
-            Наші проекти
+            {t('title')}
           </h2>
           <p className="text-xl text-white/80 mb-8">
-            Ознайомтеся з нашими успішними кейсами та результатами
+            {t('subtitle')}
           </p>
           
           <div className="w-32 h-1 bg-gradient-to-r from-red-600 to-red-400 mx-auto rounded-full"></div>
@@ -87,7 +92,7 @@ const Portfolio = () => {
               onMouseEnter={() => setHoveredIndex(index)}
               onMouseLeave={() => setHoveredIndex(null)}
             >
-              <Link href={`/${item.slug.uk}`}>
+              <Link href={`/${item.slug[locale as 'uk' | 'en']}`}>
                 <div className="group relative h-[400px] rounded-2xl overflow-hidden border border-gray-800/50 shadow-xl transition-all duration-500 hover:border-gray-700/50 hover:shadow-2xl hover:shadow-black/40 hover:-translate-y-1">
                   {/* Background Image with enhanced overlay */}
                   <div className="absolute inset-0 rounded-2xl overflow-hidden">
@@ -117,7 +122,7 @@ const Portfolio = () => {
                       
                       <div className="flex items-center">
                         <span className="text-white/70 text-sm font-medium mr-2 group-hover:text-white transition-colors duration-300">
-                          Детальніше
+                          {t('cases.0.more')}
                         </span>
                         <svg className={`w-5 h-5 ${item.iconColor} transform group-hover:translate-x-1 transition-transform duration-300`} fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />

@@ -2,40 +2,54 @@
 
 import { useInView } from 'react-intersection-observer'
 import Image from 'next/image'
-
-const testimonials = [
-  {
-    text: "Тут я зрозумів, що гнучкий графік — це не міф. Баланс між роботою і життям став реальністю.",
-    author: "Олексій",
-    position: "Email Marketing Automator",
-    avatar: "/img/join-the-team/avatar1.webp"
-  },
-  {
-    text: "ADvantage — це місце, де твої ідеї чують. Я навчилася лідогенерації з нуля і тепер веду круті проекти.",
-    author: "Марія",
-    position: "Lead Generation Specialist",
-    avatar: "/img/join-the-team/avatar2.webp"
-  },
-  {
-    text: "Працюю з топ-клієнтами, бачу результати своїх кампаній. Команда — як другий дім.",
-    author: "Дмитро",
-    position: "Facebook Media Buyer",
-    avatar: "/img/join-the-team/avatar3.webp"
-  }
-]
+import { useTranslations } from 'next-intl'
 
 const Testimonials = () => {
+  const t = useTranslations('join-the-team.testimonials')
   const [ref, inView] = useInView({
     triggerOnce: true,
     threshold: 0.1,
   })
 
+  // Get testimonials data from translations
+  const testimonials = [
+    {
+      text: t('items.0.text'),
+      author: t('items.0.author'),
+      position: t('items.0.position'),
+      avatar: "/img/join-the-team/testimonial-1.jpg"
+    },
+    {
+      text: t('items.1.text'),
+      author: t('items.1.author'),
+      position: t('items.1.position'),
+      avatar: "/img/join-the-team/testimonial-2.jpg"
+    },
+    {
+      text: t('items.2.text'),
+      author: t('items.2.author'),
+      position: t('items.2.position'),
+      avatar: "/img/join-the-team/testimonial-3.jpg"
+    }
+  ]
+
   return (
-    <section className="bg-black py-20 md:py-32">
-      <div className="max-w-7xl mx-auto px-6">
-        <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-12 md:mb-16">
-          Що каже команда?
-        </h2>
+    <section className="bg-gradient-to-b from-gray-950 to-black py-16 md:py-28 relative overflow-hidden">
+      {/* Background decorative elements */}
+      <div className="absolute inset-0 overflow-hidden">
+        <div className="absolute -top-40 -left-40 w-96 h-96 rounded-full bg-red-600/5 blur-3xl"></div>
+        <div className="absolute -bottom-20 -right-20 w-64 h-64 rounded-full bg-red-800/5 blur-3xl"></div>
+        <div className="absolute top-1/4 right-1/4 w-32 h-32 rounded-full bg-red-500/5 blur-2xl"></div>
+      </div>
+      
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div className="max-w-3xl mx-auto text-center mb-16 md:mb-20">
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-red-600 to-red-400 mb-6 relative inline-block">
+            {t('title')}
+          </h2>
+          
+          <div className="w-32 h-1 bg-gradient-to-r from-red-600 to-red-400 mx-auto rounded-full"></div>
+        </div>
 
         <div 
           ref={ref}

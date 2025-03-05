@@ -2,41 +2,44 @@
 
 import { useInView } from 'react-intersection-observer'
 import { useState } from 'react'
-
-const vacancyData = [
-  {
-    title: "Lead Generation Specialist",
-    salary: "$300–$1200",
-    experience: "Без досвіду (стажування) | З досвідом",
-    description: "Хочеш увірватися в маркетинг? Тут ти станеш профі в генерації лідів із нуля.",
-    icon: "📊",
-    gradient: "from-red-600 to-red-400"
-  },
-  {
-    title: "Facebook Media Buyer",
-    salary: "$450–$1250",
-    experience: "З досвідом від 1,5 років",
-    description: "Facebook — твій майданчик? Запускай кампанії для топ-клієнтів і рви KPI.",
-    icon: "📱",
-    gradient: "from-red-700 to-red-500"
-  },
-  {
-    title: "Email Marketing Automator",
-    salary: "$150–$1000",
-    experience: "Без досвіду (стажування) | З досвідом",
-    description: "Любиш порядок у всьому? Автоматизуй email-потоки, які приносять гроші.",
-    icon: "✉️",
-    gradient: "from-red-800 to-red-600"
-  }
-]
+import { useTranslations } from 'next-intl'
 
 const Vacancies = () => {
+  const t = useTranslations('join-the-team.vacancies')
   const [ref, inView] = useInView({
     triggerOnce: true,
     threshold: 0.1,
   })
   
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null)
+
+  // Get vacancy data from translations
+  const vacancyData = [
+    {
+      title: t('positions.0.title'),
+      salary: t('positions.0.salary'),
+      experience: t('positions.0.experience'),
+      description: t('positions.0.description'),
+      icon: t('positions.0.icon'),
+      gradient: t('positions.0.gradient')
+    },
+    {
+      title: t('positions.1.title'),
+      salary: t('positions.1.salary'),
+      experience: t('positions.1.experience'),
+      description: t('positions.1.description'),
+      icon: t('positions.1.icon'),
+      gradient: t('positions.1.gradient')
+    },
+    {
+      title: t('positions.2.title'),
+      salary: t('positions.2.salary'),
+      experience: t('positions.2.experience'),
+      description: t('positions.2.description'),
+      icon: t('positions.2.icon'),
+      gradient: t('positions.2.gradient')
+    }
+  ]
 
   const scrollToForm = () => {
     const formSection = document.getElementById('choice')
@@ -60,10 +63,10 @@ const Vacancies = () => {
           }`}
         >
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-red-600 to-red-400 mb-6 relative inline-block">
-            Вибери свою роль
+            {t('title')}
           </h2>
           <p className="text-xl text-white/80 mb-8">
-            Знайди позицію, яка найкраще відповідає твоїм навичкам та амбіціям
+            {t('subtitle')}
           </p>
           
           <div className="w-32 h-1 bg-gradient-to-r from-red-600 to-red-400 mx-auto rounded-full"></div>
@@ -79,7 +82,7 @@ const Vacancies = () => {
               onMouseEnter={() => setHoveredIndex(index)}
               onMouseLeave={() => setHoveredIndex(null)}
             >
-              <div className="group relative h-full bg-gradient-to-br from-black/80 to-gray-900/80 backdrop-blur-sm rounded-2xl p-8 border border-red-900/20 shadow-xl overflow-hidden transition-all duration-500 hover:border-red-500/30 hover:shadow-red-900/20 hover:-translate-y-1 flex flex-col">
+              <div className="group relative h-full bg-gradient-to-br from-black/80 to-gray-900/80 rounded-2xl p-8 border border-red-900/20 shadow-xl overflow-hidden transition-all duration-500 hover:border-red-500/30 hover:shadow-red-900/20 hover:-translate-y-1 flex flex-col">
                 {/* Background gradient that appears on hover */}
                 <div className={`absolute inset-0 bg-gradient-to-br ${vacancy.gradient} opacity-0 group-hover:opacity-5 transition-opacity duration-500`}></div>
                 
@@ -117,7 +120,7 @@ const Vacancies = () => {
                     <div className="absolute inset-0 bg-gradient-to-r from-red-600 to-red-400 scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left"></div>
                     
                     <span className="relative z-10 text-white font-medium flex items-center justify-center">
-                      Подати заявку
+                      {t('applyButton')}
                       <svg className="ml-2 w-5 h-5 transform group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
                       </svg>

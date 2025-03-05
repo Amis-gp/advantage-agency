@@ -6,7 +6,7 @@ import Link from 'next/link'
 const Header = () => {
   return (
     <section className="relative w-full bg-black">
-      <nav className="fixed top-0 w-full z-20 bg-black/80 backdrop-blur-sm">
+      <nav className="fixed top-0 w-full z-20 bg-black">
         <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
           <Image 
             src="/img/logo.svg" 
