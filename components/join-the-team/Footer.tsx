@@ -111,7 +111,7 @@ const Footer = () => {
               <div className="space-y-4 flex flex-col items-center md:items-start">
                 <Link 
                   href="mailto:stepan@advantage-agency.co"
-                  className="flex items-center gap-2 text-white/60 hover:text-red-500 transition-colors group"
+                  className="flex items-center gap-2 text-white/60 hover:text-red-500 transition-colors group text-sm sm:text-base"
                   onMouseEnter={() => playSound('hover_1')}
                 >
                   <svg width="20" height="19" viewBox="0 0 20 19" fill="none" xmlns="http://www.w3.org/2000/svg" className="group-hover:scale-110 transition-transform">
@@ -121,7 +121,7 @@ const Footer = () => {
                 </Link>
                 <Link 
                   href="tel:+13393688255"
-                  className="flex items-center gap-2 text-white/60 hover:text-red-500 transition-colors group"
+                  className="flex items-center gap-2 text-white/60 hover:text-red-500 transition-colors group text-sm sm:text-base" 
                   onMouseEnter={() => playSound('hover_1')}
                 >
                   <svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg" className="group-hover:scale-110 transition-transform">
