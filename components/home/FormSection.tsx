@@ -5,6 +5,8 @@ import { useTranslations } from 'next-intl';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 import { useRouter } from 'next/navigation';
+import PhoneInput from 'react-phone-number-input';
+import 'react-phone-number-input/style.css';
 
 interface FormData {
     name: string;
@@ -23,6 +25,7 @@ const FormSection = () => {
         purpose: ''
     });
     const [isSubmitting, setIsSubmitting] = useState(false);
+    const [phoneValue, setPhoneValue] = useState<string>();
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
         const { name, value } = e.target;
@@ -132,16 +135,51 @@ const FormSection = () => {
                             />
                         </div>
                         <div>
-                            <input 
-                                type="tel" 
-                                name="phone"
-                                value={formData.phone}
-                                onChange={handleChange}
+                            <PhoneInput
+                                international
+                                defaultCountry="UA"
+                                value={phoneValue}
+                                onChange={(value) => {
+                                    setPhoneValue(value);
+                                    setFormData(prev => ({
+                                        ...prev,
+                                        phone: value || ''
+                                    }));
+                                }}
                                 placeholder={t('form.phone')}
-                                pattern="[0-9+\s\-\(\)]*"
+                                className="pl-6 w-full border border-white/40 rounded-xl focus-within:border-white/60"
+                                inputClassName="bg-transparent px-6 py-4 w-full text-white placeholder-white/60 focus:outline-none h-[56px]"
+                                countrySelectClassName="bg-black text-white px-4 py-4 border-r border-white/40 h-[56px]"
+                                buttonClassName="!bg-transparent !border-0"
                                 required
-                                className="w-full bg-transparent border border-white/40 rounded-xl px-6 py-4 text-white placeholder-white/60 focus:outline-none focus:border-white/60 transition-colors"
                             />
+                            <style jsx global>{`
+                                .PhoneInput {
+                                    height: 56px;
+                                    display: flex;
+                                    align-items: center;
+                                }
+                                .PhoneInputCountrySelect {
+                                    background-color: transparent !important;
+                                    color: white !important;
+                                    height: 56px;
+                                }
+                                .PhoneInputCountrySelect option {
+                                    background-color: black;
+                                    color: white;
+                                }
+                                .PhoneInputCountrySelectArrow {
+                                    color: white !important;
+                                    opacity: 0.6;
+                                }
+                                .PhoneInputInput {
+                                    height: 56px !important;
+                                    background-color: transparent !important;
+                                }
+                                .PhoneInputCountry {
+                                    background-color: transparent !important;
+                                }
+                            `}</style>
                         </div>
                         <div>
                             <textarea 

@@ -12,7 +12,7 @@ const Hero = () => {
   }
 
   return (
-    <section className="relative w-full min-h-screen bg-black">
+    <section className="relative w-full min-h-screen bg-black overflow-hidden">
       {/* Background GIF for mobile */}
       <div className="absolute inset-0 lg:hidden">
         <Image
@@ -25,9 +25,9 @@ const Hero = () => {
         <div className="absolute inset-0 bg-gradient-to-b" />
       </div>
 
-      <div className="relative min-h-screen flex">
+      <div className="relative min-h-screen flex max-w-[2000px] mx-auto">
         {/* Left content side */}
-        <div className="flex-1 flex items-center max-w-7xl mx-auto">
+        <div className="flex-1 flex items-center max-w-7xl mx-auto z-20">
           <div className="max-w-2xl px-6 space-y-8">
             <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-tight">
               <span className="text-4xl md:text-6xl lg:text-7xl ">{t('title')}</span> <br/>
@@ -51,8 +51,8 @@ const Hero = () => {
         </div>
 
         {/* Right gif side - desktop only */}
-        <div className="hidden lg:block lg:w-1/2 lg:left-1/2 h-full absolute">
-          <div className="relative h-full">
+        <div className="hidden lg:block lg:w-3/5 lg:left-[43%] h-[100vh] absolute overflow-hidden">
+          <div className="relative mt-4 h-[105vh]">
             <div className="absolute inset-0 bg-gradient-to-r from-black to-transparent z-10" />
             <Image
               src="/img/join-the-team/job.gif"

@@ -19,7 +19,7 @@ export default function Footer() {
                         />
                         <p className="hidden sm:block mt-4 text-sm md:text-base text-center lg:text-left text-gray-400">
                             Copyright 2024.<br />
-                            Made by <span className='text-red-500font-bold hover:text-red/80 transition-colors cursor-pointer'>
+                            Made by <span className='text-red-600 font-bold hover:text-red/80 transition-colors cursor-pointer'>
                                 Advantage Agency
                             </span>
                         </p>
@@ -55,12 +55,12 @@ export default function Footer() {
                                 { name: 'Portfolio', href: '#portfolio' },
                                 { name: 'Instructions', href: '#instructions' },
                                 { name: 'Services', href: '#services' },
-        
+                                { name: 'Looking for work?', href: '/join-the-team', className: 'font-bold text-red-500 hover:text-red-600' }
                             ].map((item) => (
                                 <Link 
                                     key={item.name} 
                                     href={item.href}
-                                    className="text-sm md:text-base hover:text-red-500transition-colors"
+                                    className={`text-sm md:text-base hover:text-red-500 transition-colors ${item.className || ''}`}
                                     onMouseEnter={() => playSound('hover_1')}
                                     onClick={(e) => {
                                         if (item.href.startsWith('#')) {

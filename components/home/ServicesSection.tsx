@@ -11,6 +11,7 @@ import 'swiper/css'
 import 'swiper/css/navigation'
 import 'swiper/css/pagination'
 import { playSound } from '@/app/constant/sound'
+import { useRouter } from 'next/router'
 
 const serviceStyles = {
     google: {
@@ -30,6 +31,7 @@ const serviceStyles = {
 export default function ServicesSection() {
     const t = useTranslations('services');
     const swiperRef = useRef<SwiperType>();
+    const locale = typeof window !== 'undefined' ? window.navigator.language : 'en';
 
     const handlePrev = () => {
         playSound('click');
@@ -144,7 +146,7 @@ export default function ServicesSection() {
                                     </span>
                                 </div>
                                 <Link 
-                                    href="/offers" 
+                                    href={index === 0 ? (locale.startsWith('uk') ? '/cases/v13' : '/cases/v13uk') : '/offers'}
                                     className={`block w-full py-3 rounded-full mt-8 font-medium transition-all duration-300 text-center text-white bg-white/20 hover:bg-white/30`}
                                 >
                                     {plan.button}
@@ -189,7 +191,7 @@ export default function ServicesSection() {
                             </span>
                         </div>
                         <Link 
-                            href="/offers" 
+                            href={index === 0 ? (locale.startsWith('uk') ? '/cases/v13uk' : '/cases/v13') : '/offers'}
                             className={`block w-full py-3 rounded-full mt-8 font-medium transition-all duration-300 text-center text-white bg-white/20 hover:bg-white/30`}
                         >
                             {plan.button}
