@@ -19,7 +19,7 @@ const Footer = () => {
   }
 
   return (
-    <footer className="relative bg-black text-white py-10 md:py-16">
+    <footer className="relative bg-black text-white py-10 md:pt-16 md:pb-8">
       {/* Background pattern */}
       <div className="absolute inset-0 w-full h-full opacity-5">
         <div className="absolute inset-0" style={{

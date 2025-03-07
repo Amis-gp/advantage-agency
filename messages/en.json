@@ -861,7 +861,7 @@
                     "gradient": "from-red-600 to-red-400"
                 },
                 {
-                    "title": "Facebook Media Buyer",
+                    "title": "Media Buyer Affiliate",
                     "salary": "$450–$1250",
                     "experience": "With experience from 1.5 years",
                     "description": "Is Facebook your playground? Launch campaigns for top clients and crush KPIs.",
@@ -898,7 +898,7 @@
                     "path": "/join/lead-generation"
                 },
                 {
-                    "title": "Facebook Media Buyer",
+                    "title": "Media Buyer Affiliate",
                     "path": "/join/media-buyer"
                 },
                 {
@@ -941,6 +941,203 @@
                     "description": "Gain experience working with international clients and projects"
                 }
             ]
+        },
+        "qualification": {
+            "back": "Back",
+            "next": "Next",
+            "submit": "Submit",
+            "cold-email": {
+                "experience": {
+                    "text": "👨‍💻 What is your experience in Cold Email Marketing Automation?",
+                    "options": ["No experience", "Less than 1 year", "1-2 years", "2-5 years", "More than 5 years"]
+                },
+                "tools": {
+                    "text": "🛠️ Which Cold Email Marketing Automation tools have you used?",
+                    "options": ["Instantly", "Lemlist", "Mailchimp", "SendGrid", "Other"],
+                    "hint": "Select all tools you have experience with"
+                },
+                "spam_avoidance": {
+                    "text": "🎯 How do you ensure cold email delivery while avoiding spam filters?",
+                    "hint": "Share strategies you've used to improve email deliverability"
+                },
+                "copywriting": {
+                    "text": "✍️ How do you create effective copy for cold email campaigns?",
+                    "hint": "Share examples or approaches to writing"
+                },
+                "metrics": {
+                    "text": "📊 What metrics do you use to evaluate cold email campaign success?",
+                    "hint": "Name key indicators and explain their importance"
+                },
+                "best_result": {
+                    "text": "🏆 Tell us about your best result in Cold Email Marketing Automation",
+                    "hint": "Describe a campaign or project you're proud of"
+                },
+                "future_plans": {
+                    "text": "🎯 Where do you see yourself in 2 years and what are your earning goals?",
+                    "hint": "Share your ambitions and financial goals"
+                },
+                "previous_experience": {
+                    "text": "📚 What were you doing before applying for this role?",
+                    "hint": "Tell us about your education, work, or hobbies"
+                },
+                "computer_skills": {
+                    "text": "💻 Is the computer your friend or just an acquaintance? Rate your proficiency",
+                    "options": ["1 - Beginner", "2 - Basic", "3 - Intermediate", "4 - Advanced", "5 - Expert"]
+                },
+                "training_readiness": {
+                    "text": "📝 Are you ready to undergo training and learn new skills?",
+                    "options": ["Yes", "No"]
+                },
+                "goals": {
+                    "text": "🎯 What results do you want to achieve in this role?",
+                    "hint": "What motivates you to work in Cold Email Marketing Automation?"
+                },
+                "english_level": {
+                    "text": "🌍 What is your English proficiency level?",
+                    "options": ["None", "Beginner", "Intermediate", "Advanced"]
+                },
+                "age_group": {
+                    "text": "👤 Which age group do you belong to?",
+                    "options": ["18-20 years", "21-25 years", "26-30 years", "31+ years"]
+                }
+            },
+            "lead-gen": {
+                "experience": {
+                    "text": "👨‍💻 What experience do you have in lead generation?",
+                    "options": ["No experience", "Less than 1 year", "1-2 years", "2-5 years"]
+                },
+                "sources": {
+                    "text": "🌐 Which lead generation sources have you used?",
+                    "options": ["Telegram", "LinkedIn", "Instagram", "Other"]
+                },
+                "telegram_experience": {
+                    "text": "📱 Telegram isn't just for memes. How have you searched for leads through it?",
+                    "hint": "Tell us how you looked for communities or wrote private messages"
+                },
+                "linkedin_experience": {
+                    "text": "💼 LinkedIn — How would you perform a personalized DM?",
+                    "hint": "Share your thoughts on a personalized approach"
+                },
+                "instagram_experience": {
+                    "text": "📸 Instagram — How have you used this platform for lead generation?",
+                    "hint": "Tell us about your approach to finding clients on Instagram"
+                },
+                "other_sources": {
+                    "text": "🔍 You selected 'Other.' Tell us, what other lead generation sources have you used?",
+                    "hint": "Describe what other platforms or methods you've applied"
+                },
+                "lead_strategies": {
+                    "text": "📊 Have you used strategies to contact leads? Which ones?",
+                    "hint": "For example, how did you 'warm up' leads before reaching out?"
+                },
+                "best_result": {
+                    "text": "🏆 Tell us about your best result in lead generation",
+                    "hint": "Describe a campaign or project you're proud of"
+                },
+                "english": {
+                    "text": "🌍 Do you know English?",
+                    "options": ["Yes", "No"]
+                },
+                "english_level": {
+                    "text": "📚 What is your English level?",
+                    "options": ["Beginner", "Intermediate", "Advanced"]
+                },
+                "age": {
+                    "text": "👤 Which age category do you belong to?",
+                    "options": ["18-20 years", "21-25 years", "26-30 years", "31+ years"]
+                },
+                "why_us": {
+                    "text": "💡 Why are you interested in working with ADvantage Agency?",
+                    "hint": "What attracts you to our company and Cold Email Automation?"
+                },
+                "how_found": {
+                    "text": "🔍 How did you hear about us?",
+                    "hint": "Tell us where you saw our job posting"
+                },
+                "questions": {
+                    "text": "❓ Do you have any questions for us?",
+                    "hint": "Ask about anything that interests you regarding working with us"
+                },
+                "future_goals": {
+                    "text": "🎯 What are your future goals in lead generation?",
+                    "hint": "Tell us about your professional ambitions and development plans"
+                }
+            },
+            "media-buyer": {
+                "experience": {
+                "text": "👨‍💻 What is your experience in media buying on Facebook, TikTok or Google platforms?",
+                "options": ["Less than 1 year", "1-2 years", "2-5 years", "More than 5 years"]
+                },
+                "platforms": {
+                "text": "🌐 Which platforms have you used for media buying?",
+                "options": ["Facebook", "TikTok", "Google Ads", "Other"]
+                },
+                "niches": {
+                "text": "🏆 Which niche have you worked with?",
+                "options": ["Gambling/Betting", "Nutra", "Dating", "Other"]
+                },
+                "budget": {
+                "text": "💰 What advertising budget have you spent in $ over time?",
+                "hint": "Specify the total amount in dollars that you spent on advertising during your career."
+                },
+                "proof": {
+                "text": "📊 Share a proof screenshot of statistics from your advertising account or affiliate networks.",
+                "hint": "Provide a link to a screenshot that confirms your advertising expenses or campaign results."
+                },
+                "success_case": {
+                "text": "🚀 Describe your most successful advertising campaign on one of the platforms (Facebook, TikTok, Google). What was the niche, geo and profit?",
+                "hint": "Tell us about a specific case: niche (vertical), geography (countries) and profit (ROI or other metric)."
+                },
+                "english_knowledge": {
+                "text": "🌍 Do you know English?",
+                "options": ["Yes", "No"]
+                },
+                "english_level": {
+                "text": "📚 What is your level of English?",
+                "options": ["Beginner", "Intermediate", "Advanced"]
+                }
+            },
+            "common": {
+                "buttons": {
+                "back": "Back",
+                "next": "Next"
+                },
+                "options": {
+                    "yes": "Yes",
+                    "no": "No",
+                    "less-than-1-year": "Less than 1 year",
+                    "1-2-years": "1-2 years",
+                    "2-5-years": "2-5 years",
+                    "more-than-5-years": "More than 5 years",
+                    "other": "Other",
+                    "beginner": "Beginner",
+                    "intermediate": "Intermediate",
+                    "advanced": "Advanced",
+                    "noOptions": "No answer options"
+                },
+                "messages": {
+                "no-options": "No answer options available"
+                }
+            },
+            "contact-form": {
+                "title": "Leave your contact information",
+                "name-placeholder": "Your name",
+                "email-placeholder": "Your email",
+                "phone-placeholder": "Your phone",
+                "buttons": {
+                "submit": "Submit",
+                "submitting": "Submitting..."
+                },
+                "success": {
+                "title": "Thank you for your application!",
+                "message": "We will contact you soon."
+                }
+            },
+            "rejection": {
+                "title": "Thank you for your interest!",
+                "message": "Currently we are looking for candidates with at least 1 year of experience. You can check other vacancies on our website.",
+                "button": "View other vacancies"
+            }
         }
     },
     "brief-email": {

@@ -21,8 +21,8 @@ const Benefits = () => {
     <section className="bg-black pt-20 md:pt-32 pb-20 md:pb-32 relative overflow-hidden">
       {/* Декоративні елементи */}
       <div className="absolute top-0 left-0 w-full h-full overflow-hidden z-0">
-        <div className="absolute top-20 left-10 w-64 h-64 bg-red-500/5 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-20 right-10 w-80 h-80 bg-red-500/10 rounded-full blur-3xl"></div>
+        <div className="absolute top-20 left-10 w-64 h-64 bg-red-500/5 rounded-full"></div>
+        <div className="absolute bottom-20 right-10 w-80 h-80 bg-red-500/10 rounded-full"></div>
       </div>
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">
@@ -44,7 +44,7 @@ const Benefits = () => {
                 inView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
               }`}
             >
-              <div className="group bg-gradient-to-br from-white/5 to-white/[0.02] hover:from-white/10 hover:to-white/5 backdrop-blur-sm rounded-2xl p-6 md:p-8 h-full border border-white/5 hover:border-white/10 transition-all duration-300 relative overflow-hidden shadow-lg">
+              <div className="group bg-gradient-to-br from-white/5 to-white/[0.02] hover:from-white/10 hover:to-white/5 rounded-2xl p-6 md:p-8 h-full border border-white/5 hover:border-white/10 transition-all duration-300 relative overflow-hidden shadow-lg">
                 {/* Particles effect */}
                 <div className="absolute top-6 right-6 w-20 h-20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-30 pointer-events-none">
                   <div className="absolute w-1 h-1 bg-red-500 rounded-full animate-particle-1"></div>

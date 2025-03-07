@@ -61,8 +61,8 @@ const Portfolio = () => {
     <section id="portfolio" className="bg-gradient-to-b from-black to-gray-950 py-16 md:py-28 relative overflow-hidden">
       {/* Background decorative elements */}
       <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute -top-40 -right-40 w-96 h-96 rounded-full bg-red-600/5 blur-3xl"></div>
-        <div className="absolute -bottom-40 -left-40 w-96 h-96 rounded-full bg-red-800/5 blur-3xl"></div>
+        <div className="absolute -top-40 -right-40 w-96 h-96 rounded-full bg-red-600/5"></div>
+        <div className="absolute -bottom-40 -left-40 w-96 h-96 rounded-full bg-red-800/5"></div>
       </div>
       
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -132,7 +132,7 @@ const Portfolio = () => {
                   </div>
 
                   {/* Enhanced hover indicator */}
-                  <div className="absolute top-8 right-8 w-12 h-12 rounded-full bg-black/30 backdrop-blur-sm border border-white/10 flex items-center justify-center transform transition-all duration-500 group-hover:scale-110 group-hover:bg-black/50 group-hover:border-white/20 z-20">
+                  <div className="absolute top-8 right-8 w-12 h-12 rounded-full bg-black/30 border border-white/10 flex items-center justify-center transform transition-all duration-500 group-hover:scale-110 group-hover:bg-black/50 group-hover:border-white/20 z-20">
                     <span className={`${item.iconColor} transform group-hover:translate-x-1 transition-transform duration-300 text-lg font-bold`}>
                       →
                     </span>

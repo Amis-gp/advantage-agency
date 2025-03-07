@@ -5,16 +5,18 @@ import Link from 'next/link'
 
 const Header = () => {
   return (
-    <section className="relative w-full bg-black">
+    <section className="relative w-full bg-black z-90">
       <nav className="fixed top-0 w-full z-20 bg-black">
         <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-          <Image 
-            src="/img/logo.svg" 
-            alt="Advantage Agency" 
-            width={180} 
-            height={40} 
-            className="h-8 w-auto"
-          />
+          <Link href="/join-the-team">
+            <Image 
+              src="/img/logo.svg" 
+              alt="Advantage Agency" 
+              width={180} 
+              height={40} 
+              className="h-8 w-auto"
+            />
+          </Link>
           <div className="flex items-center gap-6">
             <Link href="https://www.linkedin.com/company/advantage-agencyuk/" 
                   className="text-white/70 hover:text-red-500 transition-colors"

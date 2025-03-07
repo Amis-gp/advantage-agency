@@ -1,15 +1,11 @@
 'use client'
 
 import Image from 'next/image'
+import Link from 'next/link'
 import { useTranslations } from 'next-intl'
 
 const Hero = () => {
   const t = useTranslations('join-the-team.hero')
-
-  const scrollToAbout = () => {
-    const aboutSection = document.getElementById('about')
-    aboutSection?.scrollIntoView({ behavior: 'smooth' })
-  }
 
   return (
     <section className="relative w-full min-h-screen bg-black overflow-hidden">
@@ -37,15 +33,15 @@ const Hero = () => {
               {t('subtitle')}
             </p>
             <div className="pt-4">
-              <button 
-                onClick={scrollToAbout}
+              <Link 
+                href="#vacancies"
                 className="group relative px-8 py-4 bg-red-500 text-white rounded-lg overflow-hidden transition-all duration-300 hover:bg-red-600"
               >
                 <span className="relative z-10 text-lg font-medium">
                   {t('button')}
                 </span>
                 <div className="absolute inset-0 bg-gradient-to-r from-red-600 to-red-500 transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-300" />
-              </button>
+              </Link>
             </div>
           </div>
         </div>

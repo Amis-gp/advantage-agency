@@ -153,7 +153,7 @@ const AboutUs = () => {
           {stats.map((stat, index) => (
             <div 
               key={index}
-              className="bg-black/40 backdrop-blur-sm rounded-xl p-6 transform transition-all duration-700 hover:scale-105 hover:bg-red-900/20"
+              className="bg-black/40 rounded-xl p-6 transform transition-all duration-700 hover:scale-105 hover:bg-red-900/20"
             >
               <div className="text-3xl md:text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-red-600 to-red-400 mb-2">
                 {stat.value}

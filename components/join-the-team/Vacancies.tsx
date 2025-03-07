@@ -47,12 +47,12 @@ const Vacancies = () => {
   }
 
   return (
-    <section className="bg-gradient-to-b from-black to-gray-950 py-16 md:py-28 relative overflow-hidden">
+    <section id="vacancies" className="bg-gradient-to-b from-black to-gray-950 py-16 md:py-28 relative overflow-hidden">
       {/* Background decorative elements */}
       <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute -top-40 -right-40 w-96 h-96 rounded-full bg-red-600/5 blur-3xl"></div>
-        <div className="absolute -bottom-40 -left-40 w-96 h-96 rounded-full bg-red-800/5 blur-3xl"></div>
-        <div className="absolute top-1/3 left-1/4 w-32 h-32 rounded-full bg-red-500/5 blur-2xl"></div>
+        <div className="absolute -top-40 -right-40 w-96 h-96 rounded-full bg-red-600/5"></div>
+        <div className="absolute -bottom-40 -left-40 w-96 h-96 rounded-full bg-red-800/5"></div>
+        <div className="absolute top-1/3 left-1/4 w-32 h-32 rounded-full bg-red-500/5"></div>
       </div>
       
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
