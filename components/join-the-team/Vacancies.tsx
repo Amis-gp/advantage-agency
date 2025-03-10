@@ -3,6 +3,8 @@
 import { useInView } from 'react-intersection-observer'
 import { useState } from 'react'
 import { useTranslations } from 'next-intl'
+import { useRouter } from 'next/navigation'
+import { usePathname } from 'next/navigation'
 
 const Vacancies = () => {
   const t = useTranslations('join-the-team.vacancies')
@@ -12,6 +14,8 @@ const Vacancies = () => {
   })
   
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null)
+  const router = useRouter()
+  const pathname = usePathname()
 
   // Get vacancy data from translations
   const vacancyData = [
@@ -21,7 +25,8 @@ const Vacancies = () => {
       experience: t('positions.0.experience'),
       description: t('positions.0.description'),
       icon: t('positions.0.icon'),
-      gradient: t('positions.0.gradient')
+      gradient: t('positions.0.gradient'),
+      path: 'lead-gen'
     },
     {
       title: t('positions.1.title'),
@@ -29,7 +34,8 @@ const Vacancies = () => {
       experience: t('positions.1.experience'),
       description: t('positions.1.description'),
       icon: t('positions.1.icon'),
-      gradient: t('positions.1.gradient')
+      gradient: t('positions.1.gradient'),
+      path: 'media-buyer'
     },
     {
       title: t('positions.2.title'),
@@ -37,13 +43,18 @@ const Vacancies = () => {
       experience: t('positions.2.experience'),
       description: t('positions.2.description'),
       icon: t('positions.2.icon'),
-      gradient: t('positions.2.gradient')
+      gradient: t('positions.2.gradient'),
+      path: 'cold-email'
     }
   ]
 
-  const scrollToForm = () => {
-    const formSection = document.getElementById('choice')
-    formSection?.scrollIntoView({ behavior: 'smooth' })
+  const handleVacancyClick = (vacancyPath: string) => {
+    // Визначаємо поточну мову з URL
+    const isUkrainian = pathname.includes('/uk')
+    const basePath = isUkrainian ? '/uk/join-the-team/' : '/join-the-team/'
+    
+    // Переходимо на відповідну сторінку вакансії
+    router.push(`${basePath}${vacancyPath}`)
   }
 
   return (
@@ -88,7 +99,7 @@ const Vacancies = () => {
                 
                 <div className="flex-grow">
                   {/* Position icon */}
-                  <div className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${vacancy.gradient} flex items-center justify-center text-3xl mb-6 transform transition-all duration-500 group-hover:scale-110 group-hover:rotate-3 shadow-lg`}>
+                  <div className={`w-16 h-16 rounded-2xl bg-gradient-to-br from-red-700 to-red-500 flex items-center justify-center text-3xl mb-6 transform transition-all duration-500 group-hover:scale-110 group-hover:rotate-3 shadow-lg`}>
                     {vacancy.icon}
                   </div>
                   
@@ -112,7 +123,7 @@ const Vacancies = () => {
                 
                 <div className="mt-auto pt-4">
                   <button 
-                    onClick={scrollToForm}
+                    onClick={() => handleVacancyClick(vacancy.path)}
                     className="relative w-full py-4 overflow-hidden rounded-lg group-hover:shadow-lg transition-all duration-300"
                   >
                     {/* Button background with animated gradient */}

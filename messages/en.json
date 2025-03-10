@@ -996,7 +996,7 @@
                     "text": "🌍 What is your English proficiency level?",
                     "options": ["None", "Beginner", "Intermediate", "Advanced"]
                 },
-                "age_group": {
+                "age": {
                     "text": "👤 Which age group do you belong to?",
                     "options": ["18-20 years", "21-25 years", "26-30 years", "31+ years"]
                 }
@@ -1033,6 +1033,22 @@
                 "best_result": {
                     "text": "🏆 Tell us about your best result in lead generation",
                     "hint": "Describe a campaign or project you're proud of"
+                },
+                "previous_experience": {
+                    "text": "📚 What were you doing before applying for this role?",
+                    "hint": "Tell us about your education, work, or hobbies"
+                },
+                "computer_skills": {
+                    "text": "💻 Is the computer your friend or just an acquaintance? Rate your proficiency",
+                    "options": ["1 - Beginner", "2 - Basic", "3 - Intermediate", "4 - Advanced", "5 - Expert"]
+                },
+                "ready_for_training": {
+                    "text": "📝 Are you ready to undergo training and learn new skills?",
+                    "options": ["Yes", "No"]
+                },
+                "motivation": {
+                    "text": "🎯 What results do you want to achieve in this role?",
+                    "hint": "What motivates you to work in lead generation?"
                 },
                 "english": {
                     "text": "🌍 Do you know English?",
@@ -1088,13 +1104,17 @@
                 "text": "🚀 Describe your most successful advertising campaign on one of the platforms (Facebook, TikTok, Google). What was the niche, geo and profit?",
                 "hint": "Tell us about a specific case: niche (vertical), geography (countries) and profit (ROI or other metric)."
                 },
-                "english_knowledge": {
+                "english": {
                 "text": "🌍 Do you know English?",
                 "options": ["Yes", "No"]
                 },
                 "english_level": {
                 "text": "📚 What is your level of English?",
                 "options": ["Beginner", "Intermediate", "Advanced"]
+                },
+                "age": {
+                    "text": "👤 Which age category do you belong to?",
+                    "options": ["18-20 years", "21-25 years", "26-30 years", "31+ years"]
                 }
             },
             "common": {
@@ -1117,20 +1137,27 @@
                 },
                 "messages": {
                 "no-options": "No answer options available"
-                }
-            },
-            "contact-form": {
-                "title": "Leave your contact information",
-                "name-placeholder": "Your name",
-                "email-placeholder": "Your email",
-                "phone-placeholder": "Your phone",
-                "buttons": {
-                "submit": "Submit",
-                "submitting": "Submitting..."
                 },
-                "success": {
-                "title": "Thank you for your application!",
-                "message": "We will contact you soon."
+                "contact-form": {
+                    "firstName": "First Name",
+                    "lastName": "Last Name",
+                    "email": "Email",
+                    "phone": "Phone",
+                    "telegram": "Telegram",
+                    "linkedin": "LinkedIn",
+                    "resume": "Resume",
+                    "portfolio": "Portfolio (if available)",
+                    "message": "Message",
+                    "title": "Leave your contact information",
+                    "name-placeholder": "Your name",
+                    "email-placeholder": "Your email",
+                    "phone-placeholder": "Your phone",
+                    "submit": "Submit",
+                    "submitting": "Submitting...",
+                    "success": {
+                        "title": "Thank you for your application!",
+                        "message": "We will contact you soon."
+                    }
                 }
             },
             "rejection": {

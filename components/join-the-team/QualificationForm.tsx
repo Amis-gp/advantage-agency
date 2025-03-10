@@ -88,22 +88,39 @@ const QualificationForm = () => {
       // Отримуємо питання на основі досвіду
       const candidateQuestions = questionsModule.getCandidateQuestions(formState.answers.experience)
       
-      // Зберігаємо загальну кількість кроків
-      if (candidateQuestions.length > 0 && totalSteps !== candidateQuestions.length) {
-        setTotalSteps(candidateQuestions.length)
-      }
+      // Фільтруємо питання на основі умов
+      const filteredQuestions = candidateQuestions.filter(question => {
+        // Якщо у питання є умова
+        if (question.condition) {
+          const { dependsOn, value } = question.condition
+          const answer = formState.answers[dependsOn]
+          
+          // Перевіряємо умову для english_level
+          if (dependsOn === 'english') {
+            return answer === value
+          }
+          
+          // Для інших умов
+          if (Array.isArray(value)) {
+            return value.includes(answer)
+          }
+          return answer === value
+        }
+        return true
+      })
       
-      // Фільтруємо питання на основі попередніх відповідей
-      const filteredQuestions = questionsModule.getFilteredQuestions(candidateQuestions, formState.answers)
+      // Зберігаємо загальну кількість кроків
+      if (filteredQuestions.length > 0 && totalSteps !== filteredQuestions.length) {
+        setTotalSteps(filteredQuestions.length)
+      }
       
       // Зберігаємо поточний крок
       const currentStep = formState.currentStep
       
-      // Оновлюємо питання, але не показуємо форму контактів тут
+      // Оновлюємо питання
       setQuestions(filteredQuestions)
       
       // Перевіряємо, чи це останній крок після фільтрації
-      // Але тільки якщо це не перша відповідь
       if (currentStep >= filteredQuestions.length && filteredQuestions.length > 0 && !isFirstAnswer) {
         setShowContactForm(true)
       }
@@ -129,7 +146,8 @@ const QualificationForm = () => {
       const newHistory = [...prev.history, prev.currentStep]
       
       // Перевіряємо, чи це перше питання про досвід для медіабаєра
-      if (questionId === 'experience' && profession === 'media-buyer' && answer === 'Менше 1 року') {
+      if (profession === 'media-buyer' && questionId === 'experience' && 
+          (answer === 'Менше 1 року' || answer === 'Less than 1 year')) {
         setShowRejectionMessage(true)
         return prev
       }
@@ -309,6 +327,33 @@ ${Object.entries(formState.answers).map(([key, value]) => {
         questionOptions = ['18-25', '26-35', '36-45', '45+'];
       }
     }
+    else if (question.id === 'platforms') {
+      try {
+        const translatedOptions = t('options.platforms');
+        questionOptions = Array.isArray(translatedOptions) ? translatedOptions : 
+          (pathname.includes('/uk/') ? 
+            ['Facebook', 'TikTok', 'Google Ads', 'Інше'] : 
+            ['Facebook', 'TikTok', 'Google Ads', 'Other']);
+      } catch (error) {
+        questionOptions = pathname.includes('/uk/') ? 
+          ['Facebook', 'TikTok', 'Google Ads', 'Інше'] : 
+          ['Facebook', 'TikTok', 'Google Ads', 'Other'];
+      }
+    }
+    else if (question.id === 'niches') {
+      try {
+        const translatedOptions = t('options.niches');
+        questionOptions = Array.isArray(translatedOptions) ? translatedOptions : 
+          (pathname.includes('/uk/') ? 
+            ['Gambling/Betting', 'Nutra', 'Dating', 'Інше'] : 
+            ['Gambling/Betting', 'Nutra', 'Dating', 'Other']);
+      } catch (error) {
+        questionOptions = pathname.includes('/uk/') ? 
+          ['Gambling/Betting', 'Nutra', 'Dating', 'Інше'] : 
+          ['Gambling/Betting', 'Nutra', 'Dating', 'Other'];
+      }
+    }
+    
     // Для інших питань використовуємо опції з об'єкта, якщо вони є
     else if (question.options) {
       questionOptions = question.options;
@@ -441,18 +486,18 @@ ${Object.entries(formState.answers).map(([key, value]) => {
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
             </svg>
           </div>
-          <h3 className="text-2xl font-bold text-white mb-4">{t('common.success.title')}</h3>
-          <p className="text-white/80 mb-6">{t('common.success.message')}</p>
+          <h3 className="text-2xl font-bold text-white mb-4">{t('common.contact-form.success.title')}</h3>
+          <p className="text-white/80 mb-6">{t('common.contact-form.success.message')}</p>
         </div>
       )
     }
 
     return (
       <div className="space-y-6">
-        <h3 className="text-2xl font-bold text-white mb-6">{t('common.contactForm.title')}</h3>
+        <h3 className="text-2xl font-bold text-white mb-6">{t('common.contact-form.title')}</h3>
         <div className="space-y-4">
           <div>
-            <label htmlFor="name" className="block text-white/80 mb-2">{t('common.contactForm.namePlaceholder')}</label>
+            <label htmlFor="name" className="block text-white/80 mb-2">{t('common.contact-form.firstName')}</label>
             <input
               type="text"
               id="name"
@@ -460,12 +505,12 @@ ${Object.entries(formState.answers).map(([key, value]) => {
               value={contactData.name}
               onChange={handleContactChange}
               className="w-full p-4 bg-black/30 border border-white/10 rounded-xl text-white/80 focus:border-red-500/50 focus:outline-none"
-              placeholder={t('common.contactForm.namePlaceholder')}
+              placeholder={t('common.contact-form.name-placeholder')}
               required
             />
           </div>
           <div>
-            <label htmlFor="email" className="block text-white/80 mb-2">{t('common.contactForm.emailPlaceholder')}</label>
+            <label htmlFor="email" className="block text-white/80 mb-2">{t('common.contact-form.email')}</label>
             <input
               type="email"
               id="email"
@@ -473,12 +518,12 @@ ${Object.entries(formState.answers).map(([key, value]) => {
               value={contactData.email}
               onChange={handleContactChange}
               className="w-full p-4 bg-black/30 border border-white/10 rounded-xl text-white/80 focus:border-red-500/50 focus:outline-none"
-              placeholder={t('common.contactForm.emailPlaceholder')}
+              placeholder={t('common.contact-form.email-placeholder')}
               required
             />
           </div>
           <div>
-            <label htmlFor="phone" className="block text-white/80 mb-2">{t('common.contactForm.phonePlaceholder')}</label>
+            <label htmlFor="phone" className="block text-white/80 mb-2">{t('common.contact-form.phone')}</label>
             <input
               type="tel"
               id="phone"
@@ -486,7 +531,7 @@ ${Object.entries(formState.answers).map(([key, value]) => {
               value={contactData.phone}
               onChange={handleContactChange}
               className="w-full p-4 bg-black/30 border border-white/10 rounded-xl text-white/80 focus:border-red-500/50 focus:outline-none"
-              placeholder={t('common.contactForm.phonePlaceholder')}
+              placeholder={t('common.contact-form.phone-placeholder')}
               required
             />
           </div>
@@ -505,7 +550,7 @@ ${Object.entries(formState.answers).map(([key, value]) => {
               (submitting || !contactData.name || !contactData.email || !contactData.phone) ? 'opacity-50 cursor-not-allowed' : ''
             }`}
           >
-            {submitting ? t('common.contactForm.submitting') : t('common.contactForm.submit')}
+            {submitting ? t('common.contact-form.submitting') : t('common.contact-form.submit')}
           </button>
         </div>
       </div>

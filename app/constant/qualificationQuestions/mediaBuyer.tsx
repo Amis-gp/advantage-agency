@@ -66,8 +66,8 @@ export const experiencedQuestions: Question[] = [
     path: 'experienced'
   },
   {
-    id: 'english_knowledge',
-    textKey: 'media-buyer.english_knowledge.text',
+    id: 'english',
+    textKey: 'media-buyer.english.text',
     type: 'yesno',
     path: 'experienced'
   },
@@ -78,7 +78,7 @@ export const experiencedQuestions: Question[] = [
     optionsKey: 'media-buyer.english_level.options',
     path: 'experienced',
     condition: {
-      dependsOn: 'english_knowledge',
+      dependsOn: 'english',
       value: true
     }
   }
@@ -113,7 +113,7 @@ export const getFilteredQuestions = (allQuestions: Question[], answers: Record<s
         if (Array.isArray(value) && Array.isArray(answerValue)) {
           return value.some(v => answerValue.includes(v));
         }
-      } else if (dependsOn === 'english_knowledge') {
+      } else if (dependsOn === 'english') {
         return answerValue === value;
       } else {
         if (Array.isArray(value)) {

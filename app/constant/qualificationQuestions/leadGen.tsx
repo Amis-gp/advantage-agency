@@ -176,6 +176,7 @@ export const commonQuestions: Question[] = [
     id: 'how_found',
     textKey: 'lead-gen.how_found.text',
     type: 'open',
+    hintKey: 'lead-gen.how_found.hint',
     path: 'all'
   },
   {

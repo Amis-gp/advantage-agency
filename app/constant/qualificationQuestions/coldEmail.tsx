@@ -122,10 +122,10 @@ export const commonQuestions: Question[] = [
     path: 'all'
   },
   {
-    id: 'age_group',
-    textKey: 'cold-email.age_group.text',
+    id: 'age',
+    textKey: 'cold-email.age.text',
     type: 'choice',
-    optionsKey: 'cold-email.age_group.options',
+    optionsKey: 'cold-email.age.options',
     path: 'all'
   }
 ]

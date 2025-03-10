@@ -21,17 +21,17 @@ const Header = () => {
             <Link href="https://www.linkedin.com/company/advantage-agencyuk/" 
                   className="text-white/70 hover:text-red-500 transition-colors"
                   target="_blank">
-              <Image src="/img/linkedin.svg" alt="LinkedIn" width={24} height={24} />
+              <Image src="/img/linkedin.svg" alt="LinkedIn" width={28} height={28} />
             </Link>
             <Link href="https://www.instagram.com/_advantage_agency_" 
                   className="text-white/70 hover:text-red-500 transition-colors"
                   target="_blank">
-              <Image src="/img/instagram.svg" alt="Instagram" width={24} height={24} />
+              <Image src="/img/instagram.svg" alt="Instagram" width={28} height={28} />
             </Link>
             <Link href="https://t.me/stepan_potichnyi" 
                   className="text-white/70 hover:text-red-500 transition-colors"
                   target="_blank">
-              <Image src="/img/telegram.svg" alt="Telegram" width={24} height={24} />
+              <Image src="/img/telegram.svg" alt="Telegram" width={28} height={28} />
             </Link>
           </div>
         </div>
