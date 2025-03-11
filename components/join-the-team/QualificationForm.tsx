@@ -96,7 +96,11 @@ const QualificationForm = () => {
       const candidateQuestions = questionsModule.getCandidateQuestions(formState.answers.experience)
       
       // Фільтруємо питання на основі умов
-      const answer = formState.answers[candidateQuestions[0].condition.dependsOn]
+      // Перевіряємо, чи існує перше питання та чи має воно умову
+      const firstQuestion = candidateQuestions[0];
+      const dependsOnField = firstQuestion && firstQuestion.condition ? firstQuestion.condition.dependsOn : null;
+      const answer = dependsOnField ? formState.answers[dependsOnField] : null;
+
       const filteredQuestions = candidateQuestions.filter((question: any) => {
         // Якщо у питання є умова
         if (question.condition) {
@@ -104,7 +108,7 @@ const QualificationForm = () => {
           
           // Перевіряємо умову для english_level
           if (dependsOn === 'english') {
-            return value === answer
+            return answer === value
           }
           
           // Для інших умов
