@@ -41,7 +41,7 @@ const QualificationForm = () => {
 
   // Додаємо функцію updateFiles тут, перед іншими хуками
   const updateFiles = (questionId: string, value: any) => {
-    setFormState(prev => ({
+    setFormState((prev: any) => ({
       ...prev,
       answers: {
         ...prev.answers,
