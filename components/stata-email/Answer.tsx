@@ -38,19 +38,20 @@ const PEOPLE: Person[] = [
     location: 'New York, USA',
     messages: [
       {
-        date: '2 Dec 2024',
+        date: '4 Dec 2024',
         subject: 'Proposal Review',
         content: `I've reviewed your proposal and would be happy to discuss the details.
                 Available for a call tomorrow afternoon or Friday morning.
 
-                A few quick points I'd like to clarify:
+                I would like to schedule a call to discuss your services.
 
-                - Current marketing strategy
-                - Budget expectations
-                - Timeline for implementation
-                - KPIs and reporting structure
+                Could you please provide:
+                - Details
+                - Pricing options
+                - Timeline
+                - Expected results
 
-                Let me know what time works best for you.
+                What time works best for you?
 
                 Best regards,
                 David`,
@@ -66,13 +67,13 @@ const PEOPLE: Person[] = [
         list: 'Roofing #1 - copy'
       },
       {
-        date: '4 Dec 2024',
+        date: '2 Dec 2024',
         type: 'mailing-add',
         email: 'david.walters@example.com',
         list: 'Roofing #1'
       },
       {
-        date: '4 Dec 2024',
+        date: '1 Dec 2024',
         type: 'import',
         email: 'david.walters@example.com',
         list: 'Roofing USA 926'
@@ -86,7 +87,7 @@ const PEOPLE: Person[] = [
     location: 'Los Angeles, USA',
     messages: [
       {
-        date: '3 Dec 2024',
+        date: '7 Dec 2024',
         subject: 'Re: Business Proposal',
         content: `Sounds promising!
             When would be a good time for you to discuss the details?
@@ -99,7 +100,7 @@ const PEOPLE: Person[] = [
     ],
     timelineEvents: [
       {
-        date: '4 Dec 2024',
+        date: '6 Dec 2024',
         type: 'mailing-add',
         email: 'sara.hart@example.com',
         list: 'Roofing #1 - copy'
@@ -111,7 +112,7 @@ const PEOPLE: Person[] = [
         list: 'Roofing #1'
       },
       {
-        date: '7 Dec 2024',
+        date: '4 Dec 2024',
         type: 'import',
         email: 'sara.hart@example.com',
         list: 'Roofing USA 926'
@@ -125,7 +126,7 @@ const PEOPLE: Person[] = [
     location: 'Honolulu, HI',
     messages: [
       {
-        date: '5 Dec 2024',
+        date: '9 Dec 2024',
         subject: 'Contact Information Request',
         content: `Hi Igor, please give me your contact information, like web site and full list of services you provide.
 
@@ -136,19 +137,19 @@ const PEOPLE: Person[] = [
     ],
     timelineEvents: [
       {
-        date: '6 Dec 2024',
+        date: '8 Dec 2024',
         type: 'mailing-add',
         email: 'sales@rgf.com',
         list: 'Roofing #1 - copy'
       },
       {
-        date: '8 Dec 2024',
+        date: '7 Dec 2024',
         type: 'mailing-add',
         email: 'sales@rgf.com',
         list: 'Roofing #1'
       },
       {
-        date: '9 Dec 2024',
+        date: '6 Dec 2024',
         type: 'import',
         email: 'sales@rgf.com',
         list: 'Roofing USA 926'
@@ -162,7 +163,7 @@ const PEOPLE: Person[] = [
     location: 'Chicago, USA',
     messages: [
       {
-        date: '7 Dec 2024',
+        date: '10 Dec 2024',
         subject: 'Re: Business Proposal',
         content: `Yes, definitely interested.`,
         from: 'Christopher',
@@ -171,7 +172,7 @@ const PEOPLE: Person[] = [
     ],
     timelineEvents: [
       {
-        date: '8 Dec 2024',
+        date: '9 Dec 2024',
         type: 'mailing-add',
         email: 'christopher@example.com',
         list: 'Roofing #1 - copy'
@@ -183,7 +184,7 @@ const PEOPLE: Person[] = [
         list: 'Roofing #1'
       },
       {
-        date: '10 Dec 2024',
+        date: '7 Dec 2024',
         type: 'import',
         email: 'christopher@example.com',
         list: 'Roofing USA 926'
@@ -197,7 +198,7 @@ const PEOPLE: Person[] = [
     location: 'Melbourne, FL 32935',
     messages: [
       {
-        date: '10 Dec 2024',
+        date: '13 Dec 2024',
         subject: 'Re: Lead Generation Inquiry',
         content: `Hello Liam,
 
@@ -217,7 +218,7 @@ const PEOPLE: Person[] = [
     ],
     timelineEvents: [
       {
-        date: '11 Dec 2024',
+        date: '12 Dec 2024',
         type: 'mailing-add',
         email: 'mona.stillwell@hipporoofing.com',
         list: 'Roofing #1 - copy'
@@ -229,7 +230,7 @@ const PEOPLE: Person[] = [
         list: 'Roofing #1'
       },
       {
-        date: '13 Dec 2024',
+        date: '10 Dec 2024',
         type: 'import',
         email: 'mona.stillwell@hipporoofing.com',
         list: 'Roofing USA 926'
@@ -243,7 +244,7 @@ const PEOPLE: Person[] = [
     location: 'Boston, USA',
     messages: [
       {
-        date: '12 Dec 2024',
+        date: '15 Dec 2024',
         subject: 'Re: Business Proposal',
         content: `Thank you for reaching out.
 
@@ -257,7 +258,7 @@ const PEOPLE: Person[] = [
     ],
     timelineEvents: [
       {
-        date: '13 Dec 2024',
+        date: '14 Dec 2024',
         type: 'mailing-add',
         email: 'jennifer.walton@example.com',
         list: 'Roofing #1 - copy'
@@ -269,7 +270,7 @@ const PEOPLE: Person[] = [
         list: 'Roofing #1'
       },
       {
-        date: '15 Dec 2024',
+        date: '12 Dec 2024',
         type: 'import',
         email: 'jennifer.walton@example.com',
         list: 'Roofing USA 926'
@@ -283,7 +284,7 @@ const PEOPLE: Person[] = [
     location: 'Chisinau, Moldova',
     messages: [
       {
-        date: '15 Dec 2024',
+        date: '20 Dec 2024',
         subject: 'Re: Services Information',
         content: `Здравствуйте, Владислав!
 
@@ -300,19 +301,19 @@ const PEOPLE: Person[] = [
     ],
     timelineEvents: [
       {
-        date: '16 Dec 2024',
+        date: '19 Dec 2024',
         type: 'mailing-add',
         email: 'aleksandr.bulatov@frars.com',
         list: 'Roofing #1 - copy'
       },
       {
-        date: '17 Dec 2024',
+        date: '18 Dec 2024',
         type: 'mailing-add',
         email: 'aleksandr.bulatov@frars.com',
         list: 'Roofing #1'
       },
       {
-        date: '20 Dec 2024',
+        date: '17 Dec 2024',
         type: 'import',
         email: 'aleksandr.bulatov@frars.com',
         list: 'Roofing USA 926'
@@ -326,7 +327,7 @@ const PEOPLE: Person[] = [
     location: 'USA',
     messages: [
       {
-        date: '15 Dec 2024',
+        date: '20 Dec 2024',
         subject: 'Re: Service Inquiry',
         content: `Hello Ivan!
 
@@ -340,7 +341,7 @@ const PEOPLE: Person[] = [
     ],
     timelineEvents: [
       {
-        date: '16 Dec 2024',
+        date: '19 Dec 2024',
         type: 'mailing-add',
         email: 'mary.shafran@example.com',
         list: 'Roofing #1 - copy'
@@ -352,7 +353,7 @@ const PEOPLE: Person[] = [
         list: 'Roofing #1'
       },
       {
-        date: '20 Dec 2024',
+        date: '17 Dec 2024',
         type: 'import',
         email: 'mary.shafran@example.com',
         list: 'Roofing USA 926'
@@ -366,7 +367,7 @@ const PEOPLE: Person[] = [
     location: 'USA',
     messages: [
       {
-        date: '18 Dec 2024',
+        date: '21 Dec 2024',
         subject: 'Re: Marketing Proposal',
         content: `Sure
         Best,
@@ -380,19 +381,19 @@ const PEOPLE: Person[] = [
     ],
     timelineEvents: [
       {
-        date: '19 Dec 2024',
+        date: '20 Dec 2024',
         type: 'mailing-add',
         email: 'info@knowaguyroofing.com',
         list: 'Roofing #1 - copy'
       },
       {
-        date: '20 Dec 2024',
+        date: '19 Dec 2024',
         type: 'mailing-add',
         email: 'info@knowaguyroofing.com',
         list: 'Roofing #1'
       },
       {
-        date: '21 Dec 2024',
+        date: '18 Dec 2024',
         type: 'import',
         email: 'info@knowaguyroofing.com',
         list: 'Roofing USA 926'
@@ -406,7 +407,7 @@ const PEOPLE: Person[] = [
     location: 'Ukraine',
     messages: [
       {
-        date: '20 Dec 2024',
+        date: '25 Dec 2024',
         subject: 'Current Topics Discussion',
         content: `Привіт Marko,
 
@@ -429,19 +430,19 @@ const PEOPLE: Person[] = [
     ],
     timelineEvents: [
       {
-        date: '21 Dec 2024',
+        date: '24 Dec 2024',
         type: 'mailing-add',
         email: 'vitaly.bondarenko@example.com',
         list: 'Roofing #1 - copy'
       },
       {
-        date: '25 Dec 2024',
+        date: '23 Dec 2024',
         type: 'mailing-add',
         email: 'vitaly.bondarenko@example.com',
         list: 'Roofing #1'
       },
       {
-        date: '25 Dec 2024',
+        date: '22 Dec 2024',
         type: 'import',
         email: 'vitaly.bondarenko@example.com',
         list: 'Roofing USA 926'
@@ -455,7 +456,7 @@ const PEOPLE: Person[] = [
     location: 'Ukraine',
     messages: [
       {
-        date: '23 Dec 2024',
+        date: '27 Dec 2024',
         subject: 'Re: Discussion',
         content: `Здравствуйте 7205791402 Анатолий, можем обсудить`,
         from: 'Anatolii Salomatin',
@@ -464,19 +465,19 @@ const PEOPLE: Person[] = [
     ],
     timelineEvents: [
       {
-        date: '24 Dec 2024',
+        date: '26 Dec 2024',
         type: 'mailing-add',
         email: 'anatolii.salomatin@example.com',
         list: 'Roofing #1 - copy'
       },
       {
-        date: '26 Dec 2024',
+        date: '25 Dec 2024',
         type: 'mailing-add',
         email: 'anatolii.salomatin@example.com',
         list: 'Roofing #1'
       },
       {
-        date: '27 Dec 2024',
+        date: '24 Dec 2024',
         type: 'import',
         email: 'anatolii.salomatin@example.com',
         list: 'Roofing USA 926'
@@ -490,7 +491,7 @@ const PEOPLE: Person[] = [
     location: 'Unknown',
     messages: [
       {
-        date: '25 Dec 2024',
+        date: '30 Dec 2024',
         subject: 'Re: Service Inquiry',
         content: `Добрый день. Мое имя Игорь. Я владелец бизнеса. Меня интересует Ваше предложение. Какие Ваши услуги и сколько это стоит?`,
         from: 'info',
@@ -499,7 +500,7 @@ const PEOPLE: Person[] = [
     ],
     timelineEvents: [
       {
-        date: '26 Dec 2024',
+        date: '29 Dec 2024',
         type: 'mailing-add',
         email: 'info@example.com',
         list: 'Roofing #1 - copy'
@@ -511,7 +512,7 @@ const PEOPLE: Person[] = [
         list: 'Roofing #1'
       },
       {
-        date: '30 Dec 2024',
+        date: '27 Dec 2024',
         type: 'import',
         email: 'info@example.com',
         list: 'Roofing USA 926'
@@ -525,7 +526,7 @@ const PEOPLE: Person[] = [
     location: 'USA',
     messages: [
       {
-        date: '28 Dec 2024',
+        date: '1 Jan 2025',
         subject: 'Re: Business Ideas',
         content: `Hi Marko,
 
@@ -540,19 +541,19 @@ const PEOPLE: Person[] = [
     ],
     timelineEvents: [
       {
-        date: '29 Dec 2024',
+        date: '31 Dec 2024',
         type: 'mailing-add',
         email: 'david.p@example.com',
         list: 'Roofing #1 - copy'
       },
       {
-        date: '1 Dec 2024',
+        date: '30 Dec 2024',
         type: 'mailing-add',
         email: 'david.p@example.com',
         list: 'Roofing #1'
       },
       {
-        date: '1 Jan 2025',
+        date: '29 Dec 2024',
         type: 'import',
         email: 'david.p@example.com',
         list: 'Roofing USA 926'
@@ -566,7 +567,7 @@ const PEOPLE: Person[] = [
     location: 'Ukraine',
     messages: [
       {
-        date: '30 Dec 2024',
+        date: '1 Jan 2025',
         subject: 'Re: Proposal Information',
         content: `Добрый день Диана,
 
@@ -581,19 +582,19 @@ const PEOPLE: Person[] = [
     ],
     timelineEvents: [
       {
-        date: '30 Dec 2024',
+        date: '31 Dec 2024',
         type: 'mailing-add',
         email: 'volos.beauty@example.com',
         list: 'Roofing #1 - copy'
       },
       {
-        date: '1 Jan 2025',
+        date: '30 Dec 2024',
         type: 'mailing-add',
         email: 'volos.beauty@example.com',
         list: 'Roofing #1'
       },
       {
-        date: '1 Jan 2025',
+        date: '29 Dec 2024',
         type: 'import',
         email: 'volos.beauty@example.com',
         list: 'Roofing USA 926'
