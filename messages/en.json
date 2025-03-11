@@ -1335,7 +1335,7 @@
                 {
                     "number": "05",
                     "title": "Track performance",
-                    "description": "We monitor 4-8% response rate (approximately 120 responses).",
+                    "description": "We monitor 3-5% response rate (approximately 30-50 responses per 1000 emails).",
                     "duration": "Ongoing"
                 },
                 {
@@ -1361,9 +1361,9 @@
             },
             "stats": [
                 {
-                    "number": "4-8%",
+                    "number": "3-5%",
                     "label": "Average Reply Rate",
-                    "description": "On average 4-8 replies per 100 sent emails"
+                    "description": "On average 3-5 replies per 100 sent emails"
                 },
                 {
                     "number": "15-20",
@@ -1401,7 +1401,7 @@
                     "name": "Michael Anderson",
                     "position": "CEO",
                     "company": "TechFlow Digital",
-                    "text": "Working with Stepan has been transformative. In less than a year, we've generated hundreds of meetings, resulting in 14 successful projects and revenue exceeding 400k€.",
+                    "text": "Working with ADvantage has been transformative for our business. Their lead generation strategies helped us secure numerous high-value meetings, leading to multiple successful projects and significant revenue growth.",
                     "image_alt": "Michael Anderson photo"
                 },
                 {
@@ -1422,7 +1422,7 @@
                     "name": "Sarah Mitchell",
                     "position": "Founder",
                     "company": "Digital Spark Agency",
-                    "text": "I'm incredibly grateful to Stepan for his mentorship in mastering advanced prospecting techniques. His guidance has been instrumental in elevating our outreach capabilities.",
+                    "text": "I'm incredibly grateful to Advantage Agency for their expertise in mastering advanced prospecting techniques. Their professional guidance has been instrumental in elevating our outreach capabilities and lead generation results.",
                     "image_alt": "Sarah Mitchell photo"
                 },
                 {
