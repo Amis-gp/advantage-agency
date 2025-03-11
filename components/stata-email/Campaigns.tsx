@@ -144,7 +144,7 @@ const Campaigns = () => {
                         Sender accounts: {campaign.senderAccounts.main} +{campaign.senderAccounts.additional} accounts
                       </div>
                       <div className="text-sm text-gray-500">
-                        Total recipients: {campaign.totalRecipients}
+                        Total sent: {campaign.totalRecipients}
                         <div className="w-24 h-[1px] bg-green-500 rounded mb-1"></div>
                       </div>
                       <div className="text-sm text-gray-500">{campaign.date}</div>

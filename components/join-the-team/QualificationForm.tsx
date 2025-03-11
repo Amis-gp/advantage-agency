@@ -31,8 +31,15 @@ const QualificationForm = () => {
   const [totalSteps, setTotalSteps] = useState(0)
   const [currentProgress, setCurrentProgress] = useState(1)
   
-  // Спочатку оголошуємо formState
-  const [formState, setFormState] = useState<any>({
+  // Спочатку визначимо інтерфейс для formState
+  interface FormState {
+    answers: Record<string, any>;
+    currentStep: number;
+    history: number[];
+  }
+
+  // Потім використаємо цей інтерфейс у useState
+  const [formState, setFormState] = useState<FormState>({
     answers: {},
     currentStep: 0,
     history: []
@@ -68,7 +75,7 @@ const QualificationForm = () => {
         setQuestionsModule(module)
         
         // Завантажуємо всі питання одразу
-        const initialQuestions = module.getCandidateQuestions(null)
+        const initialQuestions = module.getCandidateQuestions('all')
         setAllQuestions(initialQuestions)
         setQuestions(initialQuestions)
         setTotalSteps(initialQuestions.length)
@@ -89,15 +96,15 @@ const QualificationForm = () => {
       const candidateQuestions = questionsModule.getCandidateQuestions(formState.answers.experience)
       
       // Фільтруємо питання на основі умов
-      const filteredQuestions = candidateQuestions.filter(question => {
+      const answer = formState.answers[candidateQuestions[0].condition.dependsOn]
+      const filteredQuestions = candidateQuestions.filter((question: any) => {
         // Якщо у питання є умова
         if (question.condition) {
           const { dependsOn, value } = question.condition
-          const answer = formState.answers[dependsOn]
           
           // Перевіряємо умову для english_level
           if (dependsOn === 'english') {
-            return answer === value
+            return value === answer
           }
           
           // Для інших умов
@@ -141,7 +148,7 @@ const QualificationForm = () => {
   }
 
   const handleAnswer = (questionId: string, answer: any) => {
-    setFormState(prev => {
+    setFormState((prev: FormState) => {
       const newAnswers = { ...prev.answers, [questionId]: answer }
       const newHistory = [...prev.history, prev.currentStep]
       
@@ -267,14 +274,14 @@ ${Object.entries(formState.answers).map(([key, value]) => {
     // Використовуємо переклади для різних типів питань
     if (question.id === 'experience') {
       try {
-        // Перевіряємо, чи є переклад і чи це масив
-        const translatedOptions = t('options.experience');
+        // Отримуємо масив опцій напряму з об'єкта перекладів, а не через функцію t()
+        const translatedOptions = t.raw('common.options.experience');
         questionOptions = Array.isArray(translatedOptions) ? translatedOptions : 
           (pathname.includes('/uk/') ? 
             ['Менше 1 року', '1-2 роки', '2-5 років', 'Більше 5 років'] : 
             ['Less than 1 year', '1-2 years', '2-5 years', 'More than 5 years']);
       } catch (error) {
-        // Якщо переклад не знайдено, використовуємо значення за замовчуванням залежно від мови
+        // Якщо переклад не знайдено, використовуємо значення за замовчуванням
         questionOptions = pathname.includes('/uk/') ? 
           ['Менше 1 року', '1-2 роки', '2-5 років', 'Більше 5 років'] : 
           ['Less than 1 year', '1-2 years', '2-5 years', 'More than 5 years'];
@@ -282,7 +289,7 @@ ${Object.entries(formState.answers).map(([key, value]) => {
     } 
     else if (question.id === 'sources') {
       try {
-        const translatedOptions = t('options.sources');
+        const translatedOptions = t.raw('common.options.sources');
         questionOptions = Array.isArray(translatedOptions) ? translatedOptions : 
           (pathname.includes('/uk/') ? 
             ['LinkedIn', 'Instagram', 'Telegram', 'Інше'] : 
@@ -295,7 +302,7 @@ ${Object.entries(formState.answers).map(([key, value]) => {
     }
     else if (question.id === 'tools') {
       try {
-        const translatedOptions = t('options.tools');
+        const translatedOptions = t('common.options.tools');
         questionOptions = Array.isArray(translatedOptions) ? translatedOptions : 
           (pathname.includes('/uk/') ? 
             ['Hunter.io', 'Apollo.io', 'LinkedIn Sales Navigator', 'Phantombuster', 'Dux-Soup', 'Інше'] : 
@@ -308,7 +315,7 @@ ${Object.entries(formState.answers).map(([key, value]) => {
     }
     else if (question.id === 'english_level') {
       try {
-        const translatedOptions = t('options.english_level');
+        const translatedOptions = t('common.options.english_level');
         questionOptions = Array.isArray(translatedOptions) ? translatedOptions : 
           (pathname.includes('/uk/') ? 
             ['Початковий', 'Середній', 'Високий'] : 
@@ -321,7 +328,7 @@ ${Object.entries(formState.answers).map(([key, value]) => {
     }
     else if (question.id === 'age') {
       try {
-        const translatedOptions = t('options.age');
+        const translatedOptions = t('common.options.age');
         questionOptions = Array.isArray(translatedOptions) ? translatedOptions : ['18-25', '26-35', '36-45', '45+'];
       } catch (error) {
         questionOptions = ['18-25', '26-35', '36-45', '45+'];
@@ -329,7 +336,7 @@ ${Object.entries(formState.answers).map(([key, value]) => {
     }
     else if (question.id === 'platforms') {
       try {
-        const translatedOptions = t('options.platforms');
+        const translatedOptions = t('common.options.platforms');
         questionOptions = Array.isArray(translatedOptions) ? translatedOptions : 
           (pathname.includes('/uk/') ? 
             ['Facebook', 'TikTok', 'Google Ads', 'Інше'] : 
@@ -342,7 +349,7 @@ ${Object.entries(formState.answers).map(([key, value]) => {
     }
     else if (question.id === 'niches') {
       try {
-        const translatedOptions = t('options.niches');
+        const translatedOptions = t('common.options.niches');
         questionOptions = Array.isArray(translatedOptions) ? translatedOptions : 
           (pathname.includes('/uk/') ? 
             ['Gambling/Betting', 'Nutra', 'Dating', 'Інше'] : 

@@ -1133,7 +1133,8 @@
                     "beginner": "Beginner",
                     "intermediate": "Intermediate",
                     "advanced": "Advanced",
-                    "noOptions": "No answer options"
+                    "noOptions": "No answer options",
+                    "experience": ["No experience", "Less than 1 year", "1-2 years", "2-5 years", "More than 5 years"]
                 },
                 "messages": {
                 "no-options": "No answer options available"
