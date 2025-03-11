@@ -166,20 +166,6 @@ export const commonQuestions: Question[] = [
     path: 'all'
   },
   {
-    id: 'why_us',
-    textKey: 'lead-gen.why_us.text',
-    type: 'open',
-    hintKey: 'lead-gen.why_us.hint',
-    path: 'all'
-  },
-  {
-    id: 'how_found',
-    textKey: 'lead-gen.how_found.text',
-    type: 'open',
-    hintKey: 'lead-gen.how_found.hint',
-    path: 'all'
-  },
-  {
     id: 'questions',
     textKey: 'lead-gen.questions.text',
     type: 'open',

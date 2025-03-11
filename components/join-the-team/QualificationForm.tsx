@@ -31,20 +31,24 @@ const QualificationForm = () => {
   const [totalSteps, setTotalSteps] = useState(0)
   const [currentProgress, setCurrentProgress] = useState(1)
   
-  // Спочатку визначимо інтерфейс для formState
-  interface FormState {
-    answers: Record<string, any>;
-    currentStep: number;
-    history: number[];
-  }
-
-  // Потім використаємо цей інтерфейс у useState
-  const [formState, setFormState] = useState<FormState>({
+  // Спочатку оголошуємо formState
+  const [formState, setFormState] = useState<any>({
     answers: {},
     currentStep: 0,
     history: []
   })
   const [questions, setQuestions] = useState<any[]>([])
+
+  // Додаємо функцію updateFiles тут, перед іншими хуками
+  const updateFiles = (questionId: string, value: any) => {
+    setFormState(prev => ({
+      ...prev,
+      answers: {
+        ...prev.answers,
+        [questionId]: value
+      }
+    }));
+  };
   
   // Потім використовуємо formState в useEffect
   useEffect(() => {
@@ -88,7 +92,87 @@ const QualificationForm = () => {
     
     loadQuestions()
   }, [profession])
-  
+
+  // Додайте цей хук після інших useEffect, але перед визначенням функцій
+  useEffect(() => {
+    // Отримуємо поточне питання з questions та currentStep
+    const currentQuestion = questions[formState.currentStep];
+    
+    // Перевіряємо, чи це питання типу 'file'
+    if (!currentQuestion || currentQuestion.type !== 'file') return;
+    
+    // Знаходимо елемент drop zone для поточного питання
+    const input = document.getElementById(`file-input-${currentQuestion.id}`);
+    if (!input) return;
+    
+    const dropArea = input.parentElement;
+    if (!dropArea) return;
+    
+    // Запобігаємо стандартній поведінці drag-and-drop
+    const preventDefault = (e: Event) => {
+      e.preventDefault();
+      e.stopPropagation();
+    };
+    
+    // Додаємо обробники подій
+    ['dragenter', 'dragover', 'dragleave', 'drop'].forEach(eventName => {
+      dropArea.addEventListener(eventName, preventDefault);
+    });
+    
+    // Додаємо стилі при перетягуванні файлів
+    const handleDragEnter = () => {
+      dropArea.classList.add('border-red-500');
+      dropArea.classList.add('bg-white/15');
+    };
+    
+    // Видаляємо стилі при виході або відпусканні файлів
+    const handleDragLeave = () => {
+      dropArea.classList.remove('border-red-500');
+      dropArea.classList.remove('bg-white/15');
+    };
+    
+    // Обробляємо скинуті файли
+    const handleDrop = (e: any) => {
+      const files = e.dataTransfer.files;
+      if (files && files.length > 0) {
+        // Додаємо нові файли до існуючих
+        const existingFiles = Array.isArray(formState.answers[currentQuestion.id]) 
+          ? [...formState.answers[currentQuestion.id]] 
+          : [];
+        const newFiles = Array.from(files);
+        updateFiles(currentQuestion.id, [...existingFiles, ...newFiles]);
+      }
+    };
+    
+    // Додаємо обробники подій
+    ['dragenter', 'dragover'].forEach(eventName => {
+      dropArea.addEventListener(eventName, handleDragEnter);
+    });
+    
+    ['dragleave', 'drop'].forEach(eventName => {
+      dropArea.addEventListener(eventName, handleDragLeave);
+    });
+    
+    dropArea.addEventListener('drop', handleDrop);
+    
+    // Прибираємо обробники при розмонтуванні
+    return () => {
+      ['dragenter', 'dragover', 'dragleave', 'drop'].forEach(eventName => {
+        dropArea.removeEventListener(eventName, preventDefault);
+      });
+      
+      ['dragenter', 'dragover'].forEach(eventName => {
+        dropArea.removeEventListener(eventName, handleDragEnter);
+      });
+      
+      ['dragleave', 'drop'].forEach(eventName => {
+        dropArea.removeEventListener(eventName, handleDragLeave);
+      });
+      
+      dropArea.removeEventListener('drop', handleDrop);
+    };
+  }, [questions, formState.currentStep, formState.answers]);
+
   // Оновлюємо питання при зміні відповідей або після завантаження модуля
   useEffect(() => {
     if (questionsModule && Object.keys(formState.answers).length > 0) {
@@ -96,15 +180,11 @@ const QualificationForm = () => {
       const candidateQuestions = questionsModule.getCandidateQuestions(formState.answers.experience)
       
       // Фільтруємо питання на основі умов
-      // Перевіряємо, чи існує перше питання та чи має воно умову
-      const firstQuestion = candidateQuestions[0];
-      const dependsOnField = firstQuestion && firstQuestion.condition ? firstQuestion.condition.dependsOn : null;
-      const answer = dependsOnField ? formState.answers[dependsOnField] : null;
-
-      const filteredQuestions = candidateQuestions.filter((question: any) => {
+      const filteredQuestions = candidateQuestions.filter(question => {
         // Якщо у питання є умова
         if (question.condition) {
           const { dependsOn, value } = question.condition
+          const answer = formState.answers[dependsOn]
           
           // Перевіряємо умову для english_level
           if (dependsOn === 'english') {
@@ -152,13 +232,13 @@ const QualificationForm = () => {
   }
 
   const handleAnswer = (questionId: string, answer: any) => {
-    setFormState((prev: FormState) => {
+    setFormState(prev => {
       const newAnswers = { ...prev.answers, [questionId]: answer }
       const newHistory = [...prev.history, prev.currentStep]
       
       // Перевіряємо, чи це перше питання про досвід для медіабаєра
       if (profession === 'media-buyer' && questionId === 'experience' && 
-          (answer === 'Менше 1 року' || answer === 'Less than 1 year')) {
+          (answer === 'Менше 1 року' || answer === 'Less than 1 year' || answer === 'Немає досвіду' || answer === 'No experience')) {
         setShowRejectionMessage(true)
         return prev
       }
@@ -223,19 +303,24 @@ const QualificationForm = () => {
     try {
       setSubmitting(true)
       
-      // Формуємо повідомлення для відправки в Telegram
+      // Відправляємо текстове повідомлення
       const message = `
-🔥 Новий кандидат на позицію ${profession}!
+🔥 <b>Новий кандидат на позицію ${profession}!</b>
 
-👤 Ім'я: ${contactData.name}
-📧 Email: ${contactData.email}
-📱 Телефон: ${contactData.phone}
+<b>👤 Ім'я:</b> ${contactData.name}
+<b>📧 Email:</b> ${contactData.email}
+<b>📱 Телефон:</b> ${contactData.phone}
 
-📋 Відповіді на питання:
+<b>📋 Відповіді на питання:</b>
 ${Object.entries(formState.answers).map(([key, value]) => {
-  const question = questions.find(q => q.id === key)
-  return `${question?.text || key}: ${value}`
-}).join('\n')}
+  // Пропускаємо файли у текстовому повідомленні
+  if (Array.isArray(value) && value.length > 0 && value[0] instanceof File) return '';
+  if (value instanceof File) return '';
+  
+  const question = allQuestions.find(q => q.id === key)
+  const questionText = question?.textKey ? t(question.textKey) : (question?.text || key)
+  return `<b>${questionText}:</b> ${value}`
+}).filter(Boolean).join('\n')}
       `
       
       // Відправляємо дані в Telegram
@@ -254,15 +339,80 @@ ${Object.entries(formState.answers).map(([key, value]) => {
         })
       })
       
-      if (response.ok) {
-        setSubmitSuccess(true)
-      } else {
+      if (!response.ok) {
         throw new Error('Failed to send message')
+      }
+      
+      // Показуємо успіх після відправки основного повідомлення
+      setSubmitSuccess(true)
+      
+      // Збираємо всі файли з усіх полів
+      let allFiles: { key: string, file: File }[] = [];
+      
+      Object.entries(formState.answers).forEach(([key, value]) => {
+        if (Array.isArray(value) && value.length > 0 && value[0] instanceof File) {
+          // Якщо значення є масивом файлів
+          value.forEach(file => {
+            allFiles.push({ key, file });
+          });
+        } else if (value instanceof File) {
+          // Якщо значення є одиночним файлом
+          allFiles.push({ key, file: value });
+        }
+      });
+      
+      if (allFiles.length > 0) {
+        // Додаємо інформацію про файли до основного повідомлення
+        const fileInfoMessage = `
+<b>📎 Файли від кандидата ${contactData.name}:</b>
+${allFiles.map(({ key, file }) => {
+  const question = allQuestions.find(q => q.id === key)
+  const questionText = question?.textKey ? t(question.textKey) : (question?.text || key)
+  return `- ${questionText}: ${file.name} (${Math.round(file.size / 1024)} KB)`
+}).join('\n')}
+
+<i>Файли завантажуються і будуть відправлені окремо...</i>
+        `
+        
+        // Відправляємо інформацію про файли
+        await fetch(`https://api.telegram.org/bot${botToken}/sendMessage`, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            chat_id: chatId,
+            text: fileInfoMessage,
+            parse_mode: 'HTML'
+          })
+        })
+        
+        // Відправляємо файли асинхронно (не чекаємо завершення)
+        setTimeout(() => {
+          allFiles.forEach(async ({ key, file }) => {
+            try {
+              const question = allQuestions.find(q => q.id === key)
+              const questionText = question?.textKey ? t(question.textKey) : (question?.text || key)
+              
+              const formData = new FormData();
+              formData.append('chat_id', chatId as string);
+              formData.append('caption', `Файл від кандидата ${contactData.name} (${profession}) - ${questionText}`);
+              formData.append('document', file);
+              
+              await fetch(`https://api.telegram.org/bot${botToken}/sendDocument`, {
+                method: 'POST',
+                body: formData
+              });
+            } catch (error) {
+              console.error('Error sending file:', error);
+              // Не показуємо помилку користувачу, оскільки основне повідомлення вже відправлено
+            }
+          });
+        }, 100);
       }
     } catch (error) {
       console.error('Error sending data to Telegram:', error)
       alert('Сталася помилка при відправці даних. Спробуйте ще раз.')
-    } finally {
       setSubmitting(false)
     }
   }
@@ -274,100 +424,49 @@ ${Object.entries(formState.answers).map(([key, value]) => {
     
     // Отримуємо опції з перекладів
     let questionOptions = [];
-    
-    // Використовуємо переклади для різних типів питань
-    if (question.id === 'experience') {
-      try {
-        // Отримуємо масив опцій напряму з об'єкта перекладів, а не через функцію t()
-        const translatedOptions = t.raw('common.options.experience');
-        questionOptions = Array.isArray(translatedOptions) ? translatedOptions : 
-          (pathname.includes('/uk/') ? 
-            ['Менше 1 року', '1-2 роки', '2-5 років', 'Більше 5 років'] : 
-            ['Less than 1 year', '1-2 years', '2-5 years', 'More than 5 years']);
-      } catch (error) {
-        // Якщо переклад не знайдено, використовуємо значення за замовчуванням
-        questionOptions = pathname.includes('/uk/') ? 
-          ['Менше 1 року', '1-2 роки', '2-5 років', 'Більше 5 років'] : 
-          ['Less than 1 year', '1-2 years', '2-5 years', 'More than 5 years'];
-      }
-    } 
-    else if (question.id === 'sources') {
-      try {
-        const translatedOptions = t.raw('common.options.sources');
-        questionOptions = Array.isArray(translatedOptions) ? translatedOptions : 
-          (pathname.includes('/uk/') ? 
-            ['LinkedIn', 'Instagram', 'Telegram', 'Інше'] : 
-            ['LinkedIn', 'Instagram', 'Telegram', 'Other']);
-      } catch (error) {
-        questionOptions = pathname.includes('/uk/') ? 
-          ['LinkedIn', 'Instagram', 'Telegram', 'Інше'] : 
-          ['LinkedIn', 'Instagram', 'Telegram', 'Other'];
-      }
-    }
-    else if (question.id === 'tools') {
-      try {
-        const translatedOptions = t('common.options.tools');
-        questionOptions = Array.isArray(translatedOptions) ? translatedOptions : 
-          (pathname.includes('/uk/') ? 
-            ['Hunter.io', 'Apollo.io', 'LinkedIn Sales Navigator', 'Phantombuster', 'Dux-Soup', 'Інше'] : 
-            ['Hunter.io', 'Apollo.io', 'LinkedIn Sales Navigator', 'Phantombuster', 'Dux-Soup', 'Other']);
-      } catch (error) {
-        questionOptions = pathname.includes('/uk/') ? 
-          ['Hunter.io', 'Apollo.io', 'LinkedIn Sales Navigator', 'Phantombuster', 'Dux-Soup', 'Інше'] : 
-          ['Hunter.io', 'Apollo.io', 'LinkedIn Sales Navigator', 'Phantombuster', 'Dux-Soup', 'Other'];
-      }
-    }
-    else if (question.id === 'english_level') {
-      try {
-        const translatedOptions = t('common.options.english_level');
-        questionOptions = Array.isArray(translatedOptions) ? translatedOptions : 
-          (pathname.includes('/uk/') ? 
-            ['Початковий', 'Середній', 'Високий'] : 
-            ['Beginner', 'Intermediate', 'Advanced']);
-      } catch (error) {
-        questionOptions = pathname.includes('/uk/') ? 
-          ['Початковий', 'Середній', 'Високий'] : 
-          ['Beginner', 'Intermediate', 'Advanced'];
-      }
-    }
-    else if (question.id === 'age') {
-      try {
-        const translatedOptions = t('common.options.age');
-        questionOptions = Array.isArray(translatedOptions) ? translatedOptions : ['18-25', '26-35', '36-45', '45+'];
-      } catch (error) {
+
+    // Використовуємо значення за замовчуванням залежно від мови
+    const isUkrainian = pathname.includes('/uk/');
+
+    switch (question.id) {
+      case 'experience':
+        questionOptions = isUkrainian 
+          ? ['Менше 1 року', '1-2 роки', '2-5 років', 'Більше 5 років'] 
+          : ['Less than 1 year', '1-2 years', '2-5 years', 'More than 5 years'];
+        break;
+      case 'sources':
+        questionOptions = isUkrainian 
+          ? ['LinkedIn', 'Instagram', 'Telegram', 'Інше'] 
+          : ['LinkedIn', 'Instagram', 'Telegram', 'Other'];
+        break;
+      case 'tools':
+        questionOptions = isUkrainian 
+          ? ['Hunter.io', 'Apollo.io', 'LinkedIn Sales Navigator', 'Phantombuster', 'Dux-Soup', 'Інше'] 
+          : ['Hunter.io', 'Apollo.io', 'LinkedIn Sales Navigator', 'Phantombuster', 'Dux-Soup', 'Other'];
+        break;
+      case 'english_level':
+        questionOptions = isUkrainian 
+          ? ['Початковий', 'Середній', 'Високий'] 
+          : ['Beginner', 'Intermediate', 'Advanced'];
+        break;
+      case 'age':
         questionOptions = ['18-25', '26-35', '36-45', '45+'];
-      }
-    }
-    else if (question.id === 'platforms') {
-      try {
-        const translatedOptions = t('common.options.platforms');
-        questionOptions = Array.isArray(translatedOptions) ? translatedOptions : 
-          (pathname.includes('/uk/') ? 
-            ['Facebook', 'TikTok', 'Google Ads', 'Інше'] : 
-            ['Facebook', 'TikTok', 'Google Ads', 'Other']);
-      } catch (error) {
-        questionOptions = pathname.includes('/uk/') ? 
-          ['Facebook', 'TikTok', 'Google Ads', 'Інше'] : 
-          ['Facebook', 'TikTok', 'Google Ads', 'Other'];
-      }
-    }
-    else if (question.id === 'niches') {
-      try {
-        const translatedOptions = t('common.options.niches');
-        questionOptions = Array.isArray(translatedOptions) ? translatedOptions : 
-          (pathname.includes('/uk/') ? 
-            ['Gambling/Betting', 'Nutra', 'Dating', 'Інше'] : 
-            ['Gambling/Betting', 'Nutra', 'Dating', 'Other']);
-      } catch (error) {
-        questionOptions = pathname.includes('/uk/') ? 
-          ['Gambling/Betting', 'Nutra', 'Dating', 'Інше'] : 
-          ['Gambling/Betting', 'Nutra', 'Dating', 'Other'];
-      }
-    }
-    
-    // Для інших питань використовуємо опції з об'єкта, якщо вони є
-    else if (question.options) {
-      questionOptions = question.options;
+        break;
+      case 'platforms':
+        questionOptions = isUkrainian 
+          ? ['Facebook', 'TikTok', 'Google Ads', 'Інше'] 
+          : ['Facebook', 'TikTok', 'Google Ads', 'Other'];
+        break;
+      case 'niches':
+        questionOptions = isUkrainian 
+          ? ['Gambling/Betting', 'Nutra', 'Dating', 'Інше'] 
+          : ['Gambling/Betting', 'Nutra', 'Dating', 'Other'];
+        break;
+      default:
+        // Для інших питань використовуємо опції з об'єкта, якщо вони є
+        if (question.options) {
+          questionOptions = question.options;
+        }
     }
     
     const questionHint = question.hintKey ? t(question.hintKey) : question.hint
@@ -481,6 +580,102 @@ ${Object.entries(formState.answers).map(([key, value]) => {
             >
               {t('common.buttons.next')}
             </button>
+          </div>
+        )
+      case 'file':
+        return (
+          <div>
+            {questionHint && <p className="text-white/60 mb-4">{questionHint}</p>}
+            <div className="mt-4">
+              {/* Основна кнопка завантаження */}
+              <div 
+                className="w-full px-6 py-8 bg-white/5 border-2 border-dashed border-white/20 rounded-xl cursor-pointer hover:bg-white/10 transition-colors flex flex-col items-center justify-center"
+                onClick={() => document.getElementById(`file-input-${question.id}`)?.click()}
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-10 w-10 text-white/60 mb-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12" />
+                </svg>
+                <span className="text-white text-lg font-medium">
+                  {t('common.buttons.upload')}
+                </span>
+                <p className="text-white/50 mt-2 text-center">
+                  {formState.answers[question.id] && Array.isArray(formState.answers[question.id]) && formState.answers[question.id].length > 0
+                    ? `${formState.answers[question.id].length} ${t('common.buttons.files_selected')}`
+                    : t('common.buttons.drag_drop')}
+                </p>
+                <input 
+                  id={`file-input-${question.id}`}
+                  type="file" 
+                  className="hidden" 
+                  accept={question.acceptTypes || '*/*'}
+                  multiple
+                  onChange={(e) => {
+                    const files = e.target.files;
+                    if (files && files.length > 0) {
+                      // Додаємо нові файли до існуючих
+                      const existingFiles = Array.isArray(formState.answers[question.id]) 
+                        ? [...formState.answers[question.id]] 
+                        : [];
+                      const newFiles = Array.from(files);
+                      updateFiles(question.id, [...existingFiles, ...newFiles]);
+                    }
+                  }} 
+                />
+              </div>
+              
+              {/* Список вибраних файлів */}
+              {formState.answers[question.id] && Array.isArray(formState.answers[question.id]) && formState.answers[question.id].length > 0 && (
+                <div className="mt-4 bg-white/5 rounded-xl p-4 border border-white/10">
+                  <h4 className="text-white font-medium mb-3">{t('common.buttons.selected_files')}:</h4>
+                  <div className="max-h-48 overflow-y-auto space-y-2">
+                    {formState.answers[question.id].map((file: File, index: number) => (
+                      <div key={index} className="flex items-center justify-between bg-white/5 p-2 rounded">
+                        <div className="flex items-center overflow-hidden mr-2">
+                          <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-white/60 mr-2 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                          </svg>
+                          <span className="text-white truncate">{file.name}</span>
+                        </div>
+                        <button 
+                          onClick={(e) => {
+                            e.stopPropagation();
+                            const newFiles = [...formState.answers[question.id]];
+                            newFiles.splice(index, 1);
+                            updateFiles(question.id, newFiles.length > 0 ? newFiles : null);
+                          }}
+                          className="text-red-400 hover:text-red-300 bg-white/10 p-1 rounded-full flex-shrink-0"
+                        >
+                          <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                          </svg>
+                        </button>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )}
+            </div>
+            
+            <div className="mt-6 flex justify-between">
+              <button
+                onClick={() => {
+                  // Очистити всі файли
+                  if (formState.answers[question.id] && Array.isArray(formState.answers[question.id]) && formState.answers[question.id].length > 0) {
+                    updateFiles(question.id, null);
+                  }
+                }}
+                className={`px-4 py-2 rounded-xl text-white/60 hover:text-white transition-colors ${!formState.answers[question.id] || !Array.isArray(formState.answers[question.id]) || formState.answers[question.id].length === 0 ? 'invisible' : ''}`}
+              >
+                {t('common.buttons.clear_all')}
+              </button>
+              
+              <button
+                onClick={() => handleAnswer(question.id, formState.answers[question.id] || null)}
+                className="px-6 py-3 bg-gradient-to-r from-red-600 to-red-800 hover:from-red-700 hover:to-red-900 rounded-xl text-white font-medium shadow-lg"
+              >
+                {t('common.buttons.next')}
+              </button>
+            </div>
           </div>
         )
       default:

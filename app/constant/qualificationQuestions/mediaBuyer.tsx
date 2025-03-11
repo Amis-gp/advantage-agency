@@ -13,6 +13,7 @@ export interface Question {
     dependsOn: string
     value: string | string[] | boolean | number
   }
+  acceptTypes?: string
 }
 
 export interface FormState {
@@ -54,9 +55,10 @@ export const experiencedQuestions: Question[] = [
   {
     id: 'proof',
     textKey: 'media-buyer.proof.text',
-    type: 'open',
+    type: 'file',
     hintKey: 'media-buyer.proof.hint',
-    path: 'experienced'
+    path: 'experienced',
+    acceptTypes: 'image/*,.pdf'
   },
   {
     id: 'success_case',

@@ -1062,14 +1062,6 @@
                     "text": "👤 Which age category do you belong to?",
                     "options": ["18-20 years", "21-25 years", "26-30 years", "31+ years"]
                 },
-                "why_us": {
-                    "text": "💡 Why are you interested in working with ADvantage Agency?",
-                    "hint": "What attracts you to our company and Cold Email Automation?"
-                },
-                "how_found": {
-                    "text": "🔍 How did you hear about us?",
-                    "hint": "Tell us where you saw our job posting"
-                },
                 "questions": {
                     "text": "❓ Do you have any questions for us?",
                     "hint": "Ask about anything that interests you regarding working with us"
@@ -1120,7 +1112,12 @@
             "common": {
                 "buttons": {
                 "back": "Back",
-                "next": "Next"
+                "next": "Next",
+                "upload": "Upload file",
+                "drag_drop": "or drag and drop files here",
+                "files_selected": "files selected",
+                "selected_files": "Selected files",
+                "clear_all": "Clear all"
                 },
                 "options": {
                     "yes": "Yes",
