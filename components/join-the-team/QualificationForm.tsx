@@ -5,6 +5,13 @@ import { useTranslations } from 'next-intl'
 import { motion, AnimatePresence } from 'framer-motion'
 import { usePathname } from 'next/navigation'
 
+// Додайте цей інтерфейс на початку файлу, після імпортів
+interface FormState {
+  answers: Record<string, any>;
+  currentStep: number;
+  history: number[];
+}
+
 // Динамічний імпорт для різних професій
 const QualificationForm = () => {
   const pathname = usePathname()
@@ -31,8 +38,8 @@ const QualificationForm = () => {
   const [totalSteps, setTotalSteps] = useState(0)
   const [currentProgress, setCurrentProgress] = useState(1)
   
-  // Спочатку оголошуємо formState
-  const [formState, setFormState] = useState<any>({
+  // Потім змініть оголошення formState
+  const [formState, setFormState] = useState<FormState>({
     answers: {},
     currentStep: 0,
     history: []
@@ -41,7 +48,7 @@ const QualificationForm = () => {
 
   // Додаємо функцію updateFiles тут, перед іншими хуками
   const updateFiles = (questionId: string, value: any) => {
-    setFormState((prev: any) => ({
+    setFormState((prev: FormState) => ({
       ...prev,
       answers: {
         ...prev.answers,
@@ -180,7 +187,7 @@ const QualificationForm = () => {
       const candidateQuestions = questionsModule.getCandidateQuestions(formState.answers.experience)
       
       // Фільтруємо питання на основі умов
-      const filteredQuestions = candidateQuestions.filter(question => {
+      const filteredQuestions = candidateQuestions.filter((question: any) => {
         // Якщо у питання є умова
         if (question.condition) {
           const { dependsOn, value } = question.condition
@@ -232,7 +239,7 @@ const QualificationForm = () => {
   }
 
   const handleAnswer = (questionId: string, answer: any) => {
-    setFormState(prev => {
+    setFormState((prev: FormState) => {
       const newAnswers = { ...prev.answers, [questionId]: answer }
       const newHistory = [...prev.history, prev.currentStep]
       
@@ -280,7 +287,7 @@ const QualificationForm = () => {
       return
     }
     
-    setFormState(prev => {
+    setFormState((prev: FormState) => {
       const newHistory = [...prev.history]
       const lastStep = newHistory.pop()
       return {
@@ -556,7 +563,7 @@ ${allFiles.map(({ key, file }) => {
                       } else {
                         newSelection = currentSelection.filter((item: string) => item !== option);
                       }
-                      setFormState(prev => ({
+                      setFormState((prev: FormState) => ({
                         ...prev,
                         answers: {
                           ...prev.answers,
