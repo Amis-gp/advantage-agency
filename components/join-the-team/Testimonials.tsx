@@ -17,7 +17,7 @@ const Testimonials = () => {
       text: t('items.0.text'),
       author: t('items.0.author'),
       position: t('items.0.position'),
-      avatar: "/img/join-the-team/testimonial-1.jpg"
+      avatar: "/img/join-the-team/testimonial-1.webp"
     },
     {
       text: t('items.1.text'),

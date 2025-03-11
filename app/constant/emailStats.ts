@@ -9,7 +9,7 @@ interface Campaign {
   status: 'Archived' | 'Active';
   totalRecipients: number;
   stats: {
-    sent: {
+    openRate: {
       count: number;
       percentage: number;
     };
@@ -64,7 +64,7 @@ export const CAMPAIGNS: Campaign[] = [
     status: 'Archived',
     totalRecipients: 6450,
     stats: {
-      sent: { count: 6450, percentage: 94 },
+      openRate: { count: 4128, percentage: 64 },
       deliverability: { count: '-', percentage: '-' },
       clicks: { count: '-', percentage: '-' },
       replies: { count: 56, percentage: 2 },
@@ -86,7 +86,7 @@ export const CAMPAIGNS: Campaign[] = [
     status: 'Archived',
     totalRecipients: 5293,
     stats: {
-      sent: { count: 5293, percentage: 93 },
+      openRate: { count: 3282, percentage: 62 },
       deliverability: { count: '-', percentage: '-' },
       clicks: { count: '-', percentage: '-' },
       replies: { count: 115, percentage: 5 },
@@ -108,7 +108,7 @@ export const CAMPAIGNS: Campaign[] = [
     status: 'Archived',
     totalRecipients: 17478,
     stats: {
-      sent: { count: 17478, percentage: 82 },
+      openRate: { count: 10487, percentage: 60 },
       deliverability: { count: '-', percentage: '-' },
       clicks: { count: '-', percentage: '-' },
       replies: { count: 1073, percentage: 5 },
@@ -130,7 +130,7 @@ export const CAMPAIGNS: Campaign[] = [
     status: 'Archived',
     totalRecipients: 472,
     stats: {
-      sent: { count: 472, percentage: 76 },
+      openRate: { count: 270, percentage: 57 },
       deliverability: { count: '-', percentage: '-' },
       clicks: { count: '-', percentage: '-' },
       replies: { count: 18, percentage: 4 },
@@ -152,7 +152,7 @@ export const CAMPAIGNS: Campaign[] = [
     status: 'Archived',
     totalRecipients: 1862,
     stats: {
-      sent: { count: 1862, percentage: 88 },
+      openRate: { count: 1093, percentage: 59 },
       deliverability: { count: '-', percentage: '-' },
       clicks: { count: '-', percentage: '-' },
       replies: { count: 42, percentage: 5 },
@@ -174,7 +174,7 @@ export const CAMPAIGNS: Campaign[] = [
     status: 'Archived',
     totalRecipients: 699,
     stats: {
-      sent: { count: 699, percentage: 85 },
+      openRate: { count: 400, percentage: 57 },
       deliverability: { count: '-', percentage: '-' },
       clicks: { count: '-', percentage: '-' },
       replies: { count: 28, percentage: 4 },

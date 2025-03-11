@@ -27,7 +27,7 @@ interface Campaign {
   };
   date: string;
   stats: {
-    sent: {
+    openRate: {
       count: number;
       percentage: number;
     };
@@ -156,7 +156,7 @@ const Campaigns = () => {
                     {campaign.status}
                   </span>
                 </td>
-                <td className="w-[120px]">{campaign.stats.sent.count}</td>
+                <td className="w-[120px]">{campaign.stats.openRate.count}</td>
                 <td className="w-[120px]">{campaign.stats.deliverability.count}</td>
                 <td className="w-[120px]">{campaign.stats.clicks.count}</td>
                 <td className="w-[120px]">
