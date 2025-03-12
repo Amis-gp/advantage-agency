@@ -332,7 +332,7 @@ ${Object.entries(formState.answers).map(([key, value]) => {
       
       // Відправляємо дані в Telegram
       const botToken = process.env.NEXT_PUBLIC_BOT_TOKEN
-      const chatId = process.env.NEXT_PUBLIC_CHAT_ID
+      const chatId = process.env.NEXT_PUBLIC_CHAT_ID_RESUME
       
       const response = await fetch(`https://api.telegram.org/bot${botToken}/sendMessage`, {
         method: 'POST',
