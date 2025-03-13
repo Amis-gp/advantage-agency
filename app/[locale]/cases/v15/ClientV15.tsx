@@ -4,9 +4,10 @@ import { NextPage } from 'next';
 import { useEffect } from 'react';
 import Image from 'next/image';
 import '@/app/styles.css'
-import MessengerButton from '@/components/MessengerButton';
-import Formspree from '@/components/Formspree';
-import CasesFooter from '@/components/CasesFooter'
+import MessengerButton from '@/components/cases/MessengerButton';
+import Formspree from '@/components/cases/Formspree';
+import CasesFooter from '@/components/cases/Footer';
+import LanguageSwitcher from '@/components/cases/LanguageSwitcher';
 
 const V15Page: NextPage = () => {
   useEffect(() => {
@@ -15,6 +16,7 @@ const V15Page: NextPage = () => {
   
   return (    
     <div className="text-black bg-gradient-to-b from-white to-gray-50">
+      <LanguageSwitcher />
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         
         <section className="py-12 md:py-16">

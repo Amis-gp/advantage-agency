@@ -48,10 +48,9 @@ export default function Header(): JSX.Element {
 
     const handleServicesClick = (e: React.MouseEvent) => {
         e.preventDefault();
-        if (pathname === '/') {
-            document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' });
-        } else {
-            window.location.href = '/#services';
+        const element = document.getElementById('services');
+        if (element) {
+            element.scrollIntoView({ behavior: 'smooth' });
         }
     };
 
@@ -78,13 +77,15 @@ export default function Header(): JSX.Element {
                 >
                     <Image src="/img/logo.svg" alt="Advantage Agency" width={243} height={55} loading="lazy" className="h-7 sm:h-auto w-fit"/>
                 </Link>
+
+
                 <div className="flex items-center gap-4">
-                    {/*<div className="relative" ref={dropdownRef}>
+                    <div className="relative" ref={dropdownRef}>
                         <button 
                             onClick={() => setIsDropdownOpen(!isDropdownOpen)} 
                             type="button" 
                             aria-label="Change language" 
-                            className={`flex items-center gap-2 px-3 py-2 sm:px-7 sm:py-4 border border-white bg-black backdrop-blur-sm hover:bg-gray-800 transition-colors duration-300
+                            className={`flex items-center gap-2 px-3 py-2 sm:px-7 sm:py-2 border border-white bg-black backdrop-blur-sm hover:bg-gray-800 transition-colors duration-300
                                 ${isDropdownOpen ? 'rounded-t-[20px] sm:rounded-t-[24px] rounded-b-none' : 'rounded-[20px] sm:rounded-[24px]'}`}
                         >
                             {locale.toUpperCase()} 
@@ -111,7 +112,7 @@ export default function Header(): JSX.Element {
                                 )}
                                 {locale.toUpperCase() !== 'UA' && (
                                     <button 
-                                        onClick={() => toggleLanguage('ua')} 
+                                        onClick={() => toggleLanguage('uk')} 
                                         className="w-full px-3 py-2 sm:px-7 sm:py-4 text-left hover:bg-gray/20 transition-colors"
                                     >
                                         UA
@@ -119,8 +120,10 @@ export default function Header(): JSX.Element {
                                 )}
                             </div>
                         )}
-                    </div>*/}
-                    <div className="flex gap-4 items-center">
+                    </div>
+
+
+                    <div className="gap-4 items-center hidden sm:flex">
                         {[
                             { href: "https://www.linkedin.com/company/advantage-agencyuk/posts/?feedView=all", icon: "/img/linkedin.svg", alt: "LinkedIn" },
                             { href: "https://www.instagram.com/_advantage_agency_/", icon: "/img/instagram.svg", alt: "Instagram", className: "hidden sm:block" },

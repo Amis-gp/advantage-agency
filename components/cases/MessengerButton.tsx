@@ -1,7 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
 
-import "../app/globals.css"
+import "@/app/globals.css"
 
 interface MessengerButtonProps {
   link: string;

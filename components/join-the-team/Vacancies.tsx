@@ -49,11 +49,9 @@ const Vacancies = () => {
   ]
 
   const handleVacancyClick = (vacancyPath: string) => {
-    // Визначаємо поточну мову з URL
     const isUkrainian = pathname.includes('/uk')
     const basePath = isUkrainian ? '/uk/join-the-team/' : '/join-the-team/'
     
-    // Переходимо на відповідну сторінку вакансії
     router.push(`${basePath}${vacancyPath}`)
   }
 

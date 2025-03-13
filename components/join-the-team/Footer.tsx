@@ -95,7 +95,7 @@ const Footer = () => {
                 </li>
                 <li>
                   <Link 
-                    href="#choice" 
+                    href="#vacancies" 
                     className="text-white/60 hover:text-red-500 transition-colors"
                     onMouseEnter={() => playSound('hover_1')}
                   >

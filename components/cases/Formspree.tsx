@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 import { useTranslations } from 'next-intl';
-import "../app/globals.css";
+import "@/app/globals.css";
 
 const Formspree = () => {
   const t = useTranslations('form');

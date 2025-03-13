@@ -2,6 +2,8 @@
 import { useState, useRef } from 'react';
 import { useLocale, useTranslations } from 'next-intl';
 import { trackButtonClick, trackVideoPlay } from '@/utils/fbConversion';
+import { useRouter } from 'next/navigation';
+import LanguageSwitcher from '../LanguageSwitcher';
 
 const videoSources = {
     en: {
@@ -18,11 +20,14 @@ export default function Hero() {
     const [isPlaying, setIsPlaying] = useState(false);
     const [videoError, setVideoError] = useState(false);
     const [isVideoPaused, setIsVideoPaused] = useState(false);
+    const [isLangDropdownOpen, setIsLangDropdownOpen] = useState(false);
     const locale = useLocale();
     const t = useTranslations('cold-email.hero');
     const currentLocale = locale as keyof typeof videoSources;
     const sources = videoSources[currentLocale] || videoSources.en;
     const videoRef = useRef<HTMLVideoElement>(null);
+    const dropdownRef = useRef<HTMLDivElement>(null);
+    const router = useRouter();
 
     const handlePlayClick = async () => {
         setIsPlaying(true);
@@ -50,11 +55,34 @@ export default function Hero() {
         await trackButtonClick(name, location);
     };
 
+    const handleClickOutside = (event: MouseEvent) => {
+        if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
+            setIsLangDropdownOpen(false);
+        }
+    };
+
+    useState(() => {
+        document.addEventListener('mousedown', handleClickOutside);
+        return () => {
+            document.removeEventListener('mousedown', handleClickOutside);
+        };
+    }, []);
+
+    const changeLanguage = (newLocale: string) => {
+        const currentPath = window.location.pathname;
+        const pathWithoutLocale = currentPath.replace(/^\/(en|uk)/, '');
+        router.push(`/${newLocale}${pathWithoutLocale}`);
+        setIsLangDropdownOpen(false);
+    };
+
     return (
         <div className="relative min-h-screen overflow-hidden">
             <div className="relative z-10">
-                <div className="container mx-auto px-4 pt-8 md:pt-12 pb-16">
-                    <div className="max-w-4xl mx-auto text-center">
+                <div className="mx-auto px-4 pt-4 md:pt-12 pb-16">
+                    {/* language switcher */}
+                    <LanguageSwitcher />
+
+                    <div className="max-w-4xl mx-auto text-center pt-4">
                         <div className="mb-8">
                             <span className="text-[#4F46E5] text-lg font-medium mb-4 block">
                                 {t('subtitle')}

@@ -10,7 +10,7 @@ const Hero = () => {
   return (
     <section className="relative w-full min-h-screen bg-black overflow-hidden">
       {/* Background GIF for mobile */}
-      <div className="absolute inset-0 lg:hidden">
+      <div className="absolute inset-0 lg:hidden ">
         <Image
           src="/img/join-the-team/job.gif"
           alt="Team animation"
@@ -21,7 +21,7 @@ const Hero = () => {
         <div className="absolute inset-0 bg-gradient-to-b" />
       </div>
 
-      <div className="relative min-h-screen flex max-w-[2000px] mx-auto">
+      <div className="relative min-h-screen flex max-w-[2000px] mx-auto z-10">
         {/* Left content side */}
         <div className="flex-1 flex items-center max-w-7xl mx-auto z-20">
           <div className="max-w-2xl px-6 space-y-8">

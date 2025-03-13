@@ -148,9 +148,9 @@ const FormSection = () => {
                                 }}
                                 placeholder={t('form.phone')}
                                 className="pl-6 w-full border border-white/40 rounded-xl focus-within:border-white/60"
-                                inputClassName="bg-transparent px-6 py-4 w-full text-white placeholder-white/60 focus:outline-none h-[56px]"
-                                countrySelectClassName="bg-black text-white px-4 py-4 border-r border-white/40 h-[56px]"
-                                buttonClassName="!bg-transparent !border-0"
+                                inputclassname="bg-transparent px-6 py-4 w-full text-white placeholder-white/60 focus:outline-none h-[56px]"
+                                countryselectclassname="bg-black text-white px-4 py-4 border-r border-white/40 h-[56px]"
+                                buttonclassname="!bg-transparent !border-0"
                                 required
                             />
                             <style jsx global>{`

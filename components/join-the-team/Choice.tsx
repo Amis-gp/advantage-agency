@@ -27,7 +27,7 @@ const Choice = () => {
   ]
 
   return (
-    <section id="choice" className="bg-gradient-to-b from-black via-black/95 to-black relative py-20 md:py-32">
+    <section className="bg-gradient-to-b from-black via-black/95 to-black relative py-20 md:py-32">
 
       <div className="absolute inset-0 z-0 opacity-20">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(120,0,0,0.15)_0,rgba(0,0,0,0)_50%)] opacity-70"></div>

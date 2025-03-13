@@ -2,15 +2,16 @@
 
 import React from 'react';
 import { NextPage } from 'next';
+import Formspree from "@/components/cases/Formspree";
 
 import { useState, useEffect } from 'react';
 import { Dialog, Transition } from '@headlessui/react';
-import { Fragment } from 'react';      
+import { Fragment } from 'react';       
 
 import '@/app/styles.css'
-import MessengerButton from '@/components/MessengerButton';
-import Formspree from '@/components/Formspree';
-import CasesFooter from '@/components/CasesFooter';
+import MessengerButton from '@/components/cases/MessengerButton';
+import CasesFooter from '@/components/cases/Footer';
+import LanguageSwitcher from '@/components/cases/LanguageSwitcher';
 
 const V2ukPage: NextPage = () => {
   useEffect(() => {
@@ -56,6 +57,7 @@ const V2ukPage: NextPage = () => {
   return (
     
     <div className="text-black bg-white max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+      <LanguageSwitcher />
       <section className="pt-8">
         <h1 className="text-4xl sm:text-5xl font-bold mb-6 text-center">
         <u>Queen of Beauty</u> збільшила місячний дохід на <span className='highlight'>194%</span>

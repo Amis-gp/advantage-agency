@@ -4,9 +4,10 @@
   import { useEffect } from 'react';
   import Image from 'next/image';
   import '@/app/styles.css'
-  import MessengerButton from '@/components/MessengerButton';
-  import Formspree from '@/components/Formspree';
-  import CasesFooter from '@/components/CasesFooter'
+  import MessengerButton from '@/components/cases/MessengerButton';
+  import Formspree from '@/components/cases/Formspree';
+  import CasesFooter from '@/components/cases/Footer';
+  import LanguageSwitcher from '@/components/cases/LanguageSwitcher';
 
 
   const V14ukPage: NextPage = () => {
@@ -15,7 +16,7 @@
     }, []);
   return (    
     <div className="text-black bg-white max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-        
+      <LanguageSwitcher />
       <section className="mt-12">
         <h1 className="text-4xl md:text-5xl font-bold mb-12 leading-tight">
             Кейс-стаді: Як ми отримали <span className='highlight highlight-red-300 highlight-variant-5'>5% Reply Rate</span> 🎯 
