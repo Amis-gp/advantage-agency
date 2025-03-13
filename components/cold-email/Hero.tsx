@@ -1,5 +1,5 @@
 'use client';
-import { useState, useRef } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import { useLocale, useTranslations } from 'next-intl';
 import { trackButtonClick, trackVideoPlay } from '@/utils/fbConversion';
 import { useRouter } from 'next/navigation';
@@ -61,7 +61,7 @@ export default function Hero() {
         }
     };
 
-    useState(() => {
+    useEffect(() => {
         document.addEventListener('mousedown', handleClickOutside);
         return () => {
             document.removeEventListener('mousedown', handleClickOutside);
