@@ -88,7 +88,7 @@ export default function Header(): JSX.Element {
                             className={`flex items-center gap-2 px-3 py-2 sm:px-7 sm:py-2 border border-white bg-black backdrop-blur-sm hover:bg-gray-800 transition-colors duration-300
                                 ${isDropdownOpen ? 'rounded-t-[20px] sm:rounded-t-[24px] rounded-b-none' : 'rounded-[20px] sm:rounded-[24px]'}`}
                         >
-                            {locale.toUpperCase()} 
+                            {locale === 'uk' ? 'UA' : 'EN'} 
                             <svg
                                 className={`w-4 h-4 transition-transform ${isDropdownOpen ? 'rotate-180' : ''}`}
                                 xmlns="http://www.w3.org/2000/svg"

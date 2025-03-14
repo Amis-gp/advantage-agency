@@ -60,7 +60,7 @@ export default function LanguageSwitcher() {
                 onClick={() => setIsLangDropdownOpen(!isLangDropdownOpen)} 
                 className="flex items-center justify-center gap-1 px-4 py-2 bg-black/90 backdrop-blur-md border border-white/30 rounded-full hover:bg-black/80 transition-all duration-300 shadow-lg"
             >
-                <span className="font-medium text-white text-sm">{currentLocale === 'uk' ? 'UK' : 'EN'}</span>
+                <span className="font-medium text-white text-sm">{currentLocale === 'uk' ? 'UA' : 'EN'}</span>
                 <svg
                     className={`w-3.5 h-3.5 text-white transition-transform duration-300 ${isLangDropdownOpen ? 'rotate-180' : ''}`}
                     xmlns="http://www.w3.org/2000/svg"
@@ -87,7 +87,7 @@ export default function LanguageSwitcher() {
                             onClick={() => changeLanguage('uk')} 
                             className="text-sm w-full px-3 py-2 text-center text-white hover:bg-white/10 transition-colors"
                         >
-                            UK
+                            UA
                         </button>
                     )}
                 </div>

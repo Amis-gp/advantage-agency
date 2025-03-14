@@ -54,7 +54,7 @@ const Header = () => {
                   onClick={() => setIsLangDropdownOpen(!isLangDropdownOpen)} 
                   className="flex items-center justify-center gap-1 px-3 py-1.5 text-white/70 hover:text-red-500 transition-colors"
               >
-                  <span className="font-medium text-sm">{currentLocale === 'uk' ? 'UK' : 'EN'}</span>
+                  <span className="font-medium text-sm">{currentLocale === 'uk' ? 'UA' : 'EN'}</span>
                   <svg
                       className={`w-3.5 h-3.5 transition-transform duration-300 ${isLangDropdownOpen ? 'rotate-180' : ''}`}
                       xmlns="http://www.w3.org/2000/svg"
@@ -81,7 +81,7 @@ const Header = () => {
                             onClick={() => changeLanguage('uk')} 
                             className="w-full px-3 py-2 text-center text-white/70 hover:text-red-500 transition-colors"
                         >
-                            UK
+                            UA
                         </button>
                     )}
                 </div>
