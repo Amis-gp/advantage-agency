@@ -1172,7 +1172,7 @@
                     "title": "Залиште свої контактні дані",
                     "name-placeholder": "Ваше ім'я",
                     "email-placeholder": "Ваш email",
-                    "phone-placeholder": "Ваш телефон",
+                    "telegram-placeholder": "Ваш Telegram",
                     "submit": "Відправити",
                     "submitting": "Відправка...",
                     "success": {

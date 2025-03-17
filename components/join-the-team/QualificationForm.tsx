@@ -29,7 +29,7 @@ const QualificationForm = () => {
   const [contactData, setContactData] = useState({
     name: '',
     email: '',
-    phone: ''
+    telegram: ''
   })
   const [submitting, setSubmitting] = useState(false)
   const [submitSuccess, setSubmitSuccess] = useState(false)
@@ -316,7 +316,8 @@ const QualificationForm = () => {
 
 <b>👤 Ім'я:</b> ${contactData.name}
 <b>📧 Email:</b> ${contactData.email}
-<b>📱 Телефон:</b> ${contactData.phone}
+<b>💬 Telegram:</b> ${contactData.telegram}
+
 
 <b>📋 Відповіді на питання:</b>
 ${Object.entries(formState.answers).map(([key, value]) => {
@@ -736,15 +737,15 @@ ${allFiles.map(({ key, file }) => {
             />
           </div>
           <div>
-            <label htmlFor="phone" className="block text-white/80 mb-2">{t('common.contact-form.phone')}</label>
+            <label htmlFor="telegram" className="block text-white/80 mb-2">{t('common.contact-form.telegram')}</label>
             <input
-              type="tel"
-              id="phone"
-              name="phone"
-              value={contactData.phone}
+              type="text"
+              id="telegram"
+              name="telegram"
+              value={contactData.telegram}
               onChange={handleContactChange}
               className="w-full p-4 bg-black/30 border border-white/10 rounded-xl text-white/80 focus:border-red-500/50 focus:outline-none"
-              placeholder={t('common.contact-form.phone-placeholder')}
+              placeholder={t('common.contact-form.telegram-placeholder')}
               required
             />
           </div>
@@ -758,9 +759,9 @@ ${allFiles.map(({ key, file }) => {
           </button>
           <button
             onClick={handleSubmitContact}
-            disabled={submitting || !contactData.name || !contactData.email || !contactData.phone}
+            disabled={submitting || !contactData.name || !contactData.email || !contactData.telegram}
             className={`px-6 py-3 bg-gradient-to-r from-red-600 to-red-800 hover:from-red-700 hover:to-red-900 rounded-xl text-white font-medium shadow-lg ${
-              (submitting || !contactData.name || !contactData.email || !contactData.phone) ? 'opacity-50 cursor-not-allowed' : ''
+              (submitting || !contactData.name || !contactData.email || !contactData.telegram) ? 'opacity-50 cursor-not-allowed' : ''
             }`}
           >
             {submitting ? t('common.contact-form.submitting') : t('common.contact-form.submit')}

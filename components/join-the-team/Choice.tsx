@@ -15,14 +15,17 @@ const Choice = () => {
     {
       title: t('positions.0.title'),
       path: '/join-the-team/lead-gen',
+      isActive: true
     },
     {
       title: t('positions.1.title'),
       path: '/join-the-team/media-buyer',
+      isActive: false
     },
     {
       title: t('positions.2.title'),
       path: '/join-the-team/cold-email',
+      isActive: false
     },
   ]
 
@@ -63,40 +66,68 @@ const Choice = () => {
           className="flex flex-col gap-6 max-w-2xl mx-auto"
         >
           {positions.map((position, index) => (
-            <Link
-              key={position.title}
-              href={position.path}
-              className={`transform transition-all duration-700 delay-${index * 150} ${
-                inView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
-              }`}
-            >
-              <div className="group relative bg-gradient-to-br from-white/5 to-white/[0.02] hover:from-white/10 hover:to-white/5 rounded-2xl p-6 md:p-8 border border-white/5 hover:border-white/10 transition-all duration-300 overflow-hidden shadow-lg">
-                <div className="absolute -inset-0.5 bg-gradient-to-r from-red-500 to-red-700 opacity-0 group-hover:opacity-20 rounded-2xl transition-all duration-500 z-0"></div>
-                
-                <div className="flex flex-col md:flex-row items-center justify-between gap-4">
-                  <span className="text-xl md:text-2xl font-bold text-white group-hover:text-red-500 transition-colors">
-                    {position.title}
-                  </span>
+            position.isActive ? (
+              <Link
+                key={position.title}
+                href={position.path}
+                className={`transform transition-all duration-700 delay-${index * 150} ${
+                  inView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+                }`}
+              >
+                <div className="group relative bg-gradient-to-br from-white/5 to-white/[0.02] hover:from-white/10 hover:to-white/5 rounded-2xl p-6 md:p-8 border border-white/5 hover:border-white/10 transition-all duration-300 overflow-hidden shadow-lg">
+                  <div className="absolute -inset-0.5 bg-gradient-to-r from-red-500 to-red-700 opacity-0 group-hover:opacity-20 rounded-2xl transition-all duration-500 z-0"></div>
                   
-                  <div className="flex items-center gap-3">
-                    <span className="text-white/60 group-hover:text-white/90 transition-colors">
-                      {t('qualification')}
+                  <div className="flex flex-col md:flex-row items-center justify-between gap-4">
+                    <span className="text-xl md:text-2xl font-bold text-white group-hover:text-red-500 transition-colors">
+                      {position.title}
                     </span>
-                    <div className="w-10 h-10 rounded-full bg-gradient-to-r from-red-500/50 to-red-700/50 group-hover:from-red-500 group-hover:to-red-700 flex items-center justify-center transition-all duration-300">
-                      <span className="text-white transform group-hover:translate-x-1 transition-transform">
-                        →
+                    
+                    <div className="flex items-center gap-3">
+                      <span className="text-white/60 group-hover:text-white/90 transition-colors">
+                        {t('qualification')}
                       </span>
+                      <div className="w-10 h-10 rounded-full bg-gradient-to-r from-red-500/50 to-red-700/50 group-hover:from-red-500 group-hover:to-red-700 flex items-center justify-center transition-all duration-300">
+                        <span className="text-white transform group-hover:translate-x-1 transition-transform">
+                          →
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="absolute bottom-0 left-0 w-full h-[2px]">
+                    <div className="h-full bg-gradient-to-r from-red-500 to-red-700 transform origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-500" />
+                  </div>
+                  
+                  <div className="absolute inset-0 bg-gradient-to-r from-red-500/0 via-red-500/5 to-red-500/0 opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none"></div>
+                </div>
+              </Link>
+            ) : (
+              <div
+                key={position.title}
+                className={`transform transition-all duration-700 delay-${index * 150} ${
+                  inView ? 'opacity-70 translate-y-0' : 'opacity-0 translate-y-10'
+                } cursor-not-allowed`}
+              >
+                <div className="relative bg-gradient-to-br from-white/5 to-white/[0.02] rounded-2xl p-6 md:p-8 border border-white/5 overflow-hidden shadow-lg">
+                  <div className="flex flex-col md:flex-row items-center justify-between gap-4">
+                    <span className="text-xl md:text-2xl font-bold text-white/60">
+                      {position.title}
+                    </span>
+                    
+                    <div className="flex items-center gap-3">
+                      <span className="text-white/40">
+                        {t('qualification')}
+                      </span>
+                      <div className="w-10 h-10 rounded-full bg-gradient-to-r from-red-500/20 to-red-700/20 flex items-center justify-center">
+                        <span className="text-white/60">
+                          →
+                        </span>
+                      </div>
                     </div>
                   </div>
                 </div>
-
-                <div className="absolute bottom-0 left-0 w-full h-[2px]">
-                  <div className="h-full bg-gradient-to-r from-red-500 to-red-700 transform origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-500" />
-                </div>
-                
-                <div className="absolute inset-0 bg-gradient-to-r from-red-500/0 via-red-500/5 to-red-500/0 opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none"></div>
               </div>
-            </Link>
+            )
           ))}
         </div>
       </div>
