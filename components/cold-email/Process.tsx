@@ -10,7 +10,7 @@ export default function Process() {
         await trackButtonClick('Schedule Call', 'Process');
     };
 
-    const steps = Array.from({ length: 6 }, (_, i) => ({
+    const steps = Array.from({ length: 4 }, (_, i) => ({
         number: t(`steps.${i}.number`),
         title: t(`steps.${i}.title`),
         description: t(`steps.${i}.description`),
@@ -36,7 +36,7 @@ export default function Process() {
                 </motion.div>
 
                 <div className="max-w-5xl mx-auto">
-                    <div className="grid md:grid-cols-3 gap-8">
+                    <div className="grid md:grid-cols-2 gap-8">
                         {steps.map((step, index) => (
                             <motion.div
                                 key={index}
@@ -52,9 +52,6 @@ export default function Process() {
                                         <div className="flex justify-between items-start mb-4">
                                             <span className="text-4xl font-bold text-[#4F46E5] opacity-50">
                                                 {step.number}
-                                            </span>
-                                            <span className="text-sm text-gray-400 bg-black/50 px-3 py-1 rounded-full">
-                                                {step.duration}
                                             </span>
                                         </div>
                                         <h3 className="text-xl font-bold text-white mb-3">

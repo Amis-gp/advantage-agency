@@ -20,7 +20,6 @@ export default function ParticlesBackground() {
 
     return (
         <>
-            {/* Основні частинки */}
             <Particles
                 init={particlesInit}
                 options={{

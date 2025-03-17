@@ -111,7 +111,7 @@ export const CAMPAIGNS: Campaign[] = [
       openRate: { count: 10487, percentage: 60 },
       deliverability: { count: '-', percentage: '-' },
       clicks: { count: '-', percentage: '-' },
-      replies: { count: 521, percentage: 5 },
+      replies: { count: 321, percentage: 3 },
       bounces: { count: 82, percentage: 1 },
       contacted: { count: 16778, percentage: 96 },
       unsubscribed: { count: 241, percentage: 2 },

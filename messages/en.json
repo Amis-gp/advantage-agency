@@ -1303,46 +1303,30 @@
         "process": {
             "title": {
                 "part1": "Simple",
-                "part2": "6-Step",
+                "part2": "4-Step",
                 "part3": "Process"
             },
             "subtitle": "From strategy to execution in just 4 weeks",
             "steps": [
                 {
                     "number": "01",
-                    "title": "Warming up the system for mailing",
-                    "description": "We prepare and optimize the email infrastructure to ensure maximum deliverability.",
-                    "duration": "4 weeks"
+                    "title": "System Preparation",
+                    "description": "Preparing and optimizing email infrastructure for maximum deliverability."
                 },
                 {
                     "number": "02",
-                    "title": "Set up campaigns, add texts",
-                    "description": "We create compelling email templates and set up your campaign structure.",
-                    "duration": "2-3 days"
+                    "title": "Scraping Target Audience",
+                    "description": "Collecting and verifying contact information of your target audience."
                 },
                 {
                     "number": "03",
-                    "title": "Scraping 3,000 contacts",
-                    "description": "We gather and verify your target audience contact information.",
-                    "duration": "5-7 days"
+                    "title": "Contact Strategy Development",
+                    "description": "Creating compelling email templates and configuring campaign structure."
                 },
                 {
                     "number": "04",
-                    "title": "Upload contacts & launch",
-                    "description": "We import the contacts and initiate your campaign with careful monitoring.",
-                    "duration": "1 day"
-                },
-                {
-                    "number": "05",
-                    "title": "Track performance",
-                    "description": "We monitor 3-5% response rate (approximately 30-50 responses per 1000 emails).",
-                    "duration": "Ongoing"
-                },
-                {
-                    "number": "06",
-                    "title": "Generate leads",
-                    "description": "We convert responses into approximately 50 interested leads and 30 demo calls.",
-                    "duration": "Ongoing"
+                    "title": "Campaign Setup and Launch",
+                    "description": "Final setup of all processes and verification"
                 }
             ],
             "cta": {
@@ -1361,9 +1345,9 @@
             },
             "stats": [
                 {
-                    "number": "3-5%",
+                    "number": "3%",
                     "label": "Average Reply Rate",
-                    "description": "On average 3-5 replies per 100 sent emails"
+                    "description": "On average 3 replies per 100 sent emails"
                 },
                 {
                     "number": "15-20",
@@ -1442,37 +1426,57 @@
             ],
             "cta": "View case studies"
         },
-       
         "pricing": {
-            "title_part1": "Choose a Plan",
-            "title_emphasis": "That's Right",
-            "title_part2": "For You",
-            "subtitle": "Flexible pricing options to match your needs",
+            "title_part1": "Choose a plan",
+            "title_emphasis": "that fits",
+            "title_part2": "your needs",
+            "subtitle": "Flexible pricing options for your requirements",
             "popular": "Popular",
             "standard": {
-                "title": "Standard Package",
-                "description": "One-time fee, then only maintenance cost",
+                "title": "1K Contacts Package",
+                "description": "One-time payment for system setup",
                 "features": [
-                "3,000 contacts",
-                "18 Senders",
-                "6 Campaigns",
-                "Spintax",
-                "Analytics",
-                "Email warmup included"
-                ]
+                    "1 campaign = 1 approach to engagement",
+                    "1K verified contacts",
+                    "Email strategy",
+                    "Analytics and reporting",
+                    "≈ 2-3% Email replies",
+                    "≈ 20-30 Responses",
+                    "≈ 20% Conversion to leads",
+                    "≈ 4-6 qualified leads"
+                ],
+                "price": "$850"
             },
             "performance": {
-                "title": "Pay-on-Performance",
-                "description": "Covering only infrastructure and then paying per leads or calls",
-                "extra": "+ Pay per qualified lead",
+                "title": "3K Contacts Package",
+                "description": "One-time payment for system setup",
+                "extra": "Best value offer",
                 "features": [
-                "3,000 contacts",
-                "18 Senders",
-                "6 Campaigns",
-                "Spintax",
-                "Analytics",
-                "Email warmup included"
-                ]
+                    "3 campaigns = 3 approaches to engagement",
+                    "3K verified contacts",
+                    "Email strategy",
+                    "Analytics and reporting",
+                    "≈ 2-3% Email replies",
+                    "≈ 60-90 Responses",
+                    "≈ 20% Conversion to leads",
+                    "≈ 12-18 qualified leads"
+                ],
+                "price": "$1850"
+            },
+            "medium": {
+                "title": "2K Contacts Package",
+                "description": "One-time payment for system setup",
+                "features": [
+                    "2 campaigns = 2 approaches to engagement",
+                    "2K verified contacts",
+                    "Email strategy", 
+                    "Analytics and reporting",
+                    "≈ 2-3% Email replies",
+                    "≈ 40-60 Responses",
+                    "≈ 20% Conversion to leads",
+                    "≈ 8-12 qualified leads"
+                ],
+                "price": "$1350"
             },
             "getStarted": "Get Started"
         },
