@@ -1350,19 +1350,9 @@
                     "description": "On average 3 replies per 100 sent emails"
                 },
                 {
-                    "number": "15-20",
-                    "label": "Qualified Calls/Month",
-                    "description": "Qualified sales calls monthly"
-                },
-                {
                     "number": "40%",
                     "label": "Close Rate",
                     "description": "Percentage of closed deals from qualified calls"
-                },
-                {
-                    "number": "6-8",
-                    "label": "New Clients/Month",
-                    "description": "New clients every month"
                 }
             ],
             "viewCase": "View Case",

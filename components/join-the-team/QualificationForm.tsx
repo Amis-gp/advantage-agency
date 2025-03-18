@@ -487,11 +487,31 @@ ${allFiles.map(({ key, file }) => {
               className="w-full p-4 bg-black/30 border border-white/10 rounded-xl text-white/80 focus:border-red-500/50 focus:outline-none"
               rows={5}
               placeholder={questionHint}
-              onChange={(e) => {}}
+              value={formState.answers[question.id] || ''}
+              onChange={(e) =>
+                setFormState((prev: FormState) => ({
+                  ...prev,
+                  answers: {
+                    ...prev.answers,
+                    [question.id]: e.target.value
+                  }
+                }))
+              }
             />
             <button
-              className="px-6 py-3 bg-gradient-to-r from-red-600 to-red-800 hover:from-red-700 hover:to-red-900 rounded-xl text-white font-medium shadow-lg"
-              onClick={() => handleAnswer(question.id, document.querySelector('textarea')?.value || '')}
+              onClick={() => handleAnswer(question.id, formState.answers[question.id] || '')}
+              disabled={
+                question.id !== 'questions' &&
+                (!formState.answers[question.id] ||
+                 formState.answers[question.id].trim() === '')
+              }
+              className={`px-6 py-3 bg-gradient-to-r from-red-600 to-red-800 hover:from-red-700 hover:to-red-900 rounded-xl text-white font-medium shadow-lg ${
+                question.id !== 'questions' &&
+                (!formState.answers[question.id] ||
+                 formState.answers[question.id].trim() === '')
+                  ? 'opacity-50 cursor-not-allowed'
+                  : ''
+              }`}
             >
               {t('common.buttons.next')}
             </button>
@@ -556,6 +576,7 @@ ${allFiles.map(({ key, file }) => {
                     type="checkbox"
                     id={option}
                     className="mr-3 h-5 w-5 accent-red-500"
+                    checked={Array.isArray(formState.answers[question.id]) && formState.answers[question.id].includes(option)}
                     onChange={(e) => {
                       const currentSelection = formState.answers[question.id] || [];
                       let newSelection;
@@ -580,11 +601,20 @@ ${allFiles.map(({ key, file }) => {
               ))}
             </div>
             <button
-              className="px-6 py-3 bg-gradient-to-r from-red-600 to-red-800 hover:from-red-700 hover:to-red-900 rounded-xl text-white font-medium shadow-lg"
               onClick={() => {
                 const selectedOptions = formState.answers[question.id] || [];
                 handleAnswer(question.id, selectedOptions);
               }}
+              disabled={
+                question.id !== 'questions' &&
+                (!formState.answers[question.id] || (Array.isArray(formState.answers[question.id]) && formState.answers[question.id].length === 0))
+              }
+              className={`px-6 py-3 bg-gradient-to-r from-red-600 to-red-800 hover:from-red-700 hover:to-red-900 rounded-xl text-white font-medium shadow-lg ${
+                question.id !== 'questions' &&
+                (!formState.answers[question.id] || (Array.isArray(formState.answers[question.id]) && formState.answers[question.id].length === 0))
+                  ? 'opacity-50 cursor-not-allowed'
+                  : ''
+              }`}
             >
               {t('common.buttons.next')}
             </button>
@@ -679,7 +709,18 @@ ${allFiles.map(({ key, file }) => {
               
               <button
                 onClick={() => handleAnswer(question.id, formState.answers[question.id] || null)}
-                className="px-6 py-3 bg-gradient-to-r from-red-600 to-red-800 hover:from-red-700 hover:to-red-900 rounded-xl text-white font-medium shadow-lg"
+                disabled={
+                  question.id !== 'questions' &&
+                  (!formState.answers[question.id] ||
+                    (Array.isArray(formState.answers[question.id]) && formState.answers[question.id].length === 0))
+                }
+                className={`px-6 py-3 bg-gradient-to-r from-red-600 to-red-800 hover:from-red-700 hover:to-red-900 rounded-xl text-white font-medium shadow-lg ${
+                  question.id !== 'questions' &&
+                  (!formState.answers[question.id] ||
+                    (Array.isArray(formState.answers[question.id]) && formState.answers[question.id].length === 0))
+                    ? 'opacity-50 cursor-not-allowed'
+                    : ''
+                }`}
               >
                 {t('common.buttons.next')}
               </button>
@@ -864,4 +905,4 @@ ${allFiles.map(({ key, file }) => {
   )
 }
 
-export default QualificationForm
+export default QualificationForm 

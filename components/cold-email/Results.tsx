@@ -15,7 +15,7 @@ export default function Results() {
 
     const caseUrl = locale === 'uk' ? '/cases/v14uk' : '/cases/v14';
 
-    const stats = Array.from({ length: 4 }, (_, i) => ({
+    const stats = Array.from({ length: 2 }, (_, i) => ({
         number: t(`stats.${i}.number`),
         label: t(`stats.${i}.label`),
         description: t(`stats.${i}.description`)
@@ -101,7 +101,7 @@ export default function Results() {
                         whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ once: true }}
                         transition={{ duration: 0.6 }}
-                        className="bg-black/30 rounded-2xl p-8 border border-[#4F46E5] transition-all duration-300"
+                        className="bg-black/30 rounded-2xl p-8 border border-[#4F46E5] transition-all duration-300 h-fit my-auto"
                     >
                         <div className="grid grid-cols-2 gap-8 relative mb-8">
                             {stats.map((stat, index) => (
