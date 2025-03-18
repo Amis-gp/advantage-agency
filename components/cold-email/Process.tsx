@@ -14,7 +14,6 @@ export default function Process() {
         number: t(`steps.${i}.number`),
         title: t(`steps.${i}.title`),
         description: t(`steps.${i}.description`),
-        duration: t(`steps.${i}.duration`)
     }));
 
     return (

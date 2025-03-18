@@ -15,7 +15,7 @@ export default function Results() {
 
     const caseUrl = locale === 'uk' ? '/cases/v14uk' : '/cases/v14';
 
-    const stats = Array.from({ length: 2 }, (_, i) => ({
+    const stats = Array.from({ length: 3 }, (_, i) => ({
         number: t(`stats.${i}.number`),
         label: t(`stats.${i}.label`),
         description: t(`stats.${i}.description`)
@@ -105,7 +105,7 @@ export default function Results() {
                     >
                         <div className="grid grid-cols-2 gap-8 relative mb-8">
                             {stats.map((stat, index) => (
-                                <div key={index} className="text-center">
+                                <div key={index} className={`text-center ${index === 2 ? 'col-span-2' : ''}`}>
                                     <h3 className={`text-3xl md:text-4xl font-bold mb-2 ${
                                         index % 3 === 0 ? 'text-[#4F46E5]' :
                                         index % 3 === 1 ? 'text-[#06B6D4]' :
@@ -211,27 +211,7 @@ export default function Results() {
                                 </button>
 
                                 {/* Video Controls */}
-                                {isPlaying && (
-                                    <div className="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                                        <div className="flex items-center gap-4">
-                                            <button
-                                                onClick={handlePlayPause}
-                                                className="text-white hover:text-[#4F46E5] transition-colors"
-                                            >
-                                                {isPlaying ? (
-                                                    <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 9v6m4-6v6m7-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-                                                    </svg>
-                                                ) : (
-                                                    <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" />
-                                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                                                    </svg>
-                                                )}
-                                            </button>
-                                        </div>
-                                    </div>
-                                )}
+                                
                             </div>
                         </div>
                     </motion.div>

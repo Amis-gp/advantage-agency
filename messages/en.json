@@ -1353,6 +1353,11 @@
                     "number": "40%",
                     "label": "Close Rate",
                     "description": "Percentage of closed deals from qualified calls"
+                },
+                {
+                    "number": "17478",
+                    "label": "Emails Sent",
+                    "description": "Emails sent in 3 months"
                 }
             ],
             "viewCase": "View Case",
