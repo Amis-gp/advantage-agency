@@ -439,8 +439,8 @@ ${allFiles.map(({ key, file }) => {
     switch (question.id) {
       case 'experience':
         questionOptions = isUkrainian 
-          ? ['Менше 1 року', '1-2 роки', '2-5 років', 'Більше 5 років'] 
-          : ['Less than 1 year', '1-2 years', '2-5 years', 'More than 5 years'];
+          ? ["Немає досвіду", "Менше 1 року", "1-3 роки", "3+ років"] 
+          : ["No experience", "Less than 1 year", "1-3 years", "3+ years"];
         break;
       case 'sources':
         questionOptions = isUkrainian 
