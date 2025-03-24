@@ -3,29 +3,95 @@ import Head from 'next/head';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useTranslations } from 'next-intl';
+import { useLocale } from 'next-intl';
 import LanguageSwitcher from '../LanguageSwitcher'
 import { GetStaticProps } from 'next';
 
 export default function B2BLeadGenerationTrends() {
   const t = useTranslations('blog.b2b-lead-generation-trends');
+  const locale = useLocale();
+  const canonicalUrl = `https://yourdomain.com/${locale}/blog/b2b-lead-generation-2025`;
+  const currentDate = new Date().toISOString();
   
   return (
     <div className="bg-gradient-to-br from-gray-900 to-black text-white font-sans">
       <Head>
         <title>{t('meta.title')}</title>
         <meta name="description" content={t('meta.description')} />
+        
+        {/* Основні SEO-теги */}
+        <meta name="robots" content="index, follow" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="canonical" href={canonicalUrl} />
+        
+        {/* OpenGraph теги для соцмереж */}
         <meta property="og:title" content={t('meta.title')} />
         <meta property="og:description" content={t('meta.description')} />
-        <meta property="og:image" content="/img/blog/b2b-lead-generation-trends-2025/hero.jpg" />
+        <meta property="og:image" content="https://yourdomain.com/img/blog/b2b-lead-generation-trends-2025/hero.jpg" />
+        <meta property="og:url" content={canonicalUrl} />
         <meta property="og:type" content="article" />
+        <meta property="og:locale" content={locale} />
+        <meta property="article:published_time" content="2023-11-15T10:00:00Z" />
+        <meta property="article:modified_time" content={currentDate} />
+        <meta property="article:author" content="https://yourdomain.com/about" />
+        <meta property="article:section" content="B2B Marketing" />
+        <meta property="article:tag" content="B2B, Lead Generation, Marketing" />
+        
+        {/* Twitter картки */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={t('meta.title')} />
+        <meta name="twitter:description" content={t('meta.description')} />
+        <meta name="twitter:image" content="https://yourdomain.com/img/blog/b2b-lead-generation-trends-2025/hero.jpg" />
+        
+        {/* Альтернативні мовні версії */}
+        <link rel="alternate" hrefLang="uk" href="https://yourdomain.com/uk/blog/b2b-lead-generation-2025" />
+        <link rel="alternate" hrefLang="en" href="https://yourdomain.com/en/blog/b2b-lead-generation-2025" />
+        <link rel="alternate" hrefLang="x-default" href="https://yourdomain.com/en/blog/b2b-lead-generation-2025" />
+        
         <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet" />
+        
+        {/* Структуровані дані JSON-LD */}
+        <script 
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              '@context': 'https://schema.org',
+              '@type': 'BlogPosting',
+              'headline': t('meta.title'),
+              'description': t('meta.description'),
+              'image': 'https://yourdomain.com/img/blog/b2b-lead-generation-trends-2025/hero.jpg',
+              'datePublished': '2023-11-15T10:00:00Z',
+              'dateModified': currentDate,
+              'author': {
+                '@type': 'Person',
+                'name': t('sections.author.name')
+              },
+              'publisher': {
+                '@type': 'Organization',
+                'name': t('sections.author.company'),
+                'logo': {
+                  '@type': 'ImageObject',
+                  'url': 'https://yourdomain.com/img/logo.png'
+                }
+              },
+              'mainEntityOfPage': {
+                '@type': 'WebPage',
+                '@id': canonicalUrl
+              }
+            })
+          }}
+        />
       </Head>
       
-      
       <div className="max-w-4xl mx-auto px-5 py-24 sm:pt-32">
-        
-        <article className="prose prose-lg max-w-none prose-headings:font-display prose-headings:text-white prose-p:text-gray-300 prose-p:leading-relaxed prose-a:text-blue-400 prose-a:no-underline hover:prose-a:text-blue-300">
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-8 font-display bg-gradient-to-r from-white to-blue-400 bg-clip-text text-transparent">{t('title')}</h1>
+        <article className="prose prose-lg max-w-none prose-headings:font-display prose-headings:text-white prose-p:text-gray-300 prose-p:leading-relaxed prose-a:text-blue-400 prose-a:no-underline hover:prose-a:text-blue-300" itemScope itemType="https://schema.org/BlogPosting">
+          <meta itemProp="headline" content={t('meta.title')} />
+          <meta itemProp="description" content={t('meta.description')} />
+          <meta itemProp="datePublished" content="2023-11-15T10:00:00Z" />
+          <meta itemProp="dateModified" content={currentDate} />
+          <meta itemProp="author" content={t('sections.author.name')} />
+          
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-8 font-display bg-gradient-to-r from-white to-blue-400 bg-clip-text text-transparent" itemProp="headline">{t('title')}</h1>
           
           <div className="mb-10 flex items-center gap-3 text-gray-400">
             <div className="flex items-center">
