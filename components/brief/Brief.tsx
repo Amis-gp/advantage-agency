@@ -3,6 +3,7 @@
 import { useState } from 'react'
 import { useRouter } from 'next/navigation'
 import { useLocale, useTranslations } from 'next-intl'
+import LanguageSwitcher from '../LanguageSwitcher'
 
 interface BudgetDistribution {
   googleAds: number | null;
@@ -218,16 +219,15 @@ KPI: ${formData.expectations.kpi}
   };
 
   return (
-    <div className="min-h-screen bg-gray-900 text-gray-100">
-      <div className="max-w-7xl mx-auto px-4 py-12">
-        <h1 className="text-5xl font-bold text-center mb-4  bg-blue-500 text-transparent bg-clip-text">
+    <div className="min-h-screen bg-gray-900 text-white">
+      <div className="max-w-6xl mx-auto px-4 pb-12 pt-4 sm:pt-12 relative">
+        <LanguageSwitcher />
+        
+        <h1 className="mt-4 sm:mt-0 text-4xl font-bold text-center mb-8">
           {t('title')}
         </h1>
-        <p className="text-gray-400 text-center mb-12">
-          {t('subtitle')}
-        </p>
         
-        <form onSubmit={handleSubmit} className="space-y-12">
+        <form onSubmit={handleSubmit} className="space-y-8">
           <div className="space-y-12">
             <section className="bg-gray-800/50 rounded-xl p-6 border border-gray-700/50 shadow-xl">
               <div className="flex items-center mb-6">

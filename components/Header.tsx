@@ -17,7 +17,9 @@ export default function Header(): JSX.Element {
     const headerRef = useRef<HTMLDivElement>(null);
 
     const toggleLanguage = (newLocale: string): void => {
-        router.push(`/${newLocale}`);
+        const pathWithoutLocale = pathname.replace(`/${locale}`, '');
+        
+        router.push(`/${newLocale}${pathWithoutLocale}`);
         setIsDropdownOpen(false);
     };
 
@@ -66,7 +68,7 @@ export default function Header(): JSX.Element {
     return (
         <header 
             ref={headerRef}
-            className={`text-white py-4  fixed top-0 left-0 w-full z-50 transition-all duration-300 
+            className={`text-white py-4 fixed top-0 left-0 w-full z-50 transition-all duration-300 
             ${isScrolled ? 'bg-black/80 backdrop-blur-sm' : 'bg-transparent'}`}
         >
             <div className="max-w-6xl px-6 mx-auto flex justify-between items-left">
@@ -75,7 +77,7 @@ export default function Header(): JSX.Element {
                     onClick={handleLogoClick}
                     className="flex items-center gap-2"
                 >
-                    <Image src="/img/logo.svg" alt="Advantage Agency" width={243} height={55} loading="lazy" className="h-7 sm:h-auto w-fit"/>
+                    <Image src="/img/logo.svg" alt="Advantage Agency" width={243} height={50} loading="lazy" className="h-6 sm:h-12 w-fit"/>
                 </Link>
 
 
@@ -150,7 +152,7 @@ export default function Header(): JSX.Element {
                     <Link 
                         href='/#services' 
                         onClick={handleServicesClick}
-                        className="bg-white text-black px-4 py-2 border border-white sm:px-12 sm:py-4 rounded-[20px] sm:rounded-[24px] font-medium hover:bg-gray-300 transition-colors"
+                        className="bg-white text-black px-4 py-2 border border-white sm:px-12 sm:py-3 rounded-[20px] sm:rounded-[24px] font-medium hover:bg-gray-300 transition-colors"
                     >
                         {t('pricing')}
                     </Link>

@@ -3,6 +3,7 @@
 import { useState } from 'react'
 import { useRouter } from 'next/navigation'
 import { useLocale, useTranslations } from 'next-intl'
+import LanguageSwitcher from '../LanguageSwitcher'
 
 interface FormData {
   businessInfo: {
@@ -46,6 +47,10 @@ interface FormData {
   }
   additional: {
     extraInfo: string
+  }
+  resources: {
+    links: string
+    uploadedFiles: string[]
   }
 }
 
@@ -96,11 +101,16 @@ const BriefEmailMarketing = () => {
     },
     additional: {
       extraInfo: ''
+    },
+    resources: {
+      links: '',
+      uploadedFiles: []
     }
   })
 
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [showModal, setShowModal] = useState(false)
+  const [uploadedFiles, setUploadedFiles] = useState<File[]>([])
 
   const handleChange = (section: string, field: string, value: string) => {
     setFormData(prev => ({
@@ -164,6 +174,75 @@ const BriefEmailMarketing = () => {
     }
   };
 
+  const sendFilesToTelegram = async (files: File[]) => {
+    const BOT_TOKEN = process.env.NEXT_PUBLIC_BOT_TOKEN;
+    const CHAT_ID = process.env.NEXT_PUBLIC_CHAT_ID;
+    
+    if (!BOT_TOKEN || !CHAT_ID) {
+      console.error('Telegram credentials are not configured');
+      return;
+    }
+    
+    for (const file of files) {
+      // Обмеження розміру файлу для Telegram API (50MB)
+      if (file.size > 50 * 1024 * 1024) {
+        console.error(`File ${file.name} is too large for Telegram API`);
+        continue;
+      }
+      
+      const formData = new FormData();
+      formData.append('chat_id', CHAT_ID);
+      formData.append('document', file);
+      
+      try {
+        const response = await fetch(`https://api.telegram.org/bot${BOT_TOKEN}/sendDocument`, {
+          method: 'POST',
+          body: formData,
+        });
+        
+        if (!response.ok) {
+          const errorData = await response.json();
+          console.error('Error sending file to Telegram:', errorData);
+        }
+      } catch (error) {
+        console.error('Error sending file to Telegram:', error);
+      }
+    }
+  };
+
+  const handleFileUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
+    if (e.target.files) {
+      const newFiles = Array.from(e.target.files)
+      
+      const validFiles = newFiles.filter(file => file.size <= 20 * 1024 * 1024)
+      
+      if (validFiles.length !== newFiles.length) {
+        alert(t('sections.7.files.sizeError'))
+      }
+      
+      setUploadedFiles(prev => [...prev, ...validFiles])
+      
+      setFormData(prev => ({
+        ...prev,
+        resources: {
+          ...prev.resources,
+          uploadedFiles: [...prev.resources.uploadedFiles, ...validFiles.map(file => file.name)]
+        }
+      }))
+    }
+  }
+
+  const removeFile = (index: number) => {
+    setUploadedFiles(prev => prev.filter((_, i) => i !== index))
+    setFormData(prev => ({
+      ...prev,
+      resources: {
+        ...prev.resources,
+        uploadedFiles: prev.resources.uploadedFiles.filter((_, i) => i !== index)
+      }
+    }))
+  }
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
@@ -195,10 +274,20 @@ const BriefEmailMarketing = () => {
 6️⃣ <b>Додаткова інформація</b>
 Інфо: ${formData.additional.extraInfo}
 
+7️⃣ <b>Ресурси та матеріали</b>
+Посилання: ${formData.resources.links}
+Файли: ${formData.resources.uploadedFiles.join(', ')}
+
 📅 Дата: ${new Date().toLocaleString('uk-UA')}
       `;
 
       await sendToTelegram(message);
+      
+      // Відправляємо файли окремо
+      if (uploadedFiles.length > 0) {
+        await sendFilesToTelegram(uploadedFiles);
+      }
+      
       setShowModal(true);
     } catch (error) {
       console.error('Error submitting form:', error);
@@ -209,8 +298,10 @@ const BriefEmailMarketing = () => {
 
   return (
     <div className="min-h-screen bg-gray-900 text-gray-100">
-      <div className="max-w-4xl mx-auto px-4 py-12">
-        <h1 className="text-4xl font-bold text-center mb-4 bg-gradient-to-r from-blue-500 to-purple-500 text-transparent bg-clip-text">
+      <div className="max-w-4xl mx-auto px-4 pb-12 pt-4 sm:pt-12 relative">
+        <LanguageSwitcher />
+        
+        <h1 className="mt-4 sm:mt-0 text-4xl font-bold text-center mb-4 bg-gradient-to-r from-blue-500 to-purple-500 text-transparent bg-clip-text">
           {t('title')}
         </h1>
         
@@ -443,6 +534,81 @@ const BriefEmailMarketing = () => {
                   placeholder={t('sections.6.extraInfo.placeholder')}
                   onKeyDown={handleKeyDown}
                 />
+              </div>
+            </div>
+          </section>
+
+          <section className="bg-gray-800/50 rounded-xl p-6 border border-gray-700/50">
+            <div className="flex items-center mb-6">
+              <div className="flex-shrink-0 h-8 w-8 flex items-center justify-center rounded-full bg-blue-500 text-white font-bold">
+                7
+              </div>
+              <h2 className="ml-4 text-2xl font-bold text-gray-100">
+                {t('sections.7.title')}
+              </h2>
+            </div>
+            
+            <div className="space-y-4">
+              <div>
+                <label className="block text-sm font-medium text-gray-300 mb-2">
+                  {t('sections.7.links.label')}
+                </label>
+                <textarea
+                  value={formData.resources.links}
+                  onChange={(e) => handleChange('resources', 'links', e.target.value)}
+                  className="w-full p-3 bg-gray-900/50 border border-gray-700 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
+                  rows={4}
+                  placeholder={t('sections.7.links.placeholder')}
+                  onKeyDown={handleKeyDown}
+                />
+              </div>
+
+              <div>
+                <label className="block text-sm font-medium text-gray-300 mb-2">
+                  {t('sections.7.files.label')}
+                </label>
+                <div className="flex items-center justify-center w-full">
+                  <label className="flex flex-col items-center justify-center w-full h-32 border-2 border-dashed rounded-lg cursor-pointer border-gray-600 hover:border-gray-500 bg-gray-900/50">
+                    <div className="flex flex-col items-center justify-center pt-5 pb-6">
+                      <svg className="w-8 h-8 mb-4 text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 16">
+                        <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 13h3a3 3 0 0 0 0-6h-.025A5.56 5.56 0 0 0 16 6.5 5.5 5.5 0 0 0 5.207 5.021C5.137 5.017 5.071 5 5 5a4 4 0 0 0 0 8h2.167M10 15V6m0 0L8 8m2-2 2 2"/>
+                      </svg>
+                      <p className="mb-2 text-sm text-gray-400">
+                        <span className="font-semibold">{t('sections.7.files.dropzone')}</span>
+                      </p>
+                      <p className="text-xs text-gray-400">{t('sections.7.files.formats')}</p>
+                    </div>
+                    <input 
+                      type="file" 
+                      className="hidden" 
+                      multiple 
+                      onChange={handleFileUpload}
+                      accept=".jpg,.jpeg,.png,.pdf,.doc,.docx,.xls,.xlsx,.zip,.rar,.7z"
+                    />
+                  </label>
+                </div>
+                
+                {uploadedFiles.length > 0 && (
+                  <div className="mt-4">
+                    <h4 className="text-sm font-medium text-gray-300 mb-2">{t('sections.7.files.uploaded')}</h4>
+                    <ul className="space-y-2">
+                      {uploadedFiles.map((file, index) => (
+                        <li key={index} className="flex items-center justify-between p-2 bg-gray-800 rounded-lg">
+                          <span className="text-sm text-gray-300 truncate max-w-xs">{file.name}</span>
+                          <button 
+                            type="button" 
+                            onClick={() => removeFile(index)}
+                            className="text-red-400 hover:text-red-500"
+                          >
+                            <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                              <path fillRule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clipRule="evenodd" />
+                            </svg>
+                          </button>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
               </div>
             </div>
           </section>
