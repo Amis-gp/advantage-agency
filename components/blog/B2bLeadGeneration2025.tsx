@@ -4,6 +4,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { useTranslations } from 'next-intl';
 import LanguageSwitcher from '../LanguageSwitcher'
+import { GetStaticProps } from 'next';
 
 export default function B2BLeadGenerationTrends() {
   const t = useTranslations('blog.b2b-lead-generation-trends');
@@ -264,10 +265,10 @@ export default function B2BLeadGenerationTrends() {
   );
 }
 
-export async function getStaticProps({ locale }) {
+export const getStaticProps: GetStaticProps = async ({ locale }) => {
   return {
     props: {
       messages: (await import(`../../messages/${locale}.json`)).default
     }
   };
-}
+};
