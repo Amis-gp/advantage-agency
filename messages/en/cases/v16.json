@@ -1,0 +1,178 @@
+{
+  "seo": {
+    "title": "Case Study: 118 Responses from Decision Makers for Zeno CRM via Cold Email!"
+  },
+  "hero": {
+    "subtitle": "🚀 Case Study",
+    "title": "118 Responses from Decision Makers for Zeno CRM via Cold Email!",
+    "description": "From strategy to results in 6 weeks"
+  },
+  "intro": {
+    "title": "Background",
+    "description": "We met with the Zeno CRM team at one of Europe's largest SaaS conferences in Dublin. Zeno is a CRM solution for small and medium-sized companies looking for new clients and partners to scale. Their goal is a stable flow of B2B leads and partnerships. We quickly found common ground and agreed to collaborate with ADvantage in the field of Cold Email lead generation."
+  },
+  "goals": {
+    "title": "Project Goals",
+    "list": [
+      "Find 6000 decision-maker contacts in the SaaS niche.",
+      "Develop a quality cold offer that lands in the inbox.",
+      "Create a lead magnet to increase engagement.",
+      "Research the effectiveness of different Subject Lines.",
+      "Solve email delivery problems."
+    ]
+  },
+  "challenges": {
+    "title": "Why was this a challenge? 🤔",
+    "items": [
+      {
+        "title": "Difficult to reach inbox",
+        "description": "The Zeno team faced low deliverability — their emails often went to spam or promotions."
+      },
+      {
+        "title": "Expensive contacts",
+        "description": "Using LinkedIn Sales Navigator proved too costly for large-scale outreach."
+      },
+      {
+        "title": "Slow processing",
+        "description": "Manual preparation and sending of 6000 contacts could take months."
+      },
+      {
+        "title": "Low brand trust",
+        "description": "As a relatively new player, Zeno didn't yet have a strong reputation in the market."
+      }
+    ]
+  },
+  "solutions": {
+    "title": "How did we solve the problem? 🎯",
+    "description": "At ADvantage Agency, we developed a strategic Cold Email Outreach plan that included:",
+    "items": [
+      {
+        "title": "Target audience and geography definition",
+        "description": "Target: CEOs, CTOs, Heads of Sales in small and medium SaaS companies. Geography: DE, NE, BE."
+      },
+      {
+        "title": "Finding contacts",
+        "description": "Since the ADvantage team has its own parsing developments, we easily extracted a database of decision-maker contacts, conducted filtering, sorting, and verification."
+      },
+      {
+        "title": "Email strategy development",
+        "description": "To make our contact through letters effective, we developed several logical sequences of letters in which we laid down hypotheses that should lead to conversion. We wrote effective email subjects that stood out among other offers."
+      },
+      {
+        "title": "Building automation",
+        "description": "To process 6k contacts, we needed to build the appropriate infrastructure that met our needs and could satisfy the speed of delivery and personalization."
+      }
+    ]
+  },
+  "testing": {
+    "title": "Testing and Optimization",
+    "description": "For quality testing, we prepared effective Subject lines and email content in which we tested different messages that touched on different values that resonate with our target audience.",
+    "highlight": "We tested 12 different approaches",
+    "tags": [
+      "Selected relevant offers",
+      "Tested effective Subject lines",
+      "Various follow-up variations",
+      "Message personalization",
+      "A/B testing",
+      "Open rate analysis"
+    ],
+    "optimization": {
+      "title": "Campaign optimization and detailed analysis",
+      "description": "For proper results, we don't just do mailings, we constantly conduct detailed analysis and make appropriate changes",
+      "points": [
+        {
+          "title": "Selected relevant offers",
+          "description": "Constantly tested different offering options for the target audience"
+        },
+        {
+          "title": "Selected relevant Subject lines",
+          "description": "Focused on email subjects that showed high Open Rate metrics"
+        },
+        {
+          "title": "Tested different follow-up variations",
+          "description": "Connected additional variables for personalization and result improvement"
+        }
+      ]
+    }
+  },
+  "results": {
+    "title": "Results we achieved 📈",
+    "metrics": [
+      {
+        "title": "Number of contacts",
+        "value": "6000",
+        "description": "emails sent"
+      },
+      {
+        "title": "Delivery rate",
+        "value": "98%",
+        "description": "5850 emails reached the recipients"
+      },
+      {
+        "title": "Open Rate",
+        "value": "57%",
+        "description": "3334 opened emails"
+      },
+      {
+        "title": "Reply Rate",
+        "value": "2%",
+        "description": "118 responses from decision makers"
+      },
+      {
+        "title": "Qualified leads",
+        "value": "27",
+        "description": "15 of which booked demo calls"
+      },
+      {
+        "title": "Campaign duration",
+        "value": "6 weeks",
+        "description": "from start to finish"
+      }
+    ]
+  },
+  "success": {
+    "title": "Why did it work? 🌟",
+    "points": [
+      {
+        "title": "Precise targeting",
+        "description": "We only addressed relevant decision makers."
+      },
+      {
+        "title": "Personalization",
+        "description": "Each email felt personal rather than mass-produced."
+      },
+      {
+        "title": "Delivery optimization",
+        "description": "98% of emails avoided spam thanks to our infrastructure."
+      },
+      {
+        "title": "Testing",
+        "description": "Constant analysis allowed us to improve the campaign on the fly."
+      }
+    ]
+  },
+  "conclusion": {
+    "title": "Conclusion",
+    "description": "Thanks to the Cold Email campaign from ADvantage Agency, Zeno CRM received 118 responses from decision makers and 27 qualified leads (clients/partnerships). This became a stable lead generation channel that replaced expensive advertising platforms."
+  },
+  "cta": {
+    "buttonText": "Request a free consultation now"
+  },
+  "form": {
+    "title": "Want the same results for your business? 🚀",
+    "description": "Submit a request for a free consultation. We'll analyze your niche and suggest a strategy that will work specifically for you.",
+    "disclaimer": "*The consultation is free and does not oblige you to cooperate"
+  },
+  "messenger": {
+    "text": "Chat with us on Messenger"
+  },
+  "testimonials": {
+    "title": "Screenshots of Responses to Our Emails:",
+    "imageAlt": "Email Response {0}"
+  },
+  "statistics": {
+    "title": "Campaign Statistics",
+    "imageAlt": "Campaign dashboard metrics",
+    "description": "Overall campaign statistics: 6013 emails sent, 57% open rate, 2% reply rate"
+  }
+}

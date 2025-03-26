@@ -50,7 +50,7 @@ export default function LanguageSwitcher() {
             </button>
             
             {isLangDropdownOpen && (
-                <div className="absolute top-full right-0 mt-1 bg-black/90 backdrop-blur-md border border-white/30 rounded-xl overflow-hidden shadow-xl w-[70px] z-20">
+                <div className="absolute text-sm top-full right-0 mt-1 bg-black/90 backdrop-blur-md border border-white/30 rounded-xl overflow-hidden shadow-xl w-[70px] z-20">
                     {currentLocale !== 'en' && (
                         <button 
                             onClick={() => changeLanguage('en')} 

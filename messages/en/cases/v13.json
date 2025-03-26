@@ -1,0 +1,132 @@
+{
+  "seo": {
+    "title": "Case Study: How We Got 31 Demo Calls in 4 Weeks with Cold Email"
+  },
+  "hero": {
+    "title": "How We Generated 31 Demo Calls 🎯 for High-Ticket Services 💎 Using Cold Email System in 4 Weeks! ✨"
+  },
+  "intro": {
+    "title": "Cold Email Marketing: Why Is It Challenging Yet Extremely Effective? 🚀",
+    "description": "If you think cold email outreach is just writing an email and hitting \"Send\", we're about to surprise you! ✨",
+    "details": "Cold Email Marketing is a true art 🎨 that requires a combination of technical setup 🛠️, email deliverability precision 📧, and sales-driven copywriting ✍️. It's a tool that can transform your business, but doing it right is incredibly challenging."
+  },
+  "challenges": {
+    "title": "Why Most Businesses Struggle:",
+    "list": [
+      "📩 Emails get marked as spam",
+      "🔒 Lack of control over email inbox reputation",
+      "⚙️ Lack of systematization in email outreach",
+      "🧑‍💼 Unsuitable or low-quality leads",
+      "🖋️ Weak copywriting that doesn't engage"
+    ],
+    "imageAlt": "Email Marketing Challenges"
+  },
+  "ourChallenge": {
+    "title": "Our Challenge: How to Build a Stable Cold Email System? 🎯",
+    "description": "Our agency set a goal to scale project count and generate more leads for marketing services. We dove into Cold Email Marketing, and to be honest, it wasn't easy. 😅",
+    "testing": {
+      "title": "In just a few months, we went through dozens of technical and strategic trials: 🔍",
+      "description": "We tested 30+ different email automation tools. Many of them were:",
+      "issues": [
+        "Too expensive",
+        "Unstable (bugs, errors)",
+        "Missing necessary features"
+      ]
+    },
+    "critical": {
+      "title": "⚠️ Critical Moment:",
+      "description": "Choosing the right email provider and server settings took weeks. At some point, 45 email accounts were blacklisted, and we had to completely change our approach."
+    },
+    "result": {
+      "title": "🎉 Result:",
+      "description": "To build a system that reliably delivers emails to inboxes, we spent over 4 months testing, analyzing, and optimizing. But we created a setup that works consistently, and now we can confidently say: we know how Cold Email Marketing works."
+    }
+  },
+  "cta": {
+    "button": "Book Your Free Consultation Now"
+  },
+  "approach": {
+    "title": "Our Lead Generation Approach",
+    "description": "Here's what we did to get 31 demo calls in 4 weeks:",
+    "steps": [
+      {
+        "emoji": "🎯",
+        "title": "Clearly Defined Our Target Audience",
+        "description": "Which niches? What decision-maker positions?"
+      },
+      {
+        "emoji": "🔥",
+        "title": "Set Up Email Inboxes and Improve Reputation"
+      },
+      {
+        "emoji": "⚙️",
+        "title": "Prepared Email Server and Necessary Tools"
+      },
+      {
+        "emoji": "📋",
+        "title": "Collected Contact Information of Decision-Makers"
+      },
+      {
+        "emoji": "✉️",
+        "title": "Created 50+ Email Templates"
+      },
+      {
+        "emoji": "📈",
+        "title": "Developed a Sequence of 3-4 Emails"
+      },
+      {
+        "emoji": "🚀",
+        "title": "Launched Campaigns"
+      },
+      {
+        "emoji": "🛠️",
+        "title": "Monitored the System"
+      }
+    ]
+  },
+  "summary": {
+    "title": "What We Did:",
+    "steps": [
+      "Clearly Defined Our Target Audience",
+      "Set Up Email Inboxes and Improve Reputation",
+      "Prepared Email Server and Necessary Tools",
+      "Collected Contact Information of Decision-Makers",
+      "Created 50+ Email Templates",
+      "Developed a Sequence of 3-4 Emails",
+      "Launched Campaigns",
+      "Monitored the System"
+    ]
+  },
+  "testimonials": {
+    "title": "Screenshots of Responses to Our Emails:",
+    "imageAlt": "Email Response {0}"
+  },
+  "results": {
+    "title": "Results:",
+    "imageAlt": "Campaign Results"
+  },
+  "form": {
+    "title": "Get a Professional Digital Strategy for Your Business",
+    "subtitle": "Free Consultation",
+    "description": "Our team will help you create an effective customer acquisition system through internet marketing. We focus on three key areas:",
+    "pillars": [
+      {
+        "title": "Analytics",
+        "description": "Detailed analysis of your niche and competitors"
+      },
+      {
+        "title": "Strategy",
+        "description": "Development of comprehensive promotion plan"
+      },
+      {
+        "title": "Results",
+        "description": "Sales increase and scaling"
+      }
+    ],
+    "instruction": "Fill out the form below to receive a personalized development plan for your business in the digital environment",
+    "footer": "Leave your request now to get a free audit of your current marketing strategy"
+  },
+  "messenger": {
+    "text": "Chat with us on Messenger"
+  }
+}

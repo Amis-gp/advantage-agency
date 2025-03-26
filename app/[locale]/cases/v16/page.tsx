@@ -1,13 +1,13 @@
 import { setRequestLocale } from 'next-intl/server';
-import ClientV15uk from './ClientV15uk';
+import ClientV16 from './ClientV16';
 
-export default function V12ukPage({ 
+export default function V15Page({ 
     params: { locale } 
 }: { 
     params: { locale: string } 
 }) {
     setRequestLocale(locale);
-    return <ClientV15uk />;
+    return <ClientV16 />;
 }
 
 export function generateStaticParams() {

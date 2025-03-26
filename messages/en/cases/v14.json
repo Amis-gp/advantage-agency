@@ -1,0 +1,121 @@
+{
+  "seo": {
+    "title": "10,739 Emails for Crypto Project | Case Study"
+  },
+  "hero": {
+    "title": "Case Study: How We Achieved <span className='highlight highlight-red-300 highlight-variant-5'>5% Reply Rate</span> 🎯 in Crypto Niches for Justin through Cold Email ✨"
+  },
+  "background": {
+    "title": "Background 🚀",
+    "description": "Justin came to us with a request to test different offers in the crypto niche through Cold Email. The cryptocurrency market is challenging, with high competition, skepticism, and a significant percentage of emails ending up in spam. Therefore, our task was not just to do mass mailing, but to find an effective approach that would bring responses and leads."
+  },
+  "goal": {
+    "title": "💡 Goal:",
+    "list": [
+      "✔️ Test 10,000 emails",
+      "✔️ Find perfect offers for crypto audience",
+      "✔️ Test different copywriting techniques",
+      "✔️ Research effectiveness of different Subject lines",
+      "✔️ Increase reply rate to 5%"
+    ]
+  },
+  "cta": {
+    "button": "Get Free Consultation Now"
+  },
+  "approach": {
+    "title": "1. Database Collection and Analysis",
+    "description": "The cryptocurrency niche has its own peculiarities, so we paid special attention to collecting the right audience",
+    "steps": [
+      {
+        "title": "Thorough Database Collection",
+        "description": "10,739 contacts from the cryptocurrency niche, including exchange owners, traders, NFT project owners, investors, funds"
+      },
+      {
+        "title": "Filtering by Criteria",
+        "description": "business type, position, geolocation, investment volume"
+      },
+      {
+        "title": "Technical Aspect Preparation",
+        "description": "Setting up proper SPF/DKIM/DMARC records, configuring servers for sending to avoid emails landing in spam"
+      }
+    ]
+  },
+  "testing": {
+    "title": "2. Testing Different Approaches",
+    "description": "Before launching the main mailing, we tested different message variants on a small sample to find the most effective approach",
+    "approaches": [
+      {
+        "title": "Different copywriting styles",
+        "description": "direct, intriguing, emotional, case-oriented"
+      },
+      {
+        "title": "Different CTA",
+        "description": "call, get additional information, offer a test version"
+      },
+      {
+        "title": "Different email themes (Subject line)",
+        "description": "tested 30 variants"
+      }
+    ],
+    "effective": {
+      "title": "We found that the most effective were intriguing headlines that caught attention:",
+      "list": [
+        "Will you catch the cryptocurrency market downturn?",
+        "Grab 4x profit from the listing",
+        "Is this your investment?"
+      ]
+    }
+  },
+  "optimization": {
+    "title": "3. Optimize campaign after the first 2,000 emails",
+    "description": "For the results we do not just send out the mailing, we constantly conduct detailed analysis and planning",
+    "steps": [
+      "Removed irrelevant offers and improved texts",
+      "Selected relevant Subject lines that caught our target audience's attention",
+      "Tested different variations of follow-ups, added additional variables for personalization"
+    ]
+  },
+  "results": {
+    "title": "Results We Achieved",
+    "stats": [
+      {
+        "number": "20,000",
+        "text": "emails sent"
+      },
+      {
+        "number": "5%",
+        "text": "Reply Rate in crypto niche"
+      },
+      {
+        "number": "65%",
+        "text": "Open Rate"
+      },
+      {
+        "number": "+1.5%",
+        "text": "Additional Reply Rate from follow-ups"
+      },
+      {
+        "number": "300%",
+        "text": "ROI of the best offers"
+      }
+    ],
+    "screenshot": "Screenshot of statistics from our tracking system",
+    "chat": "Client's response about our services"
+  },
+  "next": {
+    "title": "What's Next?",
+    "steps": [
+      "Scaling – increasing the volume of emails with verified offers",
+      "New approaches to personalization – to make emails even more effective",
+      "Testing other formats of follow-ups"
+    ]
+  },
+  "form": {
+    "title": "Want the Same Results for Your Business? 🚀",
+    "description": "Leave a request for a free consultation. We will analyze your niche and propose a strategy that will work specifically for you.",
+    "disclaimer": "*Consultation is free and does not obligate to cooperation"
+  },
+  "messenger": {
+    "text": "Chat with us on Messenger"
+  }
+}

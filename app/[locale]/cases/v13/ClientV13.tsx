@@ -8,12 +8,13 @@ import Image from 'next/image';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination } from 'swiper/modules';
 import type { Swiper as SwiperType } from 'swiper';
+import { useParams } from 'next/navigation';
 
 import '@/app/styles.css'
 import MessengerButton from '@/components/cases/MessengerButton';
 import Formspree from '@/components/cases/Formspree';
 import CasesFooter from '@/components/cases/Footer';
-import LanguageSwitcher from '@/components/cases/LanguageSwitcher';
+import LanguageSwitcher from '@/components/LanguageSwitcher';
 
 import 'swiper/css';
 import 'swiper/css/navigation';
@@ -37,20 +38,54 @@ const testimonialImages = [
 ];
 
 const V13Page: NextPage = () => {
-    useEffect(() => {
-        document.title = "31 Demo Calls in 4 Weeks through Cold Email";
-    }, []);
+    const params = useParams();
+    const locale = params.locale as string;
+    const [translations, setTranslations] = useState<any>({});
     const [isImageOpen, setIsImageOpen] = useState(false);
-    const [selectedImage, setSelectedImage] = useState('');
+    const [currentImage, setCurrentImage] = useState('');
 
     const thumbnailsRef = useRef<SwiperType | null>(null);
     const galleryRef = useRef<SwiperType | null>(null);
 
     const syncing = useRef(false);
 
+    useEffect(() => {
+        const loadTranslations = async () => {
+            try {
+                const translations = await import(`../../../../messages/${locale}/cases/v13.json`);
+                setTranslations(translations.default);
+                document.title = translations.default.seo.title;
+            } catch (error) {
+                console.error('Помилка завантаження перекладів:', error);
+            }
+        };
+        
+        loadTranslations();
+    }, [locale]);
+
+    const t = (path: string) => {
+        const keys = path.split('.');
+        let result = translations;
+        
+        for (const key of keys) {
+            if (result && result[key] !== undefined) {
+                result = result[key];
+            } else {
+                return path;
+            }
+        }
+        
+        return result;
+    };
+
+    // Допоміжна функція для перевірки, чи є переклад масивом
+    const isArray = (value: any): value is any[] => {
+        return Array.isArray(value);
+    };
+
     function openImage(image: string) {
         console.log('Opening image:', image);
-        setSelectedImage(image);
+        setCurrentImage(image);
         setIsImageOpen(true);
     }
 
@@ -58,402 +93,296 @@ const V13Page: NextPage = () => {
         setIsImageOpen(false);
     }
     
-return (    
-    <div className="text-black bg-white max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-      <LanguageSwitcher />
-    <section className="mt-12">
-        <h1 className="text-4xl md:text-5xl font-bold mb-12 leading-tight">
-            How We Generated <span className='highlight highlight-red-300 highlight-variant-5'>31 Demo Calls</span> 🎯 
-            for High-Ticket Services 💎
-            Using Cold Email System in 4 Weeks! ✨
-        </h1>
-
-        <div className="mb-16">
-            <h2 className="text-2xl md:text-3xl font-bold mb-8">
-                Cold Email Marketing: Why Is It Challenging Yet Extremely Effective? 🚀
-            </h2>
-            <p className="mb-4 text-xl leading-relaxed text-gray-800">
-                If you think cold email outreach is just writing an email and hitting "Send", we're about to surprise you! ✨
-            </p>
-            <p className="mb-4 text-xl leading-relaxed text-gray-800">
-                Cold Email Marketing is a true art 🎨 that requires a combination of technical setup 🛠️, email deliverability precision 📧, and sales-driven copywriting ✍️. It's a tool that can transform your business, but doing it right is incredibly challenging.
-            </p>
-        </div>
-    </section>
-
-    <div className="flex justify-center w-full mt-14 mb-8 text-center">
-        <a href="#form" className="bg-[#ff6315] text-white px-8 py-4 text-2xl font-bold rounded hover:bg-red-700 transition duration-300 ease-in-out animate-bounce">
-            Book Your Free Consultation Now
-        </a>
-    </div>
-    <section className="mb-12">
-        <h2 className="text-2xl font-bold mb-6">Why Most Businesses Struggle:</h2>
-        <div className="mb-12 grid grid-cols-1 md:grid-cols-2 gap-6 items-center">
-            <div>
-                <ul className="list-disc pl-6 space-y-2">
-                    <li>📩 Emails get marked as spam</li>
-                    <li>🔒 Lack of control over email inbox reputation</li>
-                    <li>⚙️ Lack of systematization in email outreach</li>
-                    <li>🧑‍�� Unsuitable or low-quality leads</li>
-                    <li>🖋️ Weak copywriting that doesn't engage</li>
-                </ul>
+    return (    
+        <div className="text-black bg-white max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="pt-4">
+                <LanguageSwitcher />
             </div>
-            <div className="relative h-[300px]">
-                <Image 
-                    src="/img/v13/hero.jpg"
-                    alt="Email Marketing Challenges"
-                    fill
-                    className="object-cover rounded-lg"
-                />
-            </div>
-        </div>
-    </section>
-
-    <section className="mb-16 bg-gradient-to-b from-white to-gray-50 rounded-2xl shadow-sm">
-      <p className="text-3xl font-bold mb-8 text-center bg-clip-text">
-          Our Challenge: How to Build a Stable Cold Email System? 🎯
-      </p>
-
-      <div className="space-y-6 text-gray-800">
-          <p className="text-xl leading-relaxed">
-              Our agency set a goal to scale project count and generate more leads for marketing services. We dove into Cold Email Marketing, and to be honest, it wasn't easy. 😅
-          </p>
-
-          <div className="bg-white p-4 rounded-xl shadow-sm border-l-4 border-[#ff6315]">
-              <p className="text-xl font-semibold mb-4">
-                  In just a few months, we went through dozens of technical and strategic trials: 🔍
-              </p>
-              <p className="text-lg mb-3">
-                  We tested <span className="font-bold text-[#ff6315]">30+</span> different email automation tools.
-                  Many of them were:
-              </p>
-              <ul className="space-y-3 pl-4">
-                  <li className="flex items-center gap-2 text-lg">
-                      <span className="text-red-500">❌</span> Too expensive
-                  </li>
-                  <li className="flex items-center gap-2 text-lg">
-                      <span className="text-red-500">❌</span> Unstable (bugs, errors)
-                  </li>
-                  <li className="flex items-center gap-2 text-lg">
-                      <span className="text-red-500">❌</span> Missing necessary features
-                  </li>
-              </ul>
-          </div>
-
-          <div className="bg-white p-4 rounded-xl shadow-sm border-l-4 border-yellow-400">
-              <p className="text-lg leading-relaxed">
-                  <span className="font-semibold">⚠️ Critical Moment:</span> Choosing the right email provider and server settings took weeks.
-                  At some point, <span className="font-bold text-red-500">45 email accounts</span> were blacklisted, and we had to completely change our approach.
-              </p>
-          </div>
-
-          <div className="bg-white p-4 rounded-xl shadow-sm border-l-4 border-green-500">
-              <p className="text-lg leading-relaxed">
-                  <span className="font-semibold">🎉 Result:</span> To build a system that reliably delivers emails to inboxes, we spent over <span className="font-bold text-[#ff6315]">4 months</span> testing, analyzing, and optimizing. But we created a setup that works consistently, and now we can confidently say: <span className="font-bold">we know how Cold Email Marketing works</span>.
-              </p>
-          </div>
-      </div>
-    </section>
-
-    <div className="flex justify-center w-full mt-14 mb-8 text-center">
-        <a href="#form" className="bg-[#ff6315] text-white px-8 py-4 text-2xl font-bold rounded hover:bg-red-700 transition duration-300 ease-in-out animate-bounce">
-            Book Your Free Consultation Now
-        </a>
-    </div>
-
-    <section className="mb-16">
-        <h2 className="text-3xl font-bold mb-8 text-center text-gray-900">
-            Our Lead Generation Approach
-        </h2>
-        <p className="mb-8 text-xl text-center text-gray-700">
-            Here's what we did to get <span className="font-bold text-blue-600">31 demo calls</span> in 4 weeks:
-        </p>
-        
-        <div className="">
-            <ul className="space-y-6">
-                <li className="flex items-start gap-4 p-4 bg-gray-50 rounded-xl hover:bg-gray-100 transition-all">
-                    <span className="text-2xl">🎯</span>
-                    <div>
-                        <h3 className="font-semibold text-lg mb-2">Clearly Defined Our Target Audience</h3>
-                        <div className="text-gray-600 pl-4 border-l-2 border-gray-200">
-                            <p>Which niches? What decision-maker positions?</p>
-                        </div>
+            <section className="py-12">
+                <div className="max-w-7xl mx-auto">
+                    <h1 className="text-3xl md:text-5xl font-bold leading-tight mb-6">
+                        {t('hero.title')}
+                    </h1>
+                    
+                    <h2 className="text-xl sm:text-3xl font-bold mt-12 mb-6">
+                        {t('intro.title')}
+                    </h2>
+                    
+                    <p className="text-xl mb-6">
+                        {t('intro.description')}
+                    </p>
+                    
+                    <p className="text-lg mb-10">
+                        {t('intro.details')}
+                    </p>
+                    
+                    <div className="flex justify-center w-full mt-14 mb-8 text-center">
+                        <a href="#form" className="bg-[#ff6315] text-white px-8 py-4 text-2xl font-bold rounded hover:bg-red-700 transition duration-300 ease-in-out animate-bounce">
+                            {t('cta.button')}
+                        </a>
                     </div>
-                </li>
+                </div>
+            </section>
 
-                <li className="flex items-start gap-4 p-4 bg-gray-50 rounded-xl hover:bg-gray-100 transition-all">
-                    <span className="text-2xl">🔥</span>
+            <section className="mb-12">
+                <h2 className="text-2xl font-bold mb-6">{t('challenges.title')}</h2>
+                <div className="mb-12 grid grid-cols-1 md:grid-cols-2 gap-6 items-center">
                     <div>
-                        <h3 className="font-semibold text-lg">Set Up Email Inboxes and Improve Reputation</h3>
-                    </div>
-                </li>
-
-                <li className="flex items-start gap-4 p-4 bg-gray-50 rounded-xl hover:bg-gray-100 transition-all">
-                    <span className="text-2xl">⚙️</span>
-                    <div>
-                        <h3 className="font-semibold text-lg">Prepared Email Server and Necessary Tools</h3>
-                    </div>
-                </li>
-
-                <li className="flex items-start gap-4 p-4 bg-gray-50 rounded-xl hover:bg-gray-100 transition-all">
-                    <span className="text-2xl">📋</span>
-                    <div>
-                        <h3 className="font-semibold text-lg">Collected Contact Information of Decision-Makers</h3>
-                    </div>
-                </li>
-
-                <li className="flex items-start gap-4 p-4 bg-gray-50 rounded-xl hover:bg-gray-100 transition-all">
-                    <span className="text-2xl">✉️</span>
-                    <div>
-                        <h3 className="font-semibold text-lg">Created 50+ Email Templates with Unique Offers and Messages</h3>
-                    </div>
-                </li>
-
-                <li className="flex items-start gap-4 p-4 bg-gray-50 rounded-xl hover:bg-gray-100 transition-all">
-                    <span className="text-2xl">📈</span>
-                    <div>
-                        <h3 className="font-semibold text-lg mb-2">Developed a Sequence of 3-4 Emails</h3>
-                        <ul className="pl-4 text-gray-600 space-y-2 border-l-2 border-gray-200">
-                            <li>• Different Marketing Approaches</li>
-                            <li>• Clear Call-to-Action (CTA)</li>
+                        <ul className="list-disc pl-6 space-y-2">
+                            {isArray(t('challenges.list')) ? t('challenges.list').map((item: string, index: number) => (
+                                <li key={index}>{item}</li>
+                            )) : null}
                         </ul>
                     </div>
-                </li>
-
-                <li className="flex items-start gap-4 p-4 bg-gray-50 rounded-xl hover:bg-gray-100 transition-all">
-                    <span className="text-2xl">🚀</span>
-                    <div>
-                        <h3 className="font-semibold text-lg">Launched Campaigns and Conducted Detailed Analysis</h3>
+                    <div className="relative h-[300px]">
+                        <Image 
+                            src="/img/v13/hero.jpg"
+                            alt={t('challenges.imageAlt')}
+                            fill
+                            className="object-cover rounded-lg"
+                        />
                     </div>
-                </li>
+                </div>
+            </section>
 
-                <li className="flex items-start gap-4 p-4 bg-gray-50 rounded-xl hover:bg-gray-100 transition-all">
-                    <span className="text-2xl">🛠️</span>
-                    <div>
-                        <h3 className="font-semibold text-lg mb-2">Monitored the System</h3>
-                        <ul className="pl-4 text-gray-600 space-y-2 border-l-2 border-gray-200">
-                            <li>• Domain Reputation</li>
-                            <li>• Email Sender Quality</li>
-                            <li>• Conversion Rates from Emails</li>
+            <section className="mb-16 bg-gradient-to-b from-white to-gray-50 rounded-2xl shadow-sm">
+                <p className="text-3xl font-bold mb-8 text-center bg-clip-text">
+                    {t('ourChallenge.title')}
+                </p>
+
+                <div className="space-y-6 text-gray-800">
+                    <p className="text-xl leading-relaxed">
+                        {t('ourChallenge.description')}
+                    </p>
+
+                    <div className="bg-white p-4 rounded-xl shadow-sm border-l-4 border-[#ff6315]">
+                        <p className="text-xl font-semibold mb-4">
+                            {t('ourChallenge.testing.title')}
+                        </p>
+                        <p className="text-lg mb-3">
+                            {t('ourChallenge.testing.description')}
+                        </p>
+                        <ul className="space-y-3 pl-4">
+                            {isArray(t('ourChallenge.testing.issues')) ? t('ourChallenge.testing.issues').map((issue: string, index: number) => (
+                                <li key={index} className="flex items-center gap-2 text-lg">
+                                    <span className="text-red-500">❌</span>
+                                    {issue}
+                                </li>
+                            )) : null}
                         </ul>
                     </div>
-                </li>
-            </ul>
-        </div>
-    </section>
 
-    
+                    <div className="bg-white p-4 rounded-xl shadow-sm border-l-4 border-yellow-400">
+                        <p className="text-lg leading-relaxed">
+                            <span className="font-semibold">{t('ourChallenge.critical.title')}</span> {t('ourChallenge.critical.description')}
+                        </p>
+                    </div>
 
-    <section className="mb-16">
-    <h2 className="text-3xl font-bold mb-12 text-center text-gray-900">
-        Our Lead Generation Approach
-    </h2>
-    
-    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-        <div className="bg-gradient-to-br from-gray-50 to-white rounded-2xl shadow-xl p-6 border border-gray-100 hover:shadow-2xl transition-all duration-300">
-            <div className="mb-6 border-b-2 border-blue-500 pb-4">
-                <h4 className="text-2xl font-bold text-gray-800">What We Did:</h4>
+                    <div className="bg-white p-4 rounded-xl shadow-sm border-l-4 border-green-500">
+                        <p className="text-lg leading-relaxed">
+                            <span className="font-semibold">{t('ourChallenge.result.title')}</span> {t('ourChallenge.result.description')}
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <div className="flex justify-center w-full mt-14 mb-8 text-center">
+                <a href="#form" className="bg-[#ff6315] text-white px-8 py-4 text-2xl font-bold rounded hover:bg-red-700 transition duration-300 ease-in-out animate-bounce">
+                    {t('cta.button')}
+                </a>
             </div>
-            <ul className="space-y-4">
-                <li className="flex items-center gap-3 text-lg text-gray-700 hover:text-gray-900 transition-colors">
-                    <span className="text-2xl">🎯</span>
-                    <span>Clearly Defined Our Target Audience</span>
-                </li>
-                <li className="flex items-center gap-3 text-lg text-gray-700 hover:text-gray-900 transition-colors">
-                    <span className="text-2xl">🔥</span>
-                    <span>Set Up Email Inboxes and Improve Reputation</span>
-                </li>
-                <li className="flex items-center gap-3 text-lg text-gray-700 hover:text-gray-900 transition-colors">
-                    <span className="text-2xl">⚙️</span>
-                    <span>Prepared Email Server and Necessary Tools</span>
-                </li>
-                <li className="flex items-center gap-3 text-lg text-gray-700 hover:text-gray-900 transition-colors">
-                    <span className="text-2xl">📋</span>
-                    <span>Collected Contact Information of Decision-Makers</span>
-                </li>
-                <li className="flex items-center gap-3 text-lg text-gray-700 hover:text-gray-900 transition-colors">
-                    <span className="text-2xl">✉️</span>
-                    <span>Created 50+ Email Templates</span>
-                </li>
-                <li className="flex items-center gap-3 text-lg text-gray-700 hover:text-gray-900 transition-colors">
-                    <span className="text-2xl">📈</span>
-                    <span>Developed a Sequence of 3-4 Emails</span>
-                </li>
-                <li className="flex items-center gap-3 text-lg text-gray-700 hover:text-gray-900 transition-colors">
-                    <span className="text-2xl">🚀</span>
-                    <span>Launched Campaigns</span>
-                </li>
-                <li className="flex items-center gap-3 text-lg text-gray-700 hover:text-gray-900 transition-colors">
-                    <span className="text-2xl">🛠️</span>
-                    <span>Monitored the System</span>
-                </li>
-            </ul>
-        </div>
-        
-        <div className="bg-gradient-to-br from-gray-50 to-white rounded-2xl shadow-xl p-6 border border-gray-100 hover:shadow-2xl transition-all duration-300">
-            <div className="mb-6 border-b-2 border-green-500 pb-4">
-                <h4 className="text-2xl font-bold text-gray-800">Results in 4 Weeks:</h4>
-            </div>
-            <ul className="space-y-6">
-                <li className="flex items-center gap-4 text-lg">
-                    <span className="text-3xl font-bold text-blue-600">2921</span>
-                    <span className="text-gray-700">Emails Sent</span>
-                </li>
-                <li className="flex items-center gap-4 text-lg">
-                    <span className="text-3xl font-bold text-blue-600">56</span>
-                    <span className="text-gray-700">Responses</span>
-                </li>
-                <li className="flex items-center gap-4 text-lg">
-                    <span className="text-3xl font-bold text-blue-600">31</span>
-                    <span className="text-gray-700">Demo Calls</span>
-                </li>
-            </ul>
-        </div>
-    </div>
-</section>
 
-    <div className="flex justify-center w-full mt-14 mb-8 text-center">
-        <a href="#form" className="bg-[#ff6315] text-white px-8 py-4 text-2xl font-bold rounded hover:bg-red-700 transition duration-300 ease-in-out animate-bounce">
-            Book Your Free Consultation Now
-        </a>
-    </div>
+            <section className="mb-16">
+                <h2 className="text-3xl font-bold mb-8 text-center text-gray-900">
+                    {t('approach.title')}
+                </h2>
+                <p className="mb-8 text-xl text-center text-gray-700">
+                    {t('approach.description')}
+                </p>
+                
+                <div className="">
+                    <ul className="space-y-6">
+                        {isArray(t('approach.steps')) ? t('approach.steps').map((step: any, index: number) => (
+                            <li key={index} className="flex items-start gap-4 p-4 bg-gray-50 rounded-xl hover:bg-gray-100 transition-all">
+                                <span className="text-2xl">{step.emoji}</span>
+                                <div>
+                                    <h3 className="font-semibold text-lg mb-2">{step.title}</h3>
+                                    {step.description && (
+                                        <div className="text-gray-600 pl-4 border-l-2 border-gray-200">
+                                            <p>{step.description}</p>
+                                        </div>
+                                    )}
+                                </div>
+                            </li>
+                        )) : null}
+                    </ul>
+                </div>
+            </section>
 
-
-    <section className="mb-12">
-        <h2 className="text-2xl font-bold mb-6">Responses from Potential Clients:</h2>
-        <div className="mb-12 relative">
-            <button 
-                className="swiper-button-prev absolute !left-4 top-1/2 -translate-y-1/2 z-20 !w-[60px] !h-[60px] rounded-full bg-white shadow-md border border-gray-100 md:!flex !hidden items-center justify-center text-[#ff6315] hover:bg-gray-300 transition-all duration-100"
-            >
-                ←
-            </button>
-            <button 
-                className="swiper-button-next absolute !right-4 top-1/2 -translate-y-1/2 z-20 !w-[60px] !h-[60px] rounded-full bg-white shadow-md border border-gray-100 md:!flex !hidden items-center justify-center text-[#ff6315] hover:bg-gray-300 transition-all duration-100"
-            >
-                →
-            </button>
-
-            <Swiper
-                modules={[Navigation, Pagination]}
-                spaceBetween={20}
-                slidesPerView={1}
-                navigation={{
-                    prevEl: '.swiper-button-prev',
-                    nextEl: '.swiper-button-next',
-                }}
-                pagination={{ 
-                    el: '.swiper-pagination',
-                    clickable: true
-                }}
-                loop={true}
-                breakpoints={{
-                    640: { slidesPerView: 2 },
-                    1024: { slidesPerView: 3 },
-                }}
-                className="h-[400px] w-full"
-                onSwiper={(swiper) => {
-                    thumbnailsRef.current = swiper;
-                }}
-                onSlideChange={(swiper) => {
-                    if (!syncing.current) {
-                        syncing.current = true;
-                        galleryRef.current?.slideTo(swiper.activeIndex);
-                        syncing.current = false;
-                    }
-                }}
-            >
-                {testimonialImages.map((image, index) => (
-                    <SwiperSlide key={index} className="sm:pt-4 pb-12 sm:pb-8 px-2">
-                        <div 
-                            className="relative h-[370px] w-full cursor-pointer"
-                            onClick={() => {
-                                console.log('Click on image:', image);
-                                openImage(image);
-                            }}
-                            role="button"
-                            tabIndex={0}
-                        >
-                            <Image
-                                src={image}
-                                alt={`Email Response ${index + 1}`}
-                                width={590}
-                                height={735}
-                                className="!w-fit mx-auto object-cover rounded-lg shadow-lg sm:hover:scale-105 transition-all duration-300 cursor-pointer"
-                                priority={index < 4}
-                                onClick={(e) => {
-                                    e.stopPropagation();
-                                    console.log('Click on Image component:', image);
-                                    openImage(image);
-                                }}
-                            />
+            <section className="mb-16">
+                <h2 className="text-3xl font-bold mb-12 text-center text-gray-900">
+                    {t('summary.title')}
+                </h2>
+                
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div className="bg-gradient-to-br from-gray-50 to-white rounded-2xl shadow-xl p-6 border border-gray-100 hover:shadow-2xl transition-all duration-300">
+                        <div className="mb-6 border-b-2 border-blue-500 pb-4">
+                            <h4 className="text-2xl font-bold text-gray-800">{t('summary.title')}</h4>
                         </div>
-                    </SwiperSlide>
-                ))}
-            </Swiper>
-            <div className="swiper-pagination md:mt-4"></div>
-        </div>
-        
-        
-        <h2 className="text-2xl font-bold mb-6">Results:</h2>
-        <div className="relative h-full w-full mb-12">
-            <Image 
-                src="/img/v13/stats.webp"
-                alt="Campaign Results"
-                width={1280}
-                height={620}
-                className="h-full w-full object-contain rounded-lg border border-gray-200"
-            />
-        </div>
-    </section>
+                        <ul className="space-y-4">
+                            {isArray(t('summary.steps')) ? t('summary.steps').map((step: string, index: number) => (
+                                <li key={index} className="flex items-center gap-3 text-lg text-gray-700 hover:text-gray-900 transition-colors">
+                                    <span className="text-2xl">{['🎯', '🔥', '⚙️', '📋', '✉️', '📈', '🚀', '🛠️'][index % 8]}</span>
+                                    <span>{step}</span>
+                                </li>
+                            )) : null}
+                        </ul>
+                    </div>
+                    
+                    <div className="bg-gradient-to-br from-gray-50 to-white rounded-2xl shadow-xl p-6 border border-gray-100 hover:shadow-2xl transition-all duration-300">
+                        <div className="mb-6 border-b-2 border-green-500 pb-4">
+                            <h4 className="text-2xl font-bold text-gray-800">Results in 4 Weeks:</h4>
+                        </div>
+                        <ul className="space-y-6">
+                            <li className="flex items-center gap-4 text-lg">
+                                <span className="text-3xl font-bold text-blue-600">2921</span>
+                                <span className="text-gray-700">Emails Sent</span>
+                            </li>
+                            <li className="flex items-center gap-4 text-lg">
+                                <span className="text-3xl font-bold text-blue-600">56</span>
+                                <span className="text-gray-700">Responses</span>
+                            </li>
+                            <li className="flex items-center gap-4 text-lg">
+                                <span className="text-3xl font-bold text-blue-600">31</span>
+                                <span className="text-gray-700">Demo Calls</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
 
-    <section className="mb-12 mt-8">
-        <h2 id="form" className="text-3xl font-bold mb-8 text-center">
-            Get a Professional Digital Strategy for Your Business
-            <span className="block mt-2 text-2xl text-[#ff6315]">Free Consultation</span>
-        </h2>
-    
-        <div className="max-w-3xl mx-auto text-lg">
-            <p className="mb-6 text-center leading-relaxed">
-                Our team will help you create an effective customer acquisition system through internet marketing. We focus on three key areas:
-            </p>
+            <section id="testimonials" className="mb-16">
+                <div className="mb-12 bg-gray-50 p-6 rounded-lg shadow-sm">
+                    <div className="mb-6 border-b-2 border-blue-500 pb-4">
+                        <h4 className="text-2xl font-bold text-gray-800">{t('summary.title')}</h4>
+                    </div>
+                    <ul className="space-y-4">
+                        {isArray(t('summary.steps')) ? t('summary.steps').map((step: string, index: number) => (
+                            <li key={index} className="flex items-center gap-3 text-lg text-gray-700 hover:text-gray-900 transition-colors">
+                                <span className="text-2xl">{['🎯', '🔥', '⚙️', '📋', '✉️', '📈', '🚀', '🛠️'][index % 8]}</span>
+                                <span>{step}</span>
+                            </li>
+                        )) : null}
+                    </ul>
+                </div>
+
+                <h2 className="text-2xl font-bold mb-6">{t('testimonials.title')}</h2>
+                <div className="relative mb-12">
+                    <Swiper
+                        modules={[Pagination]}
+                        spaceBetween={10}
+                        slidesPerView={1}
+                        pagination={{ 
+                            el: '.swiper-pagination',
+                            clickable: true
+                        }}
+                        breakpoints={{
+                            640: {
+                                slidesPerView: 2,
+                                spaceBetween: 20,
+                            },
+                            1024: {
+                                slidesPerView: 3,
+                                spaceBetween: 30,
+                            },
+                        }}
+                    >
+                        {testimonialImages.map((image, index) => (
+                            <SwiperSlide key={index} className="sm:pt-4 pb-12 sm:pb-8 px-2">
+                                <div 
+                                    className="relative h-[370px] w-full cursor-pointer"
+                                    onClick={() => {
+                                        console.log('Click on image:', image);
+                                        openImage(image);
+                                    }}
+                                    role="button"
+                                    tabIndex={0}
+                                >
+                                    <Image
+                                        src={image}
+                                        alt={t('testimonials.imageAlt').replace('{0}', (index + 1).toString())}
+                                        width={590}
+                                        height={735}
+                                        className="!w-fit mx-auto object-cover rounded-lg shadow-lg sm:hover:scale-105 transition-all duration-300 cursor-pointer"
+                                        priority={index < 4}
+                                        onClick={(e) => {
+                                            e.stopPropagation();
+                                            console.log('Click on Image component:', image);
+                                            openImage(image);
+                                        }}
+                                    />
+                                </div>
+                            </SwiperSlide>
+                        ))}
+                    </Swiper>
+                    <div className="swiper-pagination md:mt-4"></div>
+                </div>
+                
+                
+                <h2 className="text-2xl font-bold mb-6">{t('results.title')}</h2>
+                <div className="relative h-full w-full mb-12">
+                    <Image 
+                        src="/img/v13/stats.webp"
+                        alt={t('results.imageAlt')}
+                        width={1280}
+                        height={620}
+                        className="h-full w-full object-contain rounded-lg border border-gray-200"
+                    />
+                </div>
+            </section>
+
+            <section className="mb-12 mt-8">
+                <h2 id="form" className="text-3xl font-bold mb-8 text-center">
+                    {t('form.title')}
+                    <span className="block mt-2 text-2xl text-[#ff6315]">{t('form.subtitle')}</span>
+                </h2>
             
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
-                <div className="bg-white p-4 rounded-lg shadow-md border-t-4 border-[#ff6315]">
-                    <h3 className="font-bold text-xl mb-2 text-center">Analytics</h3>
-                    <p className="text-gray-600 text-center">Detailed analysis of your niche and competitors</p>
+                <div className="max-w-3xl mx-auto text-lg">
+                    <p className="mb-6 text-center leading-relaxed">
+                        {t('form.description')}
+                    </p>
+                    
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
+                        {isArray(t('form.pillars')) ? t('form.pillars').map((pillar: any, index: number) => (
+                            <div key={index} className="bg-white p-4 rounded-lg shadow-md border-t-4 border-[#ff6315]">
+                                <h3 className="font-bold text-xl mb-2 text-center">{pillar.title}</h3>
+                                <p className="text-gray-600 text-center">{pillar.description}</p>
+                            </div>
+                        )) : null}
+                    </div>
+
+                    <p className="text-center mb-8">
+                        {t('form.instruction')}
+                    </p>
+
+                    <div className="w-fit mx-auto">
+                        <Formspree />
+                    </div>
+
+                    <p className="mt-8 text-center text-gray-600">
+                        {t('form.footer')}
+                    </p>
                 </div>
-                <div className="bg-white p-4 rounded-lg shadow-md border-t-4 border-[#ff6315]">
-                    <h3 className="font-bold text-xl mb-2 text-center">Strategy</h3>
-                    <p className="text-gray-600 text-center">Development of comprehensive promotion plan</p>
-                </div>
-                <div className="bg-white p-4 rounded-lg shadow-md border-t-4 border-[#ff6315]">
-                    <h3 className="font-bold text-xl mb-2 text-center">Results</h3>
-                    <p className="text-gray-600 text-center">Sales increase and scaling</p>
-                </div>
-            </div>
+            </section>
 
-            <p className="text-center mb-8">
-                Fill out the form below to receive a personalized development plan for your business in the digital environment
-            </p>
+            <CasesFooter />
 
-            <div className="w-fit mx-auto">
-                <Formspree />
-            </div>
+            <MessengerButton
+                link="https://m.me/100006500822716"
+                text={t('messenger.text')}
+            />
 
-            <p className="mt-8 text-center text-gray-600">
-                Leave your request now to get a <strong>free audit</strong> of your current marketing strategy
-            </p>
-        </div>
-    </section>
-
-    <CasesFooter />
-
-    <MessengerButton
-        link="https://m.me/100006500822716"
-        text="Chat with us on Messenger"
-    />
-
-        <Transition.Root show={isImageOpen} as={Fragment}>
+<Transition.Root show={isImageOpen} as={Fragment}>
             <Dialog 
                 as="div" 
                 className="relative z-50" 
@@ -483,7 +412,7 @@ return (
                             </button>
                             <div className="relative h-[80vh]">
                                 <Swiper
-                                    modules={[ Pagination]}
+                                    modules={[Pagination]}
                                     spaceBetween={20}
                                     slidesPerView={1}
                                     pagination={{ 
@@ -491,7 +420,7 @@ return (
                                         clickable: true
                                     }}
                                     loop={true}
-                                    initialSlide={testimonialImages.indexOf(selectedImage)}
+                                    initialSlide={testimonialImages.indexOf(currentImage)}
                                     className="h-full w-full"
                                     onSwiper={(swiper) => {
                                         galleryRef.current = swiper;
@@ -523,7 +452,7 @@ return (
                 </div>
             </Dialog>
         </Transition.Root>
-    </div>
+        </div>
     );
 };
 

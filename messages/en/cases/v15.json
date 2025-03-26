@@ -1,0 +1,140 @@
+{
+  "seo": {
+    "title": "Case Study: Development of a Scraper for Business Contact Collection"
+  },
+  "hero": {
+    "subtitle": "🚀 Case Study",
+    "title": "Development of a Scraper for Business Contact Collection",
+    "description": "How we automated the contact collection process and improved lead generation efficiency"
+  },
+  "strategies": {
+    "title": "Strategies and Solutions",
+    "description": "After several months of testing, we decided to develop our own scraper. From this moment, the long journey 🚀 began",
+    "limitations": {
+      "title": "We tested several scraping services, but each had its limitations:",
+      "list": [
+        "Small number of obtained contacts, although we planned to get much more",
+        "High cost of some services that wasn't justified by real results",
+        "All services had volume limitations and constantly blocked accounts"
+      ]
+    },
+    "cta": "Want the same scraper",
+    "solution": {
+      "title": "Our Solution",
+      "description": "We realized that to achieve results, we needed to develop our own solution, that would work on our terms. This became a challenge, as we didn't yet know that scrapers in the market quickly become outdated ⚡️, and we needed not just to extract data, but also quickly adapt the tool to new conditions"
+    }
+  },
+  "steps": {
+    "mobile": {
+      "tool": {
+        "number": "01",
+        "title": "Tool Development",
+        "description": "We spent over 5 months developing the first scraper to be able to extract data from various sources:",
+        "tags": [
+          "📧 emails",
+          "🌐 social networks",
+          "📝 text descriptions",
+          "📞 phone numbers",
+          "📍 addresses",
+          "👔 positions"
+        ]
+      },
+      "testing": {
+        "number": "02",
+        "title": "Testing and Configuration",
+        "description": "This process was accompanied by numerous tests: from server configuration to checking data processing 📊",
+        "challenges": [
+          "Account Blocking",
+          "Data Processing Errors",
+          "Continuous Improvement of the Mechanism"
+        ]
+      },
+      "solving": {
+        "number": "03",
+        "title": "Solving Technical Problems",
+        "description": "The technical department worked on adapting the tool to rapidly changing conditions 🚀\n\nSolving account blocking and technical glitches became a crucial step in the stability of the scraper ✅"
+      }
+    },
+    "desktop": {
+      "tool": {
+        "number": "01",
+        "title": "Tool Development",
+        "description": "We spent over 5 months developing the first scraper to be able to extract data from various sources:",
+        "tags": [
+          "📧 emails",
+          "🌐 social networks",
+          "📝 text descriptions",
+          "📞 phone numbers",
+          "📍 addresses",
+          "👔 positions"
+        ]
+      },
+      "testing": {
+        "number": "02",
+        "title": "Testing and Configuration",
+        "description": "This process was accompanied by numerous tests: from server configuration to checking data processing 📊",
+        "challenges": [
+          "Account Blocking",
+          "Data Processing Errors",
+          "Continuous Improvement of the Mechanism"
+        ]
+      },
+      "solving": {
+        "number": "03",
+        "title": "Solving Technical Problems",
+        "description": "The technical department worked on adapting the tool to rapidly changing conditions 🚀\n\nSolving account blocking and technical glitches became a crucial step in the stability of the scraper ✅"
+      }
+    }
+  },
+  "tools": {
+    "title": "Our Tools",
+    "subtitle": "Here are examples of our scrapers that helped us collect leads",
+    "instagram": {
+      "title": "Instagram Parser",
+      "description": "Intelligent tool for collecting and analyzing Instagram data"
+    },
+    "linkedin": {
+      "title": "LinkedIn Parser",
+      "description": "Reliable tool for finding and collecting business contacts"
+    }
+  },
+  "results": {
+    "title": "Results We Achieved",
+    "point1": "We created a comprehensive solution that allows extracting contacts from multiple sources.",
+    "point2": "Our tool can process and scrape large volumes of data from various platforms:",
+    "tags": [
+      "📝 Text Descriptions",
+      "📧 Emails",
+      "📱 Phone Numbers",
+      "👔 Positions",
+      "📍 Addresses"
+    ],
+    "applications": {
+      "title": "How Can This Be Applied?",
+      "email": {
+        "title": "Email Newsletter",
+        "description": "Send a hot offer to your B2B audience through cold emails. Do you have a contact list? Use our scrapers to get data and efficient mailing!"
+      },
+      "phone": {
+        "title": "Phone Calls",
+        "description": "Call your target audience and make a quick, but effective cold offer using data from our scraper."
+      },
+      "messenger": {
+        "title": "Interaction Through Messengers",
+        "description": "Lock in the person who will handle these leads through Whatsapp, Telegram, or other social networks. This will not only allow you to maintain contacts but also quickly communicate with potential clients."
+      },
+      "targeting": {
+        "title": "Facebook Targeting",
+        "description": "Upload your database to Facebook so that your ad appears only to your target audience."
+      }
+    }
+  },
+  "form": {
+    "title": "Want the Same Results for Your Business? 🚀",
+    "description": "Leave a request for a free consultation. We will analyze your niche and propose a strategy that will work exactly for you.",
+    "disclaimer": "*Consultation is free and does not obligate to cooperation"
+  },
+  "messenger": {
+    "text": "Chat with us on Messenger"
+  }
+}

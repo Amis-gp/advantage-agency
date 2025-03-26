@@ -149,7 +149,7 @@ const BriefEmailMarketing = () => {
 
   const sendToTelegram = async (message: string) => {
     const BOT_TOKEN = process.env.NEXT_PUBLIC_BOT_TOKEN;
-    const CHAT_ID = process.env.NEXT_PUBLIC_CHAT_ID;
+    const CHAT_ID = process.env.NEXT_PUBLIC_CHAT_ID_BRIEF_COLD_EMAIL;
     const url = `https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`;
 
     if (!BOT_TOKEN || !CHAT_ID) {
@@ -176,7 +176,7 @@ const BriefEmailMarketing = () => {
 
   const sendFilesToTelegram = async (files: File[]) => {
     const BOT_TOKEN = process.env.NEXT_PUBLIC_BOT_TOKEN;
-    const CHAT_ID = process.env.NEXT_PUBLIC_CHAT_ID;
+    const CHAT_ID = process.env.NEXT_PUBLIC_CHAT_ID_BRIEF_COLD_EMAIL;
     
     if (!BOT_TOKEN || !CHAT_ID) {
       console.error('Telegram credentials are not configured');
@@ -184,7 +184,6 @@ const BriefEmailMarketing = () => {
     }
     
     for (const file of files) {
-      // Обмеження розміру файлу для Telegram API (50MB)
       if (file.size > 50 * 1024 * 1024) {
         console.error(`File ${file.name} is too large for Telegram API`);
         continue;

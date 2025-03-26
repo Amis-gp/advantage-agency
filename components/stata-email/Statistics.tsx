@@ -235,7 +235,7 @@ const StataEmail: React.FC<StatisticsProps> = ({ campaignId }) => {
               </svg>
               <div>
                 <div className="text-sm text-gray-500">Sent emails</div>
-                <div className="font-semibold">{stats.openRate.count}</div>
+                <div className="font-semibold">{campaign?.totalRecipients}</div>
               </div>
             </div>
 

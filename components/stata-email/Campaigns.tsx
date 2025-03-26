@@ -156,7 +156,7 @@ const Campaigns = () => {
                     {campaign.status}
                   </span>
                 </td>
-                <td className="w-[120px]">{campaign.stats.openRate.count}</td>
+                <td className="w-[120px]">{campaign.totalRecipients}</td>
                 <td className="w-[120px]">{campaign.stats.deliverability.count}</td>
                 <td className="w-[120px]">{campaign.stats.clicks.count}</td>
                 <td className="w-[120px]">
