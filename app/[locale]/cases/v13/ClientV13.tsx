@@ -43,6 +43,7 @@ const V13Page: NextPage = () => {
     const [translations, setTranslations] = useState<any>({});
     const [isImageOpen, setIsImageOpen] = useState(false);
     const [currentImage, setCurrentImage] = useState('');
+    const [isLoading, setIsLoading] = useState(true);
 
     const thumbnailsRef = useRef<SwiperType | null>(null);
     const galleryRef = useRef<SwiperType | null>(null);
@@ -51,33 +52,39 @@ const V13Page: NextPage = () => {
 
     useEffect(() => {
         const loadTranslations = async () => {
-            try {
-                const translations = await import(`../../../../messages/${locale}/cases/v13.json`);
-                setTranslations(translations.default);
-                document.title = translations.default.seo.title;
-            } catch (error) {
-                console.error('Помилка завантаження перекладів:', error);
-            }
+          setIsLoading(true);
+          try {
+            const translations = await import(`../../../../messages/${locale}/cases/v13.json`);
+            setTranslations(translations.default);
+            document.title = translations.default.seo.title;
+          } catch (error) {
+            console.error('Помилка завантаження перекладів:', error);
+          } finally {
+            setIsLoading(false);
+          }
         };
         
         loadTranslations();
-    }, [locale]);
-
-    const t = (path: string) => {
+      }, [locale]);
+      
+      const t = (path: string) => {
+        if (isLoading) return '';
+        
         const keys = path.split('.');
         let result = translations;
         
         for (const key of keys) {
-            if (result && result[key] !== undefined) {
-                result = result[key];
-            } else {
-                return path;
-            }
+          if (result && result[key] !== undefined) {
+            result = result[key];
+          } else {
+            return '';
+          }
         }
         
         return result;
-    };
+      };
 
+    
     // Допоміжна функція для перевірки, чи є переклад масивом
     const isArray = (value: any): value is any[] => {
         return Array.isArray(value);

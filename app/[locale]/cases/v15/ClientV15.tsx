@@ -14,15 +14,19 @@ const V15Page: NextPage = () => {
   const params = useParams();
   const locale = params.locale as string;
   const [translations, setTranslations] = useState<any>({});
+  const [isLoading, setIsLoading] = useState(true);
   
   useEffect(() => {
     const loadTranslations = async () => {
+      setIsLoading(true);
       try {
         const translations = await import(`../../../../messages/${locale}/cases/v15.json`);
         setTranslations(translations.default);
         document.title = translations.default.seo.title;
       } catch (error) {
         console.error('Помилка завантаження перекладів:', error);
+      } finally {
+        setIsLoading(false);
       }
     };
     
@@ -30,6 +34,8 @@ const V15Page: NextPage = () => {
   }, [locale]);
   
   const t = (path: string) => {
+    if (isLoading) return '';
+    
     const keys = path.split('.');
     let result = translations;
     
@@ -37,7 +43,7 @@ const V15Page: NextPage = () => {
       if (result && result[key] !== undefined) {
         result = result[key];
       } else {
-        return path;
+        return '';
       }
     }
     

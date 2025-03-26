@@ -25,10 +25,16 @@ const testimonialImages = [
   '/img/v16/feedback6.webp'
 ];
 
+const allImages = [
+  '/img/v16/stats.webp',
+  ...testimonialImages
+];
+
 const V16Page: NextPage = () => {
   const params = useParams();
   const locale = params.locale as string;
   const [translations, setTranslations] = useState<any>({});
+  const [isLoading, setIsLoading] = useState(true);
   const [isImageOpen, setIsImageOpen] = useState(false);
   const [currentImage, setCurrentImage] = useState('');
   
@@ -37,12 +43,15 @@ const V16Page: NextPage = () => {
   
   useEffect(() => {
     const loadTranslations = async () => {
+      setIsLoading(true);
       try {
         const translations = await import(`../../../../messages/${locale}/cases/v16.json`);
         setTranslations(translations.default);
         document.title = translations.default.seo.title;
       } catch (error) {
         console.error('Помилка завантаження перекладів:', error);
+      } finally {
+        setIsLoading(false);
       }
     };
     
@@ -50,6 +59,8 @@ const V16Page: NextPage = () => {
   }, [locale]);
   
   const t = (path: string) => {
+    if (isLoading) return '';
+    
     const keys = path.split('.');
     let result = translations;
     
@@ -57,7 +68,7 @@ const V16Page: NextPage = () => {
       if (result && result[key] !== undefined) {
         result = result[key];
       } else {
-        return path;
+        return '';
       }
     }
     
@@ -260,7 +271,10 @@ const V16Page: NextPage = () => {
             
             <div className="mb-12">
               <h4 className="text-xl font-semibold mb-6 text-center">{t('statistics.title')}</h4>
-              <div className="relative aspect-[16/9] w-full">
+              <div 
+                className="relative aspect-[16/9] w-full cursor-pointer rounded-lg overflow-hidden border border-slate-200 hover:shadow-lg transition-all duration-300"
+                onClick={() => openImage('/img/v16/stats.webp')}
+              >
                 <Image 
                   src="/img/v16/stats.webp"
                   alt={t('statistics.imageAlt')}
@@ -268,7 +282,13 @@ const V16Page: NextPage = () => {
                   className="object-contain"
                   sizes="(max-width: 1024px) 100vw, 1024px"
                 />
+                <div className="absolute inset-0 bg-black/5 hover:bg-black/10 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity">
+                  <span className="bg-white/90 text-slate-800 px-4 py-2 rounded-full font-medium shadow-sm">
+                    Zoom
+                  </span>
+                </div>
               </div>
+              <p className="text-sm text-slate-500 mt-3 text-center">{t('statistics.description')}</p>
             </div>
 
             <div className="mt-12">
@@ -399,7 +419,7 @@ const V16Page: NextPage = () => {
                                         clickable: true
                                     }}
                                     loop={true}
-                                    initialSlide={testimonialImages.indexOf(currentImage)}
+                                    initialSlide={allImages.indexOf(currentImage)}
                                     className="h-full w-full"
                                     onSwiper={(swiper) => {
                                         galleryRef.current = swiper;
@@ -407,11 +427,11 @@ const V16Page: NextPage = () => {
                                     onSlideChange={() => {
                                     }}
                                 >
-                                    {testimonialImages.map((image, index) => (
+                                    {allImages.map((image, index) => (
                                         <SwiperSlide key={index}>
                                             <Image
                                                 src={image}
-                                                alt={`Email Response ${index + 1}`}
+                                                alt={image.includes('stats') ? t('statistics.imageAlt') : t('testimonials.imageAlt').replace('{0}', (index).toString())}
                                                 fill
                                                 className="object-contain"
                                                 priority
