@@ -57,7 +57,7 @@ export default function PricingPage() {
   };
   
   // Форматування ціни у доларах
-  const formatPrice = (price) => {
+  const formatPrice = (price: number) => {
     return `$${price.toLocaleString()}`;
   };
   
@@ -82,6 +82,7 @@ export default function PricingPage() {
 
   return (
     <div className="min-h-screen bg-white pb-20">
+      <LanguageSwitcher />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16">
         <div className="text-center">
           <h1 className="text-4xl font-extrabold text-slate-800 sm:text-5xl sm:tracking-tight lg:text-6xl">
