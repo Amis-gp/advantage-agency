@@ -6,6 +6,15 @@ import enTranslations from '@/messages/en/cold-outreach-packages.json';
 import ukTranslations from '@/messages/uk/cold-outreach-packages.json';
 import LanguageSwitcher from '@/components/LanguageSwitcher';
 
+// Визначення типу пакета
+type Package = {
+  size: string;
+  setupPrice: number;
+  ongoingPrice: number;
+  leadsPrice: number;
+  campaigns: number;
+};
+
 export default function PricingPage() {
   const [isInitialSetup, setIsInitialSetup] = useState(true);
   const [selectedPackage, setSelectedPackage] = useState(0);
@@ -62,7 +71,7 @@ export default function PricingPage() {
   };
   
   // Перемикання опцій
-  const toggleOption = (option) => {
+  const toggleOption = (option: keyof typeof options) => {
     setOptions(prev => ({
       ...prev,
       [option]: !prev[option]
@@ -70,7 +79,7 @@ export default function PricingPage() {
   };
 
   // Функція для розрахунку відображуваної ціни пакету
-  const getPackageDisplayPrice = (packageItem) => {
+  const getPackageDisplayPrice = (packageItem: typeof packages[0]) => {
     if (isInitialSetup) {
       // В режимі Initial Setup показуємо повну ціну пакету
       return packageItem.setupPrice;
