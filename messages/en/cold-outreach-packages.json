@@ -3,7 +3,7 @@
     "initialSetup": "Initial Setup (2 months)",
     "ongoingMaintenance": "Ongoing Maintenance",
     "initialDescription": "Initial 2-month package includes complete setup, strategy development, contact verification, and campaign launch",
-    "ongoingDescription": "After initial setup, you have the option to use our services for new contact parsing and verification as needed"
+    "ongoingDescription": "After initial setup, you can use our services for new contact parsing and verification as needed, or perform these tasks independently"
   },
   "steps": {
     "choosePackage": "Choose package size",
