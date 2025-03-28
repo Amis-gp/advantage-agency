@@ -2,8 +2,8 @@
   "toggleLabel": {
     "initialSetup": "Initial Setup (2 months)",
     "ongoingMaintenance": "Ongoing Maintenance",
-    "initialDescription": "Initial 2-month package includes complete setup, strategy development, lead verification, and campaign launch",
-    "ongoingDescription": "After initial setup, you have the option to use our services for new lead parsing and verification as needed"
+    "initialDescription": "Initial 2-month package includes complete setup, strategy development, contact verification, and campaign launch",
+    "ongoingDescription": "After initial setup, you have the option to use our services for new contact parsing and verification as needed"
   },
   "steps": {
     "choosePackage": "Choose package size",
@@ -11,13 +11,13 @@
   },
   "packages": {
     "prefix": "Package",
-    "verifiedLeads": "verified leads"
+    "verifiedLeads": "verified contacts"
   },
   "addons": {
     "abTesting": {
       "name": "A/B testing",
       "description": "Testing different subject lines and content variations",
-      "bonusMessage": "Package 2K+ gets 1 bonus A/B tests for free!"
+      "bonusMessage": "When purchasing at least one A/B test, you get a second one for free"
     },
     "campaignManagement": {
       "name": "Campaign management",
@@ -37,7 +37,7 @@
         "Setting up senders, protocols, warmup",
         "Brief analysis and strategy development",
         "Writing all texts and spam word checking",
-        "Lead segmentation and verification",
+        "Contact segmentation and verification",
         "Campaign creation"
       ]
     },
@@ -57,15 +57,15 @@
     "items": [
       {
         "question": "How does the pricing work?",
-        "answer": "Our pricing has two phases. The initial setup (first 2 months) includes complete preparation and campaign launch. After that, you can purchase additional services as needed."
+        "answer": "Our pricing has two phases. Initial setup (first 2 months) includes complete preparation and campaign launch. After that, you can purchase additional services as needed."
       },
       {
         "question": "What's included in the initial setup?",
-        "answer": "The initial setup includes campaign configuration, strategy development, email writing, lead verification, and campaign launch. All the preparatory work necessary for successful email outreach."
+        "answer": "Initial setup includes campaign configuration, strategy development, email writing, contact database parsing, and campaign launch. All preparatory work necessary for successful outreach."
       },
       {
-        "question": "What happens after the initial phase is completed?",
-        "answer": "After completing the initial phase, you'll have a fully functional cold outreach system. For continued operation, you'll need lead database updates and text optimization based on data collected from the previous month."
+        "question": "What happens after the first two months?",
+        "answer": "After completing the initial phase, you'll have a fully functional cold outreach system. For continued operation, you'll need to update your contact database and optimize texts based on data collected from the previous month."
       },
       {
         "question": "Can I change or customize my package?",

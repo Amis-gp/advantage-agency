@@ -166,7 +166,7 @@ export default function PricingPage() {
   const calculateTotal = () => {
     let total = isInitialSetup ? currentPackage.setupPrice : 0;
     
-    // Додаємо вартість лідів, якщо це подальші місяці
+    // Додаємо вартість контактів, якщо це подальші місяці
     if (!isInitialSetup) {
       total += currentPackage.leadsPrice;
       
@@ -202,9 +202,36 @@ export default function PricingPage() {
       // В режимі Initial Setup показуємо повну ціну пакету
       return packageItem.setupPrice;
     } else {
-      // В режимі Ongoing Maintenance показуємо ціну за ліди + campaign management
+      // В режимі Ongoing Maintenance показуємо ціну за контакти + campaign management
       return packageItem.leadsPrice;
     }
+  };
+
+  // Get maximum allowed A/B tests based on package
+  const getMaxAbTests = (packageIndex: number) => {
+    switch (packageIndex) {
+      case 0:
+      case 1:
+        return 1;
+      case 2: // 3K package
+        return 2;
+      case 3: // 4K package
+        return 3;
+      default:
+        return 1;
+    }
+  };
+
+  // Handle package change and adjust A/B test count if needed
+  const handlePackageChange = (index: number) => {
+    const maxTests = getMaxAbTests(index);
+    
+    // If current abTestCount exceeds the max for the new package, adjust it
+    if (abTestCount > maxTests) {
+      setAbTestCount(maxTests);
+    }
+    
+    setSelectedPackage(index);
   };
 
   return (
@@ -302,7 +329,7 @@ export default function PricingPage() {
                         className={`border rounded-xl p-6 text-center cursor-pointer transition-all hover:shadow-md ${
                           selectedPackage === index ? 'border-blue-500 bg-blue-50' : 'border-gray-200'
                         } ${index === 2 ? 'ring-2 ring-blue-500 relative' : ''}`}
-                        onClick={() => setSelectedPackage(index)}
+                        onClick={() => handlePackageChange(index)}
                       >
                         {index === 2 && (
                           <div className="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-blue-500 text-white text-xs py-1 px-3 rounded-full">
@@ -353,8 +380,8 @@ export default function PricingPage() {
                           <span className="px-2 py-1">{abTestCount}</span>
                           <button 
                             className="px-2 py-1 text-gray-700 disabled:text-gray-400"
-                            onClick={() => setAbTestCount(Math.min(currentPackage.campaigns, abTestCount + 1))}
-                            disabled={abTestCount >= currentPackage.campaigns}
+                            onClick={() => setAbTestCount(Math.min(getMaxAbTests(selectedPackage), abTestCount + 1))}
+                            disabled={abTestCount >= getMaxAbTests(selectedPackage)}
                           >
                             +
                           </button>
