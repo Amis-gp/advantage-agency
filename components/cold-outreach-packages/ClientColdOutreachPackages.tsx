@@ -74,7 +74,8 @@ export default function PricingPage() {
   const translations = locale === 'uk' ? ukTranslations : enTranslations;
   
   // Функція для отримання перекладів з об'єкта
-  const t = (path: string, options?: { fallback: string }) => {
+  // Update the t function to handle variables
+  const t = (path: string, options?: { fallback?: string; [key: string]: any }) => {
     const keys = path.split('.');
     let result: any = translations;
     
@@ -84,6 +85,13 @@ export default function PricingPage() {
       } else {
         return options?.fallback || path;
       }
+    }
+    
+    // Handle variable interpolation
+    if (typeof result === 'string' && options) {
+      return result.replace(/\{\{(\w+)\}\}/g, (match, key) => {
+        return options[key]?.toString() || match;
+      });
     }
     
     return result;
@@ -165,7 +173,7 @@ export default function PricingPage() {
       // Додаємо ціну A/B тестів
       total += calculateABTestPrice();
       
-      if (options.campaign) total += addons.campaign.price * currentPackage.campaigns;
+      if (options.campaign) total += addons.campaign.price;  // Remove multiplication by campaigns
       if (options.sequence) total += addons.sequence.price;
     } else {
       // Для Initial Setup додаємо тільки A/B тестування
@@ -320,12 +328,12 @@ export default function PricingPage() {
                     {/* A/B Testing */}
                     <div className="flex items-center justify-between p-4 border border-gray-200 rounded-lg">
                       <div>
-                        <div className="font-medium text-slate-800">{t('addons.abTesting.name', { fallback: addons.bonus.name })}</div>
+                        <div className="font-medium text-slate-800">{t('addons.abTesting.name')}</div>
                         <div className="text-sm text-slate-600">
-                          {t('addons.abTesting.description', { fallback: addons.bonus.description })}
+                          {t('addons.abTesting.description')}
                           {selectedPackage >= 1 && (
                             <span className="block mt-1 text-green-600 font-medium">
-                              {locale === 'uk' ? 'Пакет 2K+ отримує 2 бонусні A/B тести безкоштовно!' : 'Package 2K+ gets 2 bonus A/B tests for free!'}
+                              {t('addons.abTesting.bonusMessage')}
                             </span>
                           )}
                         </div>
@@ -360,11 +368,12 @@ export default function PricingPage() {
                         <div>
                           <div className="font-medium text-slate-800">{t('addons.campaignManagement.name')}</div>
                           <div className="text-sm text-slate-600">
-                            Professional campaign management and optimization for {currentPackage.campaigns} campaign{currentPackage.campaigns > 1 ? 's' : ''} <span className="text-blue-600 font-medium">(recommended)</span>
+                            {t('addons.campaignManagement.description', { campaigns: currentPackage.campaigns })}
+                            <span className="text-blue-600 font-medium"> {t('addons.campaignManagement.recommended')}</span>
                           </div>
                         </div>
                         <div className="flex items-center space-x-3">
-                          <div className="font-medium text-blue-600">${addons.campaign.price * currentPackage.campaigns}</div>
+                          <div className="font-medium text-blue-600">${addons.campaign.price}</div>
                           <div className="relative inline-block w-12 h-6">
                             <input 
                               type="checkbox" 

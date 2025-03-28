@@ -16,15 +16,17 @@
   "addons": {
     "abTesting": {
       "name": "A/B testing",
-      "description": "Testing different subject lines and content variations"
+      "description": "Testing different subject lines and content variations",
+      "bonusMessage": "Package 2K+ gets 1 bonus A/B tests for free!"
     },
     "campaignManagement": {
       "name": "Campaign management",
-      "description": "Professional campaign management and optimization"
+      "description": "Professional campaign management and optimization for {{campaigns}} campaign(s)",
+      "recommended": "(recommended)"
     },
     "customSequences": {
-      "name": "Custom text sequences",
-      "description": "Development of personalized follow-up sequences"
+      "name": "New marketing approach development",
+      "description": "New month, new approach, testing a different engagement method"
     }
   },
   "process": {
