@@ -121,9 +121,12 @@ const V16Page: NextPage = () => {
                   </span>
                   {t('intro.title')}
                 </h2>
-                <p className="text-lg text-slate-700 leading-relaxed">
-                  {t('intro.description')}
-                </p>
+                <p 
+                  className="text-lg text-slate-700 leading-relaxed"
+                  dangerouslySetInnerHTML={{
+                    __html: t('intro.description').replace('Zeno CRM', `<a href="https://zeno-crm.netlify.app/" target="_blank" rel="noopener noreferrer" class="text-emerald-600 font-medium underline">Zeno CRM</a>`)
+                  }}
+                />
               </div>
             </div>
             
