@@ -7,15 +7,53 @@ import Formspree from "@/components/cases/Formspree";
 import { useState, useEffect } from 'react';
 import { Dialog, Transition } from '@headlessui/react';
 import { Fragment } from 'react';       
+import { useParams } from 'next/navigation';
 
 import '@/app/styles.css'
 import MessengerButton from '@/components/cases/MessengerButton';
 import CasesFooter from '@/components/cases/Footer';
-import LanguageSwitcher from '@/components/cases/LanguageSwitcher';
+import LanguageSwitcher from '@/components/LanguageSwitcher';
 
 const V8Page: NextPage = () => {
+  const params = useParams();
+  const locale = params.locale as string;
+  const [translations, setTranslations] = useState<any>({});
+  const [isLoading, setIsLoading] = useState(true);
+  
   useEffect(() => {
-    document.title = "$116k in revenue from Roofing services";}, []);
+    const loadTranslations = async () => {
+      setIsLoading(true);
+      try {
+        const translations = await import(`/messages/${locale}/cases/v8.json`);
+        setTranslations(translations.default);
+        document.title = translations.default.title;
+      } catch (error) {
+        console.error('Error loading translations:', error);
+      } finally {
+        setIsLoading(false);
+      }
+    };
+    
+    loadTranslations();
+  }, [locale]);
+  
+  const t = (path: string) => {
+    if (isLoading) return '';
+    
+    const keys = path.split('.');
+    let result = translations;
+    
+    for (const key of keys) {
+      if (result && result[key] !== undefined) {
+        result = result[key];
+      } else {
+        return '';
+      }
+    }
+    
+    return result;
+  };
+  
   const [isOpenBeforeMeta, setIsOpenBeforeMeta] = useState(false);
   const [isOpenAfterMeta, setIsOpenAfterMeta] = useState(false);
   const [isOpenBeforeGoogle, setIsOpenBeforeGoogle] = useState(false);
@@ -53,34 +91,43 @@ const V8Page: NextPage = () => {
     setIsOpenAfterGoogle(true);
   }
   
+  // Add loading indicator before the main return
+  if (isLoading) {
+    return (
+      <div className="flex items-center justify-center min-h-screen">
+        <div className="text-center">
+          <div className="inline-block animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-rose-600 mb-4"></div>
+          <p className="text-xl font-medium">Loading...</p>
+        </div>
+      </div>
+    );
+  }
+  
   return (
-    
     <div className="text-black bg-white max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
       <LanguageSwitcher />
       <section className="pt-8">
         <h1 className="text-4xl sm:text-5xl font-bold mb-6 text-center">
-        <span className='highlight'>$116k</span> in revenue from <u>Roofing</u> services
+          {typeof t('title') === 'string' ? 
+            <div dangerouslySetInnerHTML={{ __html: t('title') }} /> : 
+            'Case Study V8'
+          }
         </h1>
         <div className="mb-12">
-          <p className="mb-4">
-          Meet Harry, <strong className='text-rose-600'>the founder of Champion Roofing in Chicago.</strong> Our team met him on Reddit and he was looking for answers to various questions about brand positioning, online advertising channels for his niche, and other marketing solutions.
-          </p>
-          <p className="mb-4">We were happy to express our desire to help Harry with marketing for his company. The project was interesting because in the US, the roofing industry has a <strong>very big</strong> demand and a wide range of services: from leakage repair, replacement of individual elements, installation of classic tiles, installation of modern energy-efficient roofing systems, to complete roof reconstruction. Our clients range from private homeowners in need of urgent repairs to <strong>large developers</strong> who need comprehensive solutions for entire residential complexes.
-          </p>
-          <p className="mb-4"> We were thrilled to learn about the specifics of the local roofing market, so the first thing we did was sit down with Harry and start asking him a bunch of questions to better understand the ins and outs of his business, his <strong>ideal customers</strong>, their pain points and desires, his unique selling proposition, analysis of his competition etc. We got a general idea of where he thought the best opportunities for business development might be.<br/>
-          After getting market insights and key information from Harry, we did some competitor and <strong>keyword research</strong> to see what other roofing companies in the area were doing that were really active in online marketing and successfully attracting customers online.
-          </p>
+          <p className="mb-4" dangerouslySetInnerHTML={{ __html: t('intro.paragraph1') }} />
+          <p className="mb-4" dangerouslySetInnerHTML={{ __html: t('intro.paragraph2') }} />
+          <p className="mb-4" dangerouslySetInnerHTML={{ __html: t('intro.paragraph3') }} />
         </div>
         <div className="mb-12 flex flex-wrap justify-center items-center">
           <div className="w-full lg:w-3/5 text-center">
-            <h2 className="text-2xl font-bold mb-4">The Challenges:</h2>
+            <h2 className="text-2xl font-bold mb-4">{t('challenges.title')}</h2>
             <ul className="list-disc inline-block text-left pl-6 space-y-2 mr-6">
-              <li>Poor media visibility of Champion Roofing as an expert in the field of roofing</li>
-              <li>Lack of an effective marketing strategy to attract customers</li>
-              <li>Incorrect positioning of their services in the market</li>
-              <li>Lack of a clear offer</li>
-              <li>Loss of funds on ineffective ad platforms</li>
-              <li>High competition and monopoly in the US roofing market ( Tecta America, Lindholm Roofing etc. )</li>
+              {Array.isArray(t('challenges.list')) 
+                ? t('challenges.list').map((item: string, index: number) => (
+                  <li key={index}>{item}</li>
+                ))
+                : <li>No challenges listed</li>
+              }
             </ul>
           </div>
           <div className="w-full lg:w-2/5 flex justify-center items-center">
@@ -88,52 +135,31 @@ const V8Page: NextPage = () => {
           </div>
         </div>
         <div className="mb-8">
-          <h2 className="text-2xl font-bold mb-4">Our approach:</h2>
+          <h2 className="text-2xl font-bold mb-4">{t('approach.title')}</h2>
           <table className="table-auto w-full bg-white shadow-md rounded-lg overflow-hidden">
             <thead className="bg-gradient-to-r from-rose-500 to-rose-600 text-white">
               <tr>
-                <th className="px-4 py-2 font-semibold uppercase tracking-wider">Step</th>
-                <th className="px-4 py-2 font-semibold uppercase tracking-wider">Action</th>
+                <th className="px-4 py-2 font-semibold uppercase tracking-wider">{t('approach.table.headers.step')}</th>
+                <th className="px-4 py-2 font-semibold uppercase tracking-wider">{t('approach.table.headers.action')}</th>
               </tr>
             </thead>
             <tbody className="divide-y divide-gray-200">
-              <tr className="hover:bg-gray-50 transition-colors duration-150">
-                <td className="px-4 py-2 whitespace-nowrap font-medium">1</td>
-                <td className="px-4 py-2">
-                Conducted a detailed analysis of the target audience, competitors, geographical features and specifics of the US roofing market.
-                </td>
-              </tr>
-              <tr className="hover:bg-gray-50 transition-colors duration-150">
-                <td className="px-4 py-2 whitespace-nowrap font-medium">2</td>
-                <td className="px-4 py-2">
-                Developed a comprehensive digital marketing plan, focusing on Google Ads and search engine optimization (SEO) campaigns
-                </td>
-              </tr>
-              <tr className="hover:bg-gray-50 transition-colors duration-150">
-                <td className="px-4 py-2 whitespace-nowrap font-medium">3</td>
-                <td className="px-4 py-2">
-                Created an SMM strategy for Champion Roofing's active social media presence.
-                </td>
-              </tr>
-              <tr className="hover:bg-gray-50 transition-colors duration-150">
-                <td className="px-4 py-2 whitespace-nowrap font-medium">4</td>
-                <td className="px-4 py-2">
-                Helped with writing scripts for social networks that demonstrated the benefits and quality of Champion Roofing's work.
-                </td>
-              </tr>
-              <tr className="hover:bg-gray-50 transition-colors duration-150">
-                <td className="px-4 py-2 whitespace-nowrap font-medium">5</td>
-                <td className="px-4 py-2">
-                Developed a modern, search engine optimized landing page, designed as a Sales Funnel with a portfolio of completed projects and customer reviews aimed at maximizing conversions.
-                </td>
-              </tr>
+              {Array.isArray(t('approach.table.rows')) 
+                ? t('approach.table.rows').map((row: string, index: number) => (
+                  <tr key={index} className="hover:bg-gray-50 transition-colors duration-150">
+                    <td className="px-4 py-2 whitespace-nowrap font-medium">{index + 1}</td>
+                    <td className="px-4 py-2">{row}</td>
+                  </tr>
+                ))
+                : <tr><td colSpan={2} className="px-4 py-2 text-center">No data available</td></tr>
+              }
             </tbody>
           </table>
         </div>
 
         <div className="flex justify-center w-full mt-14 mb-8 text-center">
             <a href="#form" className="bg-rose-600 text-white px-8 py-4 text-2xl font-bold rounded hover:bg-rose-700 transition duration-300 ease-in-out animate-bounce">
-            Book My Free Consult Now
+            {t('ctaButton')}
             </a>
           </div>
       </section>
@@ -142,35 +168,29 @@ const V8Page: NextPage = () => {
         
 
         <div className="mb-8">
-          <h3 className="text-3xl font-bold mb-8"><span className='highlight highlight-green-200 highlight-variant-5'>Google Ads</span></h3>
-          <p className="mb-4">
-          We conducted a detailed keyword research, analyzed paid and organic traffic, and identified <strong>effective keywords</strong> in the roofing services niche.
-          </p>
-          <p className="mb-4">
-          We developed an advertising campaign structure from scratch, carefully selected the most relevant keywords, and applied solutions specific to the roofing industry.
-          </p>
-          <p className="mb-4">
-          We optimized bids and conversions, changing strategies to "maximize conversions" and collecting data, taking into account the <strong>seasonality of</strong> demand for roofing services and the geographical characteristics of the target market.
-          </p>
+          <h3 className="text-3xl font-bold mb-8"><span className='highlight highlight-green-200 highlight-variant-5'>{t('googleAds.title')}</span></h3>
+          <p className="mb-4" dangerouslySetInnerHTML={{ __html: t('googleAds.paragraph1') }} />
+          <p className="mb-4" dangerouslySetInnerHTML={{ __html: t('googleAds.paragraph2') }} />
+          <p className="mb-4" dangerouslySetInnerHTML={{ __html: t('googleAds.paragraph3') }} />
           <div className="mb-8 mt-8">
             <div className="bg-white rounded-lg shadow-lg p-6 border-4 border-rose-600 w-2/5 mx-auto">
-              <h4 className="text-2xl font-bold mb-4 text-rose-600">After</h4>
+              <h4 className="text-2xl font-bold mb-4 text-rose-600">{t('googleAds.after.title')}</h4>
               <ul className="space-y-2">
-                <li><strong>Impressions:</strong> 2 574</li>
-                <li><strong>Clicks:</strong> 189</li>
-                <li><strong>Cost:</strong> $4 313</li>
-                <li><strong>Leads:</strong> 18</li>
-                <li><strong>Cost per Lead:</strong> $227</li>
-                <li className='text-rose-600'><strong>High ticket clients:</strong> 7</li>
+                <li>{t('googleAds.after.stats.impressions')}</li>
+                <li>{t('googleAds.after.stats.clicks')}</li>
+                <li>{t('googleAds.after.stats.cost')}</li>
+                <li>{t('googleAds.after.stats.leads')}</li>
+                <li>{t('googleAds.after.stats.costPerLead')}</li>
+                <li className='text-rose-600'>{t('googleAds.after.stats.highTicketClients')}</li>
               </ul>
             </div>
           </div>
 
           <div className="mb-8">
-            <h3 className="text-2xl font-bold mb-4">Results:</h3>
+            <h3 className="text-2xl font-bold mb-4">{t('results.title')}</h3>
                 <div className="grid grid-cols-1 gap-8 border-2 border-rose-600 rounded-lg p-6">
                   <div>
-                    <h4 className="text-xl font-bold mb-4 text-center bg-rose-600 text-white py-2 rounded-t-lg">After our cooperation</h4>
+                    <h4 className="text-xl font-bold mb-4 text-center bg-rose-600 text-white py-2 rounded-t-lg">{t('results.afterCooperation')}</h4>
                     <img src="/img/v8/stata-google-roofing.jpg" alt="After Results Screenshot" onClick={openModalAfterGoogle} className="mx-auto border border-gray-300 rounded-lg shadow-md hover:opacity-75 transition duration-300 ease-in-out cursor-pointer" />
                   </div>
                 </div>
@@ -201,7 +221,7 @@ const V8Page: NextPage = () => {
                         >
                           <Dialog.Panel className="w-full max-w-full transform overflow-hidden rounded-2xl bg-white p-6 text-left align-middle shadow-xl transition-all">
                             <Dialog.Title as="h3" className="text-lg font-medium leading-6 text-gray-900">
-                            After our cooperation
+                            {t('results.afterCooperation')}
                             </Dialog.Title>
                             <div className="mt-2">
                               <img src="/img/v8/stata-google-roofing.jpg" alt="After Results Screenshot" style={{ width: 'auto', height: 'auto' }} />
@@ -213,7 +233,7 @@ const V8Page: NextPage = () => {
                                 className="inline-flex justify-center rounded-md border border-transparent bg-rose-600 px-4 py-2 text-sm font-medium text-white hover:bg-rose-700 focus:outline-none focus-visible:ring-2 focus-visible:ring-rose-500 focus-visible:ring-offset-2"
                                 onClick={closeModalAfterGoogle}
                               >
-                                Close
+                                {t('results.closeButton')}
                               </button>
                             </div>
                           </Dialog.Panel>
@@ -225,10 +245,8 @@ const V8Page: NextPage = () => {
           </div>
         </div>
         <div className="mb-8">
-          <h3 className="text-2xl font-bold mb-8">Conclusions:</h3>
-          <p className="mb-4">
-          We developed a comprehensive digital marketing strategy, which included creating a high-converting sales funnel, SMM content plan, setting up effective Google Search Ads campaigns, and implementing an SEO strategy. This allowed us to make a louder statement about the company, showcase their <strong>expertise</strong>, and ensure a growing flow of new customers.
-          </p>
+          <h3 className="text-2xl font-bold mb-8">{t('conclusions.title')}</h3>
+          <p className="mb-4" dangerouslySetInnerHTML={{ __html: t('conclusions.paragraph') }} />
          
         </div>
       </section>
@@ -240,46 +258,39 @@ const V8Page: NextPage = () => {
       </div>
 
       <section className="mb-12 mt-8 px-4 py-8 bg-gray-100">
-        <h2 className="text-3xl font-bold mb-8 text-center">What Harry says about <span className='highlight highlight-rose-300 highlight-variant-5'>collaboration</span></h2>
+        <h2 className="text-3xl font-bold mb-8 text-center" dangerouslySetInnerHTML={{ __html: t('testimonial.title') }} />
         <div className="mb-4 text-center">
           <img src="/img/v8/facephoto.jpg" alt="" className="rounded-full w-48 h-48 object-cover mx-auto border-4 border-red-600" />
-          <p className="font-bold">Harry</p> 
-          <p className="text-red-600">Founder of <a href="https://championroofing.com/" target="_blank" rel="noopener noreferrer" className="text-red-600"><strong><u>Champion Roofing</u></strong></a></p>
+          <p className="font-bold">{t('testimonial.name')}</p> 
+          <p className="text-red-600" dangerouslySetInnerHTML={{ __html: t('testimonial.position') }} />
         </div>
         <div className="md:px-8">
-          <blockquote className="text-xl italic mb-4">
-            "The quality of the leads that we managed to generate from advertising is much better than what I received from various platforms where I posted ads about our services. These are not just cold customers who don't know what they want and ask a million stupid questions, they are interested people that need help with their roofing, who believe in our expertise.<br/><br/>
-            Now I have realized that the number of marketing channels needs to be increased, various details need to be worked out, and the system that is gaining momentum and starting to generate customers steadily needs to be improved. I won't hesitate to use you guys, because there is still a lot of work to be done."
-          </blockquote>
+          <blockquote className="text-xl italic mb-4" dangerouslySetInnerHTML={{ __html: t('testimonial.quote') }} />
         </div>
       </section>
  
       <div className="flex justify-center w-full mt-8 mb-8 text-center">
             <a href="#form" className="bg-rose-600 text-white px-8 py-4 text-2xl font-bold rounded hover:bg-rose-700 transition duration-300 ease-in-out animate-bounce">
-              Book My Free Consult Now
+              {t('ctaButton')}
             </a>
           </div>
 
       <section className="mb-12 mt-8">
-        <h2 id="form" className="text-3xl font-bold mb-8 text-center">Pump up your business with <span className='highlight highlight-rose-300 highlight-variant-5'>proven strategies</span></h2>
-        <p className="text-center">
-        Are you ready to get a steady <strong>stream</strong> of clients? Our agency specializes in developing powerful marketing strategies. We will work closely with you to understand your unique goals and develop a customized plan to rapidly grow your personal brand.
-        </p>
+        <h2 id="form" className="text-3xl font-bold mb-8 text-center" dangerouslySetInnerHTML={{ __html: t('form.title') }} />
+        <p className="text-center" dangerouslySetInnerHTML={{ __html: t('form.paragraph1') }} />
         <div className="flex justify-center">
         
         <Formspree />
         
         </div>
-        <p className="mt-8 text-center">
-        Don't miss the opportunity to take your business to the next level. Contact us today for a free consultation to learn how we can help you achieve significant <strong>growth</strong>.
-        </p>
+        <p className="mt-8 text-center" dangerouslySetInnerHTML={{ __html: t('form.paragraph2') }} />
       </section>
 
       <CasesFooter />
 
       <MessengerButton
         link="https://m.me/100006500822716"
-        text="Chat with us on Messenger"
+        text={t('messengerButton')}
       />
     </div>
   );

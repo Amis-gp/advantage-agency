@@ -45,11 +45,11 @@ const V16Page: NextPage = () => {
     const loadTranslations = async () => {
       setIsLoading(true);
       try {
-        const translations = await import(`../../../../messages/${locale}/cases/v16.json`);
+        const translations = await import(`/messages/${locale}/cases/v16.json`);
         setTranslations(translations.default);
         document.title = translations.default.seo.title;
       } catch (error) {
-        console.error('Помилка завантаження перекладів:', error);
+        console.error('error download translate:', error);
       } finally {
         setIsLoading(false);
       }
@@ -82,6 +82,18 @@ const V16Page: NextPage = () => {
 
   function closeImage() {
     setIsImageOpen(false);
+  }
+  
+  // Add loading indicator before the main return
+  if (isLoading) {
+    return (
+      <div className="flex items-center justify-center min-h-screen">
+        <div className="text-center">
+          <div className="inline-block animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-teal-600 mb-4"></div>
+          <p className="text-xl font-medium">Loading...</p>
+        </div>
+      </div>
+    );
   }
   
   return (    

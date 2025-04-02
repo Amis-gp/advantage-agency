@@ -1,0 +1,137 @@
+{
+  "seo": {
+    "title": "Reducing purchase cost from $72 to $48"
+  },
+  "hero": {
+    "title": "Reducing purchase cost from <span class='highlight highlight-red-300 highlight-variant-5'>$72 to $48</span>"
+  },
+  "about": {
+    "title": "🍷 About client:",
+    "name": "Winest",
+    "description": "Wine online distributor of exclusive wines in Israel, more than 3 years in the market, has an online store with digital sommelier service 🥂, for relevant wine selection and fast delivery 🚚."
+  },
+  "challenges": {
+    "title": "Challenges:",
+    "list": [
+      "Need to reduce cost per purchase",
+      "Fix attribution in tracker and traffic source",
+      "Improve existing campaigns",
+      "Prepare ads for Black Friday"
+    ],
+    "imageAlt": "Challenges Image"
+  },
+  "cta": {
+    "button": "Book Your Free Consultation Now"
+  },
+  "analysis": {
+    "description": "📊 After a thorough analysis of all data from advertising campaigns on Google and Facebook, we began to explore the user's journey—from clicking on an ad to adding items to the cart 🛒 on the website and completing the purchase process 💳."
+  },
+  "approach": {
+    "title": "Our approach:",
+    "steps": [
+      "Called the client, discussed current issues",
+      "Conducted a detailed analysis of the target audience and market specifics",
+      "Developed an advertising strategy",
+      "Adjusted conversion tracking"
+    ]
+  },
+  "meta": {
+    "title": "Meta ADS: <span class='highlight highlight-red-300 highlight-variant-5'>( facebook/instagram )</span>",
+    "description1": "🎯 After agreeing with the client, we started managing active ads and launching new ones. Our first task was to optimize mass ads, so we removed ineffective ads, selected the best ad creatives.",
+    "description2": "⚙️ We corrected UTM tags in ads, which fixed the data transfer issue from ads to Triplewhale tracker, and we integrated a promo code for additional analytics.",
+    "description3": "🚀 We conducted a successful test with ads targeting 'initiating checkout', which helped us optimize Facebook ads for the Black Friday campaign, and then added warm users. We changed our approach to targeting, focusing on Black Friday and Christmas ads.",
+    "before": {
+      "title": "Before",
+      "checkouts": "Checkouts: 633",
+      "purchases": "Purchases: 259",
+      "price": "Price per purchase: $63.3",
+      "average": "Average check: $90",
+      "budget": "Advertising budget: $15,383"
+    },
+    "after": {
+      "title": "After",
+      "checkouts": "Checkouts: 785",
+      "purchases": "Purchases: 309",
+      "price": "Price per purchase: $48.6",
+      "average": "Average check: $100",
+      "budget": "Advertising budget: $15,031"
+    },
+    "results": {
+      "title": "Results:",
+      "before": "Before",
+      "after": "After",
+      "beforeImageAlt": "Before Results Screenshot",
+      "afterImageAlt": "After Results Screenshot",
+      "modalBefore": "Prior to our collaboration",
+      "modalAfter": "After our cooperation.",
+      "close": "Close"
+    }
+  },
+  "google": {
+    "title": "Google Ads:",
+    "description": "🎯 For Google Ads we structured ad campaigns, conducted detailed keyword research and negative keyword research 🔍. ✨ We developed specialized ad creatives for search engines. We focused on optimizing ad campaigns - removed ineffective ads 🚫 and focused on the most effective ads ⭐.",
+    "before": {
+      "title": "Before",
+      "checkouts": "Checkouts: 207",
+      "purchases": "Purchases: 52",
+      "price": "Price per purchase: $67.2",
+      "budget": "Advertising budget: $3529"
+    },
+    "after": {
+      "title": "After",
+      "checkouts": "Checkouts: 294",
+      "purchases": "Purchases: 82",
+      "price": "Price per purchase: $51.6",
+      "budget": "Advertising budget: $4238"
+    },
+    "results": {
+      "title": "Results:",
+      "before": "Before",
+      "after": "After",
+      "beforeImageAlt": "Before Results Screenshot",
+      "afterImageAlt": "After Results Screenshot",
+      "modalBefore": "Prior to our collaboration",
+      "modalAfter": "After our cooperation.",
+      "close": "Close"
+    }
+  },
+  "overall": {
+    "title": "Overall Results",
+    "description": "As a result of our work, we not only reduced the cost per purchase by 23%, but also significantly increased sales through both advertising channels.",
+    "total": "Total purchases: 391",
+    "average": "Average price per purchase: $49.28",
+    "budget": "Advertising budget: $19,269"
+  },
+  "testimonial": {
+    "title": "What Katya says about cooperation: <span class='highlight highlight-red-300 highlight-variant-5'>Client Testimonial</span>",
+    "name": "Katya",
+    "position": "Business Owner",
+    "quote": "✨ Overall, I'm very satisfied with our cooperation. The Advantage team quickly helped us solve our issues with tracking purchases. The results speak for themselves - we significantly reduced the cost per purchase. 📈",
+    "additional1": "It's important, that all processes now work like clockwork, and we can clearly see the results of our advertising efforts.",
+    "additional2": "Now we have set new goals for the next year. Thank you for the professional approach! 🚀"
+  },
+  "form": {
+    "title": "Get a professional digital strategy for your business",
+    "subtitle": "Free consultation",
+    "description": "Our team will help you create an effective customer acquisition system through internet marketing. We focus on three key areas:",
+    "pillars": [
+      {
+        "title": "Analytics",
+        "description": "Detailed analysis of your niche and competitors"
+      },
+      {
+        "title": "Strategy",
+        "description": "Development of a comprehensive promotion plan"
+      },
+      {
+        "title": "Result",
+        "description": "Increase in sales and scaling"
+      }
+    ],
+    "instruction": "Fill out the form below to get a personalized development plan for your business in the digital environment",
+    "footer": "Submit your request now and get a free audit of your current marketing strategy"
+  },
+  "messenger": {
+    "text": "Chat with us on Messenger"
+  }
+}

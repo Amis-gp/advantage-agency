@@ -20,7 +20,7 @@ const V15Page: NextPage = () => {
     const loadTranslations = async () => {
       setIsLoading(true);
       try {
-        const translations = await import(`../../../../messages/${locale}/cases/v15.json`);
+        const translations = await import(`/messages/${locale}/cases/v15.json`);
         setTranslations(translations.default);
         document.title = translations.default.seo.title;
       } catch (error) {
@@ -49,6 +49,18 @@ const V15Page: NextPage = () => {
     
     return result;
   };
+  
+  // Add loading indicator before the main return
+  if (isLoading) {
+    return (
+      <div className="flex items-center justify-center min-h-screen">
+        <div className="text-center">
+          <div className="inline-block animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-rose-600 mb-4"></div>
+          <p className="text-xl font-medium">Loading...</p>
+        </div>
+      </div>
+    );
+  }
   
   return (    
     <div className="text-black bg-gradient-to-b from-white to-gray-50">

@@ -1,0 +1,70 @@
+{
+  "title": "93 Leads for a Taxation Course in Canada",
+  "intro": {
+    "greeting": "Hi everyone, I'm <strong>Marko</strong> - Team Lead for targeted advertising at <strong>ADvantage Agency</strong>. At the beginning of the case, I'll tell you a bit about the client: <strong className='text-red-500'>Tax Canada Accounting</strong>",
+    "clientDescription": "is a professional accounting firm specializing in tax assistance, financial consultations, webinars, and training programs for aspiring professionals in Canada.",
+    "teamLeadIntro": "As the Team Lead for targeted advertising at Advantage Agency, I'm excited to share how we helped Tax Canada Accounting achieve remarkable results. Our journey began with a comprehensive analysis and a strategic approach to their unique challenges.",
+    "advertisingGoal": "In the competitive field of accounting and financial services, the main goal of advertising is to generate quality leads and convert them into clients. We needed to build a strategy that would <strong>effectively reach the target audience</strong>, address their pain points, and showcase Tax Canada Accounting's expertise. Read on to discover how we achieved powerful results for our client."
+  },
+  "challenges": {
+    "title": "Challenges:",
+    "list": [
+      "Limited effectiveness of organic social media activity",
+      "Inadequate business scaling",
+      "Need for in-depth analysis of the target audience and market",
+      "Necessity of setting up targeted advertising",
+      "Creating an effective marketing funnel",
+      "Developing a strategy for an online course"
+    ]
+  },
+  "ctaButton": "Book My Free Consult Now",
+  "approach": {
+    "teamDescription": "Our team exclusively uses <strong>Facebook Ads Manager</strong>, allowing us to display ads simultaneously on three major platforms: Facebook, Instagram, and Messenger. We have the ability to create various audience combinations, taking into account the sales funnel stages, age, gender, geographic location, interests, and warm user audiences.",
+    "title": "Our approach:",
+    "description": "At the beginning of our collaboration, we decided to focus on one of the offers; the client chose to promote an online course, as the training was about to start soon, but there were very few participants.",
+    "table": {
+      "headers": {
+        "step": "Step",
+        "action": "Action"
+      },
+      "rows": [
+        "Set up advertising campaigns and tracked purchases using the Facebook pixel.",
+        "Wrote multiple versions of ad copy that resonated with the target audience.",
+        "Found target audience (5k contacts) using scripts to extract data from Instagram, LinkedIn, Facebook Groups, and other sources. This allowed us to show ads only to interested users.",
+        "Optimized advertising campaigns over 2-4 weeks. Analyzed competitors' ads, reports on age, gender, placements, devices, and ad group effectiveness."
+      ]
+    }
+  },
+  "targetedAudience": {
+    "title": "Targeted Audience Acquisition <span className='highlight highlight-red-300 highlight-variant-5'>( Data-Driven Approach )</span>",
+    "description1": "Our team has specially developed <strong>scripts</strong> that help extract contact information from various sources such as <strong>Instagram, LinkedIn, Facebook Groups</strong>, and other sites. We began searching for our target audience; in this case, these were individuals looking to gain <strong>basic knowledge for filing financial reports</strong>—people eager to master this profession for employment opportunities or those dreaming of starting their own accounting firm.",
+    "description2": "We identified a target contact base of <strong>5,000 individuals</strong>, formatted it appropriately, and prepared it for upload into Facebook. What did this achieve? Now we can show our ads exclusively to users who have shown some level of interest in accounting; this significantly <strong>narrows down targeting</strong> and filters out most users. Additionally, it allows us to create <strong>lookalike audiences</strong> similar to our target audience."
+  },
+  "results": {
+    "after": {
+      "title": "After",
+      "stats": {
+        "views": "Views: 238 544",
+        "clicks": "Clicks: 1 728",
+        "leads": "Amount of leads: 93",
+        "pricePerLead": "Price per lead: $37.69",
+        "costs": "Advertising costs: $3 108"
+      }
+    },
+    "title": "Results:",
+    "afterCooperation": "After our cooperation",
+    "closeButton": "Close"
+  },
+  "callToAction": {
+    "title": "Take your business to the next level with <span className='highlight highlight-red-300 highlight-variant-5'>proven strategies</span>",
+    "description": "If you've read this far, it means you're looking for a reliable partner who will address your marketing needs daily. This will allow you to focus on what truly matters:",
+    "list": [
+      "Your Business",
+      "Your Brand",
+      "Increasing Profits"
+    ],
+    "formIntro": "Fill out the form below and we will contact you shortly to collaboratively develop a strategy and vision for promoting your business online.",
+    "conclusion": "Don't miss this opportunity to take your business to the next level. Contact us today to get a <strong>free consultation</strong> and learn how we can help you achieve significant growth"
+  },
+  "messengerButton": "Chat with us on Messenger"
+}

@@ -1,0 +1,119 @@
+{
+  "seo": {
+    "title": "132 Leads for Notary Services in Berlin"
+  },
+  "hero": {
+    "title": "<span className='highlight'>132 leads</span> for notary services in Berlin"
+  },
+  "about": {
+    "title": "About the client:",
+    "description": "Marina - head of a notary firm with 22 years of experience, providing services in Berlin and Zurich for Ukrainian emigrants."
+  },
+  "challenges": {
+    "title": "Challenges:",
+    "list": [
+      "High competition among notary services in Berlin",
+      "Lack of an effective landing page for conversion",
+      "Need for targeting Ukrainian emigrants",
+      "Difficulty in tracking advertising effectiveness",
+      "Need for advertising budget optimization",
+      "Absence of a systematic sales funnel"
+    ],
+    "imageAlt": "Challenges Image"
+  },
+  "cta": {
+    "button": "Book Your Free Consultation Now"
+  },
+  "analysis": {
+    "description": "For successful promotion of notary services in Berlin, we developed a comprehensive approach that includes using <strong>Meta Ads and Google Ads</strong>. Our strategy is based on a deep analysis of the market and creating an optimized sales funnel using a specially developed landing page."
+  },
+  "approach": {
+    "title": "Our approach:",
+    "description": "At the initial stage of cooperation, we conducted a detailed analysis with the client to identify competitive advantages and develop an effective strategy for attracting clients for notary services.",
+    "steps": [
+      "Identifying goals and conducting an initial analysis of competitive advantages",
+      "Detailed market analysis and creation of the portrait of an ideal client",
+      "Development of advertising strategies for Meta Ads and Google Ads, creation of an optimized landing page",
+      "Setting up advertising, creating ads and optimizing advertising campaigns for 2-4 weeks"
+    ]
+  },
+  "meta": {
+    "title": "Meta ADS: <span className='highlight highlight-red-300 highlight-variant-5'>( facebook/instagram )</span>",
+    "description": "After a detailed analysis of the notary services market in Berlin, we developed a targeting strategy for the Ukrainian diaspora. We created personalized ads that highlighted <strong>experience, reliability, and professionalism</strong> of the notary firm. We paid special attention to the development of video content and visualization of the process of working with clients.",
+    "results": {
+      "title": "Meta Ads Results",
+      "leads": "Leads: 74",
+      "records": "Records: 26",
+      "average": "Average check: $200",
+      "costs": "Advertising costs: $992",
+      "roi": "ROI: 520%"
+    },
+    "after": {
+      "title": "Results:",
+      "afterTitle": "After",
+      "afterImageAlt": "After Results Screenshot",
+      "modalTitle": "After our cooperation.",
+      "close": "Close"
+    }
+  },
+  "google": {
+    "title": "<span className='highlight highlight-green-200 highlight-variant-5'>Google Ads:</span>",
+    "description": "For Google Ads, we developed a structure of campaigns focused on different types of notary services. We conducted a <strong>deep analysis of keywords</strong> and created optimized ads for each group of services. We paid special attention to geo-targeting and language settings to reach the Ukrainian audience.",
+    "results": {
+      "title": "Google Ads Results",
+      "leads": "Leads: 58",
+      "records": "Records: 17",
+      "costs": "Advertising costs: $1084",
+      "roi": "ROI: 340%"
+    },
+    "after": {
+      "title": "Results:",
+      "afterTitle": "After",
+      "afterImageAlt": "After Results Screenshot",
+      "modalTitle": "After our cooperation.",
+      "close": "Close"
+    }
+  },
+  "overall": {
+    "title": "Overall results:",
+    "description": "Thanks to the comprehensive approach and optimization of advertising campaigns, <strong>we managed to achieve significant growth</strong> in the number of clients and notary firm profits.",
+    "results": [
+      "Total leads: 132",
+      "Conversion to clients: 43",
+      "Total profit: $8,600",
+      "Total expenses: $2,076"
+    ]
+  },
+  "testimonial": {
+    "title": "<span className='highlight highlight-red-300 highlight-variant-5'>What Marina says about cooperation:</span>",
+    "name": "Marina",
+    "position": "Head of the notary firm",
+    "quote1": "I am very satisfied with the results of our cooperation. The quality of leads we get through advertising is much higher than from other channels. These are people who really need our services right now.",
+    "quote2": "It is especially important that we managed to establish a stable stream of clients among the Ukrainian diaspora in Berlin. Now we have a clear system for attracting clients that works 24/7.",
+    "quote3": "The professional approach of the team and constant support helped us to reach a new level of business development. Thank you for your excellent work!"
+  },
+  "form": {
+    "title": "Get a professional digital-marketing strategy for your business",
+    "subtitle": "Free consultation",
+    "description": "Our team will help you create an effective system for attracting clients through internet marketing. We focus on three key areas:",
+    "areas": [
+      {
+        "title": "Analytics",
+        "description": "Detailed analysis of your niche and competitors"
+      },
+      {
+        "title": "Strategy",
+        "description": "Development of a comprehensive marketing plan"
+      },
+      {
+        "title": "Result",
+        "description": "Increase sales and scale"
+      }
+    ],
+    "formDescription": "Fill out the form below to receive a personalized development plan for your business in digital-format",
+    "note": "Leave a request now and get a <strong>free audit</strong> of your current marketing strategy"
+  },
+  "messenger": {
+    "text": "Chat with us on Messenger"
+  }
+}

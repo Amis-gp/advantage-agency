@@ -1,0 +1,74 @@
+{
+  "title": "$116k in revenue from Roofing services",
+  "intro": {
+    "paragraph1": "Meet Harry, <strong className='text-rose-600'>the founder of Champion Roofing in Chicago.</strong> Our team met him on Reddit and he was looking for answers to various questions about brand positioning, online advertising channels for his niche, and other marketing solutions.",
+    "paragraph2": "We were happy to express our desire to help Harry with marketing for his company. The project was interesting because in the US, the roofing industry has a <strong>very big</strong> demand and a wide range of services: from leakage repair, replacement of individual elements, installation of classic tiles, installation of modern energy-efficient roofing systems, to complete roof reconstruction. Our clients range from private homeowners in need of urgent repairs to <strong>large developers</strong> who need comprehensive solutions for entire residential complexes.",
+    "paragraph3": "We were thrilled to learn about the specifics of the local roofing market, so the first thing we did was sit down with Harry and start asking him a bunch of questions to better understand the ins and outs of his business, his <strong>ideal customers</strong>, their pain points and desires, his unique selling proposition, analysis of his competition etc. We got a general idea of where he thought the best opportunities for business development might be.<br/>\nAfter getting market insights and key information from Harry, we did some competitor and <strong>keyword research</strong> to see what other roofing companies in the area were doing that were really active in online marketing and successfully attracting customers online."
+  },
+  "challenges": {
+    "title": "The Challenges:",
+    "list": [
+      "Poor media visibility of Champion Roofing as an expert in the field of roofing",
+      "Lack of an effective marketing strategy to attract customers",
+      "Incorrect positioning of their services in the market",
+      "Lack of a clear offer",
+      "Loss of funds on ineffective ad platforms",
+      "High competition and monopoly in the US roofing market ( Tecta America, Lindholm Roofing etc. )"
+    ]
+  },
+  "approach": {
+    "title": "Our approach:",
+    "table": {
+      "headers": {
+        "step": "Step",
+        "action": "Action"
+      },
+      "rows": [
+        "Conducted a detailed analysis of the target audience, competitors, geographical features and specifics of the US roofing market.",
+        "Developed a comprehensive digital marketing plan, focusing on Google Ads and search engine optimization (SEO) campaigns",
+        "Created an SMM strategy for Champion Roofing's active social media presence.",
+        "Helped with writing scripts for social networks that demonstrated the benefits and quality of Champion Roofing's work.",
+        "Developed a modern, search engine optimized landing page, designed as a Sales Funnel with a portfolio of completed projects and customer reviews aimed at maximizing conversions."
+      ]
+    }
+  },
+  "ctaButton": "Book My Free Consult Now",
+  "googleAds": {
+    "title": "Google Ads",
+    "paragraph1": "We conducted a detailed keyword research, analyzed paid and organic traffic, and identified <strong>effective keywords</strong> in the roofing services niche.",
+    "paragraph2": "We developed an advertising campaign structure from scratch, carefully selected the most relevant keywords, and applied solutions specific to the roofing industry.",
+    "paragraph3": "We optimized bids and conversions, changing strategies to \"maximize conversions\" and collecting data, taking into account the <strong>seasonality of</strong> demand for roofing services and the geographical characteristics of the target market.",
+    "after": {
+      "title": "After",
+      "stats": {
+        "impressions": "Impressions: 2 574",
+        "clicks": "Clicks: 189",
+        "cost": "Cost: $4 313",
+        "leads": "Leads: 18",
+        "costPerLead": "Cost per Lead: $227",
+        "highTicketClients": "High ticket clients: 7"
+      }
+    }
+  },
+  "results": {
+    "title": "Results:",
+    "afterCooperation": "After our cooperation",
+    "closeButton": "Close"
+  },
+  "conclusions": {
+    "title": "Conclusions:",
+    "paragraph": "We developed a comprehensive digital marketing strategy, which included creating a high-converting sales funnel, SMM content plan, setting up effective Google Search Ads campaigns, and implementing an SEO strategy. This allowed us to make a louder statement about the company, showcase their <strong>expertise</strong>, and ensure a growing flow of new customers."
+  },
+  "testimonial": {
+    "title": "What Harry says about <span className='highlight highlight-rose-300 highlight-variant-5'>collaboration</span>",
+    "name": "Harry",
+    "position": "Founder of <a href=\"https://championroofing.com/\" target=\"_blank\" rel=\"noopener noreferrer\" className=\"text-red-600\"><strong><u>Champion Roofing</u></strong></a>",
+    "quote": "\"The quality of the leads that we managed to generate from advertising is much better than what I received from various platforms where I posted ads about our services. These are not just cold customers who don't know what they want and ask a million stupid questions, they are interested people that need help with their roofing, who believe in our expertise.<br/><br/>\nNow I have realized that the number of marketing channels needs to be increased, various details need to be worked out, and the system that is gaining momentum and starting to generate customers steadily needs to be improved. I won't hesitate to use you guys, because there is still a lot of work to be done.\""
+  },
+  "form": {
+    "title": "Pump up your business with <span className='highlight highlight-rose-300 highlight-variant-5'>proven strategies</span>",
+    "paragraph1": "Are you ready to get a steady <strong>stream</strong> of clients? Our agency specializes in developing powerful marketing strategies. We will work closely with you to understand your unique goals and develop a customized plan to rapidly grow your personal brand.",
+    "paragraph2": "Don't miss the opportunity to take your business to the next level. Contact us today for a free consultation to learn how we can help you achieve significant <strong>growth</strong>."
+  },
+  "messengerButton": "Chat with us on Messenger"
+}

@@ -1,17 +1,66 @@
-import React from 'react';
+"use client"
+import React, { useEffect, useState } from 'react';
 import Head from 'next/head';
 import Image from 'next/image';
 import Link from 'next/link';
-import { useTranslations } from 'next-intl';
-import { useLocale } from 'next-intl';
-import LanguageSwitcher from '../LanguageSwitcher'
-import { GetStaticProps } from 'next';
+import { useParams } from 'next/navigation';
 
 export default function B2BLeadGenerationTrends() {
-  const t = useTranslations('blog.b2b-lead-generation-trends');
-  const locale = useLocale();
-  const canonicalUrl = `https://yourdomain.com/${locale}/blog/b2b-lead-generation-2025`;
+  const params = useParams();
+  const locale = params.locale as string;
+  const [translations, setTranslations] = useState<any>({});
+  const [isLoading, setIsLoading] = useState(true);
   const currentDate = new Date().toISOString();
+  
+  useEffect(() => {
+    const loadTranslations = async () => {
+      setIsLoading(true);
+      try {
+        const translations = await import(`/messages/${locale}/blog/b2b-lead-generation-trends.json`);
+        setTranslations(translations.default);
+        document.title = translations.default.meta.title;
+      } catch (error) {
+        console.error('error downloading translations:', error);
+      } finally {
+        setIsLoading(false);
+      }
+    };
+    
+    loadTranslations();
+  }, [locale]);
+  
+  const t = (path: string) => {
+    if (isLoading) return '';
+    
+    const keys = path.split('.');
+    let result = translations;
+    
+    for (const key of keys) {
+      if (result && result[key] !== undefined) {
+        result = result[key];
+      } else {
+        return '';
+      }
+    }
+    
+    return result;
+  };
+  
+  // Use relative paths instead of domain-based URLs
+  const canonicalUrl = `/blog/b2b-lead-generation-2025`;
+  
+  if (isLoading) {
+    return (
+      <div className="bg-gradient-to-br from-gray-900 to-black text-white font-sans min-h-screen flex items-center justify-center">
+        <div className="text-center">
+          <div className="inline-block h-12 w-12 animate-spin rounded-full border-4 border-solid border-blue-400 border-r-transparent align-[-0.125em] motion-reduce:animate-[spin_1.5s_linear_infinite]" role="status">
+            <span className="!absolute !-m-px !h-px !w-px !overflow-hidden !whitespace-nowrap !border-0 !p-0 ![clip:rect(0,0,0,0)]">Loading...</span>
+          </div>
+          <p className="mt-4 text-lg text-blue-300">Loading content...</p>
+        </div>
+      </div>
+    );
+  }
   
   return (
     <div className="bg-gradient-to-br from-gray-900 to-black text-white font-sans">
@@ -27,13 +76,13 @@ export default function B2BLeadGenerationTrends() {
         {/* OpenGraph теги для соцмереж */}
         <meta property="og:title" content={t('meta.title')} />
         <meta property="og:description" content={t('meta.description')} />
-        <meta property="og:image" content="https://yourdomain.com/img/blog/b2b-lead-generation-trends-2025/hero.jpg" />
+        <meta property="og:image" content="/img/blog/b2b-lead-generation-trends-2025/hero.jpg" />
         <meta property="og:url" content={canonicalUrl} />
         <meta property="og:type" content="article" />
         <meta property="og:locale" content={locale} />
         <meta property="article:published_time" content="2023-11-15T10:00:00Z" />
         <meta property="article:modified_time" content={currentDate} />
-        <meta property="article:author" content="https://yourdomain.com/about" />
+        <meta property="article:author" content="/about" />
         <meta property="article:section" content="B2B Marketing" />
         <meta property="article:tag" content="B2B, Lead Generation, Marketing" />
         
@@ -41,12 +90,12 @@ export default function B2BLeadGenerationTrends() {
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content={t('meta.title')} />
         <meta name="twitter:description" content={t('meta.description')} />
-        <meta name="twitter:image" content="https://yourdomain.com/img/blog/b2b-lead-generation-trends-2025/hero.jpg" />
+        <meta name="twitter:image" content="/img/blog/b2b-lead-generation-trends-2025/hero.jpg" />
         
         {/* Альтернативні мовні версії */}
-        <link rel="alternate" hrefLang="uk" href="https://yourdomain.com/uk/blog/b2b-lead-generation-2025" />
-        <link rel="alternate" hrefLang="en" href="https://yourdomain.com/en/blog/b2b-lead-generation-2025" />
-        <link rel="alternate" hrefLang="x-default" href="https://yourdomain.com/en/blog/b2b-lead-generation-2025" />
+        <link rel="alternate" hrefLang="uk" href={`/uk/blog/b2b-lead-generation-2025`} />
+        <link rel="alternate" hrefLang="en" href={`/en/blog/b2b-lead-generation-2025`} />
+        <link rel="alternate" hrefLang="x-default" href={`/en/blog/b2b-lead-generation-2025`} />
         
         <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet" />
         
@@ -59,7 +108,7 @@ export default function B2BLeadGenerationTrends() {
               '@type': 'BlogPosting',
               'headline': t('meta.title'),
               'description': t('meta.description'),
-              'image': 'https://yourdomain.com/img/blog/b2b-lead-generation-trends-2025/hero.jpg',
+              'image': '/img/blog/b2b-lead-generation-trends-2025/hero.jpg',
               'datePublished': '2023-11-15T10:00:00Z',
               'dateModified': currentDate,
               'author': {
@@ -71,7 +120,7 @@ export default function B2BLeadGenerationTrends() {
                 'name': t('sections.author.company'),
                 'logo': {
                   '@type': 'ImageObject',
-                  'url': 'https://yourdomain.com/img/logo.png'
+                  'url': '/img/logo.png'
                 }
               },
               'mainEntityOfPage': {
@@ -83,7 +132,7 @@ export default function B2BLeadGenerationTrends() {
         />
       </Head>
       
-      <div className="max-w-4xl mx-auto px-5 py-24 sm:pt-32">
+      <div className="max-w-4xl mx-auto px-5 py-24 sm:pt-32 ">
         <article className="prose prose-lg max-w-none prose-headings:font-display prose-headings:text-white prose-p:text-gray-300 prose-p:leading-relaxed prose-a:text-blue-400 prose-a:no-underline hover:prose-a:text-blue-300" itemScope itemType="https://schema.org/BlogPosting">
           <meta itemProp="headline" content={t('meta.title')} />
           <meta itemProp="description" content={t('meta.description')} />
@@ -122,10 +171,6 @@ export default function B2BLeadGenerationTrends() {
             <p className="text-xl font-medium leading-relaxed text-white">{t('introduction')}</p>
           </div>
           
-          <h2 className="text-3xl font-bold mt-16 mb-6 relative">
-            <span className="inline-block">{t('sections.keyTrends.title')}</span>
-            <span className="absolute -left-6 top-1/2 transform -translate-y-1/2 w-3 h-8 bg-blue-500"></span>
-          </h2>
           <p className="text-lg">{t('sections.keyTrends.content')}</p>
           
           <h3 className="text-2xl font-bold mt-12 mb-4 text-blue-300">{t('sections.aiDomination.title')}</h3>
@@ -272,69 +317,7 @@ export default function B2BLeadGenerationTrends() {
             </p>
           </div>
         </article>
-        
-        {/* <div className="mt-16 flex justify-center space-x-6">
-          <a href="https://facebook.com/share" className="p-3 bg-blue-600 text-white rounded-full hover:bg-blue-500 transition-colors duration-300 transform hover:scale-110">
-            <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-              <path fillRule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" clipRule="evenodd" />
-            </svg>
-          </a>
-          <a href="https://twitter.com/intent/tweet" className="p-3 bg-blue-400 text-white rounded-full hover:bg-blue-300 transition-colors duration-300 transform hover:scale-110">
-            <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-              <path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84" />
-            </svg>
-          </a>
-          <a href="https://linkedin.com/shareArticle" className="p-3 bg-blue-700 text-white rounded-full hover:bg-blue-600 transition-colors duration-300 transform hover:scale-110">
-            <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-              <path fillRule="evenodd" d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" clipRule="evenodd" />
-            </svg>
-          </a>
-        </div>
-        
-        <div className="mt-16 mb-10">
-          <h3 className="text-2xl font-bold mb-8 text-center text-white">{t('sections.relatedArticles.title')}</h3>
-          <div className="grid md:grid-cols-3 gap-6">
-            <a href={t('sections.relatedArticles.articles.article1.url')} className="group">
-              <div className="bg-gradient-to-br from-gray-800 to-gray-900 border border-gray-700 rounded-xl p-6 transition-all duration-300 hover:shadow-lg hover:shadow-blue-900/20 hover:border-blue-800">
-                <h4 className="font-semibold text-lg mb-2 text-blue-300 group-hover:text-blue-200 transition-colors">
-                  {t('sections.relatedArticles.articles.article1.title')}
-                </h4>
-                <div className="mt-4 flex justify-end">
-                  <span className="text-blue-400 text-sm group-hover:translate-x-1 transition-transform duration-300">Читати далі →</span>
-                </div>
-              </div>
-            </a>
-            <a href={t('sections.relatedArticles.articles.article2.url')} className="group">
-              <div className="bg-gradient-to-br from-gray-800 to-gray-900 border border-gray-700 rounded-xl p-6 transition-all duration-300 hover:shadow-lg hover:shadow-blue-900/20 hover:border-blue-800">
-                <h4 className="font-semibold text-lg mb-2 text-blue-300 group-hover:text-blue-200 transition-colors">
-                  {t('sections.relatedArticles.articles.article2.title')}
-                </h4>
-                <div className="mt-4 flex justify-end">
-                  <span className="text-blue-400 text-sm group-hover:translate-x-1 transition-transform duration-300">Читати далі →</span>
-                </div>
-              </div>
-            </a>
-            <a href={t('sections.relatedArticles.articles.article3.url')} className="group">
-              <div className="bg-gradient-to-br from-gray-800 to-gray-900 border border-gray-700 rounded-xl p-6 transition-all duration-300 hover:shadow-lg hover:shadow-blue-900/20 hover:border-blue-800">
-                <h4 className="font-semibold text-lg mb-2 text-blue-300 group-hover:text-blue-200 transition-colors">
-                  {t('sections.relatedArticles.articles.article3.title')}
-                </h4>
-                <div className="mt-4 flex justify-end">
-                  <span className="text-blue-400 text-sm group-hover:translate-x-1 transition-transform duration-300">Читати далі →</span>
-                </div>
-              </div>
-            </a>
-          </div> 
-        </div>*/}
       </div>
     </div>
   );
 }
-
-export const getStaticProps: GetStaticProps = async ({ locale }) => {
-  return {
-    props: {
-      messages: (await import(`../../messages/${locale}.json`)).default
-    }
-  };
-};
