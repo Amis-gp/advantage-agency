@@ -11,7 +11,7 @@ export const portfolioSlides = [
         location: '🇺🇸 United States',
         slug: {
             en: 'cases/v14',
-            uk: 'cases/v14uk'
+            uk: 'cases/v14'
         },
     },
     {
@@ -26,7 +26,7 @@ export const portfolioSlides = [
         location: '🇺🇸 United States',
         slug: {
             en: 'cases/v13',
-            uk: 'cases/v13uk'
+            uk: 'cases/v13'
         },
     },
     {
@@ -42,7 +42,7 @@ export const portfolioSlides = [
         location: '🌎 Worldwide',
         slug: {
             en: 'cases/v14',
-            uk: 'cases/v14uk'
+            uk: 'cases/v14'
         },
     },
     {
@@ -58,7 +58,7 @@ export const portfolioSlides = [
         location: '🇩🇪 Germany',
         slug: {
             en: 'cases/v11',
-            uk: 'cases/v11uk'
+            uk: 'cases/v11'
         },
     },
     {
@@ -74,7 +74,7 @@ export const portfolioSlides = [
         location: '🇨🇦 Canada',
         slug: {
             en: 'cases/v10',
-            uk: 'cases/v10uk'
+            uk: 'cases/v10'
         },
     },
     
@@ -137,7 +137,7 @@ export const portfolioSlides = [
         location: '🇺🇸 United States',
         slug: {
             en: 'cases/v6',
-            uk: 'cases/v6uk'
+            uk: 'cases/v6'
         },
     },
     {
@@ -152,7 +152,7 @@ export const portfolioSlides = [
         location: '🇺🇸 United States',
         slug: {
             en: 'cases/v7',
-            uk: 'cases/v7uk'
+            uk: 'cases/v7'
         },
     },
     {
@@ -168,7 +168,7 @@ export const portfolioSlides = [
         location: '🇺🇸 United States',
         slug: {
             en: 'cases/v8',
-            uk: 'cases/v8uk'
+            uk: 'cases/v8'
         },
     },
     {
@@ -184,7 +184,7 @@ export const portfolioSlides = [
         location: '🇺🇸 United States',
         slug: {
             en: 'cases/v9',
-            uk: 'cases/v9uk'
+            uk: 'cases/v9'
         },
     },
     {
@@ -214,7 +214,7 @@ export const portfolioSlides = [
         location: '🇮🇱 Israel',
         slug: {
             en: 'cases/v12',
-            uk: 'cases/v12uk'
+            uk: 'cases/v12'
         },
     },
 ];

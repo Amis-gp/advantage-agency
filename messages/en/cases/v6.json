@@ -1,0 +1,57 @@
+{
+  "seo": {
+    "title": "History of success 3D rendering company"
+  },
+  "hero": {
+    "title": "<span class='highlight'>B2B lead generation</span> through email marketing for 3D rendering company"
+  },
+  "about": {
+    "paragraph1": "Meet Konstantin, the owner of Studio Render Market — <strong class='text-amber-600 font'>a 3D rendering and modeling agency based in Los Angeles.</strong> His team offers the development of 3D furniture models, product visualization, and more, helping interior designers and furniture manufacture business owners to sell their products better with the precise visualization.",
+    "paragraph2": "For Konstantin, the biggest challenge was stable lead generation for their services, as well as direct contacts to build outreach list, so he turned to us for help with building an email marketing system for their lead generation.",
+    "paragraph3": "For our team, email marketing is something commonplace, as we have been doing it for our services and for others for a long time and with the good outcome, so we were happy to get to work."
+  },
+  "challenges": {
+    "title": "The Challenges:",
+    "list": [
+      "Narrow targeted audience",
+      "Difficult to get emails of decision-makers",
+      "Sending emails manually from one domain, with the wrong approach",
+      "Lack of an automated lead generation system",
+      "86% of emails landing in SPAM",
+      "not enough volume of sent emails per week/month"
+    ],
+    "imageAlt": "Challenges Image"
+  },
+  "approach": {
+    "title": "Our approach:",
+    "steps": [
+      "We conducted a detailed research of the market and understood pain points of the audience",
+      "Prepared mail server and other tools",
+      "Pulled out contacts of decision makers in the furniture business industry, thanks to our own tool",
+      "Setup of 10 senders, writing email letters",
+      "We've built 10 sequences of 4-5 emails with different marketing approaches",
+      "Set up email warm-up tools",
+      "Constant optimization of letters, subjects and angles."
+    ]
+  },
+  "analysis": {
+    "paragraph": "Thanks to detailed analysis and consultations with Kostya, we received valuable information about the positioning of services, subtleties, and unique needs of the Studio Render Market."
+  },
+  "cta": {
+    "button": "Book My Free Consult Now"
+  },
+  "responses": {
+    "title": "Response from <span class='highlight highlight-amber-300 highlight-variant-5'>potential leads:</span>",
+    "imageAlt1": "com-1",
+    "imageAlt2": "com2",
+    "imageAlt3": "com3",
+    "close": "Close"
+  },
+  "stats": {
+    "paragraph": "Thanks to the quality of the hand-picked audience of furniture manufacturers that we were able to get, we managed to achieve a great open rate, here is an example of statistics from one of the senders:",
+    "imageAlt": "stata"
+  },
+  "results": {
+    "title": "Results:"
+  }
+}
