@@ -13,8 +13,6 @@ export default function Results() {
     const videoRef = useRef<HTMLVideoElement>(null);
     const [isPlaying, setIsPlaying] = useState(false);
 
-    const caseUrl = locale === 'uk' ? '/cases/v14uk' : '/cases/v14';
-
     const stats = Array.from({ length: 3 }, (_, i) => ({
         number: t(`stats.${i}.number`),
         label: t(`stats.${i}.label`),
@@ -123,7 +121,7 @@ export default function Results() {
                             ))}
                         </div>
                         <Link 
-                            href={caseUrl}
+                            href={"/cases/v14"}
                             className="flex items-center justify-center gap-3 text-white bg-gradient-to-r from-[#4F46E5] via-[#7C3AED] to-[#06B6D4] p-3 rounded-xl hover:opacity-90 transition-all duration-300 group mt-8"
                             onClick={handleCaseClick}
                         >

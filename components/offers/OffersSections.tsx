@@ -95,7 +95,7 @@ const SliderSection = ({ slides, bgColor, borderColor, locale }: {
 
                                 {slide.link1 && (
                                     <Link 
-                                        href={`${slide.link1.href}${locale}`}
+                                        href={`${slide.link1.href}`}
                                         onMouseEnter={() => playSound('hover_1')}
                                         className="mt-8 mb-8 w-fit text-2xl font-semibold inline-block px-6 py-3 text-white border border-yellow rounded-lg hover:bg-white/10 transition-all duration-200"
                                     >

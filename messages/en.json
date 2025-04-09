@@ -1233,15 +1233,29 @@
         "7": {
             "title": "Resources and Materials",
             "links": {
-                "label": "Links to your pages or lead magnets",
-                "placeholder": "Paste links to your landing pages, product pages, lead magnets or other resources that can be used in emails..."
+            "label": "Links to your pages",
+            "placeholder": "Insert links to your landing pages, product pages, or other resources that can be used in emails..."
             },
             "files": {
-                "label": "Upload additional materials",
-                "dropzone": "Click to upload files",
-                "formats": "JPG, PNG, PDF, DOC, XLS, XLSX, ZIP, RAR up to 20MB",
-                "uploaded": "Uploaded files",
-                "sizeError": "Some files exceed the 20MB limit and were not uploaded"
+            "label": "Upload additional materials",
+            "dropzone": "Click to upload files or drag and drop",
+            "formats": "JPG, PNG, PDF, DOC, DOCX, XLS, XLSX, ZIP, RAR (max 20MB)",
+            "uploaded": "Uploaded files:",
+            "sizeError": "Some files exceed the 20MB size limit and were not uploaded."
+            }
+        },
+        "8": {
+            "title": "Links to your lead magnets",
+            "links": {
+            "label": "Links to your lead magnets",
+            "placeholder": "Insert links to your lead magnets or other resources that can be used in emails..."
+            },
+            "files": {
+            "label": "Upload additional materials",
+            "dropzone": "Click to upload files or drag and drop",
+            "formats": "JPG, PNG, PDF, DOC, DOCX, XLS, XLSX, ZIP, RAR (max 20MB)",
+            "uploaded": "Uploaded files:",
+            "sizeError": "Some files exceed the 20MB size limit and were not uploaded."
             }
         }
         },

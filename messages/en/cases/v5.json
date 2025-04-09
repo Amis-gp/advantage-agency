@@ -1,0 +1,134 @@
+{
+  "title": "Success story in the interior design niche",
+  "heading": "We developed a personal brand for the interior designer and helped her earn her first $25K",
+  "intro": {
+    "paragraph1": "Meet Mary, an interior designer from New York. She offers planning and development of concepts, selection of lighting and decor, author's support, development of textile design, and much more. Mary has set a goal to scale her business, generate more clients, and hire additional employees, but to realize this, she needed to implement inbound marketing and launch effective advertising.",
+    "paragraph2": "Our team was interested in taking on such a project, as we already have good experience in the construction and real estate industries, which would help us cover a larger part of the industry. There was plenty of work to be done, so we didn't hesitate and started a detailed analysis."
+  },
+  "challenges": {
+    "title": "The Challenges:",
+    "list": [
+      "The interior design market is very saturated",
+      "You need to have a collection of high-quality design works",
+      "Spend a lot of time and resources on attracting new clients",
+      "Lack of a clear plan for building a personal brand and media presence"
+    ]
+  },
+  "approach": {
+    "title": "Our Approach:",
+    "table": {
+      "headers": ["Step", "Action"],
+      "rows": [
+        "We conducted a thorough analysis of the market and services and understood the customers' pain points",
+        "Developed a comprehensive online marketing strategy tailored to Mary's unique needs and goals.",
+        "Developed a compelling landing page with an album of work that encouraged contact with Mary.",
+        "Created a clear media plan for Mary and designed a logo.",
+        "Launched advertising on Google ads and Meta ads."
+      ]
+    }
+  },
+  "cta": "Book My Free Consult Now",
+  "strategy": {
+    "title": "Our unique strategy for Mary advertising campaigns",
+    "paragraph1": "Advantage Agency specializes in creating viral advertising campaigns on Meta (Facebook and Instagram) and Google Ads platforms. Our team of experts with experience and a deep understanding of the advertising industry created a new strategy for Mary's personal brand.",
+    "paragraph2": "Through a detailed campaign audit and consultations with Mary, we gained valuable insights into her unique style and market preferences, target audience, and development goals. This knowledge informed our strategic approach, enabling us to develop a campaign that resonated with potential customers and achieved tangible results.",
+    "tactics": {
+      "intro": "We used a number of proven tactics, including:",
+      "list": [
+        "Created promotional videos, telling stories and building funnels to attract potential customers",
+        "Developed and promoted a personal brand on the Internet.",
+        "Set up detailed targeting to attract ideal clients for interior design services based on demographics, interests, and behavior.",
+        "Offers and promotions that encourage immediate action - registration in the shortest possible time",
+        "Continuous optimization and A/B testing to improve ad performance and maximize ROI"
+      ],
+      "conclusion": "By using these strategies in Meta Ads and Google Ads, we were confident in our ability to ensure a steady stream of new customers and increase brand awareness."
+    }
+  },
+  "techniques": {
+    "title": "A deep dive into our techniques",
+    "intro": "With a clear strategy in place, it was time to put our plan into action. Our team of experts rolled up their sleeves and got to work, implementing a number of proven techniques across Meta Ads, Google Ads, and our consulting services.",
+    "metaAds": {
+      "title": "Meta Ads: Engaging Audiences on Facebook and Instagram",
+      "results": {
+        "title": "After",
+        "date": "May 1 - May 31",
+        "adSpend": "$1,515",
+        "linkClicks": "706",
+        "ctr": "2.11%",
+        "leads": "13"
+      },
+      "paragraph1": "We launched ads through the Ads Manager panel and used Facebook and Instagram placements.",
+      "paragraph2": "Our display campaigns were designed to grab the attention of potential customers scrolling through their Facebook and Instagram feeds. We developed compelling ad copy and eye-catching visual ads that showcased Mary's unique offerings and striking imagery that could impress any user interested in interior design.",
+      "resultsTitle": "Results:",
+      "afterTitle": "After Our Work"
+    },
+    "googleAds": {
+      "title": "Google Ads: Attracting Clients Through Search",
+      "results": {
+        "title": "After",
+        "date": "May 1 - May 31",
+        "costPerResult": "$301.34",
+        "linkClicks": "93",
+        "ctr": "5.36%",
+        "conversions": "6"
+      },
+      "paragraph": "Our Google Ads campaigns were aimed at attracting potential customers who are actively looking for interior design services in New York. We used a number of optimization techniques to bring Mary's brand to the top of the search results.",
+      "list": [
+        "We developed advertising campaigns for each service with targeted keywords.",
+        "Analyzed and eliminated negative keywords to improve the relevance of ads",
+        "Optimized bids and conversions by modifying strategies to \"maximize conversions\" and collecting data.",
+        "Created Performance Max campaigns to maximize results across Google's advertising channels"
+      ],
+      "techniques": {
+        "googleAds": {
+          "title": "Google Ads",
+          "subtitle": "Attracting Clients Through Search",
+          "modalTitle": "Google Ads Results",
+          "imageAlt": "Google Ads Results Screenshot",
+          "resultsTitle": "Results:",
+          "afterTitle": "After Our Work"
+        },
+        "metaAds": {
+          "modalTitle": "Meta Ads Results",
+          "imageAlt": "Meta Ads Results Screenshot"
+        },
+        "challenges": {
+          "imageAlt": "Interior design challenges"
+        },
+        "strategy": {
+          "imageAlt": "Meta Ads Strategy"
+        }
+      }
+    },
+    "customStrategies": {
+      "title": "Customized Strategies for",
+      "highlight": "Success",
+      "paragraph": "Our full-service support played a significant role in building Mary's brand and bringing it to the top. We worked closely with her to understand her unique needs, goals, and target audience.",
+      "list": [
+        "We developed a new landing page with a catalog of works from scratch.",
+        "We helped to create an offer.",
+        "Provided recommendations on creating interesting video content and optimizing ad placement",
+        "Provided ongoing support and strategic guidance to ensure long-term success"
+      ],
+      "conclusion": "By strategically combining these tactics with Meta Ads, Google Ads, and consulting services, we created a powerful online marketing plan that helped Mary."
+    }
+  },
+  "modal": {
+    "close": "Close"
+  },
+  "testimonial": {
+    "title": "A Сompany Owner's Testimonial",
+    "name": "Mary",
+    "position": "Interior designer specialist",
+    "quote": "I can say that I am satisfied, it was a difficult step for me, I was very hesitant, but the risks paid off. Now I plan to continue working with the guys, now I plan to recruit an even bigger team!"
+  },
+  "form": {
+    "title": "Ready to Transform Your Company?",
+    "titleHighlight": "Transform Your Company?",
+    "description": "See how our effective digital marketing techniques can help your company grow and succeed more than ever before. Schedule your free consultation today and discover how we can help you achieve the growth you've always desired.",
+    "note": "Don't miss this opportunity to unlock your company's true potential. At the moment we can take not more than 3 new clients, so make sure that your story will be the next and take the first step towards transforming your business by getting in touch with us via Messenger or booking a call."
+  },
+  "messenger": {
+    "text": "Chat with us on Messenger"
+  }
+}

@@ -15,6 +15,21 @@ export const portfolioSlides = [
         },
     },
     {
+        title: 'Zeno CRM',
+        date: '6 weeks campaign',
+        image: '/img/portfolio/zeno-crm.webp',
+        stats: {
+            emailsSent: '6000',
+            openRate: '57%',
+            replyRate: '2%'
+        },
+        location: '🇩🇪 🇳🇱 🇧🇪 Europe',
+        slug: {
+            en: 'cases/v16',
+            uk: 'cases/v16'
+        },
+    },
+    {
         title: 'Email Marketing',
         date: '01.03.2024 - 31.03.2024',
         image: '/img/portfolio/email-marketing.webp',
@@ -29,6 +44,7 @@ export const portfolioSlides = [
             uk: 'cases/v13'
         },
     },
+    
     {
         title: 'Our Scrapping Software',
         date: '01.11.2024 - 31.01.2025',

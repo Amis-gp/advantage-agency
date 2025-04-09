@@ -52,6 +52,10 @@ interface FormData {
     links: string
     uploadedFiles: string[]
   }
+  leadMagnets: {
+    links: string
+    uploadedFiles: string[]
+  }
 }
 
 const BriefEmailMarketing = () => {
@@ -105,12 +109,17 @@ const BriefEmailMarketing = () => {
     resources: {
       links: '',
       uploadedFiles: []
+    },
+    leadMagnets: {
+      links: '',
+      uploadedFiles: []
     }
   })
 
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [showModal, setShowModal] = useState(false)
   const [uploadedFiles, setUploadedFiles] = useState<File[]>([])
+  const [uploadedLeadMagnetFiles, setUploadedLeadMagnetFiles] = useState<File[]>([])
 
   const handleChange = (section: string, field: string, value: string) => {
     setFormData(prev => ({
@@ -209,7 +218,7 @@ const BriefEmailMarketing = () => {
     }
   };
 
-  const handleFileUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleFileUpload = (e: React.ChangeEvent<HTMLInputElement>, section: 'resources' | 'leadMagnets') => {
     if (e.target.files) {
       const newFiles = Array.from(e.target.files)
       
@@ -219,27 +228,50 @@ const BriefEmailMarketing = () => {
         alert(t('sections.7.files.sizeError'))
       }
       
-      setUploadedFiles(prev => [...prev, ...validFiles])
-      
+      if (section === 'resources') {
+        setUploadedFiles(prev => [...prev, ...validFiles])
+        
+        setFormData(prev => ({
+          ...prev,
+          resources: {
+            ...prev.resources,
+            uploadedFiles: [...prev.resources.uploadedFiles, ...validFiles.map(file => file.name)]
+          }
+        }))
+      } else {
+        setUploadedLeadMagnetFiles(prev => [...prev, ...validFiles])
+        
+        setFormData(prev => ({
+          ...prev,
+          leadMagnets: {
+            ...prev.leadMagnets,
+            uploadedFiles: [...prev.leadMagnets.uploadedFiles, ...validFiles.map(file => file.name)]
+          }
+        }))
+      }
+    }
+  }
+
+  const removeFile = (index: number, section: 'resources' | 'leadMagnets') => {
+    if (section === 'resources') {
+      setUploadedFiles(prev => prev.filter((_, i) => i !== index))
       setFormData(prev => ({
         ...prev,
         resources: {
           ...prev.resources,
-          uploadedFiles: [...prev.resources.uploadedFiles, ...validFiles.map(file => file.name)]
+          uploadedFiles: prev.resources.uploadedFiles.filter((_, i) => i !== index)
+        }
+      }))
+    } else {
+      setUploadedLeadMagnetFiles(prev => prev.filter((_, i) => i !== index))
+      setFormData(prev => ({
+        ...prev,
+        leadMagnets: {
+          ...prev.leadMagnets,
+          uploadedFiles: prev.leadMagnets.uploadedFiles.filter((_, i) => i !== index)
         }
       }))
     }
-  }
-
-  const removeFile = (index: number) => {
-    setUploadedFiles(prev => prev.filter((_, i) => i !== index))
-    setFormData(prev => ({
-      ...prev,
-      resources: {
-        ...prev.resources,
-        uploadedFiles: prev.resources.uploadedFiles.filter((_, i) => i !== index)
-      }
-    }))
   }
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -276,6 +308,10 @@ const BriefEmailMarketing = () => {
 7️⃣ <b>Ресурси та матеріали</b>
 Посилання: ${formData.resources.links}
 Файли: ${formData.resources.uploadedFiles.join(', ')}
+
+8️⃣ <b>Лід-магніти</b>
+Посилання: ${formData.leadMagnets.links}
+Файли: ${formData.leadMagnets.uploadedFiles.join(', ')}
 
 📅 Дата: ${new Date().toLocaleString('uk-UA')}
       `;
@@ -581,7 +617,7 @@ const BriefEmailMarketing = () => {
                       type="file" 
                       className="hidden" 
                       multiple 
-                      onChange={handleFileUpload}
+                      onChange={(e) => handleFileUpload(e, 'resources')}
                       accept=".jpg,.jpeg,.png,.pdf,.doc,.docx,.xls,.xlsx,.zip,.rar,.7z"
                     />
                   </label>
@@ -596,7 +632,83 @@ const BriefEmailMarketing = () => {
                           <span className="text-sm text-gray-300 truncate max-w-xs">{file.name}</span>
                           <button 
                             type="button" 
-                            onClick={() => removeFile(index)}
+                            onClick={() => removeFile(index, 'resources')}
+                            className="text-red-400 hover:text-red-500"
+                          >
+                            <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                              <path fillRule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clipRule="evenodd" />
+                            </svg>
+                          </button>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
+              </div>
+            </div>
+          </section>
+
+          {/* New section 8 for lead magnets */}
+          <section className="bg-gray-800/50 rounded-xl p-6 border border-gray-700/50">
+            <div className="flex items-center mb-6">
+              <div className="flex-shrink-0 h-8 w-8 flex items-center justify-center rounded-full bg-blue-500 text-white font-bold">
+                8
+              </div>
+              <h2 className="ml-4 text-2xl font-bold text-gray-100">
+                {t('sections.8.title')}
+              </h2>
+            </div>
+            
+            <div className="space-y-4">
+              <div>
+                <label className="block text-sm font-medium text-gray-300 mb-2">
+                  {t('sections.8.links.label')}
+                </label>
+                <textarea
+                  value={formData.leadMagnets.links}
+                  onChange={(e) => handleChange('leadMagnets', 'links', e.target.value)}
+                  className="w-full p-3 bg-gray-900/50 border border-gray-700 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
+                  rows={4}
+                  placeholder={t('sections.8.links.placeholder')}
+                  onKeyDown={handleKeyDown}
+                />
+              </div>
+
+              <div>
+                <label className="block text-sm font-medium text-gray-300 mb-2">
+                  {t('sections.8.files.label')}
+                </label>
+                <div className="flex items-center justify-center w-full">
+                  <label className="flex flex-col items-center justify-center w-full h-32 border-2 border-dashed rounded-lg cursor-pointer border-gray-600 hover:border-gray-500 bg-gray-900/50">
+                    <div className="flex flex-col items-center justify-center pt-5 pb-6">
+                      <svg className="w-8 h-8 mb-4 text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 16">
+                        <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 13h3a3 3 0 0 0 0-6h-.025A5.56 5.56 0 0 0 16 6.5 5.5 5.5 0 0 0 5.207 5.021C5.137 5.017 5.071 5 5 5a4 4 0 0 0 0 8h2.167M10 15V6m0 0L8 8m2-2 2 2"/>
+                      </svg>
+                      <p className="mb-2 text-sm text-gray-400">
+                        <span className="font-semibold">{t('sections.8.files.dropzone')}</span>
+                      </p>
+                      <p className="text-xs text-gray-400">{t('sections.8.files.formats')}</p>
+                    </div>
+                    <input 
+                      type="file" 
+                      className="hidden" 
+                      multiple 
+                      onChange={(e) => handleFileUpload(e, 'leadMagnets')}
+                      accept=".jpg,.jpeg,.png,.pdf,.doc,.docx,.xls,.xlsx,.zip,.rar,.7z"
+                    />
+                  </label>
+                </div>
+                
+                {uploadedLeadMagnetFiles.length > 0 && (
+                  <div className="mt-4">
+                    <h4 className="text-sm font-medium text-gray-300 mb-2">{t('sections.8.files.uploaded')}</h4>
+                    <ul className="space-y-2">
+                      {uploadedLeadMagnetFiles.map((file, index) => (
+                        <li key={index} className="flex items-center justify-between p-2 bg-gray-800 rounded-lg">
+                          <span className="text-sm text-gray-300 truncate max-w-xs">{file.name}</span>
+                          <button 
+                            type="button" 
+                            onClick={() => removeFile(index, 'leadMagnets')}
                             className="text-red-400 hover:text-red-500"
                           >
                             <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
