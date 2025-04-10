@@ -40,6 +40,10 @@ type Translations = {
       name: string;
       description: string;
     };
+    infrastructure?: {
+      title: string;
+      description: string;
+    };
   };
   pricing: {
     totalInvestment: string;
@@ -136,6 +140,24 @@ export default function PricingPage() {
       name: "Custom text sequences", 
       price: 50, 
       description: "Changes to text sequences in the second month ($50 per approach change)" 
+    },
+    // Додаємо інфраструктурні платежі
+    infrastructure: {
+      esp: {
+        name: "ESP (Email Service Provider)",
+        price: 99,
+        description: "Email service provider subscription (fixed price)"
+      },
+      domain: {
+        name: "Domain",
+        price: 8.88,
+        description: "Domain registration per campaign"
+      },
+      workspace: {
+        name: "Google Workspace (Starter)",
+        price: 35.36,
+        description: "Email sender accounts. 4 senders per 1K package"
+      }
     }
   };
   
@@ -173,11 +195,29 @@ export default function PricingPage() {
       // Додаємо ціну A/B тестів
       total += calculateABTestPrice();
       
-      if (options.campaign) total += addons.campaign.price;  // Remove multiplication by campaigns
+      if (options.campaign) total += addons.campaign.price;
       if (options.sequence) total += addons.sequence.price;
+      
+      // Додаємо інфраструктурні платежі для Ongoing Maintenance
+      // ESP - фіксована ціна
+      total += addons.infrastructure.esp.price;
+      
+      // Домен і Workspace - залежать від розміру пакету (кількості кампаній)
+      const multiplier = selectedPackage + 1;
+      total += addons.infrastructure.domain.price * multiplier;
+      total += addons.infrastructure.workspace.price * multiplier;
     } else {
       // Для Initial Setup додаємо тільки A/B тестування
       total += calculateABTestPrice();
+      
+      // Додаємо інфраструктурні платежі для Initial Setup
+      // ESP - фіксована ціна
+      total += addons.infrastructure.esp.price;
+      
+      // Домен і Workspace - залежать від розміру пакету (кількості кампаній)
+      const multiplier = selectedPackage + 1;
+      total += addons.infrastructure.domain.price * multiplier;
+      total += addons.infrastructure.workspace.price * multiplier;
     }
     
     return total;
@@ -288,7 +328,7 @@ export default function PricingPage() {
         
         <div className='rounded-xl shadow-xl overflow-hidden border border-gray-100'>
           {/* Перемикач "Initial Setup/Ongoing" */}
-          <div className="mt-16 flex justify-center">
+          <div className="mt-12 flex justify-center">
             <div className="relative bg-gray-100 rounded-full p-1 flex shadow-sm">
               <button
                 className={`${isInitialSetup ? 'bg-blue-500 text-white' : 'bg-transparent text-slate-700'} relative py-2 px-6 rounded-full transition-all duration-300 focus:outline-none`}
@@ -328,7 +368,7 @@ export default function PricingPage() {
                         key={index}
                         className={`border rounded-xl p-6 text-center cursor-pointer transition-all hover:shadow-md ${
                           selectedPackage === index ? 'border-blue-500 bg-blue-50' : 'border-gray-200'
-                        } ${index === 2 ? 'ring-2 ring-blue-500 relative' : ''}`}
+                        } ${index === 2 ? 'ring-2 ring-blue-300 relative' : ''}`}
                         onClick={() => handlePackageChange(index)}
                       >
                         {index === 2 && (
@@ -453,6 +493,44 @@ export default function PricingPage() {
                     )}
                   </div>
                 </div>
+                
+                  <div>
+                    <h2 className="text-2xl font-bold text-slate-800">3. {t('addons.infrastructure.title', { fallback: 'Infrastructure Costs' })}</h2>
+                    <div className="font-medium text-slate-800 mb-6">{t('addons.infrastructure.description', { fallback: 'Required technical infrastructure for your campaigns' })}</div>
+                    <div className="space-y-4">
+                      
+                      <div className="flex items-center justify-between p-4 border border-gray-200 rounded-lg">
+                        <div>
+                          <div className="font-medium text-slate-800">{t('addons.infrastructure.esp.name', { fallback: addons.infrastructure.esp.name })}</div>
+                          <div className="text-sm text-slate-600">{t('addons.infrastructure.esp.description', { fallback: addons.infrastructure.esp.description })}</div>
+                        </div>
+                        <div className="font-medium text-blue-600">${addons.infrastructure.esp.price}</div>
+                      </div>
+                      
+                      <div className="flex items-center justify-between p-4 border border-gray-200 rounded-lg">
+                        <div>
+                          <div className="font-medium text-slate-800">{t('addons.infrastructure.domain.name', { fallback: addons.infrastructure.domain.name })}</div>
+                          <div className="text-sm text-slate-600">
+                            {t('addons.infrastructure.domain.description', { fallback: addons.infrastructure.domain.description })} 
+                            <span className="font-medium"> (${addons.infrastructure.domain.price} × {selectedPackage + 1})</span>
+                          </div>
+                        </div>
+                        <div className="font-medium text-blue-600">${(addons.infrastructure.domain.price * (selectedPackage + 1)).toFixed(2)}</div>
+                      </div>
+                      
+                      <div className="flex items-center justify-between p-4 border border-gray-200 rounded-lg">
+                        <div>
+                          <div className="font-medium text-slate-800">{t('addons.infrastructure.workspace.name', { fallback: addons.infrastructure.workspace.name })}</div>
+                          <div className="text-sm text-slate-600">
+                            {t('addons.infrastructure.workspace.description', { fallback: addons.infrastructure.workspace.description })}
+                            <span className="font-medium"> (${addons.infrastructure.workspace.price} × {selectedPackage + 1})</span>
+                          </div>
+                        </div>
+                        <div className="font-medium text-blue-600">${(addons.infrastructure.workspace.price * (selectedPackage + 1)).toFixed(2)}</div>
+                      </div>
+                    </div>
+                  </div>
+
               </div>
             </div>
             
@@ -463,10 +541,31 @@ export default function PricingPage() {
                   <div className="text-xl font-semibold text-slate-800">
                     {isInitialSetup ? t('pricing.totalInvestment') : t('pricing.monthlyInvestment')}
                   </div>
-                  <div className="text-sm text-slate-600 mt-1">{t('pricing.allPricesUsd')}</div>
+                  {/* Додаємо розшифровку вартості для обох режимів */}
+                  <div className="mt-3 text-left">
+                    
+                    {/* Підсумкові суми */}
+                    <div className="mt-3 pt-2 border-t border-gray-200">
+                      <div className="text-sm font-medium text-slate-800">
+                        {t('pricing.agencyServices', { fallback: 'Agency services' })}: ${(isInitialSetup 
+                          ? currentPackage.setupPrice + calculateABTestPrice()
+                          : currentPackage.leadsPrice + calculateABTestPrice() + 
+                            (options.campaign ? addons.campaign.price : 0) + 
+                            (options.sequence ? addons.sequence.price : 0)
+                        ).toFixed(2)}
+                      </div>
+                      <div className="text-sm font-medium text-slate-800">
+                        {t('pricing.infrastructureCosts', { fallback: 'Infrastructure costs' })}: ${(
+                          addons.infrastructure.esp.price + 
+                          (addons.infrastructure.domain.price * (selectedPackage + 1)) + 
+                          (addons.infrastructure.workspace.price * (selectedPackage + 1))
+                        ).toFixed(2)}
+                      </div>
+                    </div>
+                  </div>
                 </div>
                 <div className="text-2xl font-bold text-blue-600 mt-4 md:mt-0 bg-white px-8 py-3 rounded-full shadow-sm border border-blue-100">
-                  ${calculateTotal()}
+                  ${calculateTotal().toFixed(2)}
                 </div>
               </div>
             </div>
