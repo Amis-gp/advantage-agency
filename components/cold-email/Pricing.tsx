@@ -23,6 +23,9 @@ export default function Pricing() {
     const standardFeatures = t.raw('standard.features') as string[];
     const mediumFeatures = t.raw('medium.features') as string[];
     const performanceFeatures = t.raw('performance.features') as string[];
+    const package5Features = t.raw('package5.features') as string[];
+    const package7Features = t.raw('package7.features') as string[];
+    const package10Features = t.raw('package10.features') as string[];
     
     return (
         <section className="relative bg-[#111019] pt-20">
@@ -90,7 +93,8 @@ export default function Pricing() {
                 </motion.div>
 
                 <div className="max-w-7xl mx-auto">
-                    <div className="grid lg:grid-cols-3 gap-8">
+                    <div className="grid lg:grid-cols-3 gap-8 mb-16">
+                        {/* Original 3 packages */}
                         <motion.div
                             initial={{ opacity: 0, y: 20 }}
                             whileInView={{ opacity: 1, y: 0 }}
@@ -133,6 +137,7 @@ export default function Pricing() {
                             </div>
                         </motion.div>
 
+                        {/* ... existing medium package ... */}
                         <motion.div
                             initial={{ opacity: 0, y: 20 }}
                             whileInView={{ opacity: 1, y: 0 }}
@@ -175,6 +180,7 @@ export default function Pricing() {
                             </div>
                         </motion.div>
 
+                        {/* ... existing performance package ... */}
                         <motion.div
                             initial={{ opacity: 0, y: 20 }}
                             whileInView={{ opacity: 1, y: 0 }}
@@ -222,11 +228,149 @@ export default function Pricing() {
                             </div>
                         </motion.div>
                     </div>
+
+                    {/* New packages section */}
+                    <h3 className="text-2xl font-bold text-white text-center mb-8">{t('advancedPackages')}</h3>
+                    <div className="grid lg:grid-cols-3 gap-8">
+                        {/* Package 5 */}
+                        <motion.div
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ duration: 0.6, delay: 0.2 }}
+                            className="relative group h-full"
+                        >
+                            <div className="absolute inset-0 bg-[#FF6B6B]/10 rounded-3xl blur-2xl group-hover:bg-[#FF6B6B]/20 transition-all duration-500" />
+                            <div className="relative bg-black/40 backdrop-blur-xl rounded-3xl p-8 border border-[#FF6B6B]/20 h-full flex flex-col">
+                                <div className="flex flex-col gap-8 flex-grow">
+                                    <div>
+                                        <h3 className="text-3xl font-bold text-[#FF6B6B] mb-4">
+                                            {t('package5.title')}
+                                        </h3>
+                                        <div className="flex items-baseline gap-2">
+                                            <span className="text-xl font-medium text-white">{t('package5.description')}</span>
+                                        </div>
+                                    </div>
+
+                                    <div className="space-y-4 flex-grow">
+                                        {package5Features.map((feature: string, index: number) => (
+                                            <div key={index} className="flex items-center gap-3">
+                                                <div className="w-5 h-5 rounded-full bg-[#FF6B6B]/20 flex items-center justify-center">
+                                                    <svg className="w-3 h-3 text-[#FF6B6B]" fill="currentColor" viewBox="0 0 20 20">
+                                                        <path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"/>
+                                                    </svg>
+                                                </div>
+                                                <span className="text-gray-300">{feature}</span>
+                                            </div>
+                                        ))}
+                                    </div>
+
+                                    <a 
+                                        href="#calendly"
+                                        className="block w-full py-4 px-6 bg-[#FF6B6B] hover:bg-[#FF6B6B]/90 rounded-2xl text-white text-center font-medium transition-all duration-300 hover:scale-[1.02] active:scale-[0.98]"
+                                    >
+                                        {t('getStarted')}
+                                    </a>
+                                </div>
+                            </div>
+                        </motion.div>
+
+                        {/* Package 7 */}
+                        <motion.div
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ duration: 0.6, delay: 0.25 }}
+                            className="relative group h-full"
+                        >
+                            <div className="absolute inset-0 bg-[#FFD166]/10 rounded-3xl blur-2xl group-hover:bg-[#FFD166]/20 transition-all duration-500" />
+                            <div className="relative bg-black/40 backdrop-blur-xl rounded-3xl p-8 border border-[#FFD166]/20 group-hover:border-[#FFD166]/30 transition-all duration-300 h-full flex flex-col">
+                                <div className="flex flex-col gap-8 flex-grow">
+                                    <div>
+                                        <h3 className="text-3xl font-bold text-[#FFD166] mb-4">
+                                            {t('package7.title')}
+                                        </h3>
+                                        <div className="flex items-baseline gap-2">
+                                            <span className="text-xl font-medium text-white">{t('package7.description')}</span>
+                                        </div>
+                                    </div>
+
+                                    <div className="space-y-4 flex-grow">
+                                        {package7Features.map((feature: string, index: number) => (
+                                            <div key={index} className="flex items-center gap-3">
+                                                <div className="w-5 h-5 rounded-full bg-[#FFD166]/20 flex items-center justify-center">
+                                                    <svg className="w-3 h-3 text-[#FFD166]" fill="currentColor" viewBox="0 0 20 20">
+                                                        <path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"/>
+                                                    </svg>
+                                                </div>
+                                                <span className="text-gray-300">{feature}</span>
+                                            </div>
+                                        ))}
+                                    </div>
+
+                                    <a 
+                                        href="#calendly"
+                                        className="block w-full py-4 px-6 bg-[#FFD166] hover:bg-[#FFD166]/90 rounded-2xl text-white text-center font-medium transition-all duration-300 hover:scale-[1.02] active:scale-[0.98]"
+                                    >
+                                        {t('getStarted')}
+                                    </a>
+                                </div>
+                            </div>
+                        </motion.div>
+
+                        {/* Package 10 */}
+                        <motion.div
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ duration: 0.6, delay: 0.3 }}
+                            className="relative group h-full"
+                        >
+                            <div className="absolute inset-0 bg-[#06D6A0]/5 rounded-3xl blur-2xl group-hover:bg-[#06D6A0]/10 transition-all duration-500" />
+                            <div className="relative bg-black/40 backdrop-blur-xl rounded-3xl p-8 border border-[#06D6A0]/20 group-hover:border-[#06D6A0]/30 transition-all duration-300 h-full flex flex-col">
+                                <div className="absolute -top-3 right-4">
+                                    <div className="bg-[#06D6A0] px-4 py-1 rounded-full text-sm font-medium text-white">
+                                        {t('enterprise')}
+                                    </div>
+                                </div>
+                                <div className="flex flex-col gap-8 flex-grow">
+                                    <div>
+                                        <h3 className="text-3xl font-bold text-[#06D6A0] mb-4">
+                                            {t('package10.title')}
+                                        </h3>
+                                        <div className="flex items-baseline gap-2">
+                                            <span className="text-xl font-medium text-white">{t('package10.description')}</span>
+                                        </div>
+                                    </div>
+
+                                    <div className="space-y-4 flex-grow">
+                                        {package10Features.map((feature: string, index: number) => (
+                                            <div key={index} className="flex items-center gap-3">
+                                                <div className="w-5 h-5 rounded-full bg-[#06D6A0]/20 flex items-center justify-center">
+                                                    <svg className="w-3 h-3 text-[#06D6A0]" fill="currentColor" viewBox="0 0 20 20">
+                                                        <path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"/>
+                                                    </svg>
+                                                </div>
+                                                <span className="text-gray-300">{feature}</span>
+                                            </div>
+                                        ))}
+                                    </div>
+
+                                    <a 
+                                        href="#calendly"
+                                        className="block w-full py-4 px-6 bg-[#06D6A0] hover:bg-[#06D6A0]/90 rounded-2xl text-white text-center font-medium transition-all duration-300 hover:scale-[1.02] active:scale-[0.98]"
+                                    >
+                                        {t('getStarted')}
+                                    </a>
+                                </div>
+                            </div>
+                        </motion.div>
+                    </div>
                 </div>
             </div>
 
             <Suspense fallback={null}>
-                <div id="calendly">
+                <div id="calendly" className="mt-20">
                     <DynamicCalendlyEmbed url="https://calendly.com/advantage-agency-contact/30min?month=2025-01" />
                 </div>
             </Suspense>

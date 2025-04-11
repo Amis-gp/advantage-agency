@@ -119,8 +119,11 @@ export default function PricingPage() {
     { size: "1K", setupPrice: 850, ongoingPrice: 0, leadsPrice: 85, campaigns: 1 },
     { size: "2K", setupPrice: 1350, ongoingPrice: 0, leadsPrice: 170, campaigns: 2 },
     { size: "3K", setupPrice: 1850, ongoingPrice: 0, leadsPrice: 255, campaigns: 3 },
-    { size: "4K", setupPrice: 2250, ongoingPrice: 0, leadsPrice: 340, campaigns: 4 }
+    { size: "Custom", setupPrice: 0, ongoingPrice: 0, leadsPrice: 85, campaigns: 0 } // Changed to Custom package
   ];
+  
+  // Add state for custom contacts
+  const [customContacts, setCustomContacts] = useState(4);
   
   // Додаткові послуги
   const addons = {
@@ -185,65 +188,92 @@ export default function PricingPage() {
   };
 
   // Розрахунок загальної суми
+  // Update calculateTotal to handle custom package
   const calculateTotal = () => {
-    let total = isInitialSetup ? currentPackage.setupPrice : 0;
+    let total = 0;
     
-    // Додаємо вартість контактів, якщо це подальші місяці
-    if (!isInitialSetup) {
-      total += currentPackage.leadsPrice;
+    if (selectedPackage === 3) { // Custom package
+      // Calculate price based on custom contacts
+      if (isInitialSetup) {
+        // For initial setup: $850 for first campaign, $500 for each additional campaign
+        const campaignsCount = Math.ceil(customContacts / 1);
+        total += 850; // First campaign
+        if (campaignsCount > 1) {
+          total += 500 * (campaignsCount - 1); // Additional campaigns at $500 each
+        }
+      } else {
+        total += customContacts * 85; // Regular price per 1K contacts
+      }
       
-      // Додаємо ціну A/B тестів
+      // Add A/B test price
       total += calculateABTestPrice();
       
-      if (options.campaign) total += addons.campaign.price;
-      if (options.sequence) total += addons.sequence.price;
+      // Add campaign management if selected
+      if (!isInitialSetup && options.campaign) {
+        total += addons.campaign.price;
+      }
       
-      // Додаємо інфраструктурні платежі для Ongoing Maintenance
-      // ESP - фіксована ціна
-      total += addons.infrastructure.esp.price;
-      
-      // Домен і Workspace - залежать від розміру пакету (кількості кампаній)
-      const multiplier = selectedPackage + 1;
-      total += addons.infrastructure.domain.price * multiplier;
-      total += addons.infrastructure.workspace.price * multiplier;
+      // Add sequence changes if selected
+      if (!isInitialSetup && options.sequence) {
+        total += addons.sequence.price;
+      }
     } else {
-      // Для Initial Setup додаємо тільки A/B тестування
-      total += calculateABTestPrice();
+      // Original calculation for standard packages
+      total = isInitialSetup ? currentPackage.setupPrice : 0;
       
-      // Додаємо інфраструктурні платежі для Initial Setup
-      // ESP - фіксована ціна
-      total += addons.infrastructure.esp.price;
-      
-      // Домен і Workspace - залежать від розміру пакету (кількості кампаній)
-      const multiplier = selectedPackage + 1;
-      total += addons.infrastructure.domain.price * multiplier;
-      total += addons.infrastructure.workspace.price * multiplier;
+      // Додаємо вартість контактів, якщо це подальші місяці
+      if (!isInitialSetup) {
+        total += currentPackage.leadsPrice;
+        
+        // Додаємо ціну A/B тестів
+        total += calculateABTestPrice();
+        
+        if (options.campaign) total += addons.campaign.price;
+        if (options.sequence) total += addons.sequence.price;
+      } else {
+        // Для Initial Setup додаємо тільки A/B тестування
+        total += calculateABTestPrice();
+      }
     }
+    
+    // Add infrastructure costs for all packages
+    // ESP - фіксована ціна
+    total += addons.infrastructure.esp.price;
+    
+    // For custom package, calculate campaigns based on contacts
+    const campaignsCount = selectedPackage === 3 ? Math.ceil(customContacts / 1) : currentPackage.campaigns;
+    
+    // Домен і Workspace - залежать від розміру пакету (кількості кампаній)
+    total += addons.infrastructure.domain.price * campaignsCount;
+    total += addons.infrastructure.workspace.price * campaignsCount;
     
     return total;
   };
-  
-  // Форматування ціни у доларах
-  const formatPrice = (price: number) => {
-    return `$${price.toLocaleString()}`;
-  };
-  
-  // Перемикання опцій
-  const toggleOption = (option: keyof typeof options) => {
-    setOptions(prev => ({
-      ...prev,
-      [option]: !prev[option]
-    }));
-  };
 
-  // Функція для розрахунку відображуваної ціни пакету
-  const getPackageDisplayPrice = (packageItem: typeof packages[0]) => {
-    if (isInitialSetup) {
-      // В режимі Initial Setup показуємо повну ціну пакету
-      return packageItem.setupPrice;
+  // Update getPackageDisplayPrice for custom package
+  const getPackageDisplayPrice = (packageItem: typeof packages[0], index: number) => {
+    if (index === 3) { // Custom package
+      if (isInitialSetup) {
+        // For initial setup: $850 for first campaign, $500 for each additional campaign
+        const campaignsCount = Math.ceil(customContacts / 1);
+        let price = 850; // First campaign
+        if (campaignsCount > 1) {
+          price += 500 * (campaignsCount - 1); // Additional campaigns at $500 each
+        }
+        return price.toFixed(0);
+      } else {
+        return (customContacts * 85).toFixed(0);
+      }
+    } else if (isInitialSetup) {
+      // In Initial Setup mode, calculate based on the new pricing model
+      if (packageItem.campaigns === 1) {
+        return "850";
+      } else {
+        return (850 + (500 * (packageItem.campaigns - 1))).toString();
+      }
     } else {
-      // В режимі Ongoing Maintenance показуємо ціну за контакти + campaign management
-      return packageItem.leadsPrice;
+      // In Ongoing Maintenance mode, show price for contacts + campaign management
+      return packageItem.leadsPrice.toString();
     }
   };
 
@@ -376,11 +406,49 @@ export default function PricingPage() {
                             Most Popular
                           </div>
                         )}
-                        <h3 className="text-xl font-bold text-slate-800 mb-3">{t('packages.prefix', { fallback: 'Package' })} {pkg.size}</h3>
-                        <div className="text-2xl font-bold text-blue-600 mb-2">${getPackageDisplayPrice(pkg)}</div>
-                        <div className="text-slate-600">{pkg.size} {t('packages.verifiedLeads', { fallback: 'verified leads' })}</div>
-                        {isInitialSetup && (
-                          <div className="text-slate-600 mt-1">+ {pkg.campaigns} campaign{pkg.campaigns > 1 ? 's' : ''}</div>
+                        <h3 className="text-xl font-bold text-slate-800 mb-3">
+                          {index === 3 ? t('packages.customPrefix', { fallback: 'Custom' }) : t('packages.prefix', { fallback: 'Package' })} {pkg.size}
+                        </h3>
+                        
+                        {index === 3 ? (
+                          <>
+                            <div className="text-2xl font-bold text-blue-600 mb-2">${getPackageDisplayPrice(pkg, index)}</div>
+                            <div className="flex items-center justify-center mb-2">
+                              <button 
+                                className="px-2 py-1 bg-gray-200 rounded-l-md"
+                                onClick={(e) => {
+                                  e.stopPropagation();
+                                  setCustomContacts(Math.max(4, customContacts - 1));
+                                }}
+                              >
+                                -
+                              </button>
+                              <div className="px-3 py-1 bg-gray-100">
+                                {customContacts}K
+                              </div>
+                              <button 
+                                className="px-2 py-1 bg-gray-200 rounded-r-md"
+                                onClick={(e) => {
+                                  e.stopPropagation();
+                                  setCustomContacts(Math.min(20, customContacts + 1));
+                                }}
+                              >
+                                +
+                              </button>
+                            </div>
+                            <div className="text-slate-600">{customContacts}K {t('packages.verifiedLeads', { fallback: 'verified leads' })}</div>
+                            {isInitialSetup && (
+                              <div className="text-slate-600 mt-1">+ {Math.ceil(customContacts / 1)} campaign{Math.ceil(customContacts / 1) > 1 ? 's' : ''}</div>
+                            )}
+                          </>
+                        ) : (
+                          <>
+                            <div className="text-2xl font-bold text-blue-600 mb-2">${getPackageDisplayPrice(pkg, index)}</div>
+                            <div className="text-slate-600">{pkg.size} {t('packages.verifiedLeads', { fallback: 'verified leads' })}</div>
+                            {isInitialSetup && (
+                              <div className="text-slate-600 mt-1">+ {pkg.campaigns} campaign{pkg.campaigns > 1 ? 's' : ''}</div>
+                            )}
+                          </>
                         )}
                       </div>
                     ))}
@@ -548,7 +616,9 @@ export default function PricingPage() {
                     <div className="mt-3 pt-2 border-t border-gray-200">
                       <div className="text-sm font-medium text-slate-800">
                         {t('pricing.agencyServices', { fallback: 'Agency services' })}: ${(isInitialSetup 
-                          ? currentPackage.setupPrice + calculateABTestPrice()
+                          ? (selectedPackage === 3 
+                              ? (850 + (Math.ceil(customContacts / 1) > 1 ? 500 * (Math.ceil(customContacts / 1) - 1) : 0) + calculateABTestPrice())
+                              : currentPackage.setupPrice + calculateABTestPrice())
                           : currentPackage.leadsPrice + calculateABTestPrice() + 
                             (options.campaign ? addons.campaign.price : 0) + 
                             (options.sequence ? addons.sequence.price : 0)
@@ -557,8 +627,8 @@ export default function PricingPage() {
                       <div className="text-sm font-medium text-slate-800">
                         {t('pricing.infrastructureCosts', { fallback: 'Infrastructure costs' })}: ${(
                           addons.infrastructure.esp.price + 
-                          (addons.infrastructure.domain.price * (selectedPackage + 1)) + 
-                          (addons.infrastructure.workspace.price * (selectedPackage + 1))
+                          (addons.infrastructure.domain.price * (selectedPackage === 3 ? Math.ceil(customContacts / 1) : currentPackage.campaigns)) + 
+                          (addons.infrastructure.workspace.price * (selectedPackage === 3 ? Math.ceil(customContacts / 1) : currentPackage.campaigns))
                         ).toFixed(2)}
                       </div>
                     </div>

@@ -1455,6 +1455,8 @@
             "title_part2": "your needs",
             "subtitle": "Flexible pricing options for your requirements",
             "popular": "Popular",
+            "enterprise": "Enterprise",
+            "advancedPackages": "Advanced Packages",
             "standard": {
                 "title": "1K Contacts Package",
                 "description": "One-time payment for system setup",
@@ -1500,6 +1502,52 @@
                     "≈ 8-12 qualified leads"
                 ],
                 "price": "$1350"
+            },
+            "package5": {
+                "title": "5K Contacts Package",
+                "description": "One-time payment for system setup",
+                "features": [
+                    "5 campaigns = 5 approaches to engagement",
+                    "5K verified contacts",
+                    "Email strategy",
+                    "Analytics and reporting",
+                    "≈ 2-3% Email replies",
+                    "≈ 100-150 Responses",
+                    "≈ 20% Conversion to leads",
+                    "≈ 20-30 qualified leads"
+                ],
+                "price": "$2950"
+            },
+            "package7": {
+                "title": "7K Contacts Package",
+                "description": "One-time payment for system setup",
+                "features": [
+                    "7 campaigns = 7 approaches to engagement",
+                    "7K verified contacts",
+                    "Email strategy",
+                    "Analytics and reporting",
+                    "≈ 2-3% Email replies",
+                    "≈ 140-210 Responses",
+                    "≈ 20% Conversion to leads",
+                    "≈ 28-42 qualified leads"
+                ],
+                "price": "$3950"
+            },
+            "package10": {
+                "title": "10K Contacts Package",
+                "description": "One-time payment for system setup",
+                "extra": "Enterprise solution",
+                "features": [
+                    "10 campaigns = 10 approaches to engagement",
+                    "10K verified contacts",
+                    "Email strategy",
+                    "Analytics and reporting",
+                    "≈ 2-3% Email replies",
+                    "≈ 200-300 Responses",
+                    "≈ 20% Conversion to leads",
+                    "≈ 40-60 qualified leads"
+                ],
+                "price": "$5450"
             },
             "getStarted": "Get Started"
         },
