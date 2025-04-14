@@ -10,7 +10,7 @@ export const META_SLIDES = [
         ],
         link: { 
             text: "offers.offers.meta.slide1.link", 
-            href: "/services/meta-ads" 
+            href: "#form" 
         }
     },
     {
@@ -53,7 +53,7 @@ export const GOOGLE_SLIDES = [
         ],
         link: { 
             text: "offers.offers.google.slide1.link", 
-            href: "/services/pps-ads" 
+            href: "#form" 
         }
     },
     {
@@ -96,7 +96,7 @@ export const LANDING_SLIDES = [
         ],
         link: { 
             text: "offers.offers.landing.slide1.link", 
-            href: "/services/landing-page" 
+            href: "#form" 
         }
     },
     {
@@ -139,7 +139,7 @@ export const EMAIL_SLIDES = [
         ],
         link: { 
             text: "offers.offers.email.slide1.link", 
-            href: "/services/cold-email" 
+            href: "/cold-email" 
         }
     },
     {
