@@ -114,6 +114,14 @@ export default function PricingPage() {
     sequence: false
   });
   
+  // Add the toggleOption function
+  const toggleOption = (option: 'campaign' | 'sequence') => {
+    setOptions(prev => ({
+      ...prev,
+      [option]: !prev[option]
+    }));
+  };
+  
   // Базові пакети (з включеним управлінням кампанією)
   const packages = [
     { size: "1K", setupPrice: 850, ongoingPrice: 0, leadsPrice: 85, campaigns: 1 },

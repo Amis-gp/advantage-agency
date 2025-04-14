@@ -78,7 +78,7 @@
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.advantage-agency.co/en/cases/v5"/>
-    <xhtml:link rel="alternate" hreflang="uk" href="https://www.advantage-agency.co/uk/cases/v5uk"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://www.advantage-agency.co/uk/cases/v5"/>
   </url>
 
   <url>
@@ -87,7 +87,7 @@
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.advantage-agency.co/en/cases/v6"/>
-    <xhtml:link rel="alternate" hreflang="uk" href="https://www.advantage-agency.co/uk/cases/v6uk"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://www.advantage-agency.co/uk/cases/v6"/>
   </url>
 
   <url>
@@ -96,7 +96,7 @@
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.advantage-agency.co/en/cases/v7"/>
-    <xhtml:link rel="alternate" hreflang="uk" href="https://www.advantage-agency.co/uk/cases/v7uk"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://www.advantage-agency.co/uk/cases/v7"/>
   </url>
 
   <url>
@@ -105,7 +105,7 @@
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.advantage-agency.co/en/cases/v8"/>
-    <xhtml:link rel="alternate" hreflang="uk" href="https://www.advantage-agency.co/uk/cases/v8uk"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://www.advantage-agency.co/uk/cases/v8"/>
   </url>
 
   <url>
@@ -114,7 +114,7 @@
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.advantage-agency.co/en/cases/v9"/>
-    <xhtml:link rel="alternate" hreflang="uk" href="https://www.advantage-agency.co/uk/cases/v9uk"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://www.advantage-agency.co/uk/cases/v9"/>
   </url>
 
   <url>
@@ -123,7 +123,7 @@
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.advantage-agency.co/en/cases/v10"/>
-    <xhtml:link rel="alternate" hreflang="uk" href="https://www.advantage-agency.co/uk/cases/v10uk"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://www.advantage-agency.co/uk/cases/v10"/>
   </url>
 
   <url>
@@ -132,7 +132,7 @@
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.advantage-agency.co/en/cases/v11"/>
-    <xhtml:link rel="alternate" hreflang="uk" href="https://www.advantage-agency.co/uk/cases/v11uk"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://www.advantage-agency.co/uk/cases/v11"/>
   </url>
 
   <url>
@@ -141,7 +141,7 @@
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.advantage-agency.co/en/cases/v12"/>
-    <xhtml:link rel="alternate" hreflang="uk" href="https://www.advantage-agency.co/uk/cases/v12uk"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://www.advantage-agency.co/uk/cases/v12"/>
   </url>
 
   <url>
@@ -150,7 +150,34 @@
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.advantage-agency.co/en/cases/v13"/>
-    <xhtml:link rel="alternate" hreflang="uk" href="https://www.advantage-agency.co/uk/cases/v13uk"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://www.advantage-agency.co/uk/cases/v13"/>
+  </url>
+
+  <url>
+    <loc>https://www.advantage-agency.co/cases/v14</loc>
+    <lastmod>2025-03-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.advantage-agency.co/en/cases/v14"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://www.advantage-agency.co/uk/cases/v14"/>
+  </url>
+
+  <url>
+    <loc>https://www.advantage-agency.co/cases/v15</loc>
+    <lastmod>2025-03-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.advantage-agency.co/en/cases/v15"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://www.advantage-agency.co/uk/cases/v15"/>
+  </url>
+
+  <url>
+    <loc>https://www.advantage-agency.co/cases/v16</loc>
+    <lastmod>2025-03-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.advantage-agency.co/en/cases/v16"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://www.advantage-agency.co/uk/cases/v16"/>
   </url>
 
   <!-- Black Affiliate Marketing -->
