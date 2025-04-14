@@ -55,7 +55,7 @@ export default function Footer() {
                                 { name: 'Portfolio', href: '#portfolio' },
                                 { name: 'Instructions', href: '#instructions' },
                                 { name: 'Services', href: '#services' },
-                                { name: 'Looking for work?', href: '/join-the-team', className: 'font-bold text-red-500 hover:text-red-600' }
+                                { name: 'Looking for work?', href: '/join-the-team', className: 'font-bold text-red-500 hover:text-red-600 hidden sm:block ' }
                             ].map((item) => (
                                 <Link 
                                     key={item.name} 
