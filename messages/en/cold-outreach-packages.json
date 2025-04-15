@@ -11,7 +11,8 @@
   },
   "packages": {
     "prefix": "Package",
-    "verifiedLeads": "verified contacts"
+    "verifiedLeads": "verified contacts",
+    "popularForBusiness": "Popular for Business"
   },
   "addons": {
     "abTesting": {

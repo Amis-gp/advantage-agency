@@ -11,7 +11,8 @@
   },
   "packages": {
     "prefix": "Пакет",
-    "verifiedLeads": "верифікованих контактів"
+    "verifiedLeads": "верифікованих контактів",
+    "popularForBusiness": "Популярний серед бізнесу"
   },
   "addons": {
     "abTesting": {

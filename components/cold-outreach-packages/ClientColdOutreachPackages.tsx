@@ -127,13 +127,11 @@ export default function PricingPage() {
     { size: "1K", setupPrice: 850, ongoingPrice: 0, leadsPrice: 85, campaigns: 1 },
     { size: "2K", setupPrice: 1350, ongoingPrice: 0, leadsPrice: 170, campaigns: 2 },
     { size: "3K", setupPrice: 1850, ongoingPrice: 0, leadsPrice: 255, campaigns: 3 },
-    { size: "Custom", setupPrice: 0, ongoingPrice: 0, leadsPrice: 85, campaigns: 0 } // Changed to Custom package
+    { size: "5K", setupPrice: 2950, ongoingPrice: 0, leadsPrice: 425, campaigns: 5 },
+    { size: "7K", setupPrice: 3950, ongoingPrice: 0, leadsPrice: 595, campaigns: 7 },
+    { size: "10K", setupPrice: 5450, ongoingPrice: 0, leadsPrice: 850, campaigns: 10 }
   ];
   
-  // Add state for custom contacts
-  const [customContacts, setCustomContacts] = useState(4);
-  
-  // Додаткові послуги
   const addons = {
     bonus: { 
       name: "One A/B text sequence - $50", 
@@ -196,91 +194,42 @@ export default function PricingPage() {
   };
 
   // Розрахунок загальної суми
-  // Update calculateTotal to handle custom package
   const calculateTotal = () => {
     let total = 0;
     
-    if (selectedPackage === 3) { // Custom package
-      // Calculate price based on custom contacts
-      if (isInitialSetup) {
-        // For initial setup: $850 for first campaign, $500 for each additional campaign
-        const campaignsCount = Math.ceil(customContacts / 1);
-        total += 850; // First campaign
-        if (campaignsCount > 1) {
-          total += 500 * (campaignsCount - 1); // Additional campaigns at $500 each
-        }
-      } else {
-        total += customContacts * 85; // Regular price per 1K contacts
-      }
+    // Використовуємо стандартний розрахунок для всіх пакетів
+    total = isInitialSetup ? currentPackage.setupPrice : 0;
+    
+    // Додаємо вартість контактів, якщо це подальші місяці
+    if (!isInitialSetup) {
+      total += currentPackage.leadsPrice;
       
-      // Add A/B test price
+      // Додаємо ціну A/B тестів
       total += calculateABTestPrice();
       
-      // Add campaign management if selected
-      if (!isInitialSetup && options.campaign) {
-        total += addons.campaign.price;
-      }
-      
-      // Add sequence changes if selected
-      if (!isInitialSetup && options.sequence) {
-        total += addons.sequence.price;
-      }
+      if (options.campaign) total += addons.campaign.price;
+      if (options.sequence) total += addons.sequence.price;
     } else {
-      // Original calculation for standard packages
-      total = isInitialSetup ? currentPackage.setupPrice : 0;
-      
-      // Додаємо вартість контактів, якщо це подальші місяці
-      if (!isInitialSetup) {
-        total += currentPackage.leadsPrice;
-        
-        // Додаємо ціну A/B тестів
-        total += calculateABTestPrice();
-        
-        if (options.campaign) total += addons.campaign.price;
-        if (options.sequence) total += addons.sequence.price;
-      } else {
-        // Для Initial Setup додаємо тільки A/B тестування
-        total += calculateABTestPrice();
-      }
+      // Для Initial Setup додаємо тільки A/B тестування
+      total += calculateABTestPrice();
     }
     
     // Add infrastructure costs for all packages
     // ESP - фіксована ціна
     total += addons.infrastructure.esp.price;
     
-    // For custom package, calculate campaigns based on contacts
-    const campaignsCount = selectedPackage === 3 ? Math.ceil(customContacts / 1) : currentPackage.campaigns;
-    
     // Домен і Workspace - залежать від розміру пакету (кількості кампаній)
-    total += addons.infrastructure.domain.price * campaignsCount;
-    total += addons.infrastructure.workspace.price * campaignsCount;
+    total += addons.infrastructure.domain.price * currentPackage.campaigns;
+    total += addons.infrastructure.workspace.price * currentPackage.campaigns;
     
     return total;
   };
 
-  // Update getPackageDisplayPrice for custom package
-  const getPackageDisplayPrice = (packageItem: typeof packages[0], index: number) => {
-    if (index === 3) { // Custom package
-      if (isInitialSetup) {
-        // For initial setup: $850 for first campaign, $500 for each additional campaign
-        const campaignsCount = Math.ceil(customContacts / 1);
-        let price = 850; // First campaign
-        if (campaignsCount > 1) {
-          price += 500 * (campaignsCount - 1); // Additional campaigns at $500 each
-        }
-        return price.toFixed(0);
-      } else {
-        return (customContacts * 85).toFixed(0);
-      }
-    } else if (isInitialSetup) {
-      // In Initial Setup mode, calculate based on the new pricing model
-      if (packageItem.campaigns === 1) {
-        return "850";
-      } else {
-        return (850 + (500 * (packageItem.campaigns - 1))).toString();
-      }
+  // Оновлюємо функцію getPackageDisplayPrice для роботи з новими пакетами
+  const getPackageDisplayPrice = (packageItem: typeof packages[0]) => {
+    if (isInitialSetup) {
+      return packageItem.setupPrice.toString();
     } else {
-      // In Ongoing Maintenance mode, show price for contacts + campaign management
       return packageItem.leadsPrice.toString();
     }
   };
@@ -288,13 +237,18 @@ export default function PricingPage() {
   // Get maximum allowed A/B tests based on package
   const getMaxAbTests = (packageIndex: number) => {
     switch (packageIndex) {
-      case 0:
-      case 1:
+      case 0: // 1K package
         return 1;
-      case 2: // 3K package
+      case 1: // 2K package
         return 2;
-      case 3: // 4K package
+      case 2: // 3K package
         return 3;
+      case 3: // 5K package
+        return 4;
+      case 4: // 7K package
+        return 5;
+      case 5: // 10K package
+        return 6;
       default:
         return 1;
     }
@@ -422,63 +376,34 @@ export default function PricingPage() {
                   <h2 className="text-2xl font-bold text-white mb-6">1. {t('steps.choosePackage')}</h2>
                   
                   {/* Вибір пакету */}
-                  <div className="grid grid-cols-1 md:grid-cols-4 gap-4 mt-6">
-                    {packages.map((pkg, index) => (
-                      <div 
-                        key={index}
-                        className={`border rounded-xl p-6 text-center cursor-pointer transition-all hover:shadow-lg hover:shadow-blue-500/20 ${
-                          selectedPackage === index ? 'border-blue-500 bg-gradient-to-br from-blue-900/20 to-indigo-900/20' : 'border-gray-700 bg-gradient-to-br from-[#0F172A] to-[#111827]'
-                        } ${index === 2 ? 'ring-2 ring-blue-500 relative' : ''}`}
-                        onClick={() => handlePackageChange(index)}
-                      >
-                        {index === 2 && (
-                          <div className="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-gradient-to-r from-blue-500 to-indigo-600 text-white text-xs py-1 px-3 rounded-full">
-                            Most Popular
-                          </div>
-                        )}
-                        
-                        {index === 3 ? (
-                          <>
-                            <div className="text-2xl font-bold text-blue-400 mb-2">${getPackageDisplayPrice(pkg, index)}</div>
-                            <div className="flex items-center justify-center mb-2">
-                              <button 
-                                className="px-2 py-1 bg-gray-700 hover:bg-gray-600 rounded-l-md text-white"
-                                onClick={(e) => {
-                                  e.stopPropagation();
-                                  setCustomContacts(Math.max(4, customContacts - 1));
-                                }}
-                              >
-                                -
-                              </button>
-                              <div className="px-3 py-1 bg-gray-800 text-white">
-                                {customContacts}K
-                              </div>
-                              <button 
-                                className="px-2 py-1 bg-gray-700 hover:bg-gray-600 rounded-r-md text-white"
-                                onClick={(e) => {
-                                  e.stopPropagation();
-                                  setCustomContacts(Math.min(20, customContacts + 1));
-                                }}
-                              >
-                                +
-                              </button>
+                  <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-6">
+                    {packages.map((pkg, index) => {
+                      let popularLabel = "";
+                      if (index === 2) popularLabel = "Most popular";
+                      if (index === 5) popularLabel = t('packages.popularForBusiness');
+                      
+                      return (
+                        <div 
+                          key={index}
+                          className={`border rounded-xl p-6 text-center cursor-pointer transition-all hover:shadow-lg hover:shadow-blue-500/20 ${
+                            selectedPackage === index ? 'border-blue-500 bg-gradient-to-br from-blue-900/20 to-indigo-900/20' : 'border-gray-700 bg-gradient-to-br from-[#0F172A] to-[#111827]'
+                          } ${popularLabel ? 'ring-2 ring-blue-500 relative' : ''}`}
+                          onClick={() => handlePackageChange(index)}
+                        >
+                          {popularLabel && (
+                            <div className="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-gradient-to-r from-blue-500 to-indigo-600 text-white text-xs py-1 px-3 rounded-full">
+                              {popularLabel}
                             </div>
-                            <div className="text-gray-300">{customContacts}K {t('packages.verifiedLeads', { fallback: 'verified leads' })}</div>
-                            {isInitialSetup && (
-                              <div className="text-gray-300 mt-1">+ {Math.ceil(customContacts / 1)} campaign{Math.ceil(customContacts / 1) > 1 ? 's' : ''}</div>
-                            )}
-                          </>
-                        ) : (
-                          <>
-                            <div className="text-2xl font-bold text-blue-400 mb-2">${getPackageDisplayPrice(pkg, index)}</div>
-                            <div className="text-gray-300">{pkg.size} {t('packages.verifiedLeads', { fallback: 'verified leads' })}</div>
-                            {isInitialSetup && (
-                              <div className="text-gray-300 mt-1">+ {pkg.campaigns} campaign{pkg.campaigns > 1 ? 's' : ''}</div>
-                            )}
-                          </>
-                        )}
-                      </div>
-                    ))}
+                          )}
+                          
+                          <div className="text-2xl font-bold text-blue-400 mb-2">${getPackageDisplayPrice(pkg)}</div>
+                          <div className="text-gray-300">{pkg.size} {t('packages.verifiedLeads', { fallback: 'verified leads' })}</div>
+                          {isInitialSetup && (
+                            <div className="text-gray-300 mt-1">+ {pkg.campaigns} campaign{pkg.campaigns > 1 ? 's' : ''}</div>
+                          )}
+                        </div>
+                      );
+                    })}
                   </div>
                 </div>
                 
@@ -607,10 +532,10 @@ export default function PricingPage() {
                         <div className="font-medium text-white">{t('addons.infrastructure.domain.name', { fallback: addons.infrastructure.domain.name })}</div>
                         <div className="text-sm text-gray-300">
                           {t('addons.infrastructure.domain.description', { fallback: addons.infrastructure.domain.description })} 
-                          <span className="font-medium text-gray-300"> (${addons.infrastructure.domain.price} × {selectedPackage + 1})</span>
+                          <span className="font-medium text-gray-300"> (${addons.infrastructure.domain.price} × {currentPackage.campaigns})</span>
                         </div>
                       </div>
-                      <div className="font-medium text-blue-400">${(addons.infrastructure.domain.price * (selectedPackage + 1)).toFixed(2)}</div>
+                      <div className="font-medium text-blue-400">${(addons.infrastructure.domain.price * currentPackage.campaigns).toFixed(2)}</div>
                     </div>
                     
                     <div className="flex items-center justify-between p-4 border border-gray-700 rounded-lg bg-[#0F172A]/80 ">
@@ -618,10 +543,10 @@ export default function PricingPage() {
                         <div className="font-medium text-white">{t('addons.infrastructure.workspace.name', { fallback: addons.infrastructure.workspace.name })}</div>
                         <div className="text-sm text-gray-300">
                           {t('addons.infrastructure.workspace.description', { fallback: addons.infrastructure.workspace.description })}
-                          <span className="font-medium text-gray-300"> (${addons.infrastructure.workspace.price} × {selectedPackage + 1})</span>
+                          <span className="font-medium text-gray-300"> (${addons.infrastructure.workspace.price} × {currentPackage.campaigns})</span>
                         </div>
                       </div>
-                      <div className="font-medium text-blue-400">${(addons.infrastructure.workspace.price * (selectedPackage + 1)).toFixed(2)}</div>
+                      <div className="font-medium text-blue-400">${(addons.infrastructure.workspace.price * currentPackage.campaigns).toFixed(2)}</div>
                     </div>
                   </div>
                 </div>
@@ -643,19 +568,17 @@ export default function PricingPage() {
                     <div className="mt-3 pt-2 border-t border-gray-700">
                       <div className="text-sm font-medium text-gray-300">
                         {t('pricing.agencyServices', { fallback: 'Agency services' })}: <span className="text-blue-400">${(isInitialSetup 
-                          ? (selectedPackage === 3 
-                              ? (850 + (Math.ceil(customContacts / 1) > 1 ? 500 * (Math.ceil(customContacts / 1) - 1) : 0) + calculateABTestPrice())
-                              : currentPackage.setupPrice + calculateABTestPrice())
-                          : currentPackage.leadsPrice + calculateABTestPrice() + 
+                          ? (currentPackage.setupPrice + calculateABTestPrice())
+                          : (currentPackage.leadsPrice + calculateABTestPrice() + 
                             (options.campaign ? addons.campaign.price : 0) + 
-                            (options.sequence ? addons.sequence.price : 0)
+                            (options.sequence ? addons.sequence.price : 0))
                         ).toFixed(2)}</span>
                       </div>
                       <div className="text-sm font-medium text-gray-300">
                         {t('pricing.infrastructureCosts', { fallback: 'Infrastructure costs' })}: <span className="text-blue-400">${(
                           addons.infrastructure.esp.price + 
-                          (addons.infrastructure.domain.price * (selectedPackage === 3 ? Math.ceil(customContacts / 1) : currentPackage.campaigns)) + 
-                          (addons.infrastructure.workspace.price * (selectedPackage === 3 ? Math.ceil(customContacts / 1) : currentPackage.campaigns))
+                          (addons.infrastructure.domain.price * currentPackage.campaigns) + 
+                          (addons.infrastructure.workspace.price * currentPackage.campaigns)
                         ).toFixed(2)}</span>
                       </div>
                     </div>
