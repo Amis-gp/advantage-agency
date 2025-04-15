@@ -4,8 +4,6 @@ import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { useParams } from 'next/navigation';
-// Remove Head import as it's not supported in app router
-// import Head from 'next/head';
 
 const ColdEmailAutomation = () => {
   const params = useParams();
@@ -18,19 +16,11 @@ const ColdEmailAutomation = () => {
     const loadTranslations = async () => {
       setIsLoading(true);
       try {
-        const translations = await import(`/messages/${locale}/blog/cold-email-automation.json`);
+        const translations = await import(`messages/${locale}/blog/cold-email-automation.json`);
         setTranslations(translations.default);
         document.title = translations.default.title || 'Cold Email Automation';
       } catch (error) {
         console.error('Error loading translations:', error);
-        // Спробуємо завантажити англійські переклади як запасний варіант
-        try {
-          const fallbackTranslations = await import(`/messages/en/blog/cold-email-automation.json`);
-          setTranslations(fallbackTranslations.default);
-          document.title = fallbackTranslations.default.title || 'Cold Email Automation';
-        } catch (fallbackError) {
-          console.error('Error loading fallback translations:', fallbackError);
-        }
       } finally {
         setIsLoading(false);
       }
@@ -56,14 +46,10 @@ const ColdEmailAutomation = () => {
     return result;
   };
   
-  // Helper function to safely get array data from translations
   const getArrayData = (path: string) => {
     const data = t(path);
     return Array.isArray(data) ? data : [];
   };
-  
-  // Use relative paths instead of domain-based URLs
-  const canonicalUrl = `/blog/cold-email-automation`;
   
   if (isLoading) {
     return (
@@ -84,9 +70,9 @@ const ColdEmailAutomation = () => {
         <div className="prose prose-lg max-w-none prose-headings:font-display prose-headings:text-white prose-p:text-gray-300 prose-p:leading-relaxed prose-a:text-blue-400 prose-a:no-underline hover:prose-a:text-blue-300" itemScope itemType="https://schema.org/BlogPosting">
           <meta itemProp="headline" content={t('title')} />
           <meta itemProp="description" content={t('intro')} />
-          <meta itemProp="datePublished" content="2023-11-15T10:00:00Z" />
+          <meta itemProp="datePublished" content="2025-04-15T10:00:00Z" />
           <meta itemProp="dateModified" content={currentDate} />
-          <meta itemProp="author" content="Advantage Agency" />
+          <meta itemProp="author" content="ADvantage" />
           
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-8 font-display bg-gradient-to-r from-white to-blue-400 bg-clip-text text-transparent" itemProp="headline">{t('title')}</h1>
           
@@ -119,7 +105,6 @@ const ColdEmailAutomation = () => {
             <p className="text-xl font-medium leading-relaxed text-white">{t('intro')}</p>
           </div>
           
-          {/* Section 1 */}
           <section className="mb-16">
             <div className="flex items-center mb-6">
               <div className="flex items-center justify-center w-12 h-12 rounded-full bg-blue-500 mr-4 text-white font-bold">
@@ -149,8 +134,6 @@ const ColdEmailAutomation = () => {
             </p>
           </section>
 
-          {/* Rest of your sections remain the same */}
-          {/* Section 2 */}
           <section className="mb-16">
             <div className="flex items-center mb-6">
               <div className="flex items-center justify-center w-12 h-12 rounded-full bg-blue-500 mr-4 text-white font-bold">
@@ -180,7 +163,6 @@ const ColdEmailAutomation = () => {
             </p>
           </section>
 
-          {/* Section 3 */}
           <section className="mb-16">
             <div className="flex items-center mb-6">
               <div className="flex items-center justify-center w-12 h-12 rounded-full bg-blue-500 mr-4 text-white font-bold">
@@ -207,7 +189,6 @@ const ColdEmailAutomation = () => {
             </p>
           </section>
 
-          {/* Section 4 */}
           <section className="mb-16">
             <div className="flex items-center mb-6">
               <div className="flex items-center justify-center w-12 h-12 rounded-full bg-blue-500 mr-4 text-white font-bold">
@@ -237,7 +218,6 @@ const ColdEmailAutomation = () => {
             </p>
           </section>
 
-          {/* Section 5 */}
           <section className="mb-16">
             <div className="flex items-center mb-6">
               <div className="flex items-center justify-center w-12 h-12 rounded-full bg-blue-500 mr-4 text-white font-bold">
@@ -266,7 +246,6 @@ const ColdEmailAutomation = () => {
             </p>
           </section>
 
-          {/* Conclusion */}
           <section className="mb-16">
             <h2 className="text-2xl font-bold mb-6 text-white">{t('conclusion.title')}</h2>
             
@@ -288,7 +267,6 @@ const ColdEmailAutomation = () => {
             </p>
           </section>
 
-          {/* CTA */}
           <div className="bg-gradient-to-r from-blue-600 to-indigo-700 text-white p-10 rounded-2xl text-center shadow-2xl">
             <h3 className="text-2xl font-bold mb-4">{t('cta.title')}</h3>
             <p className="mb-8 text-blue-100">{t('cta.subtitle')}</p>
