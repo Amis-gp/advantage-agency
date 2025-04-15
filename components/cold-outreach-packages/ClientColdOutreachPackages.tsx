@@ -313,49 +313,66 @@ export default function PricingPage() {
   };
 
   return (
-    <div className="min-h-screen bg-white pb-20">
+    <div className="min-h-screen bg-gradient-to-b from-[#0F172A] via-[#1E293B] to-[#0F172A] text-gray-200 pb-20 relative overflow-hidden">
+
+      <div className="absolute top-20 right-10 w-96 h-96 bg-blue-500/10 rounded-full filter blur-3xl"></div>
+      <div className="absolute bottom-20 left-10 w-80 h-80 bg-indigo-500/10 rounded-full filter blur-3xl"></div>
+      <div className="absolute top-1/3 left-1/4 w-64 h-64 bg-purple-500/10 rounded-full filter blur-3xl"></div>
+      
+      <div className="absolute inset-0 opacity-20">
+        <div className="absolute top-1/4 left-0 w-full h-px bg-gradient-to-r from-transparent via-blue-500 to-transparent"></div>
+        <div className="absolute top-2/4 left-0 w-full h-px bg-gradient-to-r from-transparent via-indigo-500 to-transparent"></div>
+        <div className="absolute top-3/4 left-0 w-full h-px bg-gradient-to-r from-transparent via-purple-500 to-transparent"></div>
+      </div>
+      
       <LanguageSwitcher />
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 relative z-10">
         <div className="text-center">
-          <h1 className="text-4xl font-extrabold text-slate-800 sm:text-5xl sm:tracking-tight lg:text-6xl">
+          <h1 className="text-4xl font-extrabold text-white sm:text-5xl sm:tracking-tight lg:text-6xl bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-indigo-600">
             {t('pricing.title', { fallback: 'Cold Outreach Packages' })}
           </h1>
-          <p className="mt-6 max-w-2xl mx-auto text-xl text-slate-600">
+          <p className="mt-6 max-w-2xl mx-auto text-xl text-gray-300">
             {t('pricing.subtitle', { fallback: 'Get more leads with our professional cold email campaigns that actually convert.' })}
           </p>
         </div>
         
-        {/* Процес - пояснення */}
-        <div className="my-16 bg-gray-50 rounded-xl p-8 border border-gray-100 shadow-sm">
-          <h2 className="text-2xl font-bold text-slate-800 mb-6">{t('process.title')}</h2>
+        <div className="my-16 bg-gradient-to-br from-[#1E293B] to-[#0F172A] rounded-xl p-8 border border-gray-700 shadow-lg relative">
+          
+          <h2 className="text-2xl font-bold text-white mb-6">{t('process.title')}</h2>
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div className="bg-gray-50 p-6 rounded-xl shadow-sm border border-gray-100">
-              <h3 className="text-xl font-semibold text-slate-800 mb-4">
+            <div className="bg-gradient-to-br from-[#0F172A] to-[#111827] p-6 rounded-xl shadow-md border border-gray-700 relative overflow-hidden">
+
+              <div className="absolute top-0 left-0 w-1 h-full bg-gradient-to-b from-blue-500 to-indigo-500"></div>
+              
+              <h3 className="text-xl font-semibold text-white mb-4 pl-2">
                 {t('process.firstMonth.title')}
               </h3>
               <ul className="space-y-2">
                 {Array.isArray(t.raw('process.firstMonth.steps')) 
                 ? t.raw('process.firstMonth.steps').map((step: string, index: number) => (
                     <li key={index} className="flex items-start">
-                      <span className="text-blue-500 mr-2">✓</span>
-                      <span className="text-slate-700">{step}</span>
+                      <span className="text-blue-400 mr-2">✓</span>
+                      <span className="text-gray-300">{step}</span>
                     </li>
                   ))
                 : null}
               </ul>
             </div>
             
-            <div className="bg-gray-50 p-6 rounded-xl shadow-sm border border-gray-100">
-              <h3 className="text-xl font-semibold text-slate-800 mb-4">
+            <div className="bg-gradient-to-br from-[#0F172A] to-[#111827] p-6 rounded-xl shadow-md border border-gray-700 relative overflow-hidden">
+              {/* Додаємо декоративну лінію */}
+              <div className="absolute top-0 left-0 w-1 h-full bg-gradient-to-b from-indigo-500 to-purple-500"></div>
+              
+              <h3 className="text-xl font-semibold text-white mb-4 pl-2">
                 {t('process.secondMonth.title')}
               </h3>
               <ul className="space-y-2">
                 {Array.isArray(t.raw('process.secondMonth.steps')) 
                 ? t.raw('process.secondMonth.steps').map((step: string, index: number) => (
                     <li key={index} className="flex items-start">
-                      <span className="text-blue-500 mr-2">✓</span>
-                      <span className="text-slate-700">{step}</span>
+                      <span className="text-blue-400 mr-2">✓</span>
+                      <span className="text-gray-300">{step}</span>
                     </li>
                   ))
                 : null}
@@ -364,18 +381,21 @@ export default function PricingPage() {
           </div>
         </div>
         
-        <div className='rounded-xl shadow-xl overflow-hidden border border-gray-100'>
+        <div className='rounded-xl shadow-2xl overflow-hidden border border-gray-700 bg-gradient-to-br from-[#1E293B] to-[#0F172A] relative'>
+          {/* Додаємо декоративні елементи */}
+          <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-blue-500 via-indigo-500 to-purple-500"></div>
+          
           {/* Перемикач "Initial Setup/Ongoing" */}
           <div className="mt-12 flex justify-center">
-            <div className="relative bg-gray-100 rounded-full p-1 flex shadow-sm">
+            <div className="relative bg-[#0F172A] rounded-full p-1 flex shadow-md border border-gray-700">
               <button
-                className={`${isInitialSetup ? 'bg-blue-500 text-white' : 'bg-transparent text-slate-700'} relative py-2 px-6 rounded-full transition-all duration-300 focus:outline-none`}
+                className={`${isInitialSetup ? 'bg-gradient-to-r from-blue-500 to-indigo-600 text-white' : 'bg-transparent text-gray-300'} relative py-2 px-6 rounded-full transition-all duration-300 focus:outline-none`}
                 onClick={() => setIsInitialSetup(true)}
               >
                 {t('toggleLabel.initialSetup')}
               </button>
               <button
-                className={`${!isInitialSetup ? 'bg-blue-500 text-white' : 'bg-transparent text-slate-700'} relative py-2 px-6 rounded-full transition-all duration-300 focus:outline-none`}
+                className={`${!isInitialSetup ? 'bg-gradient-to-r from-blue-500 to-indigo-600 text-white' : 'bg-transparent text-gray-300'} relative py-2 px-6 rounded-full transition-all duration-300 focus:outline-none`}
                 onClick={() => setIsInitialSetup(false)}
               >
                 {t('toggleLabel.ongoingMaintenance')}
@@ -383,8 +403,10 @@ export default function PricingPage() {
             </div>
           </div>
           
+          {/* ... решта коду залишається без змін ... */}
+
           <div className="mt-8 text-center">
-            <p className="text-lg text-slate-700">
+            <p className="text-lg text-gray-300">
               {isInitialSetup 
                 ? t('toggleLabel.initialDescription')
                 : t('toggleLabel.ongoingDescription')
@@ -393,37 +415,34 @@ export default function PricingPage() {
           </div>
 
           {/* Конструктор пакету */}
-          <div className="mt-12 bg-white">
+          <div className="mt-12 bg-[#0F172A]/50">
             <div className="p-6">
               <div className="space-y-10">
                 <div>
-                  <h2 className="text-2xl font-bold text-slate-800 mb-6">1. {t('steps.choosePackage')}</h2>
+                  <h2 className="text-2xl font-bold text-white mb-6">1. {t('steps.choosePackage')}</h2>
                   
                   {/* Вибір пакету */}
                   <div className="grid grid-cols-1 md:grid-cols-4 gap-4 mt-6">
                     {packages.map((pkg, index) => (
                       <div 
                         key={index}
-                        className={`border rounded-xl p-6 text-center cursor-pointer transition-all hover:shadow-md ${
-                          selectedPackage === index ? 'border-blue-500 bg-blue-50' : 'border-gray-200'
-                        } ${index === 2 ? 'ring-2 ring-blue-300 relative' : ''}`}
+                        className={`border rounded-xl p-6 text-center cursor-pointer transition-all hover:shadow-lg hover:shadow-blue-500/20 ${
+                          selectedPackage === index ? 'border-blue-500 bg-gradient-to-br from-blue-900/20 to-indigo-900/20' : 'border-gray-700 bg-gradient-to-br from-[#0F172A] to-[#111827]'
+                        } ${index === 2 ? 'ring-2 ring-blue-500 relative' : ''}`}
                         onClick={() => handlePackageChange(index)}
                       >
                         {index === 2 && (
-                          <div className="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-blue-500 text-white text-xs py-1 px-3 rounded-full">
+                          <div className="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-gradient-to-r from-blue-500 to-indigo-600 text-white text-xs py-1 px-3 rounded-full">
                             Most Popular
                           </div>
                         )}
-                        <h3 className="text-xl font-bold text-slate-800 mb-3">
-                          {index === 3 ? t('packages.customPrefix', { fallback: 'Custom' }) : t('packages.prefix', { fallback: 'Package' })} {pkg.size}
-                        </h3>
                         
                         {index === 3 ? (
                           <>
-                            <div className="text-2xl font-bold text-blue-600 mb-2">${getPackageDisplayPrice(pkg, index)}</div>
+                            <div className="text-2xl font-bold text-blue-400 mb-2">${getPackageDisplayPrice(pkg, index)}</div>
                             <div className="flex items-center justify-center mb-2">
                               <button 
-                                className="px-2 py-1 bg-gray-200 rounded-l-md"
+                                className="px-2 py-1 bg-gray-700 hover:bg-gray-600 rounded-l-md text-white"
                                 onClick={(e) => {
                                   e.stopPropagation();
                                   setCustomContacts(Math.max(4, customContacts - 1));
@@ -431,11 +450,11 @@ export default function PricingPage() {
                               >
                                 -
                               </button>
-                              <div className="px-3 py-1 bg-gray-100">
+                              <div className="px-3 py-1 bg-gray-800 text-white">
                                 {customContacts}K
                               </div>
                               <button 
-                                className="px-2 py-1 bg-gray-200 rounded-r-md"
+                                className="px-2 py-1 bg-gray-700 hover:bg-gray-600 rounded-r-md text-white"
                                 onClick={(e) => {
                                   e.stopPropagation();
                                   setCustomContacts(Math.min(20, customContacts + 1));
@@ -444,17 +463,17 @@ export default function PricingPage() {
                                 +
                               </button>
                             </div>
-                            <div className="text-slate-600">{customContacts}K {t('packages.verifiedLeads', { fallback: 'verified leads' })}</div>
+                            <div className="text-gray-300">{customContacts}K {t('packages.verifiedLeads', { fallback: 'verified leads' })}</div>
                             {isInitialSetup && (
-                              <div className="text-slate-600 mt-1">+ {Math.ceil(customContacts / 1)} campaign{Math.ceil(customContacts / 1) > 1 ? 's' : ''}</div>
+                              <div className="text-gray-300 mt-1">+ {Math.ceil(customContacts / 1)} campaign{Math.ceil(customContacts / 1) > 1 ? 's' : ''}</div>
                             )}
                           </>
                         ) : (
                           <>
-                            <div className="text-2xl font-bold text-blue-600 mb-2">${getPackageDisplayPrice(pkg, index)}</div>
-                            <div className="text-slate-600">{pkg.size} {t('packages.verifiedLeads', { fallback: 'verified leads' })}</div>
+                            <div className="text-2xl font-bold text-blue-400 mb-2">${getPackageDisplayPrice(pkg, index)}</div>
+                            <div className="text-gray-300">{pkg.size} {t('packages.verifiedLeads', { fallback: 'verified leads' })}</div>
                             {isInitialSetup && (
-                              <div className="text-slate-600 mt-1">+ {pkg.campaigns} campaign{pkg.campaigns > 1 ? 's' : ''}</div>
+                              <div className="text-gray-300 mt-1">+ {pkg.campaigns} campaign{pkg.campaigns > 1 ? 's' : ''}</div>
                             )}
                           </>
                         )}
@@ -464,38 +483,38 @@ export default function PricingPage() {
                 </div>
                 
                 <div>
-                  <h2 className="text-2xl font-bold text-slate-800 mb-6">2. {t('steps.addServices')}</h2>
+                  <h2 className="text-2xl font-bold text-white mb-6">2. {t('steps.addServices')}</h2>
                   
                   {/* Додаткові послуги */}
                   <div className="space-y-4">
                     {/* A/B Testing */}
-                    <div className="flex items-center justify-between p-4 border border-gray-200 rounded-lg">
+                    <div className="flex items-center justify-between p-4 border border-gray-700 rounded-lg bg-[#0F172A]/80 ">
                       <div>
-                        <div className="font-medium text-slate-800">{t('addons.abTesting.name')}</div>
-                        <div className="text-sm text-slate-600">
+                        <div className="font-medium text-white">{t('addons.abTesting.name')}</div>
+                        <div className="text-sm text-gray-300">
                           {t('addons.abTesting.description')}
                           {selectedPackage >= 1 && (
-                            <span className="block mt-1 text-green-600 font-medium">
+                            <span className="block mt-1 text-green-400 font-medium">
                               {t('addons.abTesting.bonusMessage')}
                             </span>
                           )}
                         </div>
                       </div>
                       <div className="flex items-center space-x-3">
-                        <div className="font-medium text-blue-600">
+                        <div className="font-medium text-blue-400">
                           ${calculateABTestPrice()}
                         </div>
-                        <div className="flex items-center bg-gray-100 rounded-md">
+                        <div className="flex items-center bg-gray-800 rounded-md">
                           <button 
-                            className="px-2 py-1 text-gray-700 disabled:text-gray-400"
+                            className="px-2 py-1 text-gray-300 disabled:text-gray-600 hover:bg-gray-700 rounded-l-md"
                             onClick={() => setAbTestCount(Math.max(0, abTestCount - 1))}
                             disabled={abTestCount <= 0}
                           >
                             -
                           </button>
-                          <span className="px-2 py-1">{abTestCount}</span>
+                          <span className="px-2 py-1 text-white">{abTestCount}</span>
                           <button 
-                            className="px-2 py-1 text-gray-700 disabled:text-gray-400"
+                            className="px-2 py-1 text-gray-300 disabled:text-gray-600 hover:bg-gray-700 rounded-r-md"
                             onClick={() => setAbTestCount(Math.min(getMaxAbTests(selectedPackage), abTestCount + 1))}
                             disabled={abTestCount >= getMaxAbTests(selectedPackage)}
                           >
@@ -507,16 +526,16 @@ export default function PricingPage() {
 
                     {/* Campaign Management - показуємо тільки в режимі Ongoing */}
                     {!isInitialSetup && (
-                      <div className="flex items-center justify-between p-4 border border-gray-200 rounded-lg">
+                      <div className="flex items-center justify-between p-4 border border-gray-700 rounded-lg bg-[#0F172A]/80 ">
                         <div>
-                          <div className="font-medium text-slate-800">{t('addons.campaignManagement.name')}</div>
-                          <div className="text-sm text-slate-600">
+                          <div className="font-medium text-white">{t('addons.campaignManagement.name')}</div>
+                          <div className="text-sm text-gray-300">
                             {t('addons.campaignManagement.description', { campaigns: currentPackage.campaigns })}
-                            <span className="text-blue-600 font-medium"> {t('addons.campaignManagement.recommended')}</span>
+                            <span className="text-blue-400 font-medium"> {t('addons.campaignManagement.recommended')}</span>
                           </div>
                         </div>
                         <div className="flex items-center space-x-3">
-                          <div className="font-medium text-blue-600">${addons.campaign.price}</div>
+                          <div className="font-medium text-blue-400">${addons.campaign.price}</div>
                           <div className="relative inline-block w-12 h-6">
                             <input 
                               type="checkbox" 
@@ -527,7 +546,7 @@ export default function PricingPage() {
                             />
                             <label 
                               htmlFor="toggleCampaign"
-                              className={`block w-full h-full rounded-full cursor-pointer transition-colors ${options.campaign ? 'bg-blue-500' : 'bg-gray-300'}`}
+                              className={`block w-full h-full rounded-full cursor-pointer transition-colors ${options.campaign ? 'bg-blue-500' : 'bg-gray-700'}`}
                             >
                               <span 
                                 className={`absolute top-0.5 left-0.5 bg-white w-5 h-5 rounded-full transition-transform duration-200 ${options.campaign ? 'translate-x-6' : 'translate-x-0'}`}
@@ -540,13 +559,13 @@ export default function PricingPage() {
 
                     {/* Custom Text Sequences - показуємо тільки в режимі Ongoing */}
                     {!isInitialSetup && (
-                      <div className="flex items-center justify-between p-4 border border-gray-200 rounded-lg">
+                      <div className="flex items-center justify-between p-4 border border-gray-700 rounded-lg bg-[#0F172A]/80 ">
                         <div>
-                          <div className="font-medium text-slate-800">{t('addons.customSequences.name')}</div>
-                          <div className="text-sm text-slate-600">{t('addons.customSequences.description')}</div>
+                          <div className="font-medium text-white">{t('addons.customSequences.name')}</div>
+                          <div className="text-sm text-gray-300">{t('addons.customSequences.description')}</div>
                         </div>
                         <div className="flex items-center space-x-3">
-                          <div className="font-medium text-blue-600">${addons.sequence.price}</div>
+                          <div className="font-medium text-blue-400">${addons.sequence.price}</div>
                           <div className="relative inline-block w-12 h-6">
                             <input 
                               type="checkbox" 
@@ -557,7 +576,7 @@ export default function PricingPage() {
                             />
                             <label 
                               htmlFor="toggleSequence"
-                              className={`block w-full h-full rounded-full cursor-pointer transition-colors ${options.sequence ? 'bg-blue-500' : 'bg-gray-300'}`}
+                              className={`block w-full h-full rounded-full cursor-pointer transition-colors ${options.sequence ? 'bg-blue-500' : 'bg-gray-700'}`}
                             >
                               <span 
                                 className={`absolute top-0.5 left-0.5 bg-white w-5 h-5 rounded-full transition-transform duration-200 ${options.sequence ? 'translate-x-6' : 'translate-x-0'}`}
@@ -570,79 +589,79 @@ export default function PricingPage() {
                   </div>
                 </div>
                 
-                  <div>
-                    <h2 className="text-2xl font-bold text-slate-800">3. {t('addons.infrastructure.title', { fallback: 'Infrastructure Costs' })}</h2>
-                    <div className="font-medium text-slate-800 mb-6">{t('addons.infrastructure.description', { fallback: 'Required technical infrastructure for your campaigns' })}</div>
-                    <div className="space-y-4">
-                      
-                      <div className="flex items-center justify-between p-4 border border-gray-200 rounded-lg">
-                        <div>
-                          <div className="font-medium text-slate-800">{t('addons.infrastructure.esp.name', { fallback: addons.infrastructure.esp.name })}</div>
-                          <div className="text-sm text-slate-600">{t('addons.infrastructure.esp.description', { fallback: addons.infrastructure.esp.description })}</div>
-                        </div>
-                        <div className="font-medium text-blue-600">${addons.infrastructure.esp.price}</div>
+                <div>
+                  <h2 className="text-2xl font-bold text-white">3. {t('addons.infrastructure.title', { fallback: 'Infrastructure Costs' })}</h2>
+                  <div className="font-medium text-gray-300 mb-6">{t('addons.infrastructure.description', { fallback: 'Required technical infrastructure for your campaigns' })}</div>
+                  <div className="space-y-4">
+                    
+                    <div className="flex items-center justify-between p-4 border border-gray-700 rounded-lg bg-[#0F172A]/80 ">
+                      <div>
+                        <div className="font-medium text-white">{t('addons.infrastructure.esp.name', { fallback: addons.infrastructure.esp.name })}</div>
+                        <div className="text-sm text-gray-300">{t('addons.infrastructure.esp.description', { fallback: addons.infrastructure.esp.description })}</div>
                       </div>
-                      
-                      <div className="flex items-center justify-between p-4 border border-gray-200 rounded-lg">
-                        <div>
-                          <div className="font-medium text-slate-800">{t('addons.infrastructure.domain.name', { fallback: addons.infrastructure.domain.name })}</div>
-                          <div className="text-sm text-slate-600">
-                            {t('addons.infrastructure.domain.description', { fallback: addons.infrastructure.domain.description })} 
-                            <span className="font-medium"> (${addons.infrastructure.domain.price} × {selectedPackage + 1})</span>
-                          </div>
+                      <div className="font-medium text-blue-400">${addons.infrastructure.esp.price}</div>
+                    </div>
+                    
+                    <div className="flex items-center justify-between p-4 border border-gray-700 rounded-lg bg-[#0F172A]/80 ">
+                      <div>
+                        <div className="font-medium text-white">{t('addons.infrastructure.domain.name', { fallback: addons.infrastructure.domain.name })}</div>
+                        <div className="text-sm text-gray-300">
+                          {t('addons.infrastructure.domain.description', { fallback: addons.infrastructure.domain.description })} 
+                          <span className="font-medium text-gray-300"> (${addons.infrastructure.domain.price} × {selectedPackage + 1})</span>
                         </div>
-                        <div className="font-medium text-blue-600">${(addons.infrastructure.domain.price * (selectedPackage + 1)).toFixed(2)}</div>
                       </div>
-                      
-                      <div className="flex items-center justify-between p-4 border border-gray-200 rounded-lg">
-                        <div>
-                          <div className="font-medium text-slate-800">{t('addons.infrastructure.workspace.name', { fallback: addons.infrastructure.workspace.name })}</div>
-                          <div className="text-sm text-slate-600">
-                            {t('addons.infrastructure.workspace.description', { fallback: addons.infrastructure.workspace.description })}
-                            <span className="font-medium"> (${addons.infrastructure.workspace.price} × {selectedPackage + 1})</span>
-                          </div>
+                      <div className="font-medium text-blue-400">${(addons.infrastructure.domain.price * (selectedPackage + 1)).toFixed(2)}</div>
+                    </div>
+                    
+                    <div className="flex items-center justify-between p-4 border border-gray-700 rounded-lg bg-[#0F172A]/80 ">
+                      <div>
+                        <div className="font-medium text-white">{t('addons.infrastructure.workspace.name', { fallback: addons.infrastructure.workspace.name })}</div>
+                        <div className="text-sm text-gray-300">
+                          {t('addons.infrastructure.workspace.description', { fallback: addons.infrastructure.workspace.description })}
+                          <span className="font-medium text-gray-300"> (${addons.infrastructure.workspace.price} × {selectedPackage + 1})</span>
                         </div>
-                        <div className="font-medium text-blue-600">${(addons.infrastructure.workspace.price * (selectedPackage + 1)).toFixed(2)}</div>
                       </div>
+                      <div className="font-medium text-blue-400">${(addons.infrastructure.workspace.price * (selectedPackage + 1)).toFixed(2)}</div>
                     </div>
                   </div>
+                </div>
 
               </div>
             </div>
             
             {/* Сумарна вартість */}
-            <div className="mt-10 pt-8 border-t border-gray-200 bg-gradient-to-r from-blue-50 to-white p-6 shadow-sm">
+            <div className="mt-10 pt-8 border-t border-gray-700 bg-gradient-to-r from-blue-900/30 to-indigo-900/30 p-6 shadow-lg ">
               <div className="flex flex-col md:flex-row justify-between items-center">
                 <div>
-                  <div className="text-xl font-semibold text-slate-800">
+                  <div className="text-xl font-semibold text-white">
                     {isInitialSetup ? t('pricing.totalInvestment') : t('pricing.monthlyInvestment')}
                   </div>
                   {/* Додаємо розшифровку вартості для обох режимів */}
                   <div className="mt-3 text-left">
                     
                     {/* Підсумкові суми */}
-                    <div className="mt-3 pt-2 border-t border-gray-200">
-                      <div className="text-sm font-medium text-slate-800">
-                        {t('pricing.agencyServices', { fallback: 'Agency services' })}: ${(isInitialSetup 
+                    <div className="mt-3 pt-2 border-t border-gray-700">
+                      <div className="text-sm font-medium text-gray-300">
+                        {t('pricing.agencyServices', { fallback: 'Agency services' })}: <span className="text-blue-400">${(isInitialSetup 
                           ? (selectedPackage === 3 
                               ? (850 + (Math.ceil(customContacts / 1) > 1 ? 500 * (Math.ceil(customContacts / 1) - 1) : 0) + calculateABTestPrice())
                               : currentPackage.setupPrice + calculateABTestPrice())
                           : currentPackage.leadsPrice + calculateABTestPrice() + 
                             (options.campaign ? addons.campaign.price : 0) + 
                             (options.sequence ? addons.sequence.price : 0)
-                        ).toFixed(2)}
+                        ).toFixed(2)}</span>
                       </div>
-                      <div className="text-sm font-medium text-slate-800">
-                        {t('pricing.infrastructureCosts', { fallback: 'Infrastructure costs' })}: ${(
+                      <div className="text-sm font-medium text-gray-300">
+                        {t('pricing.infrastructureCosts', { fallback: 'Infrastructure costs' })}: <span className="text-blue-400">${(
                           addons.infrastructure.esp.price + 
                           (addons.infrastructure.domain.price * (selectedPackage === 3 ? Math.ceil(customContacts / 1) : currentPackage.campaigns)) + 
                           (addons.infrastructure.workspace.price * (selectedPackage === 3 ? Math.ceil(customContacts / 1) : currentPackage.campaigns))
-                        ).toFixed(2)}
+                        ).toFixed(2)}</span>
                       </div>
                     </div>
                   </div>
                 </div>
-                <div className="text-2xl font-bold text-blue-600 mt-4 md:mt-0 bg-white px-8 py-3 rounded-full shadow-sm border border-blue-100">
+                <div className="text-2xl font-bold text-white mt-4 md:mt-0 bg-gradient-to-r from-blue-600 to-indigo-600 px-8 py-3 rounded-full shadow-lg border border-blue-400/30">
                   ${calculateTotal().toFixed(2)}
                 </div>
               </div>
@@ -650,17 +669,15 @@ export default function PricingPage() {
           </div>
         </div>
         
-        
-
         <div className="mt-24">
-          <h2 className="text-2xl font-bold text-slate-800 mb-6">{t('faq.title')}</h2>
+          <h2 className="text-2xl font-bold text-white mb-6">{t('faq.title')}</h2>
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {Array.isArray(t.raw('faq.items')) 
               ? t.raw('faq.items').map((item: { question: string, answer: string }, index: number) => (
-                <div key={index} className="bg-gray-50 p-6 rounded-xl shadow-sm border border-gray-100">
-                  <h3 className="text-xl font-semibold text-slate-800 mb-3">{item.question}</h3>
-                  <p className="text-slate-700">{item.answer}</p>
+                <div key={index} className="bg-[#1E293B]/80 p-6 rounded-xl shadow-md border border-gray-700 ">
+                  <h3 className="text-xl font-semibold text-white mb-3">{item.question}</h3>
+                  <p className="text-gray-300">{item.answer}</p>
                 </div>
               ))
             : null}

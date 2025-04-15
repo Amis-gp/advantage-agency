@@ -61,15 +61,6 @@ export default function ClientResults() {
                         </div>
                     ))}
                 </div>
-
-                {/* <div className="text-center mt-12">
-                    <a href="#all-results" className="inline-flex items-center text-white hover:text-[#4F46E5] transition-colors duration-300">
-                        <span className="mr-2">{t('cta')}</span>
-                        <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7"/>
-                        </svg>
-                    </a>
-                </div> */}
             </div>
         </section>
     );

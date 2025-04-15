@@ -15,7 +15,7 @@ export default function FAQ() {
     };
 
     return (
-        <section className="relative py-20 overflow-hidden">
+        <section id='faq' className="relative py-20 overflow-hidden">
             <div className="relative container mx-auto px-4">
                 <motion.div 
                     initial={{ opacity: 0, y: 20 }}

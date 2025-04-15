@@ -1455,8 +1455,8 @@
             "title_part2": "your needs",
             "subtitle": "Flexible pricing options for your requirements",
             "popular": "Popular",
-            "enterprise": "Enterprise",
-            "advancedPackages": "Advanced Packages",
+            "enterprise": "Popular among businesses",
+            "advancedPackages": "Business Packages",
             "standard": {
                 "title": "1K Contacts Package",
                 "description": "One-time payment for system setup",
@@ -1557,16 +1557,16 @@
             "subtitle": "Get answers to common questions about our cold email marketing service",
             "items": [
                 {
-                    "question": "How do you guarantee results?",
-                    "answer": "We work on a performance basis, meaning we only get paid when we deliver results. Our proven system has consistently delivered qualified leads to agencies like yours."
+                    "question": "What does the initial setup include?",
+                    "answer": "The initial setup includes campaign configuration, strategy development, email copywriting, contact database parsing, and campaign launch. All preparatory work necessary for successful email outreach."
                 },
                 {
-                    "question": "What do you need from me?",
-                    "answer": "The majority of the service is done-for-you, however the 15-30 days we'll need your support with understanding who you want to target, case studies and basically becoming your fractional sales team."
+                    "question": "How does your pricing work?",
+                    "answer": "Our pricing has two phases. The initial setup (first 2 months) includes complete preparation and campaign launch. After that, you can purchase additional services as needed."
                 },
                 {
-                    "question": "What makes you different from lead gen agencies?",
-                    "answer": "Unlike traditional lead gen agencies, we focus on quality over quantity. We use trigger-based targeting to reach companies actively looking for your services, resulting in higher conversion rates and better ROI."
+                    "question": "What happens after the first two months of work?",
+                    "answer": "After completing the initial phase, you receive a fully functional cold outreach system. For continued operation, you'll need to update your contact database and optimize email messaging based on data collected from the previous month."
                 }
             ],
             "cta": {
@@ -1579,7 +1579,7 @@
             "quick_links": {
                 "title": "Quick Links",
                 "how_it_works": "How it Works",
-                "pricing": "Pricing",
+                "packages": "Packages",
                 "client_results": "Client Results",
                 "faq": "FAQ"
             },
@@ -1603,46 +1603,54 @@
             "subtitle": "Discover how we've helped businesses achieve remarkable results through our proven strategies",
             "cases": [
                 {
-                "title": "Our Scrapping Software",
-                "description": "Multi-platform data collection solution with global reach",
-                "link": "/cases/v15",
-                "stats": {
-                    "instagram": "Yes",
-                    "facebook": "Yes",
-                    "linkedin": "Yes"
-                }
+                    "title": "Our Scrapping Software",
+                    "description": "Multi-platform data collection solution with global reach",
+                    "stats": {
+                        "instagram": "Yes",
+                        "facebook": "Yes",
+                        "linkedin": "Yes"
+                    }
                 },
                 {
-                "title": "3D Rendering",
-                "description": "High-end visualization services for architecture and real estate",
-                "link": "/cases/v6",
-                "stats": {
-                    "emailResponses": "174",
-                    "leadCalls": "116",
-                    "closedDeals": "29"
-                }
+                    "title": "3D Rendering",
+                    "description": "High-end visualization services for architecture and real estate",
+                    "stats": {
+                        "emailResponses": "174",
+                        "leadCalls": "116",
+                        "closedDeals": "29"
+                    }
                 },
                 {
-                "title": "Email Marketing",
-                "description": "High-converting email marketing campaign for B2B sector",
-                "link": "/cases/v13",
-                "stats": {
-                    "emailsSent": "2921",
-                    "responses": "56",
-                    "demoCalls": "31"
-                }
+                    "title": "Email Marketing",
+                    "description": "High-converting email marketing campaign for B2B sector",
+                    "stats": {
+                        "emailsSent": "2921",
+                        "responses": "56",
+                        "demoCalls": "31"
+                    }
+                },
+                {
+                    "title": "Zeno CRM",
+                    "description": "6-week campaign for CRM solution targeting European businesses",
+                    "stats": {
+                        "emailsSent": "6000",
+                        "openRate": "57%",
+                        "replyRate": "2%"
+                    }
                 }
             ],
             "stats": {
                 "instagram": "Instagram",
                 "facebook": "Facebook",
                 "linkedin": "LinkedIn",
-                "emailResponses": "Responses",
-                "leadCalls": "Calls",
-                "closedDeals": "Deals",
-                "emailsSent": "Sent",
+                "emailResponses": "Email Responses",
+                "leadCalls": "Lead Calls",
+                "closedDeals": "Closed Deals",
+                "emailsSent": "Emails Sent",
                 "responses": "Responses",
-                "demoCalls": "Demos"
+                "demoCalls": "Demo Calls",
+                "openRate": "Open Rate",
+                "replyRate": "Reply Rate"
             },
             "viewCase": "View Case"
         }

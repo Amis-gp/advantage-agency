@@ -3,7 +3,7 @@ import Hero from '@/components/cold-email/Hero';
 import Testimonials from '@/components/cold-email/Testimonials';
 import HowItWorks from '@/components/cold-email/HowItWorks';
 import FAQ from '@/components/cold-email/FAQ';
-import Pricing from '@/components/cold-email/Pricing';
+import Pricing from '@/components/cold-email/Packages';
 import Process from '@/components/cold-email/Process';
 import Footer from '@/components/cold-email/Footer';
 import dynamic from 'next/dynamic';

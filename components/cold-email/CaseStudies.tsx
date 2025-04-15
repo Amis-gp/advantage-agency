@@ -11,8 +11,8 @@ export default function CaseStudies() {
         {
             title: t('cases.0.title'),
             description: t('cases.0.description'),
-            image: '/img/cold-email/case-1.webp',
-            link: t('cases.0.link'),
+            image: '/img/portfolio/build-scraper.webp',
+            link: "/cases/v15",
             stats: {
                 instagram: t('cases.0.stats.instagram'),
                 facebook: t('cases.0.stats.facebook'),
@@ -22,8 +22,8 @@ export default function CaseStudies() {
         {
             title: t('cases.1.title'),
             description: t('cases.1.description'),
-            image: '/img/cold-email/case-2.webp',
-            link: t('cases.1.link'),
+            image: '/img/portfolio/3d-rendering.webp',
+            link: "/cases/v6",
             stats: {
                 emailResponses: t('cases.1.stats.emailResponses'),
                 leadCalls: t('cases.1.stats.leadCalls'),
@@ -33,18 +33,29 @@ export default function CaseStudies() {
         {
             title: t('cases.2.title'),
             description: t('cases.2.description'),
-            image: '/img/cold-email/case-3.webp',
-            link: t('cases.2.link'),
+            image: '/img/portfolio/email-marketing.webp',
+            link: "/cases/v13",
             stats: {
                 emailsSent: t('cases.2.stats.emailsSent'),
                 responses: t('cases.2.stats.responses'),
                 demoCalls: t('cases.2.stats.demoCalls')
             }
+        },
+        {
+            title: t('cases.3.title'),
+            description: t('cases.3.description'),
+            image: '/img/portfolio/zeno-crm.webp',
+            link: "/cases/v16",
+            stats: {
+                emailsSent: t('cases.3.stats.emailsSent'),
+                openRate: t('cases.3.stats.openRate'),
+                replyRate: t('cases.3.stats.replyRate')
+            }
         }
     ];
 
     return (
-        <section className="pt-28 pb-8 relative max-w-7xl mx-auto">
+        <section id='CaseStudies' className="pt-28 pb-8 relative max-w-7xl mx-auto">
             <div className="container mx-auto px-4">
                 <motion.div 
                     initial={{ opacity: 0, y: 20 }}
@@ -61,7 +72,7 @@ export default function CaseStudies() {
                     </p>
                 </motion.div>
 
-                <div className="grid md:grid-cols-3 gap-12">
+                <div className="grid md:grid-cols-2 gap-12">
                     {cases.map((caseItem, index) => (
                         <motion.div
                             key={index}
@@ -69,9 +80,9 @@ export default function CaseStudies() {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ duration: 0.6, delay: index * 0.2 }}
-                            className="group relative bg-[#0A0A0A]/90 border border-zinc-800 rounded-2xl overflow-hidden hover:bg-[#151515] transition-all duration-300 hover:scale-[1.02] hover:shadow-xl hover:shadow-[#4F46E5]/10"
+                            className=" max-w-[500px] mx-auto group relative bg-[#0A0A0A]/90 border border-zinc-800 rounded-2xl overflow-hidden hover:bg-[#151515] transition-all duration-300 hover:scale-[1.02] hover:shadow-xl hover:shadow-[#4F46E5]/10"
                         >
-                            <Link href={caseItem.link} className="block p-6">
+                            <Link href={caseItem.link} target="_blank" className="block p-6">
                                 <div className="flex items-center justify-between mb-2">
                                     <div className="flex items-center gap-2">
                                         <div className="w-2 h-2 rounded-full bg-[#4F46E5]"></div>

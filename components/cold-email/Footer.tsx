@@ -73,17 +73,17 @@ export default function Footer() {
                         <h3 className="text-white font-semibold mb-4">{t('quick_links.title')}</h3>
                         <ul className="space-y-3">
                             <li>
-                                <a href="#how-it-works" className="text-gray-400 hover:text-[#645cef] transition-colors">
+                                <a href="#HowItWorks" className="text-gray-400 hover:text-[#645cef] transition-colors">
                                     {t('quick_links.how_it_works')}
                                 </a>
                             </li>
                             <li>
-                                <a href="#pricing" className="text-gray-400 hover:text-[#645cef] transition-colors">
-                                    {t('quick_links.pricing')}
+                                <a href="#Packages" className="text-gray-400 hover:text-[#645cef] transition-colors">
+                                    {t('quick_links.packages')}
                                 </a>
                             </li>
                             <li>
-                                <a href="#client-results" className="text-gray-400 hover:text-[#645cef] transition-colors">
+                                <a href="#CaseStudies" className="text-gray-400 hover:text-[#645cef] transition-colors">
                                     {t('quick_links.client_results')}
                                 </a>
                             </li>

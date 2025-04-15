@@ -57,8 +57,8 @@ export const portfolioSlides = [
         },
         location: '🌎 Worldwide',
         slug: {
-            en: 'cases/v14',
-            uk: 'cases/v14'
+            en: 'cases/v15',
+            uk: 'cases/v15'
         },
     },
     {

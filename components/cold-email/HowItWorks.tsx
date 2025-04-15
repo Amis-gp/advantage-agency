@@ -52,7 +52,7 @@ export default function HowItWorks() {
     }));
 
     return (
-        <section className="relative bg-[#111019] py-20 overflow-hidden">
+        <section id='HowItWorks' className="relative bg-[#111019] py-20 overflow-hidden">
             {/* Background Elements */}
             <div className="absolute inset-0">
                 {/* Enhanced Grid Pattern */}

@@ -28,7 +28,7 @@ export default function Pricing() {
     const package10Features = t.raw('package10.features') as string[];
     
     return (
-        <section className="relative bg-[#111019] pt-20">
+        <section id='Packages' className="relative bg-[#111019] pt-20">
             {/* Background Elements */}
             <div className="absolute inset-0">
                 {/* Circular gradient mesh */}
