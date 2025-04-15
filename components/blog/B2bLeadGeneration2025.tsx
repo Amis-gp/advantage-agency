@@ -300,16 +300,6 @@ export default function B2BLeadGenerationTrends() {
             </Link>
           </div>
           
-          <div className="mt-16 p-6 bg-gray-800/50 rounded-xl">
-            <h3 className="text-xl font-bold mb-4 text-white">{t('sections.references.title')}</h3>
-            <ol className="list-decimal pl-5 space-y-2 text-gray-300">
-              <li>{t('sections.references.list.item1')}</li>
-              <li>{t('sections.references.list.item2')}</li>
-              <li>{t('sections.references.list.item3')}</li>
-              <li>{t('sections.references.list.item4')}</li>
-            </ol>
-          </div>
-          
           <div className="border-t border-gray-700 mt-12 pt-8">
             <p className="italic text-gray-400">
               {t('sections.author.name')}, {t('sections.author.company')} <br />

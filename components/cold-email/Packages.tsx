@@ -371,7 +371,7 @@ export default function Pricing() {
 
             <Suspense fallback={null}>
                 <div id="calendly" className="mt-20">
-                    <DynamicCalendlyEmbed url="https://calendly.com/advantage-agency-contact/30min?month=2025-01" />
+                    <DynamicCalendlyEmbed url="https://calendly.com/advantage-agency-contact/30min" />
                 </div>
             </Suspense>
         </section>
