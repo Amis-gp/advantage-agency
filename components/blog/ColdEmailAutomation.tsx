@@ -4,6 +4,7 @@ import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { useParams } from 'next/navigation';
+import { portfolioSlides } from '../../app/constant/portfolioSlides';
 
 // Import translations directly
 import enTranslations from '../../messages/en/blog/cold-email-automation.json';
@@ -17,7 +18,6 @@ const ColdEmailAutomation = () => {
   const currentDate = new Date().toISOString();
   
   useEffect(() => {
-    // Встановлюємо переклади в залежності від мови
     const translationsToUse = locale === 'uk' ? ukTranslations : enTranslations;
     setTranslations(translationsToUse);
     document.title = translationsToUse.title || 'Cold Email Automation';
@@ -218,6 +218,8 @@ const ColdEmailAutomation = () => {
             </p>
           </section>
 
+          // In the Section 5 part, replace the existing grid with:
+          
           {/* Section 5 */}
           <section className="mb-16">
             <div className="flex items-center mb-6">
@@ -232,13 +234,28 @@ const ColdEmailAutomation = () => {
             </p>
             
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
-              {getArrayData('section5.cases').map((caseItem, index) => (
-                <div key={index} className="bg-gray-800/50 p-6 rounded-lg shadow-md border border-gray-700 hover:border-blue-500 transition-all duration-300">
-                  <h3 className="font-bold text-lg mb-2 text-white">{caseItem.title}</h3>
+              {portfolioSlides.slice(0, 4).map((caseItem, index) => (
+                <Link 
+                  href={`/${locale}/${caseItem.slug[locale === 'uk' ? 'uk' : 'en']}`} 
+                  key={index} 
+                  className="bg-gray-800/50 p-6 rounded-lg shadow-md border border-gray-700 hover:border-blue-500 transition-all duration-300 group"
+                >
+                  <div className="relative w-full h-48 mb-4 rounded-lg overflow-hidden">
+                    <Image 
+                      src={caseItem.image} 
+                      alt={caseItem.title}
+                      fill
+                      className="object-cover group-hover:scale-105 transition-transform duration-500"
+                    />
+                  </div>
+                  <h3 className="font-bold text-lg mb-2 text-white group-hover:text-blue-400 transition-colors duration-300">{caseItem.title}</h3>
                   <p className="text-gray-300">
-                    {caseItem.description}
+                    {caseItem.location} • {caseItem.date}
                   </p>
-                </div>
+                  <div className="mt-3 text-sm text-blue-400">
+                    {t('section5.viewCaseStudy')} →
+                  </div>
+                </Link>
               ))}
             </div>
             
