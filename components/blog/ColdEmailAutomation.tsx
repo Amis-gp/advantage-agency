@@ -5,6 +5,10 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { useParams } from 'next/navigation';
 
+// Import translations directly
+import enTranslations from '../../messages/en/blog/cold-email-automation.json';
+import ukTranslations from '../../messages/uk/blog/cold-email-automation.json';
+
 const ColdEmailAutomation = () => {
   const params = useParams();
   const locale = params.locale as string;
@@ -13,20 +17,11 @@ const ColdEmailAutomation = () => {
   const currentDate = new Date().toISOString();
   
   useEffect(() => {
-    const loadTranslations = async () => {
-      setIsLoading(true);
-      try {
-        const translations = await import(`messages/${locale}/blog/cold-email-automation.json`);
-        setTranslations(translations.default);
-        document.title = translations.default.title || 'Cold Email Automation';
-      } catch (error) {
-        console.error('Error loading translations:', error);
-      } finally {
-        setIsLoading(false);
-      }
-    };
-    
-    loadTranslations();
+    // Встановлюємо переклади в залежності від мови
+    const translationsToUse = locale === 'uk' ? ukTranslations : enTranslations;
+    setTranslations(translationsToUse);
+    document.title = translationsToUse.title || 'Cold Email Automation';
+    setIsLoading(false);
   }, [locale]);
   
   const t = (path: string) => {
@@ -105,6 +100,7 @@ const ColdEmailAutomation = () => {
             <p className="text-xl font-medium leading-relaxed text-white">{t('intro')}</p>
           </div>
           
+          {/* Section 1 */}
           <section className="mb-16">
             <div className="flex items-center mb-6">
               <div className="flex items-center justify-center w-12 h-12 rounded-full bg-blue-500 mr-4 text-white font-bold">
@@ -134,6 +130,8 @@ const ColdEmailAutomation = () => {
             </p>
           </section>
 
+          {/* Rest of your sections remain the same */}
+          {/* Section 2 */}
           <section className="mb-16">
             <div className="flex items-center mb-6">
               <div className="flex items-center justify-center w-12 h-12 rounded-full bg-blue-500 mr-4 text-white font-bold">
@@ -163,6 +161,7 @@ const ColdEmailAutomation = () => {
             </p>
           </section>
 
+          {/* Section 3 */}
           <section className="mb-16">
             <div className="flex items-center mb-6">
               <div className="flex items-center justify-center w-12 h-12 rounded-full bg-blue-500 mr-4 text-white font-bold">
@@ -189,6 +188,7 @@ const ColdEmailAutomation = () => {
             </p>
           </section>
 
+          {/* Section 4 */}
           <section className="mb-16">
             <div className="flex items-center mb-6">
               <div className="flex items-center justify-center w-12 h-12 rounded-full bg-blue-500 mr-4 text-white font-bold">
@@ -218,6 +218,7 @@ const ColdEmailAutomation = () => {
             </p>
           </section>
 
+          {/* Section 5 */}
           <section className="mb-16">
             <div className="flex items-center mb-6">
               <div className="flex items-center justify-center w-12 h-12 rounded-full bg-blue-500 mr-4 text-white font-bold">
@@ -246,6 +247,7 @@ const ColdEmailAutomation = () => {
             </p>
           </section>
 
+          {/* Conclusion */}
           <section className="mb-16">
             <h2 className="text-2xl font-bold mb-6 text-white">{t('conclusion.title')}</h2>
             
@@ -267,6 +269,7 @@ const ColdEmailAutomation = () => {
             </p>
           </section>
 
+          {/* CTA */}
           <div className="bg-gradient-to-r from-blue-600 to-indigo-700 text-white p-10 rounded-2xl text-center shadow-2xl">
             <h3 className="text-2xl font-bold mb-4">{t('cta.title')}</h3>
             <p className="mb-8 text-blue-100">{t('cta.subtitle')}</p>
