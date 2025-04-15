@@ -218,7 +218,6 @@ const ColdEmailAutomation = () => {
             </p>
           </section>
 
-          // In the Section 5 part, replace the existing grid with:
           
           {/* Section 5 */}
           <section className="mb-16">
