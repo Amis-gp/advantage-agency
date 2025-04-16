@@ -132,7 +132,7 @@ export default function ServicesSection() {
                                 viewport={{ once: true }}
                                 whileInView={{ opacity: 1, y: 0 }}
                                 transition={{ delay: index * 0.2 }}
-                                className={`rounded-2xl p-8 border ${serviceStyles[plan.type as keyof typeof serviceStyles].background} border-[#3e4c68] h-[570px]`}
+                                className={`rounded-2xl p-6 xl:p-8 border ${serviceStyles[plan.type as keyof typeof serviceStyles].background} border-[#3e4c68] h-[570px]`}
                             >
                                 <h3 className="text-2xl font-bold text-white">
                                     {plan.title}
@@ -140,7 +140,7 @@ export default function ServicesSection() {
                                 <p className={`mt-2 text-sm text-gray-400`}>
                                     {plan.subtitle}
                                 </p>
-                                <div className="mt-8">
+                                <div className="mt-4 xl:mt-8">
                                     <span className={`text-5xl font-bold ${['blue', 'white', 'purple']}`}>
                                         {plan.price}
                                     </span>
@@ -151,9 +151,9 @@ export default function ServicesSection() {
                                 >
                                     {plan.button}
                                 </Link>
-                                <ul className="mt-8 space-y-4">
+                                <ul className="mt-8 space-y-2 sm:space-y-4 lg:space-y-2 xl:space-y-4">
                                     {plan.features?.map((feature: string, i: number) => (
-                                        <li key={i} className="flex items-center gap-3">
+                                        <li key={i} className="flex items-center gap-3 mt-auto">
                                             <span className="text-green-500">✓</span>
                                             <span className="text-gray-400">
                                                 {feature}
