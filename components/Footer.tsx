@@ -52,7 +52,7 @@ export default function Footer() {
                         <div className="flex gap-6 md:gap-8">
                             {[
                                 { name: 'Home', href: '/' },
-                                { name: 'Portfolio', href: '#portfolio' },
+                                { name: 'Instructions', href: '#instructions' },
                                 { name: 'Services', href: '#services' },
                                 { name: 'Blog', href: '/blog' },
                                 { name: 'Looking for work?', href: '/join-the-team', className: 'font-bold text-red-500 hover:text-red-600 hidden sm:block ' }
