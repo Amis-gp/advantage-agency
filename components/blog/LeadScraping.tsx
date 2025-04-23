@@ -194,7 +194,6 @@ export default function LeadScraping() {
               fill
               className="object-cover hover:scale-105 transition-transform duration-700"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-gray-900/80 to-transparent"></div>
           </div>
           
           <div className="mb-12 bg-blue-900/20 p-6 rounded-xl border-l-4 border-blue-500">
@@ -326,7 +325,7 @@ export default function LeadScraping() {
             
             <div className="mt-8">
               <Link 
-                href={`/${locale}/contact`}
+                href={'https://calendly.com/advantage-agency-contact/30min'}
                 className="inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 md:py-4 md:text-lg md:px-8 transition-colors"
               >
                 {locale === 'uk' ? 'Зв\'яжіться з нами' : 'Contact Us'}
