@@ -9,7 +9,7 @@ const blogPosts = [
   {
     slug: 'lead-scraping',
     image: '/img/blog/lead-scraping/hero.webp',
-    date: '2025-03-24',
+    date: '2025-04-23',
   },
   {
     slug: 'cold-email-automation',
@@ -19,7 +19,7 @@ const blogPosts = [
   {
     slug: 'b2b-lead-generation-2025',
     image: '/img/blog/b2b-lead-generation-trends-2025/hero.jpg',
-    date: '2025-04-22',
+    date: '2025-03-24',
   },
 ];
 
