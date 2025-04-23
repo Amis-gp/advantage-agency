@@ -27,18 +27,47 @@ export default function LeadScraping() {
   const t = (path: string) => {
     if (isLoading) return '';
     
-    const keys = path.split('.');
-    let result = translations;
+    // Handle array indexing in the path (e.g., 'sections.whatIsLeadParsing.content[0]')
+    const regex = /(.*?)\[(\d+)\]$/;
+    const match = path.match(regex);
     
-    for (const key of keys) {
-      if (result && result[key] !== undefined) {
-        result = result[key];
-      } else {
-        return '';
+    if (match) {
+      // If path contains array indexing
+      const basePath = match[1];
+      const index = parseInt(match[2], 10);
+      
+      // Get the array first
+      const keys = basePath.split('.');
+      let result = translations;
+      
+      for (const key of keys) {
+        if (result && result[key] !== undefined) {
+          result = result[key];
+        } else {
+          return '';
+        }
       }
+      
+      // Then access the array element
+      if (Array.isArray(result) && index < result.length) {
+        return result[index];
+      }
+      return '';
+    } else {
+      // Regular path without array indexing
+      const keys = path.split('.');
+      let result = translations;
+      
+      for (const key of keys) {
+        if (result && result[key] !== undefined) {
+          result = result[key];
+        } else {
+          return '';
+        }
+      }
+      
+      return result;
     }
-    
-    return result;
   };
   
   // Use relative paths instead of domain-based URLs
@@ -169,58 +198,78 @@ export default function LeadScraping() {
           </div>
           
           <div className="mb-12 bg-blue-900/20 p-6 rounded-xl border-l-4 border-blue-500">
-            <p className="text-xl font-medium leading-relaxed text-white">{t('introduction')}</p>
+            <p className="text-xl font-medium leading-relaxed text-white">{translations.introduction}</p>
           </div>
           
           <h2 className="text-3xl font-bold mt-16 mb-6 relative">
             <span className="inline-block">{t('sections.whatIsLeadParsing.title')}</span>
             <span className="absolute -left-6 top-1/2 transform -translate-y-1/2 w-3 h-8 bg-blue-500"></span>
           </h2>
-          <p className="text-lg">{t('sections.whatIsLeadParsing.content')}</p>
-          <ul className="mt-6 space-y-4">
-            {t('sections.whatIsLeadParsing.list').map((item: string, index: number) => (
-              <li key={index} className="flex items-start">
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-blue-400 mr-2 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                </svg>
-                <span>{item}</span>
-              </li>
-            ))}
-          </ul>
+          <p className="text-lg">{translations.sections.whatIsLeadParsing.content[0]}</p>
+          {Array.isArray(translations.sections.whatIsLeadParsing.content[1]) && (
+            <ul className="mt-6 space-y-4">
+              {translations.sections.whatIsLeadParsing.content[1].map((item: string, index: number) => (
+                <li key={index} className="flex items-start">
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-blue-400 mr-2 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ul>
+          )}
+          <p className="mt-4">{translations.sections.whatIsLeadParsing.content[2]}</p>
 
           <h2 className="text-3xl font-bold mt-16 mb-6 relative">
             <span className="inline-block">{t('sections.standardSolutions.title')}</span>
             <span className="absolute -left-6 top-1/2 transform -translate-y-1/2 w-3 h-8 bg-blue-500"></span>
           </h2>
-          <p className="text-lg">{t('sections.standardSolutions.content')}</p>
-          <ul className="mt-6 space-y-4">
-            {t('sections.standardSolutions.list').map((item: string, index: number) => (
-              <li key={index} className="flex items-start">
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-blue-400 mr-2 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                </svg>
-                <span>{item}</span>
-              </li>
-            ))}
-          </ul>
-          <p className="mt-4">{t('sections.standardSolutions.conclusion')}</p>
+          <p className="text-lg">{translations.sections.standardSolutions.content[0]}</p>
+          {Array.isArray(translations.sections.standardSolutions.content[1]) && (
+            <ul className="mt-6 space-y-4">
+              {translations.sections.standardSolutions.content[1].map((item: string, index: number) => (
+                <li key={index} className="flex items-start">
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-blue-400 mr-2 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ul>
+          )}
+          <p className="mt-4">
+            {(() => {
+              const text = translations.sections.standardSolutions.content[2];
+              const casePhrase = "Case";
+              const idx = text.indexOf(casePhrase);
+              if (idx === -1) return text;
+              return <>
+                {text.slice(0, idx)}
+                <Link href="/cases/v16" className="text-blue-400 underline hover:text-blue-600 transition-colors" target="_blank" rel="noopener noreferrer">{casePhrase}</Link>
+                {text.slice(idx + casePhrase.length)}
+              </>;
+            })()}
+          </p>
 
           <h2 className="text-3xl font-bold mt-16 mb-6 relative">
             <span className="inline-block">{t('sections.businessApplications.title')}</span>
             <span className="absolute -left-6 top-1/2 transform -translate-y-1/2 w-3 h-8 bg-blue-500"></span>
           </h2>
-          <p className="text-lg">{t('sections.businessApplications.content')}</p>
-          <ul className="mt-6 space-y-4">
-            {t('sections.businessApplications.list').map((item: string, index: number) => (
-              <li key={index} className="flex items-start">
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-blue-400 mr-2 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                </svg>
-                <span>{item}</span>
-              </li>
-            ))}
-          </ul>
-          <p className="mt-4">{t('sections.businessApplications.conclusion')}</p>
+          <p className="text-lg">{translations.sections.businessApplications.content[0]}</p>
+          <p className="text-lg">{translations.sections.businessApplications.content[1]}</p>
+          {Array.isArray(translations.sections.businessApplications.content[2]) && (
+            <ul className="mt-6 space-y-4">
+              {translations.sections.businessApplications.content[2].map((item: string, index: number) => (
+                <li key={index} className="flex items-start">
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-blue-400 mr-2 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ul>
+          )}
+          <p className="mt-4">{translations.sections.businessApplications.content[3]}</p>
 
           
           
@@ -228,85 +277,59 @@ export default function LeadScraping() {
             <span className="inline-block">{t('sections.suitableNiches.title')}</span>
             <span className="absolute -left-6 top-1/2 transform -translate-y-1/2 w-3 h-8 bg-blue-500"></span>
           </h2>
-          <p className="text-lg">{t('sections.suitableNiches.content')}</p>
+          <p className="text-lg">{translations.sections.suitableNiches.content[0]}</p>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
-            <div className="bg-blue-900/20 p-6 rounded-xl border-t-2 border-blue-500 hover:bg-blue-900/30 transition-colors">
-              <h3 className="text-xl font-bold mb-3 text-white">{t('sections.suitableNiches.b2b.title')}</h3>
-              <p>{t('sections.suitableNiches.b2b.content')}</p>
-            </div>
-            
-            <div className="bg-blue-900/20 p-6 rounded-xl border-t-2 border-blue-500 hover:bg-blue-900/30 transition-colors">
-              <h3 className="text-xl font-bold mb-3 text-white">{t('sections.suitableNiches.retail.title')}</h3>
-              <p>{t('sections.suitableNiches.retail.content')}</p>
-            </div>
-            
-            <div className="bg-blue-900/20 p-6 rounded-xl border-t-2 border-blue-500 hover:bg-blue-900/30 transition-colors">
-              <h3 className="text-xl font-bold mb-3 text-white">{t('sections.suitableNiches.realestate.title')}</h3>
-              <p>{t('sections.suitableNiches.realestate.content')}</p>
-            </div>
-            
-            <div className="bg-blue-900/20 p-6 rounded-xl border-t-2 border-blue-500 hover:bg-blue-900/30 transition-colors">
-              <h3 className="text-xl font-bold mb-3 text-white">{t('sections.suitableNiches.finance.title')}</h3>
-              <p>{t('sections.suitableNiches.finance.content')}</p>
-            </div>
-          </div>
+          {Array.isArray(translations.sections.suitableNiches.content[1]) && (
+            <ul className="mt-6 space-y-4">
+              {translations.sections.suitableNiches.content[1].map((item: string, index: number) => (
+                <li key={index} className="flex items-start">
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-blue-400 mr-2 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ul>
+          )}
+          
+          <p className="mt-4">{translations.sections.suitableNiches.content[2]}</p>
           
           <h2 className="text-3xl font-bold mt-16 mb-6 relative">
             <span className="inline-block">{t('sections.whyProfessionals.title')}</span>
             <span className="absolute -left-6 top-1/2 transform -translate-y-1/2 w-3 h-8 bg-blue-500"></span>
           </h2>
-          <p className="text-lg">{t('sections.whyProfessionals.content')}</p>
+          <p className="text-lg">{translations.sections.whyProfessionals.content[0]}</p>
           
-          <ul className="mt-6 space-y-4">
-            <li className="flex items-start">
-              <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-blue-400 mr-2 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-              </svg>
-              <span>{t('sections.whyProfessionals.list.item1')}</span>
-            </li>
-            <li className="flex items-start">
-              <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-blue-400 mr-2 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-              </svg>
-              <span>{t('sections.whyProfessionals.list.item2')}</span>
-            </li>
-            <li className="flex items-start">
-              <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-blue-400 mr-2 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-              </svg>
-              <span>{t('sections.whyProfessionals.list.item3')}</span>
-            </li>
-            <li className="flex items-start">
-              <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-blue-400 mr-2 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-              </svg>
-              <span>{t('sections.whyProfessionals.list.item4')}</span>
-            </li>
-            <li className="flex items-start">
-              <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-blue-400 mr-2 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-              </svg>
-              <span>{t('sections.whyProfessionals.list.item5')}</span>
-            </li>
-            <li className="flex items-start">
-              <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-blue-400 mr-2 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-              </svg>
-              <span>{t('sections.whyProfessionals.list.item6')}</span>
-            </li>
-          </ul>
+          {Array.isArray(translations.sections.whyProfessionals.content[1]) && (
+            <ul className="mt-6 space-y-4">
+              {translations.sections.whyProfessionals.content[1].map((item: string, index: number) => (
+                <li key={index} className="flex items-start">
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-blue-400 mr-2 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ul>
+          )}
+          
+          {translations.sections.whyProfessionals.content[2] && (
+            <p className="mt-4">{translations.sections.whyProfessionals.content[2]}</p>
+          )}
           
           <div className="mt-16 bg-blue-900/20 p-6 rounded-xl">
             <h2 className="text-2xl font-bold mb-4">{t('sections.conclusion.title')}</h2>
-            <p className="text-lg">{t('sections.conclusion.content')}</p>
+            <p className="text-lg">{translations.sections.conclusion.content[0]}</p>
+            {translations.sections.conclusion.content[1] && (
+              <p className="text-lg mt-4">{translations.sections.conclusion.content[1]}</p>
+            )}
             
             <div className="mt-8">
               <Link 
                 href={`/${locale}/contact`}
                 className="inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 md:py-4 md:text-lg md:px-8 transition-colors"
               >
-                {t('sections.conclusion.cta')}
+                {locale === 'uk' ? 'Зв\'яжіться з нами' : 'Contact Us'}
               </Link>
             </div>
           </div>
