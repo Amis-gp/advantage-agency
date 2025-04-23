@@ -7,6 +7,11 @@ import Image from 'next/image';
 // Blog posts metadata
 const blogPosts = [
   {
+    slug: 'lead-scraping',
+    image: '/img/blog/lead-scraping/hero.webp',
+    date: '2025-03-24',
+  },
+  {
     slug: 'cold-email-automation',
     image: '/img/blog/cold-email-automation/hero.webp',
     date: '2025-04-15',
@@ -14,9 +19,8 @@ const blogPosts = [
   {
     slug: 'b2b-lead-generation-2025',
     image: '/img/blog/b2b-lead-generation-trends-2025/hero.jpg',
-    date: '2023-11-15',
+    date: '2025-04-22',
   },
-  // Add more blog posts here as they are created
 ];
 
 export default function BlogIndexPage({ params }: { params: { locale: string } }) {
