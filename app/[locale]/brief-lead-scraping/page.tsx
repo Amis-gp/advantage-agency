@@ -1,5 +1,5 @@
 import { setRequestLocale } from 'next-intl/server'
-import Brief from '@/components/brief/BriefEmailMarketing'
+import BriefLeadScraping from '@/components/brief/BriefLeadScraping'
 
 interface Props {
   params: { locale: string }
@@ -8,5 +8,5 @@ interface Props {
 export default function BriefPage({ params: { locale } }: Props) {
   setRequestLocale(locale)
   
-  return <Brief />
+  return <BriefLeadScraping />
 }

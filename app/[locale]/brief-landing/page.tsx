@@ -1,5 +1,5 @@
 import { setRequestLocale } from 'next-intl/server'
-import BriefLandingPage from '@/components/brief-landing/BriefLanding'
+import BriefLandingPage from '@/components/brief/BriefLanding'
 
 interface Props {
   params: { locale: string }
