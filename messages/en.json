@@ -1216,17 +1216,12 @@
         "success": {
             "title": "Thank you for your request!",
             "message": "We have received your lead scraping brief. Our team will contact you soon.",
-            "button": "Back to Home"
-        },
-        "thankYou": {
-            "title": "Thank you for completing the brief!",
-            "message": "We have received your information and will contact you soon to discuss the project details.",
-            "button": "Return to Home"
+            "button": "Close"
         }
-        },
-        "brief-landing": {
-            "title": "Landing Page Brief",
-            "sections": {
+    },
+    "brief-landing": {
+        "title": "Landing Page Brief",
+        "sections": {
             "1": {
                 "title": "Company Information",
                 "name": {

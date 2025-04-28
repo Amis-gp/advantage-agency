@@ -243,7 +243,7 @@ const BriefLeadScraping = () => {
               <button
                 onClick={() => {
                   setShowModal(false)
-                  router.push(`/${locale}`)
+                  router.push(`#`)
                 }}
                 className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 transition-colors text-white font-bold py-2 px-6 rounded-lg shadow-md"
               >

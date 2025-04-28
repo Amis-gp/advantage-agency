@@ -200,36 +200,6 @@
     <xhtml:link rel="alternate" hreflang="uk" href="https://www.advantage-agency.co/uk/join-the-team"/>
   </url>
 
-  <!-- Media Buyer Position -->
-  <url>
-    <loc>https://www.advantage-agency.co/join-the-team/media-buyer</loc>
-    <lastmod>2025-01-27</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.advantage-agency.co/en/join-the-team/media-buyer"/>
-    <xhtml:link rel="alternate" hreflang="uk" href="https://www.advantage-agency.co/uk/join-the-team/media-buyer"/>
-  </url>
-
-  <!-- Lead Generation Position -->
-  <url>
-    <loc>https://www.advantage-agency.co/join-the-team/lead-gen</loc>
-    <lastmod>2025-01-27</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.advantage-agency.co/en/join-the-team/lead-gen"/>
-    <xhtml:link rel="alternate" hreflang="uk" href="https://www.advantage-agency.co/uk/join-the-team/lead-gen"/>
-  </url>
-
-  <!-- Cold Email Position -->
-  <url>
-    <loc>https://www.advantage-agency.co/join-the-team/cold-email</loc>
-    <lastmod>2025-01-27</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.advantage-agency.co/en/join-the-team/cold-email"/>
-    <xhtml:link rel="alternate" hreflang="uk" href="https://www.advantage-agency.co/uk/join-the-team/cold-email"/>
-  </url>
-
   <!-- Blog: B2B Lead Generation 2025 -->
   <url>
     <loc>https://www.advantage-agency.co/blog/b2b-lead-generation-2025</loc>
