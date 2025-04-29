@@ -48,7 +48,7 @@ const BriefLeadScraping = () => {
 
   const sendToTelegram = async (message: string) => {
     const BOT_TOKEN = process.env.NEXT_PUBLIC_BOT_TOKEN;
-    const CHAT_ID = process.env.NEXT_PUBLIC_CHAT_ID;
+    const CHAT_ID = process.env.NEXT_PUBLIC_CHAT_SCRAPING;
     const url = `https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`;
 
     if (!BOT_TOKEN || !CHAT_ID) {
