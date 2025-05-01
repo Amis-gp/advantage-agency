@@ -19,6 +19,15 @@ const BriefLeadScraping = () => {
   const router = useRouter()
   const t = useTranslations('brief-lead-scraping')
 
+  // Primary info state
+  const [primaryInfo, setPrimaryInfo] = useState({
+    businessName: '',
+    niche: '',
+    email: '',
+    phone: ''
+  })
+  const [primaryError, setPrimaryError] = useState('')
+
   const [formData, setFormData] = useState<FormData>({
     topic: '',
     region: '',
@@ -73,11 +82,34 @@ const BriefLeadScraping = () => {
     }
   };
 
+  const validatePrimary = () => {
+    if (!primaryInfo.businessName || !primaryInfo.niche || !primaryInfo.email) {
+      setPrimaryError(t('primary.validation'));
+      return false;
+    }
+    setPrimaryError('');
+    return true;
+  };
+
+  const handlePrimaryChange = (field: string, value: string) => {
+    setPrimaryInfo(prev => ({ ...prev, [field]: value }));
+  };
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
+    if (!validatePrimary()) {
+      setIsSubmitting(false);
+      return;
+    }
     try {
-      const message = `\uD83D\uDCCB <b>New Lead Scraping Brief!</b>\n\n` +
+      const message = `
+<b>Бізнес:</b> ${primaryInfo.businessName}
+<b>Ніша:</b> ${primaryInfo.niche}
+<b>Пошта:</b> ${primaryInfo.email}
+<b>Телефон:</b> ${primaryInfo.phone || '-'}
+
+\uD83D\uDCCB <b>New Lead Scraping Brief!</b>\n\n` +
         `<b>1. Topic/Niche:</b> ${formData.topic}\n` +
         `<b>2. Region:</b> ${formData.region}\n` +
         `<b>3. Positions/Profiles:</b> ${formData.positions}\n` +
@@ -85,7 +117,7 @@ const BriefLeadScraping = () => {
         `<b>5. Quantity:</b> ${formData.quantity}\n` +
         `<b>6. Additional info:</b> ${formData.additional}`;
       await sendToTelegram(message);
-      setShowModal(true);
+      router.push(`/${locale}/thank-you`);
     } catch (error) {
       console.error('Error submitting form:', error);
     } finally {
@@ -100,7 +132,56 @@ const BriefLeadScraping = () => {
         <h1 className="mt-4 sm:mt-0 text-4xl font-bold text-center mb-4 bg-gradient-to-r from-blue-500 to-purple-500 text-transparent bg-clip-text">
           {t('title')}
         </h1>
+        {/* Primary info section */}
         <form onSubmit={handleSubmit} className="space-y-8">
+          <section className="bg-gray-800/50 rounded-xl p-6 border border-gray-700/50">
+            <h2 className="text-2xl font-bold text-gray-100 mb-6">{t('primary.title')}</h2>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+              <div>
+                <label className="block font-medium text-gray-300 mb-2">{t('primary.businessName.label')}</label>
+                <input
+                  type="text"
+                  value={primaryInfo.businessName}
+                  onChange={e => handlePrimaryChange('businessName', e.target.value)}
+                  className="w-full p-3 bg-gray-900/50 border border-gray-700 rounded-lg"
+                  placeholder={t('primary.businessName.placeholder')}
+                />
+              </div>
+              <div>
+                <label className="block font-medium text-gray-300 mb-2">{t('primary.niche.label')}</label>
+                <input
+                  type="text"
+                  value={primaryInfo.niche}
+                  onChange={e => handlePrimaryChange('niche', e.target.value)}
+                  className="w-full p-3 bg-gray-900/50 border border-gray-700 rounded-lg"
+                  placeholder={t('primary.niche.placeholder')}
+                />
+              </div>
+            </div>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mt-6">
+              <div>
+                <label className="block font-medium text-gray-300 mb-2">{t('primary.email.label')}</label>
+                <input
+                  type="email"
+                  value={primaryInfo.email}
+                  onChange={e => handlePrimaryChange('email', e.target.value)}
+                  className="w-full p-3 bg-gray-900/50 border border-gray-700 rounded-lg"
+                  placeholder={t('primary.email.placeholder')}
+                />
+              </div>
+              <div>
+                <label className="block font-medium text-gray-300 mb-2">{t('primary.phone.label')}</label>
+                <input
+                  type="text"
+                  value={primaryInfo.phone}
+                  onChange={e => handlePrimaryChange('phone', e.target.value)}
+                  className="w-full p-3 bg-gray-900/50 border border-gray-700 rounded-lg"
+                  placeholder={t('primary.phone.placeholder')}
+                />
+              </div>
+            </div>
+            {primaryError && <div className="text-red-400 mt-4">{primaryError}</div>}
+          </section>
           <section className="bg-gray-800/50 rounded-xl p-6 border border-gray-700/50">
             <div className="flex items-center mb-6">
               <div className="flex-shrink-0 h-8 w-8 flex items-center justify-center rounded-full bg-blue-500 text-white font-bold">1</div>
@@ -235,23 +316,7 @@ const BriefLeadScraping = () => {
             </button>
           </div>
         </form>
-        {showModal && (
-          <div className="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center z-50">
-            <div className="bg-gray-900 rounded-xl p-8 max-w-lg w-full text-center">
-              <h2 className="text-2xl font-bold mb-4 text-green-400">{t('success.title')}</h2>
-              <p className="mb-6">{t('success.message')}</p>
-              <button
-                onClick={() => {
-                  setShowModal(false)
-                  router.push(`#`)
-                }}
-                className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 transition-colors text-white font-bold py-2 px-6 rounded-lg shadow-md"
-              >
-                {t('success.button')}
-              </button>
-            </div>
-          </div>
-        )}
+
       </div>
     </div>
   )

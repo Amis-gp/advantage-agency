@@ -63,6 +63,15 @@ const BriefEmailMarketing = () => {
   const router = useRouter()
   const t = useTranslations('brief-email')
 
+  // Primary info state
+  const [primaryInfo, setPrimaryInfo] = useState({
+    businessName: '',
+    niche: '',
+    email: '',
+    phone: ''
+  })
+  const [primaryError, setPrimaryError] = useState('')
+
   const [formData, setFormData] = useState<FormData>({
     businessInfo: {
       description: '',
@@ -274,13 +283,36 @@ const BriefEmailMarketing = () => {
     }
   }
 
+  const validatePrimary = () => {
+    if (!primaryInfo.businessName || !primaryInfo.niche || !primaryInfo.email) {
+      setPrimaryError(t('primary.validation'));
+      return false;
+    }
+    setPrimaryError('');
+    return true;
+  };
+
+  const handlePrimaryChange = (field: string, value: string) => {
+    setPrimaryInfo(prev => ({ ...prev, [field]: value }));
+  };
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
 
+    if (!validatePrimary()) {
+      setIsSubmitting(false);
+      return;
+    }
+
     try {
       const message = `
-        🎯 <b>Новий бриф Email Marketing отримано!</b>
+<b>Бізнес:</b> ${primaryInfo.businessName}
+<b>Ніша:</b> ${primaryInfo.niche}
+<b>Пошта:</b> ${primaryInfo.email}
+<b>Телефон:</b> ${primaryInfo.phone || '-'}
+
+🎯 <b>Новий бриф Email Marketing отримано!</b>
 
 1️⃣ <b>Про бізнес</b>
 Опис: ${formData.businessInfo.description}
@@ -322,8 +354,8 @@ const BriefEmailMarketing = () => {
       if (uploadedFiles.length > 0) {
         await sendFilesToTelegram(uploadedFiles);
       }
-      
-      setShowModal(true);
+      // Redirect to the localized thank you page
+      router.push(`/${locale}/brief-thank-you`);
     } catch (error) {
       console.error('Error submitting form:', error);
     } finally {
@@ -340,7 +372,54 @@ const BriefEmailMarketing = () => {
           {t('title')}
         </h1>
         
+        {/* Primary info section */}
         <form onSubmit={handleSubmit} className="space-y-8">
+          <section className="bg-gray-800/50 rounded-xl p-6 border border-gray-700/50">
+            <h2 className="text-2xl font-bold text-gray-100 mb-6">{t('primary.title')}</h2>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+              <div>
+                <label className="block font-medium text-gray-300 mb-2">{t('primary.businessName.label')}</label>
+                <input
+                  type="text"
+                  value={primaryInfo.businessName}
+                  onChange={e => handlePrimaryChange('businessName', e.target.value)}
+                  className="w-full p-3 bg-gray-900/50 border border-gray-700 rounded-lg"
+                  placeholder={t('primary.businessName.placeholder')}
+                />
+              </div>
+              <div>
+                <label className="block font-medium text-gray-300 mb-2">{t('primary.niche.label')}</label>
+                <input
+                  type="text"
+                  value={primaryInfo.niche}
+                  onChange={e => handlePrimaryChange('niche', e.target.value)}
+                  className="w-full p-3 bg-gray-900/50 border border-gray-700 rounded-lg"
+                  placeholder={t('primary.niche.placeholder')}
+                />
+              </div>
+              <div>
+                <label className="block font-medium text-gray-300 mb-2">{t('primary.email.label')}</label>
+                <input
+                  type="email"
+                  value={primaryInfo.email}
+                  onChange={e => handlePrimaryChange('email', e.target.value)}
+                  className="w-full p-3 bg-gray-900/50 border border-gray-700 rounded-lg"
+                  placeholder={t('primary.email.placeholder')}
+                />
+              </div>
+              <div>
+                <label className="block font-medium text-gray-300 mb-2">{t('primary.phone.label')}</label>
+                <input
+                  type="text"
+                  value={primaryInfo.phone}
+                  onChange={e => handlePrimaryChange('phone', e.target.value)}
+                  className="w-full p-3 bg-gray-900/50 border border-gray-700 rounded-lg"
+                  placeholder={t('primary.phone.placeholder')}
+                />
+              </div>
+            </div>
+            {primaryError && <div className="text-red-400 mt-4">{primaryError}</div>}
+          </section>
           <section className="bg-gray-800/50 rounded-xl p-6 border border-gray-700/50">
             <div className="flex items-center mb-6">
               <div className="flex-shrink-0 h-8 w-8 flex items-center justify-center rounded-full bg-blue-500 text-white font-bold">

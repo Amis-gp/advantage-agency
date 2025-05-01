@@ -18,6 +18,12 @@ const BriefPage = () => {
   const t = useTranslations('brief')
   
   const [formData, setFormData] = useState({
+    primary: {
+      businessName: '',
+      niche: '',
+      email: '',
+      phone: '',
+    },
     companyInfo: {
       overview: '',
       marketingGoals: '',
@@ -148,11 +154,23 @@ const BriefPage = () => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+
+    // Validate required primary fields
+    if (!formData.primary.businessName || !formData.primary.niche || !formData.primary.email) {
+      alert(t('primary.validation'));
+      return;
+    }
+
     setIsSubmitting(true);
 
     try {
       const message = `
         🎯 <b>Новий бриф отримано!</b>
+
+<b>Назва бізнесу:</b> ${formData.primary.businessName}
+<b>Ніша:</b> ${formData.primary.niche}
+<b>Пошта:</b> ${formData.primary.email}
+<b>Номер:</b> ${formData.primary.phone}
 
 1️⃣ <b>Інформація про компанію</b>
 Огляд: ${formData.companyInfo.overview}
@@ -210,7 +228,8 @@ KPI: ${formData.expectations.kpi}
         `;
 
       await sendToTelegram(message);
-      setShowModal(true);
+      // Redirect to the localized thank you page
+      router.push(`/${locale}/brief-thank-you`);
     } catch (error) {
       console.error('Error submitting form:', error);
     } finally {
@@ -228,6 +247,74 @@ KPI: ${formData.expectations.kpi}
         </h1>
         
         <form onSubmit={handleSubmit} className="space-y-8">
+          {/* Primary Info Section */}
+          <section className="bg-gray-800/50 rounded-xl p-6 border border-gray-700/50 shadow-xl mb-8">
+            <div className="flex items-center mb-6">
+              <div className="flex-shrink-0 h-8 w-8 flex items-center justify-center rounded-full bg-blue-500 text-white font-bold">
+                ★
+              </div>
+              <h2 className="ml-4 text-2xl font-bold text-gray-100">
+                {t('primary.title')}
+              </h2>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div>
+                <label className="block mb-2 text-gray-300 font-medium">
+                  {t('primary.businessName.label')}
+                </label>
+                <input
+                  type="text"
+                  value={formData.primary.businessName}
+                  onChange={e => handleChange('primary', 'businessName', e.target.value)}
+                  onKeyDown={handleKeyDown}
+                  className="w-full p-3 bg-gray-900/50 border border-gray-700 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
+                  placeholder={t('primary.businessName.placeholder')}
+                  required
+                />
+              </div>
+              <div>
+                <label className="block mb-2 text-gray-300 font-medium">
+                  {t('primary.niche.label')}
+                </label>
+                <input
+                  type="text"
+                  value={formData.primary.niche}
+                  onChange={e => handleChange('primary', 'niche', e.target.value)}
+                  onKeyDown={handleKeyDown}
+                  className="w-full p-3 bg-gray-900/50 border border-gray-700 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
+                  placeholder={t('primary.niche.placeholder')}
+                  required
+                />
+              </div>
+              <div>
+                <label className="block mb-2 text-gray-300 font-medium">
+                  {t('primary.email.label')}
+                </label>
+                <input
+                  type="email"
+                  value={formData.primary.email}
+                  onChange={e => handleChange('primary', 'email', e.target.value)}
+                  onKeyDown={handleKeyDown}
+                  className="w-full p-3 bg-gray-900/50 border border-gray-700 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
+                  placeholder={t('primary.email.placeholder')}
+                  required
+                />
+              </div>
+              <div>
+                <label className="block mb-2 text-gray-300 font-medium">
+                  {t('primary.phone.label')}
+                </label>
+                <input
+                  type="tel"
+                  value={formData.primary.phone}
+                  onChange={e => handleChange('primary', 'phone', e.target.value)}
+                  onKeyDown={handleKeyDown}
+                  className="w-full p-3 bg-gray-900/50 border border-gray-700 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
+                  placeholder={t('primary.phone.placeholder')}
+                />
+              </div>
+            </div>
+          </section>
           <div className="space-y-12">
             <section className="bg-gray-800/50 rounded-xl p-6 border border-gray-700/50 shadow-xl">
               <div className="flex items-center mb-6">
@@ -818,41 +905,7 @@ KPI: ${formData.expectations.kpi}
           </div>
         </form>
 
-        {/* modal */}
-        {showModal && (
-          <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
-            <div className="bg-gray-800 p-8 rounded-xl shadow-xl max-w-md w-full mx-4 relative">
-              <button 
-                onClick={() => setShowModal(false)}
-                className="absolute top-4 right-4 text-gray-400 hover:text-white"
-              >
-                ✕
-              </button>
-              
-              <div className="text-center">
-                <div className="w-16 h-16 bg-green-500 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                  </svg>
-                </div>
-                
-                <h3 className="text-2xl font-bold mb-2">
-                  Thank you for submitting the brief!
-                </h3>
-                <p className="text-gray-300 mb-6">
-                  We have received your information and will contact you soon.
-                </p>
-                
-                <button
-                  onClick={() => setShowModal(false)}
-                  className="px-6 py-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white font-medium rounded-lg hover:from-blue-700 hover:to-purple-700 transform hover:scale-105 transition-all duration-200"
-                >
-                  Close
-                </button>
-              </div>
-            </div>
-          </div>
-        )}
+
       </div>
     </div>
   )

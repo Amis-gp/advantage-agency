@@ -602,6 +602,26 @@
     },
     "brief": {
         "title": "Marketing Brief",
+        "primary": {
+            "title": "Primary Information",
+            "businessName": {
+                "label": "Business Name",
+                "placeholder": "Enter your business name"
+            },
+            "niche": {
+                "label": "Niche",
+                "placeholder": "Your business niche"
+            },
+            "email": {
+                "label": "Email",
+                "placeholder": "Your email address"
+            },
+            "phone": {
+                "label": "Phone (optional)",
+                "placeholder": "Your phone number"
+            },
+            "validation": "Please fill in all required fields: business name, niche, email."
+        },
         "subtitle": "Fill out the form below so we can better understand your needs",
         "sections": {
             "1": {
@@ -1167,6 +1187,26 @@
     },
     "brief-lead-scraping": {
         "title": "Lead Scraping Brief",
+        "primary": {
+            "title": "Primary Information",
+            "businessName": {
+                "label": "Business Name",
+                "placeholder": "Enter your business name"
+            },
+            "niche": {
+                "label": "Niche",
+                "placeholder": "Your business niche"
+            },
+            "email": {
+                "label": "Email",
+                "placeholder": "Your email address"
+            },
+            "phone": {
+                "label": "Phone (optional)",
+                "placeholder": "Your phone number"
+            },
+            "validation": "Please fill in all required fields: business name, niche, email."
+        },
         "sections": {
             "1": {
             "title": "Topic/Niche",
@@ -1221,6 +1261,26 @@
     },
     "brief-landing": {
         "title": "Landing Page Brief",
+        "primary": {
+            "title": "Primary Information",
+            "businessName": {
+                "label": "Business Name",
+                "placeholder": "Enter your business name"
+            },
+            "niche": {
+                "label": "Niche",
+                "placeholder": "Your business niche"
+            },
+            "email": {
+                "label": "Email",
+                "placeholder": "Your email address"
+            },
+            "phone": {
+                "label": "Phone (optional)",
+                "placeholder": "Your phone number"
+            },
+            "validation": "Please fill in all required fields: business name, niche, email."
+        },
         "sections": {
             "1": {
                 "title": "Company Information",
@@ -1472,7 +1532,27 @@
         }
     },
     "brief-email": {
-        "title": "Cold Email Marketing Brief",
+        "title": "Email Marketing Brief",
+        "primary": {
+            "title": "Primary Information",
+            "businessName": {
+                "label": "Business Name",
+                "placeholder": "Enter your business name"
+            },
+            "niche": {
+                "label": "Niche",
+                "placeholder": "Your business niche"
+            },
+            "email": {
+                "label": "Email",
+                "placeholder": "Your email address"
+            },
+            "phone": {
+                "label": "Phone (optional)",
+                "placeholder": "Your phone number"
+            },
+            "validation": "Please fill in all required fields: business name, niche, email."
+        },
         "sections": {
         "1": {
             "title": "About Business",
@@ -1574,6 +1654,10 @@
         "description": "We have received your information and will contact you soon.",
         "closeButton": "Close"
         }
+    },
+    "brief-thank-you": {
+        "title": "Thank you for completing the brief!",
+        "message": "We have received your information and are processing it. We will contact you shortly to discuss the details of the project"
     },
     "cold-email": {
         "hero": {
