@@ -8,6 +8,7 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
+        geologica: ['Geologica', 'Inter', 'sans-serif'],
         'clash-grotesk': ['var(--font-clash-grotesk)'],
         roboto: ['var(--font-roboto)'],
       },
