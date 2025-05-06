@@ -190,7 +190,7 @@
                 "type": "email",
                 "title": "Cold Email",
                 "subtitle": "B2B Lead Generation",
-                "price": "From $1499",
+                "price": "From €1499",
                 "button": "Learn More",
                 "features": [
                     "Proven cold email system",
@@ -205,7 +205,7 @@
                 "type": "google",
                 "title": "Google Ads",
                 "subtitle": "Search Advertising, Display, Youtube",
-                "price": "From $999",
+                "price": "From €999",
                 "button": "Learn More",
                 "features": [
                     "Careful keyword selection",
@@ -219,7 +219,7 @@
                 "type": "facebook",
                 "title": "Meta Ads",
                 "subtitle": "Targeted advertising Facebook, Instagram",
-                "price": "From $999",
+                "price": "From €999",
                 "button": "Learn More",
                 "features": [
                     "Detailed targeting strategy development",
@@ -234,7 +234,7 @@
                 "type": "web",
                 "title": "Landing Page",
                 "subtitle": "Universal web pages, written in code",
-                "price": "From $999",
+                "price": "From €999",
                 "button": "Learn More",
                 "features": [
                     "Responsiveness and fast loading",
@@ -337,7 +337,7 @@
         "offers": {
             "meta": {
                 "slide1": {
-                    "title": "FROM $999",
+                    "title": "FROM €999",
                     "subtitle": "How does targeted advertising work?",
                     "content": [
                         "Users browse Facebook and Instagram feeds, and our ads are shown to them at the right moment.",
@@ -388,7 +388,7 @@
             },
             "google": {
                 "slide1": {
-                    "title": "FROM $999",
+                    "title": "FROM €999",
                     "subtitle": "How does search advertising work?",
                     "content": [
                         "Users search for products and services on Google, and your ad appears in top search positions at the exact moment when the client is ready to buy.",
@@ -439,7 +439,7 @@
             },
             "landing": {
                 "slide1": {
-                    "title": "FROM $999",
+                    "title": "FROM €999",
                     "subtitle": "What is a landing page?",
                     "content": [
                         "It's a single-page website specifically designed to attract clients, present services, or sell products. It's focused on achieving one specific goal – generating leads or sales.",
@@ -490,7 +490,7 @@
             },
             "email": {
                 "slide1": {
-                    "title": "FROM $1499",
+                    "title": "FROM €1499",
                     "subtitle": "How does cold emailing work?",
                     "content": {
                         "0": "Your target audience receives an email in their inbox that motivates them to move further along the sales or partnership funnel.",
@@ -557,9 +557,9 @@
         },
         "pricePerClient": {
             "question": "What price are you willing to pay per new client?",
-            "upto20": "up to $20",
-            "20to50": "from $20 to $50",
-            "50plus": "more than $50"
+            "upto20": "up to €20",
+            "20to50": "from €20 to €50",
+            "50plus": "more than €50"
         },
         "customersPerDay": {
             "question": "How many new customers can you process per month?",
@@ -801,7 +801,7 @@
                 {
                     "icon": "🚀",
                     "title": "Marketing experts",
-                    "description": "We are a team of experts united by a passion for marketing and lead generation. Our goal is to develop businesses through comprehensive solutions that bring real profit."
+                    "description": "We are a team of experts united by a passion for marketing and SDR. Our goal is to develop businesses through comprehensive solutions that bring real profit."
                 },
                 {
                     "icon": "💎",
@@ -856,9 +856,9 @@
                     "position": "Sales"
                 },
                 {
-                    "text": "I am very grateful for the valuable experience in lead generation, now I know how to work with many IT niches",
+                    "text": "I am very grateful for the valuable experience in SDR, now I know how to work with many IT niches",
                     "author": "Maria",
-                    "position": "Lead Generation Specialist"
+                    "position": "SDR Specialist"
                 },
                 {
                     "text": "I work with top clients and see the results of my campaigns. The team is like a second home.",
@@ -873,10 +873,10 @@
             "applyButton": "Apply now",
             "positions": [
                 {
-                    "title": "Lead Generation Specialist",
+                    "title": "SDR Specialist",
                     "salary": "$300–$1200",
                     "experience": "No experience (internship) | With experience",
-                    "description": "Want to break into marketing? Here you'll become a lead generation pro from scratch.",
+                    "description": "Want to break into marketing? Here you'll become a SDR pro from scratch.",
                     "icon": "📊",
                     "gradient": "from-red-600 to-red-400"
                 },
@@ -914,8 +914,8 @@
             "qualification": "Take qualification",
             "positions": [
                 {
-                    "title": "Lead Generation Specialist",
-                    "path": "/join/lead-generation"
+                    "title": "SDR",
+                    "path": "/join/sdr"
                 },
                 {
                     "title": "Affiliate Media Buyer",
@@ -1021,13 +1021,13 @@
                     "options": ["18-20 years", "21-25 years", "26-30 years", "31+ years"]
                 }
             },
-            "lead-gen": {
+            "sdr": {
                 "experience": {
-                    "text": "👨‍💻 What experience do you have in lead generation?",
+                    "text": "👨‍💻 What experience do you have in SDR?",
                     "options": ["No experience", "Less than 1 year", "1-2 years", "2-5 years"]
                 },
                 "sources": {
-                    "text": "🌐 Which lead generation sources have you used?",
+                    "text": "🌐 Which SDR sources have you used?",
                     "options": ["Telegram", "LinkedIn", "Instagram", "Other"]
                 },
                 "telegram_experience": {
@@ -1860,7 +1860,7 @@
                     "≈ 20% Conversion to leads",
                     "≈ 4-6 qualified leads"
                 ],
-                "price": "$850"
+                "price": "€850"
             },
             "performance": {
                 "title": "3K Contacts Package",
@@ -1876,7 +1876,7 @@
                     "≈ 20% Conversion to leads",
                     "≈ 12-18 qualified leads"
                 ],
-                "price": "$1850"
+                "price": "€1850"
             },
             "medium": {
                 "title": "2K Contacts Package",
@@ -1891,7 +1891,7 @@
                     "≈ 20% Conversion to leads",
                     "≈ 8-12 qualified leads"
                 ],
-                "price": "$1350"
+                "price": "€1350"
             },
             "package5": {
                 "title": "5K Contacts Package",
@@ -1906,7 +1906,7 @@
                     "≈ 20% Conversion to leads",
                     "≈ 20-30 qualified leads"
                 ],
-                "price": "$2950"
+                "price": "€2950"
             },
             "package7": {
                 "title": "7K Contacts Package",
@@ -1921,7 +1921,7 @@
                     "≈ 20% Conversion to leads",
                     "≈ 28-42 qualified leads"
                 ],
-                "price": "$3950"
+                "price": "€3950"
             },
             "package10": {
                 "title": "10K Contacts Package",
@@ -1937,7 +1937,7 @@
                     "≈ 20% Conversion to leads",
                     "≈ 40-60 qualified leads"
                 ],
-                "price": "$5450"
+                "price": "€5450"
             },
             "getStarted": "Get Started"
         },

@@ -134,7 +134,7 @@ export default function PricingPage() {
   
   const addons = {
     bonus: { 
-      name: "One A/B text sequence - $50", 
+      name: "One A/B text sequence - €50", 
       price: 50, 
       description: "1 additional marketing approach (includes 3 emails)"
     },
@@ -148,7 +148,7 @@ export default function PricingPage() {
     sequence: { 
       name: "Custom text sequences", 
       price: 50, 
-      description: "Changes to text sequences in the second month ($50 per approach change)" 
+      description: "Changes to text sequences in the second month (€50 per approach change)" 
     },
     // Додаємо інфраструктурні платежі
     infrastructure: {
@@ -183,11 +183,11 @@ export default function PricingPage() {
       return abTestCount * addons.bonus.price;
     } else { // 2K+ пакети
       if (abTestCount <= 2) {
-        return 50; // 1-2 тести коштують $50
+        return 50; // 1-2 тести коштують €50
       } else if (abTestCount === 3) {
-        return 100; // 3 тести коштують $100
+        return 100; // 3 тести коштують €100
       } else if (abTestCount === 4) {
-        return 150; // 4 тести коштують $150
+        return 150; // 4 тести коштують €150
       }
     }
     return 0;
@@ -396,7 +396,7 @@ export default function PricingPage() {
                             </div>
                           )}
                           
-                          <div className="text-2xl font-bold text-blue-400 mb-2">${getPackageDisplayPrice(pkg)}</div>
+                          <div className="text-2xl font-bold text-blue-400 mb-2">€{getPackageDisplayPrice(pkg)}</div>
                           <div className="text-gray-300">{pkg.size} {t('packages.verifiedLeads', { fallback: 'verified leads' })}</div>
                           {isInitialSetup && (
                             <div className="text-gray-300 mt-1">+ {pkg.campaigns} campaign{pkg.campaigns > 1 ? 's' : ''}</div>
@@ -427,7 +427,7 @@ export default function PricingPage() {
                       </div>
                       <div className="flex items-center space-x-3">
                         <div className="font-medium text-blue-400">
-                          ${calculateABTestPrice()}
+                          €{calculateABTestPrice()}
                         </div>
                         <div className="flex items-center bg-gray-800 rounded-md">
                           <button 
@@ -460,7 +460,7 @@ export default function PricingPage() {
                           </div>
                         </div>
                         <div className="flex items-center space-x-3">
-                          <div className="font-medium text-blue-400">${addons.campaign.price}</div>
+                          <div className="font-medium text-blue-400">€{addons.campaign.price}</div>
                           <div className="relative inline-block w-12 h-6">
                             <input 
                               type="checkbox" 
@@ -490,7 +490,7 @@ export default function PricingPage() {
                           <div className="text-sm text-gray-300">{t('addons.customSequences.description')}</div>
                         </div>
                         <div className="flex items-center space-x-3">
-                          <div className="font-medium text-blue-400">${addons.sequence.price}</div>
+                          <div className="font-medium text-blue-400">€{addons.sequence.price}</div>
                           <div className="relative inline-block w-12 h-6">
                             <input 
                               type="checkbox" 
@@ -524,7 +524,7 @@ export default function PricingPage() {
                         <div className="font-medium text-white">{t('addons.infrastructure.esp.name', { fallback: addons.infrastructure.esp.name })}</div>
                         <div className="text-sm text-gray-300">{t('addons.infrastructure.esp.description', { fallback: addons.infrastructure.esp.description })}</div>
                       </div>
-                      <div className="font-medium text-blue-400">${addons.infrastructure.esp.price}</div>
+                      <div className="font-medium text-blue-400">€{addons.infrastructure.esp.price}</div>
                     </div>
                     
                     <div className="flex items-center justify-between p-4 border border-gray-700 rounded-lg bg-[#0F172A]/80 ">
@@ -532,10 +532,10 @@ export default function PricingPage() {
                         <div className="font-medium text-white">{t('addons.infrastructure.domain.name', { fallback: addons.infrastructure.domain.name })}</div>
                         <div className="text-sm text-gray-300">
                           {t('addons.infrastructure.domain.description', { fallback: addons.infrastructure.domain.description })} 
-                          <span className="font-medium text-gray-300"> (${addons.infrastructure.domain.price} × {currentPackage.campaigns})</span>
+                          <span className="font-medium text-gray-300"> (€{addons.infrastructure.domain.price} × {currentPackage.campaigns})</span>
                         </div>
                       </div>
-                      <div className="font-medium text-blue-400">${(addons.infrastructure.domain.price * currentPackage.campaigns).toFixed(2)}</div>
+                      <div className="font-medium text-blue-400">€{(addons.infrastructure.domain.price * currentPackage.campaigns).toFixed(2)}</div>
                     </div>
                     
                     <div className="flex items-center justify-between p-4 border border-gray-700 rounded-lg bg-[#0F172A]/80 ">
@@ -543,10 +543,10 @@ export default function PricingPage() {
                         <div className="font-medium text-white">{t('addons.infrastructure.workspace.name', { fallback: addons.infrastructure.workspace.name })}</div>
                         <div className="text-sm text-gray-300">
                           {t('addons.infrastructure.workspace.description', { fallback: addons.infrastructure.workspace.description })}
-                          <span className="font-medium text-gray-300"> (${addons.infrastructure.workspace.price} × {currentPackage.campaigns})</span>
+                          <span className="font-medium text-gray-300"> (€{addons.infrastructure.workspace.price} × {currentPackage.campaigns})</span>
                         </div>
                       </div>
-                      <div className="font-medium text-blue-400">${(addons.infrastructure.workspace.price * currentPackage.campaigns).toFixed(2)}</div>
+                      <div className="font-medium text-blue-400">€{(addons.infrastructure.workspace.price * currentPackage.campaigns).toFixed(2)}</div>
                     </div>
                   </div>
                 </div>
@@ -567,7 +567,7 @@ export default function PricingPage() {
                     {/* Підсумкові суми */}
                     <div className="mt-3 pt-2 border-t border-gray-700">
                       <div className="text-sm font-medium text-gray-300">
-                        {t('pricing.agencyServices', { fallback: 'Agency services' })}: <span className="text-blue-400">${(isInitialSetup 
+                        {t('pricing.agencyServices', { fallback: 'Agency services' })}: <span className="text-blue-400">€{(isInitialSetup 
                           ? (currentPackage.setupPrice + calculateABTestPrice())
                           : (currentPackage.leadsPrice + calculateABTestPrice() + 
                             (options.campaign ? addons.campaign.price : 0) + 
@@ -575,7 +575,7 @@ export default function PricingPage() {
                         ).toFixed(2)}</span>
                       </div>
                       <div className="text-sm font-medium text-gray-300">
-                        {t('pricing.infrastructureCosts', { fallback: 'Infrastructure costs' })}: <span className="text-blue-400">${(
+                        {t('pricing.infrastructureCosts', { fallback: 'Infrastructure costs' })}: <span className="text-blue-400">€{(
                           addons.infrastructure.esp.price + 
                           (addons.infrastructure.domain.price * currentPackage.campaigns) + 
                           (addons.infrastructure.workspace.price * currentPackage.campaigns)
@@ -585,7 +585,7 @@ export default function PricingPage() {
                   </div>
                 </div>
                 <div className="text-2xl font-bold text-white mt-4 md:mt-0 bg-gradient-to-r from-blue-600 to-indigo-600 px-8 py-3 rounded-full shadow-lg border border-blue-400/30">
-                  ${calculateTotal().toFixed(2)}
+                  €{calculateTotal().toFixed(2)}
                 </div>
               </div>
             </div>

@@ -23,25 +23,25 @@ export interface FormState {
 
 export const experienceQuestion: Question = {
   id: 'experience',
-  textKey: 'lead-gen.experience.text',
+  textKey: 'sdr.experience.text',
   type: 'choice',
-  optionsKey: 'lead-gen.experience.options',
+  optionsKey: 'sdr.experience.options',
   path: 'all'
 }
 
 export const experiencedQuestions: Question[] = [
   {
     id: 'sources',
-    textKey: 'lead-gen.sources.text',
+    textKey: 'sdr.sources.text',
     type: 'multiple',
-    optionsKey: 'lead-gen.sources.options',
+    optionsKey: 'sdr.sources.options',
     path: 'experienced'
   },
   {
     id: 'telegram_experience',
-    textKey: 'lead-gen.telegram_experience.text',
+    textKey: 'sdr.telegram_experience.text',
     type: 'open',
-    hintKey: 'lead-gen.telegram_experience.hint',
+    hintKey: 'sdr.telegram_experience.hint',
     path: 'experienced',
     condition: {
       dependsOn: 'sources',
@@ -50,9 +50,9 @@ export const experiencedQuestions: Question[] = [
   },
   {
     id: 'linkedin_experience',
-    textKey: 'lead-gen.linkedin_experience.text',
+    textKey: 'sdr.linkedin_experience.text',
     type: 'open',
-    hintKey: 'lead-gen.linkedin_experience.hint',
+    hintKey: 'sdr.linkedin_experience.hint',
     path: 'experienced',
     condition: {
       dependsOn: 'sources',
@@ -61,9 +61,9 @@ export const experiencedQuestions: Question[] = [
   },
   {
     id: 'instagram_experience',
-    textKey: 'lead-gen.instagram_experience.text',
+    textKey: 'sdr.instagram_experience.text',
     type: 'open',
-    hintKey: 'lead-gen.instagram_experience.hint',
+    hintKey: 'sdr.instagram_experience.hint',
     path: 'experienced',
     condition: {
       dependsOn: 'sources',
@@ -72,9 +72,9 @@ export const experiencedQuestions: Question[] = [
   },
   {
     id: 'other_sources',
-    textKey: 'lead-gen.other_sources.text',
+    textKey: 'sdr.other_sources.text',
     type: 'open',
-    hintKey: 'lead-gen.other_sources.hint',
+    hintKey: 'sdr.other_sources.hint',
     path: 'experienced',
     condition: {
       dependsOn: 'sources',
@@ -83,23 +83,23 @@ export const experiencedQuestions: Question[] = [
   },
   {
     id: 'lead_strategies',
-    textKey: 'lead-gen.lead_strategies.text',
+    textKey: 'sdr.lead_strategies.text',
     type: 'open',
-    hintKey: 'lead-gen.lead_strategies.hint',
+    hintKey: 'sdr.lead_strategies.hint',
     path: 'experienced'
   },
   {
     id: 'best_result',
-    textKey: 'lead-gen.best_result.text',
+    textKey: 'sdr.best_result.text',
     type: 'open',
-    hintKey: 'lead-gen.best_result.hint',
+    hintKey: 'sdr.best_result.hint',
     path: 'experienced'
   },
   {
     id: 'future_goals',
-    textKey: 'lead-gen.future_goals.text',
+    textKey: 'sdr.future_goals.text',
     type: 'open',
-    hintKey: 'lead-gen.future_goals.hint',
+    hintKey: 'sdr.future_goals.hint',
     path: 'experienced'
   }
 ]
@@ -107,35 +107,35 @@ export const experiencedQuestions: Question[] = [
 export const inexperiencedQuestions: Question[] = [
   {
     id: 'previous_experience',
-    textKey: 'lead-gen.previous_experience.text',
+    textKey: 'sdr.previous_experience.text',
     type: 'open',
-    hintKey: 'lead-gen.previous_experience.hint',
+    hintKey: 'sdr.previous_experience.hint',
     path: 'inexperienced'
   },
   {
     id: 'computer_skills',
-    textKey: 'lead-gen.computer_skills.text',
+    textKey: 'sdr.computer_skills.text',
     type: 'scale',
     path: 'inexperienced'
   },
   {
     id: 'ready_for_training',
-    textKey: 'lead-gen.ready_for_training.text',
+    textKey: 'sdr.ready_for_training.text',
     type: 'yesno',
     path: 'inexperienced'
   },
   {
     id: 'motivation',
-    textKey: 'lead-gen.motivation.text',
+    textKey: 'sdr.motivation.text',
     type: 'open',
-    hintKey: 'lead-gen.motivation.hint',
+    hintKey: 'sdr.motivation.hint',
     path: 'inexperienced'
   },
   {
     id: 'future_goals',
-    textKey: 'lead-gen.future_goals.text',
+    textKey: 'sdr.future_goals.text',
     type: 'open',
-    hintKey: 'lead-gen.future_goals.hint',
+    hintKey: 'sdr.future_goals.hint',
     path: 'inexperienced'
   }
 ]
@@ -143,15 +143,15 @@ export const inexperiencedQuestions: Question[] = [
 export const commonQuestions: Question[] = [
   {
     id: 'english',
-    textKey: 'lead-gen.english.text',
+    textKey: 'sdr.english.text',
     type: 'yesno',
     path: 'all'
   },
   {
     id: 'english_level',
-    textKey: 'lead-gen.english_level.text',
+    textKey: 'sdr.english_level.text',
     type: 'choice',
-    optionsKey: 'lead-gen.english_level.options',
+    optionsKey: 'sdr.english_level.options',
     path: 'all',
     condition: {
       dependsOn: 'english',
@@ -160,16 +160,16 @@ export const commonQuestions: Question[] = [
   },
   {
     id: 'age',
-    textKey: 'lead-gen.age.text',
+    textKey: 'sdr.age.text',
     type: 'choice',
-    optionsKey: 'lead-gen.age.options',
+    optionsKey: 'sdr.age.options',
     path: 'all'
   },
   {
     id: 'questions',
-    textKey: 'lead-gen.questions.text',
+    textKey: 'sdr.questions.text',
     type: 'open',
-    hintKey: 'lead-gen.questions.hint',
+    hintKey: 'sdr.questions.hint',
     path: 'all'
   }
 ]

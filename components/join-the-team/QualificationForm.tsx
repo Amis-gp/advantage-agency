@@ -74,7 +74,7 @@ const QualificationForm = () => {
             module = await import('@/app/constant/qualificationQuestions/coldEmail')
             break
           case 'lead-gen':
-            module = await import('@/app/constant/qualificationQuestions/leadGen')
+            module = await import('@/app/constant/qualificationQuestions/sdr')
             break
           case 'media-buyer':
             module = await import('@/app/constant/qualificationQuestions/mediaBuyer')

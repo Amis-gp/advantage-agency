@@ -26,7 +26,7 @@ const Vacancies = () => {
       description: t('positions.0.description'),
       icon: t('positions.0.icon'),
       gradient: t('positions.0.gradient'),
-      path: 'lead-gen',
+      path: 'sdr',
       isActive: true
     },
     {
