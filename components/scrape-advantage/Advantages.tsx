@@ -110,7 +110,7 @@ const Advantages = () => {
         {cards.map((card: any, i: number) => (
           <div
             key={card.title}
-            className="advantage-card group flex flex-col items-center rounded-2xl p-8 transition-all duration-500 relative neomorph-card opacity-0 translate-y-8"
+            className="advantage-card group flex flex-col items-center rounded-2xl p-6 transition-all duration-500 relative neomorph-card opacity-0 translate-y-8"
             style={{transitionDelay: `${i * 100}ms`}}
           >
             {/* Refined gradient border effect with reduced intensity */}
@@ -148,7 +148,7 @@ const Advantages = () => {
       </div>
       
       <div className="flex justify-center relative z-10">
-        <a href="#brief-form" className="group relative px-10 py-4 text-lg font-bold overflow-hidden transition-all duration-500 hover:scale-105">
+        <a href="/brief-lead-scraping" className="group relative px-10 py-4 text-lg font-bold overflow-hidden transition-all duration-500 hover:scale-105">
           {/* Enhanced button with multiple effects */}
           <span className="relative z-20 flex items-center gap-2 text-[#F6C744] group-hover:text-white transition-colors duration-500">
             {t('advantages.cta')}

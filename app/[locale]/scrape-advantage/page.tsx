@@ -52,7 +52,7 @@ export default function OffersPage({
           <FAQ />
           <Footer />
           <Popup />
-        </div>
+        </div> 
     );
 }
 

@@ -31,7 +31,7 @@ const AboutAdvantage = () => {
         <p className="text-lg md:text-xl text-[#F6C744] mb-10">
           {t('text')}
         </p>
-        <Link href="https://advantage.agency" target="_blank" rel="noopener noreferrer">
+        <Link href="/" target="_blank" rel="noopener noreferrer">
           <button className="px-8 py-3 rounded-full bg-gradient-to-r from-[#F6C744] to-[#4B3694] text-[#131328] font-semibold shadow-lg transition hover:scale-105">
             {t('cta')}
           </button>

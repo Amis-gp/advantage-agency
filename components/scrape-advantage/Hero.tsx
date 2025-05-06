@@ -3,6 +3,7 @@ import React from "react";
 import { useLocale } from 'next-intl';
 import en from '@/messages/en/scrape-advantage.json';
 import uk from '@/messages/uk/scrape-advantage.json';
+import Link from "next/link";
 
 const Hero = () => {
   const locale = useLocale();
@@ -47,9 +48,9 @@ const Hero = () => {
         <p className="text-lg md:text-2xl text-gray-200 mb-6 max-w-2xl mx-auto">
           {t('subtitle')}
         </p>
-        <button className="mt-2 px-8 py-4 bg-[#6B46C1] text-[#F6C744] font-bold text-lg rounded-xl shadow-lg transition-transform duration-200 hover:scale-105 hover:shadow-xl animate-pulse">
+        <Link href={"/brief-lead-scraping"} className="mt-2 px-8 py-4 bg-[#6B46C1] text-[#F6C744] font-bold text-lg rounded-xl shadow-lg transition-transform duration-200 hover:scale-105 hover:shadow-xl animate-pulse">
           {t('cta')}
-        </button>
+        </Link>
         <div className="mt-8 flex flex-col items-center">
           <span className="text-4xl md:text-5xl font-bold text-[#F6C744] animate-countup">{t('stats.count')}</span>
           <span className="text-gray-300 text-lg mt-1">{t('stats.description')}</span>

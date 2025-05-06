@@ -10,8 +10,8 @@ import uk from '@/messages/uk/scrape-advantage.json';
 
 const NAV_ITEMS = [
   { href: "#advantages", key: "nav.advantages" },
-  { href: "#how", key: "nav.how" },
-  { href: "#cases", key: "nav.cases" },
+  { href: "#how-it-works", key: "nav.how" },
+  { href: "#case-study", key: "nav.cases" },
   { href: "#faq", key: "nav.faq" },
 ];
 

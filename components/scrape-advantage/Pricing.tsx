@@ -163,7 +163,7 @@ const Pricing = () => {
                 
                 {/* CTA button */}
                 <a 
-                  href="#brief-form" 
+                  href="/brief-lead-scraping" 
                   className="group relative inline-flex items-center justify-center w-full py-3 px-6 overflow-hidden rounded-xl transition-all duration-300"
                 >
                   {/* Button text */}
@@ -209,7 +209,7 @@ const Pricing = () => {
               
               <div className="mt-auto">
                 <a 
-                  href="#brief-form" 
+                  href="/brief-lead-scraping" 
                   className="group relative inline-flex items-center justify-center w-full py-3 px-6 overflow-hidden rounded-xl border-2 border-[#F6C744] text-[#F6C744] transition-all duration-300"
                 >
                   <span className="relative z-10 flex items-center justify-center gap-2 transition-colors duration-300 group-hover:text-white">
@@ -265,7 +265,7 @@ const Pricing = () => {
               </div>
               
               <a 
-                href="#brief-form" 
+                href="/brief-lead-scraping" 
                 className="group relative inline-flex items-center justify-center w-full py-3 px-6 overflow-hidden rounded-xl transition-all duration-300"
               >
                 <span className="relative z-10 flex items-center justify-center gap-2 text-white font-medium transition-colors duration-300">

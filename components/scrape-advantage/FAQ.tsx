@@ -36,7 +36,7 @@ const FAQ = () => {
   };
 
   return (
-    <section className="py-20 relative overflow-hidden" style={{ background: 'linear-gradient(to bottom, #0F1022, #131328)' }}>
+    <section id="faq" className="py-20 relative overflow-hidden" style={{ background: 'linear-gradient(to bottom, #0F1022, #131328)' }}>
       {/* Background pattern */}
       <div className="absolute inset-0 opacity-10" 
         style={{

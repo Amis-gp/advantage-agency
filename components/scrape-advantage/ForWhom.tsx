@@ -171,14 +171,14 @@ const ForWhom = () => {
           <p className="text-base text-gray-400 mb-6">
             {t('forWhom.blogPromo')}
           </p>
-          <Link href="/blog/what-is-lead-scraping" className="inline-block text-[#F6C744] hover:text-white border-b border-[#F6C744] pb-1 transition-colors duration-300">
-            {t('forWhom.readMore')} →
+          <Link href="/blog/lead-scraping" target='_blank' className="inline-block text-[#F6C744] hover:text-white border-b border-[#F6C744] pb-1 transition-colors duration-300">
+            {t('forWhom.readMore')} <span className='top-px relative'>→</span>
           </Link>
         </div>
         
         {/* CTA button */}
         <div className="flex justify-center">
-          <a href="#brief-form" className="group relative px-10 py-4 text-lg font-bold overflow-hidden transition-all duration-500 hover:scale-105">
+          <a href="/brief-lead-scraping" className="group relative px-10 py-4 text-lg font-bold overflow-hidden transition-all duration-500 hover:scale-105">
             {/* Button text */}
             <span className="relative z-20 flex items-center gap-2 text-[#F6C744] group-hover:text-white transition-colors duration-500">
               {t('forWhom.cta')}

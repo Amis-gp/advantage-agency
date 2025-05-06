@@ -212,7 +212,7 @@ const HowItWorks = () => {
         
         {/* CTA button */}
         <div className="flex justify-center">
-          <a href="#brief-form" className="group relative px-10 py-4 text-lg font-bold overflow-hidden transition-all duration-500 hover:scale-105">
+          <a href="/brief-lead-scraping" className="group relative px-10 py-4 text-lg font-bold overflow-hidden transition-all duration-500 hover:scale-105">
             {/* Button text */}
             <span className="relative z-20 flex items-center gap-2 text-[#F6C744] group-hover:text-white transition-colors duration-500">
               {t('howItWorks.cta')}
