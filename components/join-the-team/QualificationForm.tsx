@@ -68,12 +68,11 @@ const QualificationForm = () => {
         setLoading(true)
         let module
         
-        // Вибираємо правильний модуль питань залежно від професії
         switch(profession) {
           case 'cold-email':
             module = await import('@/app/constant/qualificationQuestions/coldEmail')
             break
-          case 'lead-gen':
+          case 'sdr':
             module = await import('@/app/constant/qualificationQuestions/sdr')
             break
           case 'media-buyer':
