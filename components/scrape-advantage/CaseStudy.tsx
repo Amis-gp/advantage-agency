@@ -104,13 +104,14 @@ const CaseStudy = () => {
             {/* Content */}
             <div className="relative z-10 flex flex-col md:flex-row gap-8 items-center">
               {/* Image */}
-              <div className="w-full md:w-2/5 rounded-xl overflow-hidden shadow-lg">
-                <div className="relative aspect-[4/3] w-full transform group-hover:scale-105 transition-transform duration-500">
+              <div className="w-full md:w-2/5">
+                <div className="relative h-full transform group-hover:scale-105 transition-transform duration-500">
                   <Image 
-                    src="/img/scrape-advantage/case-study.webp" 
-                    alt="B2B Lead Generation Case Study" 
-                    fill
-                    className="object-cover"
+                    src="/img/portfolio/build-scraper.webp" 
+                    alt="B2B Lead Generation Case Study"
+                    className="object-cover rounded-xl overflow-hidden shadow-lg mx-auto"
+                    width={250}
+                    height={300}
                   />
                 </div>
               </div>
@@ -153,6 +154,8 @@ const CaseStudy = () => {
                 <div className="mt-8">
                   <Link 
                     href="/cases/v14" 
+                    target='_blank'
+
                     className="group relative inline-flex items-center gap-2 px-6 py-3 overflow-hidden rounded-xl border-2 border-[#F6C744] text-[#F6C744] font-medium transition-all duration-300"
                   >
                     <span className="relative z-10 flex items-center gap-2 transition-colors duration-300 group-hover:text-white">

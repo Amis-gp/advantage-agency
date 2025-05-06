@@ -8,7 +8,7 @@ const ICONS = [
   // Smart Search
   <svg key="search" className="w-12 h-12 text-white group-hover:text-[#F6C744] transition-colors duration-300" fill="none" stroke="currentColor" strokeWidth="1.5" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8" strokeWidth="1.75"/><path strokeWidth="1.75" d="M21 21l-4.35-4.35"/></svg>,
   // Data Enrichment
-  <svg key="enrich" className="w-12 h-12 text-white group-hover:text-[#F6C744] transition-colors duration-300" fill="none" stroke="currentColor" strokeWidth="1.5" viewBox="0 0 24 24"><rect x="3" y="7" width="18" height="10" rx="2" strokeWidth="1.75"/><path strokeWidth="1.75" d="M7 7V5a5 5 0 0 1 10 0v2"/></svg>,
+  <svg key="enrich" className="w-12 h-14 text-white group-hover:text-[#F6C744] transition-colors duration-300" fill="none" stroke="currentColor" strokeWidth="1.5" viewBox="0 0 24 24"><rect x="3" y="7" width="18" height="14" rx="2" strokeWidth="1.75"/><path strokeWidth="1.75" d="M7 7V5a5 5 0 0 1 10 0v2"/><circle cx="12" cy="14" r="1" strokeWidth="0" fill="currentColor"/><path strokeWidth="1.75" d="M12 14v3" /></svg>,
   // Email Verification
   <svg key="email" className="w-12 h-12 text-white group-hover:text-[#F6C744] transition-colors duration-300" fill="none" stroke="currentColor" strokeWidth="1.5" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2" strokeWidth="1.75"/><path strokeWidth="1.75" d="M3 7l9 6 9-6"/></svg>,
   // Versatility
@@ -82,7 +82,7 @@ const Advantages = () => {
       <div className="max-w-5xl mx-auto text-center mb-16 relative z-10">
         {/* Subtler floating particles with reduced opacity */}
         <div className="absolute -top-10 left-1/4 w-2 h-2 bg-[#F6C744] rounded-full opacity-40 animate-particle-1 pointer-events-none"></div>
-        <div className="absolute top-20 right-1/3 w-1.5 h-1.5 bg-[#F6C744] rounded-full opacity-30 animate-particle-2 pointer-events-none"></div>
+        <div className="hidden sm:visible absolute top-20 right-1/3 w-1.5 h-1.5 bg-[#F6C744] rounded-full opacity-30 animate-particle-2 pointer-events-none"></div>
         <div className="absolute -bottom-16 left-1/3 w-3 h-3 bg-[#F6C744] rounded-full opacity-25 animate-particle-3 pointer-events-none"></div>
         
         {/* Refined badge with subtler glow */}
