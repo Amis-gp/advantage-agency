@@ -166,11 +166,11 @@ const HowItWorks = () => {
           {steps.map((step, index) => (
             <div 
               key={index} 
-              className={`timeline-step relative flex flex-col md:flex-row items-start md:items-center gap-6 mb-16 opacity-0 translate-y-8 transition-all duration-700 ${index % 2 === 1 ? 'md:flex-row-reverse' : ''}`}
+              className={`timeline-step relative flex flex-col md:flex-row items-start md:items-center mb-16 opacity-0 translate-y-8 transition-all duration-700 ${index % 2 === 1 ? 'md:flex-row-reverse' : ''}`}
               style={{ transitionDelay: `${index * 200}ms` }}
             >
               {/* Step number/icon */}
-              <div className="flex-shrink-0 z-10">
+              <div className="flex-shrink-0 z-10 -mb-[72px] md:mb-0 md:-mx-[30px]">
                 <div className="relative flex items-center justify-center w-[60px] h-[60px] rounded-full bg-gradient-to-br from-[#1A1A1A] to-[#252136] border-4 border-[#1A1A1A] ml-[10px] md:ml-0 md:mx-auto">
                   <div className="absolute inset-0 rounded-full bg-gradient-to-r from-[#6B46C1] to-[#F6C744] opacity-30 blur-sm"></div>
                   <span className="relative z-10 text-2xl font-bold text-white">{index + 1}</span>
@@ -178,15 +178,8 @@ const HowItWorks = () => {
               </div>
               
               {/* Content card */}
-              <div className={`flex-1 ${index % 2 === 1 ? 'md:text-right md:pr-10' : 'md:pl-10'}`}>
-                <div className="bg-gradient-to-br from-[#1A1A1A]/80 to-[#252136]/80 backdrop-blur-sm p-6 md:p-8 rounded-xl border border-[#6B46C1]/20 shadow-lg hover:shadow-xl transition-all duration-300 hover:border-[#6B46C1]/40 group">
-                  {/* Step time badge (only for first step) */}
-                  {step.time && (
-                    <div className="inline-block px-3 py-1 mb-3 text-xs font-medium text-[#F6C744] bg-[#F6C744]/10 rounded-full border border-[#F6C744]/20">
-                      {step.time}
-                    </div>
-                  )}
-                  
+              <div className={`flex-1  ${index % 2 === 1 ? 'md:ml-56' : 'md:mr-56'}`}>
+                <div className=" bg-gradient-to-br from-[#1A1A1A]/80 to-[#252136]/80 backdrop-blur-sm p-6 md:p-8 rounded-xl border border-[#6B46C1]/20 shadow-lg hover:shadow-xl transition-all duration-300 hover:border-[#6B46C1]/40 group">
                   {/* Icon */}
                   <div className="mb-4 flex items-center justify-center md:justify-start">
                     <div className="relative w-16 h-16 flex items-center justify-center">
@@ -217,8 +210,8 @@ const HowItWorks = () => {
             <span className="relative z-20 flex items-center gap-2 text-[#F6C744] group-hover:text-white transition-colors duration-500">
               {t('howItWorks.cta')}
               <svg width="24" height="24" fill="none" stroke="currentColor" strokeWidth="2" 
-                   className="ml-1 transform group-hover:translate-x-2 transition-all duration-500 ease-out" 
-                   viewBox="0 0 24 24">
+                className="ml-1 transform group-hover:translate-x-2 transition-all duration-500 ease-out" 
+                viewBox="0 0 24 24">
                 <path d="M5 12h14M13 6l6 6-6 6" strokeLinecap="round" strokeLinejoin="round"/>
               </svg>
             </span>

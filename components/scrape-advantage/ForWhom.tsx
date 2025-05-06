@@ -107,15 +107,14 @@ const ForWhom = () => {
         className="absolute inset-0 opacity-8 z-0" 
         style={{
           backgroundImage: `url("data:image/svg+xml,%3Csvg width='120' height='120' viewBox='0 0 120 120' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M9 0h2v20H9V0zm25.134.84l1.732 1-10 17.32-1.732-1 10-17.32zm-20 20l1.732 1-10 17.32-1.732-1 10-17.32zM58.16 4.134l1 1.732-17.32 10-1-1.732 17.32-10zm-40 40l1 1.732-17.32 10-1-1.732 17.32-10zM80 9v2H60V9h20zM20 69v2H0v-2h20zm79.32-55l-1 1.732-17.32-10L82 4l17.32 10zm-80 80l-1 1.732-17.32-10L2 84l17.32 10zm96.546-75.84l-1.732 1-10-17.32 1.732-1 10 17.32zm-100 100l-1.732 1-10-17.32 1.732-1 10 17.32zM38.16 24.134l1 1.732-17.32 10-1-1.732 17.32-10zM60 29v2H40v-2h20zm19.32 5l-1 1.732-17.32-10L62 24l17.32 10zm16.546 4.16l-1.732 1-10-17.32 1.732-1 10 17.32zM111 40h-2V20h2v20zm3.134.84l1.732 1-10 17.32-1.732-1 10-17.32zM40 49v2H20v-2h20zm19.32 5l-1 1.732-17.32-10L42 44l17.32 10zm-20 20l-1 1.732-17.32-10L22 64l17.32 10zm52.546-59.84l-1.732 1-10-17.32 1.732-1 10 17.32zm-40 40l-1.732 1-10-17.32 1.732-1 10 17.32zm32.32 15l1 1.732-17.32 10-1-1.732 17.32-10zM100 69v2H80v-2h20zm19.32 5l1 1.732-17.32 10-1-1.732 17.32-10zm-40 40l1 1.732-17.32 10-1-1.732 17.32-10zm52.546-59.84l1.732 1-10 17.32-1.732-1 10-17.32zm-40 40l1.732 1-10 17.32-1.732-1 10-17.32zM111 80h2v20h-2V80zm-19.32 15l-1 1.732-17.32-10 1-1.732 17.32 10z' fill='%235D3FBB' fill-opacity='0.2' fill-rule='evenodd'/%3E%3C/svg%3E")`,
-          backgroundSize: '180px 180px',
-          animation: 'patternMove 100s linear infinite'
+          backgroundSize: '180px 180px'
         }}
       ></div>
       
       {/* Decorative elements - updated with new colors */}
-      <div className="absolute top-0 right-0 w-[40vw] h-[40vw] bg-gradient-to-r from-[#7E57C2]/20 to-transparent rounded-full blur-[120px] animate-float-slow"></div>
-      <div className="absolute bottom-0 left-0 w-[50vw] h-[50vw] bg-gradient-to-r from-[#5D3FBB]/25 to-transparent rounded-full blur-[120px] animate-float"></div>
-      <div className="absolute top-1/3 left-1/4 w-[30vw] h-[30vw] bg-gradient-to-r from-[#F6C744]/10 to-transparent rounded-full blur-[100px] animate-float-reverse"></div>
+      <div className="absolute top-0 right-0 w-[40vw] h-[40vw] bg-gradient-to-r from-[#7E57C2]/20 to-transparent rounded-full blur-[120px]"></div>
+      <div className="absolute bottom-0 left-0 w-[50vw] h-[50vw] bg-gradient-to-r from-[#5D3FBB]/25 to-transparent rounded-full blur-[120px]"></div>
+      <div className="absolute top-1/3 left-1/4 w-[30vw] h-[30vw] bg-gradient-to-r from-[#F6C744]/10 to-transparent rounded-full blur-[100px]"></div>
       
       {/* Content container */}
       <div className="max-w-6xl mx-auto relative z-10">
@@ -183,8 +182,8 @@ const ForWhom = () => {
             <span className="relative z-20 flex items-center gap-2 text-[#F6C744] group-hover:text-white transition-colors duration-500">
               {t('forWhom.cta')}
               <svg width="24" height="24" fill="none" stroke="currentColor" strokeWidth="2" 
-                   className="ml-1 transform group-hover:translate-x-2 transition-all duration-500 ease-out" 
-                   viewBox="0 0 24 24">
+                className="ml-1 transform group-hover:translate-x-2 transition-all duration-500 ease-out" 
+                viewBox="0 0 24 24">
                 <path d="M5 12h14M13 6l6 6-6 6" strokeLinecap="round" strokeLinejoin="round"/>
               </svg>
             </span>
@@ -203,38 +202,6 @@ const ForWhom = () => {
 
       {/* Animations and styles */}
       <style jsx>{`
-        @keyframes patternMove {
-          0% { background-position: 0 0; }
-          100% { background-position: 500px 500px; }
-        }
-        
-        @keyframes float {
-          0%, 100% { transform: translateY(0) rotate(0deg); }
-          50% { transform: translateY(-20px) rotate(2deg); }
-        }
-        
-        @keyframes float-slow {
-          0%, 100% { transform: translateY(0) rotate(0deg); }
-          50% { transform: translateY(-12px) rotate(-2deg); }
-        }
-        
-        @keyframes pulse-slow {
-          0%, 100% { opacity: 0.2; transform: scale(1); }
-          50% { opacity: 0.5; transform: scale(1.15); }
-        }
-        
-        .animate-float {
-          animation: float 15s ease-in-out infinite;
-        }
-        
-        .animate-float-slow {
-          animation: float-slow 20s ease-in-out infinite;
-        }
-        
-        .animate-pulse-slow {
-          animation: pulse-slow 3s ease-in-out infinite;
-        }
-        
         /* Scroll animation for cards */
         .industry-card.visible {
           opacity: 1;

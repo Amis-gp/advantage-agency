@@ -1,12 +1,12 @@
 {
   "nav": {
-    "advantages": "Advantages",
-    "how": "How it works",
+    "advantage": "ADvantage",
     "cases": "Cases",
-    "faq": "FAQ"
+    "blog": "Blog",
+    "contacts": "Contacts"
   },
   "cta": {
-    "get100": "Get 100 leads"
+    "get100": "Get 100 leads for €9"
   },
   "advantages": {
     "title": "Why Scrape ADvantage is your key to success?",
@@ -33,7 +33,7 @@
   "hero": {
     "title": "Find ideal clients with Scrape ADvantage!",
     "subtitle": "Our lead scraping technology from various channels saves your time and brings results.",
-    "cta": "Get 100 leads for free",
+    "cta": "Get 100 leads for €9",
     "stats": {
       "count": "134k+",
       "description": "leads scraped for clients"
@@ -55,7 +55,7 @@
     }
   },
   "forWhom": {
-    "title": "Who needs Scrape ADvantage?",
+    "title": "Who can benefit from lead scraping?",
     "description": "If you need quality lead databases for lead generation, sales, marketing, recruiting, or partnership building, we'll find them for you.",
     "blogPromo": "Check out our article where we explain what lead scraping is and how it helps businesses!",
     "readMore": "Read article",
@@ -73,7 +73,7 @@
   },
   "howItWorks": {
     "title": "How do we find your ideal leads?",
-    "cta": "Get 100 leads for free",
+    "cta": "Get 100 leads for €9",
     "steps": {
       "brief": {
         "title": "Brief Completion",
@@ -117,7 +117,7 @@
       "support": "24/7 Support"
     },
     "packages": {
-      "free": "Free",
+      "free": "€9",
       "custom": {
         "leads": "Custom package"
       }
@@ -154,10 +154,10 @@
   },
   
   "popup": {
-    "title": "Get 100 Free Leads!",
+    "title": "Get 100 Leads for €9!",
     "description": "Leave your email and we'll send you a sample of leads for your niche",
     "emailPlaceholder": "Your email address",
-    "submitButton": "Get Free Leads",
+    "submitButton": "Get Leads",
     "privacyNote": "We don't share your data with third parties. Learn more in our privacy policy."
   },
   "faq": {
@@ -175,8 +175,8 @@
       "answer": "Depending on the volume of data, scraping can take from a few hours to 2-3 days."
     },
     "q4": {
-      "question": "What are the conditions for getting 100 free leads?",
-      "answer": "You need to submit a request on the website and specify your niche — we'll prepare a sample for you free of charge."
+      "question": "What are the conditions for getting 100 leads for €9?",
+      "answer": "You need to submit a request on the website and specify your niche — we scrap leads and send them to you."
     },
     "q5": {
       "question": "Can I order scraping for a specific niche?",

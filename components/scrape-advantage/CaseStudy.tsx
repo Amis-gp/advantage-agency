@@ -51,7 +51,7 @@ const CaseStudy = () => {
   };
 
   return (
-    <section ref={sectionRef} id="case-study" className="relative py-24 px-4 md:px-12 overflow-hidden font-geologica">
+    <section id="cases" ref={sectionRef} className="relative py-24 px-4 md:px-12 overflow-hidden font-geologica">
       {/* Background elements - updated with new gradient */}
       <div className="absolute inset-0 bg-gradient-to-br from-[#1E1E36] via-[#141428] to-[#232342] z-0"></div>
       

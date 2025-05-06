@@ -1,8 +1,26 @@
 'use client';
 import React, { useEffect, useRef } from 'react';
+import Image from "next/image";
 import { useLocale } from 'next-intl';
 import en from '@/messages/en/scrape-advantage.json';
 import uk from '@/messages/uk/scrape-advantage.json';
+
+// Logo types and data from PlatformsLogos
+type LogoInfo = {
+  key: string;
+  src: string;
+};
+
+const logos: Record<string, LogoInfo> = {
+  instagram: { key: "instagram", src: "/img/scrape-advantage/instagram.webp" },
+  linkedin: { key: "linkedin", src: "/img/scrape-advantage/linkedin.png" },
+  googleMaps: { key: "googleMaps", src: "/img/scrape-advantage/google-maps.png" },
+  facebook: { key: "facebook", src: "/img/scrape-advantage/facebook.svg" },
+  apollo: { key: "apollo", src: "/img/scrape-advantage/apollo.svg" },
+  yelp: { key: "yelp", src: "/img/scrape-advantage/yelp.webp" },
+  capterra: { key: "capterra", src: "/img/scrape-advantage/capterra.webp" },
+  bazarClub: { key: "bazarClub", src: "/img/scrape-advantage/bazar-club.svg" },
+};
 
 const ICONS = [
   // Smart Search
@@ -60,7 +78,7 @@ const Advantages = () => {
   const cards = translations.advantages.cards;
 
   return (
-    <section ref={sectionRef} id="advantages" className="relative py-28 px-4 md:px-12 overflow-hidden">
+    <section ref={sectionRef} id="advantages" className="relative py-28 px-4 sm:px-0 overflow-hidden">
       {/* Refined background with subtle gradient */}
       <div className="absolute inset-0 bg-gradient-to-br from-[#3A2A5E] via-[#1A1A1A] to-[#1A1A1A] z-0"></div>
       
@@ -73,18 +91,53 @@ const Advantages = () => {
           animation: 'patternMove 120s linear infinite'
         }}
       ></div>
+
+
+      {/* PlatformsLogos section integrated */}
+      <div className=" w-full overflow-hidden font-geologica">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-0">
+          <div className="flex flex-col items-center mb-12 md:mb-14 relative z-10">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-3 drop-shadow-lg tracking-tight text-center" style={{letterSpacing: '-0.01em'}}>
+              {translations.platformsLogos?.title || 'Supported Platforms'}
+            </h2>
+            <p className="text-base md:text-lg text-gray-300 font-medium text-center max-w-2xl">
+              {translations.platformsLogos?.subtitle || 'We work with all major platforms to find the perfect leads for your business'}
+            </p>
+          </div>
+        </div>
+
+        <div className="relative w-full z-10 overflow-hidden">
+          <div className="flex gap-10 md:gap-16 items-center w-max relative py-6 marquee">
+            {Object.entries(logos).concat(Object.entries(logos)).map(([key, logo], idx) => (
+              <div
+                key={`${key}-${idx}`}
+                className="h-16 w-32 md:h-20 md:w-40 flex items-center justify-center group relative transform transition-transform duration-500 hover:scale-110"
+              >
+                <Image
+                  src={logo.src}
+                  alt={logo.key}
+                  width={120}
+                  height={64}
+                  className="object-contain w-auto h-14 sm:h-16 md:h-20 z-10 opacity-80 hover:opacity-100 transition-opacity duration-300"
+                />
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
       
       {/* Softer decorative elements with reduced opacity */}
       <div className="absolute top-0 right-0 w-[40vw] h-[40vw] bg-gradient-to-r from-[#F6C744]/15 to-transparent rounded-full blur-[120px] animate-float-slow"></div>
       <div className="absolute bottom-0 left-0 w-[50vw] h-[50vw] bg-gradient-to-r from-[#6B46C1]/20 to-transparent rounded-full blur-[120px] animate-float"></div>
       <div className="absolute top-1/2 left-1/4 w-[20vw] h-[20vw] bg-gradient-to-r from-[#F6C744]/10 to-transparent rounded-full blur-[100px] animate-float-reverse"></div>
       
-      <div className="max-w-5xl mx-auto text-center mb-16 relative z-10">
+      <div className="max-w-5xl mx-auto text-center mb-16 relative pt-16 md:pt-24">
         {/* Subtler floating particles with reduced opacity */}
-        <div className="absolute -top-10 left-1/4 w-2 h-2 bg-[#F6C744] rounded-full opacity-40 animate-particle-1 pointer-events-none"></div>
-        <div className="hidden sm:visible absolute top-20 right-1/3 w-1.5 h-1.5 bg-[#F6C744] rounded-full opacity-30 animate-particle-2 pointer-events-none"></div>
-        <div className="absolute -bottom-16 left-1/3 w-3 h-3 bg-[#F6C744] rounded-full opacity-25 animate-particle-3 pointer-events-none"></div>
-        
+        <div className="absolute top-10 left-1/4 w-2 h-2 bg-[#F6C744] rounded-full opacity-40 animate-particle-1 pointer-events-none"></div>
+        <div className="absolute top-12 left-3/4 w-1.5 h-1.5 bg-[#F6C744] rounded-full opacity-30 animate-particle-2 pointer-events-none"></div>
+        <div className="absolute -bottom-16 left-2/3 w-3 h-3 bg-[#F6C744] rounded-full opacity-25 animate-particle-3 pointer-events-none"></div>
+        <div className="absolute -bottom-[400px] left-1/4 w-3 h-3 bg-[#F6C744] rounded-full opacity-25 animate-particle-3 pointer-events-none"></div>
+
         {/* Refined badge with subtler glow */}
         <div className="relative inline-block mb-6">
           <span className="relative z-10 inline-block py-2 px-6 rounded-full bg-gradient-to-r from-[#1A1A1A] to-[#252136] text-[#F6C744] text-sm font-medium tracking-wide border border-[#6B46C1]/40">
@@ -153,19 +206,16 @@ const Advantages = () => {
           <span className="relative z-20 flex items-center gap-2 text-[#F6C744] group-hover:text-white transition-colors duration-500">
             {t('advantages.cta')}
             <svg width="24" height="24" fill="none" stroke="currentColor" strokeWidth="2" 
-                 className="ml-1 transform group-hover:translate-x-2 transition-all duration-500 ease-out" 
-                 viewBox="0 0 24 24">
+                className="ml-1 transform group-hover:translate-x-2 transition-all duration-500 ease-out" 
+                viewBox="0 0 24 24">
               <path d="M5 12h14M13 6l6 6-6 6" strokeLinecap="round" strokeLinejoin="round"/>
             </svg>
           </span>
           
-          {/* Enhanced background fill effect */}
           <span className="absolute inset-0 bg-gradient-to-r from-[#6B46C1] via-[#9A77E0] to-[#F6C744] rounded-xl transform scale-x-0 group-hover:scale-x-100 origin-left transition-all duration-500 ease-out z-10"></span>
           
-          {/* Enhanced border */}
           <span className="absolute inset-0 border-2 border-[#F6C744] rounded-xl z-10"></span>
           
-          {/* Subtler glow effect */}
           <span className="absolute -inset-1 bg-gradient-to-r from-[#F6C744]/20 via-[#6B46C1]/20 to-[#F6C744]/20 rounded-xl opacity-0 group-hover:opacity-70 blur-md transition-opacity duration-500 z-0"></span>
         </a>
       </div>
@@ -173,6 +223,8 @@ const Advantages = () => {
       <div className="absolute left-[10%] top-[15%] w-24 h-24 border border-[#6B46C1]/20 rounded-lg transform rotate-45 animate-float opacity-25 z-0"></div>
       <div className="absolute right-[15%] bottom-[20%] w-16 h-16 border border-[#6B46C1]/15 rounded-full animate-float-slow opacity-20 z-0"></div>
       <div className="absolute left-[30%] bottom-[10%] w-8 h-20 border border-[#F6C744]/10 rounded-sm transform -rotate-12 animate-float-reverse opacity-15 z-0"></div>
+      
+      
 
       <style jsx>{`
         /* Enhanced card styling */
@@ -287,6 +339,20 @@ const Advantages = () => {
         .advantage-card.visible {
           opacity: 1;
           transform: translateY(0);
+        }
+        
+        /* PlatformsLogos marquee animation */
+        .marquee {
+          animation: marquee 60s linear infinite;          
+        }
+        @keyframes marquee {
+          0% { transform: translateX(0); }
+          100% { transform: translateX(-50%); }
+        }
+        @media (prefers-reduced-motion: reduce) {
+          .marquee {
+            animation: none;
+          }
         }
       `}</style>
     </section>

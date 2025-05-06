@@ -2,7 +2,6 @@ import { setRequestLocale } from 'next-intl/server';
 import { Metadata } from 'next';
 import HeroSection from '@/components/scrape-advantage/Hero';
 import Header from '@/components/scrape-advantage/Header';
-import PlatformsLogos from '@/components/scrape-advantage/PlatformsLogos';
 import Advantages from '@/components/scrape-advantage/Advantages';
 import ForWhom from '@/components/scrape-advantage/ForWhom';
 import HowItWorks from '@/components/scrape-advantage/HowItWorks';
@@ -42,7 +41,6 @@ export default function OffersPage({
       <div style={{ fontFamily: "'Geologica', 'Inter', sans-serif" }}>
           <Header />
           <HeroSection />
-          <PlatformsLogos />
           <Advantages />
           <ForWhom />
           <HowItWorks />

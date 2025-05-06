@@ -1,5 +1,5 @@
 'use client';
-import React, { useRef, useEffect } from 'react';
+import React, { useRef, useEffect, useState } from 'react';
 import Link from 'next/link';
 import { useLocale } from 'next-intl';
 import en from '@/messages/en/scrape-advantage.json';
@@ -49,17 +49,24 @@ const Pricing = () => {
     return typeof result === 'string' ? result : '';
   };
 
-  // Pricing data
-  const packages = [
-    { id: 'free', leads: '100', price: t('pricing.packages.free'), popular: false },
-    { id: 'small', leads: '1k', price: '168€', popular: false },
-    { id: 'medium', leads: '2k', price: '298€', popular: false },
-    { id: 'large', leads: '3k', price: '409€', popular: true },
-    { id: 'xl', leads: '4k', price: '499€', popular: false },
-    { id: 'xxl', leads: '5k', price: '599€', popular: false },
-    { id: 'custom', leads: t('pricing.packages.custom.leads'), price: '', popular: false, isCustom: true },
-    { id: 'verification', leads: '1k', price: '20€', popular: false, isVerification: true },
+  // Pricing data options
+  const leadOptions = [
+    { id: 'free', leads: '100', price: t('pricing.packages.free') },
+    { id: 'small', leads: '1k', price: '€168' },
+    { id: 'medium', leads: '2k', price: '€298' },
+    { id: 'large', leads: '3k', price: '€409' },
+    { id: 'xl', leads: '4k', price: '€499' },
+    { id: 'xxl', leads: '5k', price: '€599' },
   ];
+  
+  // Other packages
+  const specialPackages = [
+    { id: 'custom', leads: t('pricing.packages.custom.leads'), price: '', isCustom: true },
+    { id: 'verification', leads: '1k', price: '€20', isVerification: true },
+  ];
+  
+  // State for selected leads
+  const [selectedLeadOption, setSelectedLeadOption] = useState('large'); // Default to 3k (most popular)
 
   return (
     <section ref={sectionRef} id="pricing" className="relative py-24 px-4 md:px-12 overflow-hidden font-geologica">
@@ -95,101 +102,14 @@ const Pricing = () => {
           </div>
         </div>
         
-        {/* Main packages grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
-          {packages.slice(0, 6).map((pkg, i) => (
-            <div
-              key={pkg.id}
-              className={`pricing-card group flex flex-col rounded-xl p-6 transition-all duration-500 relative opacity-0 translate-y-8 ${
-                pkg.popular 
-                  ? 'bg-gradient-to-br from-[#0F1022] to-[#131328] border-2 border-[#F6C744]' 
-                  : 'bg-[#0F1022]/90 border border-[#4B3694]/20 hover:border-[#4B3694]/50'
-              }`}
-              style={{transitionDelay: `${i * 100}ms`}}
-            >
-              {/* Hover effect */}
-              <div className="absolute -inset-0.5 bg-gradient-to-r from-[#F6C744]/40 via-[#4B3694]/40 to-[#F6C744]/40 rounded-xl opacity-0 group-hover:opacity-50 transition-opacity duration-500"></div>
-              
-              {/* Popular badge */}
-              {pkg.popular && (
-                <div className="absolute -top-3 right-6">
-                  <div className="relative px-3 py-1 bg-[#F6C744] text-[#0F1022] text-xs font-bold rounded-full shadow-lg">
-                    {t('pricing.popular')}
-                  </div>
-                </div>
-              )}
-              
-              <div className="relative z-10 flex flex-col h-full">
-                {/* Package number */}
-                <div className="mb-4 text-sm text-gray-400">
-                  {t('pricing.package')} #{i + 1}
-                </div>
-                
-                {/* Package details */}
-                <div className="mb-6">
-                  <div className="flex items-end gap-2 mb-2">
-                    <span className="text-4xl font-bold text-white">{pkg.leads}</span>
-                    <span className="text-xl text-gray-300 mb-1">{t('pricing.leads')}</span>
-                  </div>
-                  
-                  <div className="text-3xl font-bold text-[#F6C744]">
-                    {pkg.price}
-                  </div>
-                </div>
-                
-                {/* Features */}
-                <div className="space-y-3 mb-8 flex-grow">
-                  <div className="flex items-center gap-2">
-                    <svg className="w-5 h-5 text-[#F6C744]" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
-                    </svg>
-                    <span className="text-gray-300">{t('pricing.features.quality')}</span>
-                  </div>
-                  
-                  <div className="flex items-center gap-2">
-                    <svg className="w-5 h-5 text-[#F6C744]" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
-                    </svg>
-                    <span className="text-gray-300">{t('pricing.features.format')}</span>
-                  </div>
-                  
-                  <div className="flex items-center gap-2">
-                    <svg className="w-5 h-5 text-[#F6C744]" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
-                    </svg>
-                    <span className="text-gray-300">{t('pricing.features.support')}</span>
-                  </div>
-                </div>
-                
-                {/* CTA button */}
-                <a 
-                  href="/brief-lead-scraping" 
-                  className="group relative inline-flex items-center justify-center w-full py-3 px-6 overflow-hidden rounded-xl transition-all duration-300"
-                >
-                  {/* Button text */}
-                  <span className="relative z-10 flex items-center justify-center gap-2 text-white font-medium transition-colors duration-300">
-                    {t('pricing.cta')}
-                    <svg width="16" height="16" fill="none" stroke="currentColor" strokeWidth="2" className="transform transition-transform duration-300 group-hover:translate-x-1" viewBox="0 0 24 24">
-                      <path d="M5 12h14M13 6l6 6-6 6" strokeLinecap="round" strokeLinejoin="round"/>
-                    </svg>
-                  </span>
-                  
-                  {/* Button background */}
-                  <span className="absolute inset-0 bg-gradient-to-r from-[#362873] via-[#4B3694] to-[#F6C744] transform group-hover:scale-105 transition-transform duration-500 z-0"></span>
-                </a>
-              </div>
-            </div>
-          ))}
-        </div>
-        
-        {/* Special packages */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
-          {/* Custom package */}
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12 items-stretch">
+
+           {/* Custom package */}
           <div
-            className="pricing-card group flex flex-col rounded-xl p-6 transition-all duration-500 relative opacity-0 translate-y-8 bg-[#0F1022]/90 border border-[#4B3694]/20 hover:border-[#4B3694]/50"
+            className="pricing-card group flex flex-col rounded-xl p-6 h-full transition-all duration-500 relative opacity-0 translate-y-8 bg-[#0F1022]/90 border border-[#4B3694]/20 hover:border-[#4B3694]/50 min-h-[540px]"
             style={{transitionDelay: `600ms`}}
           >
-            {/* Hover effect */}
             <div className="absolute -inset-0.5 bg-gradient-to-r from-[#F6C744]/40 via-[#4B3694]/40 to-[#F6C744]/40 rounded-xl opacity-0 group-hover:opacity-50 transition-opacity duration-500"></div>
             
             <div className="relative z-10 flex flex-col h-full">
@@ -223,10 +143,111 @@ const Pricing = () => {
               </div>
             </div>
           </div>
+
+
+        {/* Main package with lead option selector */}
+        <div>
+          <div className="pricing-card group flex flex-col rounded-xl p-6 h-full transition-all duration-500 relative opacity-0 translate-y-8 bg-gradient-to-br from-[#0F1022] to-[#131328] border-2 border-[#F6C744] min-h-[540px]">
+            {/* Hover effect */}
+            <div className="absolute -inset-0.5 bg-gradient-to-r from-[#F6C744]/40 via-[#4B3694]/40 to-[#F6C744]/40 rounded-xl opacity-0 group-hover:opacity-50 transition-opacity duration-500"></div>
+            
+            {/* Popular badge */}
+            <div className="absolute -top-3 right-6">
+              <div className="relative px-3 py-1 bg-[#F6C744] text-[#0F1022] text-xs font-bold rounded-full shadow-lg">
+                {t('pricing.popular')}
+              </div>
+            </div>
+            
+            <div className="relative z-10 flex flex-col h-full">
+              {/* Package title */}
+              <div className="mb-4 text-sm text-gray-400">
+                {t('pricing.package')} #{leadOptions.findIndex(opt => opt.id === selectedLeadOption) + 1}
+              </div>
+              
+              {/* Package details */}
+              <div className="mb-6">
+                <div className="flex items-end gap-2 mb-2">
+                  <span className="text-4xl font-bold text-white">
+                    {leadOptions.find(opt => opt.id === selectedLeadOption)?.leads}
+                  </span>
+                  <span className="text-xl text-gray-300 mb-1">{t('pricing.leads')}</span>
+                </div>
+                
+                <div className="text-3xl font-bold text-[#F6C744]">
+                  {leadOptions.find(opt => opt.id === selectedLeadOption)?.price}
+                </div>
+              </div>
+
+              {/* Lead quantity selector */}
+              <div className="mb-8">
+                <div className="text-sm text-gray-400 mb-3">Select lead quantity:</div>
+                <div className="flex flex-wrap gap-3">
+                  {leadOptions.map((option) => (
+                    <button
+                      key={option.id}
+                      onClick={() => setSelectedLeadOption(option.id)}
+                      className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 ${
+                        selectedLeadOption === option.id
+                          ? 'bg-[#F6C744] text-[#0F1022] shadow-lg'
+                          : 'bg-[#0F1022]/70 text-gray-300 border border-[#4B3694]/30 hover:border-[#4B3694]/70'
+                      }`}
+                    >
+                      {option.leads}
+                    </button>
+                  ))}
+                </div>
+              </div>
+              
+              {/* Features */}
+              <div className="space-y-3 mb-8 flex-grow">
+                <div className="flex items-center gap-2">
+                  <svg className="w-5 h-5 text-[#F6C744]" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
+                  </svg>
+                  <span className="text-gray-300">{t('pricing.features.quality')}</span>
+                </div>
+                
+                <div className="flex items-center gap-2">
+                  <svg className="w-5 h-5 text-[#F6C744]" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
+                  </svg>
+                  <span className="text-gray-300">{t('pricing.features.format')}</span>
+                </div>
+                
+                <div className="flex items-center gap-2">
+                  <svg className="w-5 h-5 text-[#F6C744]" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
+                  </svg>
+                  <span className="text-gray-300">{t('pricing.features.support')}</span>
+                </div>
+              </div>
+              
+              {/* CTA button */}
+              <a 
+                href="/brief-lead-scraping" 
+                className="group relative inline-flex items-center justify-center w-full py-3 px-6 overflow-hidden rounded-xl transition-all duration-300"
+              >
+                {/* Button text */}
+                <span className="relative z-10 flex items-center justify-center gap-2 text-white font-medium transition-colors duration-300">
+                  {t('pricing.cta')}
+                  <svg width="16" height="16" fill="none" stroke="currentColor" strokeWidth="2" className="transform transition-transform duration-300 group-hover:translate-x-1" viewBox="0 0 24 24">
+                    <path d="M5 12h14M13 6l6 6-6 6" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                </span>
+                
+                {/* Button background */}
+                <span className="absolute inset-0 bg-gradient-to-r from-[#362873] via-[#4B3694] to-[#F6C744] transform group-hover:scale-105 transition-transform duration-500 z-0"></span>
+              </a>
+            </div>
+          </div>
+        </div>
+        
+        
+         
           
           {/* Email verification package */}
           <div
-            className="pricing-card group flex flex-col rounded-xl p-6 transition-all duration-500 relative opacity-0 translate-y-8 bg-[#0F1022]/90 border border-[#4B3694]/20 hover:border-[#4B3694]/50"
+            className="pricing-card group flex flex-col rounded-xl p-6 h-full transition-all duration-500 relative opacity-0 translate-y-8 bg-[#0F1022]/90 border border-[#4B3694]/20 hover:border-[#4B3694]/50 min-h-[540px]"
             style={{transitionDelay: `700ms`}}
           >
             {/* Hover effect */}
@@ -244,7 +265,7 @@ const Pricing = () => {
                 </div>
                 
                 <div className="text-3xl font-bold text-[#F6C744]">
-                  20€
+                  €20
                 </div>
               </div>
               

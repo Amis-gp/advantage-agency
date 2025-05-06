@@ -24,7 +24,7 @@ const Footer = () => {
   };
   
   return (
-    <footer className="w-full py-16 px-6 md:px-12 bg-[#131328] text-white border-t border-[#4B3694]/30">
+    <footer id='contacts' className="w-full py-16 px-6 md:px-12 bg-[#131328] text-white border-t border-[#4B3694]/30">
       <div className="max-w-6xl mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
           {/* Logo and tagline */}

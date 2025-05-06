@@ -24,7 +24,13 @@ const Hero = () => {
   };
 
   return (
-    <section className="relative bg-gradient-to-br from-[#6B46C1] via-[#1A1A1A] to-[#F6C744] min-h-[80vh] flex flex-col items-center justify-center overflow-hidden">
+    <section
+      className="relative min-h-[80vh] flex flex-col items-center justify-center overflow-hidden"
+      style={{
+        background: "linear-gradient(90deg, rgba(107,70,193,1) 0%, rgba(107,70,193,0.8) 15%, rgba(35,33,59,0.9) 30%, rgba(26,26,26,1) 40%, rgba(26,26,26,1) 60%, rgba(35,33,59,0.9) 70%, rgba(246,199,68,0.8) 85%, rgba(246,199,68,1) 100%)",
+        boxShadow: "inset 0 0 70px rgba(107,70,193,0.3), inset 0 0 30px rgba(246,199,68,0.2)"
+      }}
+    >
       <div className="pt-28 relative z-10 w-full max-w-4xl mx-auto flex flex-col items-center text-center px-4 py-12">
         <div className="w-full max-w-2xl mx-auto rounded-2xl overflow-hidden shadow-2xl mb-8 aspect-video bg-gray-900/60 flex items-center justify-center">
           <video

@@ -9,10 +9,10 @@ import en from '@/messages/en/scrape-advantage.json';
 import uk from '@/messages/uk/scrape-advantage.json';
 
 const NAV_ITEMS = [
-  { href: "#advantages", key: "nav.advantages" },
-  { href: "#how-it-works", key: "nav.how" },
-  { href: "#case-study", key: "nav.cases" },
-  { href: "#faq", key: "nav.faq" },
+  { href: "/", key: "nav.advantage" },
+  { href: "#cases", key: "nav.cases" },
+  { href: "/blog", key: "nav.blog" },
+  { href: "#contacts", key: "nav.contacts" },
 ];
 
 const Header = () => {
