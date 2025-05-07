@@ -223,7 +223,7 @@ const Pricing = () => {
               </div>
               
               <a 
-                href="/brief-lead-scraping" 
+                href={selectedLeadOption === 'free' ? 'https://buy.stripe.com/6oE29i1lk5jbb3GaF5' : '/brief-lead-scraping'} 
                 className="group relative inline-flex items-center justify-center w-full py-3 px-6 overflow-hidden rounded-xl transition-all duration-300"
               >
                 <span className="relative z-10 flex items-center justify-center gap-2 text-white font-medium transition-colors duration-300">
@@ -240,7 +240,6 @@ const Pricing = () => {
         </div>
         
         
-         
           
           {/* Email verification package */}
           <div

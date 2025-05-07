@@ -27,15 +27,14 @@ const Hero = () => {
     <section
       className="relative min-h-[80vh] flex flex-col items-center justify-center overflow-hidden"
       style={{
-        background: "linear-gradient(90deg, rgba(107,70,193,0.8) 0%, rgba(35,33,59,0.9) 15%, rgba(26,26,26,1) 40%, rgba(26,26,26,1) 60%, rgba(35,33,59,0.9) 85%, rgba(246,199,68,0.8) 100%",
-        boxShadow: "inset 0 0 70px rgba(107,70,193,0.3), inset 0 0 30px rgba(246,199,68,0.2)"
+        background: "linear-gradient(90deg, rgba(107,70,193,0.8) 0%, rgba(35,33,59,0.9) 15%, rgba(26,26,26,1) 40%, rgba(26,26,26,1) 60%, rgba(35,33,59,0.9) 85%, rgba(246,199,68,0.8) 100%"
       }}
     >
       {/* Blurred overlay */}
       <div
         className="absolute inset-0 z-0 pointer-events-none"
         style={{
-          background: "inherit",
+          background: "linear-gradient(90deg, rgba(107,70,193,0.8) 0%, rgba(35,33,59,0.9) 15%, rgba(26,26,26,1) 40%, rgba(26,26,26,1) 60%, rgba(35,33,59,0.9) 85%, rgba(246,199,68,0.8) 100%)",
           filter: "blur(16px)",
           opacity: 0.9
         }}

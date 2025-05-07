@@ -13,7 +13,7 @@ type LogoInfo = {
 
 const logos: Record<string, LogoInfo> = {
   instagram: { key: "instagram", src: "/img/scrape-advantage/instagram.webp" },
-  linkedin: { key: "linkedin", src: "/img/scrape-advantage/linkedin.png" },
+  linkedin: { key: "linkedin", src: "/img/scrape-advantage/linkedin.webp" },
   googleMaps: { key: "googleMaps", src: "/img/scrape-advantage/google-maps.png" },
   facebook: { key: "facebook", src: "/img/scrape-advantage/facebook.svg" },
   apollo: { key: "apollo", src: "/img/scrape-advantage/apollo.svg" },
@@ -78,7 +78,7 @@ const Advantages = () => {
   const cards = translations.advantages.cards;
 
   return (
-    <section ref={sectionRef} id="advantages" className="relative py-28 px-4 sm:px-0 overflow-hidden">
+    <section ref={sectionRef} id="advantages" className="relative py-14 sm:py-28 px-4 sm:px-0 overflow-hidden">
       {/* Refined background with subtle gradient */}
       <div className="absolute inset-0 bg-gradient-to-br from-[#3A2A5E] via-[#1A1A1A] to-[#1A1A1A] z-0"></div>
       
