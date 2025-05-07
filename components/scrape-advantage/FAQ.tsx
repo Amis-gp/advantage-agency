@@ -8,8 +8,7 @@ const FAQ_ITEMS = [
   { key: 'q1' },
   { key: 'q2' },
   { key: 'q3' },
-  { key: 'q4' },
-  { key: 'q5' }
+  { key: 'q4' }
 ];
 
 const FAQ = () => {

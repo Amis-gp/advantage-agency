@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { useLocale } from 'next-intl';
 import en from '@/messages/en/scrape-advantage.json';
 import uk from '@/messages/uk/scrape-advantage.json';
+import Image from 'next/image';
 
 const Footer = () => {
   const locale = useLocale();
@@ -30,7 +31,7 @@ const Footer = () => {
           {/* Logo and tagline */}
           <div className="space-y-4">
             <div className="flex items-center">
-              <span className="text-2xl font-bold bg-gradient-to-r from-[#F6C744] to-[#4B3694] bg-clip-text text-transparent">Scrape ADvantage</span>
+              <Image src="/img/scrape-advantage/logo.webp" alt="Scrape ADvantage Logo" width={396} height={116} className="md:max-w-[160px] md:max-h-[36px] max-w-[120px] max-h-[26px] object-contain object-left transition-transform group-hover:scale-105" onError={(e) => (e.currentTarget.style.display = 'none')} />
             </div>
             <p className="text-gray-400 text-sm">
               {t('tagline')}

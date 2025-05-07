@@ -94,7 +94,7 @@ const Advantages = () => {
 
 
       {/* PlatformsLogos section integrated */}
-      <div className=" w-full overflow-hidden font-geologica">
+      <div className="overflow-hidden px-2 sm:px-4 max-w-5xl mx-auto">
         <div className="container mx-auto px-4 sm:px-6 lg:px-0">
           <div className="flex flex-col items-center mb-12 md:mb-14 relative z-10">
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-3 drop-shadow-lg tracking-tight text-center" style={{letterSpacing: '-0.01em'}}>

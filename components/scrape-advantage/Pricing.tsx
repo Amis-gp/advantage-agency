@@ -107,12 +107,12 @@ const Pricing = () => {
 
            {/* Custom package */}
           <div
-            className="pricing-card group flex flex-col rounded-xl p-6 h-full transition-all duration-500 relative opacity-0 translate-y-8 bg-[#0F1022]/90 border border-[#4B3694]/20 hover:border-[#4B3694]/50 min-h-[540px]"
+            className="pricing-card group flex flex-col rounded-xl p-6 md:h-full transition-all duration-500 relative opacity-0 translate-y-8 bg-[#0F1022]/90 border border-[#4B3694]/20 hover:border-[#4B3694]/50"
             style={{transitionDelay: `600ms`}}
           >
             <div className="absolute -inset-0.5 bg-gradient-to-r from-[#F6C744]/40 via-[#4B3694]/40 to-[#F6C744]/40 rounded-xl opacity-0 group-hover:opacity-50 transition-opacity duration-500"></div>
             
-            <div className="relative z-10 flex flex-col h-full">
+            <div className="relative z-10 flex flex-col md:h-full">
               <div className="mb-4 text-sm text-gray-400">
                 {t('pricing.custom.title')}
               </div>
@@ -129,7 +129,7 @@ const Pricing = () => {
               
               <div className="mt-auto">
                 <a 
-                  href="/brief-lead-scraping" 
+                  href="https://t.me/stepan_potichnyi" 
                   className="group relative inline-flex items-center justify-center w-full py-3 px-6 overflow-hidden rounded-xl border-2 border-[#F6C744] text-[#F6C744] transition-all duration-300"
                 >
                   <span className="relative z-10 flex items-center justify-center gap-2 transition-colors duration-300 group-hover:text-white">
@@ -147,7 +147,7 @@ const Pricing = () => {
 
         {/* Main package with lead option selector */}
         <div>
-          <div className="pricing-card group flex flex-col rounded-xl p-6 h-full transition-all duration-500 relative opacity-0 translate-y-8 bg-gradient-to-br from-[#0F1022] to-[#131328] border-2 border-[#F6C744] min-h-[540px]">
+          <div className="pricing-card group flex flex-col rounded-xl p-6 h-full transition-all duration-500 relative opacity-0 translate-y-8 bg-gradient-to-br from-[#0F1022] to-[#131328] border-2 border-[#F6C744]">
             {/* Hover effect */}
             <div className="absolute -inset-0.5 bg-gradient-to-r from-[#F6C744]/40 via-[#4B3694]/40 to-[#F6C744]/40 rounded-xl opacity-0 group-hover:opacity-50 transition-opacity duration-500"></div>
             
@@ -198,7 +198,7 @@ const Pricing = () => {
                 </div>
               </div>
               
-              {/* Features */}
+
               <div className="space-y-3 mb-8 flex-grow">
                 <div className="flex items-center gap-2">
                   <svg className="w-5 h-5 text-[#F6C744]" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -222,12 +222,10 @@ const Pricing = () => {
                 </div>
               </div>
               
-              {/* CTA button */}
               <a 
                 href="/brief-lead-scraping" 
                 className="group relative inline-flex items-center justify-center w-full py-3 px-6 overflow-hidden rounded-xl transition-all duration-300"
               >
-                {/* Button text */}
                 <span className="relative z-10 flex items-center justify-center gap-2 text-white font-medium transition-colors duration-300">
                   {t('pricing.cta')}
                   <svg width="16" height="16" fill="none" stroke="currentColor" strokeWidth="2" className="transform transition-transform duration-300 group-hover:translate-x-1" viewBox="0 0 24 24">
@@ -235,7 +233,6 @@ const Pricing = () => {
                   </svg>
                 </span>
                 
-                {/* Button background */}
                 <span className="absolute inset-0 bg-gradient-to-r from-[#362873] via-[#4B3694] to-[#F6C744] transform group-hover:scale-105 transition-transform duration-500 z-0"></span>
               </a>
             </div>
@@ -247,13 +244,12 @@ const Pricing = () => {
           
           {/* Email verification package */}
           <div
-            className="pricing-card group flex flex-col rounded-xl p-6 h-full transition-all duration-500 relative opacity-0 translate-y-8 bg-[#0F1022]/90 border border-[#4B3694]/20 hover:border-[#4B3694]/50 min-h-[540px]"
+            className="pricing-card group flex flex-col rounded-xl p-6 md:h-full transition-all duration-500 relative opacity-0 translate-y-8 bg-[#0F1022]/90 border border-[#4B3694]/20 hover:border-[#4B3694]/50"
             style={{transitionDelay: `700ms`}}
           >
-            {/* Hover effect */}
             <div className="absolute -inset-0.5 bg-gradient-to-r from-[#F6C744]/40 via-[#4B3694]/40 to-[#F6C744]/40 rounded-xl opacity-0 group-hover:opacity-50 transition-opacity duration-500"></div>
             
-            <div className="relative z-10 flex flex-col h-full">
+            <div className="relative z-10 flex flex-col md:h-full">
               <div className="mb-4 text-sm text-gray-400">
                 {t('pricing.verification.title')}
               </div>
