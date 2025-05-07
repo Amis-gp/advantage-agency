@@ -27,16 +27,16 @@ const Hero = () => {
     <section
       className="relative min-h-[80vh] flex flex-col items-center justify-center overflow-hidden"
       style={{
-        background: "linear-gradient(90deg, rgba(107,70,193,0.8) 0%, rgba(35,33,59,0.9) 15%, rgba(26,26,26,1) 40%, rgba(26,26,26,1) 60%, rgba(35,33,59,0.9) 85%, rgba(246,199,68,0.8) 100%"
+        background: "linear-gradient(90deg, #F6C744 0%, #6B46C1 100%)"
       }}
     >
-      {/* Blurred overlay */}
+      {/* Blurred black vignette overlay */}
       <div
         className="absolute inset-0 z-0 pointer-events-none"
         style={{
-          background: "linear-gradient(90deg, rgba(107,70,193,0.8) 0%, rgba(35,33,59,0.9) 15%, rgba(26,26,26,1) 40%, rgba(26,26,26,1) 60%, rgba(35,33,59,0.9) 85%, rgba(246,199,68,0.8) 100%)",
-          filter: "blur(16px)",
-          opacity: 0.9
+          background: "radial-gradient(circle at 70% 90%, rgba(0,0,0,0.7) 30%, rgba(0,0,0,0.6) 50%, rgba(0,0,0,0.7) 100%)",
+          filter: "blur(48px)",
+          opacity: 0.95
         }}
       />
       <div className="pt-28 relative z-10 w-full max-w-4xl mx-auto flex flex-col items-center text-center px-4 py-12">
