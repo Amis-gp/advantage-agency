@@ -40,7 +40,7 @@ const Hero = () => {
         }}
       />
       <div className="pt-28 relative z-10 w-full max-w-4xl mx-auto flex flex-col items-center text-center px-4 py-12">
-        <div className="w-full max-w-2xl mx-auto rounded-2xl overflow-hidden shadow-2xl mb-8 aspect-video bg-gray-900/60 flex items-center justify-center">
+        <div className="w-full max-w-2xl mx-auto rounded-2xl overflow-hidden shadow-xl shadow-zinc-500 mb-8 aspect-video bg-gray-900/60 flex items-center justify-center">
           <video
             className="w-full h-full object-cover"
             src="/scrape-advantage-demo.mp4"
