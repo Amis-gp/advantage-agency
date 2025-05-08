@@ -1661,11 +1661,10 @@
     },
     "cold-email": {
         "hero": {
-            "subtitle": "WE BUILD OUTBOUND SYSTEMS THAT SELL FOR YOU ON AUTOPILOT",
+            "subtitle": "Automated outbound sales system for lead generation",
             "title": {
-                "part1": "Add 15-40 Qualified Sales Meetings",
-                "part2": "To Your Calendar Each Month On A Performance Basis",
-                "part3": "Completely Done-For-You"
+                "part1": "Get 7-35 qualified calls monthly",
+                "part2": "Choose infrastructure size for your business"
             },
             "buttons": {
             "book": "Book Your Growth Call",

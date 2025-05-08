@@ -133,14 +133,14 @@ export default function PricingPage() {
   ];
   
   const addons = {
-    bonus: { 
-      name: "One A/B text sequence - €50", 
-      price: 50, 
-      description: "1 additional marketing approach (includes 3 emails)"
-    },
     campaign: { 
       name: "Campaign management", 
-      price: 60, 
+      price:selectedPackage === 0 ? 60 : 
+            selectedPackage === 1 ? 80 : 
+            selectedPackage === 2 ? 99 : 
+            selectedPackage === 3 ? 180 : 
+            selectedPackage === 4 ? 240 : 
+            299, 
       description: isInitialSetup 
         ? "Professional campaign management and optimization (always included)" 
         : "Professional campaign management and optimization (recommended)" 
@@ -180,7 +180,7 @@ export default function PricingPage() {
     }
     
     if (selectedPackage === 0) { // 1K пакет
-      return abTestCount * addons.bonus.price;
+      return abTestCount;
     } else { // 2K+ пакети
       if (abTestCount <= 2) {
         return 50; // 1-2 тести коштують €50
@@ -408,47 +408,9 @@ export default function PricingPage() {
                 </div>
                 
                 <div>
-                  <h2 className="text-2xl font-bold text-white mb-6">2. {t('steps.addServices')}</h2>
                   
                   {/* Додаткові послуги */}
                   <div className="space-y-4">
-                    {/* A/B Testing */}
-                    <div className="flex items-center justify-between p-4 border border-gray-700 rounded-lg bg-[#0F172A]/80 ">
-                      <div>
-                        <div className="font-medium text-white">{t('addons.abTesting.name')}</div>
-                        <div className="text-sm text-gray-300">
-                          {t('addons.abTesting.description')}
-                          {selectedPackage >= 1 && (
-                            <span className="block mt-1 text-green-400 font-medium">
-                              {t('addons.abTesting.bonusMessage')}
-                            </span>
-                          )}
-                        </div>
-                      </div>
-                      <div className="flex items-center space-x-3">
-                        <div className="font-medium text-blue-400">
-                          €{calculateABTestPrice()}
-                        </div>
-                        <div className="flex items-center bg-gray-800 rounded-md">
-                          <button 
-                            className="px-2 py-1 text-gray-300 disabled:text-gray-600 hover:bg-gray-700 rounded-l-md"
-                            onClick={() => setAbTestCount(Math.max(0, abTestCount - 1))}
-                            disabled={abTestCount <= 0}
-                          >
-                            -
-                          </button>
-                          <span className="px-2 py-1 text-white">{abTestCount}</span>
-                          <button 
-                            className="px-2 py-1 text-gray-300 disabled:text-gray-600 hover:bg-gray-700 rounded-r-md"
-                            onClick={() => setAbTestCount(Math.min(getMaxAbTests(selectedPackage), abTestCount + 1))}
-                            disabled={abTestCount >= getMaxAbTests(selectedPackage)}
-                          >
-                            +
-                          </button>
-                        </div>
-                      </div>
-                    </div>
-
                     {/* Campaign Management - показуємо тільки в режимі Ongoing */}
                     {!isInitialSetup && (
                       <div className="flex items-center justify-between p-4 border border-gray-700 rounded-lg bg-[#0F172A]/80 ">
@@ -515,7 +477,7 @@ export default function PricingPage() {
                 </div>
                 
                 <div>
-                  <h2 className="text-2xl font-bold text-white">3. {t('addons.infrastructure.title', { fallback: 'Infrastructure Costs' })}</h2>
+                  <h2 className="text-2xl font-bold text-white">2. {t('addons.infrastructure.title', { fallback: 'Infrastructure Costs' })}</h2>
                   <div className="font-medium text-gray-300 mb-6">{t('addons.infrastructure.description', { fallback: 'Required technical infrastructure for your campaigns' })}</div>
                   <div className="space-y-4">
                     

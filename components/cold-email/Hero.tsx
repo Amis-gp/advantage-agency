@@ -91,11 +91,6 @@ export default function Hero() {
                                 {t('title.part1')}
                                 <span className="text-[#7C3AED]"> {t('title.part2')}</span>
                             </h1>
-                            <div className="flex items-center justify-center gap-6">
-                                <div className="h-[2px] w-24 bg-gradient-to-r from-transparent via-[#4F46E5] to-[#06B6D4] opacity-80"></div>
-                                <span className="text-white text-xl">{t('title.part3')}</span>
-                                <div className="h-[2px] w-24 bg-gradient-to-l from-transparent via-[#4F46E5] to-[#06B6D4] opacity-80"></div>
-                            </div>
                         </div>
 
                         <div className="max-w-[300px] mx-auto">
