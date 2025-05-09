@@ -216,15 +216,15 @@ const V15Page: NextPage = () => {
                         <div className="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center text-xl">
                           🛠️
                         </div>
-                        <h3 className="font-semibold">{t('steps.mobile.tool.number')} / {t('steps.mobile.tool.title')}</h3>
+                        <h3 className="font-semibold">{t('steps.tool.number')} / {t('steps.tool.title')}</h3>
                       </div>
                       
                       <div className="bg-gradient-to-br from-blue-50 to-purple-50 p-6 rounded-2xl">
                         <p className="text-gray-700">
-                          {t('steps.mobile.tool.description')}
+                          {t('steps.tool.description')}
                         </p>
                         <div className="flex flex-wrap gap-2 mt-4">
-                          {Array.isArray(t('steps.mobile.tool.tags')) && t('steps.mobile.tool.tags').map((tag: string, index: number) => (
+                          {Array.isArray(t('steps.tool.tags')) && t('steps.tool.tags').map((tag: string, index: number) => (
                             <span className="inline-block bg-white/80 backdrop-blur px-3 py-1 rounded-full text-blue-800 text-sm" key={index}>
                               {tag}
                             </span>
@@ -240,15 +240,15 @@ const V15Page: NextPage = () => {
                         <div className="w-10 h-10 bg-green-100 rounded-full flex items-center justify-center text-xl">
                           🧪
                         </div>
-                        <h3 className="font-semibold">{t('steps.mobile.testing.number')} / {t('steps.mobile.testing.title')}</h3>
+                        <h3 className="font-semibold">{t('steps.testing.number')} / {t('steps.testing.title')}</h3>
                       </div>
                       
                       <div className="bg-gradient-to-br from-green-50 to-blue-50 p-6 rounded-2xl">
                         <p className="text-gray-700">
-                          {t('steps.mobile.testing.description')}
+                          {t('steps.testing.description')}
                         </p>
                         <div className="mt-4 space-y-3">
-                          {Array.isArray(t('steps.mobile.testing.challenges')) && t('steps.mobile.testing.challenges').map((challenge: string, index: number) => (
+                          {Array.isArray(t('steps.testing.challenges')) && t('steps.testing.challenges').map((challenge: string, index: number) => (
                             <div className="flex items-center gap-3 bg-white/80 backdrop-blur px-4 py-2 rounded-xl" key={index}>
                               <span className="text-red-500">⚠️</span>
                               <span>{challenge}</span>
@@ -265,12 +265,29 @@ const V15Page: NextPage = () => {
                         <div className="w-10 h-10 bg-orange-100 rounded-full flex items-center justify-center text-xl">
                           🔧
                         </div>
-                        <h3 className="font-semibold">{t('steps.mobile.solving.number')} / {t('steps.mobile.solving.title')}</h3>
+                        <h3 className="font-semibold">{t('steps.solving.number')} / {t('steps.solving.title')}</h3>
                       </div>
                       
                       <div className="bg-gradient-to-br from-orange-50 to-red-50 p-6 rounded-2xl">
                         <p className="text-gray-700 whitespace-pre-line">
-                          {t('steps.mobile.solving.description')}
+                          {t('steps.solving.description')}
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="relative">
+                    <div className="flex flex-col gap-4">
+                      <div className="flex items-center gap-3 text-purple-600">
+                        <div className="w-10 h-10 bg-purple-100 rounded-full flex items-center justify-center text-xl">
+                          💡
+                        </div>
+                        <h3 className="font-semibold">{t('steps.improvement.number')} / {t('steps.improvement.title')}</h3>
+                      </div>
+                      
+                      <div className="bg-gradient-to-br from-purple-50 to-pink-50 p-6 rounded-2xl">
+                        <p className="text-gray-700 whitespace-pre-line">
+                          {t('steps.improvement.description')}
                         </p>
                       </div>
                     </div>
@@ -281,14 +298,14 @@ const V15Page: NextPage = () => {
                   <div className="relative pl-0">
                     <div className="grid grid-cols-[200px_1fr] gap-8">
                       <div className="text-right font-semibold text-blue-600">
-                        {t('steps.desktop.tool.number')} / {t('steps.desktop.tool.title')}
+                        {t('steps.tool.number')} / {t('steps.tool.title')}
                       </div>
                       <div className="bg-gradient-to-br from-blue-50 to-purple-50 p-6 rounded-2xl">
                         <p className="text-gray-700">
-                          {t('steps.desktop.tool.description')}
+                          {t('steps.tool.description')}
                         </p>
                         <div className="flex flex-wrap gap-2 mt-4">
-                          {Array.isArray(t('steps.desktop.tool.tags')) && t('steps.desktop.tool.tags').map((tag: string, index: number) => (
+                          {Array.isArray(t('steps.tool.tags')) && t('steps.tool.tags').map((tag: string, index: number) => (
                             <span className="inline-block bg-white/80 backdrop-blur px-3 py-1 rounded-full text-blue-800 text-sm" key={index}>
                               {tag}
                             </span>
@@ -301,14 +318,14 @@ const V15Page: NextPage = () => {
                   <div className="relative pl-0">
                     <div className="grid grid-cols-[200px_1fr] gap-8">
                       <div className="text-right font-semibold text-green-600">
-                        {t('steps.desktop.testing.number')} / {t('steps.desktop.testing.title')}
+                        {t('steps.testing.number')} / {t('steps.testing.title')}
                       </div>
                       <div className="bg-gradient-to-br from-green-50 to-blue-50 p-6 rounded-2xl">
                         <p className="text-gray-700">
-                          {t('steps.desktop.testing.description')}
+                          {t('steps.testing.description')}
                         </p>
                         <div className="mt-4 space-y-3">
-                          {Array.isArray(t('steps.desktop.testing.challenges')) && t('steps.desktop.testing.challenges').map((challenge: string, index: number) => (
+                          {Array.isArray(t('steps.testing.challenges')) && t('steps.testing.challenges').map((challenge: string, index: number) => (
                             <div className="flex items-center gap-3 bg-white/80 backdrop-blur px-4 py-2 rounded-xl" key={index}>
                               <span className="text-red-500">⚠️</span>
                               <span>{challenge}</span>
@@ -322,11 +339,24 @@ const V15Page: NextPage = () => {
                   <div className="relative pl-0">
                     <div className="grid grid-cols-[200px_1fr] gap-8">
                       <div className="text-right font-semibold text-orange-600">
-                        {t('steps.desktop.solving.number')} / {t('steps.desktop.solving.title')}
+                        {t('steps.solving.number')} / {t('steps.solving.title')}
                       </div>
                       <div className="bg-gradient-to-br from-orange-50 to-red-50 p-6 rounded-2xl">
                         <p className="text-gray-700 whitespace-pre-line">
-                          {t('steps.desktop.solving.description')}
+                          {t('steps.solving.description')}
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="relative pl-0">
+                    <div className="grid grid-cols-[200px_1fr] gap-8">
+                      <div className="text-right font-semibold text-purple-600">
+                        {t('steps.improvement.number')} / {t('steps.improvement.title')}
+                      </div>
+                      <div className="bg-gradient-to-br from-purple-50 to-pink-50 p-6 rounded-2xl">
+                        <p className="text-gray-700 whitespace-pre-line">
+                          {t('steps.improvement.description')}
                         </p>
                       </div>
                     </div>

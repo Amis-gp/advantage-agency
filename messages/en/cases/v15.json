@@ -25,65 +25,38 @@
     }
   },
   "steps": {
-    "mobile": {
-      "tool": {
-        "number": "01",
-        "title": "Tool Development",
-        "description": "We spent over 5 months developing the first scraper to be able to extract data from various sources:",
-        "tags": [
-          "📧 emails",
-          "🌐 social networks",
-          "📝 text descriptions",
-          "📞 phone numbers",
-          "📍 addresses",
-          "👔 positions"
-        ]
-      },
-      "testing": {
-        "number": "02",
-        "title": "Testing and Configuration",
-        "description": "This process was accompanied by numerous tests: from server configuration to checking data processing 📊",
-        "challenges": [
-          "Account Blocking",
-          "Data Processing Errors",
-          "Continuous Improvement of the Mechanism"
-        ]
-      },
-      "solving": {
-        "number": "03",
-        "title": "Solving Technical Problems",
-        "description": "The technical department worked on adapting the tool to rapidly changing conditions 🚀\n\nSolving account blocking and technical glitches became a crucial step in the stability of the scraper ✅"
-      }
+    "tool": {
+      "number": "01",
+      "title": "Tool Development",
+      "description": "We spent over 5 months developing the first scraper to be able to extract data from various sources:",
+      "tags": [
+        "📧 emails",
+        "🌐 social networks",
+        "📝 text descriptions",
+        "📞 phone numbers",
+        "📍 addresses",
+        "👔 positions"
+      ]
     },
-    "desktop": {
-      "tool": {
-        "number": "01",
-        "title": "Tool Development",
-        "description": "We spent over 5 months developing the first scraper to be able to extract data from various sources:",
-        "tags": [
-          "📧 emails",
-          "🌐 social networks",
-          "📝 text descriptions",
-          "📞 phone numbers",
-          "📍 addresses",
-          "👔 positions"
-        ]
-      },
-      "testing": {
-        "number": "02",
-        "title": "Testing and Configuration",
-        "description": "This process was accompanied by numerous tests: from server configuration to checking data processing 📊",
-        "challenges": [
-          "Account Blocking",
-          "Data Processing Errors",
-          "Continuous Improvement of the Mechanism"
-        ]
-      },
-      "solving": {
-        "number": "03",
-        "title": "Solving Technical Problems",
-        "description": "The technical department worked on adapting the tool to rapidly changing conditions 🚀\n\nSolving account blocking and technical glitches became a crucial step in the stability of the scraper ✅"
-      }
+    "testing": {
+      "number": "02",
+      "title": "Testing and Configuration",
+      "description": "This process was accompanied by numerous tests: from server configuration to checking data processing 📊",
+      "challenges": [
+        "Account Blocking",
+        "Data Processing Errors",
+        "Continuous Improvement of the Mechanism"
+      ]
+    },
+    "solving": {
+      "number": "03",
+      "title": "Solving Technical Problems",
+      "description": "The technical department worked on adapting the tool to rapidly changing conditions 🚀\n\nSolving account blocking and technical glitches became a crucial step in the stability of the scraper ✅"
+    },
+    "improvement": {
+      "number": "04",
+      "title": "System Improvement",
+      "description": "We developed an AI-based vector technology that helps find more specific niches and target better.\n\nWe can perform contact verification.\n\nWe increased the number of channels for parsing: websites, directories, Yelp, Capterra, and others."
     }
   },
   "tools": {
