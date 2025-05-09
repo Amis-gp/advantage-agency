@@ -3,8 +3,23 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { playSound } from '@/app/constant/sound';
+import { useLocale } from 'next-intl';
 
 export default function Footer() {
+    const locale = useLocale();
+
+    const mainLinks = [
+        { name: 'Cold Email', href: `/${locale}/cold-email` },
+        { name: 'Scraping', href: 'https://www.advantagescrape.com/' },
+        { name: 'Blog', href: `/${locale}/blog` }
+    ];
+
+    const secondaryLink = { 
+        name: 'Looking for work?', 
+        href: '/join-the-team', 
+        className: 'font-bold text-red-500 hover:text-red-600' 
+    };
+
     return (
         <footer className="bg-black text-white py-10 md:py-16">
             <div className="max-w-6xl mx-auto px-6">
@@ -18,9 +33,9 @@ export default function Footer() {
                             className="hover:opacity-80 transition-opacity" 
                         />
                         <p className="hidden sm:block mt-4 text-sm md:text-base text-center lg:text-left text-gray-400">
-                            Copyright 2024.<br />
+                            Copyright {new Date().getFullYear()}<br />
                             Made by <span className='text-red-600 font-bold hover:text-red/80 transition-colors cursor-pointer'>
-                                Advantage Agency
+                                Advantage
                             </span>
                         </p>
                     </div>
@@ -49,34 +64,40 @@ export default function Footer() {
                             </Link>
                         </div>
 
-                        <div className="flex gap-6 md:gap-8">
-                            {[
-                                { name: 'Home', href: '/' },
-                                { name: 'Instructions', href: '#instructions' },
-                                { name: 'Services', href: '#services' },
-                                { name: 'Looking for work?', href: '/join-the-team', className: 'font-bold text-red-500 hover:text-red-600 hidden sm:block ' }
-                            ].map((item) => (
-                                <Link 
-                                    key={item.name} 
-                                    href={item.href}
-                                    className={`text-sm md:text-base hover:text-red-500 transition-colors ${item.className || ''}`}
-                                    onMouseEnter={() => playSound('hover_1')}
-                                    onClick={(e) => {
-                                        if (item.href.startsWith('#')) {
-                                            e.preventDefault();
-                                            const element = document.getElementById(item.href.substring(1));
-                                            if (element) {
-                                                element.scrollIntoView({ 
-                                                    behavior: 'smooth',
-                                                    block: 'start'
-                                                });
+                        <div className="flex flex-col md:flex-row items-center gap-6 md:gap-8">
+                            <div className="flex gap-6 md:gap-8">
+                                {mainLinks.map((item) => (
+                                    <Link 
+                                        key={item.name} 
+                                        href={item.href}
+                                        className="text-sm md:text-base hover:text-red-500 transition-colors"
+                                        onMouseEnter={() => playSound('hover_1')}
+                                        onClick={(e) => {
+                                            if (item.href.startsWith('#')) {
+                                                e.preventDefault();
+                                                const element = document.getElementById(item.href.substring(1));
+                                                if (element) {
+                                                    element.scrollIntoView({ 
+                                                        behavior: 'smooth',
+                                                        block: 'start'
+                                                    });
+                                                }
                                             }
-                                        }
-                                    }}
-                                >
-                                    {item.name}
-                                </Link>
-                            ))}
+                                        }}
+                                        target={item.href.startsWith('http') ? '_blank' : '_self'}
+                                        rel={item.href.startsWith('http') ? 'noopener noreferrer' : undefined}
+                                    >
+                                        {item.name}
+                                    </Link>
+                                ))}
+                            </div>
+                            <Link 
+                                href={secondaryLink.href}
+                                className={`text-sm md:text-base hover:text-red-500 transition-colors ${secondaryLink.className} mt-2 md:mt-0`}
+                                onMouseEnter={() => playSound('hover_1')}
+                            >
+                                {secondaryLink.name}
+                            </Link>
                         </div>
                     </div>
 
@@ -110,9 +131,9 @@ export default function Footer() {
                         </Link>
                     </div>
                     <p className="sm:hidden text-sm md:text-base text-center lg:text-left text-gray-400">
-                        Copyright 2024.<br />
+                        Copyright {new Date().getFullYear()}<br />
                         Made by <span className='text-red-500font-bold hover:text-red/80 transition-colors cursor-pointer'>
-                            Advantage Agency
+                            Advantage
                         </span><br />
                     </p>
                     

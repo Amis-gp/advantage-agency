@@ -15,6 +15,12 @@ const NAV_ITEMS = [
   { href: "#contacts", key: "nav.contacts" },
 ];
 
+const VSL_ITEMS = [
+  { href: "/cold-email", key: "vsl-cold-email", title: "Cold Email" },
+  { href: "/scrape-advantage", key: "vsl-scraping", title: "Scraping" },
+  { href: "/blog", key: "vsl-blog", title: "Blog" },
+];
+
 const Header = () => {
   const locale = useLocale();
   const translations = locale === 'uk' ? uk : en;
@@ -52,6 +58,21 @@ const Header = () => {
               <span className="absolute left-0 -bottom-1 w-0 group-hover:w-full h-0.5 bg-gold-400 transition-all duration-300" />
             </a>
           ))}
+          
+          <div className="relative group">
+            <span className="text-white/90 hover:text-gold-400 transition-colors duration-200 px-2 py-1 cursor-pointer">VSL</span>
+            <div className="absolute hidden group-hover:block min-w-[140px] top-full right-0 bg-black/95 backdrop-blur-xl border border-[#23213b]/60 rounded-md shadow-lg mt-2 z-50">
+              {VSL_ITEMS.map((item) => (
+                <Link
+                  key={item.key}
+                  href={item.href}
+                  className="block text-white/80 hover:text-gold-400 hover:bg-[#23213b]/40 px-4 py-2 text-sm transition-colors whitespace-nowrap"
+                >
+                  {item.title}
+                </Link>
+              ))}
+            </div>
+          </div>
         </nav>
         <div className="flex items-center gap-2 md:gap-4 relative">
           <LanguageSwitcher />
@@ -77,6 +98,22 @@ const Header = () => {
                 {t(item.key)}
               </a>
             ))}
+            
+            <div className="w-full px-4 mt-2">
+              <div className="text-lg text-white/90 font-medium text-center mb-1">VSL</div>
+              <div className="flex flex-col gap-1">
+                {VSL_ITEMS.map((item) => (
+                  <Link
+                    key={item.key}
+                    href={item.href}
+                    className="text-base text-white/80 hover:text-gold-400 px-4 py-1.5 font-medium rounded transition-colors text-center bg-[#23213b]/40"
+                    onClick={() => setMobileMenu(false)}
+                  >
+                    {item.title}
+                  </Link>
+                ))}
+              </div>
+            </div>
             <a
               href="#lead-magnet"
               className="mt-2 px-6 py-3 rounded-full font-bold text-base text-white bg-gradient-to-r from-[#6B46C1] to-[#F6C744] shadow-lg hover:scale-105 hover:from-[#7e5bef] hover:to-[#ffe066] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold-400 transition-all"

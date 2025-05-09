@@ -110,7 +110,7 @@ const V15Page: NextPage = () => {
 
               <div className="flex flex-col sm:flex-row justify-center gap-4 my-6 md:my-10">
                 <a 
-                  href="#form" 
+                  href="https://www.advantagescrape.com/" 
                   className="px-6 py-3 bg-blue-600 text-white text-center rounded-xl hover:bg-blue-700 transition-all inline-flex items-center justify-center gap-2 w-full sm:w-auto animate-bounce"
                 >
                   🚀 {t('strategies.cta')}
@@ -337,12 +337,12 @@ const V15Page: NextPage = () => {
           </div>
         </section>
 
-        <div className="flex flex-col sm:flex-row justify-center gap-4 ">
+        <div className="flex flex-col sm:flex-row justify-center gap-4 mt-12">
           <a 
-            href="#form" 
+            href="https://www.advantagescrape.com/" 
             className="px-6 py-3 bg-blue-600 text-white text-center rounded-xl hover:bg-blue-700 transition-all inline-flex items-center justify-center gap-2 w-full sm:w-auto animate-bounce"
           >
-            {t('cta.help')}
+            {t('strategies.cta')}
           </a>
         </div>
 

@@ -254,6 +254,16 @@
         "description": "After 6 months of cooperation, you can get your money back if you don't get the proper result. We provide this guarantee because we are fully confident in achieving results for your business.",
         "button": "Book a Consultation"
     },
+    "quickLinks": {
+        "title": "Quick Links",
+        "coldEmailLabel": "Cold Email Campaigns",
+        "coldEmailDescription": "Learn how our automated outreach can attract new clients for your business.",
+        "scrapingLabel": "Data Scraping",
+        "scrapingDescription": "Discover our powerful data collection tool to help you gain a competitive edge.",
+        "blogLabel": "Our Blog",
+        "blogDescription": "Read our latest articles and insights on marketing, sales, and technology.",
+        "learnMore": "Learn More"
+    },
     "contact": {
         "headline": "Contact Us",
         "title": "Start Your Journey to Successful Digital Marketing Today",

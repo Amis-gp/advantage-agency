@@ -9,16 +9,16 @@
   },
   "strategies": {
     "title": "Strategies and Solutions",
-    "description": "After several months of testing, we decided to develop our own scraper. From this moment, the long journey 🚀 began",
+    "description": "After several months of testing, we decided to develop our own parser. This was the beginning of a long journey 🚀",
     "limitations": {
-      "title": "We tested several scraping services, but each had its limitations:",
+      "title": "We tested several parsing services, but each had its limitations:",
       "list": [
-        "Small number of obtained contacts, although we planned to get much more",
+        "Received fewer contacts than planned",
         "High cost of some services that wasn't justified by real results",
         "All services had volume limitations and constantly blocked accounts"
       ]
     },
-    "cta": "Want the same scraper",
+    "cta": "Get leads",
     "solution": {
       "title": "Our Solution",
       "description": "We realized that to achieve results, we needed to develop our own solution, that would work on our terms. This became a challenge, as we didn't yet know that scrapers in the market quickly become outdated ⚡️, and we needed not just to extract data, but also quickly adapt the tool to new conditions"
@@ -90,11 +90,11 @@
     "title": "Our Tools",
     "subtitle": "Here are examples of our scrapers that helped us collect leads",
     "instagram": {
-      "title": "Instagram Parser",
+      "title": "Instagram scraper",
       "description": "Intelligent tool for collecting and analyzing Instagram data"
     },
     "linkedin": {
-      "title": "LinkedIn Parser",
+      "title": "LinkedIn scraper",
       "description": "Reliable tool for finding and collecting business contacts"
     }
   },

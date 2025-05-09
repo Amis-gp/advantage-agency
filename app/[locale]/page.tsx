@@ -6,6 +6,7 @@ import Header from '@/components/Header'
 import HeroSection from '@/components/home/HeroSections'
 import StatsSection from '@/components/home/StatsSection'
 import IntroductionSection from '@/components/home/IntroductionSection'
+import QuickLinksSection from '@/components/home/QuickLinksSection' 
 import PortfolioSection from '@/components/home/PortfolioSection'
 import AchievementsSection from '@/components/home/AchievementsSection'
 import PartnersSection from '@/components/home/PartnersSection'
@@ -172,6 +173,7 @@ export default async function Home({ params }: Props) {
         <TestimonialSection />
         <ServicesSection />
         <FormSection />
+        <QuickLinksSection /> 
         <FaqSection />
       </main>
       <Footer />
