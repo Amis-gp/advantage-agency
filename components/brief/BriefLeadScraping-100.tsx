@@ -66,7 +66,7 @@ const BriefLeadScraping = () => {
     }
 
     try {
-      await fetch(url, {
+      const response = await fetch(url, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -77,6 +77,12 @@ const BriefLeadScraping = () => {
           parse_mode: 'HTML'
         }),
       });
+      
+      if (!response.ok) {
+        const errorData = await response.json().catch(() => null);
+        console.error('Telegram API error:', response.status, errorData);
+        throw new Error(`Telegram API error: ${response.status}`);
+      }
     } catch (error) {
       console.error('Error sending to Telegram:', error);
     }
@@ -114,7 +120,7 @@ const BriefLeadScraping = () => {
         `<b>2. Region:</b> ${formData.region}\n` +
         `<b>3. Positions/Profiles:</b> ${formData.positions}\n` +
         `<b>4. Links/Keywords:</b> ${formData.linksOrKeywords}\n` +
-        `<b>5. Quantity:</b> ${formData.quantity}\n` +
+        `<b>5. Оплачено 100</b>\n` +
         `<b>6. Additional info:</b> ${formData.additional}`;
       await sendToTelegram(message);
       router.push(`/${locale}/brief-thank-you`);
@@ -132,7 +138,6 @@ const BriefLeadScraping = () => {
         <h1 className="mt-4 sm:mt-0 text-4xl font-bold text-center mb-4 bg-gradient-to-r from-blue-500 to-purple-500 text-transparent bg-clip-text">
           {t('title')}
         </h1>
-        {/* Primary info section */}
         <form onSubmit={handleSubmit} className="space-y-8">
           <section className="bg-gray-800/50 rounded-xl p-6 border border-gray-700/50">
             <h2 className="text-2xl font-bold text-gray-100 mb-6">{t('primary.title')}</h2>
@@ -268,27 +273,6 @@ const BriefLeadScraping = () => {
           <section className="bg-gray-800/50 rounded-xl p-6 border border-gray-700/50">
             <div className="flex items-center mb-6">
               <div className="flex-shrink-0 h-8 w-8 flex items-center justify-center rounded-full bg-blue-500 text-white font-bold">5</div>
-              <h2 className="ml-4 text-2xl font-bold text-gray-100">{t('sections.5.title')}</h2>
-            </div>
-            <div className="space-y-4">
-              <div>
-                <label className="block font-medium text-gray-300 mb-2">{t('sections.5.quantity.label')}</label>
-                <input
-                  type="text"
-                  value={formData.quantity}
-                  onChange={(e) => handleChange('quantity', e.target.value)}
-                  onKeyDown={handleKeyDown}
-                  className="w-full rounded-lg border border-gray-700 bg-gray-900 px-4 py-2 text-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500"
-                  placeholder={t('sections.5.quantity.placeholder')}
-                  required
-                />
-              </div>
-            </div>
-          </section>
-
-          <section className="bg-gray-800/50 rounded-xl p-6 border border-gray-700/50">
-            <div className="flex items-center mb-6">
-              <div className="flex-shrink-0 h-8 w-8 flex items-center justify-center rounded-full bg-blue-500 text-white font-bold">6</div>
               <h2 className="ml-4 text-2xl font-bold text-gray-100">{t('sections.6.title')}</h2>
             </div>
             <div className="space-y-4">

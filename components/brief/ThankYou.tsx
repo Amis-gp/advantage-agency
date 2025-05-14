@@ -8,9 +8,11 @@ import LanguageSwitcher from '@/components/LanguageSwitcher';
 export default function ThankYou() {
   const t = useTranslations('brief-thank-you');
   return (
-    <div>
-      <LanguageSwitcher />
-      <div className="min-h-screen bg-gray-900 text-white flex flex-col">
+    <div className='bg-gray-900'>
+      <div className='pr-4 pt-4'>
+        <LanguageSwitcher />
+      </div>
+      <div className="min-h-screen text-white flex flex-col">
         <div className="flex-grow flex items-center justify-center px-4 pb-12 pt-4 sm:pt-12">
           <div className="bg-gray-800 p-8 rounded-xl shadow-xl max-w-md w-full mx-4 relative">
             <div className="w-16 h-16 bg-green-500 rounded-full flex items-center justify-center mx-auto mb-4">

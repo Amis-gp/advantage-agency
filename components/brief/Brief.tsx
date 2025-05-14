@@ -228,7 +228,6 @@ KPI: ${formData.expectations.kpi}
         `;
 
       await sendToTelegram(message);
-      // Redirect to the localized thank you page
       router.push(`/${locale}/brief-thank-you`);
     } catch (error) {
       console.error('Error submitting form:', error);
