@@ -187,7 +187,7 @@ export default function LeadScraping() {
             </div>
           </div>
           
-          <div className="relative w-full h-[500px] mb-10 rounded-2xl overflow-hidden shadow-xl shadow-blue-900/20">
+          <div className="relative w-full max-h-[500px] aspect-video mb-10 rounded-2xl overflow-hidden shadow-xl shadow-blue-900/20">
             <Image 
               src="/img/blog/lead-scraping/hero.webp" 
               alt={t('imageAlt')}
