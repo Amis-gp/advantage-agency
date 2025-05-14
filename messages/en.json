@@ -1261,6 +1261,12 @@
             }
             }
         },
+        "privacy": {
+            "agreement": "I have read the",
+            "policy": "privacy policy",
+            "consent": "and I agree to it",
+            "validation": "You must agree to the privacy policy"
+        },
         "submit": "Submit Brief",
         "submitting": "Submitting...",
         "success": {

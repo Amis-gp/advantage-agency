@@ -18,7 +18,7 @@ export default function PartnersSection() {
                     <div className="partner-marquee-container">
                         {[1, 2].map((containerIndex) => (
                             <div key={containerIndex} className="partner-marquee-content">
-                                {[1, 2, 3, 4, 5, 6, 7].map((index) => (
+                                {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((index) => (
                                     <div 
                                         key={`${containerIndex}-${index}`}
                                         className="h-[35px] md:h-[50px] w-auto px-8 md:px-12 flex-shrink-0 flex items-center justify-center"

@@ -27,6 +27,8 @@ const BriefLeadScraping = () => {
     phone: ''
   })
   const [primaryError, setPrimaryError] = useState('')
+  const [privacyChecked, setPrivacyChecked] = useState(false)
+  const [privacyError, setPrivacyError] = useState('')
 
   const [formData, setFormData] = useState<FormData>({
     topic: '',
@@ -95,10 +97,22 @@ const BriefLeadScraping = () => {
     setPrimaryInfo(prev => ({ ...prev, [field]: value }));
   };
 
+  const handlePrivacyChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setPrivacyChecked(e.target.checked);
+    if (e.target.checked) {
+      setPrivacyError('');
+    }
+  };
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
     if (!validatePrimary()) {
+      setIsSubmitting(false);
+      return;
+    }
+    if (!privacyChecked) {
+      setPrivacyError(t('privacy.validation') || 'Ви повинні погодитись з політикою конфіденційності');
       setIsSubmitting(false);
       return;
     }
@@ -304,6 +318,24 @@ const BriefLeadScraping = () => {
                 />
               </div>
             </div>
+          </section>
+
+          <section className="bg-gray-800/50 rounded-xl p-6 border border-gray-700/50">
+            <div className="flex items-start">
+              <input
+                type="checkbox"
+                id="privacy-policy"
+                checked={privacyChecked}
+                onChange={handlePrivacyChange}
+                className="mt-1 mr-3"
+              />
+              <label htmlFor="privacy-policy" className="text-gray-300">
+                {t('privacy.agreement') || 'Я ознайомився з'} <a href="http://advantagescrape.com/privacy-policy" target="_blank" rel="noopener noreferrer" className="text-blue-400 hover:underline">
+                  {t('privacy.policy') || 'політикою конфіденційності'}
+                </a> {t('privacy.consent') || 'та не маю претензій'}
+              </label>
+            </div>
+            {privacyError && <div className="text-red-400 mt-2">{privacyError}</div>}
           </section>
 
           <div className="flex justify-center">
