@@ -7,6 +7,11 @@ import Image from 'next/image';
 // Blog posts metadata
 const blogPosts = [
   {
+    slug: 'lead-magnets',
+    image: '/img/blog/lead-magnets/hero.webp',
+    date: '2025-05-15',
+  },
+  {
     slug: 'lead-scraping',
     image: '/img/blog/lead-scraping/hero.webp',
     date: '2025-04-23',
@@ -59,7 +64,7 @@ export default function BlogIndexPage({ params }: { params: { locale: string } }
   
   return (
     <div className="bg-gradient-to-br from-gray-900 to-black text-white min-h-screen">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
+      <div className="max-w-7xl mx-auto px-6 lg:px-8 py-24">
         <div className="text-center mb-16">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 font-display bg-gradient-to-r from-white to-blue-400 bg-clip-text text-transparent">
             {translations.title || 'Blog'}
@@ -89,7 +94,7 @@ export default function BlogIndexPage({ params }: { params: { locale: string } }
                     className="object-cover"
                   />
                 </div>
-                <div className="p-6 flex-grow">
+                <div className="p-6 flex-grow flex flex-col">
                   <div className="text-sm text-blue-400 mb-2">
                     {new Date(post.date).toLocaleDateString(params.locale === 'uk' ? 'uk-UA' : 'en-US', {
                       year: 'numeric',
@@ -99,7 +104,7 @@ export default function BlogIndexPage({ params }: { params: { locale: string } }
                   </div>
                   <h2 className="text-xl font-bold mb-3 text-white">{postTitle}</h2>
                   <p className="text-gray-300 mb-4">{postDescription}</p>
-                  <div className="text-blue-400 font-medium">
+                  <div className="mt-auto text-blue-400 font-medium">
                     {translations.readMore || 'Read More'} →
                   </div>
                 </div>

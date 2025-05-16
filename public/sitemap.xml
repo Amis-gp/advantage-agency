@@ -200,7 +200,17 @@
     <xhtml:link rel="alternate" hreflang="uk" href="https://www.advantage-agency.co/uk/join-the-team"/>
   </url>
 
-  <!-- Blog: B2B Lead Generation 2025 -->
+  <url>
+    <loc>https://www.advantage-agency.co/blog/lead-magnets</loc>
+    <lastmod>2025-05-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.advantage-agency.co/en/blog/lead-magnets"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://www.advantage-agency.co/uk/blog/lead-magnets"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.advantage-agency.co/en/blog/lead-magnets"/>
+  </url>
+
+  
   <url>
     <loc>https://www.advantage-agency.co/blog/b2b-lead-generation-2025</loc>
     <lastmod>2025-01-27</lastmod>

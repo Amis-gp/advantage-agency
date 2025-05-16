@@ -1,0 +1,311 @@
+"use client";
+
+import React, { useEffect, useState } from 'react';
+import Link from 'next/link';
+import Image from 'next/image';
+import { useParams } from 'next/navigation';
+import Head from 'next/head';
+
+import enTranslations from '../../messages/en/blog/lead-magnets-for-cold-emails.json';
+import ukTranslations from '../../messages/uk/blog/lead-magnets-for-cold-emails.json';
+
+export default function LeadMagnetsForColdEmails() {
+  const params = useParams();
+  const locale = params.locale as string;
+  const [translations, setTranslations] = useState<any>({});
+  const [isLoading, setIsLoading] = useState(true);
+  const currentDate = new Date().toISOString();
+  
+  useEffect(() => {
+    const translationsToUse = locale === 'uk' ? ukTranslations : enTranslations;
+    setTranslations(translationsToUse);
+    document.title = translationsToUse.meta?.title || 'Lead Magnets for Cold Emails';
+    setIsLoading(false);
+  }, [locale]);
+  
+  const t = (path: string) => {
+    if (isLoading) return '';
+    
+    const regex = /(.*?)\[(\d+)\]$/;
+    const match = path.match(regex);
+    
+    if (match) {
+      const basePath = match[1];
+      const index = parseInt(match[2], 10);
+      
+      const keys = basePath.split('.');
+      let result = translations;
+      
+      for (const key of keys) {
+        if (result && result[key] !== undefined) {
+          result = result[key];
+        } else {
+          return '';
+        }
+      }
+      
+      if (Array.isArray(result) && index < result.length) {
+        return result[index];
+      }
+      return '';
+    } else {
+      const keys = path.split('.');
+      let result = translations;
+      
+      for (const key of keys) {
+        if (result && result[key] !== undefined) {
+          result = result[key];
+        } else {
+          return '';
+        }
+      }
+      
+      return result;
+    }
+  };
+  
+  const canonicalUrl = `/blog/lead-magnets-for-cold-emails`;
+  
+  if (isLoading) {
+    return (
+      <div className="bg-gradient-to-br from-gray-900 to-black text-white font-sans min-h-screen flex items-center justify-center">
+        <div className="text-center">
+          <div className="inline-block h-12 w-12 animate-spin rounded-full border-4 border-solid border-blue-400 border-r-transparent align-[-0.125em] motion-reduce:animate-[spin_1.5s_linear_infinite]" role="status">
+            <span className="!absolute !-m-px !h-px !w-px !overflow-hidden !whitespace-nowrap !border-0 !p-0 ![clip:rect(0,0,0,0)]">Loading...</span>
+          </div>
+          <p className="mt-4 text-lg text-blue-300">Завантаження вмісту...</p>
+        </div>
+      </div>
+    );
+  }
+  
+  return (
+    <div className="bg-gradient-to-br from-gray-900 to-black text-white font-sans">
+      <Head>
+        <title>{t('meta.title')}</title>
+        <meta name="description" content={t('meta.description')} />
+        
+        <meta name="robots" content="index, follow" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="canonical" href={canonicalUrl} />
+        
+        <meta property="og:title" content={t('meta.title')} />
+        <meta property="og:description" content={t('meta.description')} />
+        <meta property="og:image" content="/img/blog/lead-magnets-for-cold-emails/hero.webp" />
+        <meta property="og:url" content={canonicalUrl} />
+        <meta property="og:type" content="article" />
+        <meta property="og:locale" content={locale} />
+        <meta property="article:published_time" content="2025-05-15T10:00:00Z" />
+        <meta property="article:modified_time" content={currentDate} />
+        <meta property="article:section" content="B2B Marketing" />
+        <meta property="article:tag" content="B2B, Lead Generation, Cold Emails, Lead Magnets" />
+        
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={t('meta.title')} />
+        <meta name="twitter:description" content={t('meta.description')} />
+        <meta name="twitter:image" content="/img/blog/lead-magnets-for-cold-emails/hero.webp" />
+        
+        <link rel="alternate" hrefLang="uk" href={`/uk/blog/lead-magnets-for-cold-emails`} />
+        <link rel="alternate" hrefLang="en" href={`/en/blog/lead-magnets-for-cold-emails`} />
+        <link rel="alternate" hrefLang="x-default" href={`/en/blog/lead-magnets-for-cold-emails`} />
+        
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet" />
+        
+        <script 
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              '@context': 'https://schema.org',
+              '@type': 'BlogPosting',
+              'headline': t('meta.title'),
+              'description': t('meta.description'),
+              'image': '/img/blog/lead-magnets-for-cold-emails/hero.webp',
+              'datePublished': '2025-05-15T10:00:00Z',
+              'dateModified': currentDate,
+              'publisher': {
+                '@type': 'Organization',
+                'name': 'ADvantage Agency',
+                'logo': {
+                  '@type': 'ImageObject',
+                  'url': '/img/logo.png'
+                }
+              },
+              'mainEntityOfPage': {
+                '@type': 'WebPage',
+                '@id': canonicalUrl
+              }
+            })
+          }}
+        />
+      </Head>
+      
+      <div className="max-w-4xl mx-auto px-5 py-24 sm:pt-32 ">
+        <div className="mb-8">
+          <Link 
+            href={`/${locale}/blog`}
+            className="inline-flex items-center text-blue-400 hover:text-blue-300 transition-colors"
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+            </svg>
+            {locale === 'uk' ? 'Назад до блогу' : 'Back to Blog'}
+          </Link>
+        </div>
+        
+        <article className="prose prose-lg max-w-none prose-headings:font-display prose-headings:text-white prose-p:text-gray-300 prose-p:leading-relaxed prose-a:text-blue-400 prose-a:no-underline hover:prose-a:text-blue-300" itemScope itemType="https://schema.org/BlogPosting">
+          <meta itemProp="headline" content={t('meta.title')} />
+          <meta itemProp="description" content={t('meta.description')} />
+          <meta itemProp="datePublished" content="2025-05-15T10:00:00Z" />
+          <meta itemProp="dateModified" content={currentDate} />
+          
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-8 font-display bg-gradient-to-r from-white to-blue-400 bg-clip-text text-transparent" itemProp="headline">{t('title')}</h1>
+          
+          <div className="mb-10 flex items-center gap-3 text-gray-400">
+            <div className="flex items-center">
+              <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 mr-1.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+              </svg>
+              <time dateTime="2025-05-15" className="text-sm">{t('publishDate')}</time>
+            </div>
+            <div className="flex items-center">
+              <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 mr-1.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+              <span className="text-sm">{t('readTime')}</span>
+            </div>
+          </div>
+          
+          <div className="relative w-full max-h-[500px] aspect-video mb-10 rounded-2xl overflow-hidden shadow-xl shadow-blue-900/20">
+            <Image 
+              src="/img/blog/lead-magnets/hero.webp" 
+              alt={t('imageAlt')}
+              fill
+              className="object-cover hover:scale-105 transition-transform duration-700"
+            />
+          </div>
+          
+          <div className="mb-12 bg-blue-900/20 p-6 rounded-xl border-l-4 border-blue-500">
+            <p className="text-xl font-medium leading-relaxed text-white">{translations.introduction}</p>
+          </div>
+          
+          <h2 className="text-3xl font-bold mt-16 mb-6 relative">
+            <span className="inline-block">{t('sections.whatAreLeadMagnets.title')}</span>
+            <span className="absolute -left-6 top-1/2 transform -translate-y-1/2 w-3 h-8 bg-blue-500"></span>
+          </h2>
+          <p className="text-lg">{translations.sections.whatAreLeadMagnets.content[0]}</p>
+          {Array.isArray(translations.sections.whatAreLeadMagnets.content[1]) && (
+            <ul className="mt-6 space-y-4">
+              {translations.sections.whatAreLeadMagnets.content[1].map((item: string, index: number) => (
+                <li key={index} className="flex items-start">
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-blue-400 mr-2 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ul>
+          )}
+          <p className="mt-4">{translations.sections.whatAreLeadMagnets.content[2]}</p>
+
+          <h2 className="text-3xl font-bold mt-16 mb-6 relative">
+            <span className="inline-block">{t('sections.effectiveLeadMagnets.title')}</span>
+            <span className="absolute -left-6 top-1/2 transform -translate-y-1/2 w-3 h-8 bg-blue-500"></span>
+          </h2>
+          <p className="text-lg">{translations.sections.effectiveLeadMagnets.content[0]}</p>
+          {Array.isArray(translations.sections.effectiveLeadMagnets.content[1]) && (
+            <ul className="mt-6 space-y-4">
+              {translations.sections.effectiveLeadMagnets.content[1].map((item: string, index: number) => (
+                <li key={index} className="flex items-start">
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-blue-400 mr-2 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ul>
+          )}
+          <p className="mt-4">{translations.sections.effectiveLeadMagnets.content[2]}</p>
+
+          <h2 className="text-3xl font-bold mt-16 mb-6 relative">
+            <span className="inline-block">{t('sections.implementation.title')}</span>
+            <span className="absolute -left-6 top-1/2 transform -translate-y-1/2 w-3 h-8 bg-blue-500"></span>
+          </h2>
+          <p className="text-lg">{translations.sections.implementation?.content?.[0] || ''}</p>
+          {Array.isArray(translations.sections.implementation?.content?.[1]) && (
+            <ol className="mt-6 space-y-4 list-decimal pl-5">
+              {translations.sections.implementation.content[1].map((item: string, index: number) => (
+                <li key={index} className="pl-2">
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ol>
+          )}
+          <p className="mt-4">{translations.sections.implementation?.content?.[2] || ''}</p>
+
+          <h2 className="text-3xl font-bold mt-16 mb-6 relative">
+            <span className="inline-block">{t('sections.formats.title')}</span>
+            <span className="absolute -left-6 top-1/2 transform -translate-y-1/2 w-3 h-8 bg-blue-500"></span>
+          </h2>
+          <p className="text-lg">{translations.sections.formats?.content?.[0] || ''}</p>
+          {Array.isArray(translations.sections.formats?.content?.[1]) && (
+            <ul className="mt-6 space-y-4">
+              {translations.sections.formats.content[1].map((item: any, index: number) => (
+                <li key={index} className="flex items-start">
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-blue-400 mr-2 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                  <div>
+                    {typeof item === 'object' ? (
+                      <>
+                        <span className="font-medium text-white">{item.title}</span>: {item.description}
+                      </>
+                    ) : (
+                      <span>{item}</span>
+                    )}
+                  </div>
+                </li>
+              ))}
+            </ul>
+          )}
+          <p className="mt-4">{translations.sections.formats?.content?.[2] || ''}</p>
+
+          <h2 className="text-3xl font-bold mt-16 mb-6 relative">
+            <span className="inline-block">{t('sections.mistakes.title')}</span>
+            <span className="absolute -left-6 top-1/2 transform -translate-y-1/2 w-3 h-8 bg-blue-500"></span>
+          </h2>
+          <p className="text-lg">{translations.sections.mistakes.content[0]}</p>
+          {Array.isArray(translations.sections.mistakes.content[1]) && (
+            <ul className="mt-6 space-y-4">
+              {translations.sections.mistakes.content[1].map((item: string, index: number) => (
+                <li key={index} className="flex items-start">
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-blue-400 mr-2 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ul>
+          )}
+          <p className="mt-4">{translations.sections.mistakes.content[2]}</p>
+          
+          <div className="mt-16 bg-blue-900/20 p-6 rounded-xl">
+            <h2 className="text-2xl font-bold mb-4">{t('sections.conclusion.title')}</h2>
+            <p className="text-lg">{translations.sections.conclusion?.content?.[0] || ''}</p>
+            {translations.sections.conclusion?.content?.[1] && (
+              <p className="text-lg mt-4">{translations.sections.conclusion.content[1]}</p>
+            )}
+            
+            <div className="mt-8 w-fit mx-auto">
+              <Link 
+                href={'https://calendly.com/advantage-agency-contact/30min'}
+                className="inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 md:py-4 md:text-lg md:px-8 transition-colors"
+              >
+                {locale === 'uk' ? 'Зв\'яжіться з нами' : 'Contact Us'}
+              </Link>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  );
+}

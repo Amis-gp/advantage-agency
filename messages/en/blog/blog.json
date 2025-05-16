@@ -4,13 +4,17 @@
   "description": "Explore our latest articles, insights, and case studies about marketing, lead generation, and business growth",
   "readMore": "Read More",
   "posts": {
+    "lead-magnets": {
+      "title": "Lead Magnets for Cold Emails",
+      "description": "Learn how to create effective lead magnets for cold emails that will help you attract more clients"
+    },
       "cold-email-automation": {
           "title": "Cold Email Automation: How It Works, Why It's Effective, and Who It's For",
           "description": "Learn how cold emails help generate leads, why they're effective, and who they're suitable for. Cases and tips from ADvantage Agency."
       },
       "lead-scraping": {
           "title": "Lead Scraping: How to Find Ideal Clients for Your Business",
-          "description": "Learn how lead scraping can help your business find ideal clients, overcome standard solution limitations, and effectively apply this technology."
+          "description": "Learn how lead scraping can help your business find ideal clients."
       },
       "b2b-lead-generation-2025": {
           "title": "B2B Lead Generation Trends for 2025",
