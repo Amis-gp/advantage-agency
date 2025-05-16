@@ -133,7 +133,7 @@ export default function Footer() {
                     <p className="sm:hidden text-sm md:text-base text-center lg:text-left text-gray-400">
                         Copyright {new Date().getFullYear()}<br />
                         Made by <span className='text-red-500font-bold hover:text-red/80 transition-colors cursor-pointer'>
-                            Advantage
+                            ADvantage
                         </span><br />
                     </p>
                     

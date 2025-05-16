@@ -135,7 +135,7 @@ export default function Footer() {
                                 rel="noopener noreferrer"
                                 className="text-[#645cef] font-bold hover:text-[#645cef] hover:underline transition-colors"
                             >
-                                {t('copyright.company')}
+                                ADvantage
                             </Link>
                         </p>
                         <Link href="/privacy-policy" className="text-gray-400 hover:text-[#645cef] transition-colors text-sm">
