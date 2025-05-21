@@ -7,6 +7,11 @@ import Image from 'next/image';
 // Blog posts metadata
 const blogPosts = [
   {
+    slug: 'ideal-customer-profile',
+    image: '/img/blog/ideal-customer-profile/hero.webp',
+    date: '2025-05-21',
+  },
+  {
     slug: 'lead-magnets',
     image: '/img/blog/lead-magnets/hero.webp',
     date: '2025-05-15',

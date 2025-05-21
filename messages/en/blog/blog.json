@@ -4,6 +4,10 @@
   "description": "Explore our latest articles, insights, and case studies about marketing, lead generation, and business growth",
   "readMore": "Read More",
   "posts": {
+    "ideal-customer-profile": {
+      "title": "How to Find the Ideal Audience for B2B Lead Generation",
+      "description": "Learn how to define the ideal customer profile (ICP) for effective B2B lead generation"
+    },
     "lead-magnets": {
       "title": "Lead Magnets for Cold Emails",
       "description": "Learn how to create effective lead magnets for cold emails that will help you attract more clients"
