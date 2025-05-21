@@ -5,7 +5,6 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { useParams } from 'next/navigation';
 
-// Імпортуємо файли перекладів напряму
 import enTranslations from '../../messages/en/blog/ideal-customer-profile.json';
 import ukTranslations from '../../messages/uk/blog/ideal-customer-profile.json';
 
@@ -17,7 +16,6 @@ export default function IdealCustomerProfile() {
   const currentDate = new Date().toISOString();
   
   useEffect(() => {
-    // Використовуємо імпортовані переклади замість динамічного імпорту
     const translationsToUse = locale === 'uk' ? ukTranslations : enTranslations;
     setTranslations(translationsToUse);
     document.title = translationsToUse.meta?.title || 'Ideal Customer Profile';
@@ -27,16 +25,13 @@ export default function IdealCustomerProfile() {
   const t = (path: string) => {
     if (isLoading) return '';
     
-    // Handle array indexing in the path (e.g., 'sections.whyMassApproachFails.content[0]')
     const regex = /(.*?)\[(\d+)\]$/;
     const match = path.match(regex);
     
     if (match) {
-      // If path contains array indexing
       const basePath = match[1];
       const index = parseInt(match[2], 10);
       
-      // Get the array first
       const keys = basePath.split('.');
       let result = translations;
       
@@ -48,13 +43,11 @@ export default function IdealCustomerProfile() {
         }
       }
       
-      // Then access the array element
       if (Array.isArray(result) && index < result.length) {
         return result[index];
       }
       return '';
     } else {
-      // Regular path without array indexing
       const keys = path.split('.');
       let result = translations;
       
@@ -69,8 +62,11 @@ export default function IdealCustomerProfile() {
       return result;
     }
   };
+
+  const renderHTML = (htmlContent: string) => {
+    return { __html: htmlContent };
+  };
   
-  // Use relative paths instead of domain-based URLs
   const canonicalUrl = `/blog/ideal-customer-profile`;
   
   if (isLoading) {
@@ -92,12 +88,10 @@ export default function IdealCustomerProfile() {
         <title>{t('meta.title')}</title>
         <meta name="description" content={t('meta.description')} />
         
-        {/* Основні SEO-теги */}
         <meta name="robots" content="index, follow" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="canonical" href={canonicalUrl} />
         
-        {/* OpenGraph теги для соцмереж */}
         <meta property="og:title" content={t('meta.title')} />
         <meta property="og:description" content={t('meta.description')} />
         <meta property="og:image" content="/img/blog/ideal-customer-profile/hero.webp" />
@@ -109,20 +103,17 @@ export default function IdealCustomerProfile() {
         <meta property="article:section" content="B2B Marketing" />
         <meta property="article:tag" content="B2B, Lead Generation, ICP, Ideal Customer Profile" />
         
-        {/* Twitter картки */}
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content={t('meta.title')} />
         <meta name="twitter:description" content={t('meta.description')} />
         <meta name="twitter:image" content="/img/blog/ideal-customer-profile/hero.webp" />
         
-        {/* Альтернативні мовні версії */}
         <link rel="alternate" hrefLang="uk" href={`/uk/blog/ideal-customer-profile`} />
         <link rel="alternate" hrefLang="en" href={`/en/blog/ideal-customer-profile`} />
         <link rel="alternate" hrefLang="x-default" href={`/en/blog/ideal-customer-profile`} />
         
         <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet" />
         
-        {/* Структуровані дані JSON-LD */}
         <script 
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -264,8 +255,8 @@ export default function IdealCustomerProfile() {
                 ))
               }
             </ul>
-            <p className="text-gray-300">
-              {t('sections.leadMagnetsRole.content[2]')}
+            <p className="text-gray-300" 
+               dangerouslySetInnerHTML={renderHTML(t('sections.leadMagnetsRole.content[2]'))}>
             </p>
           </section>
           
