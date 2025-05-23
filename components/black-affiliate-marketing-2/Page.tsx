@@ -49,7 +49,6 @@ const VideoPlayer = ({
           muted
           loop
           playsInline
-          preload="metadata"
         />
       )}
       
@@ -58,7 +57,6 @@ const VideoPlayer = ({
         src={videoUrl}
         className={`w-full mx-auto ${className}`}
         playsInline
-        preload="metadata"
       />
 
       {!isPlaying && (
@@ -158,15 +156,22 @@ export default function BlackAffiliateMarketing() {
           </p>
 
           <div className="mx-auto md:w-[560px] mt-8 relative">
-            <VideoPlayer 
-              videoUrl="/img/black-affiliate-marketing/video-vsl.mp4" 
-              placeholder="/img/black-affiliate-marketing/placeholder.mp4"
-              className="px-4 md:px-0 md:h-[360px]"
+            <Image 
+              src="/img/black-affiliate-marketing/hero.webp" 
+              alt="Black Affiliate Marketing Hero" 
+              width={560} 
+              height={315} 
+              className="rounded-lg object-cover"
+              priority
+              quality={90}
+              sizes="(max-width: 768px) 100vw, 560px"
+              placeholder="blur"
+              blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/4gHYSUNDX1BST0ZJTEUAAQEAAAHIAAAAAAQwAABtbnRyUkdCIFhZWiAH4AABAAEAAAAAAABhY3NwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAA9tYAAQAAAADTLQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAlkZXNjAAAA8AAAACRyWFlaAAABFAAAABRnWFlaAAABKAAAABRiWFlaAAABPAAAABR3dHB0AAABUAAAABRyVFJDAAABZAAAAChnVFJDAAABZAAAAChiVFJDAAABZAAAAChjcHJ0AAABjAAAADxtbHVjAAAAAAAAAAEAAAAMZW5VUwAAAAgAAAAcAHMAUgBHAEJYWVogAAAAAAAAb6IAADj1AAADkFhZWiAAAAAAAABimQAAt4UAABjaWFlaIAAAAAAAACSgAAAPhAAAts9YWVogAAAAAAAA9tYAAQAAAADTLXBhcmEAAAAAAAQAAAACZmYAAPKnAAANWQAAE9AAAApbAAAAAAAAAABtbHVjAAAAAAAAAAEAAAAMZW5VUwAAACAAAAAcAEcAbwBvAGcAbABlACAASQBuAGMALgAgADIAMAAxADb/2wBDABQODxIPDRQSEBIXFRQdHx4eHRoaHSQtJSAyVC0zLysvMy0/RD49QzQ3REVPS1NUV1pjZGR2foGDhY6NzaGur7L/2wBDARUXFx4aHR4eHbIuIi6ysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrL/wAARCAAIAAoDASIAAhEB"
             />
           </div>
 
           <div className="!mt-6 pt-8 animate-bounce">
-            <Link href="/black-affiliate-marketing/form" className="bg-red-800 hover:bg-red-700 text-white text-xl font-bold py-4 px-8 uppercase">
+            <Link href="/black-affiliate-marketing-2/form" className="bg-red-800 hover:bg-red-700 text-white text-xl font-bold py-4 px-8 uppercase">
               SECURE YOUR SPOT NOW
             </Link>
           </div>
@@ -179,7 +184,6 @@ export default function BlackAffiliateMarketing() {
               <div className="w-28 h-28 mx-auto">
                 <Image src="/img/black-affiliate-marketing/1.avif" alt="1" width={100} height={100} loading='eager' 
                   sizes="100px"
-                  quality={85}
                   placeholder="blur"
                   blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/4gHYSUNDX1BST0ZJTEUAAQEAAAHIAAAAAAQwAABtbnRyUkdCIFhZWiAH4AABAAEAAAAAAABhY3NwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAA9tYAAQAAAADTLQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAlkZXNjAAAA8AAAACRyWFlaAAABFAAAABRnWFlaAAABKAAAABRiWFlaAAABPAAAABR3dHB0AAABUAAAABRyVFJDAAABZAAAAChnVFJDAAABZAAAAChiVFJDAAABZAAAAChjcHJ0AAABjAAAADxtbHVjAAAAAAAAAAEAAAAMZW5VUwAAAAgAAAAcAHMAUgBHAEJYWVogAAAAAAAAb6IAADj1AAADkFhZWiAAAAAAAABimQAAt4UAABjaWFlaIAAAAAAAACSgAAAPhAAAts9YWVogAAAAAAAA9tYAAQAAAADTLXBhcmEAAAAAAAQAAAACZmYAAPKnAAANWQAAE9AAAApbAAAAAAAAAABtbHVjAAAAAAAAAAEAAAAMZW5VUwAAACAAAAAcAEcAbwBvAGcAbABlACAASQBuAGMALgAgADIAMAAxADb/2wBDABQODxIPDRQSEBIXFRQdHx4eHRoaHSQtJSAyVC0zLysvMy0/RD49QzQ3REVPS1NUV1pjZGR2foGDhY6NzaGur7L/2wBDARUXFx4aHR4eHbIuIi6ysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrL/wAARCAAIAAoDASIAAhEB"
                 />
@@ -192,12 +196,7 @@ export default function BlackAffiliateMarketing() {
 
             <div className="space-y-4 bg-black/40 backdrop-blur-sm p-6 rounded-xl border border-red-600/30 hover:border-red-600/50 transition-all duration-300">
               <div className="w-28 h-28 mx-auto">
-                <Image src="/img/black-affiliate-marketing/2.png" alt="2" width={100} height={100} loading='eager'
-                  sizes="100px"
-                  quality={85}
-                  placeholder="blur"
-                  blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/4gHYSUNDX1BST0ZJTEUAAQEAAAHIAAAAAAQwAABtbnRyUkdCIFhZWiAH4AABAAEAAAAAAABhY3NwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAA9tYAAQAAAADTLQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAlkZXNjAAAA8AAAACRyWFlaAAABFAAAABRnWFlaAAABKAAAABRiWFlaAAABPAAAABR3dHB0AAABUAAAABRyVFJDAAABZAAAAChnVFJDAAABZAAAAChiVFJDAAABZAAAAChjcHJ0AAABjAAAADxtbHVjAAAAAAAAAAEAAAAMZW5VUwAAAAgAAAAcAHMAUgBHAEJYWVogAAAAAAAAb6IAADj1AAADkFhZWiAAAAAAAABimQAAt4UAABjaWFlaIAAAAAAAACSgAAAPhAAAts9YWVogAAAAAAAA9tYAAQAAAADTLXBhcmEAAAAAAAQAAAACZmYAAPKnAAANWQAAE9AAAApbAAAAAAAAAABtbHVjAAAAAAAAAAEAAAAMZW5VUwAAACAAAAAcAEcAbwBvAGcAbABlACAASQBuAGMALgAgADIAMAAxADb/2wBDABQODxIPDRQSEBIXFRQdHx4eHRoaHSQtJSAyVC0zLysvMy0/RD49QzQ3REVPS1NUV1pjZGR2foGDhY6NzaGur7L/2wBDARUXFx4aHR4eHbIuIi6ysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrL/wAARCAAIAAoDASIAAhEB"
-                />
+                <Image src="/img/black-affiliate-marketing/2.png" alt="2" width={100} height={100} loading='eager'/>
               </div>
               <p className="">
                 If you want an{' '}
@@ -207,12 +206,7 @@ export default function BlackAffiliateMarketing() {
 
             <div className="space-y-4 bg-black/40 backdrop-blur-sm p-6 rounded-xl border border-red-600/30 hover:border-red-600/50 transition-all duration-300">
               <div className="w-28 h-28 mx-auto">
-                <Image src="/img/black-affiliate-marketing/3.avif" alt="3" width={100} height={100} loading='eager'
-                  sizes="100px"
-                  quality={85}
-                  placeholder="blur"
-                  blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/4gHYSUNDX1BST0ZJTEUAAQEAAAHIAAAAAAQwAABtbnRyUkdCIFhZWiAH4AABAAEAAAAAAABhY3NwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAA9tYAAQAAAADTLQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAlkZXNjAAAA8AAAACRyWFlaAAABFAAAABRnWFlaAAABKAAAABRiWFlaAAABPAAAABR3dHB0AAABUAAAABRyVFJDAAABZAAAAChnVFJDAAABZAAAAChiVFJDAAABZAAAAChjcHJ0AAABjAAAADxtbHVjAAAAAAAAAAEAAAAMZW5VUwAAAAgAAAAcAHMAUgBHAEJYWVogAAAAAAAAb6IAADj1AAADkFhZWiAAAAAAAABimQAAt4UAABjaWFlaIAAAAAAAACSgAAAPhAAAts9YWVogAAAAAAAA9tYAAQAAAADTLXBhcmEAAAAAAAQAAAACZmYAAPKnAAANWQAAE9AAAApbAAAAAAAAAABtbHVjAAAAAAAAAAEAAAAMZW5VUwAAACAAAAAcAEcAbwBvAGcAbABlACAASQBuAGMALgAgADIAMAAxADb/2wBDABQODxIPDRQSEBIXFRQdHx4eHRoaHSQtJSAyVC0zLysvMy0/RD49QzQ3REVPS1NUV1pjZGR2foGDhY6NzaGur7L/2wBDARUXFx4aHR4eHbIuIi6ysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrL/wAARCAAIAAoDASIAAhEB"
-                />
+                <Image src="/img/black-affiliate-marketing/3.avif" alt="3" width={100} height={100} loading='eager'/>
               </div>
               <p className="">
                 Ideal for students or anyone wanting to live life on their own terms,{' '}
@@ -222,12 +216,7 @@ export default function BlackAffiliateMarketing() {
 
             <div className="space-y-4 bg-black/40 backdrop-blur-sm p-6 rounded-xl border border-red-600/30 hover:border-red-600/50 transition-all duration-300">
               <div className="w-28 h-28 mx-auto">
-                <Image src="/img/black-affiliate-marketing/4.avif" alt="4" width={100} height={100} loading='eager'
-                  sizes="100px"
-                  quality={85}
-                  placeholder="blur"
-                  blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/4gHYSUNDX1BST0ZJTEUAAQEAAAHIAAAAAAQwAABtbnRyUkdCIFhZWiAH4AABAAEAAAAAAABhY3NwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAA9tYAAQAAAADTLQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAlkZXNjAAAA8AAAACRyWFlaAAABFAAAABRnWFlaAAABKAAAABRiWFlaAAABPAAAABR3dHB0AAABUAAAABRyVFJDAAABZAAAAChnVFJDAAABZAAAAChiVFJDAAABZAAAAChjcHJ0AAABjAAAADxtbHVjAAAAAAAAAAEAAAAMZW5VUwAAAAgAAAAcAHMAUgBHAEJYWVogAAAAAAAAb6IAADj1AAADkFhZWiAAAAAAAABimQAAt4UAABjaWFlaIAAAAAAAACSgAAAPhAAAts9YWVogAAAAAAAA9tYAAQAAAADTLXBhcmEAAAAAAAQAAAACZmYAAPKnAAANWQAAE9AAAApbAAAAAAAAAABtbHVjAAAAAAAAAAEAAAAMZW5VUwAAACAAAAAcAEcAbwBvAGcAbABlACAASQBuAGMALgAgADIAMAAxADb/2wBDABQODxIPDRQSEBIXFRQdHx4eHRoaHSQtJSAyVC0zLysvMy0/RD49QzQ3REVPS1NUV1pjZGR2foGDhY6NzaGur7L/2wBDARUXFx4aHR4eHbIuIi6ysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrL/wAARCAAIAAoDASIAAhEB"
-                />
+                <Image src="/img/black-affiliate-marketing/4.avif" alt="4" width={100} height={100} loading='eager'/>
               </div>
               <p className="">
                 Perfect for those looking to build a business and passive income,{' '}
@@ -241,7 +230,7 @@ export default function BlackAffiliateMarketing() {
                 Get free samples of pre-landers, ads and traffic sources!
             </h2>
             <div className="animate-bounce pt-8">
-              <Link href="/black-affiliate-marketing/form" className="bg-red-800 hover:bg-red-700 text-white text-xl font-bold py-4 px-8 uppercase">
+              <Link href="/black-affiliate-marketing-2/form" className="bg-red-800 hover:bg-red-700 text-white text-xl font-bold py-4 px-8 uppercase">
                 TAKE A QUIZ NOW
               </Link>
             </div>
@@ -455,7 +444,7 @@ export default function BlackAffiliateMarketing() {
           </div>
 
           <div className="animate-bounce pt-8">
-            <Link href="/black-affiliate-marketing/form" className="bg-red-800 hover:bg-red-700 text-white text-xl font-bold py-4 px-8 uppercase">
+            <Link href="/black-affiliate-marketing-2/form" className="bg-red-800 hover:bg-red-700 text-white text-xl font-bold py-4 px-8 uppercase">
               SECURE YOUR SPOT NOW
             </Link>
           </div>
@@ -472,109 +461,96 @@ export default function BlackAffiliateMarketing() {
           </h2>
 
           <div className="space-y-8">
+            {/* First Row - 4 items */}
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
               <div className="text-center space-y-4 ">
                 <div className="bg-gray-50 rounded-full p-6 mx-auto w-fit">
-                  <Image src="/img/black-affiliate-marketing/ico-1.avif" alt="Video Lessons" width={70} height={70} loading='lazy'/>
+                  <Image src="/img/black-affiliate-marketing/ico-1.avif" alt="Video Lessons" width={70} height={70} loading='lazy' sizes="70px" placeholder="empty" />
                 </div>
                 <p>35 Video Lessons and Guides</p>
               </div>
 
               <div className="text-center space-y-4">
                 <div className="bg-gray-50 rounded-full p-6 mx-auto w-fit">
-                  <Image src="/img/black-affiliate-marketing/ico-2.avif" alt="FB Accounts" width={70} height={70} loading='lazy'/>
+                  <Image src="/img/black-affiliate-marketing/ico-2.avif" alt="FB Accounts" width={70} height={70} loading='lazy' sizes="70px" placeholder="empty" />
                 </div>
                 <p>FB Accounts to run ads from</p>
               </div>
 
               <div className="text-center space-y-4">
                 <div className="bg-gray-50 rounded-full p-6 mx-auto w-fit">
-                  <Image src="/img/black-affiliate-marketing/ico-3.avif" alt="Advanced techniques" width={70} height={70} loading='lazy'/>
+                  <Image src="/img/black-affiliate-marketing/ico-3.avif" alt="Advanced techniques" width={70} height={70} loading='lazy' sizes="70px" placeholder="empty" />
                 </div>
                 <p>Advanced techniques how to run any ads that you want</p>
               </div>
 
               <div className="text-center space-y-4">
                 <div className="bg-gray-50 rounded-full p-6 mx-auto w-fit">
-                  <Image src="/img/black-affiliate-marketing/ico-4.avif" alt="Funnels" width={70} height={70} loading='lazy'/>
+                  <Image src="/img/black-affiliate-marketing/ico-4.avif" alt="Funnels" width={70} height={70} loading='lazy' sizes="70px" placeholder="empty" />
                 </div>
                 <p>Funnels of how to Drive Traffic</p>
               </div>
             </div>
 
-            {/* Second Row */}
-            <div className="grid grid-cols-2 md:grid-cols-5 gap-8">
+            {/* Second Row - 3 items */}
+            <div className="grid grid-cols-2 md:grid-cols-3 gap-8 px-[10%]">
               <div className="text-center space-y-4">
                 <div className="bg-gray-50 rounded-full p-6 mx-auto w-fit">
-                  <Image src="/img/black-affiliate-marketing/ico-5.png" alt="Traffic Sources" width={70} height={70} loading='lazy'/>
+                  <Image src="/img/black-affiliate-marketing/ico-5.png" alt="Traffic Sources" width={70} height={70} loading='lazy' sizes="70px" placeholder="empty" />
                 </div>
                 <p>Traffic Sources Cheet Sheet</p>
               </div>
 
               <div className="text-center space-y-4">
                 <div className="bg-gray-50 rounded-full p-6 mx-auto w-fit">
-                  <Image src="/img/black-affiliate-marketing/ico-6.avif" alt="Push Notifications" width={70} height={70} loading='lazy'/>
+                  <Image src="/img/black-affiliate-marketing/ico-6.avif" alt="Push Notifications" width={70} height={70} loading='lazy' sizes="70px" placeholder="empty" />
                 </div>
                 <p>Push Notifications Course</p>
               </div>
 
               <div className="text-center space-y-4">
                 <div className="bg-gray-50 rounded-full p-6 mx-auto w-fit">
-                  <Image src="/img/black-affiliate-marketing/ico-7.png" alt="FB Advanced" width={70} height={70} loading='lazy'/>
+                  <Image src="/img/black-affiliate-marketing/ico-7.png" alt="FB Advanced" width={70} height={70} loading='lazy' sizes="70px" placeholder="empty" />
                 </div>
                 <p>FB Advanced Level Ads Course</p>
               </div>
 
-              <div className="text-center space-y-4">
+              <div className="text-center space-y-4 md:hidden">
                 <div className="bg-gray-50 rounded-full p-6 mx-auto w-fit">
-                  <Image src="/img/black-affiliate-marketing/ico-8.avif" alt="Security" width={70} height={70} loading='lazy'/>
+                  <Image src="/img/black-affiliate-marketing/ico-8.avif" alt="Security" width={70} height={70} loading='lazy' sizes="70px" placeholder="empty" />
+                </div>
+                <p>Security in the Internet Instructions</p>
+              </div>
+            </div>
+
+            {/* Third Row - 4 items */}
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+              <div className="text-center space-y-4 hidden md:block">
+                <div className="bg-gray-50 rounded-full p-6 mx-auto w-fit">
+                  <Image src="/img/black-affiliate-marketing/ico-8.avif" alt="Security" width={70} height={70} loading='lazy' sizes="70px" placeholder="empty" />
                 </div>
                 <p>Security in the Internet Instructions</p>
               </div>
 
-              <div className="text-center space-y-4 hidden md:block">
+              <div className="text-center space-y-4">
                 <div className="bg-gray-50 rounded-full p-6 mx-auto w-fit">
-                  <Image src="/img/black-affiliate-marketing/ico-9.png" alt="Services" width={70} height={70} loading='lazy'/>
-                </div>
-                <p>List of Services to use for work</p>
-              </div>
-            </div>
-
-            {/* Third Row */}
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-              <div className="text-center space-y-4 md:hidden">
-                <div className="bg-gray-50 rounded-full p-6 mx-auto w-fit">
-                  <Image src="/img/black-affiliate-marketing/ico-9.png" alt="Services" width={70} height={70} loading='lazy'/>
+                  <Image src="/img/black-affiliate-marketing/ico-9.png" alt="Services" width={70} height={70} loading='lazy' sizes="70px" placeholder="empty" />
                 </div>
                 <p>List of Services to use for work</p>
               </div>
 
               <div className="text-center space-y-4">
                 <div className="bg-gray-50 rounded-full p-6 mx-auto w-fit">
-                  <Image src="/img/black-affiliate-marketing/ico-10.avif" alt="Mentorship" width={70} height={70} loading='lazy'/>
+                  <Image src="/img/black-affiliate-marketing/ico-10.avif" alt="Mentorship" width={70} height={70} loading='lazy' sizes="70px" placeholder="empty" />
                 </div>
                 <p>1:1 Mentorship from Stepan</p>
               </div>
 
               <div className="text-center space-y-4">
                 <div className="bg-gray-50 rounded-full p-6 mx-auto w-fit">
-                  <Image src="/img/black-affiliate-marketing/ico-11.png" alt="Community" width={70} height={70} loading='lazy'/>
-                </div>
-                <p>Private community of like-minded hustlers, that will help you to scale and get your first payout</p>
-              </div>
-
-              <div className="text-center space-y-4">
-                <div className="bg-gray-50 rounded-full p-6 mx-auto w-fit">
-                  <Image src="/img/black-affiliate-marketing/ico-12.avif" alt="Examples" width={70} height={70} loading='lazy'/>
+                  <Image src="/img/black-affiliate-marketing/ico-12.avif" alt="Examples" width={70} height={70} loading='lazy' sizes="70px" placeholder="empty" />
                 </div>
                 <p>Examples of pre-landers, exclusive offers, direct introductions, examples of creatives</p>
-              </div>
-
-              <div className="text-center space-y-4 col-span-2 md:col-span-1">
-                <div className="bg-gray-50 rounded-full p-6 mx-auto w-fit">
-                  <Image src="/img/black-affiliate-marketing/ico-13.png" alt="Ability to get Hired" width={70} height={70} loading='lazy'/>
-                </div>
-                <p>Ability to get Hired, and Ability to WIN $5k</p>
               </div>
             </div>
           </div>
@@ -683,7 +659,7 @@ export default function BlackAffiliateMarketing() {
           </div>
 
           <div className="pt-8 animate-bounce !mt-10">
-            <Link href="/black-affiliate-marketing/form" className="bg-red-800 hover:bg-red-700 text-white text-xl font-bold py-4 px-8 uppercase">
+            <Link href="/black-affiliate-marketing-2/form" className="bg-red-800 hover:bg-red-700 text-white text-xl font-bold py-4 px-8 uppercase">
               SECURE YOUR SPOT NOW
             </Link>
           </div>
@@ -835,7 +811,7 @@ export default function BlackAffiliateMarketing() {
               <div className="text-5xl font-bold mb-8 group-hover:text-red-500 transition-colors">$999</div>
               
               <div className="mt-6 mb-8 text-center">
-                <Link href="/black-affiliate-marketing/form" className="w-full bg-red-800 hover:bg-red-700 text-white py-3 px-6 rounded-lg transition-colors">
+                <Link href="/black-affiliate-marketing-2/form" className="w-full bg-red-800 hover:bg-red-700 text-white py-3 px-6 rounded-lg transition-colors">
                   BUY NOW
                 </Link>
               </div>
@@ -888,7 +864,7 @@ export default function BlackAffiliateMarketing() {
               <div className="text-5xl font-bold mb-8 group-hover:text-red-500 transition-colors">$2990</div>
               
               <div className="mt-6 mb-8 text-center">
-                <Link href="/black-affiliate-marketing/form" className="w-full bg-red-800 hover:bg-red-700 text-white py-3 px-6 rounded-lg transition-colors">
+                <Link href="/black-affiliate-marketing-2/form" className="w-full bg-red-800 hover:bg-red-700 text-white py-3 px-6 rounded-lg transition-colors">
                   BUY NOW
                 </Link>
               </div>
@@ -920,8 +896,8 @@ export default function BlackAffiliateMarketing() {
               
               <div className="text-5xl font-bold mb-8 group-hover:text-red-500 transition-colors">$4999</div>
               
-               <div className="mt-6 mb-8 text-center">
-                <Link href="/black-affiliate-marketing/form" className="w-full bg-red-800 hover:bg-red-700 text-white py-3 px-6 rounded-lg transition-colors">
+              <div className="mt-6 mb-8 text-center">
+                <Link href="/black-affiliate-marketing-2/form" className="w-full bg-red-800 hover:bg-red-700 text-white py-3 px-6 rounded-lg transition-colors">
                   BUY NOW
                 </Link>
               </div>
@@ -1057,7 +1033,7 @@ export default function BlackAffiliateMarketing() {
                   It may not be a simple endeavor, but I am committed to ensuring your success in the most effective and efficient manner possible.
                 </p>
                 <div className="mt-8">
-                  <Link href="/black-affiliate-marketing/form" className="bg-red-800 hover:bg-red-700 text-white py-4 px-8 rounded-lg inline-block transition-colors">
+                  <Link href="/black-affiliate-marketing-2/form" className="bg-red-800 hover:bg-red-700 text-white py-4 px-8 rounded-lg inline-block transition-colors">
                     SECURE YOUR SPOT NOW
                   </Link>
                 </div>
