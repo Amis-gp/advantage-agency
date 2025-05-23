@@ -546,13 +546,19 @@ export default function BlackAffiliateMarketing() {
                 <p>1:1 Mentorship from Stepan</p>
               </div>
 
-              <div className="text-center space-y-4">
+              <div className="text-center space-y-4 hidden md:block">
                 <div className="bg-gray-50 rounded-full p-6 mx-auto w-fit">
                   <Image src="/img/black-affiliate-marketing/ico-12.avif" alt="Examples" width={70} height={70} loading='lazy' sizes="70px" placeholder="empty" />
                 </div>
                 <p>Examples of pre-landers, exclusive offers, direct introductions, examples of creatives</p>
               </div>
             </div>
+            <div className="text-center space-y-4 md:hidden">
+                <div className="bg-gray-50 rounded-full p-6 mx-auto w-fit">
+                  <Image src="/img/black-affiliate-marketing/ico-12.avif" alt="Examples" width={70} height={70} loading='lazy' sizes="70px" placeholder="empty" />
+                </div>
+                <p>Examples of pre-landers, exclusive offers, direct introductions, examples of creatives</p>
+              </div>
           </div>
         </section>
 
