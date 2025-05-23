@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import Image from 'next/image';
+import { logFormSubmission, updateFormStatus } from '@/utils/formLogger';
 
 interface FormData {
   name: string;
@@ -87,6 +88,19 @@ export default function FormPage() {
     e.preventDefault();
     setIsSubmitting(true);
 
+    // Збереження даних форми в MongoDB
+    let formLogId;
+    try {
+      // Спочатку зберігаємо дані в MongoDB
+      const logResult = await logFormSubmission('affiliate', formData);
+      if (logResult.success) {
+        formLogId = logResult.id;
+      }
+    } catch (logError) {
+      console.error('Помилка при логуванні форми:', logError);
+      // Продовжуємо навіть якщо логування не вдалося
+    }
+
     const BOT_TOKEN = process.env.NEXT_PUBLIC_BOT_TOKEN;
     const CHAT_ID = process.env.NEXT_PUBLIC_CHAT_ID;
     const url = `https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`;
@@ -118,6 +132,11 @@ Answer: ${formData.quizAnswers[i]}`).join('\n')}
       });
 
       if (response.ok) {
+        // Оновлюємо статус в MongoDB, якщо логування вдалося
+        if (formLogId) {
+          await updateFormStatus(formLogId, 'sent');
+        }
+        
         alert('Thank you for your submission!');
         setFormData({
           name: '',
@@ -126,9 +145,18 @@ Answer: ${formData.quizAnswers[i]}`).join('\n')}
           quizAnswers: new Array(5).fill(''),
         });
       } else {
+        // Оновлюємо статус в MongoDB як помилку, якщо логування вдалося
+        if (formLogId) {
+          await updateFormStatus(formLogId, 'failed');
+        }
         throw new Error('Failed to submit form');
       }
     } catch (error) {
+      // Оновлюємо статус в MongoDB як помилку, якщо логування вдалося
+      if (formLogId) {
+        await updateFormStatus(formLogId, 'failed');
+      }
+      
       alert('Something went wrong. Please try again later.');
     } finally {
       setIsSubmitting(false);
