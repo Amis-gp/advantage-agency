@@ -4,6 +4,7 @@ import { useState } from 'react'
 import { useRouter } from 'next/navigation'
 import { useLocale, useTranslations } from 'next-intl'
 import LanguageSwitcher from '@/components/LanguageSwitcher'
+import { logFormSubmission, updateFormStatus } from '@/utils/formLogger'
 
 interface FormData {
   primary: {
@@ -226,6 +227,25 @@ const BriefLanding = () => {
 
     setIsSubmitting(true);
 
+    // Зберігаємо дані форми в MongoDB
+    let formLogId;
+    try {
+      // Додаємо інформацію про джерело форми
+      const formDataWithSource = {
+        ...formData,
+        formSource: 'brief-landing'
+      };
+      
+      // Спочатку зберігаємо дані в MongoDB
+      const logResult = await logFormSubmission('contact', formDataWithSource);
+      if (logResult.success) {
+        formLogId = logResult.id;
+      }
+    } catch (logError) {
+      console.error('Помилка при логуванні форми:', logError);
+      // Продовжуємо навіть якщо логування не вдалося
+    }
+
     try {
       const message = `
         🎯 <b>Новий бриф для лендінгу отримано!</b>
@@ -305,9 +325,20 @@ KPI: ${formData.goals.kpi}
       `;
 
       await sendToTelegram(message);
+      
+      // Оновлюємо статус в MongoDB, якщо логування вдалося
+      if (formLogId) {
+        await updateFormStatus(formLogId, 'sent');
+      }
+      
       router.push(`/${locale}/brief-thank-you`);
     } catch (error) {
       console.error('Error submitting form:', error);
+      
+      // Оновлюємо статус в MongoDB як помилку, якщо логування вдалося
+      if (formLogId) {
+        await updateFormStatus(formLogId, 'failed');
+      }
     } finally {
       setIsSubmitting(false);
     }

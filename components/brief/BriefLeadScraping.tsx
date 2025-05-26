@@ -4,6 +4,7 @@ import { useState } from 'react'
 import { useRouter } from 'next/navigation'
 import { useLocale, useTranslations } from 'next-intl'
 import LanguageSwitcher from '../LanguageSwitcher'
+import { logFormSubmission, updateFormStatus } from '@/utils/formLogger'
 
 interface FormData {
   topic: string
@@ -116,6 +117,26 @@ const BriefLeadScraping = () => {
       setIsSubmitting(false);
       return;
     }
+
+    // Формуємо дані форми з джерелом для логування
+    const completeFormData = {
+      primary: primaryInfo,
+      ...formData,
+      formSource: 'brief-lead-scraping'
+    };
+
+    // Зберігаємо дані форми в MongoDB
+    let formLogId;
+    try {
+      const logResult = await logFormSubmission('contact', completeFormData);
+      if (logResult.success) {
+        formLogId = logResult.id;
+      }
+    } catch (logError) {
+      console.error('Помилка при логуванні форми:', logError);
+      // Продовжуємо навіть якщо логування не вдалося
+    }
+
     try {
       const message = `
 <b>Бізнес:</b> ${primaryInfo.businessName}
@@ -130,10 +151,22 @@ const BriefLeadScraping = () => {
         `<b>4. Links/Keywords:</b> ${formData.linksOrKeywords}\n` +
         `<b>5. Quantity:</b> ${formData.quantity}\n` +
         `<b>6. Additional info:</b> ${formData.additional}`;
+      
       await sendToTelegram(message);
+      
+      // Оновлюємо статус в MongoDB, якщо логування вдалося
+      if (formLogId) {
+        await updateFormStatus(formLogId, 'sent');
+      }
+      
       router.push(`/${locale}/brief-thank-you`);
     } catch (error) {
       console.error('Error submitting form:', error);
+      
+      // Оновлюємо статус в MongoDB як помилку, якщо логування вдалося
+      if (formLogId) {
+        await updateFormStatus(formLogId, 'failed');
+      }
     } finally {
       setIsSubmitting(false);
     }

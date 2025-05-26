@@ -7,6 +7,7 @@ import Image from 'next/image';
 import { useRouter } from 'next/navigation';
 import PhoneInput from 'react-phone-number-input';
 import 'react-phone-number-input/style.css';
+import { logFormSubmission, updateFormStatus } from '@/utils/formLogger';
 
 interface FormData {
     name: string;
@@ -66,6 +67,24 @@ const FormSection = () => {
         e.preventDefault();
         setIsSubmitting(true);
 
+        // Формуємо дані форми з джерелом для логування
+        const completeFormData = {
+            ...formData,
+            formSource: 'home-contact'
+        };
+
+        // Зберігаємо дані форми в MongoDB
+        let formLogId;
+        try {
+            const logResult = await logFormSubmission('contact', completeFormData);
+            if (logResult.success) {
+                formLogId = logResult.id;
+            }
+        } catch (logError) {
+            console.error('Помилка при логуванні форми:', logError);
+            // Продовжуємо навіть якщо логування не вдалося
+        }
+
         try {
             const message = `<b>Нова заявка з сайту advantage-agency.co!</b>
 
@@ -77,9 +96,20 @@ const FormSection = () => {
 <b>Дата:</b> ${new Date().toLocaleString('uk-UA')}`;
 
             await sendToTelegram(message);
+            
+            // Оновлюємо статус в MongoDB, якщо логування вдалося
+            if (formLogId) {
+                await updateFormStatus(formLogId, 'sent');
+            }
+            
             router.push('/thank-you');
         } catch (error) {
             console.error('Error submitting form:', error);
+            
+            // Оновлюємо статус в MongoDB як помилку, якщо логування вдалося
+            if (formLogId) {
+                await updateFormStatus(formLogId, 'failed');
+            }
         } finally {
             setIsSubmitting(false);
         }

@@ -577,7 +577,13 @@
             "upto100": "up to 100",
             "100plus": "more than 100"
         },
-        "submit": "Submit"
+        "submit": "Submit",
+        "submitting": "Processing...",
+        "success": "Thank you! Your application has been received. We will contact you shortly.",
+        "error": "An error occurred while submitting the form. Please try again.",
+        "successTitle": "Success!",
+        "errorTitle": "Error!",
+        "modalClose": "OK"
     },
     "casesFooter": {
         "title": "Get in Touch with Us",

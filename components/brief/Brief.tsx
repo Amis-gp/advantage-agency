@@ -163,12 +163,18 @@ const BriefPage = () => {
     }
 
     setIsSubmitting(true);
-    
-    // Збереження даних форми в MongoDB
+
+    // Зберігаємо дані форми в MongoDB
     let formLogId;
     try {
+      // Додаємо інформацію про джерело форми
+      const formDataWithSource = {
+        ...formData,
+        formSource: 'brief'
+      };
+      
       // Спочатку зберігаємо дані в MongoDB
-      const logResult = await logFormSubmission('contact', formData);
+      const logResult = await logFormSubmission('contact', formDataWithSource);
       if (logResult.success) {
         formLogId = logResult.id;
       }
@@ -243,6 +249,7 @@ KPI: ${formData.expectations.kpi}
 
       await sendToTelegram(message);
       
+      // Оновлюємо статус в MongoDB, якщо логування вдалося
       if (formLogId) {
         await updateFormStatus(formLogId, 'sent');
       }
@@ -251,6 +258,7 @@ KPI: ${formData.expectations.kpi}
     } catch (error) {
       console.error('Error submitting form:', error);
       
+      // Оновлюємо статус в MongoDB як помилку, якщо логування вдалося
       if (formLogId) {
         await updateFormStatus(formLogId, 'failed');
       }
