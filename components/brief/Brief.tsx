@@ -4,6 +4,7 @@ import { useState } from 'react'
 import { useRouter } from 'next/navigation'
 import { useLocale, useTranslations } from 'next-intl'
 import LanguageSwitcher from '../LanguageSwitcher'
+import { logFormSubmission, updateFormStatus } from '@/utils/formLogger'
 
 interface BudgetDistribution {
   googleAds: number | null;
@@ -162,6 +163,19 @@ const BriefPage = () => {
     }
 
     setIsSubmitting(true);
+    
+    // Збереження даних форми в MongoDB
+    let formLogId;
+    try {
+      // Спочатку зберігаємо дані в MongoDB
+      const logResult = await logFormSubmission('contact', formData);
+      if (logResult.success) {
+        formLogId = logResult.id;
+      }
+    } catch (logError) {
+      console.error('Помилка при логуванні форми:', logError);
+      // Продовжуємо навіть якщо логування не вдалося
+    }
 
     try {
       const message = `
@@ -228,9 +242,18 @@ KPI: ${formData.expectations.kpi}
         `;
 
       await sendToTelegram(message);
+      
+      if (formLogId) {
+        await updateFormStatus(formLogId, 'sent');
+      }
+      
       router.push(`/${locale}/brief-thank-you`);
     } catch (error) {
       console.error('Error submitting form:', error);
+      
+      if (formLogId) {
+        await updateFormStatus(formLogId, 'failed');
+      }
     } finally {
       setIsSubmitting(false);
     }

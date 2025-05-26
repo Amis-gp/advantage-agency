@@ -1,7 +1,7 @@
 import { setRequestLocale } from 'next-intl/server'
 import { Metadata } from 'next'
 import BlackAffiliateMarketing from '@/components/black-affiliate-marketing-2/Page'
-import Footer from '@/components/black-affiliate-marketing-2/Footer'
+import Footer from '@/components/black-affiliate-marketing/Footer'
 
 interface Props {
   params: { locale: string }

@@ -1,5 +1,5 @@
-import Footer from '@/components/black-affiliate-marketing-2/Footer'
-import FormSection from '@/components/black-affiliate-marketing-2/Form'
+import Footer from '@/components/black-affiliate-marketing/Footer'
+import FormSection from '@/components/black-affiliate-marketing/Form'
 import { setRequestLocale } from 'next-intl/server'
 
 
