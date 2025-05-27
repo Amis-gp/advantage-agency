@@ -676,31 +676,6 @@ export default function BlackAffiliateMarketing() {
             Testimonials
           </h2>
 
-          {/* First Row - Videos */}
-          <div className="gap-4 md:flex justify-between">
-            <div className="md:w-2/5 h-[360px] mx-auto">
-              <VideoPlayer 
-                videoUrl="/img/black-affiliate-marketing/video-1.mp4" 
-                className="h-[360px]" 
-                placeholder="/img/black-affiliate-marketing/video-1-placeholder.webp" 
-              />
-            </div>
-            <div className=" md:w-2/3 h-[360px] mx-auto">
-              <VideoPlayer 
-                videoUrl="/img/black-affiliate-marketing/video-2.mp4" 
-                className="h-[360px]" 
-                placeholder="/img/black-affiliate-marketing/video-2-placeholder.webp"
-              />
-            </div>
-            <div className="aspect-[4/5] md:w-2/5 h-[360px] mx-auto mb-8 md:mb-0">
-              <VideoPlayer 
-                videoUrl="/img/black-affiliate-marketing/video-3.mp4" 
-                className="h-[360px]" 
-                placeholder="/img/black-affiliate-marketing/video-3-placeholder.webp"
-              />
-            </div>
-          </div>
-
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4 items-center sm:mt-4">
             <div className="space-y-4">
               <div className="relative cursor-pointer transition-transform duration-300 hover:scale-105" onClick={() => openImage('/img/black-affiliate-marketing/testimonial-1.jpg')}>
