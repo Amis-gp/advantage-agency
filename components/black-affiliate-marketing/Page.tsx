@@ -608,7 +608,7 @@ export default function BlackAffiliateMarketing() {
             <div className="relative flex flex-col md:flex-row items-center mb-12 md:mb-32">
               <div className="absolute left-1/2 transform -translate-x-1/2 w-8 h-8 bg-red-600 rounded-full border-4 border-black md:block hidden" />
               <div className='md:pr-16'>
-                <div className="w-full md:w-1/2  bg-white text-black p-6 rounded-xl">
+                <div className="w-full md:w-1/2 bg-white text-black p-6 sm:p-8 rounded-xl">
                   <div className="mb-8 flex justify-center md:justify-start">
                     <Image 
                       src="/img/black-affiliate-marketing/community-icon-1.webp" 
@@ -633,7 +633,7 @@ export default function BlackAffiliateMarketing() {
             <div className="relative flex flex-col md:flex-row items-center mb-12 md:mb-32">
               <div className="absolute left-1/2 transform -translate-x-1/2 w-8 h-8 bg-red-600 rounded-full border-4 border-black md:block hidden" />
               <div className='md:pl-16'>
-                <div className="w-full md:w-1/2 md:ml-auto md:pl-16 bg-white text-black p-6 rounded-xl">
+                <div className="w-full md:w-1/2 md:ml-auto bg-white text-black p-6 sm:p-8 rounded-xl">
                   <div className="mb-8 flex justify-center md:justify-start">
                     <Image 
                       src="/img/black-affiliate-marketing/community-icon-2.webp" 
@@ -659,7 +659,7 @@ export default function BlackAffiliateMarketing() {
             <div className="relative flex flex-col md:flex-row items-center">
               <div className="absolute left-1/2 transform -translate-x-1/2 w-8 h-8 bg-red-600 rounded-full border-4 border-black md:block hidden" />
               <div className='md:pr-16'>
-                <div className="w-full md:w-1/2 md:pr-16 bg-white text-black p-6 rounded-xl">
+                <div className="w-full md:w-1/2 bg-white text-black p-6 sm:p-8 rounded-xl">
                   <div className="mb-8 flex justify-center md:justify-start">
                     <Image 
                       src="/img/black-affiliate-marketing/community-icon-3.webp" 
@@ -698,17 +698,29 @@ export default function BlackAffiliateMarketing() {
           {/* First Row - Videos */}
           <div className="gap-4 md:flex justify-between">
             <div className="md:w-2/5 h-[360px] mx-auto">
-              <VideoPlayer videoUrl="/img/black-affiliate-marketing/video-1.mp4" className="h-[360px]"/>
+              <VideoPlayer 
+                videoUrl="/img/black-affiliate-marketing/video-1.mp4" 
+                className="h-[360px]" 
+                placeholder="/img/black-affiliate-marketing/video-1-placeholder.webp" 
+              />
             </div>
             <div className=" md:w-2/3 h-[360px] mx-auto">
-              <VideoPlayer videoUrl="/img/black-affiliate-marketing/video-2.mp4" className="h-[360px]"/>
+              <VideoPlayer 
+                videoUrl="/img/black-affiliate-marketing/video-2.mp4" 
+                className="h-[360px]" 
+                placeholder="/img/black-affiliate-marketing/video-2-placeholder.webp"
+              />
             </div>
             <div className="aspect-[4/5] md:w-2/5 h-[360px] mx-auto mb-8 md:mb-0">
-              <VideoPlayer videoUrl="/img/black-affiliate-marketing/video-3.mp4" className="h-[360px]"/>
+              <VideoPlayer 
+                videoUrl="/img/black-affiliate-marketing/video-3.mp4" 
+                className="h-[360px]" 
+                placeholder="/img/black-affiliate-marketing/video-3-placeholder.webp"
+              />
             </div>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 items-center">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 items-center sm:mt-4">
             <div className="space-y-4">
               <div className="relative cursor-pointer transition-transform duration-300 hover:scale-105" onClick={() => openImage('/img/black-affiliate-marketing/testimonial-1.jpg')}>
                 <Image 

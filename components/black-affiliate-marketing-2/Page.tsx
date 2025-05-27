@@ -165,8 +165,6 @@ export default function BlackAffiliateMarketing() {
               priority
               quality={90}
               sizes="(max-width: 768px) 100vw, 560px"
-              placeholder="blur"
-              blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/4gHYSUNDX1BST0ZJTEUAAQEAAAHIAAAAAAQwAABtbnRyUkdCIFhZWiAH4AABAAEAAAAAAABhY3NwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAA9tYAAQAAAADTLQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAlkZXNjAAAA8AAAACRyWFlaAAABFAAAABRnWFlaAAABKAAAABRiWFlaAAABPAAAABR3dHB0AAABUAAAABRyVFJDAAABZAAAAChnVFJDAAABZAAAAChiVFJDAAABZAAAAChjcHJ0AAABjAAAADxtbHVjAAAAAAAAAAEAAAAMZW5VUwAAAAgAAAAcAHMAUgBHAEJYWVogAAAAAAAAb6IAADj1AAADkFhZWiAAAAAAAABimQAAt4UAABjaWFlaIAAAAAAAACSgAAAPhAAAts9YWVogAAAAAAAA9tYAAQAAAADTLXBhcmEAAAAAAAQAAAACZmYAAPKnAAANWQAAE9AAAApbAAAAAAAAAABtbHVjAAAAAAAAAAEAAAAMZW5VUwAAACAAAAAcAEcAbwBvAGcAbABlACAASQBuAGMALgAgADIAMAAxADb/2wBDABQODxIPDRQSEBIXFRQdHx4eHRoaHSQtJSAyVC0zLysvMy0/RD49QzQ3REVPS1NUV1pjZGR2foGDhY6NzaGur7L/2wBDARUXFx4aHR4eHbIuIi6ysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrL/wAARCAAIAAoDASIAAhEB"
             />
           </div>
 
@@ -182,46 +180,39 @@ export default function BlackAffiliateMarketing() {
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
             <div className="space-y-4 bg-black/40 backdrop-blur-sm p-6 rounded-xl border border-red-600/30 hover:border-red-600/50 transition-all duration-300">
               <div className="w-28 h-28 mx-auto">
-                <Image src="/img/black-affiliate-marketing/1.avif" alt="1" width={100} height={100} loading='eager' 
+                <Image src="/img/black-affiliate-marketing/1.webp" alt="iGaming operators" width={100} height={100} loading='eager' 
                   sizes="100px"
-                  placeholder="blur"
-                  blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/4gHYSUNDX1BST0ZJTEUAAQEAAAHIAAAAAAQwAABtbnRyUkdCIFhZWiAH4AABAAEAAAAAAABhY3NwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAA9tYAAQAAAADTLQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAlkZXNjAAAA8AAAACRyWFlaAAABFAAAABRnWFlaAAABKAAAABRiWFlaAAABPAAAABR3dHB0AAABUAAAABRyVFJDAAABZAAAAChnVFJDAAABZAAAAChiVFJDAAABZAAAAChjcHJ0AAABjAAAADxtbHVjAAAAAAAAAAEAAAAMZW5VUwAAAAgAAAAcAHMAUgBHAEJYWVogAAAAAAAAb6IAADj1AAADkFhZWiAAAAAAAABimQAAt4UAABjaWFlaIAAAAAAAACSgAAAPhAAAts9YWVogAAAAAAAA9tYAAQAAAADTLXBhcmEAAAAAAAQAAAACZmYAAPKnAAANWQAAE9AAAApbAAAAAAAAAABtbHVjAAAAAAAAAAEAAAAMZW5VUwAAACAAAAAcAEcAbwBvAGcAbABlACAASQBuAGMALgAgADIAMAAxADb/2wBDABQODxIPDRQSEBIXFRQdHx4eHRoaHSQtJSAyVC0zLysvMy0/RD49QzQ3REVPS1NUV1pjZGR2foGDhY6NzaGur7L/2wBDARUXFx4aHR4eHbIuIi6ysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrL/wAARCAAIAAoDASIAAhEB"
                 />
               </div>
               <p className="">
-                This course is for anyone ready to leave the{' '}
-                <span className="text-red-600">9-to-5 grind</span> and make a real change!
+                ✅ iGaming operators and affiliates – <span className="text-red-600">looking to scale campaigns, bypass restrictions, and access aggressive traffic sources</span>.
               </p>
             </div>
 
             <div className="space-y-4 bg-black/40 backdrop-blur-sm p-6 rounded-xl border border-red-600/30 hover:border-red-600/50 transition-all duration-300">
               <div className="w-28 h-28 mx-auto">
-                <Image src="/img/black-affiliate-marketing/2.png" alt="2" width={100} height={100} loading='eager'/>
+                <Image src="/img/black-affiliate-marketing/2.webp" alt="Offer owners" width={100} height={100} loading='eager'/>
               </div>
               <p className="">
-                If you want an{' '}
-                <span className="text-red-600">online income that's based on your skills</span>, not luck, this course is for you
+                ✅ Offer owners – <span className="text-red-600">who want to build their own media buying team and control the full funnel from ad to conversion</span>.
               </p>
             </div>
 
             <div className="space-y-4 bg-black/40 backdrop-blur-sm p-6 rounded-xl border border-red-600/30 hover:border-red-600/50 transition-all duration-300">
               <div className="w-28 h-28 mx-auto">
-                <Image src="/img/black-affiliate-marketing/3.avif" alt="3" width={100} height={100} loading='eager'/>
+                <Image src="/img/black-affiliate-marketing/3.webp" alt="Agencies" width={100} height={100} loading='eager'/>
               </div>
               <p className="">
-                Ideal for students or anyone wanting to live life on their own terms,{' '}
-                <span className="text-red-600">free from a boss or financial worries</span>
+                ✅ Agencies – <span className="text-red-600">that are ready to advertise with no limits, push into black-hat verticals, and unlock high-ROI tactics most won't dare to touch</span>.
               </p>
             </div>
 
             <div className="space-y-4 bg-black/40 backdrop-blur-sm p-6 rounded-xl border border-red-600/30 hover:border-red-600/50 transition-all duration-300">
               <div className="w-28 h-28 mx-auto">
-                <Image src="/img/black-affiliate-marketing/4.avif" alt="4" width={100} height={100} loading='eager'/>
+                <Image src="/img/black-affiliate-marketing/4.webp" alt="Media buyers" width={100} height={100} loading='eager'/>
               </div>
               <p className="">
-                Perfect for those looking to build a business and passive income,{' '}
-                <span className="text-red-600">with strategies that keep paying off</span>{' '}
-                in digital marketing
+                ✅ Media buyers – <span className="text-red-600">who want to work with high-paying, uncapped offers across iGaming, nutra, dating, and crypto niches</span>.
               </p>
             </div>
           </div>
@@ -238,7 +229,7 @@ export default function BlackAffiliateMarketing() {
         </section>
 
         {/* Who Am I Section */}
-        <section className="grid grid-cols-1 md:grid-cols-2 gap-12 mt-20 max-w-6xl mx-auto relative">
+        <section className="grid grid-cols-1 md:grid-cols-2 gap-12 mt-12 sm:mt-16 max-w-6xl mx-auto relative">
           <div
             className="absolute -right-[30%] -top-[30%] w-[500px] h-[500px] md:w-[700px] md:h-[700px] rounded-full bg-red-600/30 blur-[150px] -z-10"
             style={{ filter: 'blur(150px)' }}
@@ -247,20 +238,19 @@ export default function BlackAffiliateMarketing() {
             <Image 
               src="/img/black-affiliate-marketing/foto-1.webp" 
               alt="Mentor" 
-              width={500} 
-              height={700} 
-              className="rounded-lg object-cover"
+              width={1080} 
+              height={1616} 
+              className="rounded-lg  max-h-[700px] w-auto"
               quality={100}
               loading='lazy'
-              sizes="(max-width: 768px) 100vw, 50vw"
               placeholder="blur"
               blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/4gHYSUNDX1BST0ZJTEUAAQEAAAHIAAAAAAQwAABtbnRyUkdCIFhZWiAH4AABAAEAAAAAAABhY3NwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAA9tYAAQAAAADTLQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAlkZXNjAAAA8AAAACRyWFlaAAABFAAAABRnWFlaAAABKAAAABRiWFlaAAABPAAAABR3dHB0AAABUAAAABRyVFJDAAABZAAAAChnVFJDAAABZAAAAChiVFJDAAABZAAAAChjcHJ0AAABjAAAADxtbHVjAAAAAAAAAAEAAAAMZW5VUwAAAAgAAAAcAHMAUgBHAEJYWVogAAAAAAAAb6IAADj1AAADkFhZWiAAAAAAAABimQAAt4UAABjaWFlaIAAAAAAAACSgAAAPhAAAts9YWVogAAAAAAAA9tYAAQAAAADTLXBhcmEAAAAAAAQAAAACZmYAAPKnAAANWQAAE9AAAApbAAAAAAAAAABtbHVjAAAAAAAAAAEAAAAMZW5VUwAAACAAAAAcAEcAbwBvAGcAbABlACAASQBuAGMALgAgADIAMAAxADb/2wBDABQODxIPDRQSEBIXFRQdHx4eHRoaHSQtJSAyVC0zLysvMy0/RD49QzQ3REVPS1NUV1pjZGR2foGDhY6NzaGur7L/2wBDARUXFx4aHR4eHbIuIi6ysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrL/wAARCAAIAAoDASIAAhEB"
             />
           </div>
 
-          <div className="space-y-6 text-left">
+          <div className="space-y-6 text-left flex flex-col justify-center">
             <h2 className="text-4xl font-bold">
-              Who Am I <span className="underline">To Teach You?</span>
+              Meet Your <span className="underline">Growth</span> Partner
             </h2>
 
             <ul className="space-y-6 text-lg md:text-2xl font-bold list-disc pl-6">
@@ -275,8 +265,8 @@ export default function BlackAffiliateMarketing() {
               </li>
 
               <li className="">
-                <span className="text-red-600 font-bold">Extensive experience working </span>
-                <span>with a diverse range of industries, from logistics and restaurants to IT and cutting-edge Web 3.0 projects.</span>
+                <span className="text-red-600 font-bold">Extensive experience worked across all big verticals : </span>
+                <span>from ecommerce and nutra to igaming, crypto and search arbitrage.</span>
               </li>
 
               <li className="">
@@ -284,10 +274,10 @@ export default function BlackAffiliateMarketing() {
                 <span>from a $10,000 monthly ad spend to an $1,000,000 in monthly ad spend.</span>
               </li>
 
-              <li className="">
+              {/* <li className="">
                 <span className="text-red-600 font-bold">Delivered more than 10 comprehensive </span>
                 <span>Marketing Courses to empower professionals in the field.</span>
-              </li>
+              </li> */}
             </ul>
           </div>
           <div className="flex justify-center gap-6 mt-6 md:col-span-2">
@@ -318,25 +308,24 @@ export default function BlackAffiliateMarketing() {
         <section className="space-y-12 mt-20 max-w-6xl mx-auto">
           {/* First Part */}
           <div className="flex flex-col md:flex-row gap-12">
-            <div className="md:w-[120%] space-y-8 text-left text-lg order-2 md:order-1">
+            <div className="md:w-[120%] space-y-8 text-left text-lg order-2 md:order-1 flex flex-col justify-center">
               <p>
-                "I hail from very humble beginnings, a life marked by relentless hard work 💪. There were no safety nets; I had to rely <span className="font-bold">solely on my own efforts</span>. My family, with four children, including me as the eldest, was always facing financial constraints, making it necessary for me to take on the <span className="text-red-600 font-bold">responsibility of supporting my siblings and retiring my parents</span> so they don't have to work so hard anymore. My journey took me from a small village in Ukraine to pursuing studies in Poland 🌍, all while juggling a series of low-paying, physically demanding jobs to make ends meet.
+                I come from humble beginnings — the oldest of four kids in a Ukrainian village, where hard work wasn't a choice, it was survival. With no safety nets, I took on the <span className="text-red-600 font-bold">responsibility of supporting my family</span> and working toward retiring my parents.
               </p>
               <p>
-                These jobs ranged from working in kitchens, at McDonald's, in supermarkets, and in construction - any work that involved manual labor 🏗️. It was my only means of earning a meager income, and it still barely covered my modest bills. To make it all work, I often had to <span className="font-bold">juggle two jobs while attending university</span>. My life felt ascetic, dedicated to learning, completing various courses, and an <span className="text-red-600 font-bold">unending pursuit of self-improvement</span>. 📚
+                I moved to Poland to study, while grinding through low-paying, physical jobs — kitchens, McDonald's, construction, supermarkets — whatever kept the lights on. At one point, I was <span className="font-bold">juggling two jobs and university</span>, living a disciplined, ascetic life focused on growth, learning, and <span className="text-red-600 font-bold">breaking the cycle</span>. 📚
               </p>
             </div>
 
-            <div className="w-4/5 mx-auto order-1 md:order-2 md:-mt-6">
+            <div className="mx-auto order-1 md:order-2">
               <Image 
                 src="/img/black-affiliate-marketing/foto-2.avif" 
                 alt="Personal photo" 
                 width={500} 
                 height={700} 
-                className="rounded-lg object-cover"
+                className="rounded-lg object-cover max-w-[330px] max-h-[400px]"
                 loading='lazy'
                 quality={90}
-                sizes="(max-width: 768px) 100vw, 50vw"
                 blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/4gHYSUNDX1BST0ZJTEUAAQEAAAHIAAAAAAQwAABtbnRyUkdCIFhZWiAH4AABAAEAAAAAAABhY3NwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAA9tYAAQAAAADTLQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAlkZXNjAAAA8AAAACRyWFlaAAABFAAAABRnWFlaAAABKAAAABRiWFlaAAABPAAAABR3dHB0AAABUAAAABRyVFJDAAABZAAAAChnVFJDAAABZAAAAChiVFJDAAABZAAAAChjcHJ0AAABjAAAADxtbHVjAAAAAAAAAAEAAAAMZW5VUwAAAAgAAAAcAHMAUgBHAEJYWVogAAAAAAAAb6IAADj1AAADkFhZWiAAAAAAAABimQAAt4UAABjaWFlaIAAAAAAAACSgAAAPhAAAts9YWVogAAAAAAAA9tYAAQAAAADTLXBhcmEAAAAAAAQAAAACZmYAAPKnAAANWQAAE9AAAApbAAAAAAAAAABtbHVjAAAAAAAAAAEAAAAMZW5VUwAAACAAAAAcAEcAbwBvAGcAbABlACAASQBuAGMALgAgADIAMAAxADb/2wBDABQODxIPDRQSEBIXFRQdHx4eHRoaHSQtJSAyVC0zLysvMy0/RD49QzQ3REVPS1NUV1pjZGR2foGDhY6NzaGur7L/2wBDARUXFx4aHR4eHbIuIi6ysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrL/wAARCAAIAAoDASIAAhEB"
               />
             </div>
@@ -354,40 +343,39 @@ export default function BlackAffiliateMarketing() {
                 alt="Personal photo" 
                 width={500} 
                 height={700} 
-                className="rounded-lg object-cover"
+                className="rounded-lg object-cover max-h-[650px]"
                 loading='lazy'
                 quality={90}
-                sizes="(max-width: 768px) 100vw, 50vw"
                 blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/4gHYSUNDX1BST0ZJTEUAAQEAAAHIAAAAAAQwAABtbnRyUkdCIFhZWiAH4AABAAEAAAAAAABhY3NwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAA9tYAAQAAAADTLQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAlkZXNjAAAA8AAAACRyWFlaAAABFAAAABRnWFlaAAABKAAAABRiWFlaAAABPAAAABR3dHB0AAABUAAAABRyVFJDAAABZAAAAChnVFJDAAABZAAAAChiVFJDAAABZAAAAChjcHJ0AAABjAAAADxtbHVjAAAAAAAAAAEAAAAMZW5VUwAAACAAAAAcAEcAbwBvAGcAbABlACAASQBuAGMALgAgADIAMAAxADb/2wBDABQODxIPDRQSEBIXFRQdHx4eHRoaHSQtJSAyVC0zLysvMy0/RD49QzQ3REVPS1NUV1pjZGR2foGDhY6NzaGur7L/2wBDARUXFx4aHR4eHbIuIi6ysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrL/wAARCAAIAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAb/xAAUEAEAAAAAAAAAAAAAAAAAAAAA/8QAFQEBAQAAAAAAAAAAAAAAAAAAAAX/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwCdABmX/9k="
               />
             </div>
-            <div className="md:w-[120%] space-y-8 text-left text-lg">
+            <div className="md:w-[120%] space-y-8 text-left text-lg flex flex-col justify-center">
               <p>
-                "My journey at Google marked the <span className="font-bold">beginning of my career as a digital marketer</span> 🚀. The story of how I secured this opportunity, the desperation that fueled my efforts, and how I managed to <span className="text-red-600 font-bold">stand out among 50 other candidates</span> is an incredible tale. Perhaps, I'll share it on my YouTube channel someday.
+                My break came when I landed a role at Google — <span className="text-red-600 font-bold">beating out over 50 candidates</span>. I'll share the full story on YouTube one day, but it started with pure hunger and zero excuses.
               </p>
               <p>
-                The second photo captures a moment from a presentation I delivered to an audience of 200+ people 🎯. Googlers from the Dublin office had come to Poland for a 'pitch-off' event where I competed with five other top performers. I <span className="font-bold">proudly won this contest twice</span> out of 2 participations. Working for Google was a <span className="text-red-600 font-bold">significant achievement</span>, and I established myself as one of the best employees there. 🏆
+                Soon, I was presenting to crowds of 200+, winning company-wide pitch competitions in front of the top Googlers from Dublin. I <span className="font-bold">won twice out of two appearances</span> — and earned a reputation as one of the top performers in the office.
               </p>
               <p>
-                Back then, I thought I was earning a fortune. It was certainly an improvement from the less satisfying jobs, but it was still a far cry from my ultimate goals. Keep in mind, it is Poland, where the average salary was around $700 per month. I was earning <span className="font-bold">$1,500 per month</span> 💰, which was considered a substantial income. Saving was still challenging, but I managed to save $900 or $1k - don't ask me how I did it. I lived with six other people in a cramped room, and my ability to save was a result of <span className="text-red-600 font-bold">frugality</span>. I never dined out with friends, refrained from buying clothes or anything else, and essentially lived a minimalist lifestyle. It wasn't living; it was surviving. 🌱
+                At the time, $1,500/month felt like a fortune, especially in Poland, where the average was $700. But it still wasn't freedom. I lived in a cramped apartment with six others, didn't eat out, didn't buy clothes — just <span className="text-red-600 font-bold">saved like a machine</span>. I managed to put away $10,000 in seven months at age 21.
               </p>
               <p>
-                In the midst of it all, I embarked on the creation of <span className="font-bold">ten different e-commerce websites</span> to test various concepts 💻. However, I ended up losing all the money I had saved - a total of $10,000. In Poland, people might amass such savings after two or 3 years of work on a good job and if they save at least $500 per month, while earning $700, but I achieved it in just <span className="text-red-600 font-bold">seven months, at the age of 21</span>. It's important to note that as I'm an immigrant here, many times I faced discrimination due to my nationality. No one welcomed me here in Poland, rather the opposite. 💪
+                Then I lost all of it — testing 10 e-commerce projects that flopped. That pain taught me more than any win ever could. As a foreigner in Poland, I faced discrimination and exclusion. No one rolled out a red carpet. But that only made me <span className="font-bold">more determined to carve my own path</span> — by any means necessary.
               </p>
             </div>
           </div>
 
           {/* Third Part */}
           <div className="flex flex-col md:flex-row gap-12">
-            <div className="md:w-[120%] space-y-8 text-left text-lg order-2 md:order-1">
+            <div className="md:w-[120%] space-y-8 text-left text-lg order-2 md:order-1 flex flex-col justify-center">
               <p>
-                "After leaving Google, I ventured into freelancing, managing Google ads for clients, website development, and assisting businesses with their digital transformation 💼. It had its upsides - I had <span className="font-bold">many clients from word of mouth</span>. However, I was a one-person show, working tirelessly throughout the day, without the confines of a traditional 9-5 schedule. It was more like a <span className="text-red-600 font-bold">9 am to 9 pm routine</span>. 
+                After Google, I went all-in on freelancing — running Google Ads, building websites, and helping small businesses go digital. It was just me, grinding <span className="text-red-600 font-bold">9 AM to 9 PM, every day</span>. No team, no safety net — just hustle and referrals.
               </p>
               <p>
-                Around the six-month mark, I recognized the need for change. Freelancing wasn't providing the stability I desired, and the income was far from substantial, averaging between $1,500 to $2,000 💰. I decided to rent a room in a shared flat with 3 other people, a significant improvement from my previous situation. Subsequently, I dedicated an entire month to a <span className="font-bold">relentless job hunt, participating in over 27 job interviews</span> 🎯. I received numerous offers and chose to take on <span className="text-red-600 font-bold">two demanding corporate sales positions</span> ( Voluum and BenefitHub ), you can verify it on my <Link href="https://www.linkedin.com/in/stepan-potichnyi/" target="_blank" className="text-blue-500 font-bold">LinkedIn profile</Link>.
+                Six months in, I hit a wall. Freelancing wasn't stable, and the income ($1.5k–$2k/month) wasn't enough for the life I wanted. So I made a move — rented a shared flat, and spent an entire month doing nothing but job interviews. <span className="font-bold">27 of them</span>, to be exact.
               </p>
               <p>
-                Reflecting on that period, it was nothing short of a whirlwind 🌪️. Each day was filled with stress, as I bore the responsibility for the revenue in two IT SaaS companies. I sustained this lifestyle for <span className="font-bold">nearly three years</span>, which took a toll on my health, and life became synonymous with work. I had no days off, along with multiple side projects and tests conducted during my spare time. However, the income improved to a range of <span className="text-red-600 font-bold">$3,000 to $4,000 per month</span> from both jobs, and I managed to save. 💪
+                The result? I landed <span className="text-red-600 font-bold">two high-pressure corporate roles at once</span> — Voluum and BenefitHub — both in SaaS sales. You can verify that on my <Link href="https://www.linkedin.com/in/stepan-potichnyi/" target="_blank" className="text-blue-500 font-bold">LinkedIn profile</Link>. For nearly three years, I carried the revenue of two tech companies on my back. No weekends. No balance. Just pure output. My income jumped to $3k–$4k/month. I finally started saving — but my health, energy, and freedom were running low.
               </p>
             </div>
 
@@ -425,20 +413,20 @@ export default function BlackAffiliateMarketing() {
                 blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/4gHYSUNDX1BST0ZJTEUAAQEAAAHIAAAAAAQwAABtbnRyUkdCIFhZWiAH4AABAAEAAAAAAABhY3NwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAA9tYAAQAAAADTLQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAlkZXNjAAAA8AAAACRyWFlaAAABFAAAABRnWFlaAAABKAAAABRiWFlaAAABPAAAABR3dHB0AAABUAAAABRyVFJDAAABZAAAAChnVFJDAAABZAAAAChiVFJDAAABZAAAAChjcHJ0AAABjAAAADxtbHVjAAAAAAAAAAEAAAAMZW5VUwAAACAAAAAcAEcAbwBvAGcAbABlACAASQBuAGMALgAgADIAMAAxADb/2wBDABQODxIPDRQSEBIXFRQdHx4eHRoaHSQtJSAyVC0zLysvMy0/RD49QzQ3REVPS1NUV1pjZGR2foGDhY6NzaGur7L/2wBDARUXFx4aHR4eHbIuIi6ysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrL/wAARCAAIAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAb/xAAUEAEAAAAAAAAAAAAAAAAAAAAA/8QAFQEBAQAAAAAAAAAAAAAAAAAAAAX/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwCdABmX/9k="
               />
             </div>
-            <div className="md:w-[120%] space-y-8 text-left text-lg">
+            <div className="md:w-[120%] space-y-8 text-left text-lg flex flex-col justify-center">
               <p>
-                "In February 2022, a war broke out in my homeland, russia invaded. My family and loved ones were in danger, and the threat of missiles reaching anywhere in Ukraine persisted until today. This was the <span className="text-red-600 font-bold">turning point</span> that made me realize my current efforts were insufficient. 🔄 In addition to making donations to our army, I began investing $2,000 to $3,000 per month in online advertising, specifically affiliate marketing.
+                In February 2022, war broke out in my homeland. Russia invaded Ukraine. My family was in danger, missiles were flying, and everything I thought mattered suddenly didn't. That moment hit hard — I realized that the life I had built wasn't enough. I needed to create <span className="text-red-600 font-bold">real freedom</span>.
               </p>
               <p>
-                I faced significant losses initially, but I soon realized I was approaching things the wrong way. With the budget I had, it seemed almost impossible to achieve profitability through conventional methods. So, I embarked on a journey of months, <span className="font-bold">sleepless nights, and weekends, tirelessly searching for answers</span>. Finally, I <span className="text-red-600 font-bold">cracked the code</span>. 🔑
+                So I went all-in. I started donating to our army and investing $2,000–$3,000/month into affiliate marketing. At first, I lost money. A lot. I was doing it the "standard" way — and failing. So I went dark. <span className="font-bold">Locked in. Spent months testing, studying, building</span>. Sleepless nights, no weekends, just work. Eventually, I <span className="text-red-600 font-bold">cracked the code</span>.
               </p>
               <p>
-                Since then, my life transformed into what you might see on Instagram - the 'high life,' as they call it. I generated nearly <span className="text-red-600 font-bold">$400,000 in net profit</span> 🎯, bought my dream car, customized it to my liking, and traveled to destinations like Ibiza, Mallorca, Marbella ( Spain ) then Portugal, Positano, Italy, and Croatia. Got tired of the sea and went to London many times, Amsterdam, Paris, Berlin and this all in just <span className="font-bold">6 months</span>. I enjoyed a life I never thought possible. Finally I quit my jobs, it felt so good. 🌟
+                Everything changed. Over the next six months, I pulled nearly <span className="text-red-600 font-bold">$400,000 in net profit</span>. I bought my dream car, traveled across Europe — Ibiza, Marbella, Positano, Amsterdam, London, Berlin. I quit both jobs. For the first time ever, I had full control of my time and income.
               </p>
               <p>
-                Subsequently, I established a digital marketing agency, <span className="font-bold">ADvantage</span> 
-                <Link href="https://advantage-agency.co" target="_blank" className="text-blue-500 font-bold"> (here's the link)</Link>.
-                I now have a team, and we're in the process of expanding. This journey led me to create a course where I aim not only to share my secrets and help others make money online but also to provide an opportunity to join my team. The <span className="text-red-600 font-bold">best-performing students from my course have the chance to earn $5,000</span>. So don't hesitate. This is a short part of my story, just to give you my background and to show that it wasn't easy at all. But if I made it, I'm totally confident that anyone can do it, and I am here to help. 💪
+                That success led to my agency — <span className="font-bold">ADvantage</span> 
+                <Link href="https://advantage-agency.co" target="_blank" className="text-blue-500 font-bold"> (here's the link)</Link> —
+                and now, this course. I'm not here to sell dreams. I'm here to show you the path, and if you're serious, even offer you a seat at the table. My <span className="text-red-600 font-bold">top students now earn up to $5,000/month</span> working with us. This is just a part of my story. Nothing about it was easy. But if I did it — so can you. And I'll show you how.
               </p>
             </div>
           </div>
@@ -569,16 +557,15 @@ export default function BlackAffiliateMarketing() {
             style={{ filter: 'blur(150px)' }}
           />
           <h2 className="text-2xl md:text-4xl font-bold">
-          This Fundamental <span className="text-red-600">3-Phase System Will Transform Your Approach</span> To
-          Getting Paper & Make You MATRIX-PROOF
+            The Proven <span className="text-red-600">3-Phase System to Build a Profitable Black-Hat Advertising Operation</span>
           </h2>
 
           <h2 className={sectionHeaderClass}>
-            Let's Cut The Shit.
+            This program isn't theory. It's a practical system based on real campaigns, real results, and hard-earned lessons.
           </h2>
 
           <p className="text-xl md:text-2xl mx-auto">
-            Follow This And You Will Become More Successful Than The People You See Online.
+            If you're looking to run aggressive offers in restricted verticals like iGaming, Nutra, or Crypto — this is the process:
           </p>
 
           {/* Timeline */}
@@ -590,7 +577,7 @@ export default function BlackAffiliateMarketing() {
             <div className="relative flex flex-col md:flex-row items-center mb-12 md:mb-32">
               <div className="absolute left-1/2 transform -translate-x-1/2 w-8 h-8 bg-red-600 rounded-full border-4 border-black md:block hidden" />
               <div className='md:pr-16'>
-                <div className="w-full md:w-1/2  bg-white text-black p-6 rounded-xl">
+                <div className="w-full md:w-1/2  bg-white text-black p-6 sm:p-8 rounded-xl">
                   <div className="mb-8 flex justify-center md:justify-start">
                     <Image 
                       src="/img/black-affiliate-marketing/community-icon-1.webp" 
@@ -602,10 +589,10 @@ export default function BlackAffiliateMarketing() {
                       blurDataURL='/img/black-affiliate-marketing/community-icon-1.webp'
                     />
                   </div>
-                  <h3 className="text-4xl font-bold mb-4 text-center md:text-left">Learn the Skill</h3>
+                  <h3 className="text-4xl font-bold mb-4 text-center md:text-left">Master the Technical Foundation</h3>
                   <p className="text-lg text-center md:text-left">
-                    Complete the lessons, pass a test, launch your first campaigns, get your first conversions and optimize your traffic. 
-                    <span className="text-red-500"> Learn the advanced techniques, get unique offers and make</span> your first few grands net profit.
+                    Learn how to set up cloaking correctly, implement tracking tools, prepare ad accounts, and build funnels that avoid bans. 
+                    <span className="text-red-500"> We cover the exact infrastructure required to operate in black-hat environments.</span>
                   </p>
                 </div>
               </div>
@@ -615,7 +602,7 @@ export default function BlackAffiliateMarketing() {
             <div className="relative flex flex-col md:flex-row items-center mb-12 md:mb-32">
               <div className="absolute left-1/2 transform -translate-x-1/2 w-8 h-8 bg-red-600 rounded-full border-4 border-black md:block hidden" />
               <div className='md:pl-16'>
-                <div className="w-full md:w-1/2 md:ml-auto md:pl-16 bg-white text-black p-6 rounded-xl">
+                <div className="w-full md:w-1/2 md:ml-auto bg-white text-black p-6 sm:p-8 rounded-xl">
                   <div className="mb-8 flex justify-center md:justify-start">
                     <Image 
                       src="/img/black-affiliate-marketing/community-icon-2.webp" 
@@ -627,11 +614,10 @@ export default function BlackAffiliateMarketing() {
                       blurDataURL='/img/black-affiliate-marketing/community-icon-2.webp'
                     />
                   </div>
-                  <h3 className="text-4xl font-bold mb-4 text-center md:text-left">Join the Community</h3>
+                  <h3 className="text-4xl font-bold mb-4 text-center md:text-left">Select the Right Offer and Build a Marketing Strategy</h3>
                   <p className="text-lg text-center md:text-left">
-                    Meet like-minded people, who are also launching their ads and testing campaigns. 
-                    <span className="text-red-500"> From complete beginners to a few great media buyers, to share knowledge and results.</span> 
-                    Qualify for the affiliate tournament, join the team and drive huge volumes of traffic, test your creatives and funnels 5X faster.
+                    Choosing the wrong offer will drain your budget fast. You'll learn how to evaluate verticals, select high-ROI campaigns, 
+                    <span className="text-red-500"> and craft a complete go-to-market plan — from creatives to landers to traffic source.</span>
                   </p>
                   </div>
               </div>
@@ -641,7 +627,7 @@ export default function BlackAffiliateMarketing() {
             <div className="relative flex flex-col md:flex-row items-center">
               <div className="absolute left-1/2 transform -translate-x-1/2 w-8 h-8 bg-red-600 rounded-full border-4 border-black md:block hidden" />
               <div className='md:pr-16'>
-                <div className="w-full md:w-1/2 md:pr-16 bg-white text-black p-6 rounded-xl">
+                <div className="w-full md:w-1/2 bg-white text-black p-6 sm:p-8 rounded-xl">
                   <div className="mb-8 flex justify-center md:justify-start">
                     <Image 
                       src="/img/black-affiliate-marketing/community-icon-3.webp" 
@@ -653,12 +639,11 @@ export default function BlackAffiliateMarketing() {
                       blurDataURL='/img/black-affiliate-marketing/community-icon-3.webp'
                     />
                   </div>
-                  <h3 className="text-4xl font-bold mb-4 text-center md:text-left">Start a Legit Online Business</h3>
+                  <h3 className="text-4xl font-bold mb-4 text-center md:text-left">Launch, Analyze, and Scale</h3>
                   <p className="text-lg text-center md:text-left">
-                    As you scale with your ad spend, work with better offers, register a company, list the services of 
-                    <span className="text-red-500"> digital marketing, landing creation, design, funnel-building, private consultations</span> 
-                    for other agencies if you will. Automate the processes and go out there enjoy yourself! There is more to life than just work 😊
-                    </p>
+                    Once you're live and see early signs of profitability, it's time to scale. We'll walk through data-driven decisions, 
+                    <span className="text-red-500"> traffic source reinvestment, scaling frameworks, and maintaining account stability while growing aggressively.</span>
+                  </p>
                 </div>
               </div>
             </div>
@@ -680,17 +665,29 @@ export default function BlackAffiliateMarketing() {
           {/* First Row - Videos */}
           <div className="gap-4 md:flex justify-between">
             <div className="md:w-2/5 h-[360px] mx-auto">
-              <VideoPlayer videoUrl="/img/black-affiliate-marketing/video-1.mp4" className="h-[360px]"/>
+              <VideoPlayer 
+                videoUrl="/img/black-affiliate-marketing/video-1.mp4" 
+                className="h-[360px]" 
+                placeholder="/img/black-affiliate-marketing/video-1-placeholder.webp" 
+              />
             </div>
             <div className=" md:w-2/3 h-[360px] mx-auto">
-              <VideoPlayer videoUrl="/img/black-affiliate-marketing/video-2.mp4" className="h-[360px]"/>
+              <VideoPlayer 
+                videoUrl="/img/black-affiliate-marketing/video-2.mp4" 
+                className="h-[360px]" 
+                placeholder="/img/black-affiliate-marketing/video-2-placeholder.webp"
+              />
             </div>
             <div className="aspect-[4/5] md:w-2/5 h-[360px] mx-auto mb-8 md:mb-0">
-              <VideoPlayer videoUrl="/img/black-affiliate-marketing/video-3.mp4" className="h-[360px]"/>
+              <VideoPlayer 
+                videoUrl="/img/black-affiliate-marketing/video-3.mp4" 
+                className="h-[360px]" 
+                placeholder="/img/black-affiliate-marketing/video-3-placeholder.webp"
+              />
             </div>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 items-center">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 items-center sm:mt-4">
             <div className="space-y-4">
               <div className="relative cursor-pointer transition-transform duration-300 hover:scale-105" onClick={() => openImage('/img/black-affiliate-marketing/testimonial-1.jpg')}>
                 <Image 
