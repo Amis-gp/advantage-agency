@@ -416,7 +416,7 @@ export default function BlackAffiliateMarketing() {
             />
             <div className="w-4/5 md:w-full mx-auto md:my-auto">
               <Image 
-                src="/img/black-affiliate-marketing/foto-5.avif" 
+                src="/img/black-affiliate-marketing/foto-5.webp" 
                 alt="Personal photo" 
                 width={500} 
                 height={700} 

@@ -14,17 +14,44 @@ import 'swiper/css/pagination';
 const VideoPlayer = ({ 
   videoUrl, 
   placeholder,
-  className
+  className,
+  loading
 }: { 
   videoUrl: string, 
   placeholder?: string,
-  className?: string
+  className?: string,
+  loading?: string
 }) => {
+  const containerRef = useRef<HTMLDivElement>(null);
   const videoRef = useRef<HTMLVideoElement>(null);
   const previewRef = useRef<HTMLVideoElement>(null);
   const [isPlaying, setIsPlaying] = useState(false);
+  const [isLoaded, setIsLoaded] = useState(loading !== 'lazy');
+
+  // Використовуємо IntersectionObserver для lazy loading
+  React.useEffect(() => {
+    if (loading !== 'lazy' || isLoaded) return;
+    
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (entries[0].isIntersecting) {
+          setIsLoaded(true);
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.1 }
+    );
+
+    if (containerRef.current) {
+      observer.observe(containerRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, [loading, isLoaded]);
 
   const togglePlay = () => {
+    if (!isLoaded) return;
+    
     if (videoRef.current) {
       if (isPlaying) {
         videoRef.current.pause();
@@ -39,8 +66,9 @@ const VideoPlayer = ({
   };
 
   return (
-    <div className="relative w-full overflow-hidden group cursor-pointer" onClick={togglePlay}>
-      {!isPlaying && (
+    <div ref={containerRef} className="relative w-full overflow-hidden group cursor-pointer" onClick={togglePlay}>
+      {/* Показуємо плейсхолдер, якщо відео не відтворюється і контент завантажено */}
+      {!isPlaying && isLoaded && placeholder && (
         <video 
           ref={previewRef}
           src={placeholder}
@@ -53,15 +81,19 @@ const VideoPlayer = ({
         />
       )}
       
-      <video 
-        ref={videoRef}
-        src={videoUrl}
-        className={`w-full mx-auto ${className}`}
-        playsInline
-        preload="metadata"
-      />
+      {/* Показуємо відео тільки якщо воно завантажене (або не використовується lazy loading) */}
+      {isLoaded && (
+        <video 
+          ref={videoRef}
+          src={videoUrl}
+          className={`w-full mx-auto ${className}`}
+          playsInline
+          preload="metadata"
+        />
+      )}
 
-      {!isPlaying && (
+      {/* Показуємо кнопку відтворення тільки якщо відео не відтворюється і воно завантажене */}
+      {!isPlaying && isLoaded && (
         <div className='bg-black/30 absolute inset-0 hover:bg-black/40 transition-all duration-300 group'>
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex gap-4">
             <button 
@@ -76,6 +108,13 @@ const VideoPlayer = ({
               </svg>
             </button>
           </div>
+        </div>
+      )}
+      
+      {/* Показуємо простий плейсхолдер, якщо використовується lazy loading і відео ще не завантажено */}
+      {!isLoaded && (
+        <div className={`w-full ${className} bg-gray-200 flex items-center justify-center`}>
+          <div className="text-gray-500">Завантаження...</div>
         </div>
       )}
     </div>
@@ -425,7 +464,7 @@ export default function BlackAffiliateMarketing() {
             />
             <div className="w-4/5 md:w-full mx-auto md:my-auto">
               <Image 
-                src="/img/black-affiliate-marketing/foto-5.avif" 
+                src="/img/black-affiliate-marketing/foto-5.webp" 
                 alt="Personal photo" 
                 width={500} 
                 height={700} 
@@ -702,6 +741,7 @@ export default function BlackAffiliateMarketing() {
                 videoUrl="/img/black-affiliate-marketing/video-1.mp4" 
                 className="h-[360px]" 
                 placeholder="/img/black-affiliate-marketing/video-1-placeholder.webp" 
+                loading="lazy"
               />
             </div>
             <div className=" md:w-2/3 h-[360px] mx-auto">
@@ -709,6 +749,7 @@ export default function BlackAffiliateMarketing() {
                 videoUrl="/img/black-affiliate-marketing/video-2.mp4" 
                 className="h-[360px]" 
                 placeholder="/img/black-affiliate-marketing/video-2-placeholder.webp"
+                loading="lazy"
               />
             </div>
             <div className="aspect-[4/5] md:w-2/5 h-[360px] mx-auto mb-8 md:mb-0">
@@ -716,6 +757,7 @@ export default function BlackAffiliateMarketing() {
                 videoUrl="/img/black-affiliate-marketing/video-3.mp4" 
                 className="h-[360px]" 
                 placeholder="/img/black-affiliate-marketing/video-3-placeholder.webp"
+                loading="lazy"
               />
             </div>
           </div>
