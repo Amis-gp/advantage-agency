@@ -1,7 +1,17 @@
 import { setRequestLocale } from 'next-intl/server'
 import { Metadata } from 'next'
-import BlackAffiliateMarketing from '@/components/black-affiliate-marketing-2/Page'
-import Footer from '@/components/black-affiliate-marketing/Footer'
+import dynamic from 'next/dynamic'
+
+// Динамічний імпорт компонентів для кращої швидкодії
+const BlackAffiliateMarketing = dynamic(
+  () => import('@/components/black-affiliate-marketing-2/Page'),
+  { ssr: true, loading: () => <div className="min-h-screen bg-black flex items-center justify-center"><p className="text-white text-xl">Завантаження...</p></div> }
+)
+
+const Footer = dynamic(
+  () => import('@/components/black-affiliate-marketing/Footer'),
+  { ssr: true }
+)
 
 interface Props {
   params: { locale: string }

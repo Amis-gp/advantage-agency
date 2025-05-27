@@ -190,6 +190,16 @@
     <xhtml:link rel="alternate" hreflang="uk" href="https://www.advantage-agency.co/uk/black-affiliate-marketing"/>
   </url>
 
+  <!-- Black Affiliate Marketing 2.0 -->
+  <url>
+    <loc>https://www.advantage-agency.co/black-affiliate-marketing-2</loc>
+    <lastmod>2025-05-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.advantage-agency.co/en/black-affiliate-marketing-2"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://www.advantage-agency.co/uk/black-affiliate-marketing-2"/>
+  </url>
+
   <!-- Career Pages -->
   <url>
     <loc>https://www.advantage-agency.co/join-the-team</loc>

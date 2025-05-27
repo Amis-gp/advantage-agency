@@ -23,8 +23,22 @@ const VideoPlayer = ({
   const videoRef = useRef<HTMLVideoElement>(null);
   const previewRef = useRef<HTMLVideoElement>(null);
   const [isPlaying, setIsPlaying] = useState(false);
+  const [isVideoLoaded, setIsVideoLoaded] = useState(false);
+
+  // Ліниве завантаження відео тільки при кліку
+  const loadVideo = () => {
+    if (videoRef.current && !isVideoLoaded) {
+      videoRef.current.src = videoUrl;
+      videoRef.current.load();
+      setIsVideoLoaded(true);
+    }
+  };
 
   const togglePlay = () => {
+    if (!isVideoLoaded) {
+      loadVideo();
+    }
+    
     if (videoRef.current) {
       if (isPlaying) {
         videoRef.current.pause();
@@ -242,7 +256,7 @@ export default function BlackAffiliateMarketing() {
               height={1616} 
               className="rounded-lg  max-h-[700px] w-auto"
               quality={100}
-              loading='lazy'
+              loading="lazy"
               placeholder="blur"
               blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/4gHYSUNDX1BST0ZJTEUAAQEAAAHIAAAAAAQwAABtbnRyUkdCIFhZWiAH4AABAAEAAAAAAABhY3NwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAA9tYAAQAAAADTLQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAlkZXNjAAAA8AAAACRyWFlaAAABFAAAABRnWFlaAAABKAAAABRiWFlaAAABPAAAABR3dHB0AAABUAAAABRyVFJDAAABZAAAAChnVFJDAAABZAAAAChiVFJDAAABZAAAAChjcHJ0AAABjAAAADxtbHVjAAAAAAAAAAEAAAAMZW5VUwAAAAgAAAAcAHMAUgBHAEJYWVogAAAAAAAAb6IAADj1AAADkFhZWiAAAAAAAABimQAAt4UAABjaWFlaIAAAAAAAACSgAAAPhAAAts9YWVogAAAAAAAA9tYAAQAAAADTLXBhcmEAAAAAAAQAAAACZmYAAPKnAAANWQAAE9AAAApbAAAAAAAAAABtbHVjAAAAAAAAAAEAAAAMZW5VUwAAACAAAAAcAEcAbwBvAGcAbABlACAASQBuAGMALgAgADIAMAAxADb/2wBDABQODxIPDRQSEBIXFRQdHx4eHRoaHSQtJSAyVC0zLysvMy0/RD49QzQ3REVPS1NUV1pjZGR2foGDhY6NzaGur7L/2wBDARUXFx4aHR4eHbIuIi6ysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrL/wAARCAAIAAoDASIAAhEB"
             />
@@ -282,7 +296,7 @@ export default function BlackAffiliateMarketing() {
           </div>
           <div className="flex justify-center gap-6 mt-6 md:col-span-2">
               <a href="https://www.linkedin.com/in/stepan-potichnyi/" target="_blank" className="hover:scale-110 transition-all duration-300">
-                <Image src="/img/black-affiliate-marketing/linkedin.avif" alt="LinkedIn" width={40} height={40} loading='lazy' 
+                <Image src="/img/black-affiliate-marketing/linkedin.avif" alt="LinkedIn" width={40} height={40} loading="lazy" 
                   sizes="40px"
                   quality={80}
                   placeholder="blur"
@@ -290,16 +304,16 @@ export default function BlackAffiliateMarketing() {
                 />
               </a>
               <a href="https://www.instagram.com/stepan_knows" target="_blank" className="hover:scale-110 transition-all duration-300">
-                <Image src="/img/black-affiliate-marketing/instagram.avif" alt="Instagram" width={40} height={40} loading='lazy'/>
+                <Image src="/img/black-affiliate-marketing/instagram.avif" alt="Instagram" width={40} height={40} loading="lazy"/>
               </a>
               <a href="https://www.facebook.com/profile.php?id=100006500822716&locale=uk_UA" target="_blank" className="hover:scale-110 transition-all duration-300">
-                <Image src="/img/black-affiliate-marketing/facebook.avif" alt="Facebook" width={40} height={40} loading='lazy'/>
+                <Image src="/img/black-affiliate-marketing/facebook.avif" alt="Facebook" width={40} height={40} loading="lazy"/>
               </a>
               <a href="https://www.youtube.com/@Stepan_Knows" target="_blank" className="hover:scale-110 transition-all duration-300">
-                <Image src="/img/black-affiliate-marketing/youtube.avif" alt="YouTube" width={40} height={40} loading='lazy'/>
+                <Image src="/img/black-affiliate-marketing/youtube.avif" alt="YouTube" width={40} height={40} loading="lazy"/>
               </a>
               <a href="https://www.tiktok.com/@steve_4_real" target="_blank" className="hover:scale-110 transition-all duration-300">
-                <Image src="/img/black-affiliate-marketing/tiktok.avif" alt="TikTok" width={40} height={40} loading='lazy'/>
+                <Image src="/img/black-affiliate-marketing/tiktok.avif" alt="TikTok" width={40} height={40} loading="lazy"/>
               </a>
             </div>
         </section>
@@ -324,7 +338,7 @@ export default function BlackAffiliateMarketing() {
                 width={500} 
                 height={700} 
                 className="rounded-lg object-cover max-w-[330px] max-h-[400px]"
-                loading='lazy'
+                loading="lazy"
                 quality={90}
                 blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/4gHYSUNDX1BST0ZJTEUAAQEAAAHIAAAAAAQwAABtbnRyUkdCIFhZWiAH4AABAAEAAAAAAABhY3NwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAA9tYAAQAAAADTLQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAlkZXNjAAAA8AAAACRyWFlaAAABFAAAABRnWFlaAAABKAAAABRiWFlaAAABPAAAABR3dHB0AAABUAAAABRyVFJDAAABZAAAAChnVFJDAAABZAAAAChiVFJDAAABZAAAAChjcHJ0AAABjAAAADxtbHVjAAAAAAAAAAEAAAAMZW5VUwAAAAgAAAAcAHMAUgBHAEJYWVogAAAAAAAAb6IAADj1AAADkFhZWiAAAAAAAABimQAAt4UAABjaWFlaIAAAAAAAACSgAAAPhAAAts9YWVogAAAAAAAA9tYAAQAAAADTLXBhcmEAAAAAAAQAAAACZmYAAPKnAAANWQAAE9AAAApbAAAAAAAAAABtbHVjAAAAAAAAAAEAAAAMZW5VUwAAACAAAAAcAEcAbwBvAGcAbABlACAASQBuAGMALgAgADIAMAAxADb/2wBDABQODxIPDRQSEBIXFRQdHx4eHRoaHSQtJSAyVC0zLysvMy0/RD49QzQ3REVPS1NUV1pjZGR2foGDhY6NzaGur7L/2wBDARUXFx4aHR4eHbIuIi6ysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrL/wAARCAAIAAoDASIAAhEB"
               />
@@ -344,7 +358,7 @@ export default function BlackAffiliateMarketing() {
                 width={500} 
                 height={700} 
                 className="rounded-lg object-cover max-h-[650px]"
-                loading='lazy'
+                loading="lazy"
                 quality={90}
                 blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/4gHYSUNDX1BST0ZJTEUAAQEAAAHIAAAAAAQwAABtbnRyUkdCIFhZWiAH4AABAAEAAAAAAABhY3NwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAA9tYAAQAAAADTLQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAlkZXNjAAAA8AAAACRyWFlaAAABFAAAABRnWFlaAAABKAAAABRiWFlaAAABPAAAABR3dHB0AAABUAAAABRyVFJDAAABZAAAAChnVFJDAAABZAAAAChiVFJDAAABZAAAAChjcHJ0AAABjAAAADxtbHVjAAAAAAAAAAEAAAAMZW5VUwAAACAAAAAcAEcAbwBvAGcAbABlACAASQBuAGMALgAgADIAMAAxADb/2wBDABQODxIPDRQSEBIXFRQdHx4eHRoaHSQtJSAyVC0zLysvMy0/RD49QzQ3REVPS1NUV1pjZGR2foGDhY6NzaGur7L/2wBDARUXFx4aHR4eHbIuIi6ysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrL/wAARCAAIAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAb/xAAUEAEAAAAAAAAAAAAAAAAAAAAA/8QAFQEBAQAAAAAAAAAAAAAAAAAAAAX/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwCdABmX/9k="
               />
@@ -386,7 +400,7 @@ export default function BlackAffiliateMarketing() {
                 width={500} 
                 height={700} 
                 className="rounded-lg object-cover"
-                loading='lazy'
+                loading="lazy"
                 quality={90}
                 sizes="(max-width: 768px) 100vw, 50vw"
                 blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/4gHYSUNDX1BST0ZJTEUAAQEAAAHIAAAAAAQwAABtbnRyUkdCIFhZWiAH4AABAAEAAAAAAABhY3NwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAA9tYAAQAAAADTLQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAlkZXNjAAAA8AAAACRyWFlaAAABFAAAABRnWFlaAAABKAAAABRiWFlaAAABPAAAABR3dHB0AAABUAAAABRyVFJDAAABZAAAAChnVFJDAAABZAAAAChiVFJDAAABZAAAAChjcHJ0AAABjAAAADxtbHVjAAAAAAAAAAEAAAAMZW5VUwAAACAAAAAcAEcAbwBvAGcAbABlACAASQBuAGMALgAgADIAMAAxADb/2wBDABQODxIPDRQSEBIXFRQdHx4eHRoaHSQtJSAyVC0zLysvMy0/RD49QzQ3REVPS1NUV1pjZGR2foGDhY6NzaGur7L/2wBDARUXFx4aHR4eHbIuIi6ysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrL/wAARCAAIAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAb/xAAUEAEAAAAAAAAAAAAAAAAAAAAA/8QAFQEBAQAAAAAAAAAAAAAAAAAAAAX/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwCdABmX/9k="
@@ -407,7 +421,7 @@ export default function BlackAffiliateMarketing() {
                 width={500} 
                 height={700} 
                 className="rounded-lg object-cover"
-                loading='lazy'
+                loading="lazy"
                 quality={90}
                 sizes="(max-width: 768px) 100vw, 50vw"
                 blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/4gHYSUNDX1BST0ZJTEUAAQEAAAHIAAAAAAQwAABtbnRyUkdCIFhZWiAH4AABAAEAAAAAAABhY3NwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAA9tYAAQAAAADTLQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAlkZXNjAAAA8AAAACRyWFlaAAABFAAAABRnWFlaAAABKAAAABRiWFlaAAABPAAAABR3dHB0AAABUAAAABRyVFJDAAABZAAAAChnVFJDAAABZAAAAChiVFJDAAABZAAAAChjcHJ0AAABjAAAADxtbHVjAAAAAAAAAAEAAAAMZW5VUwAAACAAAAAcAEcAbwBvAGcAbABlACAASQBuAGMALgAgADIAMAAxADb/2wBDABQODxIPDRQSEBIXFRQdHx4eHRoaHSQtJSAyVC0zLysvMy0/RD49QzQ3REVPS1NUV1pjZGR2foGDhY6NzaGur7L/2wBDARUXFx4aHR4eHbIuIi6ysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrL/wAARCAAIAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAb/xAAUEAEAAAAAAAAAAAAAAAAAAAAA/8QAFQEBAQAAAAAAAAAAAAAAAAAAAAX/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwCdABmX/9k="
@@ -453,59 +467,59 @@ export default function BlackAffiliateMarketing() {
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
               <div className="text-center space-y-4 ">
                 <div className="bg-gray-50 rounded-full p-6 mx-auto w-fit">
-                  <Image src="/img/black-affiliate-marketing/ico-1.avif" alt="Video Lessons" width={70} height={70} loading='lazy' sizes="70px" placeholder="empty" />
+                  <Image src="/img/black-affiliate-marketing/ico-1.avif" alt="Video Lessons" width={70} height={70} loading="lazy" sizes="70px" placeholder="blur" blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+P+/HgAFeAJc0aNZqgAAAABJRU5ErkJggg==" />
                 </div>
                 <p>35 Video Lessons and Guides</p>
               </div>
 
               <div className="text-center space-y-4">
                 <div className="bg-gray-50 rounded-full p-6 mx-auto w-fit">
-                  <Image src="/img/black-affiliate-marketing/ico-2.avif" alt="FB Accounts" width={70} height={70} loading='lazy' sizes="70px" placeholder="empty" />
+                  <Image src="/img/black-affiliate-marketing/ico-2.avif" alt="FB Accounts" width={70} height={70} loading="lazy" sizes="70px" placeholder="blur" blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+P+/HgAFeAJc0aNZqgAAAABJRU5ErkJggg==" />
                 </div>
                 <p>FB Accounts to run ads from</p>
               </div>
 
               <div className="text-center space-y-4">
                 <div className="bg-gray-50 rounded-full p-6 mx-auto w-fit">
-                  <Image src="/img/black-affiliate-marketing/ico-3.avif" alt="Advanced techniques" width={70} height={70} loading='lazy' sizes="70px" placeholder="empty" />
+                  <Image src="/img/black-affiliate-marketing/ico-3.avif" alt="Advanced techniques" width={70} height={70} loading="lazy" sizes="70px" placeholder="blur" blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+P+/HgAFeAJc0aNZqgAAAABJRU5ErkJggg==" />
                 </div>
                 <p>Advanced techniques how to run any ads that you want</p>
               </div>
 
               <div className="text-center space-y-4">
                 <div className="bg-gray-50 rounded-full p-6 mx-auto w-fit">
-                  <Image src="/img/black-affiliate-marketing/ico-4.avif" alt="Funnels" width={70} height={70} loading='lazy' sizes="70px" placeholder="empty" />
+                  <Image src="/img/black-affiliate-marketing/ico-4.avif" alt="Funnels" width={70} height={70} loading="lazy" sizes="70px" placeholder="blur" blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+P+/HgAFeAJc0aNZqgAAAABJRU5ErkJggg==" />
                 </div>
                 <p>Funnels of how to Drive Traffic</p>
               </div>
             </div>
 
             {/* Second Row - 3 items */}
-            <div className="grid grid-cols-2 md:grid-cols-3 gap-8 px-[10%]">
+            <div className="grid grid-cols-2 md:grid-cols-3 gap-8 md:px-[10%]">
               <div className="text-center space-y-4">
                 <div className="bg-gray-50 rounded-full p-6 mx-auto w-fit">
-                  <Image src="/img/black-affiliate-marketing/ico-5.png" alt="Traffic Sources" width={70} height={70} loading='lazy' sizes="70px" placeholder="empty" />
+                  <Image src="/img/black-affiliate-marketing/ico-5.png" alt="Traffic Sources" width={70} height={70} loading="lazy" sizes="70px" placeholder="blur" blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+P+/HgAFeAJc0aNZqgAAAABJRU5ErkJggg==" />
                 </div>
                 <p>Traffic Sources Cheet Sheet</p>
               </div>
 
               <div className="text-center space-y-4">
                 <div className="bg-gray-50 rounded-full p-6 mx-auto w-fit">
-                  <Image src="/img/black-affiliate-marketing/ico-6.avif" alt="Push Notifications" width={70} height={70} loading='lazy' sizes="70px" placeholder="empty" />
+                  <Image src="/img/black-affiliate-marketing/ico-6.avif" alt="Push Notifications" width={70} height={70} loading="lazy" sizes="70px" placeholder="blur" blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+P+/HgAFeAJc0aNZqgAAAABJRU5ErkJggg==" />
                 </div>
                 <p>Push Notifications Course</p>
               </div>
 
               <div className="text-center space-y-4">
                 <div className="bg-gray-50 rounded-full p-6 mx-auto w-fit">
-                  <Image src="/img/black-affiliate-marketing/ico-7.png" alt="FB Advanced" width={70} height={70} loading='lazy' sizes="70px" placeholder="empty" />
+                  <Image src="/img/black-affiliate-marketing/ico-7.png" alt="FB Advanced" width={70} height={70} loading="lazy" sizes="70px" placeholder="blur" blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+P+/HgAFeAJc0aNZqgAAAABJRU5ErkJggg==" />
                 </div>
                 <p>FB Advanced Level Ads Course</p>
               </div>
 
               <div className="text-center space-y-4 md:hidden">
                 <div className="bg-gray-50 rounded-full p-6 mx-auto w-fit">
-                  <Image src="/img/black-affiliate-marketing/ico-8.avif" alt="Security" width={70} height={70} loading='lazy' sizes="70px" placeholder="empty" />
+                  <Image src="/img/black-affiliate-marketing/ico-8.avif" alt="Security" width={70} height={70} loading="lazy" sizes="70px" placeholder="blur" blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+P+/HgAFeAJc0aNZqgAAAABJRU5ErkJggg==" />
                 </div>
                 <p>Security in the Internet Instructions</p>
               </div>
@@ -515,35 +529,35 @@ export default function BlackAffiliateMarketing() {
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
               <div className="text-center space-y-4 hidden md:block">
                 <div className="bg-gray-50 rounded-full p-6 mx-auto w-fit">
-                  <Image src="/img/black-affiliate-marketing/ico-8.avif" alt="Security" width={70} height={70} loading='lazy' sizes="70px" placeholder="empty" />
+                  <Image src="/img/black-affiliate-marketing/ico-8.avif" alt="Security" width={70} height={70} loading="lazy" sizes="70px" placeholder="blur" blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+P+/HgAFeAJc0aNZqgAAAABJRU5ErkJggg==" />
                 </div>
                 <p>Security in the Internet Instructions</p>
               </div>
 
               <div className="text-center space-y-4">
                 <div className="bg-gray-50 rounded-full p-6 mx-auto w-fit">
-                  <Image src="/img/black-affiliate-marketing/ico-9.png" alt="Services" width={70} height={70} loading='lazy' sizes="70px" placeholder="empty" />
+                  <Image src="/img/black-affiliate-marketing/ico-9.png" alt="Services" width={70} height={70} loading="lazy" sizes="70px" placeholder="blur" blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+P+/HgAFeAJc0aNZqgAAAABJRU5ErkJggg==" />
                 </div>
                 <p>List of Services to use for work</p>
               </div>
 
               <div className="text-center space-y-4">
                 <div className="bg-gray-50 rounded-full p-6 mx-auto w-fit">
-                  <Image src="/img/black-affiliate-marketing/ico-10.avif" alt="Mentorship" width={70} height={70} loading='lazy' sizes="70px" placeholder="empty" />
+                  <Image src="/img/black-affiliate-marketing/ico-10.avif" alt="Mentorship" width={70} height={70} loading="lazy" sizes="70px" placeholder="blur" blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+P+/HgAFeAJc0aNZqgAAAABJRU5ErkJggg==" />
                 </div>
                 <p>1:1 Mentorship from Stepan</p>
               </div>
 
               <div className="text-center space-y-4 hidden md:block">
                 <div className="bg-gray-50 rounded-full p-6 mx-auto w-fit">
-                  <Image src="/img/black-affiliate-marketing/ico-12.avif" alt="Examples" width={70} height={70} loading='lazy' sizes="70px" placeholder="empty" />
+                  <Image src="/img/black-affiliate-marketing/ico-12.avif" alt="Examples" width={70} height={70} loading="lazy" sizes="70px" placeholder="blur" blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+P+/HgAFeAJc0aNZqgAAAABJRU5ErkJggg==" />
                 </div>
                 <p>Examples of pre-landers, exclusive offers, direct introductions, examples of creatives</p>
               </div>
             </div>
             <div className="text-center space-y-4 md:hidden">
                 <div className="bg-gray-50 rounded-full p-6 mx-auto w-fit">
-                  <Image src="/img/black-affiliate-marketing/ico-12.avif" alt="Examples" width={70} height={70} loading='lazy' sizes="70px" placeholder="empty" />
+                  <Image src="/img/black-affiliate-marketing/ico-12.avif" alt="Examples" width={70} height={70} loading="lazy" sizes="70px" placeholder="blur" blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+P+/HgAFeAJc0aNZqgAAAABJRU5ErkJggg==" />
                 </div>
                 <p>Examples of pre-landers, exclusive offers, direct introductions, examples of creatives</p>
               </div>
@@ -584,7 +598,7 @@ export default function BlackAffiliateMarketing() {
                       alt="Learn" 
                       width={80} 
                       height={80} 
-                      loading='lazy'
+                      loading="lazy"
                       quality={90}
                       blurDataURL='/img/black-affiliate-marketing/community-icon-1.webp'
                     />
@@ -609,7 +623,7 @@ export default function BlackAffiliateMarketing() {
                       alt="Community" 
                       width={80} 
                       height={80} 
-                      loading='lazy'
+                      loading="lazy"
                       quality={90}
                       blurDataURL='/img/black-affiliate-marketing/community-icon-2.webp'
                     />
@@ -634,7 +648,7 @@ export default function BlackAffiliateMarketing() {
                       alt="Business" 
                       width={80} 
                       height={80} 
-                      loading='lazy'
+                      loading="lazy"
                       quality={90}
                       blurDataURL='/img/black-affiliate-marketing/community-icon-3.webp'
                     />
@@ -695,7 +709,7 @@ export default function BlackAffiliateMarketing() {
                   alt="1" 
                   width={500} 
                   height={176} 
-                  loading="lazy"
+                  loading="lazy" decoding="async"
                   sizes="(max-width: 768px) 100vw, 33vw"
                   blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/4gHYSUNDX1BST0ZJTEUAAQEAAAHIAAAAAAQwAABtbnRyUkdCIFhZWiAH4AABAAEAAAAAAABhY3NwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAA9tYAAQAAAADTLQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAlkZXNjAAAA8AAAACRyWFlaAAABFAAAABRnWFlaAAABKAAAABRiWFlaAAABPAAAABR3dHB0AAABUAAAABRyVFJDAAABZAAAAChnVFJDAAABZAAAAChiVFJDAAABZAAAAChjcHJ0AAABjAAAADxtbHVjAAAAAAAAAAEAAAAMZW5VUwAAACAAAAAcAEcAbwBvAGcAbABlACAASQBuAGMALgAgADIAMAAxADb/2wBDABQODxIPDRQSEBIXFRQdHx4eHRoaHSQtJSAyVC0zLysvMy0/RD49QzQ3REVPS1NUV1pjZGR2foGDhY6NzaGur7L/2wBDARUXFx4aHR4eHbIuIi6ysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrL/wAARCAAIAAoDASIAAhEB"
                 />
@@ -706,7 +720,7 @@ export default function BlackAffiliateMarketing() {
                   alt="8" 
                   width={490} 
                   height={460} 
-                  loading="lazy"
+                  loading="lazy" decoding="async"
                   sizes="(max-width: 768px) 100vw, 33vw"
                   blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/4gHYSUNDX1BST0ZJTEUAAQEAAAHIAAAAAAQwAABtbnRyUkdCIFhZWiAH4AABAAEAAAAAAABhY3NwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAA9tYAAQAAAADTLQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAlkZXNjAAAA8AAAACRyWFlaAAABFAAAABRnWFlaAAABKAAAABRiWFlaAAABPAAAABR3dHB0AAABUAAAABRyVFJDAAABZAAAAChnVFJDAAABZAAAAChiVFJDAAABZAAAAChjcHJ0AAABjAAAADxtbHVjAAAAAAAAAAEAAAAMZW5VUwAAACAAAAAcAEcAbwBvAGcAbABlACAASQBuAGMALgAgADIAMAAxADb/2wBDABQODxIPDRQSEBIXFRQdHx4eHRoaHSQtJSAyVC0zLysvMy0/RD49QzQ3REVPS1NUV1pjZGR2foGDhY6NzaGur7L/2wBDARUXFx4aHR4eHbIuIi6ysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrL/wAARCAAIAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAb/xAAUEAEAAAAAAAAAAAAAAAAAAAAA/8QAFQEBAQAAAAAAAAAAAAAAAAAAAAX/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwCdABmX/9k="
                 />
@@ -717,7 +731,7 @@ export default function BlackAffiliateMarketing() {
                   alt="3" 
                   width={500} 
                   height={176} 
-                  loading="lazy"
+                  loading="lazy" decoding="async"
                   sizes="(max-width: 768px) 100vw, 33vw"
                   blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/4gHYSUNDX1BST0ZJTEUAAQEAAAHIAAAAAAQwAABtbnRyUkdCIFhZWiAH4AABAAEAAAAAAABhY3NwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAA9tYAAQAAAADTLQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAlkZXNjAAAA8AAAACRyWFlaAAABFAAAABRnWFlaAAABKAAAABRiWFlaAAABPAAAABR3dHB0AAABUAAAABRyVFJDAAABZAAAAChnVFJDAAABZAAAAChiVFJDAAABZAAAAChjcHJ0AAABjAAAADxtbHVjAAAAAAAAAAEAAAAMZW5VUwAAACAAAAAcAEcAbwBvAGcAbABlACAASQBuAGMALgAgADIAMAAxADb/2wBDABQODxIPDRQSEBIXFRQdHx4eHRoaHSQtJSAyVC0zLysvMy0/RD49QzQ3REVPS1NUV1pjZGR2foGDhY6NzaGur7L/2wBDARUXFx4aHR4eHbIuIi6ysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrL/wAARCAAIAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAb/xAAUEAEAAAAAAAAAAAAAAAAAAAAA/8QAFQEBAQAAAAAAAAAAAAAAAAAAAAX/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwCdABmX/9k="
                 />
@@ -730,7 +744,7 @@ export default function BlackAffiliateMarketing() {
                   alt="4" 
                   width={896} 
                   height={515} 
-                  loading="lazy"
+                  loading="lazy" decoding="async"
                   sizes="(max-width: 768px) 100vw, 33vw"
                   blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/4gHYSUNDX1BST0ZJTEUAAQEAAAHIAAAAAAQwAABtbnRyUkdCIFhZWiAH4AABAAEAAAAAAABhY3NwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAA9tYAAQAAAADTLQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAlkZXNjAAAA8AAAACRyWFlaAAABFAAAABRnWFlaAAABKAAAABRiWFlaAAABPAAAABR3dHB0AAABUAAAABRyVFJDAAABZAAAAChnVFJDAAABZAAAAChiVFJDAAABZAAAAChjcHJ0AAABjAAAADxtbHVjAAAAAAAAAAEAAAAMZW5VUwAAACAAAAAcAEcAbwBvAGcAbABlACAASQBuAGMALgAgADIAMAAxADb/2wBDABQODxIPDRQSEBIXFRQdHx4eHRoaHSQtJSAyVC0zLysvMy0/RD49QzQ3REVPS1NUV1pjZGR2foGDhY6NzaGur7L/2wBDARUXFx4aHR4eHbIuIi6ysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrL/wAARCAAIAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAb/xAAUEAEAAAAAAAAAAAAAAAAAAAAA/8QAFQEBAQAAAAAAAAAAAAAAAAAAAAX/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwCdABmX/9k="
                 />
@@ -741,7 +755,7 @@ export default function BlackAffiliateMarketing() {
                   alt="5" 
                   width={952} 
                   height={296} 
-                  loading="lazy"
+                  loading="lazy" decoding="async"
                   sizes="(max-width: 768px) 100vw, 33vw"
                   blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/4gHYSUNDX1BST0ZJTEUAAQEAAAHIAAAAAAQwAABtbnRyUkdCIFhZWiAH4AABAAEAAAAAAABhY3NwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAA9tYAAQAAAADTLQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAlkZXNjAAAA8AAAACRyWFlaAAABFAAAABRnWFlaAAABKAAAABRiWFlaAAABPAAAABR3dHB0AAABUAAAABRyVFJDAAABZAAAAChnVFJDAAABZAAAAChiVFJDAAABZAAAAChjcHJ0AAABjAAAADxtbHVjAAAAAAAAAAEAAAAMZW5VUwAAACAAAAAcAEcAbwBvAGcAbABlACAASQBuAGMALgAgADIAMAAxADb/2wBDABQODxIPDRQSEBIXFRQdHx4eHRoaHSQtJSAyVC0zLysvMy0/RD49QzQ3REVPS1NUV1pjZGR2foGDhY6NzaGur7L/2wBDARUXFx4aHR4eHbIuIi6ysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrL/wAARCAAIAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAb/xAAUEAEAAAAAAAAAAAAAAAAAAAAA/8QAFQEBAQAAAAAAAAAAAAAAAAAAAAX/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwCdABmX/9k="
                 />
@@ -752,7 +766,7 @@ export default function BlackAffiliateMarketing() {
                   alt="2" 
                   width={500} 
                   height={176} 
-                  loading="lazy"
+                  loading="lazy" decoding="async"
                   sizes="(max-width: 768px) 100vw, 33vw"
                   blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/4gHYSUNDX1BST0ZJTEUAAQEAAAHIAAAAAAQwAABtbnRyUkdCIFhZWiAH4AABAAEAAAAAAABhY3NwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAA9tYAAQAAAADTLQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAlkZXNjAAAA8AAAACRyWFlaAAABFAAAABRnWFlaAAABKAAAABRiWFlaAAABPAAAABR3dHB0AAABUAAAABRyVFJDAAABZAAAAChnVFJDAAABZAAAAChiVFJDAAABZAAAAChjcHJ0AAABjAAAADxtbHVjAAAAAAAAAAEAAAAMZW5VUwAAACAAAAAcAEcAbwBvAGcAbABlACAASQBuAGMALgAgADIAMAAxADb/2wBDABQODxIPDRQSEBIXFRQdHx4eHRoaHSQtJSAyVC0zLysvMy0/RD49QzQ3REVPS1NUV1pjZGR2foGDhY6NzaGur7L/2wBDARUXFx4aHR4eHbIuIi6ysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrL/wAARCAAIAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAb/xAAUEAEAAAAAAAAAAAAAAAAAAAAA/8QAFQEBAQAAAAAAAAAAAAAAAAAAAAX/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwCdABmX/9k="
                 />
@@ -765,7 +779,7 @@ export default function BlackAffiliateMarketing() {
                   alt="7" 
                   width={489} 
                   height={493} 
-                  loading="lazy"
+                  loading="lazy" decoding="async"
                   sizes="(max-width: 768px) 100vw, 33vw"
                   blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/4gHYSUNDX1BST0ZJTEUAAQEAAAHIAAAAAAQwAABtbnRyUkdCIFhZWiAH4AABAAEAAAAAAABhY3NwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAA9tYAAQAAAADTLQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAlkZXNjAAAA8AAAACRyWFlaAAABFAAAABRnWFlaAAABKAAAABRiWFlaAAABPAAAABR3dHB0AAABUAAAABRyVFJDAAABZAAAAChnVFJDAAABZAAAAChiVFJDAAABZAAAAChjcHJ0AAABjAAAADxtbHVjAAAAAAAAAAEAAAAMZW5VUwAAACAAAAAcAEcAbwBvAGcAbABlACAASQBuAGMALgAgADIAMAAxADb/2wBDABQODxIPDRQSEBIXFRQdHx4eHRoaHSQtJSAyVC0zLysvMy0/RD49QzQ3REVPS1NUV1pjZGR2foGDhY6NzaGur7L/2wBDARUXFx4aHR4eHbIuIi6ysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrL/wAARCAAIAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAb/xAAUEAEAAAAAAAAAAAAAAAAAAAAA/8QAFQEBAQAAAAAAAAAAAAAAAAAAAAX/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwCdABmX/9k="
                 />
@@ -776,7 +790,7 @@ export default function BlackAffiliateMarketing() {
                   alt="6" 
                   width={1656} 
                   height={458} 
-                  loading="lazy"
+                  loading="lazy" decoding="async"
                   sizes="(max-width: 768px) 100vw, 33vw"
                   blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/4gHYSUNDX1BST0ZJTEUAAQEAAAHIAAAAAAQwAABtbnRyUkdCIFhZWiAH4AABAAEAAAAAAABhY3NwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAA9tYAAQAAAADTLQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAlkZXNjAAAA8AAAACRyWFlaAAABFAAAABRnWFlaAAABKAAAABRiWFlaAAABPAAAABR3dHB0AAABUAAAABRyVFJDAAABZAAAAChnVFJDAAABZAAAAChiVFJDAAABZAAAAChjcHJ0AAABjAAAADxtbHVjAAAAAAAAAAEAAAAMZW5VUwAAACAAAAAcAEcAbwBvAGcAbABlACAASQBuAGMALgAgADIAMAAxADb/2wBDABQODxIPDRQSEBIXFRQdHx4eHRoaHSQtJSAyVC0zLysvMy0/RD49QzQ3REVPS1NUV1pjZGR2foGDhY6NzaGur7L/2wBDARUXFx4aHR4eHbIuIi6ysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrL/wAARCAAIAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAb/xAAUEAEAAAAAAAAAAAAAAAAAAAAA/8QAFQEBAQAAAAAAAAAAAAAAAAAAAAX/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwCdABmX/9k="
                 />
@@ -787,7 +801,7 @@ export default function BlackAffiliateMarketing() {
                   alt="9" 
                   width={500} 
                   height={176} 
-                  loading="lazy"
+                  loading="lazy" decoding="async"
                   sizes="(max-width: 768px) 100vw, 33vw"
                   blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/4gHYSUNDX1BST0ZJTEUAAQEAAAHIAAAAAAQwAABtbnRyUkdCIFhZWiAH4AABAAEAAAAAAABhY3NwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAA9tYAAQAAAADTLQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAlkZXNjAAAA8AAAACRyWFlaAAABFAAAABRnWFlaAAABKAAAABRiWFlaAAABPAAAABR3dHB0AAABUAAAABRyVFJDAAABZAAAAChnVFJDAAABZAAAAChiVFJDAAABZAAAAChjcHJ0AAABjAAAADxtbHVjAAAAAAAAAAEAAAAMZW5VUwAAACAAAAAcAEcAbwBvAGcAbABlACAASQBuAGMALgAgADIAMAAxADb/2wBDABQODxIPDRQSEBIXFRQdHx4eHRoaHSQtJSAyVC0zLysvMy0/RD49QzQ3REVPS1NUV1pjZGR2foGDhY6NzaGur7L/2wBDARUXFx4aHR4eHbIuIi6ysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrL/wAARCAAIAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAb/xAAUEAEAAAAAAAAAAAAAAAAAAAAA/8QAFQEBAQAAAAAAAAAAAAAAAAAAAAX/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwCdABmX/9k="
                 />
@@ -1086,7 +1100,7 @@ export default function BlackAffiliateMarketing() {
                           alt={`Testimonial ${index + 1}`}
                           fill
                           className="object-contain"
-                          loading='lazy'
+                          loading="lazy"
                         />
                       </SwiperSlide>
                     ))}
