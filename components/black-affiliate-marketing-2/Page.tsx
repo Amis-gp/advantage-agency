@@ -271,7 +271,7 @@ export default function BlackAffiliateMarketing() {
 
               <li className="">
                 <span className="text-red-600 font-bold">Successfully scaled multiple clients </span>
-                <span>from a $10,000 monthly ad spend to an $1,000,000 in monthly ad spend.</span>
+                <span>from a €10,000 monthly ad spend to an €1,000,000 in monthly ad spend.</span>
               </li>
 
               {/* <li className="">
@@ -357,7 +357,7 @@ export default function BlackAffiliateMarketing() {
                 Soon, I was presenting to crowds of 200+, winning company-wide pitch competitions in front of the top Googlers from Dublin. I <span className="font-bold">won twice out of two appearances</span> — and earned a reputation as one of the top performers in the office.
               </p>
               <p>
-                At the time, $1,500/month felt like a fortune, especially in Poland, where the average was $700. But it still wasn't freedom. I lived in a cramped apartment with six others, didn't eat out, didn't buy clothes — just <span className="text-red-600 font-bold">saved like a machine</span>. I managed to put away $10,000 in seven months at age 21.
+                At the time, €1,500/month felt like a fortune, especially in Poland, where the average was €700. But it still wasn't freedom. I lived in a cramped apartment with six others, didn't eat out, didn't buy clothes — just <span className="text-red-600 font-bold">saved like a machine</span>. I managed to put away €10,000 in seven months at age 21.
               </p>
               <p>
                 Then I lost all of it — testing 10 e-commerce projects that flopped. That pain taught me more than any win ever could. As a foreigner in Poland, I faced discrimination and exclusion. No one rolled out a red carpet. But that only made me <span className="font-bold">more determined to carve my own path</span> — by any means necessary.
@@ -372,10 +372,10 @@ export default function BlackAffiliateMarketing() {
                 After Google, I went all-in on freelancing — running Google Ads, building websites, and helping small businesses go digital. It was just me, grinding <span className="text-red-600 font-bold">9 AM to 9 PM, every day</span>. No team, no safety net — just hustle and referrals.
               </p>
               <p>
-                Six months in, I hit a wall. Freelancing wasn't stable, and the income ($1.5k–$2k/month) wasn't enough for the life I wanted. So I made a move — rented a shared flat, and spent an entire month doing nothing but job interviews. <span className="font-bold">27 of them</span>, to be exact.
+                Six months in, I hit a wall. Freelancing wasn't stable, and the income (€1.5k–€2k/month) wasn't enough for the life I wanted. So I made a move — rented a shared flat, and spent an entire month doing nothing but job interviews. <span className="font-bold">27 of them</span>, to be exact.
               </p>
               <p>
-                The result? I landed <span className="text-red-600 font-bold">two high-pressure corporate roles at once</span> — Voluum and BenefitHub — both in SaaS sales. You can verify that on my <Link href="https://www.linkedin.com/in/stepan-potichnyi/" target="_blank" className="text-blue-500 font-bold">LinkedIn profile</Link>. For nearly three years, I carried the revenue of two tech companies on my back. No weekends. No balance. Just pure output. My income jumped to $3k–$4k/month. I finally started saving — but my health, energy, and freedom were running low.
+                The result? I landed <span className="text-red-600 font-bold">two high-pressure corporate roles at once</span> — Voluum and BenefitHub — both in SaaS sales. You can verify that on my <Link href="https://www.linkedin.com/in/stepan-potichnyi/" target="_blank" className="text-blue-500 font-bold">LinkedIn profile</Link>. For nearly three years, I carried the revenue of two tech companies on my back. No weekends. No balance. Just pure output. My income jumped to €3k–€4k/month. I finally started saving — but my health, energy, and freedom were running low.
               </p>
             </div>
 
@@ -418,15 +418,15 @@ export default function BlackAffiliateMarketing() {
                 In February 2022, war broke out in my homeland. Russia invaded Ukraine. My family was in danger, missiles were flying, and everything I thought mattered suddenly didn't. That moment hit hard — I realized that the life I had built wasn't enough. I needed to create <span className="text-red-600 font-bold">real freedom</span>.
               </p>
               <p>
-                So I went all-in. I started donating to our army and investing $2,000–$3,000/month into affiliate marketing. At first, I lost money. A lot. I was doing it the "standard" way — and failing. So I went dark. <span className="font-bold">Locked in. Spent months testing, studying, building</span>. Sleepless nights, no weekends, just work. Eventually, I <span className="text-red-600 font-bold">cracked the code</span>.
+                So I went all-in. I started donating to our army and investing €2,000–€3,000/month into affiliate marketing. At first, I lost money. A lot. I was doing it the "standard" way — and failing. So I went dark. <span className="font-bold">Locked in. Spent months testing, studying, building</span>. Sleepless nights, no weekends, just work. Eventually, I <span className="text-red-600 font-bold">cracked the code</span>.
               </p>
               <p>
-                Everything changed. Over the next six months, I pulled nearly <span className="text-red-600 font-bold">$400,000 in net profit</span>. I bought my dream car, traveled across Europe — Ibiza, Marbella, Positano, Amsterdam, London, Berlin. I quit both jobs. For the first time ever, I had full control of my time and income.
+                Everything changed. Over the next six months, I pulled nearly <span className="text-red-600 font-bold">€400,000 in net profit</span>. I bought my dream car, traveled across Europe — Ibiza, Marbella, Positano, Amsterdam, London, Berlin. I quit both jobs. For the first time ever, I had full control of my time and income.
               </p>
               <p>
                 That success led to my agency — <span className="font-bold">ADvantage</span> 
                 <Link href="https://advantage-agency.co" target="_blank" className="text-blue-500 font-bold"> (here's the link)</Link> —
-                and now, this course. I'm not here to sell dreams. I'm here to show you the path, and if you're serious, even offer you a seat at the table. My <span className="text-red-600 font-bold">top students now earn up to $5,000/month</span> working with us. This is just a part of my story. Nothing about it was easy. But if I did it — so can you. And I'll show you how.
+                and now, this course. I'm not here to sell dreams. I'm here to show you the path, and if you're serious, even offer you a seat at the table. My <span className="text-red-600 font-bold">top students now earn up to €5,000/month</span> working with us. This is just a part of my story. Nothing about it was easy. But if I did it — so can you. And I'll show you how.
               </p>
             </div>
           </div>
@@ -811,7 +811,7 @@ export default function BlackAffiliateMarketing() {
               <h3 className="text-2xl font-bold mb-2">Basic</h3>
               <p className="text-gray-400 mb-8 h-12">Become a Black Belt in Affiliate Marketing</p>
               
-              <div className="text-5xl font-bold mb-8 group-hover:text-red-500 transition-colors">$999</div>
+              <div className="text-5xl font-bold mb-8 group-hover:text-red-500 transition-colors">€999</div>
               
               <div className="mt-6 mb-8 text-center">
                 <Link href="/black-affiliate-marketing-2/form" className="w-full bg-red-800 hover:bg-red-700 text-white py-3 px-6 rounded-lg transition-colors">
@@ -864,7 +864,7 @@ export default function BlackAffiliateMarketing() {
               <h3 className="text-2xl font-bold mb-2">Black Affiliate</h3>
               <p className="text-gray-400 mb-8 h-12">Master Affiliate Marketing with Pro Mentorship</p>
               
-              <div className="text-5xl font-bold mb-8 group-hover:text-red-500 transition-colors">$2990</div>
+              <div className="text-5xl font-bold mb-8 group-hover:text-red-500 transition-colors">€2990</div>
               
               <div className="mt-6 mb-8 text-center">
                 <Link href="/black-affiliate-marketing-2/form" className="w-full bg-red-800 hover:bg-red-700 text-white py-3 px-6 rounded-lg transition-colors">
@@ -897,7 +897,7 @@ export default function BlackAffiliateMarketing() {
               <h3 className="text-2xl font-bold mb-2">Vip</h3>
               <p className="text-gray-400 mb-8 h-12">Unlock VIP Secrets for Unprecedented Success</p>
               
-              <div className="text-5xl font-bold mb-8 group-hover:text-red-500 transition-colors">$4999</div>
+              <div className="text-5xl font-bold mb-8 group-hover:text-red-500 transition-colors">€4999</div>
               
               <div className="mt-6 mb-8 text-center">
                 <Link href="/black-affiliate-marketing-2/form" className="w-full bg-red-800 hover:bg-red-700 text-white py-3 px-6 rounded-lg transition-colors">
@@ -945,7 +945,7 @@ export default function BlackAffiliateMarketing() {
               },
               {
                 question: "The course seems to be quite expensive, why?",
-                answer: "I've done thousands of tests in order to get to what really works and build the whole system around it, the pricing is reasonable, considering I've spent more than $100k and teaching you for $1k, and higher plans cost more because I invest a lot of my time to help you."
+                answer: "I've done thousands of tests in order to get to what really works and build the whole system around it, the pricing is reasonable, considering I've spent more than €100k and teaching you for €1k, and higher plans cost more because I invest a lot of my time to help you."
               },
               {
                 question: "How much I should work per day?",

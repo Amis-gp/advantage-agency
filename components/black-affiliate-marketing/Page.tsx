@@ -292,7 +292,7 @@ export default function BlackAffiliateMarketing() {
 
               <li className="">
                 <span className="text-red-600 font-bold">Successfully scaled multiple clients </span>
-                <span>from a $10,000 monthly ad spend to an $1,000,000 in monthly ad spend.</span>
+                <span>from a €10,000 monthly ad spend to an €1,000,000 in monthly ad spend.</span>
               </li>
 
               <li className="">
@@ -380,10 +380,10 @@ export default function BlackAffiliateMarketing() {
                 The second photo captures a moment from a presentation I delivered to an audience of 200+ people 🎯. Googlers from the Dublin office had come to Poland for a 'pitch-off' event where I competed with five other top performers. I <span className="font-bold">proudly won this contest twice</span> out of 2 participations. Working for Google was a <span className="text-red-600 font-bold">significant achievement</span>, and I established myself as one of the best employees there. 🏆
               </p>
               <p>
-                Back then, I thought I was earning a fortune. It was certainly an improvement from the less satisfying jobs, but it was still a far cry from my ultimate goals. Keep in mind, it is Poland, where the average salary was around $700 per month. I was earning <span className="font-bold">$1,500 per month</span> 💰, which was considered a substantial income. Saving was still challenging, but I managed to save $900 or $1k - don't ask me how I did it. I lived with six other people in a cramped room, and my ability to save was a result of <span className="text-red-600 font-bold">frugality</span>. I never dined out with friends, refrained from buying clothes or anything else, and essentially lived a minimalist lifestyle. It wasn't living; it was surviving. 🌱
+                Back then, I thought I was earning a fortune. It was certainly an improvement from the less satisfying jobs, but it was still a far cry from my ultimate goals. Keep in mind, it is Poland, where the average salary was around €700 per month. I was earning <span className="font-bold">€1,500 per month</span> 💰, which was considered a substantial income. Saving was still challenging, but I managed to save €900 or €1k - don't ask me how I did it. I lived with six other people in a cramped room, and my ability to save was a result of <span className="text-red-600 font-bold">frugality</span>. I never dined out with friends, refrained from buying clothes or anything else, and essentially lived a minimalist lifestyle. It wasn't living; it was surviving. 🌱
               </p>
               <p>
-                In the midst of it all, I embarked on the creation of <span className="font-bold">ten different e-commerce websites</span> to test various concepts 💻. However, I ended up losing all the money I had saved - a total of $10,000. In Poland, people might amass such savings after two or 3 years of work on a good job and if they save at least $500 per month, while earning $700, but I achieved it in just <span className="text-red-600 font-bold">seven months, at the age of 21</span>. It's important to note that as I'm an immigrant here, many times I faced discrimination due to my nationality. No one welcomed me here in Poland, rather the opposite. 💪
+                In the midst of it all, I embarked on the creation of <span className="font-bold">ten different e-commerce websites</span> to test various concepts 💻. However, I ended up losing all the money I had saved - a total of €10,000. In Poland, people might amass such savings after two or 3 years of work on a good job and if they save at least €500 per month, while earning €700, but I achieved it in just <span className="text-red-600 font-bold">seven months, at the age of 21</span>. It's important to note that as I'm an immigrant here, many times I faced discrimination due to my nationality. No one welcomed me here in Poland, rather the opposite. 💪
               </p>
             </div>
           </div>
@@ -395,10 +395,10 @@ export default function BlackAffiliateMarketing() {
                 "After leaving Google, I ventured into freelancing, managing Google ads for clients, website development, and assisting businesses with their digital transformation 💼. It had its upsides - I had <span className="font-bold">many clients from word of mouth</span>. However, I was a one-person show, working tirelessly throughout the day, without the confines of a traditional 9-5 schedule. It was more like a <span className="text-red-600 font-bold">9 am to 9 pm routine</span>. 
               </p>
               <p>
-                Around the six-month mark, I recognized the need for change. Freelancing wasn't providing the stability I desired, and the income was far from substantial, averaging between $1,500 to $2,000 💰. I decided to rent a room in a shared flat with 3 other people, a significant improvement from my previous situation. Subsequently, I dedicated an entire month to a <span className="font-bold">relentless job hunt, participating in over 27 job interviews</span> 🎯. I received numerous offers and chose to take on <span className="text-red-600 font-bold">two demanding corporate sales positions</span> ( Voluum and BenefitHub ), you can verify it on my <Link href="https://www.linkedin.com/in/stepan-potichnyi/" target="_blank" className="text-blue-500 font-bold">LinkedIn profile</Link>.
+                Around the six-month mark, I recognized the need for change. Freelancing wasn't providing the stability I desired, and the income was far from substantial, averaging between €1,500 to €2,000 💰. I decided to rent a room in a shared flat with 3 other people, a significant improvement from my previous situation. Subsequently, I dedicated an entire month to a <span className="font-bold">relentless job hunt, participating in over 27 job interviews</span> 🎯. I received numerous offers and chose to take on <span className="text-red-600 font-bold">two demanding corporate sales positions</span> ( Voluum and BenefitHub ), you can verify it on my <Link href="https://www.linkedin.com/in/stepan-potichnyi/" target="_blank" className="text-blue-500 font-bold">LinkedIn profile</Link>.
               </p>
               <p>
-                Reflecting on that period, it was nothing short of a whirlwind 🌪️. Each day was filled with stress, as I bore the responsibility for the revenue in two IT SaaS companies. I sustained this lifestyle for <span className="font-bold">nearly three years</span>, which took a toll on my health, and life became synonymous with work. I had no days off, along with multiple side projects and tests conducted during my spare time. However, the income improved to a range of <span className="text-red-600 font-bold">$3,000 to $4,000 per month</span> from both jobs, and I managed to save. 💪
+                Reflecting on that period, it was nothing short of a whirlwind 🌪️. Each day was filled with stress, as I bore the responsibility for the revenue in two IT SaaS companies. I sustained this lifestyle for <span className="font-bold">nearly three years</span>, which took a toll on my health, and life became synonymous with work. I had no days off, along with multiple side projects and tests conducted during my spare time. However, the income improved to a range of <span className="text-red-600 font-bold">€3,000 to €4,000 per month</span> from both jobs, and I managed to save. 💪
               </p>
             </div>
 
@@ -438,18 +438,18 @@ export default function BlackAffiliateMarketing() {
             </div>
             <div className="md:w-[120%] space-y-8 text-left text-lg">
               <p>
-                "In February 2022, a war broke out in my homeland, russia invaded. My family and loved ones were in danger, and the threat of missiles reaching anywhere in Ukraine persisted until today. This was the <span className="text-red-600 font-bold">turning point</span> that made me realize my current efforts were insufficient. 🔄 In addition to making donations to our army, I began investing $2,000 to $3,000 per month in online advertising, specifically affiliate marketing.
+                "In February 2022, a war broke out in my homeland, russia invaded. My family and loved ones were in danger, and the threat of missiles reaching anywhere in Ukraine persisted until today. This was the <span className="text-red-600 font-bold">turning point</span> that made me realize my current efforts were insufficient. 🔄 In addition to making donations to our army, I began investing €2,000 to €3,000 per month in online advertising, specifically affiliate marketing.
               </p>
               <p>
                 I faced significant losses initially, but I soon realized I was approaching things the wrong way. With the budget I had, it seemed almost impossible to achieve profitability through conventional methods. So, I embarked on a journey of months, <span className="font-bold">sleepless nights, and weekends, tirelessly searching for answers</span>. Finally, I <span className="text-red-600 font-bold">cracked the code</span>. 🔑
               </p>
               <p>
-                Since then, my life transformed into what you might see on Instagram - the 'high life,' as they call it. I generated nearly <span className="text-red-600 font-bold">$400,000 in net profit</span> 🎯, bought my dream car, customized it to my liking, and traveled to destinations like Ibiza, Mallorca, Marbella ( Spain ) then Portugal, Positano, Italy, and Croatia. Got tired of the sea and went to London many times, Amsterdam, Paris, Berlin and this all in just <span className="font-bold">6 months</span>. I enjoyed a life I never thought possible. Finally I quit my jobs, it felt so good. 🌟
+                Since then, my life transformed into what you might see on Instagram - the 'high life,' as they call it. I generated nearly <span className="text-red-600 font-bold">€400,000 in net profit</span> 🎯, bought my dream car, customized it to my liking, and traveled to destinations like Ibiza, Mallorca, Marbella ( Spain ) then Portugal, Positano, Italy, and Croatia. Got tired of the sea and went to London many times, Amsterdam, Paris, Berlin and this all in just <span className="font-bold">6 months</span>. I enjoyed a life I never thought possible. Finally I quit my jobs, it felt so good. 🌟
               </p>
               <p>
                 Subsequently, I established a digital marketing agency, <span className="font-bold">ADvantage</span> 
                 <Link href="https://advantage-agency.co" target="_blank" className="text-blue-500 font-bold"> (here's the link)</Link>.
-                I now have a team, and we're in the process of expanding. This journey led me to create a course where I aim not only to share my secrets and help others make money online but also to provide an opportunity to join my team. The <span className="text-red-600 font-bold">best-performing students from my course have the chance to earn $5,000</span>. So don't hesitate. This is a short part of my story, just to give you my background and to show that it wasn't easy at all. But if I made it, I'm totally confident that anyone can do it, and I am here to help. 💪
+                I now have a team, and we're in the process of expanding. This journey led me to create a course where I aim not only to share my secrets and help others make money online but also to provide an opportunity to join my team. The <span className="text-red-600 font-bold">best-performing students from my course have the chance to earn €5,000</span>. So don't hesitate. This is a short part of my story, just to give you my background and to show that it wasn't easy at all. But if I made it, I'm totally confident that anyone can do it, and I am here to help. 💪
               </p>
             </div>
           </div>
@@ -574,7 +574,7 @@ export default function BlackAffiliateMarketing() {
                 <div className="bg-gray-50 rounded-full p-6 mx-auto w-fit">
                   <Image src="/img/black-affiliate-marketing/ico-13.png" alt="Ability to get Hired" width={70} height={70} loading='lazy'/>
                 </div>
-                <p>Ability to get Hired, and Ability to WIN $5k</p>
+                <p>Ability to get Hired, and Ability to WIN €5k</p>
               </div>
             </div>
           </div>
@@ -844,7 +844,7 @@ export default function BlackAffiliateMarketing() {
               <h3 className="text-2xl font-bold mb-2">Basic</h3>
               <p className="text-gray-400 mb-8 h-12">Become a Black Belt in Affiliate Marketing</p>
               
-              <div className="text-5xl font-bold mb-8 group-hover:text-red-500 transition-colors">$999</div>
+              <div className="text-5xl font-bold mb-8 group-hover:text-red-500 transition-colors">€999</div>
               
               <div className="mt-6 mb-8 text-center">
                 <Link href="/black-affiliate-marketing/form" className="w-full bg-red-800 hover:bg-red-700 text-white py-3 px-6 rounded-lg transition-colors">
@@ -897,7 +897,7 @@ export default function BlackAffiliateMarketing() {
               <h3 className="text-2xl font-bold mb-2">Black Affiliate</h3>
               <p className="text-gray-400 mb-8 h-12">Master Affiliate Marketing with Pro Mentorship</p>
               
-              <div className="text-5xl font-bold mb-8 group-hover:text-red-500 transition-colors">$2990</div>
+              <div className="text-5xl font-bold mb-8 group-hover:text-red-500 transition-colors">€2990</div>
               
               <div className="mt-6 mb-8 text-center">
                 <Link href="/black-affiliate-marketing/form" className="w-full bg-red-800 hover:bg-red-700 text-white py-3 px-6 rounded-lg transition-colors">
@@ -930,7 +930,7 @@ export default function BlackAffiliateMarketing() {
               <h3 className="text-2xl font-bold mb-2">Vip</h3>
               <p className="text-gray-400 mb-8 h-12">Unlock VIP Secrets for Unprecedented Success</p>
               
-              <div className="text-5xl font-bold mb-8 group-hover:text-red-500 transition-colors">$4999</div>
+              <div className="text-5xl font-bold mb-8 group-hover:text-red-500 transition-colors">€4999</div>
               
                <div className="mt-6 mb-8 text-center">
                 <Link href="/black-affiliate-marketing/form" className="w-full bg-red-800 hover:bg-red-700 text-white py-3 px-6 rounded-lg transition-colors">
@@ -978,7 +978,7 @@ export default function BlackAffiliateMarketing() {
               },
               {
                 question: "The course seems to be quite expensive, why?",
-                answer: "I've done thousands of tests in order to get to what really works and build the whole system around it, the pricing is reasonable, considering I've spent more than $100k and teaching you for $1k, and higher plans cost more because I invest a lot of my time to help you."
+                answer: "I've done thousands of tests in order to get to what really works and build the whole system around it, the pricing is reasonable, considering I've spent more than €100k and teaching you for €1k, and higher plans cost more because I invest a lot of my time to help you."
               },
               {
                 question: "How much I should work per day?",
