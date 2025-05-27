@@ -1,6 +1,6 @@
 "use client"
 
-import React, { useState, useRef, Fragment } from 'react';
+import React, { useState, useRef, Fragment, useCallback } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { Dialog, Transition } from '@headlessui/react';
@@ -11,7 +11,7 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 
-const VideoPlayer = ({ 
+const VideoPlayerComponent = ({ 
   videoUrl, 
   placeholder,
   className
@@ -26,15 +26,15 @@ const VideoPlayer = ({
   const [isVideoLoaded, setIsVideoLoaded] = useState(false);
 
   // Ліниве завантаження відео тільки при кліку
-  const loadVideo = () => {
+  const loadVideo = useCallback(() => {
     if (videoRef.current && !isVideoLoaded) {
       videoRef.current.src = videoUrl;
       videoRef.current.load();
       setIsVideoLoaded(true);
     }
-  };
+  }, [videoUrl, isVideoLoaded]);
 
-  const togglePlay = () => {
+  const togglePlay = useCallback(() => {
     if (!isVideoLoaded) {
       loadVideo();
     }
@@ -50,7 +50,7 @@ const VideoPlayer = ({
       }
       setIsPlaying(!isPlaying);
     }
-  };
+  }, [isVideoLoaded, isPlaying, loadVideo]);
 
   return (
     <div className="relative w-full overflow-hidden group cursor-pointer" onClick={togglePlay}>
@@ -93,6 +93,9 @@ const VideoPlayer = ({
     </div>
   );
 };
+
+// Мемоізований компонент VideoPlayer
+const VideoPlayer = React.memo(VideoPlayerComponent);
 
 const sectionHeaderClass = `
   text-5xl 
@@ -675,6 +678,31 @@ export default function BlackAffiliateMarketing() {
           <h2 className={sectionHeaderClass}>
             Testimonials
           </h2>
+
+          {/* First Row - Videos */}
+          <div className="gap-4 md:flex justify-between">
+            <div className="md:w-2/5 h-[360px] mx-auto">
+              <VideoPlayer 
+                videoUrl="/img/black-affiliate-marketing/video-1.mp4" 
+                className="h-[360px]" 
+                placeholder="/img/black-affiliate-marketing/video-1-placeholder.webp" 
+              />
+            </div>
+            <div className=" md:w-2/3 h-[360px] mx-auto">
+              <VideoPlayer 
+                videoUrl="/img/black-affiliate-marketing/video-2.mp4" 
+                className="h-[360px]" 
+                placeholder="/img/black-affiliate-marketing/video-2-placeholder.webp"
+              />
+            </div>
+            <div className="aspect-[4/5] md:w-2/5 h-[360px] mx-auto mb-8 md:mb-0">
+              <VideoPlayer 
+                videoUrl="/img/black-affiliate-marketing/video-3.mp4" 
+                className="h-[360px]" 
+                placeholder="/img/black-affiliate-marketing/video-3-placeholder.webp"
+              />
+            </div>
+          </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4 items-center sm:mt-4">
             <div className="space-y-4">
