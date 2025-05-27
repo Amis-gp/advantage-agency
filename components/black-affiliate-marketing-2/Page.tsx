@@ -4,12 +4,16 @@ import React, { useState, useRef, Fragment, useCallback } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { Dialog, Transition } from '@headlessui/react';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { Navigation, Pagination } from 'swiper/modules';
+import dynamic from 'next/dynamic';
 
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
+
+const Swiper = dynamic(() => import('swiper/react').then(mod => mod.Swiper), { ssr: false });
+const SwiperSlide = dynamic(() => import('swiper/react').then(mod => mod.SwiperSlide), { ssr: false });
+
+import { Navigation, Pagination } from 'swiper/modules';
 
 const VideoPlayerComponent = ({ 
   videoUrl, 
@@ -25,7 +29,6 @@ const VideoPlayerComponent = ({
   const [isPlaying, setIsPlaying] = useState(false);
   const [isVideoLoaded, setIsVideoLoaded] = useState(false);
 
-  // Ліниве завантаження відео тільки при кліку
   const loadVideo = useCallback(() => {
     if (videoRef.current && !isVideoLoaded) {
       videoRef.current.src = videoUrl;
@@ -117,6 +120,8 @@ export default function BlackAffiliateMarketing() {
   const [selectedImage, setSelectedImage] = useState('');
   const [openFaq, setOpenFaq] = useState<number | null>(null);
 
+  // testimonialImages та faqList тепер глобальні
+
   const testimonialImages = [
     '/img/black-affiliate-marketing/testimonial-1.jpg',
     '/img/black-affiliate-marketing/testimonial-2.jpg',
@@ -127,6 +132,41 @@ export default function BlackAffiliateMarketing() {
     '/img/black-affiliate-marketing/testimonial-7.jpg',
     '/img/black-affiliate-marketing/testimonial-8.jpg',
     '/img/black-affiliate-marketing/testimonial-9.jpg'
+  ];
+
+  const faqList = [
+    {
+      question: "How much is possible to earn per month?",
+      answer: "There is no limit as such, the more you spend on ads - the more you earn, all comes down to your ROI. I'm offering basically a hand holding until you get your first payouts. Consistency is the key."
+    },
+    {
+      question: "How quickly will I get my first payout?",
+      answer: "Depends on the offer type, there are offers that pay daily, that are offers that pay monthly, you see your sales every day, then you can withdraw your money from affiliate network and invest in ads more or buy yourself nice things. But for your first 5 payouts I would hold off shopping and invest in ads."
+    },
+    {
+      question: "The course seems to be quite expensive, why?",
+      answer: "I've done thousands of tests in order to get to what really works and build the whole system around it, the pricing is reasonable, considering I've spent more than €100k and teaching you for €1k, and higher plans cost more because I invest a lot of my time to help you."
+    },
+    {
+      question: "How much I should work per day?",
+      answer: "It is quite individual, depending how much stuff you can get done and how fast you learn. I would recommend to consider it as a part-time or full-time job, the more time you invest in this, the better you become and less you need to work. It is possible to automate many processes and work a few hours per day."
+    },
+    {
+      question: "What if I don't like the course?",
+      answer: "I guess what matters is a result, if you are making decent money working remotely from any country - it was worth it being consistent and not giving up. That's why we have a community, and teams to make sure you won't abandon it. I also offer a full refund, if you did what was required but never earned nothing."
+    },
+    {
+      question: "Why is it called \"black affiliate marketing\"?",
+      answer: "I was thinking about the name, and concerned if it wouldn't make an impression as something bad. Not at all, it is just a different side of the affiliate marketing with specific technical aspects and techniques that will give you a huge advantage over competition, bringing you more conversions and profit."
+    },
+    {
+      question: "Will it work in my country?",
+      answer: "Yes! If you are from the US, UK, CA, AU, - you should quickly get your first results. If you are from Europe - also pretty quick. If you are from other countries, it might take a bit more time, but it will work as well, as it is based on the internet."
+    },
+    {
+      question: "How long will I have access to the course?",
+      answer: "You will have access to the course for a lifetime, you can always get back to it when needed."
+    }
   ];
 
   function openImage(image: string) {
@@ -261,7 +301,7 @@ export default function BlackAffiliateMarketing() {
               quality={100}
               loading="lazy"
               placeholder="blur"
-              blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/4gHYSUNDX1BST0ZJTEUAAQEAAAHIAAAAAAQwAABtbnRyUkdCIFhZWiAH4AABAAEAAAAAAABhY3NwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAA9tYAAQAAAADTLQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAlkZXNjAAAA8AAAACRyWFlaAAABFAAAABRnWFlaAAABKAAAABRiWFlaAAABPAAAABR3dHB0AAABUAAAABRyVFJDAAABZAAAAChnVFJDAAABZAAAAChiVFJDAAABZAAAAChjcHJ0AAABjAAAADxtbHVjAAAAAAAAAAEAAAAMZW5VUwAAAAgAAAAcAHMAUgBHAEJYWVogAAAAAAAAb6IAADj1AAADkFhZWiAAAAAAAABimQAAt4UAABjaWFlaIAAAAAAAACSgAAAPhAAAts9YWVogAAAAAAAA9tYAAQAAAADTLXBhcmEAAAAAAAQAAAACZmYAAPKnAAANWQAAE9AAAApbAAAAAAAAAABtbHVjAAAAAAAAAAEAAAAMZW5VUwAAACAAAAAcAEcAbwBvAGcAbABlACAASQBuAGMALgAgADIAMAAxADb/2wBDABQODxIPDRQSEBIXFRQdHx4eHRoaHSQtJSAyVC0zLysvMy0/RD49QzQ3REVPS1NUV1pjZGR2foGDhY6NzaGur7L/2wBDARUXFx4aHR4eHbIuIi6ysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrL/wAARCAAIAAoDASIAAhEB"
+              blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/4gHYSUNDX1BST0ZJTEUAAQEAAAHIAAAAAAQwAABtbnRyUkdCIFhZWiAH4AABAAEAAAAAAABhY3NwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAA9tYAAQAAAADTLQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAlkZXNjAAAA8AAAACRyWFlaAAABFAAAABRnWFlaAAABKAAAABRiWFlaAAABPAAAABR3dHB0AAABUAAAABRyVFJDAAABZAAAAChnVFJDAAABZAAAAChiVFJDAAABZAAAAChjcHJ0AAABjAAAADxtbHVjAAAAAAAAAAEAAAAMZW5VUwAAACAAAAAcAEcAbwBvAGcAbABlACAASQBuAGMALgAgADIAMAAxADb/2wBDABQODxIPDRQSEBIXFRQdHx4eHRoaHSQtJSAyVC0zLysvMy0/RD49QzQ3REVPS1NUV1pjZGR2foGDhY6NzaGur7L/2wBDARUXFx4aHR4eHbIuIi6ysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrL/wAARCAAIAAoDASIAAhEB"
             />
           </div>
 
@@ -303,7 +343,7 @@ export default function BlackAffiliateMarketing() {
                   sizes="40px"
                   quality={80}
                   placeholder="blur"
-                  blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/4gHYSUNDX1BST0ZJTEUAAQEAAAHIAAAAAAQwAABtbnRyUkdCIFhZWiAH4AABAAEAAAAAAABhY3NwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAA9tYAAQAAAADTLQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAlkZXNjAAAA8AAAACRyWFlaAAABFAAAABRnWFlaAAABKAAAABRiWFlaAAABPAAAABR3dHB0AAABUAAAABRyVFJDAAABZAAAAChnVFJDAAABZAAAAChiVFJDAAABZAAAAChjcHJ0AAABjAAAADxtbHVjAAAAAAAAAAEAAAAMZW5VUwAAAAgAAAAcAHMAUgBHAEJYWVogAAAAAAAAb6IAADj1AAADkFhZWiAAAAAAAABimQAAt4UAABjaWFlaIAAAAAAAACSgAAAPhAAAts9YWVogAAAAAAAA9tYAAQAAAADTLXBhcmEAAAAAAAQAAAACZmYAAPKnAAANWQAAE9AAAApbAAAAAAAAAABtbHVjAAAAAAAAAAEAAAAMZW5VUwAAACAAAAAcAEcAbwBvAGcAbABlACAASQBuAGMALgAgADIAMAAxADb/2wBDABQODxIPDRQSEBIXFRQdHx4eHRoaHSQtJSAyVC0zLysvMy0/RD49QzQ3REVPS1NUV1pjZGR2foGDhY6NzaGur7L/2wBDARUXFx4aHR4eHbIuIi6ysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrL/wAARCAAIAAoDASIAAhEB"
+                  blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/4gHYSUNDX1BST0ZJTEUAAQEAAAHIAAAAAAQwAABtbnRyUkdCIFhZWiAH4AABAAEAAAAAAABhY3NwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAA9tYAAQAAAADTLQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAlkZXNjAAAA8AAAACRyWFlaAAABFAAAABRnWFlaAAABKAAAABRiWFlaAAABPAAAABR3dHB0AAABUAAAABRyVFJDAAABZAAAAChnVFJDAAABZAAAAChiVFJDAAABZAAAAChjcHJ0AAABjAAAADxtbHVjAAAAAAAAAAEAAAAMZW5VUwAAACAAAAAcAEcAbwBvAGcAbABlACAASQBuAGMALgAgADIAMAAxADb/2wBDABQODxIPDRQSEBIXFRQdHx4eHRoaHSQtJSAyVC0zLysvMy0/RD49QzQ3REVPS1NUV1pjZGR2foGDhY6NzaGur7L/2wBDARUXFx4aHR4eHbIuIi6ysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrL/wAARCAAIAAoDASIAAhEB"
                 />
               </a>
               <a href="https://www.instagram.com/stepan_knows" target="_blank" className="hover:scale-110 transition-all duration-300">
@@ -343,7 +383,7 @@ export default function BlackAffiliateMarketing() {
                 className="rounded-lg object-cover max-w-[330px] max-h-[400px]"
                 loading="lazy"
                 quality={90}
-                blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/4gHYSUNDX1BST0ZJTEUAAQEAAAHIAAAAAAQwAABtbnRyUkdCIFhZWiAH4AABAAEAAAAAAABhY3NwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAA9tYAAQAAAADTLQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAlkZXNjAAAA8AAAACRyWFlaAAABFAAAABRnWFlaAAABKAAAABRiWFlaAAABPAAAABR3dHB0AAABUAAAABRyVFJDAAABZAAAAChnVFJDAAABZAAAAChiVFJDAAABZAAAAChjcHJ0AAABjAAAADxtbHVjAAAAAAAAAAEAAAAMZW5VUwAAAAgAAAAcAHMAUgBHAEJYWVogAAAAAAAAb6IAADj1AAADkFhZWiAAAAAAAABimQAAt4UAABjaWFlaIAAAAAAAACSgAAAPhAAAts9YWVogAAAAAAAA9tYAAQAAAADTLXBhcmEAAAAAAAQAAAACZmYAAPKnAAANWQAAE9AAAApbAAAAAAAAAABtbHVjAAAAAAAAAAEAAAAMZW5VUwAAACAAAAAcAEcAbwBvAGcAbABlACAASQBuAGMALgAgADIAMAAxADb/2wBDABQODxIPDRQSEBIXFRQdHx4eHRoaHSQtJSAyVC0zLysvMy0/RD49QzQ3REVPS1NUV1pjZGR2foGDhY6NzaGur7L/2wBDARUXFx4aHR4eHbIuIi6ysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrL/wAARCAAIAAoDASIAAhEB"
+                blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/4gHYSUNDX1BST0ZJTEUAAQEAAAHIAAAAAAQwAABtbnRyUkdCIFhZWiAH4AABAAEAAAAAAABhY3NwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAA9tYAAQAAAADTLQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAlkZXNjAAAA8AAAACRyWFlaAAABFAAAABRnWFlaAAABKAAAABRiWFlaAAABPAAAABR3dHB0AAABUAAAABRyVFJDAAABZAAAAChnVFJDAAABZAAAAChiVFJDAAABZAAAAChjcHJ0AAABjAAAADxtbHVjAAAAAAAAAAEAAAAMZW5VUwAAACAAAAAcAEcAbwBvAGcAbABlACAASQBuAGMALgAgADIAMAAxADb/2wBDABQODxIPDRQSEBIXFRQdHx4eHRoaHSQtJSAyVC0zLysvMy0/RD49QzQ3REVPS1NUV1pjZGR2foGDhY6NzaGur7L/2wBDARUXFx4aHR4eHbIuIi6ysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrL/wAARCAAIAAoDASIAAhEB"
               />
             </div>
           </div>
@@ -951,40 +991,7 @@ export default function BlackAffiliateMarketing() {
           </h2>
 
           <div className="space-y-4">
-            {[
-              {
-                question: "How much is possible to earn per month?",
-                answer: "There is no limit as such, the more you spend on ads - the more you earn, all comes down to your ROI. I'm offering basically a hand holding until you get your first payouts. Consistency is the key."
-              },
-              {
-                question: "How quickly will I get my first payout?",
-                answer: "Depends on the offer type, there are offers that pay daily, that are offers that pay monthly, you see your sales every day, then you can withdraw your money from affiliate network and invest in ads more or buy yourself nice things. But for your first 5 payouts I would hold off shopping and invest in ads."
-              },
-              {
-                question: "The course seems to be quite expensive, why?",
-                answer: "I've done thousands of tests in order to get to what really works and build the whole system around it, the pricing is reasonable, considering I've spent more than €100k and teaching you for €1k, and higher plans cost more because I invest a lot of my time to help you."
-              },
-              {
-                question: "How much I should work per day?",
-                answer: "It is quite individual, depending how much stuff you can get done and how fast you learn. I would recommend to consider it as a part-time or full-time job, the more time you invest in this, the better you become and less you need to work. It is possible to automate many processes and work a few hours per day."
-              },
-              {
-                question: "What if I don't like the course?",
-                answer: "I guess what matters is a result, if you are making decent money working remotely from any country - it was worth it being consistent and not giving up. That's why we have a community, and teams to make sure you won't abandon it. I also offer a full refund, if you did what was required but never earned nothing."
-              },
-              {
-                question: "Why is it called \"black affiliate marketing\"?",
-                answer: "I was thinking about the name, and concerned if it wouldn't make an impression as something bad. Not at all, it is just a different side of the affiliate marketing with specific technical aspects and techniques that will give you a huge advantage over competition, bringing you more conversions and profit."
-              },
-              {
-                question: "Will it work in my country?",
-                answer: "Yes! If you are from the US, UK, CA, AU, - you should quickly get your first results. If you are from Europe - also pretty quick. If you are from other countries, it might take a bit more time, but it will work as well, as it is based on the internet."
-              },
-              {
-                question: "How long will I have access to the course?",
-                answer: "You will have access to the course for a lifetime, you can always get back to it when needed."
-              }
-            ].map((faq, index) => (
+            {faqList.map((faq, index) => (
               <div key={index} className="border border-white/10 rounded-lg hover:border-red-600/50 hover:bg-red-600/10 transition-all duration-300">
                 <button 
                   className="w-full p-6 text-left text-2xl flex justify-between items-center"
