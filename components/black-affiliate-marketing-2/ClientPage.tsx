@@ -7,7 +7,6 @@ import MentorSection from './MentorSection';
 import StorySection from './StorySection';
 import ProvidingSection from './ProvidingSection';
 import PhaseSystemSection from './PhaseSystemSection';
-import TestimonialsSection from './TestimonialsSection';
 import PricingSection from './PricingSection';
 import FAQSection from './FAQSection';
 import TwoOptionsSection from './TwoOptionsSection';
@@ -74,7 +73,7 @@ const ClientPage = () => {
         <StorySection />
         <ProvidingSection />
         <PhaseSystemSection />
-        <TestimonialsSection testimonialImages={testimonialImages} />
+       
         <PricingSection />
         <FAQSection faqList={faqList} />
         <TwoOptionsSection />
