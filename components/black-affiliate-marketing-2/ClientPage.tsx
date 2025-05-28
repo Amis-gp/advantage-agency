@@ -14,15 +14,15 @@ import TwoOptionsSection from './TwoOptionsSection';
 
 const ClientPage = () => {
   const testimonialImages = [
-    '/img/black-affiliate-marketing/testimonial-1.jpg',
-    '/img/black-affiliate-marketing/testimonial-2.jpg',
-    '/img/black-affiliate-marketing/testimonial-3.jpg',
-    '/img/black-affiliate-marketing/testimonial-4.jpg',
-    '/img/black-affiliate-marketing/testimonial-5.jpg',
-    '/img/black-affiliate-marketing/testimonial-6.png',
-    '/img/black-affiliate-marketing/testimonial-7.jpg',
-    '/img/black-affiliate-marketing/testimonial-8.jpg',
-    '/img/black-affiliate-marketing/testimonial-9.jpg'
+    '/img/black-affiliate-marketing/testimonial-1.webp',
+    '/img/black-affiliate-marketing/testimonial-2.webp',
+    '/img/black-affiliate-marketing/testimonial-3.webp',
+    '/img/black-affiliate-marketing/testimonial-4.webp',
+    '/img/black-affiliate-marketing/testimonial-5.webp',
+    '/img/black-affiliate-marketing/testimonial-6.webp',
+    '/img/black-affiliate-marketing/testimonial-7.webp',
+    '/img/black-affiliate-marketing/testimonial-8.webp',
+    '/img/black-affiliate-marketing/testimonial-9.webp'
   ];
 
   const faqList = [
