@@ -65,6 +65,50 @@ const TestimonialsSection = ({ testimonialImages }: TestimonialsSectionProps) =>
           />
         </div>
       </div> */}
+      {/* Vimeo відео в правильному React форматі */}
+
+      <div className="flex flex-col md:flex-row gap-4 justify-between items-center mb-8">
+        <div className="w-full md:w-2/5 mb-4 md:mb-0 self-start md:self-center">
+          <div style={{ padding: '177.78% 0 0 0', position: 'relative' }} className="rounded-md overflow-hidden">
+            <iframe 
+              src="https://player.vimeo.com/video/878742669?title=0&byline=0&portrait=0&badge=0&autopause=0&player_id=0&app_id=58479&transparent=0&dnt=1&playsinline=1&autopause=0&quality=720p&controls=1" 
+              frameBorder="0" 
+              allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media" 
+              style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%' }} 
+              title="video 1"
+              loading="lazy"
+            />
+          </div>
+        </div>
+
+        <div className="w-full md:w-2/3 mb-4 md:mb-0 flex items-center justify-center h-full">
+          <div style={{ padding: '56.25% 0 0 0', position: 'relative' }} className="rounded-md overflow-hidden w-full">
+            <iframe 
+              src="https://player.vimeo.com/video/881769577?title=0&byline=0&portrait=0&badge=0&autopause=0&player_id=0&app_id=58479&transparent=0&dnt=1&playsinline=1&autopause=0&quality=720p&controls=1" 
+              frameBorder="0" 
+              allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media" 
+              style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%' }} 
+              title="video 2"
+              loading="lazy"
+            />
+          </div>
+        </div>
+
+        <div className="w-full md:w-2/5 mb-4 md:mb-0 self-start md:self-center">
+          <div style={{ padding: '182.76% 0 0 0', position: 'relative' }} className="rounded-md overflow-hidden">
+            <iframe 
+              src="https://player.vimeo.com/video/879409981?title=0&byline=0&portrait=0&badge=0&autopause=0&player_id=0&app_id=58479&transparent=0&dnt=1&playsinline=1&autopause=0&quality=720p&controls=1" 
+              frameBorder="0" 
+              allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media" 
+              style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%' }} 
+              title="video 3"
+              loading="lazy"
+            />
+          </div>
+        </div>
+      </div>
+      
+      <script async src="https://player.vimeo.com/api/player.js"/>
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4 items-center sm:mt-4">
         <div className="space-y-4">
