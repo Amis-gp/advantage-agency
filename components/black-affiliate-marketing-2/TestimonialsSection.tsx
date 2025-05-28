@@ -36,7 +36,7 @@ const TestimonialsSection = ({ testimonialImages }: TestimonialsSectionProps) =>
   const [isImageOpen, setIsImageOpen] = useState(false);
   const [selectedImage, setSelectedImage] = useState('');
   const [isSwiperLoaded, setIsSwiperLoaded] = useState(false);
-  const [loadedImages, setLoadedImages] = useState<Set<string>>(new Set());
+  const [loadedImages, setLoadedImages] = useState<string[]>([]);
   
   // Предзавантаження критичних зображень
   useEffect(() => {
@@ -46,7 +46,7 @@ const TestimonialsSection = ({ testimonialImages }: TestimonialsSectionProps) =>
         const img = new window.Image();
         img.src = src;
         img.onload = () => {
-          setLoadedImages(prev => new Set([...prev, src]));
+          setLoadedImages(prev => prev.includes(src) ? prev : [...prev, src]);
         };
       });
     };
