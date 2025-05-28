@@ -1,11 +1,12 @@
 "use client"
 
-import React, { useState, Fragment } from 'react';
+import React, { useState, Fragment, useCallback, useEffect } from 'react';
 import Image from 'next/image';
 import { Dialog, Transition } from '@headlessui/react';
 import dynamic from 'next/dynamic';
 
-const Swiper = dynamic(() => import('swiper/react').then(mod => mod.Swiper), { ssr: false });
+// Динамічний імпорт Swiper тільки при потребі
+const Swiper = dynamic(() => import('swiper/react').then(mod => mod.Swiper), { ssr: false, loading: () => <div className="h-full w-full flex items-center justify-center"><div className="animate-pulse bg-gray-300 h-full w-full opacity-30"></div></div> });
 const SwiperSlide = dynamic(() => import('swiper/react').then(mod => mod.SwiperSlide), { ssr: false });
 
 import { Navigation, Pagination } from 'swiper/modules';
@@ -18,32 +19,27 @@ interface TestimonialsSectionProps {
 const TestimonialsSection = ({ testimonialImages }: TestimonialsSectionProps) => {
   const [isImageOpen, setIsImageOpen] = useState(false);
   const [selectedImage, setSelectedImage] = useState('');
+  const [isSwiperLoaded, setIsSwiperLoaded] = useState(false);
+  
+  // Відкладене завантаження Swiper тільки коли модальне вікно відкрите
+  useEffect(() => {
+    if (isImageOpen && !isSwiperLoaded) {
+      setIsSwiperLoaded(true);
+    }
+  }, [isImageOpen, isSwiperLoaded]);
 
-  function openImage(image: string) {
+  const openImage = useCallback((image: string) => {
     setSelectedImage(image);
     setIsImageOpen(true);
-  }
+  }, []);
 
-  function closeImage() {
+  const closeImage = useCallback(() => {
     setIsImageOpen(false);
-  }
+  }, []);
 
   return (
     <section className="mt-20 max-w-6xl mx-auto relative px-2">
-      <h2 className={`
-        text-5xl 
-        font-bold 
-        text-center 
-        mb-10
-        bg-gradient-to-r 
-        from-white 
-        via-red-400 
-        to-gray-100 
-        bg-clip-text 
-        text-transparent 
-        animate-gradient 
-        bg-[length:200%_auto]
-      `}>
+      <h2 className="text-5xl font-bold text-center mb-10 bg-gradient-to-r from-white via-red-400 to-gray-100 bg-clip-text text-transparent animate-gradient bg-[length:200%_auto]">
         Testimonials
       </h2>
 
@@ -56,7 +52,7 @@ const TestimonialsSection = ({ testimonialImages }: TestimonialsSectionProps) =>
             placeholder="/img/black-affiliate-marketing/video-1-placeholder.webp" 
           />
         </div>
-        <div className=" md:w-2/3 h-[360px] mx-auto">
+        <div className="md:w-2/3 h-[360px] mx-auto">
           <VideoPlayer 
             videoUrl="/img/black-affiliate-marketing/video-2.mp4" 
             className="h-[360px]" 
@@ -77,11 +73,13 @@ const TestimonialsSection = ({ testimonialImages }: TestimonialsSectionProps) =>
           <div className="relative cursor-pointer transition-transform duration-300 hover:scale-105" onClick={() => openImage('/img/black-affiliate-marketing/testimonial-1.webp')}>
             <Image 
               src="/img/black-affiliate-marketing/testimonial-1.webp" 
-              alt="1" 
+              alt="Testimonial 1" 
               width={500} 
               height={176} 
-              loading="lazy" decoding="async"
+              loading="eager" 
+              priority={true}
               sizes="(max-width: 768px) 100vw, 33vw"
+              placeholder="blur"
               blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/4gHYSUNDX1BST0ZJTEUAAQEAAAHIAAAAAAQwAABtbnRyUkdCIFhZWiAH4AABAAEAAAAAAABhY3NwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAA9tYAAQAAAADTLQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAlkZXNjAAAA8AAAACRyWFlaAAABFAAAABRnWFlaAAABKAAAABRiWFlaAAABPAAAABR3dHB0AAABUAAAABRyVFJDAAABZAAAAChnVFJDAAABZAAAAChiVFJDAAABZAAAAChjcHJ0AAABjAAAADxtbHVjAAAAAAAAAAEAAAAMZW5VUwAAACAAAAAcAEcAbwBvAGcAbABlACAASQBuAGMALgAgADIAMAAxADb/2wBDABQODxIPDRQSEBIXFRQdHx4eHRoaHSQtJSAyVC0zLysvMy0/RD49QzQ3REVPS1NUV1pjZGR2foGDhY6NzaGur7L/2wBDARUXFx4aHR4eHbIuIi6ysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrL/wAARCAAIAAoDASIAAhEB"
             />
           </div>
@@ -204,26 +202,43 @@ const TestimonialsSection = ({ testimonialImages }: TestimonialsSectionProps) =>
                   ×
                 </button>
                 <div className="relative h-[80vh]">
-                  <Swiper
-                    modules={[Navigation, Pagination]}
-                    spaceBetween={20}
-                    slidesPerView={1}
-                    loop={true}
-                    initialSlide={testimonialImages.indexOf(selectedImage)}
-                    className="h-full w-full"
-                  >
-                    {testimonialImages.map((image, index) => (
-                      <SwiperSlide key={index}>
-                        <Image
-                          src={image}
-                          alt={`Testimonial ${index + 1}`}
-                          fill
-                          className="object-contain"
-                          loading="lazy"
-                        />
-                      </SwiperSlide>
-                    ))}
-                  </Swiper>
+                  {(isImageOpen && isSwiperLoaded) ? (
+                    <Swiper
+                      modules={[Navigation, Pagination]}
+                      spaceBetween={20}
+                      slidesPerView={1}
+                      loop={true}
+                      initialSlide={testimonialImages.indexOf(selectedImage)}
+                      className="h-full w-full"
+                    >
+                      {testimonialImages.map((image, index) => (
+                        <SwiperSlide key={index}>
+                          <div className="relative h-full w-full">
+                            <Image
+                              src={image}
+                              alt={`Testimonial ${index + 1}`}
+                              fill
+                              className="object-contain"
+                              loading="lazy"
+                              onLoad={(event) => {
+                                // Додавання обробника події для видалення анімації завантаження
+                                const target = event.target as HTMLImageElement;
+                                if (target.complete) target.classList.remove('opacity-0');
+                              }}
+                              style={{ opacity: 0, transition: 'opacity 0.3s ease-in-out' }}
+                              onLoadingComplete={(img) => {
+                                img.style.opacity = '1';
+                              }}
+                            />
+                          </div>
+                        </SwiperSlide>
+                      ))}
+                    </Swiper>
+                  ) : (
+                    <div className="h-full w-full flex items-center justify-center bg-gray-800">
+                      <div className="animate-pulse bg-gray-700 h-4/5 w-4/5 rounded opacity-30"></div>
+                    </div>
+                  )}
                 </div>
               </Dialog.Panel>
             </div>

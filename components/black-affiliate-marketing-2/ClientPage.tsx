@@ -1,6 +1,6 @@
 "use client"
 
-import React, { useState } from 'react';
+import dynamic from 'next/dynamic';
 import HeroSection from './HeroSection';
 import CourseTargetSection from './CourseTargetSection';
 import MentorSection from './MentorSection';
@@ -10,6 +10,15 @@ import PhaseSystemSection from './PhaseSystemSection';
 import PricingSection from './PricingSection';
 import FAQSection from './FAQSection';
 import TwoOptionsSection from './TwoOptionsSection';
+
+// Динамічний імпорт компонента з відгуками для відкладеного завантаження
+const TestimonialsSection = dynamic(
+  () => import('./TestimonialsSection'),
+  { 
+    ssr: false, 
+    loading: () => <div className="mt-20 max-w-6xl mx-auto text-center"><p className="text-xl">Завантаження відгуків...</p></div> 
+  }
+);
 
 const ClientPage = () => {
   const testimonialImages = [
@@ -73,7 +82,7 @@ const ClientPage = () => {
         <StorySection />
         <ProvidingSection />
         <PhaseSystemSection />
-       
+        <TestimonialsSection testimonialImages={testimonialImages} />
         <PricingSection />
         <FAQSection faqList={faqList} />
         <TwoOptionsSection />
