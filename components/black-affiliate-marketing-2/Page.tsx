@@ -6,14 +6,7 @@ import Link from 'next/link';
 import { Dialog, Transition } from '@headlessui/react';
 import dynamic from 'next/dynamic';
 
-import 'swiper/css';
-import 'swiper/css/navigation';
-import 'swiper/css/pagination';
 
-const Swiper = dynamic(() => import('swiper/react').then(mod => mod.Swiper), { ssr: false });
-const SwiperSlide = dynamic(() => import('swiper/react').then(mod => mod.SwiperSlide), { ssr: false });
-
-import { Navigation, Pagination } from 'swiper/modules';
 
 const VideoPlayerComponent = ({ 
   videoUrl, 
@@ -1071,56 +1064,7 @@ export default function BlackAffiliateMarketing() {
 
       </main>
 
-      <Transition.Root show={isImageOpen} as={Fragment}>
-        <Dialog as="div" className="relative z-50" onClose={closeImage}>
-          <Transition.Child
-            as={Fragment}
-            enter="ease-out duration-300"
-            enterFrom="opacity-0"
-            enterTo="opacity-100"
-            leave="ease-in duration-200"
-            leaveFrom="opacity-100"
-            leaveTo="opacity-0"
-          >
-            <div className="fixed inset-0 bg-black/80" />
-          </Transition.Child>
-
-          <div className="fixed inset-0 overflow-y-auto">
-            <div className="flex min-h-full items-center justify-center p-4">
-              <Dialog.Panel className="relative max-w-4xl w-full">
-                <button
-                  onClick={closeImage}
-                  className="absolute -top-12 right-0 text-white text-6xl hover:text-gray-300 transition-colors z-50"
-                >
-                  ×
-                </button>
-                <div className="relative h-[80vh]">
-                  <Swiper
-                    modules={[Navigation, Pagination]}
-                    spaceBetween={20}
-                    slidesPerView={1}
-                    loop={true}
-                    initialSlide={testimonialImages.indexOf(selectedImage)}
-                    className="h-full w-full"
-                  >
-                    {testimonialImages.map((image, index) => (
-                      <SwiperSlide key={index}>
-                        <Image
-                          src={image}
-                          alt={`Testimonial ${index + 1}`}
-                          fill
-                          className="object-contain"
-                          loading="lazy"
-                        />
-                      </SwiperSlide>
-                    ))}
-                  </Swiper>
-                </div>
-              </Dialog.Panel>
-            </div>
-          </div>
-        </Dialog>
-      </Transition.Root>
+      
     </div>
   );
 }
