@@ -89,7 +89,7 @@ const TestimonialsSection = ({ testimonialImages }: TestimonialsSectionProps) =>
     className?: string 
   }) => {
     const [imageLoaded, setImageLoaded] = useState(false);
-    const isLoaded = loadedImages.has(config.src) || imageLoaded;
+    const isLoaded = loadedImages.includes(config.src) || imageLoaded;
 
     return (
       <div 
