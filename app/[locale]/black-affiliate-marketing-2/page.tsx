@@ -3,9 +3,9 @@ import { Metadata } from 'next'
 import dynamic from 'next/dynamic'
 
 // Динамічний імпорт компонентів для кращої швидкодії
-const BlackAffiliateMarketing = dynamic(
-  () => import('@/components/black-affiliate-marketing-2/Page'),
-  { ssr: true, loading: () => <div className="min-h-screen bg-black flex items-center justify-center"><p className="text-white text-xl">Завантаження...</p></div> }
+const ClientPage = dynamic(
+  () => import('@/components/black-affiliate-marketing-2/ClientPage'),
+  { ssr: false, loading: () => <div className="min-h-screen bg-black flex items-center justify-center"><p className="text-white text-xl">Loading...</p></div> }
 )
 
 const Footer = dynamic(
@@ -39,12 +39,12 @@ export const metadata: Metadata = {
   },
 }
 
-export default function BlackAffiliatePage({ params: { locale } }: Props) {
+export default async function BlackAffiliatePage({ params: { locale } }: Props) {
   setRequestLocale(locale)
   
   return (
     <>
-      <BlackAffiliateMarketing />
+      <ClientPage />
       <Footer />
     </>
   )
