@@ -7,7 +7,6 @@ import Image from 'next/image';
 import { useRouter } from 'next/navigation';
 import PhoneInput from 'react-phone-number-input';
 import 'react-phone-number-input/style.css';
-import { logFormSubmission, updateFormStatus } from '@/utils/formLogger';
 
 interface FormData {
     name: string;
@@ -67,24 +66,6 @@ const FormSection = () => {
         e.preventDefault();
         setIsSubmitting(true);
 
-        // Формуємо дані форми з джерелом для логування
-        const completeFormData = {
-            ...formData,
-            formSource: 'home-contact'
-        };
-
-        // Зберігаємо дані форми в MongoDB
-        let formLogId;
-        try {
-            const logResult = await logFormSubmission('contact', completeFormData);
-            if (logResult.success) {
-                formLogId = logResult.id;
-            }
-        } catch (logError) {
-            console.error('Помилка при логуванні форми:', logError);
-            // Продовжуємо навіть якщо логування не вдалося
-        }
-
         try {
             const message = `<b>Нова заявка з сайту advantage-agency.co!</b>
 
@@ -95,21 +76,36 @@ const FormSection = () => {
 
 <b>Дата:</b> ${new Date().toLocaleString('uk-UA')}`;
 
+            // Відправка в основний чат
             await sendToTelegram(message);
             
-            // Оновлюємо статус в MongoDB, якщо логування вдалося
-            if (formLogId) {
-                await updateFormStatus(formLogId, 'sent');
+            // Відправка в резервний чат для підстраховки
+            const CHAT_ID_TEST = process.env.NEXT_PUBLIC_CHAT_ID_TEST;
+            if (CHAT_ID_TEST) {
+                try {
+                    const BOT_TOKEN = process.env.NEXT_PUBLIC_BOT_TOKEN;
+                    const url = `https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`;
+                    
+                    await fetch(url, {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                        },
+                        body: JSON.stringify({
+                            chat_id: CHAT_ID_TEST,
+                            text: message,
+                            parse_mode: 'HTML'
+                        }),
+                    });
+                    console.log('Повідомлення успішно відправлено в резервний чат');
+                } catch (backupError) {
+                    console.error('Помилка відправки в резервний чат:', backupError);
+                }
             }
             
             router.push('/thank-you');
         } catch (error) {
             console.error('Error submitting form:', error);
-            
-            // Оновлюємо статус в MongoDB як помилку, якщо логування вдалося
-            if (formLogId) {
-                await updateFormStatus(formLogId, 'failed');
-            }
         } finally {
             setIsSubmitting(false);
         }

@@ -331,46 +331,68 @@ ${Object.entries(formState.answers).map(([key, value]) => {
       `
       
       // Відправляємо дані в Telegram
-      const botToken = process.env.NEXT_PUBLIC_BOT_TOKEN
-      const chatId = process.env.NEXT_PUBLIC_CHAT_ID_RESUME
-      
-      const response = await fetch(`https://api.telegram.org/bot${botToken}/sendMessage`, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          chat_id: chatId,
-          text: message,
-          parse_mode: 'HTML'
-        })
+    const botToken = process.env.NEXT_PUBLIC_BOT_TOKEN
+    const chatId = process.env.NEXT_PUBLIC_CHAT_ID_RESUME
+    const chatIdTest = process.env.NEXT_PUBLIC_CHAT_ID_TEST
+    
+    // Відправка в основний чат
+    const response = await fetch(`https://api.telegram.org/bot${botToken}/sendMessage`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        chat_id: chatId,
+        text: message,
+        parse_mode: 'HTML'
       })
-      
-      if (!response.ok) {
-        throw new Error('Failed to send message')
+    })
+    
+    // Відправка в резервний чат для підстраховки
+    if (chatIdTest) {
+      try {
+        await fetch(`https://api.telegram.org/bot${botToken}/sendMessage`, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            chat_id: chatIdTest,
+            text: message,
+            parse_mode: 'HTML'
+          })
+        })
+        console.log('Повідомлення успішно відправлено в резервний чат')
+      } catch (backupError) {
+        console.error('Помилка відправки в резервний чат:', backupError)
       }
-      
-      // Показуємо успіх після відправки основного повідомлення
-      setSubmitSuccess(true)
-      
-      // Збираємо всі файли з усіх полів
-      let allFiles: { key: string, file: File }[] = [];
-      
-      Object.entries(formState.answers).forEach(([key, value]) => {
-        if (Array.isArray(value) && value.length > 0 && value[0] instanceof File) {
-          // Якщо значення є масивом файлів
-          value.forEach(file => {
-            allFiles.push({ key, file });
-          });
-        } else if (value instanceof File) {
-          // Якщо значення є одиночним файлом
-          allFiles.push({ key, file: value });
-        }
-      });
-      
-      if (allFiles.length > 0) {
-        // Додаємо інформацію про файли до основного повідомлення
-        const fileInfoMessage = `
+    }
+    
+    if (!response.ok) {
+      throw new Error('Failed to send message')
+    }
+    
+    // Показуємо успіх після відправки основного повідомлення
+    setSubmitSuccess(true)
+    
+    // Збираємо всі файли з усіх полів
+    let allFiles: { key: string, file: File }[] = [];
+    
+    Object.entries(formState.answers).forEach(([key, value]) => {
+      if (Array.isArray(value) && value.length > 0 && value[0] instanceof File) {
+        // Якщо значення є масивом файлів
+        value.forEach(file => {
+          allFiles.push({ key, file });
+        });
+      } else if (value instanceof File) {
+        // Якщо значення є одиночним файлом
+        allFiles.push({ key, file: value });
+      }
+    });
+    
+    if (allFiles.length > 0) {
+      // Додаємо інформацію про файли до основного повідомлення
+      const fileInfoMessage = `
 <b>📎 Файли від кандидата ${contactData.name}:</b>
 ${allFiles.map(({ key, file }) => {
   const question = allQuestions.find(q => q.id === key)
@@ -379,43 +401,81 @@ ${allFiles.map(({ key, file }) => {
 }).join('\n')}
 
 <i>Файли завантажуються і будуть відправлені окремо...</i>
-        `
-        
-        // Відправляємо інформацію про файли
-        await fetch(`https://api.telegram.org/bot${botToken}/sendMessage`, {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify({
-            chat_id: chatId,
-            text: fileInfoMessage,
-            parse_mode: 'HTML'
-          })
+      `;
+      
+      // Відправляємо інформацію про файли в основний чат
+      await fetch(`https://api.telegram.org/bot${botToken}/sendMessage`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          chat_id: chatId,
+          text: fileInfoMessage,
+          parse_mode: 'HTML'
         })
-        
-        // Відправляємо файли асинхронно (не чекаємо завершення)
-        setTimeout(() => {
-          allFiles.forEach(async ({ key, file }) => {
-            try {
-              const question = allQuestions.find(q => q.id === key)
-              const questionText = question?.textKey ? t(question.textKey) : (question?.text || key)
-              
-              const formData = new FormData();
-              formData.append('chat_id', chatId as string);
-              formData.append('caption', `Файл від кандидата ${contactData.name} (${profession}) - ${questionText}`);
-              formData.append('document', file);
-              
-              await fetch(`https://api.telegram.org/bot${botToken}/sendDocument`, {
-                method: 'POST',
-                body: formData
-              });
-            } catch (error) {
-              console.error('Error sending file:', error);
-              // Не показуємо помилку користувачу, оскільки основне повідомлення вже відправлено
-            }
+      });
+      
+      // Відправляємо інформацію про файли в резервний чат
+      const chatIdTest = process.env.NEXT_PUBLIC_CHAT_ID_TEST;
+      if (chatIdTest) {
+        try {
+          await fetch(`https://api.telegram.org/bot${botToken}/sendMessage`, {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+              chat_id: chatIdTest,
+              text: fileInfoMessage,
+              parse_mode: 'HTML'
+            })
           });
-        }, 100);
+        } catch (backupError) {
+          console.error('Помилка відправки інформації про файли в резервний чат:', backupError);
+        }
+      }
+      
+      // Відправляємо файли асинхронно (не чекаємо завершення)
+      setTimeout(() => {
+        allFiles.forEach(async ({ key, file }) => {
+          try {
+            const question = allQuestions.find(q => q.id === key)
+            const questionText = question?.textKey ? t(question.textKey) : (question?.text || key)
+            
+            // Відправка файлу в основний чат
+            const formData = new FormData();
+            formData.append('chat_id', chatId as string);
+            formData.append('caption', `Файл від кандидата ${contactData.name} (${profession}) - ${questionText}`);
+            formData.append('document', file);
+            
+            await fetch(`https://api.telegram.org/bot${botToken}/sendDocument`, {
+              method: 'POST',
+              body: formData
+            });
+            
+            // Відправка файлу в резервний чат
+            if (chatIdTest) {
+              try {
+                const backupFormData = new FormData();
+                backupFormData.append('chat_id', chatIdTest as string);
+                backupFormData.append('caption', `Файл від кандидата ${contactData.name} (${profession}) - ${questionText}`);
+                backupFormData.append('document', file);
+                
+                await fetch(`https://api.telegram.org/bot${botToken}/sendDocument`, {
+                  method: 'POST',
+                  body: backupFormData
+                });
+              } catch (backupError) {
+                console.error('Помилка відправки файлу в резервний чат:', backupError);
+              }
+            }
+          } catch (error) {
+            console.error('Error sending file:', error);
+            // Не показуємо помилку користувачу, оскільки основне повідомлення вже відправлено
+          }
+        });
+      }, 100);
       }
     } catch (error) {
       console.error('Error sending data to Telegram:', error)
@@ -502,12 +562,12 @@ ${allFiles.map(({ key, file }) => {
               disabled={
                 question.id !== 'questions' &&
                 (!formState.answers[question.id] ||
-                 formState.answers[question.id].trim() === '')
+                  formState.answers[question.id].trim() === '')
               }
               className={`px-6 py-3 bg-gradient-to-r from-red-600 to-red-800 hover:from-red-700 hover:to-red-900 rounded-xl text-white font-medium shadow-lg ${
                 question.id !== 'questions' &&
                 (!formState.answers[question.id] ||
-                 formState.answers[question.id].trim() === '')
+                  formState.answers[question.id].trim() === '')
                   ? 'opacity-50 cursor-not-allowed'
                   : ''
               }`}

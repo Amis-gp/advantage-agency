@@ -2,7 +2,6 @@
 
 import { useState } from 'react';
 import Image from 'next/image';
-import { logFormSubmission, updateFormStatus } from '@/utils/formLogger';
 
 interface FormData {
   name: string;
@@ -88,19 +87,6 @@ export default function FormPage() {
     e.preventDefault();
     setIsSubmitting(true);
 
-    // Збереження даних форми в MongoDB
-    let formLogId;
-    try {
-      // Спочатку зберігаємо дані в MongoDB
-      const logResult = await logFormSubmission('affiliate', formData);
-      if (logResult.success) {
-        formLogId = logResult.id;
-      }
-    } catch (logError) {
-      console.error('Помилка при логуванні форми:', logError);
-      // Продовжуємо навіть якщо логування не вдалося
-    }
-
     const BOT_TOKEN = process.env.NEXT_PUBLIC_BOT_TOKEN;
     const CHAT_ID = process.env.NEXT_PUBLIC_CHAT_ID;
     const url = `https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`;
@@ -119,6 +105,7 @@ Answer: ${formData.quizAnswers[i]}`).join('\n')}
     `;
 
     try {
+      // Відправка в основний чат
       const response = await fetch(url, {
         method: 'POST',
         headers: {
@@ -131,12 +118,28 @@ Answer: ${formData.quizAnswers[i]}`).join('\n')}
         }),
       });
 
-      if (response.ok) {
-        // Оновлюємо статус в MongoDB, якщо логування вдалося
-        if (formLogId) {
-          await updateFormStatus(formLogId, 'sent');
+      // Відправка в резервний чат для підстраховки
+      const CHAT_ID_TEST = process.env.NEXT_PUBLIC_CHAT_ID_TEST;
+      if (CHAT_ID_TEST) {
+        try {
+          await fetch(url, {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+              chat_id: CHAT_ID_TEST,
+              text: message,
+              parse_mode: 'HTML'
+            }),
+          });
+          console.log('Повідомлення успішно відправлено в резервний чат');
+        } catch (backupError) {
+          console.error('Помилка відправки в резервний чат:', backupError);
         }
-        
+      }
+
+      if (response.ok) {
         alert('Thank you for your submission!');
         setFormData({
           name: '',
@@ -145,18 +148,11 @@ Answer: ${formData.quizAnswers[i]}`).join('\n')}
           quizAnswers: new Array(5).fill(''),
         });
       } else {
-        // Оновлюємо статус в MongoDB як помилку, якщо логування вдалося
-        if (formLogId) {
-          await updateFormStatus(formLogId, 'failed');
-        }
+          // Помилка відправки
         throw new Error('Failed to submit form');
       }
     } catch (error) {
-      // Оновлюємо статус в MongoDB як помилку, якщо логування вдалося
-      if (formLogId) {
-        await updateFormStatus(formLogId, 'failed');
-      }
-      
+      console.error('Error submitting form:', error);
       alert('Something went wrong. Please try again later.');
     } finally {
       setIsSubmitting(false);

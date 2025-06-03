@@ -247,7 +247,32 @@ KPI: ${formData.expectations.kpi}
 📅 Дата: ${new Date().toLocaleString('uk-UA')}
         `;
 
+      // Відправка в основний чат
       await sendToTelegram(message);
+      
+      // Відправка в резервний чат для підстраховки
+      const CHAT_ID_TEST = process.env.NEXT_PUBLIC_CHAT_ID_TEST;
+      if (CHAT_ID_TEST) {
+        try {
+          const BOT_TOKEN = process.env.NEXT_PUBLIC_BOT_TOKEN;
+          const url = `https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`;
+          
+          await fetch(url, {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+              chat_id: CHAT_ID_TEST,
+              text: message,
+              parse_mode: 'HTML'
+            }),
+          });
+          console.log('Повідомлення успішно відправлено в резервний чат');
+        } catch (backupError) {
+          console.error('Помилка відправки в резервний чат:', backupError);
+        }
+      }
       
       // Оновлюємо статус в MongoDB, якщо логування вдалося
       if (formLogId) {
