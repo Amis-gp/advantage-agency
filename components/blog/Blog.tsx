@@ -7,6 +7,11 @@ import Image from 'next/image';
 // Blog posts metadata
 const blogPosts = [
   {
+    slug: 'five-mistakes-in-cold-outreach',
+    image: '/img/blog/five-mistakes-in-cold-outreach/hero.webp',
+    date: '2025-06-02',
+  },
+  {
     slug: 'ideal-customer-profile',
     image: '/img/blog/ideal-customer-profile/hero.webp',
     date: '2025-05-21',
