@@ -478,7 +478,7 @@ export default function PricingPage() {
                 
                 <div>
                   <h2 className="text-2xl font-bold text-white">2. {t('addons.infrastructure.title', { fallback: 'Infrastructure Costs' })}</h2>
-                  <div className="font-medium text-gray-300 mb-6">{t('addons.infrastructure.description', { fallback: 'Required technical infrastructure for your campaigns' })}</div>
+                  <div className="font-medium text-gray-300 mb-6">{t('addons.infrastructure.description', { fallback: 'Required technical infrastructure for your campaigns (separate payment)' })}</div>
                   <div className="space-y-4">
                     
                     <div className="flex items-center justify-between p-4 border border-gray-700 rounded-lg bg-[#0F172A]/80 ">
