@@ -164,7 +164,7 @@ export default function PricingPage() {
       },
       workspace: {
         name: "Google Workspace (Starter)",
-        price: 35.36,
+        price: 53.04,
         description: "Email sender accounts. 4 senders per 1K package"
       }
     }
