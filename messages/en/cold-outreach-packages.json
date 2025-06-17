@@ -1,6 +1,6 @@
 {
   "toggleLabel": {
-    "initialSetup": "Initial Setup (2 months)",
+    "initialSetup": "Initial Setup (10 weeks)",
     "ongoingMaintenance": "Ongoing Maintenance",
     "initialDescription": "Initial 2-month package includes complete setup, strategy development, contact verification, and campaign launch",
     "ongoingDescription": "After initial setup, you can use our services for new contact parsing and verification as needed, or perform these tasks independently"
@@ -33,7 +33,7 @@
   "process": {
     "title": "How the process works",
     "firstMonth": {
-      "title": "First month: Preparation",
+      "title": "1-6 weeks: Preparation",
       "steps": [
         "Setting up senders, protocols, warmup",
         "Brief analysis and strategy development",
@@ -43,7 +43,7 @@
       ]
     },
     "secondMonth": {
-      "title": "Second month: Execution",
+      "title": "7-10 weeks: Execution",
       "steps": [
         "Campaign launch",
         "Testing and optimization",
@@ -58,7 +58,7 @@
     "items": [
       {
         "question": "How does the pricing work?",
-        "answer": "Our pricing has two phases. Initial setup (first 2 months) includes complete preparation and campaign launch. After that, you can purchase additional services as needed."
+        "answer": "Our pricing has two phases. Initial setup (first 10 weeks) includes complete preparation and campaign launch. After that, you can purchase additional services as needed."
       },
       {
         "question": "What's included in the initial setup?",
@@ -77,7 +77,7 @@
   "pricing": {
     "title": "Cold Outreach Packages",
     "subtitle": "Professional lead generation through cold emails to decision makers",
-    "totalInvestment": "Total investment for 2 months",
+    "totalInvestment": "Total investment for 10 weeks",
     "monthlyInvestment": "Monthly investment"
   }
 }
