@@ -190,7 +190,7 @@
                 "type": "email",
                 "title": "Cold Email",
                 "subtitle": "B2B Lead Generation",
-                "price": "From €1499",
+                "price": "From €849",
                 "button": "Learn More",
                 "features": [
                     "Proven cold email system",
@@ -1992,7 +1992,7 @@
                 "how_it_works": "How it Works",
                 "packages": "Packages",
                 "client_results": "Client Results",
-                "faq": "FAQ"
+                "blog": "Our blog"
             },
             "contact": {
                 "title": "Contact",
@@ -2063,7 +2063,12 @@
                 "openRate": "Open Rate",
                 "replyRate": "Reply Rate"
             },
-            "viewCase": "View Case"
+            "viewCase": "View Case",
+            "cta": {
+                "title": "Expert Knowledge and Tips",
+                "subtitle": "Visit our blog where we share practical strategies, case studies, and secrets of successful cold outreach. Learn how to increase conversion rates and get more qualified leads",
+                "button": "Read Articles"
+            }
         }
     },
     "Admin": {

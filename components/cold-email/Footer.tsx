@@ -88,8 +88,8 @@ export default function Footer() {
                                 </a>
                             </li>
                             <li>
-                                <a href="#faq" className="text-gray-400 hover:text-[#645cef] transition-colors">
-                                    {t('quick_links.faq')}
+                                <a href="/blog" className="text-gray-400 hover:text-[#645cef] transition-colors">
+                                    {t('quick_links.blog')}
                                 </a>
                             </li>
                         </ul>

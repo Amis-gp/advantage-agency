@@ -124,6 +124,32 @@ export default function CaseStudies() {
                         </motion.div>
                     ))}
                 </div>
+
+                <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.6, delay: 0.8 }}
+                    className="text-center mt-16"
+                >
+                    <div className="bg-gradient-to-r from-[#4F46E5]/20 to-[#7C3AED]/20 border border-[#4F46E5]/30 rounded-2xl p-8 max-w-2xl mx-auto">
+                        <h3 className="text-2xl font-bold text-white mb-4">
+                            {t('cta.title')}
+                        </h3>
+                        <p className="text-gray-400 mb-6">
+                            {t('cta.subtitle')}
+                        </p>
+                        <Link 
+                            href="/blog" 
+                            className="inline-flex items-center gap-2 bg-[#4F46E5] hover:bg-[#4338CA] text-white px-6 py-3 rounded-lg font-medium transition-colors duration-300"
+                        >
+                            {t('cta.button')}
+                            <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                            </svg>
+                        </Link>
+                    </div>
+                </motion.div>
             </div>
         </section>
     );

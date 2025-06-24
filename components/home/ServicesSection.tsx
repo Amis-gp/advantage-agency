@@ -11,7 +11,6 @@ import 'swiper/css'
 import 'swiper/css/navigation'
 import 'swiper/css/pagination'
 import { playSound } from '@/app/constant/sound'
-import { useRouter } from 'next/router'
 
 const serviceStyles = {
     google: {
@@ -146,7 +145,7 @@ export default function ServicesSection() {
                                     </span>
                                 </div>
                                 <Link 
-                                    href={index === 0 ? (locale.startsWith('uk') ? '/cases/v13' : '/cases/v13uk') : '/offers'}
+                                    href={index === 0 ?  '/cold-email' : '/offers'}
                                     className={`block w-full py-3 rounded-full mt-8 font-medium transition-all duration-300 text-center text-white bg-white/20 hover:bg-white/30`}
                                 >
                                     {plan.button}

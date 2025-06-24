@@ -49,7 +49,7 @@ export default function Results() {
 
                 {/* Glowing Elements */}
                 <div className="absolute top-0 left-1/4 w-[300px] h-[300px] bg-[#4F46E5] rounded-full opacity-[0.03] blur-[100px] animate-pulse-slow" />
-                <div className="absolute bottom-0 right-1/4 w-[300px] h-[300px] bg-[#7C3AED] rounded-full opacity-[0.03] blur-[100px] animate-pulse-slow" />
+                <div className="absolute bottom-0 right-[10%] w-[150px] h-[150px] bg-[#7C3AED] rounded-full opacity-[0.01] blur-[100px] animate-pulse-slow" />
 
                 {/* Animated Lines */}
                 <div className="absolute inset-0">

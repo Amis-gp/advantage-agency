@@ -190,13 +190,13 @@
                 "type": "email",
                 "title": "Cold Email",
                 "subtitle": "B2B Лід-генерація",
-                "price": "Від €1499",
+                "price": "Від €849",
                 "button": "Дізнатись більше",
                 "features": [
                     "Побудова якісної системи",
                     "Перевірена система холодних розсилок",
                     "Генерація кваліфікованих лідів",
-                    "Запуск за 4 тижні",
+                    "Запуск за 6 тижнів",
                     "Точний підбір ICP",
                     "Високі показники конверсії"
                 ]
@@ -1773,7 +1773,7 @@
                 "part2": "4-кроковий",
                 "part3": "процес"
             },
-            "subtitle": "Від стратегії до запуску 6 тижні",
+            "subtitle": "Від стратегії до запуску 6 тижнів",
             "steps": [
                 {
                     "number": "01",
@@ -2020,7 +2020,7 @@
                 "how_it_works": "Як це працює",
                 "packages": "Пакети",
                 "client_results": "Результати клієнтів",
-                "faq": "Часті запитання"
+                "blog": "Наш блог"
             },
             "contact": {
                 "title": "Контакти",
@@ -2091,7 +2091,12 @@
             "openRate": "Відкриття",
             "replyRate": "Відповіді"
         },
-            "viewCase": "Переглянути кейс"
+            "viewCase": "Переглянути кейс",
+            "cta": {
+                "title": "Useful information",
+                "subtitle": "Visit our blog, where we share the secrets of successful cold outreach. Learn how to increase conversion and get more quality leads",
+                "button": "Read articles"
+            }
         }
     },
     "Admin": {
