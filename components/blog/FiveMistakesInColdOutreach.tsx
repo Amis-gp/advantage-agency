@@ -232,7 +232,7 @@ const FiveMistakesInColdOutreach = () => {
             <h3 className="text-xl font-bold mb-4">{locale === 'uk' ? 'Готові покращити ваші холодні листи?' : 'Ready to improve your cold emails?'}</h3>
             <p className="text-gray-300 mb-6">{t('cta')}</p>
             <Link 
-              href={`/${locale}/contact`} 
+              href={`https://calendly.com/advantage-agency-contact/30min`} 
               className="inline-flex items-center px-5 py-2 bg-blue-600 text-white font-medium rounded hover:bg-blue-700 transition-colors group"
             >
               {locale === 'uk' ? 'Зв\'яжіться з нами' : 'Contact us'}

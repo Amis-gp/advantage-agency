@@ -322,7 +322,7 @@ export default function IdealCustomerProfile() {
             
             <div>
               <Link 
-                href={`/${locale}/contact`}
+                href={`https://calendly.com/advantage-agency-contact/30min`}
                 className="inline-flex items-center px-6 py-3 border border-blue-500 text-blue-400 bg-transparent hover:bg-blue-500 hover:text-white transition-colors rounded-lg font-medium"
               >
                 {locale === 'uk' ? 'Зв\'язатися з нами' : 'Contact Us'}

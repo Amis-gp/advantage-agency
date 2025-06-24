@@ -7,6 +7,11 @@ import Image from 'next/image';
 // Blog posts metadata
 const blogPosts = [
   {
+    slug: 'email-vs-linkedin',
+    image: '/img/blog/email-vs-linkedin/hero.webp',
+    date: '2025-06-24',
+  },
+  {
     slug: 'five-mistakes-in-cold-outreach',
     image: '/img/blog/five-mistakes-in-cold-outreach/hero.webp',
     date: '2025-06-02',
