@@ -55,6 +55,28 @@ interface ChartDataPoint {
 export const CAMPAIGNS: Campaign[] = [
   {
     id: '1',
+    name: 'SEO, SW - Igaming',
+    list: 'Igaming SEO & Software Leads',
+    senderAccounts: {
+      main: 'outreach@advantageinbox...',
+      additional: 3
+    },
+    status: 'Active',
+    totalRecipients: 5800,
+    stats: {
+      openRate: { count: 1200, percentage: 60 },
+      deliverability: { count: '-', percentage: '-' },
+      clicks: { count: '-', percentage: '-' },
+      replies: { count: 61, percentage: 2 },
+      bounces: { count: 19, percentage: 1 },
+      contacted: { count: 1600, percentage: 80 },
+      unsubscribed: { count: 40, percentage: 2 },
+      notReached: { count: 360, percentage: 18 }
+    },
+    date: '5 May 2025, 09:37 AM'
+  },
+  {
+    id: '2',
     name: 'Advantage #1 - copy',
     list: 'Advantage USA 926',
     senderAccounts: {
@@ -76,7 +98,7 @@ export const CAMPAIGNS: Campaign[] = [
     date: '8 Nov 2024, 09:38 AM'
   },
   {
-    id: '2',
+    id: '3',
     name: 'Advantage #1',
     list: 'Advantage USA 926',
     senderAccounts: {
@@ -98,7 +120,7 @@ export const CAMPAIGNS: Campaign[] = [
     date: '5 Nov 2024, 10:13 AM'
   },
   {
-    id: '3',
+    id: '4',
     name: 'Crypto offer - Justin',
     list: 'Advantage USA 927',
     senderAccounts: {
@@ -120,7 +142,7 @@ export const CAMPAIGNS: Campaign[] = [
     date: '1 Nov 2024, 11:45 AM'
   },
   {
-    id: '4',
+    id: '5',
     name: 'Zeno CRM',
     list: 'Zeno CRM-6013',
     senderAccounts: {
@@ -142,7 +164,7 @@ export const CAMPAIGNS: Campaign[] = [
     date: '24 Feb 2025, 10:17 AM'
   },
   {
-    id: '5',
+    id: '6',
     name: 'Advantage Fb',
     list: 'Advantage Commercial Leads 100',
     senderAccounts: {
@@ -164,7 +186,7 @@ export const CAMPAIGNS: Campaign[] = [
     date: '25 Oct 2024, 14:30 PM'
   },
   {
-    id: '6',
+    id: '7',
     name: 'Advantage Google',
     list: 'Advantage Industrial Network 50',
     senderAccounts: {
@@ -185,10 +207,41 @@ export const CAMPAIGNS: Campaign[] = [
     },
     date: '22 Oct 2024, 16:15 PM'
   },
+  
 ];
 
 export const CAMPAIGN_CHART_DATA: Record<string, ChartDataPoint[]> = {
   '1': [
+    { date: '5 May 2025', sent: 205, replied: 2, bounced: 1 },
+    { date: '6 May 2025', sent: 208, replied: 3, bounced: 0 },
+    { date: '7 May 2025', sent: 203, replied: 2, bounced: 1 },
+    { date: '8 May 2025', sent: 207, replied: 2, bounced: 1 },
+    { date: '9 May 2025', sent: 206, replied: 3, bounced: 0 },
+    { date: '10 May 2025', sent: 204, replied: 2, bounced: 1 },
+    { date: '11 May 2025', sent: 209, replied: 2, bounced: 1 },
+    { date: '12 May 2025', sent: 205, replied: 3, bounced: 0 },
+    { date: '13 May 2025', sent: 207, replied: 2, bounced: 1 },
+    { date: '14 May 2025', sent: 203, replied: 2, bounced: 1 },
+    { date: '15 May 2025', sent: 208, replied: 3, bounced: 0 },
+    { date: '16 May 2025', sent: 206, replied: 2, bounced: 1 },
+    { date: '17 May 2025', sent: 204, replied: 2, bounced: 1 },
+    { date: '18 May 2025', sent: 209, replied: 3, bounced: 0 },
+    { date: '19 May 2025', sent: 205, replied: 2, bounced: 1 },
+    { date: '20 May 2025', sent: 207, replied: 2, bounced: 1 },
+    { date: '21 May 2025', sent: 203, replied: 3, bounced: 0 },
+    { date: '22 May 2025', sent: 208, replied: 2, bounced: 1 },
+    { date: '23 May 2025', sent: 206, replied: 2, bounced: 1 },
+    { date: '24 May 2025', sent: 204, replied: 3, bounced: 0 },
+    { date: '25 May 2025', sent: 209, replied: 2, bounced: 1 },
+    { date: '26 May 2025', sent: 205, replied: 2, bounced: 1 },
+    { date: '27 May 2025', sent: 207, replied: 3, bounced: 0 },
+    { date: '28 May 2025', sent: 203, replied: 2, bounced: 1 },
+    { date: '29 May 2025', sent: 208, replied: 2, bounced: 1 },
+    { date: '30 May 2025', sent: 206, replied: 3, bounced: 0 },
+    { date: '31 May 2025', sent: 204, replied: 2, bounced: 1 },
+    { date: '1 Jun 2025', sent: 209, replied: 2, bounced: 1 }
+  ],
+  '2': [
     { date: '1 Dec 2024', sent: 220, replied: 2, bounced: 0 },
     { date: '2 Dec 2024', sent: 245, replied: 3, bounced: 0 },
     { date: '3 Dec 2024', sent: 180, replied: 1, bounced: 0 },
@@ -221,7 +274,7 @@ export const CAMPAIGN_CHART_DATA: Record<string, ChartDataPoint[]> = {
     { date: '30 Dec 2024', sent: 190, replied: 1, bounced: 0 },
     { date: '31 Dec 2024', sent: 167, replied: 1, bounced: 0 }
   ],
-  '2': [
+  '3': [
     { date: '1 Dec 2024', sent: 0, replied: 0, bounced: 0 },
     { date: '2 Dec 2024', sent: 0, replied: 0, bounced: 0 },
     { date: '3 Dec 2024', sent: 0, replied: 0, bounced: 0 },
@@ -254,7 +307,7 @@ export const CAMPAIGN_CHART_DATA: Record<string, ChartDataPoint[]> = {
     { date: '30 Dec 2024', sent: 163, replied: 3, bounced: 0 },
     { date: '31 Dec 2024', sent: 166, replied: 4, bounced: 0 }
   ],
-  '3': [
+  '4': [
     { date: '1 Nov 2024', sent: 84, replied: 4, bounced: 2 },
     { date: '2 Nov 2024', sent: 86, replied: 3, bounced: 1 },
     { date: '3 Nov 2024', sent: 170, replied: 8, bounced: 0 },
@@ -348,7 +401,7 @@ export const CAMPAIGN_CHART_DATA: Record<string, ChartDataPoint[]> = {
     { date: '30 Jan 2025', sent: 172, replied: 9, bounced: 0 },
     { date: '31 Jan 2025', sent: 170, replied: 7, bounced: 1 }
   ],
-  '4': [
+  '5': [
     { date: '24 Feb 2025', sent: 231, replied: 2, bounced: 0 },
     { date: '25 Feb 2025', sent: 232, replied: 3, bounced: 0 },
     { date: '26 Feb 2025', sent: 230, replied: 4, bounced: 1 },
@@ -376,7 +429,7 @@ export const CAMPAIGN_CHART_DATA: Record<string, ChartDataPoint[]> = {
     { date: '20 Mar 2025', sent: 236, replied: 4, bounced: 0 },
     { date: '21 Mar 2025', sent: 235, replied: 6, bounced: 0 }
   ],
-  '5': [
+  '6': [
     { date: '1 Dec 2024', sent: 10, replied: 0, bounced: 0 },
     { date: '2 Dec 2024', sent: 10, replied: 0, bounced: 0 },
     { date: '3 Dec 2024', sent: 10, replied: 0, bounced: 0 },
@@ -409,7 +462,7 @@ export const CAMPAIGN_CHART_DATA: Record<string, ChartDataPoint[]> = {
     { date: '30 Dec 2024', sent: 10, replied: 0, bounced: 0 },
     { date: '31 Dec 2024', sent: 9, replied: 0, bounced: 0 }
   ],
-  '6': [
+  '7': [
     { date: '1 Dec 2024', sent: 10, replied: 0, bounced: 0 },
     { date: '2 Dec 2024', sent: 10, replied: 0, bounced: 0 },
     { date: '3 Dec 2024', sent: 10, replied: 0, bounced: 0 },
