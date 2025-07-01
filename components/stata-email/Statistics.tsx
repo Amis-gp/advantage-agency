@@ -263,7 +263,7 @@ const StataEmail: React.FC<StatisticsProps> = ({ campaignId }) => {
         
         <div className="space-y-2 bg-gray-50 rounded-lg p-4 pr-20">
           <Link 
-            href="/email-answer" 
+            href={`/email-answer?campaignId=${campaignId}`} 
             className="flex items-center gap-4 p-4 hover:bg-gray-100 rounded-lg transition-colors"
           >
             <div className="text-gray-400">
@@ -281,7 +281,7 @@ const StataEmail: React.FC<StatisticsProps> = ({ campaignId }) => {
           <div className="mx-4 border-b border-gray-100"></div>
 
           <Link 
-            href="/email-answer"
+            href={`/email-answer?campaignId=${campaignId}`}
             className="flex items-center gap-4 p-4 hover:bg-gray-100 rounded-lg transition-colors"
           >
             <div className="text-gray-400">
@@ -299,7 +299,7 @@ const StataEmail: React.FC<StatisticsProps> = ({ campaignId }) => {
           <div className="mx-4 border-b border-gray-100"></div>
 
           <Link 
-            href="/email-answer"
+            href={`/email-answer?campaignId=${campaignId}`}
             className="flex items-center gap-4 p-4 hover:bg-gray-100 rounded-lg transition-colors"
           >
             <div className="text-gray-400">

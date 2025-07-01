@@ -2065,9 +2065,9 @@
             },
             "viewCase": "View Case",
             "cta": {
-                "title": "Expert Knowledge and Tips",
-                "subtitle": "Visit our blog where we share practical strategies, case studies, and secrets of successful cold outreach. Learn how to increase conversion rates and get more qualified leads",
-                "button": "Read Articles"
+                "title": "Useful Information",
+                "subtitle": "We have our own blog where you can find a lot of useful information",
+                "button": "Go to Blog"
             }
         }
     },

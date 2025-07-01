@@ -24,7 +24,7 @@ export default function StatisticsPage({
       <Sidebar />
       <div className="flex-1">
         <Nav />
-        <Answer />
+        <Answer company={searchParams.campaignId} />
         <FloatingChatButton />
       </div>
     </div>
