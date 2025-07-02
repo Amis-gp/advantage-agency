@@ -219,21 +219,6 @@ export const portfolioSlides = [
         },
     },
     {
-        title: 'Wine Distributor',
-        date: '04.03.2024 - 4.04.2024',
-        image: '/img/portfolio/wine-distributor.webp',
-        stats: {
-            amountOfPurchases: '391',
-            pricePerPurchase: '$49.28',
-            adSpend: '$19,269'
-        },
-        location: '🇮🇱 Israel',
-        slug: {
-            en: 'cases/v12',
-            uk: 'cases/v12'
-        },
-    },
-    {
         title: 'Wedding Accessories',
         date: '02.06.2025 - 2.07.2025',
         image: '/img/portfolio/wedding-accessories.webp',
@@ -246,6 +231,21 @@ export const portfolioSlides = [
         slug: {
             en: 'cases/v17',
             uk: 'cases/v17'
+        },
+    },
+    {
+        title: 'Wine Distributor',
+        date: '04.03.2024 - 4.04.2024',
+        image: '/img/portfolio/wine-distributor.webp',
+        stats: {
+            amountOfPurchases: '391',
+            pricePerPurchase: '$49.28',
+            adSpend: '$19,269'
+        },
+        location: '🇮🇱 Israel',
+        slug: {
+            en: 'cases/v12',
+            uk: 'cases/v12'
         },
     },
 ];
