@@ -161,7 +161,8 @@ export default function PortfolioSection() {
                                                 alt={slide.title}
                                                 fill
                                                 className="object-cover brightness-75"
-                                                loading="lazy"
+                                                priority={index < 3}
+                                                sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
                                             />
                                             <div className="absolute inset-0 p-8 flex flex-col items-center justify-center">
                                                 <h3 className="text-white text-2xl md:text-3xl font-bold text-center uppercase">{slide.title}</h3>

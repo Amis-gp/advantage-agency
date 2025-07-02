@@ -233,4 +233,19 @@ export const portfolioSlides = [
             uk: 'cases/v12'
         },
     },
+    {
+        title: 'Wedding Accessories',
+        date: '02.06.2025 - 2.07.2025',
+        image: '/img/portfolio/wedding-accessories.webp',
+        stats: {
+            openRate: '56%',
+            replyRate: '2%',
+            partnerships: '5'
+        },
+        location: '🇺🇸 United States',
+        slug: {
+            en: 'cases/v17',
+            uk: 'cases/v17'
+        },
+    },
 ];
