@@ -1,0 +1,165 @@
+{
+  "seo": {
+    "title": "Case Study: How We Helped a Wedding Accessories Brand Conquer the US Market Through Cold Email Automation"
+  },
+  "hero": {
+    "subtitle": "🚀 Case Study",
+    "title": "How We Helped a Wedding Accessories Brand Conquer the US Market",
+    "description": "From partner search to closing 5 long-term contracts through Cold Email Automation"
+  },
+  "intro": {
+    "title": "About the Client",
+    "description": "Our client is a premium wedding accessories brand specializing in handcrafted unique tableware and decor made from high-quality materials such as crystals, brass, and stainless steel. Their products are not just items, but true family heirlooms that add luxury and individuality to every wedding. The main goal of collaborating with our ADvantage agency was to find B2B partners in the US market — wedding salons, showrooms, and stores that would become distributors of their products."
+  },
+  "goals": {
+    "title": "Project Goals",
+    "list": [
+      "Enter the American market and establish long-term partnerships",
+      "Find and attract relevant partners in the US wedding industry",
+      "Clearly highlight product uniqueness amid high competition",
+      "Develop effective communication to attract attention and motivate dialogue"
+    ]
+  },
+  "challenges": {
+    "title": "Main Challenges 🤔",
+    "items": [
+      {
+        "title": "Unfamiliar Market",
+        "description": "We needed to find and attract relevant partners in the US working in the wedding industry."
+      },
+      {
+        "title": "High Competition",
+        "description": "The American market is oversaturated with offers, so we needed to clearly highlight product uniqueness."
+      },
+      {
+        "title": "Precise Targeting",
+        "description": "Find wedding salons, showrooms, and stores that share brand values and are ready for collaboration."
+      },
+      {
+        "title": "Effective Communication",
+        "description": "Develop emails that would attract attention, build trust, and motivate dialogue."
+      }
+    ]
+  },
+  "solutions": {
+    "title": "Our Solution: Cold Email Automation 🎯",
+    "description": "The ADvantage team developed a comprehensive Cold Email Automation strategy to achieve the set goals. We went through several key stages:",
+    "items": [
+      {
+        "title": "Lead Parsing and Verification",
+        "description": "We collected a database of <strong>3,000 potential partners</strong> — wedding salons, showrooms, decor stores, and event agencies in the US. Each lead was carefully verified to ensure data accuracy and target audience compliance."
+      },
+      {
+        "title": "Creating Personalized Campaigns",
+        "description": "We developed <strong>three unique email sequences</strong>, each consisting of three emails with different communication approaches. Each email was personalized for the specific recipient, considering their business and needs."
+      },
+      {
+        "title": "Technical Implementation",
+        "description": "We set up an automated mailing system that ensured email delivery to the \"Inbox\" folder through proper technical settings and allowed tracking of key metrics."
+      }
+    ]
+  },
+  "strategy": {
+    "title": "Email Campaign Strategy",
+    "description": "We developed three unique email sequences with different approaches:",
+    "sequences": [
+      {
+        "title": "First Email: Brand Introduction",
+        "description": "Focus on product uniqueness (handcrafted, premium materials, personalization)"
+      },
+      {
+        "title": "Second Email: Benefits Focus",
+        "description": "Enhancing partner business prestige, sales growth through exclusive products"
+      },
+      {
+        "title": "Third Email: Call to Action",
+        "description": "Sample Pack offer for quality assessment and call scheduling invitation"
+      }
+    ]
+  },
+  "testing": {
+    "title": "A/B Testing and Optimization",
+    "description": "We used A/B testing to determine the most effective email subjects and calls to action.",
+    "highlight": "Tested different personalization approaches",
+    "tags": [
+      "Email Subjects",
+      "Calls to Action",
+      "Content Personalization",
+      "Send Time",
+      "Email Structure",
+      "Emotional Copywriting"
+    ]
+  },
+  "results": {
+    "title": "Impressive Results 📈",
+    "metrics": [
+      {
+        "title": "Open Rate",
+        "value": "56%",
+        "description": "high email open rate"
+      },
+      {
+        "title": "Reply Rate",
+        "value": "2%",
+        "description": "≈60 responses from potential partners"
+      },
+      {
+        "title": "Active Dialogues",
+        "value": "18",
+        "description": "dialogues moved to active communication"
+      },
+      {
+        "title": "Closed Partnerships",
+        "value": "5",
+        "description": "long-term contracts with salons and showrooms"
+      },
+      {
+        "title": "Contact Database",
+        "value": "3000",
+        "description": "verified potential partners"
+      },
+      {
+        "title": "Campaign ROI",
+        "value": "Positive",
+        "description": "stable partners with regular orders"
+      }
+    ]
+  },
+  "success": {
+    "title": "Why It Worked? 🌟",
+    "points": [
+      {
+        "title": "Precise Targeting",
+        "description": "We only reached out to businesses truly interested in premium wedding accessories."
+      },
+      {
+        "title": "Emotional Copywriting",
+        "description": "Emails told the brand story, emphasizing uniqueness and value of products as family heirlooms."
+      },
+      {
+        "title": "Personalization",
+        "description": "Each email was adapted to recipient needs, which increased trust levels."
+      },
+      {
+        "title": "Clear Call to Action",
+        "description": "Sample pack offer and quick connection opportunity through calls made collaboration convenient and attractive."
+      }
+    ]
+  },
+  "conclusion": {
+    "title": "Conclusion",
+    "description": "Through Cold Email Automation, we helped the wedding accessories brand successfully enter the US market, find reliable B2B partners, and lay the foundation for long-term growth. This case demonstrates how a properly planned email strategy can open new markets and ensure stable partnerships."
+  },
+  "cta": {
+    "buttonText": "Order a free consultation now",
+    "finalText": "Ready to replicate this success for your business? Contact ADvantage, and we'll develop a personalized Cold Email Automation strategy that will take you to new heights!"
+  },
+  "form": {
+    "title": "Want the same results for your business? 🚀",
+    "description": "Submit a request for a free consultation. We'll analyze your niche and propose a Cold Email Automation strategy that will work specifically for you.",
+    "disclaimer": "*Consultation is free and does not oblige you to cooperate"
+  },
+  "messenger": {
+    "text": "Chat with us on Messenger"
+  }
+}

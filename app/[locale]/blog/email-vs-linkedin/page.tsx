@@ -17,12 +17,12 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const translations = params.locale === 'uk' ? ukTranslations : enTranslations;
   
   // Базові змінні для SEO з резервними текстами відповідно до мови
-  const title = translations.meta?.title || (params.locale === 'uk' 
+  const title = params.locale === 'uk' 
     ? 'Холодні листи vs LinkedIn: Який канал обрати для B2B лідогенерації' 
-    : 'Cold Emails vs LinkedIn: Which Channel to Choose for B2B Lead Generation');
-  const description = translations.meta?.description || (params.locale === 'uk' 
+    : 'Cold Emails vs LinkedIn: Which Channel to Choose for B2B Lead Generation';
+  const description = params.locale === 'uk' 
     ? 'Дізнайтеся про ключові відмінності між холодними листами та LinkedIn outreach для B2B лідогенерації, їхні переваги, недоліки та як обрати правильний канал для вашого бізнесу.' 
-    : 'Learn the key differences between cold emails and LinkedIn outreach for B2B lead generation, their advantages, disadvantages, and how to choose the right channel for your business.');
+    : 'Learn the key differences between cold emails and LinkedIn outreach for B2B lead generation, their advantages, disadvantages, and how to choose the right channel for your business.';
   const publishDate = '2025-07-15T10:00:00Z';
   const imageUrl = 'https://www.advantage-agency.co/img/blog/email-vs-linkedin/hero.webp';
   const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://www.advantage-agency.co';
