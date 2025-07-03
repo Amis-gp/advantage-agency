@@ -210,6 +210,14 @@ export const CAMPAIGNS: Campaign[] = [
   
 ];
 
+export const CAMPAIGN_EMAIL_SUBJECTS: { [key: string]: string[] } = {
+  '1': [
+    'Email: In case this helps you',
+    'Email: Did you see our idea for {{company_name}}?',
+    'Email: Is there a chance we could connect?',
+  ],
+};
+
 export const CAMPAIGN_CHART_DATA: Record<string, ChartDataPoint[]> = {
   '1': [
     { date: '5 May 2025', sent: 205, replied: 2, bounced: 1 },

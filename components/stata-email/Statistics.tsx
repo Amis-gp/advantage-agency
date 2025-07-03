@@ -11,7 +11,7 @@ import {
   Tooltip,
   Legend
 } from 'recharts';
-import { CAMPAIGNS, CAMPAIGN_CHART_DATA } from '@/app/constant/emailStats';
+import { CAMPAIGNS, CAMPAIGN_CHART_DATA, CAMPAIGN_EMAIL_SUBJECTS } from '@/app/constant/emailStats';
 import Link from 'next/link';
 
 interface EmailStats {
@@ -272,13 +272,19 @@ const StataEmail: React.FC<StatisticsProps> = ({ campaignId }) => {
                 <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" />
               </svg>
             </div>
-            <div className="w-1/2">Email: Get a clients for $130!</div>
+            <div className="w-1/2">
+              {campaignId === '1' ? (
+                <div>Email: In case this helps you</div>
+              ) : (
+                <div>Email: Get a clients for $130!</div>
+              )}
+            </div>
             <div className="text-gray-500 flex-1">721</div>
             <div className="text-gray-400 flex-1">Disabled</div>
             <div className="text-gray-400 flex-1">Disabled</div>
             <div className="text-blue-500 flex-1">5% (36)</div>
           </Link>
-          <div className="mx-4 border-b border-gray-100"></div>
+            <div className="mx-4 border-b border-gray-100"></div>
 
           <Link 
             href={`/email-answer?campaignId=${campaignId}`}
@@ -290,7 +296,13 @@ const StataEmail: React.FC<StatisticsProps> = ({ campaignId }) => {
                 <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" />
               </svg>
             </div>
-            <div className="w-1/2">Email: Is it possible to get cheap leads from advertising?</div>
+            <div className="w-1/2">
+              {campaignId === '1' ? (
+                <div>Email: Did you see our idea for {'{{company_name}}'}?</div>
+              ) : (
+                <div>Email: Is it possible to get cheap leads from advertising?</div>
+              )}
+            </div>
             <div className="text-gray-500 flex-1">641</div>
             <div className="text-gray-400 flex-1">Disabled</div>
             <div className="text-gray-400 flex-1">Disabled</div>
@@ -308,7 +320,13 @@ const StataEmail: React.FC<StatisticsProps> = ({ campaignId }) => {
                 <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" />
               </svg>
             </div>
-            <div className="w-1/2">Email: Partnership</div>
+            <div className="w-1/2">
+              {campaignId === '1' ? (
+                <div>Email: Is there a chance we could connect?</div>
+              ) : (
+                <div>Email: Partnership</div>
+              )}
+            </div>
             <div className="text-gray-500 flex-1">608</div>
             <div className="text-gray-400 flex-1">Disabled</div>
             <div className="text-gray-400 flex-1">Disabled</div>
