@@ -22,7 +22,7 @@ export default function StatsSection() {
                         className="bg-zinc-900 p-8 rounded-lg border border-zinc-800 text-center flex flex-col items-center justify-center hover:scale-105 hover:bg-zinc-800 transition-all duration-100"
                         onMouseEnter={() => playSound('hover_2')}
                     >
-                        <h3 className="text-6xl font-bold mb-4">72</h3>
+                        <h3 className="text-6xl font-bold mb-4">84</h3>
                         <p className="text-gray-400">{t('stats.specialists')}</p>
                     </motion.div>
                     
