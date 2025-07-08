@@ -154,7 +154,7 @@ export default function PricingPage() {
     infrastructure: {
       esp: {
         name: "ESP (Email Service Provider)",
-        price: 99,
+        price: 97,
         description: "Email service provider subscription (fixed price)"
       },
       domain: {
@@ -164,19 +164,17 @@ export default function PricingPage() {
       },
       workspace: {
         name: "Google Workspace (Starter)",
-        price: 53.04,
-        description: "Email sender accounts. 4 senders per 1K package"
+        price: 28,
+        description: "Email sender accounts. 8 senders per 1K package"
       }
     }
   };
   
-  // Отримати поточний вибраний пакет
   const currentPackage = packages[selectedPackage];
   
-  // Розрахунок ціни для A/B тестів на основі кількості тестів і пакету
   const calculateABTestPrice = () => {
     if (abTestCount === 0) {
-      return 0; // Якщо 0 тестів, ціна 0
+      return 0;
     }
     
     if (selectedPackage === 0) { // 1K пакет

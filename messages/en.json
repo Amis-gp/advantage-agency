@@ -1990,10 +1990,10 @@
             "description": "We help marketing agencies book more qualified calls through our proven cold email system.",
             "quick_links": {
                 "title": "Quick Links",
-                "how_it_works": "How it Works",
-                "packages": "Packages",
-                "client_results": "Client Results",
-                "blog": "Our blog"
+                "home": "Home",
+                "cases": "Cases",
+                "blog": "Blog",
+                "join_the_team": "Join the team"
             },
             "contact": {
                 "title": "Contact",

@@ -73,23 +73,23 @@ export default function Footer() {
                         <h3 className="text-white font-semibold mb-4">{t('quick_links.title')}</h3>
                         <ul className="space-y-3">
                             <li>
-                                <a href="#HowItWorks" className="text-gray-400 hover:text-[#645cef] transition-colors">
-                                    {t('quick_links.how_it_works')}
+                                <a href="/" className="text-gray-400 hover:text-[#645cef] transition-colors">
+                                    {t('quick_links.home')}
                                 </a>
                             </li>
                             <li>
-                                <a href="#Packages" className="text-gray-400 hover:text-[#645cef] transition-colors">
-                                    {t('quick_links.packages')}
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#CaseStudies" className="text-gray-400 hover:text-[#645cef] transition-colors">
-                                    {t('quick_links.client_results')}
+                                <a href="/cases" className="text-gray-400 hover:text-[#645cef] transition-colors">
+                                    {t('quick_links.cases')}
                                 </a>
                             </li>
                             <li>
                                 <a href="/blog" className="text-gray-400 hover:text-[#645cef] transition-colors">
                                     {t('quick_links.blog')}
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/join-the-team" className="text-gray-400 hover:text-[#645cef] transition-colors">
+                                    {t('quick_links.join_the_team')}
                                 </a>
                             </li>
                         </ul>
