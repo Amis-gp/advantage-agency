@@ -2,33 +2,12 @@
 
 import { NextPage } from 'next';
 import { useEffect, useState, Fragment, useRef } from 'react';
-import Image from 'next/image';
-import { Dialog, Transition } from '@headlessui/react';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { Pagination } from 'swiper/modules';
 import '@/app/styles.css'
 import MessengerButton from '@/components/cases/MessengerButton';
 import Formspree from '@/components/cases/Formspree';
 import CasesFooter from '@/components/cases/Footer';
 import LanguageSwitcher from '@/components/LanguageSwitcher';
 import { useParams } from 'next/navigation';
-import 'swiper/css';
-import 'swiper/css/pagination';
-import type { Swiper as SwiperType } from 'swiper';
-
-const testimonialImages = [
-  '/img/v17/feedback1.webp',
-  '/img/v17/feedback2.webp',
-  '/img/v17/feedback3.webp',
-  '/img/v17/feedback4.webp',
-  '/img/v17/feedback5.webp',
-  '/img/v17/feedback6.webp'
-];
-
-const allImages = [
-  '/img/v17/stats.webp',
-  ...testimonialImages
-];
 
 const V17Page: NextPage = () => {
   const params = useParams();
@@ -37,9 +16,6 @@ const V17Page: NextPage = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [isImageOpen, setIsImageOpen] = useState(false);
   const [currentImage, setCurrentImage] = useState('');
-  
-  const galleryRef = useRef<SwiperType | null>(null);
-  const syncing = useRef(false);
   
   useEffect(() => {
     const loadTranslations = async () => {
@@ -343,72 +319,6 @@ const V17Page: NextPage = () => {
         
         <CasesFooter />
       </div>
-
-      <Transition.Root show={isImageOpen} as={Fragment}>
-        <Dialog 
-          as="div" 
-          className="relative z-50" 
-          onClose={closeImage}
-          open={isImageOpen}
-        >
-          <Transition.Child
-            as={Fragment}
-            enter="ease-out duration-300"
-            enterFrom="opacity-0"
-            enterTo="opacity-100"
-            leave="ease-in duration-200"
-            leaveFrom="opacity-100"
-            leaveTo="opacity-0"
-          >
-            <div className="fixed inset-0 bg-black/80" />
-          </Transition.Child>
-
-          <div className="fixed inset-0 overflow-y-auto">
-            <div className="flex min-h-full items-center justify-center p-4">
-              <Dialog.Panel className="relative max-w-4xl w-full">
-                <button
-                  onClick={closeImage}
-                  className="absolute -top-12 right-0 text-white text-4xl hover:text-gray-300 transition-colors z-50"
-                >
-                  ×
-                </button>
-                <div className="relative h-[80vh]">
-                  <Swiper
-                    modules={[Pagination]}
-                    spaceBetween={20}
-                    slidesPerView={1}
-                    pagination={{ 
-                      el: '.swiper-pagination',
-                      clickable: true
-                    }}
-                    loop={true}
-                    initialSlide={allImages.indexOf(currentImage)}
-                    className="h-full w-full"
-                    onSwiper={(swiper) => {
-                      galleryRef.current = swiper;
-                    }}
-                    onSlideChange={() => {
-                    }}
-                  >
-                    {allImages.map((image, index) => (
-                      <SwiperSlide key={index}>
-                        <Image
-                          src={image}
-                          alt={image.includes('stats') ? 'Statistics' : `Feedback ${index}`}
-                          fill
-                          className="object-contain"
-                          priority
-                        />
-                      </SwiperSlide>
-                    ))}
-                  </Swiper>
-                  <div className="swiper-pagination absolute bottom-4 w-full"></div>
-                </div>
-              </Dialog.Panel>
-            </div>
-          </div>
-        </Dialog>
-      </Transition.Root>
     </div>
   );
 };

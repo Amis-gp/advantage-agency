@@ -1,0 +1,114 @@
+{
+  "seo": {
+    "title": "Case Study: How We Helped an iGaming Provider Find 35 Warm Leads Through Cold Email"
+  },
+  "hero": {
+    "subtitle": "🚀 Case Study",
+    "title": "How We Helped an iGaming Provider Find 35 Warm Leads Through Cold Email",
+    "description": "From operator search to receiving 94 responses through personalized email campaigns"
+  },
+  "intro": {
+    "title": "About the Client",
+    "description": "A gaming software provider operating in the B2B iGaming segment - creating slots, live games, virtual products, and platforms. Due to NDA conditions, we cannot name the brand, but this is a company looking for new casino operators to license or sell their products to."
+  },
+  "goals": {
+    "title": "Objective",
+    "list": [
+      "interested in expanding their game portfolio",
+      "looking for unique content",
+      "value fast API integration",
+      "work with licensed providers"
+    ]
+  },
+  "challenges": {
+    "title": "Main Challenges 🤔",
+    "items": [
+      {
+        "title": "High Competition",
+        "description": "The iGaming industry is highly competitive. Operators receive dozens of similar offers daily."
+      },
+      {
+        "title": "Complex Audience",
+        "description": "We needed to find the right decision-makers - CEOs, Head of Operations, Business Development Managers."
+      },
+      {
+        "title": "Technical Requirements",
+        "description": "Operators look for products with fast APIs, international certifications, and multi-language support."
+      },
+      {
+        "title": "Unique Value Proposition",
+        "description": "It was necessary to highlight unique game mechanics and advantages among numerous competitors."
+      }
+    ]
+  },
+  "solutions": {
+    "title": "What We Did",
+    "description": "We created a 5-email cold email campaign. The focus was on business personalization, clear UVP, and easy-to-execute call-to-action (demo, call, intro call).",
+    "items": [
+      {
+        "title": "Campaign Parameters",
+        "description": "• 3,000 contacts\n• Open Rate - 61%\n• Reply Rate - 3% (94 responses)"
+      }
+    ]
+  },
+  "strategy": {
+    "title": "How We Built Communication",
+    "description": "Each email was built with a clear structure:",
+    "sequences": [
+      {
+        "title": "personalization",
+        "description": "mentioned specific operator pain points (lack of unique content, technical integration difficulties, need for certified software)"
+      },
+      {
+        "title": "UVP",
+        "description": "emphasis on provider's strengths - certification (e.g., MGA, Curacao), exclusive game mechanics, multi-language support, bonus modules"
+      },
+      {
+        "title": "call to action",
+        "description": "without being pushy, but with a clear next step - \"Schedule a call\", \"Get a demo\", \"Give team intro\""
+      }
+    ]
+  },
+  "testing": {
+    "title": "Segmentation and Lead Search",
+    "description": "We didn't just take a database. Each contact went through filters based on several criteria:\n– geography (Europe, LatAm, Asia)\n– business size (from medium to large-scale operators)\n– vertical: live casino, slots, virtual sports, sportsbook\n\nContacts were found through:\n– Our team handled audience search and collection\n– We applied our proprietary development for scraping leads from various sources.\n\nWe targeted only decision-makers - CEOs, Head of Operations, Business Development Managers.",
+    "highlight": "3,000 contacts were carefully selected",
+    "tags": [
+      "Geography: Europe, LatAm, Asia",
+      "Business size: from medium to large-scale operators",
+      "Live casino",
+      "Slots",
+      "Virtual sports",
+      "Sportsbook"
+    ]
+  },
+  "success": {
+    "title": "Why It Worked",
+    "points": [
+      {
+        "title": "Strong UVP",
+        "description": "The client had unique game mechanics, support for over 10 languages, fast API, and international certifications - and we highlighted all of this in every email."
+      },
+      {
+        "title": "Deep Understanding of Market Pain Points",
+        "description": "Operators need content that:\n– doesn't duplicate competitors'\n– provides high player LTV\n– easily launches in new regions"
+      }
+    ]
+  },
+  "conclusion": {
+    "title": "Our Observations",
+    "description": "• More than 60% of online casino revenue comes from only 10-15% of games - operators are looking for products that can become hits.\n• Most platforms integrate new providers through APIs - speed and stability are critical here.\n• Games certified for multiple jurisdictions (e.g., MGA, UKGC, ONJN) provide greater market access.\n• Live games and crash games are the top growing verticals in 2024-2025."
+  },
+  "cta": {
+    "buttonText": "Book a free consultation now",
+    "finalText": "Want similar results for your iGaming business?\n**Contact us - let's discuss your challenge.**"
+  },
+  "form": {
+    "title": "Want the same results for your business? 🚀",
+    "description": "Submit a request for a free consultation. We'll analyze your niche and propose a Cold Email strategy that will work specifically for you.",
+    "disclaimer": "*Consultation is free and does not oblige you to cooperate"
+  },
+  "messenger": {
+    "text": "Chat with us on Messenger"
+  }
+}
