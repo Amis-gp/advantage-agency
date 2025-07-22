@@ -234,8 +234,23 @@ export const portfolioSlides = [
         },
     },
     {
+        title: 'iGaming B2B',
+        date: '18.06.2025 - 18.07.2025',
+        image: '/img/portfolio/igaming.webp',
+        stats: {
+            emailsSent: '3000',
+            openRate: '61%',
+            replyRate: '3%',
+        },
+        location: '🌍 Worldwide',
+        slug: {
+            en: 'cases/v18',
+            uk: 'cases/v18'
+        },
+    },
+    {
         title: 'Wine Distributor',
-        date: '04.03.2024 - 4.04.2024',
+        date: '04.10.2024 - 4.11.2024',
         image: '/img/portfolio/wine-distributor.webp',
         stats: {
             amountOfPurchases: '391',

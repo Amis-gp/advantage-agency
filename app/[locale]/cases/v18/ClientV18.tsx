@@ -214,45 +214,21 @@ const V18Page: NextPage = () => {
             </div>
           </div>
           
-          <div className="relative ml-4 pl-10 border-l-2 border-indigo-200 py-4 mb-14">
-            <div className="absolute -left-3 top-0 w-6 h-6 rounded-full bg-indigo-500 flex items-center justify-center">
-              <span className="text-white text-sm">5</span>
-            </div>
-            <h2 className="text-xl font-bold text-indigo-700 mb-8">{t('testing.title')}</h2>
-            <p className="text-lg mb-6">{t('testing.description')}</p>
-            
-            <div className="text-center mb-10">
-              <div className="inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-amber-100 to-yellow-100 border border-amber-200 rounded-2xl shadow-sm">
-                <div className="w-8 h-8 bg-amber-500 rounded-full flex items-center justify-center">
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
-                  </svg>
-                </div>
-                <span className="text-xl font-bold text-amber-800">
-                  {t('testing.highlight')}
-                </span>
-              </div>
-            </div>
-            
-            <div className="flex flex-wrap justify-center gap-4 mb-12">
-              {t('testing.tags') && Array.isArray(t('testing.tags')) && t('testing.tags').map((tag: string, index: number) => (
-                <span key={index} className="px-4 py-2 bg-slate-100 text-slate-700 rounded-full text-sm font-medium">
-                  {tag}
-                </span>
-              ))}
-            </div>
-          </div>
-          
-
-          
           <div className="relative ml-4 pl-10 border-l-2 border-indigo-200 py-4 mb-16">
             <div className="absolute -left-3 top-0 w-6 h-6 rounded-full bg-indigo-500 flex items-center justify-center">
-              <span className="text-white text-sm">6</span>
+              <span className="text-white text-sm">5</span>
             </div>
             <div className="flex items-start gap-4 mb-6">
               <h3 className="text-xl font-bold text-indigo-700">{t('success.title')}</h3>
             </div>
             
+            <p 
+              className="text-lg text-slate-700 leading-relaxed mb-8"
+              dangerouslySetInnerHTML={{
+                __html: t('success.description')
+              }}
+            />
+
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10">
               {t('success.points') && Array.isArray(t('success.points')) && t('success.points').map((point: any, index: number) => (
                 <div key={index} className="bg-gradient-to-r from-amber-50 to-yellow-50 p-6 rounded-xl border-l-4 border-amber-400 shadow-sm hover:shadow-md transition-all duration-300">
