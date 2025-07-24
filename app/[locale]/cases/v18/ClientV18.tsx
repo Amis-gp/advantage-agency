@@ -8,6 +8,7 @@ import Formspree from '@/components/cases/Formspree';
 import CasesFooter from '@/components/cases/Footer';
 import LanguageSwitcher from '@/components/LanguageSwitcher';
 import { useParams } from 'next/navigation';
+import Image from 'next/image';
 
 const V18Page: NextPage = () => {
   const params = useParams();
@@ -178,6 +179,17 @@ const V18Page: NextPage = () => {
             
             <p className="text-lg text-slate-700 mb-8">{t('solutions.description')}</p>
             
+             <div className="my-12 rounded-xl overflow-hidden shadow-2xl border border-indigo-100">
+              <Image
+                src="/img/v18/stata.webp"
+                alt={t('success.title')}
+                width={1200}
+                height={675}
+                className="w-full h-auto object-cover cursor-pointer hover:scale-105 transition-transform duration-300"
+                onClick={() => openImage('/img/v18/stata.webp')}
+              />
+            </div>
+
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {t('solutions.items') && Array.isArray(t('solutions.items')) && t('solutions.items').map((solution: any, index: number) => (
                 <div key={index} className="bg-gradient-to-r from-slate-50 to-indigo-50 p-6 rounded-xl border-l-4 border-indigo-500">
