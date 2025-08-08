@@ -71,10 +71,6 @@ const PricingSection = () => {
               Access to community to build a team
             </li>
           </ul>
-
-          <div className="mt-6 text-center">
-            <p className="text-white underline">+ ready to run FB accounts</p>
-          </div>
         </div>
 
         {/* Black Affiliate Package */}

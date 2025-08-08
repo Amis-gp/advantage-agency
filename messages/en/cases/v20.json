@@ -1,0 +1,93 @@
+{
+  "seo": {
+    "title": "$11k+ Pure Profit from One Buyer: Team Case Study - One Partners",
+    "description": "Discover how our team buyer achieved $11k+ pure profit with proven frameworks, working tech, and consistent optimization strategies."
+  },
+  "hero": {
+    "subtitle": "Case Study",
+    "title": "$11k+ Pure Profit from One Buyer",
+    "description": "At our partners' request, we're sharing results from one of our buyers — breaking down all the key elements of a profitable run."
+  },
+  "intro": {
+    "title": "The Profitable Framework",
+    "description": "We scaled this funnel and added tests for new angles. One of the team's buyers agreed to break down his working funnel and share all the details — except the offer. Take notes, analyze the case, and borrow what works for your own launches."
+  },
+  "stats": {
+    "title": "Key Results",
+    "items": [
+      {
+        "value": "$11k+",
+        "label": "Pure Profit"
+      },
+      {
+        "value": "400+",
+        "label": "Redeposits"
+      },
+      {
+        "value": "100%+",
+        "label": "Redep Rate"
+      },
+      {
+        "value": "$12",
+        "label": "Avg Deposit"
+      },
+      {
+        "value": "50/50",
+        "label": "Spy vs In-house"
+      },
+      {
+        "value": "75%",
+        "label": "Agency Accounts"
+      },
+      {
+        "value": "iOS + Android",
+        "label": "Coverage"
+      },
+      {
+        "value": "Smartlink+",
+        "label": "Technology"
+      }
+    ]
+  },
+  "breakdown": {
+    "title": "Case Study Breakdown",
+    "sections": [
+      {
+        "title": "1. Creatives: 50/50 Spy vs In-house",
+        "content": "\"I actively tested different creatives: grabbed from spy tools and built my own — 50/50.<br><br>Conversions came in from both, but my custom creatives always performed better.<br><br>Best results came from the evergreen combo — <strong>gameplay + emotion</strong>, and also UGC-style influencer videos showing gameplay on mobile.\"<br><br><strong>IMPORTANT</strong>: Local voiceover gives a big trust boost and improves conversions. Take the time to generate <strong>AI voiceovers in the local language</strong> — look for good speech samples in other creatives or videos, and aim for natural intonation and flow.",
+        "images": ["/img/v20/image2.webp"]
+      },
+      {
+        "title": "2. Accounts: 25% self-farmed, 75% agency",
+        "content": "Agency accounts work as a stable base for scaling.<br><br>\"We farm our own accounts (King + personal). They hook better and don't have limit issues — scale is smooth.\"",
+        "images": ["/img/v20/image3.webp"]
+      },
+      {
+        "title": "3. Apps & Funnel Setup",
+        "content": "We used the <strong>smartlink+</strong> tech from ZM Apps to <strong>capture a wider audience</strong>. That allowed us to pull traffic from both <strong>iOS and Android</strong> within the same campaign.<br><br>• iOS users were sent to a regular iOS app<br>• Android users landed on a <strong>custom PWA</strong> created inside the ZM Apps dashboard<br><br>\"We never lowball the targeting — that always ends in low quality and cuts.<br><br>We trim weak creatives, scale the age targeting, test various PWAs, and leave only what performs best.\"<br><br>Also test the new <strong>PWA Games</strong> format — these are interactive prelanders that fully simulate the game. Users get familiar with the mechanics and even receive a bonus before downloading — which massively boosts <strong>click-to-install</strong>.<br><br><strong>IMPORTANT</strong>: Running traffic through <strong>smartlink+</strong> maximizes user coverage. That's why <strong>iOS traffic ends up cheaper</strong>, and your <strong>ROI increases</strong>.",
+        "images": ["/img/v20/image4.webp", "/img/v20/image5.webp"]
+      },
+      {
+        "title": "4. Quality: 100%+ Redeposits",
+        "content": "\"This run delivered over 100% redeposits: 400+ RDs.<br><br>Though the average dep was on the low side — around $12.\"<br><br>Alongside scaling Chicken (this particular funnel), we also started testing <strong>slots-based angles</strong> like <strong>Egypt, Bonanza, and Zeus</strong>.",
+        "images": ["/img/v20/image6.webp"]
+      }
+    ]
+  },
+  "conclusion": {
+    "title": "Final Thoughts",
+    "description": "There's no such thing as a secret sauce.<br><br>But there is a <strong>set of proven frameworks</strong>, <strong>access to working tech</strong>, and <strong>consistent work on testing, analysis, and optimization</strong>.<br><br>When you combine all of that into a system — that's when you start getting what everyone's here for: <strong>consistent profit</strong>."
+  },
+  "cta": {
+    "buttonText": "Get Similar Results",
+    "finalText": "Ready to implement <strong>proven frameworks</strong> and achieve <strong>$11k+ profit</strong> like our team buyer?"
+  },
+  "form": {
+    "title": "Ready to Scale Your Profits?",
+    "description": "Let's discuss how we can help you implement these proven strategies and achieve similar results. Our team of experts is ready to share working frameworks and tech.",
+    "disclaimer": "We'll respond within 24 hours with a personalized strategy proposal."
+  },
+  "messenger": {
+    "text": "Chat with us on Messenger"
+  }
+}
