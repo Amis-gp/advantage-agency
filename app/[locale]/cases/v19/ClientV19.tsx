@@ -182,6 +182,9 @@ const V19Page: NextPage = () => {
                 <div key={index} className="group">
                   <div className="bg-white border border-red-200 p-6 rounded-xl shadow-sm">
                     <div className="flex items-start gap-4">
+                      <div className="w-10 h-10 bg-gradient-to-br from-red-500 to-orange-600 rounded-xl flex items-center justify-center flex-shrink-0 mt-1">
+                        <span className="text-white font-bold text-sm">{index + 1}</span>
+                      </div>
                       <div className="flex-1">
                         <h4 className="font-bold text-slate-900 text-xl mb-4 group-hover:text-red-700 transition-colors duration-300">{section.title}</h4>
                         {section.title.includes('Campaign Setup') ? (

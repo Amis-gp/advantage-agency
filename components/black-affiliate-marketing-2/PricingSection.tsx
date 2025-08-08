@@ -39,27 +39,27 @@ const PricingSection = () => {
 
           <ul className="space-y-4 text-sm">
             <li className="flex gap-2">
-              <span className="text-red-500 w-1.5 h-1.5 rounded-full mt-1.5 bg-red-500"></span>
+              <span className="text-red-500">•</span>
               FB marketing fundamentals
             </li>
             <li className="flex gap-2">
-              <span className="text-red-500 w-1.5 h-1.5 rounded-full mt-1.5 bg-red-500"></span>
+              <span className="text-red-500">•</span>
               Proven ways to bypass FB restrictions
             </li>
             <li className="flex gap-2">
-              <span className="text-red-500 w-1.5 h-1.5 rounded-full mt-1.5 bg-red-500"></span>
+              <span className="text-red-500">•</span>
               35k IP addresses of FB moderators
             </li>
             <li className="flex gap-2">
-              <span className="text-red-500 w-1.5 h-1.5 rounded-full mt-1.5 bg-red-500"></span>
+              <span className="text-red-500">•</span>
               Pre-lander setup & optimization manual
             </li>
             <li className="flex gap-2">
-              <span className="text-red-500 w-1.5 h-1.5 rounded-full mt-1.5 bg-red-500"></span>
+              <span className="text-red-500">•</span>
               Intro to Gambling, Nutra and crypto vertical
             </li>
             <li className="flex gap-2">
-              <span className="text-red-500 w-1.5 h-1.5 rounded-full mt-1.5 bg-red-500"></span>
+              <span className="text-red-500">•</span>
               List of suppliers & essential services
             </li>
           </ul>
@@ -80,23 +80,23 @@ const PricingSection = () => {
 
           <ul className="space-y-4 text-sm text-left">
             <li className="flex gap-2">
-              <span className="text-red-500 w-1.5 h-1.5 rounded-full mt-1.5 bg-red-500"></span>
+              <span className="text-red-500">•</span>
               Everything from BASIC, plus:
             </li>
             <li className="flex gap-2">
-              <span className="text-red-500 w-1.5 h-1.5 rounded-full mt-1.5 bg-red-500"></span>
+              <span className="text-red-500">•</span>
               Personal mentorship directly from me
             </li>
             <li className="flex gap-2">
-              <span className="text-red-500 w-1.5 h-1.5 pr-1 rounded-full mt-1.5 bg-red-500"></span>
+              <span className="text-red-500">•</span>
               Warm introductions to top affiliate networks & traffic sources
             </li>
             <li className="flex gap-2">
-              <span className="text-red-500 w-1.5 h-1.5 rounded-full mt-1.5 bg-red-500"></span>
+              <span className="text-red-500">•</span>
               Real examples of high-converting funnels
             </li>
             <li className="flex gap-2">
-              <span className="text-red-500 w-1.5 h-1.5 rounded-full mt-1.5 bg-red-500"></span>
+              <span className="text-red-500">•</span>
               Personal recommendations
             </li>
           </ul>
@@ -117,27 +117,27 @@ const PricingSection = () => {
 
           <ul className="space-y-4 text-sm text-left">
             <li className="flex gap-2">
-              <span className="text-red-500 w-1.5 h-1.5 rounded-full mt-1.5 bg-red-500"></span>
+              <span className="text-red-500">•</span>
               Everything from BLACK AFFILIATE, plus:
             </li>
             <li className="flex gap-2">
-              <span className="text-red-500 w-1.5 h-1.5 rounded-full mt-1.5 bg-red-500"></span>
+              <span className="text-red-500">•</span>
               Contacts of trusted sellers
             </li>
             <li className="flex gap-2">
-              <span className="text-red-500 w-1.5 h-1.5 rounded-full mt-1.5 pr-1 bg-red-500"></span>
+              <span className="text-red-500">•</span>
               Advanced methods for running prohibited creatives on FB
             </li>
             <li className="flex gap-2">
-              <span className="text-red-500 w-1.5 h-1.5 rounded-full mt-1.5 bg-red-500"></span>
+              <span className="text-red-500">•</span>
               4 one-on-one strategic calls with me
             </li>
             <li className="flex gap-2">
-              <span className="text-red-500 w-1.5 h-1.5 rounded-full mt-1.5 bg-red-500"></span>
+              <span className="text-red-500">•</span>
               Road Map
             </li>
             <li className="flex gap-2">
-              <span className="text-red-500 w-1.5 h-1.5 rounded-full mt-1.5 bg-red-500"></span>
+              <span className="text-red-500">•</span>
               Step-by-step handholding until your first payout
             </li>
           </ul>
