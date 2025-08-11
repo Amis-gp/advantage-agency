@@ -107,7 +107,7 @@ const PricingSection = () => {
           <h3 className="text-2xl font-bold mb-2">Vip</h3>
           <p className="text-gray-400 mb-8 h-12">Unlock VIP Secrets for Unprecedented Success</p>
           
-          <div className="text-5xl font-bold mb-8 group-hover:text-red-500 transition-colors">€4999</div>
+          <div className="text-5xl font-bold mb-8 group-hover:text-red-500 transition-colors">€3999</div>
           
           <div className="mt-6 mb-8 text-center">
             <Link href="/black-affiliate-marketing-2/form" className="w-full bg-red-800 hover:bg-red-700 text-white py-3 px-6 rounded-lg transition-colors">
