@@ -17,7 +17,7 @@ const PortfolioSection = () => {
                 </div>
 
                 <div className="space-y-8">
-                    <div className="grid grid-cols-5 gap-8 text-white text-sm font-semibold border-b border-gray-700 pb-4">
+                    <div className="hidden md:grid grid-cols-5 gap-8 text-white text-sm font-semibold border-b border-gray-700 pb-4">
                         <div>NUMBER</div>
                         <div>VERTICAL</div>
                         <div>GEOS & DATES</div>
@@ -28,25 +28,28 @@ const PortfolioSection = () => {
                     
 
                     <Link href="/en/cases/v14" className="block">
-                        <div className="grid grid-cols-5 gap-8 text-white py-6 border-b border-gray-800 hover:bg-gray-900/50 hover:border-red-400/50 transition-all duration-300 cursor-pointer group">
-                            <div className="text-white font-semibold group-hover:text-red-400 transition-colors">
-                                N°01
+                        <div className="md:grid md:grid-cols-5 md:gap-8 text-white py-6 border-b border-gray-800 hover:bg-gray-900/50 hover:border-red-400/50 transition-all duration-300 cursor-pointer group">
+                            <div className="text-white font-semibold group-hover:text-red-400 transition-colors mb-2 md:mb-0">
+                                <span className="md:hidden text-gray-400 text-xs uppercase tracking-wider">Number: </span>N°01
                             </div>
                             
-                            <div className="text-white font-semibold group-hover:text-red-400 transition-colors">
-                                CRYPTO
+                            <div className="text-white font-semibold group-hover:text-red-400 transition-colors mb-2 md:mb-0">
+                                <span className="md:hidden text-gray-400 text-xs uppercase tracking-wider">Vertical: </span>CRYPTO
                             </div>
                             
-                            <div>
-                                <div className="text-white font-semibold group-hover:text-red-400 transition-colors">GLOBAL</div>
-                                <div className="text-gray-400 text-sm mt-1 group-hover:text-gray-300 transition-colors">2024</div>
+                            <div className="mb-2 md:mb-0">
+                                <span className="md:hidden text-gray-400 text-xs uppercase tracking-wider">Geos & Dates: </span>
+                                <div className="text-white font-semibold group-hover:text-red-400 transition-colors inline md:block">GLOBAL</div>
+                                <div className="text-gray-400 text-sm mt-1 group-hover:text-gray-300 transition-colors inline md:block ml-2 md:ml-0">2024</div>
                             </div>
                             
-                            <div className="text-white text-sm leading-tight group-hover:text-red-400 transition-colors">
+                            <div className="text-white text-sm leading-tight group-hover:text-red-400 transition-colors mb-2 md:mb-0">
+                                <span className="md:hidden text-gray-400 text-xs uppercase tracking-wider block mb-1">Goal: </span>
                                 TEST 10,000 EMAILS<br />IN CRYPTO NICHE
                             </div>
                             
                             <div>
+                                <span className="md:hidden text-gray-400 text-xs uppercase tracking-wider block mb-1">Traffic Sources & Result: </span>
                                 <div className="text-white text-sm leading-tight mb-2 group-hover:text-red-400 transition-colors">
                                     COLD EMAIL
                                 </div>
@@ -59,25 +62,28 @@ const PortfolioSection = () => {
                     </Link>
 
                     <Link href="/en/cases/v18" className="block">
-                        <div className="grid grid-cols-5 gap-8 text-white py-6 border-b border-gray-800 hover:bg-gray-900/50 hover:border-red-400/50 transition-all duration-300 cursor-pointer group">
-                            <div className="text-white font-semibold group-hover:text-red-400 transition-colors">
-                                N°02
+                        <div className="md:grid md:grid-cols-5 md:gap-8 text-white py-6 border-b border-gray-800 hover:bg-gray-900/50 hover:border-red-400/50 transition-all duration-300 cursor-pointer group">
+                            <div className="text-white font-semibold group-hover:text-red-400 transition-colors mb-2 md:mb-0">
+                                <span className="md:hidden text-gray-400 text-xs uppercase tracking-wider">Number: </span>N°02
                             </div>
                             
-                            <div className="text-white font-semibold group-hover:text-red-400 transition-colors">
-                                iGAMING B2B
+                            <div className="text-white font-semibold group-hover:text-red-400 transition-colors mb-2 md:mb-0">
+                                <span className="md:hidden text-gray-400 text-xs uppercase tracking-wider">Vertical: </span>iGAMING B2B
                             </div>
                             
-                            <div>
-                                <div className="text-white font-semibold group-hover:text-red-400 transition-colors">EUROPE, LATAM, ASIA</div>
-                                <div className="text-gray-400 text-sm mt-1 group-hover:text-gray-300 transition-colors">2025</div>
+                            <div className="mb-2 md:mb-0">
+                                <span className="md:hidden text-gray-400 text-xs uppercase tracking-wider">Geos & Dates: </span>
+                                <div className="text-white font-semibold group-hover:text-red-400 transition-colors inline md:block">EUROPE, LATAM, ASIA</div>
+                                <div className="text-gray-400 text-sm mt-1 group-hover:text-gray-300 transition-colors inline md:block ml-2 md:ml-0">2025</div>
                             </div>
                             
-                            <div className="text-white text-sm leading-tight group-hover:text-red-400 transition-colors">
+                            <div className="text-white text-sm leading-tight group-hover:text-red-400 transition-colors mb-2 md:mb-0">
+                                <span className="md:hidden text-gray-400 text-xs uppercase tracking-wider block mb-1">Goal: </span>
                                 FIND WARM LEADS<br />FOR SOFTWARE<br />PROVIDER
                             </div>
                             
                             <div>
+                                <span className="md:hidden text-gray-400 text-xs uppercase tracking-wider block mb-1">Traffic Sources & Result: </span>
                                 <div className="text-white text-sm leading-tight mb-2 group-hover:text-red-400 transition-colors">
                                     COLD EMAIL
                                 </div>
@@ -90,25 +96,28 @@ const PortfolioSection = () => {
                     </Link>
 
                     <Link href="/en/cases/v19" className="block">
-                        <div className="grid grid-cols-5 gap-8 text-white py-6 border-b border-gray-800 hover:bg-gray-900/50 hover:border-red-400/50 transition-all duration-300 cursor-pointer group">
-                            <div className="text-white font-semibold group-hover:text-red-400 transition-colors">
-                                N°03
+                        <div className="md:grid md:grid-cols-5 md:gap-8 text-white py-6 border-b border-gray-800 hover:bg-gray-900/50 hover:border-red-400/50 transition-all duration-300 cursor-pointer group">
+                            <div className="text-white font-semibold group-hover:text-red-400 transition-colors mb-2 md:mb-0">
+                                <span className="md:hidden text-gray-400 text-xs uppercase tracking-wider">Number: </span>N°03
                             </div>
                             
-                            <div className="text-white font-semibold group-hover:text-red-400 transition-colors">
-                                GAMBLING
+                            <div className="text-white font-semibold group-hover:text-red-400 transition-colors mb-2 md:mb-0">
+                                <span className="md:hidden text-gray-400 text-xs uppercase tracking-wider">Vertical: </span>GAMBLING
                             </div>
                             
-                            <div>
-                                <div className="text-white font-semibold group-hover:text-red-400 transition-colors">MEXICO</div>
-                                <div className="text-gray-400 text-sm mt-1 group-hover:text-gray-300 transition-colors">2025</div>
+                            <div className="mb-2 md:mb-0">
+                                <span className="md:hidden text-gray-400 text-xs uppercase tracking-wider">Geos & Dates: </span>
+                                <div className="text-white font-semibold group-hover:text-red-400 transition-colors inline md:block">MEXICO</div>
+                                <div className="text-gray-400 text-sm mt-1 group-hover:text-gray-300 transition-colors inline md:block ml-2 md:ml-0">2025</div>
                             </div>
                             
-                            <div className="text-white text-sm leading-tight group-hover:text-red-400 transition-colors">
+                            <div className="text-white text-sm leading-tight group-hover:text-red-400 transition-colors mb-2 md:mb-0">
+                                <span className="md:hidden text-gray-400 text-xs uppercase tracking-wider block mb-1">Goal: </span>
                                 SCALE PWA<br />GAMBLING OFFERS
                             </div>
                             
                             <div>
+                                <span className="md:hidden text-gray-400 text-xs uppercase tracking-wider block mb-1">Traffic Sources & Result: </span>
                                 <div className="text-white text-sm leading-tight mb-2 group-hover:text-red-400 transition-colors">
                                     FACEBOOK APPS
                                 </div>
@@ -121,25 +130,28 @@ const PortfolioSection = () => {
                     </Link>
 
                     <Link href="/en/cases/v20" className="block">
-                        <div className="grid grid-cols-5 gap-8 text-white py-6 border-b border-gray-800 hover:bg-gray-900/50 hover:border-red-400/50 transition-all duration-300 cursor-pointer group">
-                            <div className="text-white font-semibold group-hover:text-red-400 transition-colors">
-                                N°04
+                        <div className="md:grid md:grid-cols-5 md:gap-8 text-white py-6 border-b border-gray-800 hover:bg-gray-900/50 hover:border-red-400/50 transition-all duration-300 cursor-pointer group">
+                            <div className="text-white font-semibold group-hover:text-red-400 transition-colors mb-2 md:mb-0">
+                                <span className="md:hidden text-gray-400 text-xs uppercase tracking-wider">Number: </span>N°04
                             </div>
                             
-                            <div className="text-white font-semibold group-hover:text-red-400 transition-colors">
-                                GAMBLING
+                            <div className="text-white font-semibold group-hover:text-red-400 transition-colors mb-2 md:mb-0">
+                                <span className="md:hidden text-gray-400 text-xs uppercase tracking-wider">Vertical: </span>GAMBLING
                             </div>
                             
-                            <div>
-                                <div className="text-white font-semibold group-hover:text-red-400 transition-colors">GLOBAL</div>
-                                <div className="text-gray-400 text-sm mt-1 group-hover:text-gray-300 transition-colors">2025</div>
+                            <div className="mb-2 md:mb-0">
+                                <span className="md:hidden text-gray-400 text-xs uppercase tracking-wider">Geos & Dates: </span>
+                                <div className="text-white font-semibold group-hover:text-red-400 transition-colors inline md:block">GLOBAL</div>
+                                <div className="text-gray-400 text-sm mt-1 group-hover:text-gray-300 transition-colors inline md:block ml-2 md:ml-0">2025</div>
                             </div>
                             
-                            <div className="text-white text-sm leading-tight group-hover:text-red-400 transition-colors">
+                            <div className="text-white text-sm leading-tight group-hover:text-red-400 transition-colors mb-2 md:mb-0">
+                                <span className="md:hidden text-gray-400 text-xs uppercase tracking-wider block mb-1">Goal: </span>
                                 MAXIMIZE PROFIT<br />WITH PROVEN<br />FRAMEWORKS
                             </div>
                             
                             <div>
+                                <span className="md:hidden text-gray-400 text-xs uppercase tracking-wider block mb-1">Traffic Sources & Result: </span>
                                 <div className="text-white text-sm leading-tight mb-2 group-hover:text-red-400 transition-colors">
                                     SMARTLINK+
                                 </div>

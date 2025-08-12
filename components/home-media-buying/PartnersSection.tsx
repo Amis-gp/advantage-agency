@@ -16,7 +16,7 @@ export default function PartnersSection() {
 
                 <div className="pt-10 md:pt-16 pb-2">
                     <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8 md:gap-12 items-center justify-items-center">
-                        {[1, 2, 3, 4, 5].map((index) => (
+                        {[2, 3, 4, 5].map((index) => (
                             <div 
                                 key={index}
                                 className="h-[35px] md:h-[50px] w-auto flex items-center justify-center"
@@ -33,6 +33,18 @@ export default function PartnersSection() {
                                 />
                             </div>
                         ))}
+                        <div className="col-span-2 md:col-span-1 h-[35px] md:h-[50px] w-auto flex items-center justify-center">
+                            <Image 
+                                src="/img/media-buying/logo-affiliate-partner/parthner-logo-1.webp"
+                                alt="Partner logo 1"
+                                height={60}
+                                width={400}
+                                className="h-full w-auto max-w-[200px] object-contain"
+                                loading="lazy"
+                                onMouseEnter={() => playSound('hover_2')}
+                                draggable={false}
+                            />
+                        </div>
                     </div>
                 </div>
             </div>
