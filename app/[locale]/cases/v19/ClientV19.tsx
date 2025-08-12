@@ -122,19 +122,19 @@ const V19Page: NextPage = () => {
                 <span className="text-white text-sm">1</span>
               </div>
               <h3 className="text-xl font-bold text-red-700 mb-6">{t('stats.title')}</h3>
-              <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
                 {t('stats.items') && Array.isArray(t('stats.items')) && t('stats.items').map((stat: any, index: number) => {
                   const isHighlight = stat.label === 'ROI' || stat.label === 'Profit' || stat.label === 'Прибуток';
                   return (
-                    <div key={index} className={`p-3 rounded-lg border text-center ${
+                    <div key={index} className={`p-4 rounded-xl border text-center transform hover:scale-105 transition-all duration-300 ${
                       isHighlight 
-                        ? 'bg-red-500 text-white border-red-600' 
-                        : 'bg-white border-red-200'
+                        ? 'bg-gradient-to-br from-red-500 to-orange-600 text-white border-red-600 shadow-lg' 
+                        : 'bg-gradient-to-r from-red-50 to-orange-50 border-red-200 hover:shadow-md'
                     }`}>
-                      <div className={`text-base font-bold mb-1 ${
+                      <div className={`text-lg font-bold mb-1 ${
                         isHighlight ? 'text-white' : 'text-red-600'
                       }`}>{stat.value}</div>
-                      <div className={`text-xs ${
+                      <div className={`text-xs font-medium ${
                         isHighlight ? 'text-red-100' : 'text-slate-600'
                       }`}>{stat.label}</div>
                     </div>
@@ -177,53 +177,81 @@ const V19Page: NextPage = () => {
               </div>
             </div>
             
-            <div className="grid gap-6">
+            <div className="grid gap-8">
               {t('breakdown.sections') && Array.isArray(t('breakdown.sections')) && t('breakdown.sections').map((section: any, index: number) => (
-                <div key={index} className="group">
-                  <div className="bg-white border border-red-200 p-6 rounded-xl shadow-sm">
+                <div key={index} className="group relative">
+                  <div className="absolute inset-0 bg-gradient-to-r from-red-500/10 to-orange-500/10 rounded-2xl transform group-hover:scale-105 transition-transform duration-300"></div>
+                  <div className="relative bg-white/80 backdrop-blur-sm border border-red-200/50 p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300">
                     <div className="flex items-start gap-4">
-                      <div className="w-10 h-10 bg-gradient-to-br from-red-500 to-orange-600 rounded-xl flex items-center justify-center flex-shrink-0 mt-1">
-                        <span className="text-white font-bold text-sm">{index + 1}</span>
-                      </div>
                       <div className="flex-1">
                         <h4 className="font-bold text-slate-900 text-xl mb-4 group-hover:text-red-700 transition-colors duration-300">{section.title}</h4>
                         {section.title.includes('Campaign Setup') ? (
-                          <div className="space-y-4">
-                            <div className="text-slate-700 leading-relaxed">
+                          <div className="space-y-6">
+                            <div className="text-slate-700 leading-relaxed mb-6">
                               During the campaign launch, the team used in-house PWAs, with Facebook as the placement. The target audience was clearly defined: men aged 25 and older.
                             </div>
                             
-                            <div className="bg-white p-4 rounded-lg border border-red-200">
-                              <h5 className="font-bold text-red-700 text-lg mb-3">Key Campaign Parameters</h5>
+                            <div className="bg-gradient-to-r from-red-50 to-orange-50 p-6 rounded-xl border border-red-200">
+                              <h5 className="font-bold text-red-700 text-lg mb-4 flex items-center gap-2">
+                                <span className="w-6 h-6 bg-red-500 rounded-full flex items-center justify-center">
+                                  <span className="text-white text-xs">⚙️</span>
+                                </span>
+                                Key Campaign Parameters
+                              </h5>
                               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                                <div className="space-y-2">
-                                  <div className="flex justify-between items-center py-1 border-b border-red-100">
+                                <div className="space-y-3">
+                                  <div className="flex justify-between items-center py-2 border-b border-red-200">
                                     <span className="font-medium text-slate-600">Objective:</span>
-                                    <span className="font-bold text-red-600">FTD</span>
+                                    <span className="font-bold text-red-600">FTD (First-Time Deposit)</span>
                                   </div>
-                                  <div className="flex justify-between items-center py-1 border-b border-red-100">
-                                    <span className="font-medium text-slate-600">GEO:</span>
-                                    <span className="font-bold text-red-600">Mexico</span>
+                                  <div className="flex justify-between items-center py-2 border-b border-red-200">
+                                    <span className="font-medium text-slate-600">GEOs:</span>
+                                    <span className="font-bold text-red-600">BD, MX, PK</span>
                                   </div>
-                                  <div className="flex justify-between items-center py-1">
-                                    <span className="font-medium text-slate-600">Platform:</span>
-                                    <span className="font-bold text-red-600">Facebook Apps</span>
+                                  <div className="flex justify-between items-center py-2 border-b border-red-200">
+                                    <span className="font-medium text-slate-600">Cap:</span>
+                                    <span className="font-bold text-red-600">20 deposits</span>
                                   </div>
-                                </div>
-                                <div className="space-y-2">
-                                  <div className="flex justify-between items-center py-1 border-b border-red-100">
-                                    <span className="font-medium text-slate-600">Test Period:</span>
-                                    <span className="font-bold text-red-600">08.09 - 08.10.2024</span>
-                                  </div>
-                                  <div className="flex justify-between items-center py-1 border-b border-red-100">
-                                    <span className="font-medium text-slate-600">Offer:</span>
-                                    <span className="font-bold text-red-600">PWA</span>
-                                  </div>
-                                  <div className="flex justify-between items-center py-1">
-                                    <span className="font-medium text-slate-600">Target:</span>
-                                    <span className="font-bold text-red-600">Men 25+</span>
+                                  <div className="flex justify-between items-center py-2">
+                                    <span className="font-medium text-slate-600">KPI:</span>
+                                    <span className="font-bold text-red-600">Minimum deposit, playing traffic</span>
                                   </div>
                                 </div>
+                                
+                                <div className="space-y-3">
+                                  <div className="bg-white p-4 rounded-lg border border-red-100">
+                                    <h6 className="font-bold text-slate-700 mb-3">Minimum Deposit:</h6>
+                                    <div className="space-y-2">
+                                      <div className="flex justify-between items-center">
+                                        <span className="text-slate-600">BD:</span>
+                                        <span className="font-bold text-green-600">400 BDT</span>
+                                      </div>
+                                      <div className="flex justify-between items-center">
+                                        <span className="text-slate-600">MX:</span>
+                                        <span className="font-bold text-green-600">40 MXN</span>
+                                      </div>
+                                      <div className="flex justify-between items-center">
+                                        <span className="text-slate-600">PK:</span>
+                                        <span className="font-bold text-green-600">200 PKR</span>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            
+                            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-6">
+                              <div className="bg-white p-4 rounded-lg border border-red-200 text-center">
+                                <div className="text-sm text-slate-600 mb-1">Test Period</div>
+                                <div className="font-bold text-red-600">08.09 - 08.10.2024</div>
+                              </div>
+                              <div className="bg-white p-4 rounded-lg border border-red-200 text-center">
+                                <div className="text-sm text-slate-600 mb-1">Platform</div>
+                                <div className="font-bold text-red-600">Facebook Apps</div>
+                              </div>
+                              <div className="bg-white p-4 rounded-lg border border-red-200 text-center">
+                                <div className="text-sm text-slate-600 mb-1">Offer</div>
+                                <div className="font-bold text-red-600">PWA</div>
                               </div>
                             </div>
                           </div>
