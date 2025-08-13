@@ -160,7 +160,7 @@ export default function PricingPage() {
       domain: {
         name: "Domain",
         price: 8.88,
-        description: "Domain registration per campaign"
+        description: "Purchase of 3 domains for 1 campaign"
       },
       workspace: {
         name: "Google Workspace (Starter)",
@@ -217,7 +217,7 @@ export default function PricingPage() {
     total += addons.infrastructure.esp.price;
     
     // Домен і Workspace - залежать від розміру пакету (кількості кампаній)
-    total += addons.infrastructure.domain.price * currentPackage.campaigns;
+    total += addons.infrastructure.domain.price * currentPackage.campaigns * 3;
     total += addons.infrastructure.workspace.price * currentPackage.campaigns;
     
     return total;
@@ -492,10 +492,10 @@ export default function PricingPage() {
                         <div className="font-medium text-white">{t('addons.infrastructure.domain.name', { fallback: addons.infrastructure.domain.name })}</div>
                         <div className="text-sm text-gray-300">
                           {t('addons.infrastructure.domain.description', { fallback: addons.infrastructure.domain.description })} 
-                          <span className="font-medium text-gray-300"> (€{addons.infrastructure.domain.price} × {currentPackage.campaigns})</span>
+                          <span className="font-medium text-gray-300"> (€{addons.infrastructure.domain.price} × 3)</span>
                         </div>
                       </div>
-                      <div className="font-medium text-blue-400">€{(addons.infrastructure.domain.price * currentPackage.campaigns).toFixed(2)}</div>
+                      <div className="font-medium text-blue-400">€{(addons.infrastructure.domain.price * 3 * currentPackage.campaigns).toFixed(2)}</div>
                     </div>
                     
                     <div className="flex items-center justify-between p-4 border border-gray-700 rounded-lg bg-[#0F172A]/80 ">

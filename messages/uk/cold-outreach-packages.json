@@ -38,7 +38,7 @@
       },
       "domain": {
         "name": "Домен",
-        "description": "Реєстрація домену для кожної кампанії"
+        "description": "Придбання 3 доменів на 1 кампанію"
       },
       "workspace": {
         "name": "Google Workspace (Starter)",
