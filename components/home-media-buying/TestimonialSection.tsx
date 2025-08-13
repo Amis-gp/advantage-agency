@@ -90,13 +90,6 @@ export default function TestimonialSection() {
             rating: "5"
         },
         {
-            title: "Outstanding ROI on Dating Campaigns",
-            text: "Working with ADvantage transformed our dating app's user acquisition. They delivered 300% ROI improvement and helped us scale to new markets efficiently. Their understanding of compliance and creative strategies is unmatched.",
-            author: "Anonymous, Dating Platform",
-            daysAgo: "1 month ago",
-            rating: "5"
-        },
-        {
             title: "Crypto Project Success",
             text: "ADvantage helped us launch our crypto project with incredible results. Their team navigated complex regulations while delivering high-quality traffic and conversions. Professional, reliable, and results-oriented.",
             author: "Anonymous, Crypto Startup",

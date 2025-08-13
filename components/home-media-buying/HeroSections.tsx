@@ -74,7 +74,7 @@ export default function HeroSection() {
                         We Drive Traffic. You Reap the Rewards.
                     </h1>
                     <p className="text-xl md:text-2xl max-w-3xl mx-auto text-gray-300">
-                        We help iGaming, Nutra, and Dating brands scale globally with Meta Ads, TikTok, Native and Push expertise.
+                        We help iGaming and Nutra brands scale globally with Meta Ads, TikTok, Native and Push expertise.
                     </p>
                 </motion.div>
 
