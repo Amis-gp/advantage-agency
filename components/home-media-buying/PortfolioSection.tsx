@@ -119,7 +119,7 @@ const PortfolioSection = () => {
                             <div>
                                 <span className="md:hidden text-gray-400 text-xs uppercase tracking-wider block mb-1">Traffic Sources & Result: </span>
                                 <div className="text-white text-sm leading-tight mb-2 group-hover:text-red-400 transition-colors">
-                                    FACEBOOK APPS
+                                    FACEBOOK
                                 </div>
                                 <div className="text-red-400 font-semibold text-sm group-hover:text-red-300 transition-colors">
                                     94.21% ROI,<br />
