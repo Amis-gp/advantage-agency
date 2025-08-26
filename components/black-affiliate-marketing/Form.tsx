@@ -92,7 +92,7 @@ export default function FormPage() {
     const url = `https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`;
 
     const message = `
-    New Lead black affiliate:
+    New Lead black-affiliate-marketing-2:
           
 Name: ${formData.name}
 Email: ${formData.email}
