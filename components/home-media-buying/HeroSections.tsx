@@ -63,7 +63,10 @@ export default function HeroSection() {
                 <Image src="/img/home/gradient-ball-1.svg" alt="Decorative lines" width={426} height={426}/>
             </div>
 
-            <div className="max-w-6xl mx-auto pt-28 relative">
+            <div className="max-w-6xl mx-auto pt-16 relative">
+                <div className="flex justify-center mb-12">
+                    <Image src="/img/logo.svg" alt="Advantage Agency Logo" width={250} height={55} />
+                </div>
                 <motion.div 
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
@@ -151,44 +154,18 @@ export default function HeroSection() {
                     </div>
                 </motion.div>
 
-                <motion.div 
-                    initial={{ opacity: 0, y: 30 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.6, delay: 0.4 }}
-                    className="flex items-center gap-4 mt-8 justify-center relative"
-                >
-                    <div className="flex -space-x-4">
-                        <Image src="/img/home/ava-1.jpg" alt="Avatar" width={40} height={40} className="rounded-full" />
-                        <Image src="/img/home/ava-2.jpg" alt="Avatar" width={40} height={40} className="rounded-full" />
-                        <Image src="/img/home/ava-3.jpg" alt="Avatar" width={40} height={40} className="rounded-full" />
-                        <Image src="/img/home/ava-4.jpg" alt="Avatar" width={40} height={40} className="rounded-full" />
-                    </div>
-                    <div className="">
-                        <div className="flex items-center">
-                            {[1, 2, 3, 4].map((star) => (
-                                <Image key={star} src="/img/home/star-yellow.svg" alt="Star" width={12} height={12} className="mr-1"/>
-                            ))}
-                            <Image src="/img/home/star-yellow-gray.svg" alt="Star" width={12} height={12}/>
-                            <span className="ml-2">4.6</span>
-                        </div>
-                        <span className="mt-3">100+ reviews</span>
-                    </div>
-                    <motion.div className="absolute top-28 left-1 sm:top-10 sm:left-40" style={{ rotate: rotate2 }}>
-                        <Image src="/img/home/star.svg" alt="Star" width={24} height={24}/>
-                    </motion.div>
-                </motion.div>
-
+                
                 <motion.div 
                     initial={{ opacity: 0, y: 30 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.6, delay: 0.6 }}
                     className="w-fit mx-auto mt-4 hover:scale-105 transition-all duration-100"
                 >
-                    <Link href="/offers" 
+                    <Link href="/form" 
                         className="group relative bg-white hover:bg-white/90 transition-all duration-300 text-black px-8 py-4 rounded-full text-lg font-medium flex items-center gap-2" 
                         onMouseEnter={() => playSound('hover_1')}
                     >
-                        <span className="relative z-10">Get Started</span>
+                        <span className="relative z-10">Get traffic</span>
                         <span className="relative z-10 animate-[bounceX_1s_ease-in-out_infinite]">→</span>
                         <div className="absolute inset-0 rounded-full animate-pulse-border group-hover:animate-none"></div>
                     </Link>
