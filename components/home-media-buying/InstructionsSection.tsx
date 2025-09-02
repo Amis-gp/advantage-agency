@@ -13,6 +13,32 @@ export default function Instructions() {
     
     const { scrollY } = useScroll();
     const rotate2 = useTransform(scrollY, [0, 3000], [0, -360]);
+    const steps = [
+        {
+            title: "Marketing research, analysis geo",
+            duration: "Duration 1 day",
+        },
+        {
+            title: "Choosing an offer and locking in terms with the advertiser (aff networks)",
+            duration: "Duration 2 days",
+        },
+        {
+            title: "Technical setup of the workflow",
+            duration: "Duration 2 days",
+        },
+        {
+            title: "Test launch of traffic to the offer",
+            duration: "Duration 7 days",
+        },
+        {
+            title: "Traffic analysis and optimization",
+            duration: "Duration 3 weeks",
+        },
+        {
+            title: "Scaling ad campaigns",
+            duration: "Duration individually",
+        }
+    ];
     
     useEffect(() => {
         const updatePath = () => {
@@ -154,7 +180,7 @@ export default function Instructions() {
                     </motion.div>
 
                     <div className="hidden md:block absolute top-0 -right-48 opacity-80">
-                        <Image src="/img/home/gradient-ball-1.svg" alt="Decorative lines" width={426} height={426} loading="lazy" priority={false} />
+                        <Image src="/img/home/gradient-ball-1.svg" alt="Decorative lines" width={426} height={426} loading="lazy" priority={false} className='opacity-40'/>
                     </div>
                 </motion.div>
 
@@ -178,14 +204,14 @@ export default function Instructions() {
                         />
                     </svg>
 
-                    {[...Array(6)].map((_, index) => (
+                    {steps.map((step, index) => (
                         <div 
                             key={index}
                             className={`flex justify-center ${index % 2 === 1 ? 'mt-28 md:mt-80' : '-mt-14'} relative`}
                         >
                             <div className="z-20 relative rounded-2xl border border-white/90 bg-black p-3 md:p-12 space-y-4 md:space-y-10 max-w-[200px] md:max-w-[350px] h-fit w-full">
                                 <p className="text-white text-xs sm:text-base md:text-xl font-semibold">
-                                    {t(`steps.step${index + 1}.title`)}
+                                    {step.title}
                                 </p>
                                 <div 
                                     ref={(el) => {
@@ -197,16 +223,19 @@ export default function Instructions() {
                                 >
                                     <span className="text-sm md:text-xl xl:text-4xl font-semibold">{`${index + 1}`}</span>
                                 </div>
-                                <Image 
-                                    src={`/img/home/instruction-icon-${index + 1}.webp`} 
-                                    alt={t(`steps.step${index + 1}.title`)} 
-                                    width={200} 
-                                    height={150} 
-                                    loading="lazy" 
-                                />
+                                <div className='w-fit mx-auto'>
+                                    <Image 
+                                        src={`/img/media-buying/instruction-icon-${index + 1}.webp`} 
+                                        alt={step.title} 
+                                        width={170} 
+                                        height={120}
+                                        loading="lazy" 
+                                        className='max-h-[120px] object-contain'
+                                    />
+                                </div>
                                 <div className="text-center gap-2 text-white border border-white rounded-3xl py-2 md:py-4 px-4 md:px-3">
                                     <span className="text-xs sm:text-base md:text-xl">
-                                        {t(`steps.step${index + 1}.duration`)}
+                                        {step.duration}
                                     </span>
                                 </div>
                             </div>
@@ -244,16 +273,16 @@ export default function Instructions() {
                     transition={{ duration: 1, delay: 0.2 }}
                     className="absolute top-[15%] -left-20 animate-float"
                 >
-                    <Image src="/img/home/gradient-ball-1.svg" alt="Decorative lines" className='w-52 h-52 md:w-[450px] md:h-[450px]' width={200} height={200} loading="lazy" priority={false} />
+                    <Image src="/img/home/gradient-ball-1.svg" alt="Decorative lines" className='w-52 h-52 md:w-[450px] md:h-[450px] opacity-40' width={200} height={200} loading="lazy" priority={false} />
                 </motion.div>
                 <div className="absolute top-[30%] -right-20 opacity-60">
-                    <Image src="/img/home/gradient-ball-1.svg" alt="Decorative lines" className='w-52 h-52 md:w-[450px] md:h-[450px]' width={266} height={266} loading="lazy" priority={false} />
+                    <Image src="/img/home/gradient-ball-1.svg" alt="Decorative lines" className='w-52 h-52 md:w-[450px] md:h-[450px] opacity-40' width={266} height={266} loading="lazy" priority={false} />
                 </div>
                 <div className="absolute top-[50%] -left-20 opacity-60">
-                    <Image src="/img/home/gradient-ball-1.svg" alt="Decorative lines" className='w-52 h-52 md:w-[450px] md:h-[450px]' width={300} height={300} loading="lazy" priority={false} />
+                    <Image src="/img/home/gradient-ball-1.svg" alt="Decorative lines" className='w-52 h-52 md:w-[450px] md:h-[450px] opacity-40' width={300} height={300} loading="lazy" priority={false} />
                 </div>
                 <div className="absolute top-[70%] -right-20 opacity-60 animate-float">
-                    <Image src="/img/home/gradient-ball-1.svg" alt="Decorative lines" className='w-52 h-52 md:w-[450px] md:h-[450px]' width={326} height={326} loading="lazy" priority={false} />
+                    <Image src="/img/home/gradient-ball-1.svg" alt="Decorative lines" className='w-52 h-52 md:w-[450px] md:h-[450px] opacity-40' width={326} height={326} loading="lazy" priority={false} />
                 </div>
             </div>
         </section>

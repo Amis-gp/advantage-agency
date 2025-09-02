@@ -5,8 +5,8 @@ import Link from 'next/link';
 const PortfolioSection = () => {
 
     return (
-        <section className="bg-black py-16 px-6">
-            <div className="max-w-7xl mx-auto">
+        <section className="py-16 px-6">
+            <div className="max-w-6xl mx-auto">
                 <div className="flex justify-between items-start mb-12">
                     <div>
                         <h2 className="text-white text-4xl md:text-6xl font-bold mb-4">

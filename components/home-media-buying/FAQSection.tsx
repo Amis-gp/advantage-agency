@@ -33,7 +33,7 @@ const FaqSection = () => {
     };
 
     return (
-        <section className="bg-black py-20">
+        <section className="py-20">
             <div className="max-w-6xl mx-auto px-6">
                 <div className="flex justify-between items-center">
                     <span className="text-red-500 uppercase tracking-wider">{t('headline')}</span>
@@ -51,13 +51,13 @@ const FaqSection = () => {
                             transition={{ delay: index * 0.1 }}
                             className="group"
                         >
-                            <div className="border border-white/10 rounded-2xl overflow-hidden backdrop-blur-sm transition-all duration-500 ">
+                            <div className="border border-black/10 rounded-2xl overflow-hidden backdrop-blur-sm transition-all duration-500 ">
                                 <button
                                     onClick={() => toggleQuestion(index)}
                                     className={`w-full p-8 flex justify-between items-center text-left transition-all duration-500 ${
                                         activeIndex === index 
-                                            ? 'bg-yellow/20' 
-                                            : 'bg-gradient-to-br from-white/10 via-white/5 to-transparent text-white hover:from-white/15'
+                                            ? 'bg-yellow' 
+                                            : 'bg-gradient-to-br from-black/50 via-black/45 to-transparent text-white'
                                     }`}
                                 >
                                     <span className="text-xl font-medium">{item.question}</span>

@@ -164,10 +164,10 @@ export default function IntroductionSection() {
                     ))}
                 </div>
                 <div className="lg:hidden absolute -top-10 -left-80 opacity-80 animate-float">
-                    <Image src="/img/home/gradient-ball-1.svg" alt="Decorative lines" width={426} height={426} loading="lazy" priority={false} />
+                    <Image src="/img/home/gradient-ball-1.svg" alt="Decorative lines" width={426} height={426} loading="lazy" priority={false} className='opacity-40' />
                 </div>
                 <div className="absolute bottom-5 -right-80 opacity-80 animate-float">
-                    <Image src="/img/home/gradient-ball-1.svg" alt="Decorative lines" width={426} height={426} loading="lazy" priority={false} />
+                    <Image src="/img/home/gradient-ball-1.svg" alt="Decorative lines" width={426} height={426} loading="lazy" priority={false} className='opacity-40'/>
                 </div>
                 <div className="hidden lg:block absolute -bottom-10 -right-[650px] w-[726px] h-[726px] opacity-40">
                     <Image src="/img/home/lines.svg" alt="Decorative lines" width={726} height={726} loading="lazy" priority={false} />

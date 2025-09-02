@@ -45,27 +45,30 @@ export default function HeroSection() {
     return (
         <section className="px-6 relative" id="hero">
             <div className="absolute top-28 -left-40 xl:left-10 w-64 h-64">
-                <motion.div className="hidden xl:block absolute" style={{ rotate: rotate1 }}>
-                    <Image src="/img/home/star.svg" alt="Star" width={64} height={64}/>
+                <Image src="/img/home/gradient-ball-1.svg" className="animate-float opacity-40" alt="Decorative lines" width={726} height={726}/>
+            </div>
+            <div className="absolute top-2/3 -left-40 xl:left-10 w-64 h-64">
+                <motion.div className="hidden xl:block absolute" >
+                   <Image src="/img/media-buying/icon6.png" alt="Star" width={64} height={64} className='opacity-40'/>
                 </motion.div>
-                <Image src="/img/home/gradient-ball-1.svg" className="animate-float" alt="Decorative lines" width={726} height={726}/>
             </div>
 
             <div className="absolute -rotate-12 sm:rotate-0 -top-20 -right-52 sm:-top-80 sm:-right-80 w-[426px] h-[426px] sm:w-[726px] sm:h-[726px] opacity-40">
                 <Image src="/img/home/lines.svg" alt="Decorative lines" width={726} height={726} priority/>
             </div>
 
-            <motion.div className="absolute top-20 right-4 xl:right-16  w-4 h-4 sm:w-8 sm:h-8 xl:w-auto xl:h-auto" style={{ rotate: rotate2 }}>
-                <Image src="/img/home/star.svg" alt="Star" width={64} height={64}/>
+            <motion.div className="absolute top-20 right-4 xl:right-16  w-8 h-8 xl:w-auto xl:h-auto" style={{ rotate: rotate2 }}>
+                
+                <Image src="/img/media-buying/icon4.png" alt="icon" width={64} height={64} className=" invert"/>
             </motion.div>
 
             <div className="absolute -bottom-10 -right-56 sm:right-10 opacity-80 animate-float">
-                <Image src="/img/home/gradient-ball-1.svg" alt="Decorative lines" width={426} height={426}/>
+                <Image src="/img/home/gradient-ball-1.svg" alt="Decorative lines" width={426} height={426} className='opacity-40'/>
             </div>
 
-            <div className="max-w-6xl mx-auto pt-16 relative">
+            <div className="max-w-6xl mx-auto pt-4 sm:pt-16 relative">
                 <div className="flex justify-center mb-12">
-                    <Image src="/img/logo.svg" alt="Advantage Agency Logo" width={250} height={55} />
+                    <Image src="/img/logo.svg" alt="Advantage Agency Logo" width={250} height={55} className='opacity-50'/>
                 </div>
                 <motion.div 
                     initial={{ opacity: 0, y: 20 }}

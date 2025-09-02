@@ -119,7 +119,7 @@ export default function TestimonialSection() {
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="bg-black py-6 md:py-16 relative overflow-hidden"
+            className="py-6 md:py-16 relative overflow-hidden"
         >
             <div className="max-w-6xl mx-auto px-6">
                 <div className="relative flex flex-col md:flex-row justify-between mb-10">

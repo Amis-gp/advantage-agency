@@ -6,8 +6,16 @@ import { playSound } from '@/app/constant/sound';
 export default function PartnersSection() {
     const t = useTranslations();
 
+    const partners = [
+        { src: '/img/media-buying/logo-affiliate-partner/parthner-logo-1.webp', alt: 'Partner logo 1' },
+        { src: '/img/media-buying/logo-affiliate-partner/parthner-logo-2.webp', alt: 'Partner logo 2' },
+        { src: '/img/media-buying/logo-affiliate-partner/parthner-logo-3.webp', alt: 'Partner logo 3' },
+        { src: '/img/media-buying/logo-affiliate-partner/parthner-logo-4.webp', alt: 'Partner logo 4' },
+        { src: '/img/media-buying/logo-affiliate-partner/parthner-logo-5.webp', alt: 'Partner logo 5' },
+    ];
+
     return (
-        <section className="bg-black pt-10 md:pt-20">
+        <section className="pt-10 md:pt-20">
             <div className="max-w-[1400px] mx-auto px-6">
                 <div className="sm:text-center">
                     <span className="text-red-500 uppercase tracking-wider">{t('partners.headline')}</span>
@@ -15,17 +23,17 @@ export default function PartnersSection() {
                 </div>
 
                 <div className="pt-10 md:pt-16 pb-2">
-                    <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8 md:gap-12 items-center justify-items-center">
-                        {[2, 3, 4, 5].map((index) => (
+                    <div className="flex flex-wrap items-center justify-center gap-8 md:gap-12">
+                        {partners.map((partner, index) => (
                             <div 
                                 key={index}
-                                className="h-[35px] md:h-[50px] w-auto flex items-center justify-center"
+                                className="h-[35px] md:h-[50px] flex items-center justify-center"
                             >
                                 <Image 
-                                    src={`/img/media-buying/logo-affiliate-partner/parthner-logo-${index}.webp`}
-                                    alt={`Partner logo ${index}`}
+                                    src={partner.src}
+                                    alt={partner.alt}
                                     height={60}
-                                    width={400}
+                                    width={200}
                                     className="h-full w-auto max-w-[200px] object-contain"
                                     loading="lazy"
                                     onMouseEnter={() => playSound('hover_2')}
@@ -33,18 +41,6 @@ export default function PartnersSection() {
                                 />
                             </div>
                         ))}
-                        <div className="col-span-2 md:col-span-1 h-[35px] md:h-[50px] w-auto flex items-center justify-center">
-                            <Image 
-                                src="/img/media-buying/logo-affiliate-partner/parthner-logo-1.webp"
-                                alt="Partner logo 1"
-                                height={60}
-                                width={400}
-                                className="h-full w-auto max-w-[200px] object-contain"
-                                loading="lazy"
-                                onMouseEnter={() => playSound('hover_2')}
-                                draggable={false}
-                            />
-                        </div>
                     </div>
                 </div>
             </div>

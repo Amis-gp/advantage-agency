@@ -67,7 +67,7 @@ const FormSection = () => {
         setIsSubmitting(true);
 
         try {
-            const message = `<b>Нова заявка з сайту advantage-agency.co!</b>
+            const message = `<b>Нова заявка з сайту advantage-agency.co/media-buying</b>
 
 <b>Ім'я:</b> ${formData.name}
 <b>Email:</b> ${formData.email}
@@ -114,8 +114,8 @@ const FormSection = () => {
     return (
         <section className="py-0 md:py-16 relative" id="form">
             <div className="max-w-6xl mx-auto px-6">
-                <div className="flex flex-col lg:flex-row gap-16 relative md:px-16 overflow-hidden p-6">
-                    <div className="lg:w-1/2 relative md:mt-20">
+                <div className="flex flex-col lg:flex-row gap-16 relative md:px-16 overflow-hidden p-6 bg-black">
+                    <div className="lg:w-1/2 relative md:mt-20 ">
                         <span className="text-red-500 uppercase tracking-wider">{t('headline')}</span>
                         <h2 className="text-3xl md:text-5xl font-bold text-white mt-2 leading-tight">{t('title')}</h2>
                     </div>

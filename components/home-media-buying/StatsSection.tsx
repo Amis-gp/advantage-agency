@@ -57,7 +57,7 @@ export default function StatsSection() {
                 initial={{ opacity: 0 }}
                 animate={isInView ? { opacity: 1 } : { opacity: 0 }}
                 transition={{ duration: 0.6, delay: 0.6 }}
-                className="bg-black w-full overflow-hidden whitespace-nowrap"
+                className="w-full overflow-hidden whitespace-nowrap"
             >
                 <div className="relative max-w-[1400px] mx-auto">
                     <div className="absolute left-0 top-0 bottom-0 w-20 bg-gradient-to-r from-black to-transparent z-10"></div>

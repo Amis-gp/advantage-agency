@@ -37,7 +37,7 @@ export default function QuickLinksSection() {
                         >
                             <Link href={link.href} legacyBehavior passHref>
                                 <a 
-                                   className="flex flex-col h-full p-6 bg-zinc-900 border border-zinc-700 rounded-xl shadow-lg hover:shadow-xl hover:shadow-red-500/25 hover:border-red-500 transition-all duration-300 transform hover:-translate-y-1.5 group text-center"
+                                   className="flex flex-col h-full p-6 bg-black/40 border border-zinc-700 rounded-xl shadow-lg hover:shadow-xl hover:shadow-red-500/25 hover:border-red-500 transition-all duration-300 transform hover:-translate-y-1.5 group text-center"
                                    target={link.href.startsWith('http') ? '_blank' : '_self'}
                                    rel={link.href.startsWith('http') ? 'noopener noreferrer' : undefined}
                                 >

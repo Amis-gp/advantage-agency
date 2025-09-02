@@ -4,12 +4,11 @@ import FormSection from '@/components/home-media-buying/FormSection';
 import StatsSection from '@/components/home-media-buying/StatsSection';
 import IntroductionSection from '@/components/home-media-buying/IntroductionSection';
 import PortfolioSection from '@/components/home-media-buying/PortfolioSection';
-import AchievementsSection from '@/components/home-media-buying/AchievementsSection';
 import PartnersSection from '@/components/home-media-buying/PartnersSection';
 import Instructions from '@/components/home-media-buying/InstructionsSection';
-import TestimonialSection from '@/components/home-media-buying/TestimonialSection';
 import QuickLinksSection from '@/components/home-media-buying/QuickLinksSection';
 import FaqSection from '@/components/home-media-buying/FAQSection';
+import AdBlockSection from '@/components/home-media-buying/AdBlockSection';
 import Footer from '@/components/Footer';
 
 export default function MediaBuyingPage({
@@ -20,21 +19,33 @@ export default function MediaBuyingPage({
     setRequestLocale(locale);
 
     return (
-      <div className="bg-black text-white">
-        <main className="no-select h-full overflow-y-auto overflow-x-hidden">
-          <HeroSection />
-          <StatsSection />
-          <IntroductionSection />
-          <PortfolioSection />
-          <AchievementsSection />
-          <PartnersSection />
-          <Instructions />
-          <TestimonialSection />
-          <FormSection />
-          <QuickLinksSection /> 
-          <FaqSection />
-        </main>
-        <Footer />
+      <div className="relative bg-black text-white">
+        <div
+          className="absolute inset-0"
+          style={{
+            backgroundImage: `url(/img/media-buying/background-dark-grunge.avif)`,
+            backgroundRepeat: 'no-repeat',
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            backgroundAttachment: 'fixed',
+            opacity: 0.6,
+          }}
+        />
+        <div className="relative">
+          <main className="no-select h-full overflow-y-auto overflow-x-hidden">
+            <HeroSection />
+            <StatsSection />
+            <IntroductionSection />
+            <PortfolioSection />
+            <PartnersSection />
+            <AdBlockSection />
+            <Instructions />
+            <FormSection />
+            <QuickLinksSection />
+            <FaqSection />
+          </main>
+          <Footer />
+        </div>
       </div>
     );
 }
