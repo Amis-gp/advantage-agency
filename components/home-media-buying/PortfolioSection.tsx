@@ -9,8 +9,8 @@ const PortfolioSection = () => {
             <div className="max-w-6xl mx-auto">
                 <div className="flex justify-between items-start mb-12">
                     <div>
-                        <h2 className="text-white text-4xl md:text-6xl font-bold mb-4">
-                            SHORT<br />CASES
+                        <h2 className="text-3xl md:text-5xl font-bold text-white leading-tight">
+                            Short Cases
                         </h2>
                     </div>
 
