@@ -140,6 +140,10 @@ export default function HeroSection() {
                             </>
                         )}
                         
+                        <div className="absolute top-4 sm:top-1/4 w-full text-center text-white/50 text-xl sm:text-4xl px-3 py-1 rounded-full font-bold z-20">
+                            COMING SOON
+                        </div>
+                        
                         {!isPlaying && (
                             <div 
                                 onMouseEnter={() => playSound('hover_1')} 

@@ -35,7 +35,7 @@ export default function PartnersSection() {
                         {partners.map((partner, index) => (
                             <motion.div 
                                 key={index}
-                                className="group flex items-center justify-center p-4 rounded-xl bg-black hover:bg-black/50 transition-all duration-300 border border-transparent hover:border-red-500/30"
+                                className="group flex items-center justify-center p-4 rounded-xl bg-black hover:bg-black/50 transition-all duration-300 border border-transparent hover:border-gray-500/30"
                                 initial={{ opacity: 0, scale: 0.9 }}
                                 whileInView={{ opacity: 1, scale: 1 }}
                                 transition={{ 

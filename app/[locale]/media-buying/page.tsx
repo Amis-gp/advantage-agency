@@ -9,6 +9,7 @@ import Instructions from '@/components/home-media-buying/InstructionsSection';
 import QuickLinksSection from '@/components/home-media-buying/QuickLinksSection';
 import FaqSection from '@/components/home-media-buying/FAQSection';
 import AdBlockSection from '@/components/home-media-buying/AdBlockSection';
+import HowWeWorkSection from '@/components/home-media-buying/HowWeWorkSection';
 import Footer from '@/components/Footer';
 
 export default function MediaBuyingPage({
@@ -40,6 +41,7 @@ export default function MediaBuyingPage({
             <AdBlockSection />
             <Instructions />
             <PartnersSection />
+            <HowWeWorkSection />
             <FormSection />
             <QuickLinksSection />
             <FaqSection />
