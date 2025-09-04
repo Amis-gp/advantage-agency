@@ -5,8 +5,7 @@ import { motion, useInView } from 'framer-motion';
 import { useRef } from 'react';
 
 export default function StatsSection() {
-    const t = useTranslations();
-    const content = "EFFICIENCY GROWTH QUALITY SOLUTIONS INNOVATION CONNECT LEAD";
+    const content = "EFFICIENCY GROWTH QUALITY SOLUTIONS INNOVATION CONNECT LEAD INSTALL CPA";
     
     const ref = useRef(null);
     const isInView = useInView(ref, { once: true, amount: 0.3 });

@@ -230,7 +230,7 @@ export default function Instructions() {
                                         width={170} 
                                         height={120}
                                         loading="lazy" 
-                                        className='max-h-[120px] object-contain'
+                                        className='max-h-[50px] sm:max-h-[100px] md:max-h-[120px] object-contain'
                                     />
                                 </div>
                                 <div className="text-center gap-2 text-white border border-white rounded-3xl py-2 md:py-4 px-4 md:px-3">
