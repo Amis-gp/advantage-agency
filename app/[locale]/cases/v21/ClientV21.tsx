@@ -10,11 +10,47 @@ import '@/app/styles.css'
 import MessengerButton from '@/components/cases/MessengerButton';
 import CasesFooter from '@/components/cases/Footer';
 import LanguageSwitcher from '@/components/LanguageSwitcher';
+import { useParams } from 'next/navigation';
 
 const V21Page: NextPage = () => {
+  const params = useParams();
+  const locale = params.locale as string;
+  const [translations, setTranslations] = useState<any>({});
+  const [isLoading, setIsLoading] = useState(true);
+  
   useEffect(() => {
-    document.title = "Prostanorm Forte Case Study: $9,450 in 2 Weeks";
-  }, []);
+    const loadTranslations = async () => {
+      setIsLoading(true);
+      try {
+        const translations = await import(`/messages/${locale}/cases/v21.json`);
+        setTranslations(translations.default);
+        document.title = translations.default.seo.title;
+      } catch (error) {
+        console.error('error download translate:', error);
+      } finally {
+        setIsLoading(false);
+      }
+    };
+    
+    loadTranslations();
+  }, [locale]);
+  
+  const t = (path: string) => {
+    if (isLoading) return '';
+    
+    const keys = path.split('.');
+    let result = translations;
+    
+    for (const key of keys) {
+      if (result && result[key] !== undefined) {
+        result = result[key];
+      } else {
+        return '';
+      }
+    }
+    
+    return result;
+  };
 
   const [isOpenImage2, setIsOpenImage2] = useState(false);
   const [isOpenImage3, setIsOpenImage3] = useState(false);
@@ -98,34 +134,40 @@ const V21Page: NextPage = () => {
     setIsOpenImage10(true);
   }
 
+  // Add loading indicator before the main return
+  if (isLoading) {
+    return (
+      <div className="flex items-center justify-center min-h-screen">
+        <div className="text-center">
+          <div className="inline-block animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-orange-600 mb-4"></div>
+          <p className="text-xl font-medium">Loading...</p>
+        </div>
+      </div>
+    );
+  }
+
   return (
     <div className="text-black bg-white max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
     <LanguageSwitcher/>
       <section className="pt-8">
-        <h1 className="text-4xl sm:text-5xl font-bold mb-6 text-center">
-          Case Study: <span className='highlight'>$9,450 with Prostanorm Forte</span> in 2 Weeks on FB in Mexico
+        <h1 className="text-4xl sm:text-5xl font-bold mb-6 text-center" dangerouslySetInnerHTML={{ __html: t('hero.title') }}>
         </h1>
         <h2 className="text-2xl font-semibold mb-8 text-center text-orange-600">
-        Discover the Winning Strategy That Generated 81% ROI
+          {t('hero.subtitle')}
         </h2>
         <div className="mb-12">
-          <p className="mb-4">
-            This case study reveals how we achieved outstanding results with Prostanorm Forte in the Mexican market using Facebook advertising. In just 2 weeks, we generated <strong>$9,414 in revenue</strong> with a total ad spend of $5,199, resulting in an impressive <strong>81.07% ROI</strong>.
+          <p className="mb-4" dangerouslySetInnerHTML={{ __html: t('intro.description1') }}>
           </p>
-          <p className="mb-4">
-            Our team leveraged proven strategies in the prostatitis remedy category, utilizing ready-made pre-landings from LuckyOnline's media buying team and adapting them specifically for Facebook campaigns. The results speak for themselves - <u>1,642 total leads</u> with a <strong>31.85% approval rate</strong>.
+          <p className="mb-4" dangerouslySetInnerHTML={{ __html: t('intro.description2') }}>
           </p>
         </div>
         <div className="mb-12 flex flex-wrap justify-center items-center">
           <div className="w-full lg:w-3/5 text-center">
-            <h2 className="text-2xl font-bold mb-4">Campaign Results:</h2>
+            <h2 className="text-2xl font-bold mb-4">{t('results.title')}</h2>
             <ul className="list-disc inline-block text-left pl-6 space-y-2">
-              <li>Total Leads: 1,642</li>
-              <li>Approved: 523 (31.85%)</li>
-              <li>Total Spent: $5,199</li>
-              <li>Total Earned: $9,414</li>
-              <li>Net Profit: $4,214</li>
-              <li>ROI: 81.07%</li>
+              {t('results.stats') && t('results.stats').map((stat: any, index: number) => (
+                <li key={index}>{stat.label}: {stat.value}</li>
+              ))}
             </ul>
           </div>
           <div className="w-full lg:w-2/5 flex justify-center items-center">
@@ -133,7 +175,7 @@ const V21Page: NextPage = () => {
           </div>
         </div>
         <div className="mb-8">
-          <h2 className="text-2xl font-bold mb-4">Campaign Details:</h2>
+          <h2 className="text-2xl font-bold mb-4">{t('campaignDetails.title')}</h2>
           <table className="table-auto w-full bg-white shadow-md rounded-lg overflow-hidden">
             <thead className="bg-gradient-to-r from-orange-500 to-orange-600 text-white">
               <tr>
@@ -142,30 +184,12 @@ const V21Page: NextPage = () => {
               </tr>
             </thead>
             <tbody className="divide-y divide-gray-200">
-              <tr className="hover:bg-gray-50 transition-colors duration-150">
-                <td className="px-4 py-2 whitespace-nowrap font-medium">Offer</td>
-                <td className="px-4 py-2">Prostanorm Forte</td>
-              </tr>
-              <tr className="hover:bg-gray-50 transition-colors duration-150">
-                <td className="px-4 py-2 whitespace-nowrap font-medium">Network</td>
-                <td className="px-4 py-2">LuckyOnline</td>
-              </tr>
-              <tr className="hover:bg-gray-50 transition-colors duration-150">
-                <td className="px-4 py-2 whitespace-nowrap font-medium">Traffic Source</td>
-                <td className="px-4 py-2">Facebook</td>
-              </tr>
-              <tr className="hover:bg-gray-50 transition-colors duration-150">
-                <td className="px-4 py-2 whitespace-nowrap font-medium">GEO</td>
-                <td className="px-4 py-2">Mexico</td>
-              </tr>
-              <tr className="hover:bg-gray-50 transition-colors duration-150">
-                <td className="px-4 py-2 whitespace-nowrap font-medium">Campaign Period</td>
-                <td className="px-4 py-2">02/01/2025 – 02/14/2025</td>
-              </tr>
-              <tr className="hover:bg-gray-50 transition-colors duration-150">
-                <td className="px-4 py-2 whitespace-nowrap font-medium">Daily Cap</td>
-                <td className="px-4 py-2">150 leads</td>
-              </tr>
+              {t('campaignDetails.details') && t('campaignDetails.details').map((detail: any, index: number) => (
+                <tr key={index} className="hover:bg-gray-50 transition-colors duration-150">
+                  <td className="px-4 py-2 whitespace-nowrap font-medium">{detail.parameter}</td>
+                  <td className="px-4 py-2">{detail.value}</td>
+                </tr>
+              ))}
             </tbody>
           </table>
         </div>
@@ -178,27 +202,24 @@ const V21Page: NextPage = () => {
       </section>
 
       <section className="mb-8 mt-8">
-        <h2 className="text-3xl font-bold mb-4 text-center">
-          What You'll Learn: <span className='highlight highlight-orange-300 highlight-variant-5'>Our Winning Strategy</span> for Prostanorm Forte Campaign
+        <h2 className="text-3xl font-bold mb-4 text-center" dangerouslySetInnerHTML={{ __html: t('whatYoullLearn.title') }}>
         </h2>
         <p className="mb-4">
-        This comprehensive case study will reveal the exact strategies and techniques we used to achieve these outstanding results. You'll discover proven methods that can be applied to your own campaigns in the health and wellness niche.
+          {t('whatYoullLearn.description1')}
         </p>
         <p className="mb-4">
-          Through our detailed analysis, you'll gain valuable insights into successful Facebook advertising for health products in Latin American markets. This knowledge will help you understand the nuances of targeting, creative development, and campaign optimization.
+          {t('whatYoullLearn.description2')}
         </p>
         <p>
-          Here's what this case study covers:
+          {t('whatYoullLearn.description3')}
         </p>
         <ul className="list-disc pl-6 mb-4">
-          <li>The traffic pouring scheme that generated consistent results</li>
-          <li>Converting pre-landing pages adapted from native ads to Facebook</li>
-          <li>Winning creative approaches specifically for the Mexican market</li>
-          <li>Technical setup including accounts, payment methods, cloaking, and proxies</li>
-          <li>Campaign optimization strategies and automated rules</li>
+          {t('whatYoullLearn.topics') && t('whatYoullLearn.topics').map((topic: string, index: number) => (
+            <li key={index}>{topic}</li>
+          ))}
         </ul>
         <p>
-          By implementing these proven tactics, you'll be able to replicate similar success in your own campaigns. Let's dive into the details!
+          {t('whatYoullLearn.conclusion')}
         </p>
       </section>
 
@@ -209,65 +230,62 @@ const V21Page: NextPage = () => {
       </div>
 
       <section className="mb-8 mt-8">
-        <h2 className="text-3xl font-bold mb-4">Technical Setup: <span className='highlight highlight-orange-300 highlight-variant-5'>The Foundation of Success</span></h2>
+        <h2 className="text-3xl font-bold mb-4" dangerouslySetInnerHTML={{ __html: t('technicalSetup.title') }}></h2>
         <p className="mb-8">
-        Before launching any campaign, proper technical setup is crucial for success. Here's the exact infrastructure we used to ensure smooth operations and avoid common pitfalls that can kill campaigns.
+          {t('technicalSetup.description')}
         </p>
 
         <div className="mb-8">
-          <h3 className="text-2xl font-bold mb-8"><span className='highlight highlight-blue-200 highlight-variant-5'>Infrastructure:</span> Essential Tools and Services</h3>
+          <h3 className="text-2xl font-bold mb-8" dangerouslySetInnerHTML={{ __html: t('technicalSetup.infrastructure.title') }}></h3>
 
           <div className="mb-8">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               <div className="bg-white rounded-lg shadow-lg p-6 border-2 border-gray-300">
-                <h4 className="text-2xl font-bold mb-4 text-gray-600">Cloaking & Security</h4>
+                <h4 className="text-2xl font-bold mb-4 text-gray-600">{t('technicalSetup.infrastructure.cloaking.title')}</h4>
                 <ul className="space-y-2">
-                  <li><strong>Cloaking:</strong> Keitaro filters</li>
-                  <li><strong>Filters:</strong> Providers, GEO, Generated white page</li>
-                  <li><strong>Proxies:</strong> Mobile proxies tailored to Mexico</li>
-                  <li><strong>Purpose:</strong> Account farming and security</li>
+                  {t('technicalSetup.infrastructure.cloaking.items') && t('technicalSetup.infrastructure.cloaking.items').map((item: string, index: number) => (
+                    <li key={index} dangerouslySetInnerHTML={{ __html: item }}></li>
+                  ))}
                 </ul>
               </div>
               <div className="bg-white rounded-lg shadow-lg p-6 border-4 border-orange-600">
-                <h4 className="text-2xl font-bold mb-4 text-orange-600">Accounts & Payments</h4>
+                <h4 className="text-2xl font-bold mb-4 text-orange-600">{t('technicalSetup.infrastructure.accounts.title')}</h4>
                 <ul className="space-y-2">
-                  <li><strong>Payment System:</strong> Lamanche Payments</li>
-                  <li><strong>FB Accounts:</strong> Agency accounts from Fan Agency</li>
-                  <li><strong>Fan Pages:</strong> PZRD (pre-verified) Fan Pages</li>
-                  <li><strong>Daily Cap:</strong> 150 leads per account</li>
+                  {t('technicalSetup.infrastructure.accounts.items') && t('technicalSetup.infrastructure.accounts.items').map((item: string, index: number) => (
+                    <li key={index} dangerouslySetInnerHTML={{ __html: item }}></li>
+                  ))}
                 </ul>
               </div>
             </div>
           </div>
 
           <p className="mb-4">
-          This technical foundation allowed us to run campaigns safely and scale effectively. The combination of proper cloaking, reliable payment processing, and quality accounts is essential for sustained success in affiliate marketing.
+            {t('technicalSetup.infrastructure.conclusion')}
           </p>
           
           <div className="flex justify-center w-full mt-8 mb-8 text-center">
             <a href="#form" className="bg-orange-600 text-white px-8 py-4 text-2xl font-bold rounded hover:bg-orange-700 transition duration-300 ease-in-out animate-bounce">
-              Book My Free Consult Now
+              {t('cta.buttonText')}
             </a>
           </div>
         </div>
 
         <div className="mb-8">
-          <h3 className="text-2xl font-bold mb-4"><span className='highlight highlight-green-200 highlight-variant-5'>Offer Selection:</span> Why Prostanorm Forte</h3>
+          <h3 className="text-2xl font-bold mb-4" dangerouslySetInnerHTML={{ __html: t('technicalSetup.offerSelection.title') }}></h3>
           <p className="mb-4">
-          Based on the recommendation from manager Emil for driving traffic in Mexico, the Prostanorm Forte offer from the prostatitis remedy category was chosen. This decision was backed by:
+            {t('technicalSetup.offerSelection.description')}
           </p>
           <ul className="list-disc pl-6 mb-4">
-            <li>Strong performance history in Latin American markets</li>
-            <li>High conversion rates for the target demographic (M40+)</li>
-            <li>Proven demand for prostatitis remedies in Mexico</li>
-            <li>Competitive payout structure from LuckyOnline network</li>
+            {t('technicalSetup.offerSelection.reasons') && t('technicalSetup.offerSelection.reasons').map((reason: string, index: number) => (
+              <li key={index}>{reason}</li>
+            ))}
           </ul>
         </div>
 
         <div className="mb-8">
-          <h3 className="text-2xl font-bold mb-4"><span className='highlight highlight-purple-200 highlight-variant-5'>Pre-Landing Strategy:</span> Adapting Proven Winners</h3>
+          <h3 className="text-2xl font-bold mb-4" dangerouslySetInnerHTML={{ __html: t('technicalSetup.preLanding.title') }}></h3>
           <p className="mb-4">
-          We didn't have to spend much time or money testing approaches because LuckyOnline provides ready-made pre-landings from their media buying, already tested in native ads. We took two pre-landings with a medical news approach and adapted them for Facebook.
+            {t('technicalSetup.preLanding.description')}
           </p>
           
           <div className="flex flex-wrap justify-center gap-4 mb-4">
@@ -278,20 +296,19 @@ const V21Page: NextPage = () => {
           </div>
 
           <p className="mb-4">
-          The medical news angle works particularly well because it:
+            {t('technicalSetup.preLanding.benefits.description')}
           </p>
           <ul className="list-disc pl-6 mb-4">
-            <li>Builds trust through authoritative presentation</li>
-            <li>Educates users about the problem before presenting the solution</li>
-            <li>Reduces ad fatigue by appearing as editorial content</li>
-            <li>Improves Facebook approval rates compared to direct sales pages</li>
+            {t('technicalSetup.preLanding.benefits.items') && t('technicalSetup.preLanding.benefits.items').map((item: string, index: number) => (
+              <li key={index}>{item}</li>
+            ))}
           </ul>
         </div>
 
         <div className="mb-8">
-          <h3 className="text-2xl font-bold mb-4"><span className='highlight highlight-red-200 highlight-variant-5'>Creative Strategy:</span> Proven Winners for LatAm</h3>
+          <h3 className="text-2xl font-bold mb-4" dangerouslySetInnerHTML={{ __html: t('creativeStrategy.title') }}></h3>
           <p className="mb-4">
-          Since we'd already worked with the prostatitis category in Mexico, we didn't need to test tons of creatives. We immediately used creatives that had proven effective for prostatitis in LatAm.
+            {t('creativeStrategy.description')}
           </p>
           
           <div className="flex flex-wrap justify-center gap-4 mb-4">
@@ -301,19 +318,18 @@ const V21Page: NextPage = () => {
           </div>
 
           <p className="mb-4">
-          <strong>Key insights about our creative approach:</strong>
+            <strong>{t('creativeStrategy.insights.title')}</strong>
           </p>
           <ul className="list-disc pl-6 mb-4">
-            <li>This approach generates consistent traffic with minimal rejections</li>
-            <li>Rejections typically appear within 24 hours if they occur</li>
-            <li>Lower conversion rates are offset by extremely cheap click prices</li>
-            <li>Cost per lead remains highly competitive due to volume</li>
+            {t('creativeStrategy.insights.items') && t('creativeStrategy.insights.items').map((item: string, index: number) => (
+              <li key={index}>{item}</li>
+            ))}
           </ul>
         </div>
       </section>
 
       <section className="mb-8 mt-8">
-        <h2 className="text-3xl font-bold mb-4">Campaign Execution: <span className='highlight highlight-orange-300 highlight-variant-5'>The Winning Formula</span></h2>
+        <h2 className="text-3xl font-bold mb-4" dangerouslySetInnerHTML={{ __html: t('campaignExecution.title') }}></h2>
         
         <div className="mb-8 overflow-x-auto">
           <table className="table-auto w-full bg-white shadow-md rounded-lg overflow-hidden">
@@ -324,30 +340,20 @@ const V21Page: NextPage = () => {
               </tr>
             </thead>
             <tbody className="divide-y divide-gray-200 text-base">
-              <tr className="hover:bg-gray-50 transition-colors duration-150">
-                <td className="px-4 py-2 whitespace-nowrap font-medium">Target Audience</td>
-                <td className="px-4 py-2">Males 40+ (based on experience)</td>
-              </tr>
-              <tr className="hover:bg-gray-50 transition-colors duration-150">
-                <td className="px-4 py-2 whitespace-nowrap font-medium">Placements</td>
-                <td className="px-4 py-2">FB News Feed, FB Video Feed, FB Stories, IG Stories, IG Feed</td>
-              </tr>
-              <tr className="hover:bg-gray-50 transition-colors duration-150">
-                <td className="px-4 py-2 whitespace-nowrap font-medium">Account Setup</td>
-                <td className="px-4 py-2">1:1:1 setup on accounts with $50 limit</td>
-              </tr>
-              <tr className="hover:bg-gray-50 transition-colors duration-150">
-                <td className="px-4 py-2 whitespace-nowrap font-medium">Bidding Strategy</td>
-                <td className="px-4 py-2">Cost per Result targeting 10% ROI</td>
-              </tr>
+              {t('campaignExecution.settings') && t('campaignExecution.settings').map((setting: any, index: number) => (
+                <tr key={index} className="hover:bg-gray-50 transition-colors duration-150">
+                  <td className="px-4 py-2 whitespace-nowrap font-medium">{setting.name}</td>
+                  <td className="px-4 py-2">{setting.value}</td>
+                </tr>
+              ))}
             </tbody>
           </table>
         </div>
 
         <div className="mb-8">
-          <h3 className="text-2xl font-bold mb-4">Automated Rules for Optimization</h3>
+          <h3 className="text-2xl font-bold mb-4">{t('campaignExecution.automatedRules.title')}</h3>
           <p className="mb-4">
-          We always applied automated rules to pause expensive ad sets when they overspin. This crucial optimization prevents budget waste and maintains profitability.
+            {t('campaignExecution.automatedRules.description')}
           </p>
           
           <div className="flex justify-center mb-4">
@@ -356,9 +362,9 @@ const V21Page: NextPage = () => {
         </div>
 
         <div className="mb-8">
-          <h3 className="text-2xl font-bold mb-4">Final Results & Statistics</h3>
+          <h3 className="text-2xl font-bold mb-4">{t('campaignExecution.finalResults.title')}</h3>
           <p className="mb-4">
-          Here's a screenshot from one of our advertising accounts showing the actual performance data:
+            {t('campaignExecution.finalResults.description')}
           </p>
           
           <div className="flex justify-center mb-4">
@@ -367,12 +373,12 @@ const V21Page: NextPage = () => {
 
           <div className="p-4 flex flex-col md:flex-row items-center mb-8 border-4 border-orange-600 border-dashed rounded-lg">
             <div className="md:w-1/3 md:pr-8 mb-4 md:mb-0 text-center">
-              <p className="text-3xl font-bold text-orange-600 mb-2">81.07%</p>
-              <p><b>Return on Investment</b></p>
+              <p className="text-3xl font-bold text-orange-600 mb-2">{t('campaignExecution.finalResults.roi.percentage')}</p>
+              <p><b>{t('campaignExecution.finalResults.roi.label')}</b></p>
             </div>
             <div className="md:w-2/3">
               <p className="text-2xl font-bold">
-              Through our strategic approach and proven methodologies, we achieved an outstanding 81.07% ROI, generating $4,214 in net profit from a $5,199 investment in just 2 weeks.
+                {t('campaignExecution.finalResults.roi.description')}
               </p>
             </div>           
           </div>
@@ -380,15 +386,15 @@ const V21Page: NextPage = () => {
 
         <div className="flex justify-center w-full mt-8 mb-8 text-center">
           <a href="#form" className="bg-orange-600 text-white px-8 py-4 text-2xl font-bold rounded hover:bg-orange-700 transition duration-300 ease-in-out animate-bounce">
-            Book My Free Consult Now
+            {t('cta.buttonText')}
           </a>
         </div>
       </section>
 
       <section className="mb-8">
-        <h2 className="text-3xl font-bold mb-4 text-center">Ready to Replicate These Results?</h2>
+        <h2 className="text-3xl font-bold mb-4 text-center">{t('finalCta.title')}</h2>
         <p className="mb-8 text-center text-xl">
-          This case study demonstrates the power of combining proven strategies with proper execution. If you're ready to achieve similar results in your campaigns, let's discuss how we can help you succeed.
+          {t('finalCta.description')}
         </p>
         <div className='w-fit mx-auto'>
           <Formspree />
