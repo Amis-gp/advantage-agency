@@ -1,10 +1,9 @@
 'use client';
 import Link from 'next/link';
-import { useTranslations, useLocale } from 'next-intl';
+import { useLocale } from 'next-intl';
 import { motion } from 'framer-motion';
 
 export default function QuickLinksSection() {
-    const t = useTranslations('quickLinks');
     const locale = useLocale();
 
     const links = [
@@ -23,7 +22,7 @@ export default function QuickLinksSection() {
                     transition={{ duration: 0.5 }}
                     className="text-3xl sm:text-4xl md:text-5xl font-bold text-white text-center mb-12 md:mb-16"
                 >
-                    {t('title')}
+                    Quick Links
                 </motion.h2>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                     {links.map((link, index) => (
@@ -43,14 +42,18 @@ export default function QuickLinksSection() {
                                 >
                                     <div>
                                         <h3 className="text-2xl font-semibold text-white mb-4 group-hover:text-red-400 transition-colors duration-300">
-                                            {t(link.labelKey)}
+                                            {link.labelKey === 'coldEmailLabel' ? 'Cold Email Campaigns' : 
+                                             link.labelKey === 'scrapingLabel' ? 'Data Scraping' : 
+                                             'Our Blog'}
                                         </h3>
                                         <p className="text-gray-400 text-sm mb-4 group-hover:text-gray-300 transition-colors duration-300 min-h-[60px]">
-                                            {t(link.descriptionKey)}
+                                            {link.descriptionKey === 'coldEmailDescription' ? 'Learn how our automated email campaigns can attract new clients for your business.' : 
+                                             link.descriptionKey === 'scrapingDescription' ? 'Discover our powerful data collection tool that will help you gain a competitive advantage.' : 
+                                             'Read our latest articles and insights about marketing, sales and technology.'}
                                         </p>
                                     </div>
                                     <p className="mt-auto text-red-500 group-hover:text-red-300 font-medium transition-colors duration-300">
-                                        {t('learnMore')} →
+                                        Learn More →
                                     </p>
                                 </a>
                             </Link>

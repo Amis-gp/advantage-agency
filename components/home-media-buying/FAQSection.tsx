@@ -1,7 +1,6 @@
 'use client';
 
 import React, { useState } from 'react';
-import { useTranslations } from 'next-intl';
 import { motion } from 'framer-motion';
 import { playSound } from '@/app/constant/sound';
 
@@ -22,7 +21,6 @@ const ChevronIcon = () => (
 );
 
 const FaqSection = () => {
-    const t = useTranslations('faq');
     const [activeIndex, setActiveIndex] = useState<number | null>(null);
 
     const toggleQuestion = (index: number) => {
@@ -32,17 +30,32 @@ const FaqSection = () => {
         setActiveIndex(activeIndex === index ? null : index);
     };
 
+    const faqData = [
+        {
+            question: "Which geos do you work with?",
+            answer: "Our team works on the World Wide market"
+        },
+        {
+            question: "What model do you work with?",
+            answer: "We work with CPA, Revenue Share or hybrid model"
+        },
+        {
+            question: "Which traffic channels do you work with?",
+            answer: "We work with Meta, TikTok and Moloco"
+        }
+    ];
+
     return (
         <section className="py-20">
             <div className="max-w-6xl mx-auto px-6">
                 <div className="flex justify-between items-center">
-                    <span className="text-red-500 uppercase tracking-wider">{t('headline')}</span>
+                    <span className="text-red-500 uppercase tracking-wider">FAQ</span>
                 </div>
 
-                <h2 className="text-4xl md:text-5xl font-bold text-white mt-4 mb-12">{t('title')}</h2>
+                <h2 className="text-4xl md:text-5xl font-bold text-white mt-4 mb-12">Frequently Asked Questions</h2>
 
                 <div className="space-y-4">
-                    {t.raw('questions').map((item: any, index: number) => (
+                    {faqData.map((item, index: number) => (
                         <motion.div
                             key={index}
                             initial={{ opacity: 0, y: 20 }}

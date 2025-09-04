@@ -8,12 +8,12 @@ import { playSound } from '@/app/constant/sound';
 
 const videoSources = {
     uk: {
-        full: 'img/home/video-uk.mp4',
-        preview: 'img/home/preview-uk.mp4'
+        full: 'img/home/video-uk.mp41',
+        preview: 'img/home/preview-uk.mp41'
     },
     en: {
-        full: 'img/home/video-en.mp4',
-        preview: 'img/home/preview-en.mp4'
+        full: 'img/home/video-en.mp41',
+        preview: 'img/home/preview-en.mp41'
     }
 };
 

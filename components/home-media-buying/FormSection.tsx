@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
-import { useTranslations } from 'next-intl';
+
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 import { useRouter } from 'next/navigation';
@@ -16,7 +16,7 @@ interface FormData {
 }
 
 const FormSection = () => {
-    const t = useTranslations('contact');
+
     const router = useRouter();
     const [formData, setFormData] = useState<FormData>({
         name: '',
@@ -116,8 +116,8 @@ const FormSection = () => {
             <div className="max-w-6xl mx-auto px-6">
                 <div className="flex flex-col lg:flex-row gap-16 relative md:px-16 overflow-hidden p-6 bg-black">
                     <div className="lg:w-1/2 relative md:mt-20 ">
-                        <span className="text-red-500 uppercase tracking-wider">{t('headline')}</span>
-                        <h2 className="text-3xl md:text-5xl font-bold text-white mt-2 leading-tight">{t('title')}</h2>
+                        <span className="text-red-500 uppercase tracking-wider">Contact us</span>
+                        <h2 className="text-3xl md:text-5xl font-bold text-white mt-2 leading-tight">Start your path to successful digital marketing today</h2>
                     </div>
 
                     <motion.form 
@@ -144,7 +144,7 @@ const FormSection = () => {
                                 name="name"
                                 value={formData.name}
                                 onChange={handleChange}
-                                placeholder={t('form.name')}
+                                placeholder="How should we address you?"
                                 required
                                 className="w-full bg-transparent border border-white/40 rounded-xl px-6 py-4 text-white placeholder-white/60 focus:outline-none focus:border-white/60 transition-colors"
                             />
@@ -155,7 +155,7 @@ const FormSection = () => {
                                 name="email"
                                 value={formData.email}
                                 onChange={handleChange}
-                                placeholder={t('form.email')}
+                                placeholder="Your email"
                                 required
                                 className="w-full bg-transparent border border-white/40 rounded-xl px-6 py-4 text-white placeholder-white/60 focus:outline-none focus:border-white/60 transition-colors"
                             />
@@ -172,7 +172,7 @@ const FormSection = () => {
                                         phone: value || ''
                                     }));
                                 }}
-                                placeholder={t('form.phone')}
+                                placeholder="Phone"
                                 className="pl-6 w-full border border-white/40 rounded-xl focus-within:border-white/60"
                                 inputclassname="bg-transparent px-6 py-4 w-full text-white placeholder-white/60 focus:outline-none h-[56px]"
                                 countryselectclassname="bg-black text-white px-4 py-4 border-r border-white/40 h-[56px]"
@@ -212,7 +212,7 @@ const FormSection = () => {
                                 name="purpose"
                                 value={formData.purpose}
                                 onChange={handleChange}
-                                placeholder={t('form.purpose')}
+                                placeholder="Tell us about your project"
                                 rows={4}
                                 className="w-full bg-transparent border border-white/40 rounded-xl px-6 py-4 text-white placeholder-white/60 focus:outline-none focus:border-white/60 transition-colors resize-none"
                             />
@@ -224,7 +224,7 @@ const FormSection = () => {
                                 isSubmitting ? 'opacity-70 cursor-not-allowed' : 'hover:bg-white/90'
                             }`}
                         >
-                            {isSubmitting ? 'Sending...' : t('form.submit')}
+                            {isSubmitting ? 'Sending...' : 'Send request'}
                         </button>
                     </motion.form>
 

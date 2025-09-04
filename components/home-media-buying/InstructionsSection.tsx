@@ -2,13 +2,13 @@
 import { useEffect, useRef, useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { useTranslations } from 'next-intl';
+
 import { playSound } from '@/app/constant/sound';
 import { motion, useTransform, useScroll } from 'framer-motion';
 
 export default function Instructions() {
     const circleRefs = useRef<(HTMLDivElement | null)[]>([]);
-    const t = useTranslations('instructions');
+
     const [strokeWidth, setStrokeWidth] = useState(6);
     
     const { scrollY } = useScroll();
@@ -150,9 +150,9 @@ export default function Instructions() {
                         transition={{ duration: 0.8, delay: 0.2 }}
                         className="z-10 relative"
                     >
-                        <span className="text-red-500 uppercase tracking-wider">{t('headline')}</span>
-                        <h2 className="text-white text-3xl md:text-5xl font-bold mt-2">{t('title')}</h2>
-                        <p className="text-white/70 mt-4 md:text-lg">{t('description')}</p>
+                        <span className="text-red-500 uppercase tracking-wider">Instructions</span>
+                        <h2 className="text-white text-3xl md:text-5xl font-bold mt-2">How the collaboration process looks</h2>
+                        <p className="text-white/70 mt-4 md:text-lg">Depending on your marketing needs, we develop a workflow for your business!</p>
                     </motion.div>
 
                     <motion.div 
@@ -166,7 +166,7 @@ export default function Instructions() {
                             className="group relative bg-white hover:bg-white/90 transition-all duration-300 text-black px-8 py-4 rounded-full text-lg font-medium flex items-center gap-2" 
                             onMouseEnter={() => playSound('hover_1')}
                         >
-                            <span className="relative z-10 whitespace-nowrap">{t('button')}</span>
+                            <span className="relative z-10 whitespace-nowrap">Start collaboration</span>
                             <span className="relative z-10 animate-[bounceX_1s_ease-in-out_infinite]">→</span>
                             <div className="absolute inset-0 rounded-full animate-pulse-border group-hover:animate-none"></div>
                         </Link>

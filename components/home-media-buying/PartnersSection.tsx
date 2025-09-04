@@ -1,10 +1,10 @@
 'use client';
-import { useTranslations } from 'next-intl';
+
 import Image from 'next/image';
 import { playSound } from '@/app/constant/sound';
 
 export default function PartnersSection() {
-    const t = useTranslations();
+
 
     const partners = [
         { src: '/img/media-buying/logo-affiliate-partner/parthner-logo-1.webp', alt: 'Partner logo 1' },
@@ -18,8 +18,8 @@ export default function PartnersSection() {
         <section className="pt-10 md:pt-20">
             <div className="max-w-[1400px] mx-auto px-6">
                 <div className="sm:text-center">
-                    <span className="text-red-500 uppercase tracking-wider">{t('partners.headline')}</span>
-                    <h2 className="text-white text-3xl md:text-5xl font-bold mt-2">{t('partners.title')}</h2>
+                    <span className="text-red-500 uppercase tracking-wider">Companies</span>
+                    <h2 className="text-white text-3xl md:text-5xl font-bold mt-2">Our partners and clients</h2>
                 </div>
 
                 <div className="pt-10 md:pt-16 pb-2">
