@@ -25,6 +25,10 @@
       "description": "Professional campaign management and optimization for {{campaigns}} campaign(s)",
       "recommended": "(recommended)"
     },
+    "leadParsing": {
+      "name": "Parsing {{size}} verified contacts",
+      "description": "Collection and verification of {{size}} quality contacts for your campaigns from €85 to €150"
+    },
     "customSequences": {
       "name": "New marketing approach development",
       "description": "New month, new approach, testing a different engagement method"
