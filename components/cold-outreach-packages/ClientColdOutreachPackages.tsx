@@ -216,8 +216,12 @@ export default function PricingPage() {
     // ESP - фіксована ціна
     total += addons.infrastructure.esp.price;
     
-    // Домен і Workspace - залежать від розміру пакету (кількості кампаній)
-    total += addons.infrastructure.domain.price * currentPackage.campaigns * 3;
+    // Домен - тільки для початкового налаштування
+    if (isInitialSetup) {
+      total += addons.infrastructure.domain.price * currentPackage.campaigns * 3;
+    }
+    
+    // Workspace - для всіх пакетів
     total += addons.infrastructure.workspace.price * currentPackage.campaigns;
     
     return total;
@@ -385,7 +389,7 @@ export default function PricingPage() {
                           key={index}
                           className={`border rounded-xl p-6 text-center cursor-pointer transition-all hover:shadow-lg hover:shadow-blue-500/20 ${
                             selectedPackage === index ? 'border-blue-500 bg-gradient-to-br from-blue-900/20 to-indigo-900/20' : 'border-gray-700 bg-gradient-to-br from-[#0F172A] to-[#111827]'
-                          } ${popularLabel ? 'ring-2 ring-blue-500 relative' : ''}`}
+                          } ${popularLabel ? ' relative' : ''}`}
                           onClick={() => handlePackageChange(index)}
                         >
                           {popularLabel && (
@@ -409,6 +413,21 @@ export default function PricingPage() {
                   
                   {/* Додаткові послуги */}
                   <div className="space-y-4">
+                    {/* Lead Parsing - показуємо тільки в режимі Ongoing */}
+                    {!isInitialSetup && (
+                      <div className="flex items-center justify-between p-4 border border-gray-700 rounded-lg bg-[#0F172A]/80 ">
+                        <div>
+                          <div className="font-medium text-white">{t('addons.leadParsing.name', { size: currentPackage.size })}</div>
+                          <div className="text-sm text-gray-300">
+                            {t('addons.leadParsing.description', { size: currentPackage.size })}
+                          </div>
+                        </div>
+                        <div className="flex items-center space-x-3">
+                          <div className="font-medium text-blue-400">from €{currentPackage.leadsPrice} to €{currentPackage.leadsPrice + 65 * currentPackage.campaigns}</div>
+                        </div>
+                      </div>
+                    )}
+
                     {/* Campaign Management - показуємо тільки в режимі Ongoing */}
                     {!isInitialSetup && (
                       <div className="flex items-center justify-between p-4 border border-gray-700 rounded-lg bg-[#0F172A]/80 ">
@@ -487,23 +506,25 @@ export default function PricingPage() {
                       <div className="font-medium text-blue-400">€{addons.infrastructure.esp.price}</div>
                     </div>
                     
-                    <div className="flex items-center justify-between p-4 border border-gray-700 rounded-lg bg-[#0F172A]/80 ">
-                      <div>
-                        <div className="font-medium text-white">{t('addons.infrastructure.domain.name', { fallback: addons.infrastructure.domain.name })}</div>
-                        <div className="text-sm text-gray-300">
-                          {t('addons.infrastructure.domain.description', { fallback: addons.infrastructure.domain.description })} 
-                          <span className="font-medium text-gray-300"> (€{addons.infrastructure.domain.price} × 3)</span>
+                    {isInitialSetup && (
+                      <div className="flex items-center justify-between p-4 border border-gray-700 rounded-lg bg-[#0F172A]/80 ">
+                        <div>
+                          <div className="font-medium text-white">{t('addons.infrastructure.domain.name', { fallback: addons.infrastructure.domain.name })}</div>
+                          <div className="text-sm text-gray-300">
+                            {t('addons.infrastructure.domain.description', { fallback: addons.infrastructure.domain.description })} 
+                            <span className="font-medium text-blue-400"> (€{addons.infrastructure.domain.price} × 3)</span>
+                          </div>
                         </div>
+                        <div className="font-medium text-blue-400">€{(addons.infrastructure.domain.price * 3 * currentPackage.campaigns).toFixed(2)}</div>
                       </div>
-                      <div className="font-medium text-blue-400">€{(addons.infrastructure.domain.price * 3 * currentPackage.campaigns).toFixed(2)}</div>
-                    </div>
+                    )}
                     
                     <div className="flex items-center justify-between p-4 border border-gray-700 rounded-lg bg-[#0F172A]/80 ">
                       <div>
                         <div className="font-medium text-white">{t('addons.infrastructure.workspace.name', { fallback: addons.infrastructure.workspace.name })}</div>
                         <div className="text-sm text-gray-300">
                           {t('addons.infrastructure.workspace.description', { fallback: addons.infrastructure.workspace.description })}
-                          <span className="font-medium text-gray-300"> (€{addons.infrastructure.workspace.price} × {currentPackage.campaigns})</span>
+                          <span className="font-medium text-blue-400"> (€{addons.infrastructure.workspace.price} × {currentPackage.campaigns})</span>
                         </div>
                       </div>
                       <div className="font-medium text-blue-400">€{(addons.infrastructure.workspace.price * currentPackage.campaigns).toFixed(2)}</div>
@@ -527,17 +548,19 @@ export default function PricingPage() {
                     {/* Підсумкові суми */}
                     <div className="mt-3 pt-2 border-t border-gray-700">
                       <div className="text-sm font-medium text-gray-300">
-                        {t('pricing.agencyServices', { fallback: 'Agency services' })}: <span className="text-blue-400">€{(isInitialSetup 
-                          ? (currentPackage.setupPrice + calculateABTestPrice())
-                          : (currentPackage.leadsPrice + calculateABTestPrice() + 
+                        {t('pricing.agencyServices', { fallback: 'Agency services' })}: <span className="text-blue-400">{isInitialSetup 
+                          ? `€${(currentPackage.setupPrice + calculateABTestPrice()).toFixed(2)}`
+                          : `from €${(currentPackage.leadsPrice + calculateABTestPrice() + 
                             (options.campaign ? addons.campaign.price : 0) + 
-                            (options.sequence ? addons.sequence.price : 0))
-                        ).toFixed(2)}</span>
+                            (options.sequence ? addons.sequence.price : 0)).toFixed(2)} to €${(currentPackage.leadsPrice + 65 * currentPackage.campaigns + calculateABTestPrice() + 
+                            (options.campaign ? addons.campaign.price : 0) + 
+                            (options.sequence ? addons.sequence.price : 0)).toFixed(2)}`
+                        }</span>
                       </div>
                       <div className="text-sm font-medium text-gray-300">
                         {t('pricing.infrastructureCosts', { fallback: 'Infrastructure costs' })}: <span className="text-blue-400">€{(
                           addons.infrastructure.esp.price + 
-                          (addons.infrastructure.domain.price * currentPackage.campaigns) + 
+                          (isInitialSetup ? (addons.infrastructure.domain.price * currentPackage.campaigns * 3) : 0) + 
                           (addons.infrastructure.workspace.price * currentPackage.campaigns)
                         ).toFixed(2)}</span>
                       </div>
@@ -545,7 +568,11 @@ export default function PricingPage() {
                   </div>
                 </div>
                 <div className="text-2xl font-bold text-white mt-4 md:mt-0 bg-gradient-to-r from-blue-600 to-indigo-600 px-8 py-3 rounded-full shadow-lg border border-blue-400/30">
-                  €{calculateTotal().toFixed(2)}
+                  {isInitialSetup ? (
+                    `€${calculateTotal().toFixed(2)}`
+                  ) : (
+                    `from €${calculateTotal().toFixed(2)} to €${(calculateTotal() + 65 * currentPackage.campaigns * 2).toFixed(2)}`
+                  )}
                 </div>
               </div>
             </div>
