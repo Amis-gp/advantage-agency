@@ -30,7 +30,7 @@ const PortfolioSection = () => {
                     <Link href="/en/cases/v19" className="block">
                         <div className="md:grid md:grid-cols-5 md:gap-8 text-white py-6 border-b border-gray-800 hover:bg-black/30 hover:border-red-400/50 transition-all duration-300 cursor-pointer group">
                             <div className="text-white font-semibold group-hover:text-red-400 transition-colors mb-2 md:mb-0">
-                                <span className="md:hidden text-gray-400 text-xs uppercase tracking-wider">Number: </span>N°01
+                                <span className="md:hidden text-gray-400 text-xs uppercase tracking-wider">Number: </span>N°03
                             </div>
                             
                             <div className="text-white font-semibold group-hover:text-red-400 transition-colors mb-2 md:mb-0">
@@ -64,7 +64,7 @@ const PortfolioSection = () => {
                     <Link href="/en/cases/v20" className="block">
                         <div className="md:grid md:grid-cols-5 md:gap-8 text-white py-6 border-b border-gray-800 hover:bg-black/30 hover:border-red-400/50 transition-all duration-300 cursor-pointer group">
                             <div className="text-white font-semibold group-hover:text-red-400 transition-colors mb-2 md:mb-0">
-                                <span className="md:hidden text-gray-400 text-xs uppercase tracking-wider">Number: </span>N°02
+                                <span className="md:hidden text-gray-400 text-xs uppercase tracking-wider">Number: </span>N°04
                             </div>
                             
                             <div className="text-white font-semibold group-hover:text-red-400 transition-colors mb-2 md:mb-0">
@@ -94,44 +94,11 @@ const PortfolioSection = () => {
                             </div>
                         </div>
                     </Link>
-                    <Link href="/en/cases/v21" className="block">
-                            <div className="md:grid md:grid-cols-5 md:gap-8 text-white py-6 border-b border-gray-800 hover:bg-black/30 hover:border-red-400/50 transition-all duration-300 cursor-pointer group">
-                                <div className="text-white font-semibold group-hover:text-red-400 transition-colors mb-2 md:mb-0">
-                                    <span className="md:hidden text-gray-400 text-xs uppercase tracking-wider">Number: </span>N°03
-                                </div>
-                                
-                                <div className="text-white font-semibold group-hover:text-red-400 transition-colors mb-2 md:mb-0">
-                                    <span className="md:hidden text-gray-400 text-xs uppercase tracking-wider">Vertical: </span>NUTRA
-                                </div>
-                                
-                                <div className="mb-2 md:mb-0">
-                                    <span className="md:hidden text-gray-400 text-xs uppercase tracking-wider">Geos & Dates: </span>
-                                    <div className="text-white font-semibold group-hover:text-red-400 transition-colors inline md:block">MEXICO</div>
-                                    <div className="text-gray-400 text-sm mt-1 group-hover:text-gray-300 transition-colors inline md:block ml-2 md:ml-0">2025</div>
-                                </div>
-                                
-                                <div className="text-white text-sm leading-tight group-hover:text-red-400 transition-colors mb-2 md:mb-0">
-                                    <span className="md:hidden text-gray-400 text-xs uppercase tracking-wider block mb-1">Goal: </span>
-                                    SCALE PROSTANORM<br />FORTE OFFER
-                                </div>
-                                
-                                <div>
-                                    <span className="md:hidden text-gray-400 text-xs uppercase tracking-wider block mb-1">Traffic Sources & Result: </span>
-                                    <div className="text-white text-sm leading-tight mb-2 group-hover:text-red-400 transition-colors">
-                                        FACEBOOK
-                                    </div>
-                                    <div className="text-red-400 font-semibold text-sm group-hover:text-red-300 transition-colors">
-                                        81.07% ROI,<br />
-                                        $4,214 PROFIT
-                                    </div>
-                                </div>
-                            </div>
-                        </Link>
 
                     <Link href="/en/cases/v14" className="block">
                         <div className="md:grid md:grid-cols-5 md:gap-8 text-white py-6 border-b border-gray-800 hover:bg-black/30 hover:border-red-400/50 transition-all duration-300 cursor-pointer group">
                             <div className="text-white font-semibold group-hover:text-red-400 transition-colors mb-2 md:mb-0">
-                                <span className="md:hidden text-gray-400 text-xs uppercase tracking-wider">Number: </span>N°04
+                                <span className="md:hidden text-gray-400 text-xs uppercase tracking-wider">Number: </span>N°01
                             </div>
                             
                             <div className="text-white font-semibold group-hover:text-red-400 transition-colors mb-2 md:mb-0">
@@ -162,36 +129,70 @@ const PortfolioSection = () => {
                         </div>
                     </Link>
 
+                    <Link href="/en/cases/v18" className="block">
+                        <div className="md:grid md:grid-cols-5 md:gap-8 text-white py-6 border-b border-gray-800 hover:bg-black/30 hover:border-red-400/50 transition-all duration-300 cursor-pointer group">
+                            <div className="text-white font-semibold group-hover:text-red-400 transition-colors mb-2 md:mb-0">
+                                <span className="md:hidden text-gray-400 text-xs uppercase tracking-wider">Number: </span>N°02
+                            </div>
+                            
+                            <div className="text-white font-semibold group-hover:text-red-400 transition-colors mb-2 md:mb-0">
+                                <span className="md:hidden text-gray-400 text-xs uppercase tracking-wider">Vertical: </span>iGAMING B2B
+                            </div>
+                            
+                            <div className="mb-2 md:mb-0">
+                                <span className="md:hidden text-gray-400 text-xs uppercase tracking-wider">Geos & Dates: </span>
+                                <div className="text-white font-semibold group-hover:text-red-400 transition-colors inline md:block">EUROPE, LATAM, ASIA</div>
+                                <div className="text-gray-400 text-sm mt-1 group-hover:text-gray-300 transition-colors inline md:block ml-2 md:ml-0">2025</div>
+                            </div>
+                            
+                            <div className="text-white text-sm leading-tight group-hover:text-red-400 transition-colors mb-2 md:mb-0">
+                                <span className="md:hidden text-gray-400 text-xs uppercase tracking-wider block mb-1">Goal: </span>
+                                FIND WARM LEADS<br />FOR SOFTWARE<br />PROVIDER
+                            </div>
+                            
+                            <div>
+                                <span className="md:hidden text-gray-400 text-xs uppercase tracking-wider block mb-1">Traffic Sources & Result: </span>
+                                <div className="text-white text-sm leading-tight mb-2 group-hover:text-red-400 transition-colors">
+                                    COLD EMAIL
+                                </div>
+                                <div className="text-red-400 font-semibold text-sm group-hover:text-red-300 transition-colors">
+                                    94 RESPONSES,<br />
+                                    35 WARM LEADS
+                                </div>
+                            </div>
+                        </div>
+                    </Link>
+
                     <div className={`overflow-hidden transition-all duration-500 ease-in-out ${showMore ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'}`}>
-                        <Link href="/en/cases/v18" className="block">
+                        <Link href="/en/cases/v21" className="block">
                             <div className="md:grid md:grid-cols-5 md:gap-8 text-white py-6 border-b border-gray-800 hover:bg-black/30 hover:border-red-400/50 transition-all duration-300 cursor-pointer group">
                                 <div className="text-white font-semibold group-hover:text-red-400 transition-colors mb-2 md:mb-0">
                                     <span className="md:hidden text-gray-400 text-xs uppercase tracking-wider">Number: </span>N°05
                                 </div>
                                 
                                 <div className="text-white font-semibold group-hover:text-red-400 transition-colors mb-2 md:mb-0">
-                                    <span className="md:hidden text-gray-400 text-xs uppercase tracking-wider">Vertical: </span>iGAMING B2B
+                                    <span className="md:hidden text-gray-400 text-xs uppercase tracking-wider">Vertical: </span>HEALTH
                                 </div>
                                 
                                 <div className="mb-2 md:mb-0">
                                     <span className="md:hidden text-gray-400 text-xs uppercase tracking-wider">Geos & Dates: </span>
-                                    <div className="text-white font-semibold group-hover:text-red-400 transition-colors inline md:block">EUROPE, LATAM, ASIA</div>
+                                    <div className="text-white font-semibold group-hover:text-red-400 transition-colors inline md:block">MEXICO</div>
                                     <div className="text-gray-400 text-sm mt-1 group-hover:text-gray-300 transition-colors inline md:block ml-2 md:ml-0">2025</div>
                                 </div>
                                 
                                 <div className="text-white text-sm leading-tight group-hover:text-red-400 transition-colors mb-2 md:mb-0">
                                     <span className="md:hidden text-gray-400 text-xs uppercase tracking-wider block mb-1">Goal: </span>
-                                    FIND WARM LEADS<br />FOR SOFTWARE<br />PROVIDER
+                                    SCALE PROSTANORM<br />FORTE OFFER
                                 </div>
                                 
                                 <div>
                                     <span className="md:hidden text-gray-400 text-xs uppercase tracking-wider block mb-1">Traffic Sources & Result: </span>
                                     <div className="text-white text-sm leading-tight mb-2 group-hover:text-red-400 transition-colors">
-                                        COLD EMAIL
+                                        FACEBOOK
                                     </div>
                                     <div className="text-red-400 font-semibold text-sm group-hover:text-red-300 transition-colors">
-                                        94 RESPONSES,<br />
-                                        35 WARM LEADS
+                                        81.07% ROI,<br />
+                                        $4,214 PROFIT
                                     </div>
                                 </div>
                             </div>
