@@ -11,6 +11,7 @@ import FaqSection from '@/components/home-media-buying/FAQSection';
 import AdBlockSection from '@/components/home-media-buying/AdBlockSection';
 import HowWeWorkSection from '@/components/home-media-buying/HowWeWorkSection';
 import Footer from '@/components/Footer';
+import CtaSection from '@/components/home-media-buying/CtaSection';
 
 export default function MediaBuyingPage({
     params: { locale } 
@@ -38,6 +39,7 @@ export default function MediaBuyingPage({
             <StatsSection />
             <IntroductionSection />
             <PortfolioSection />
+            <CtaSection />
             <AdBlockSection />
             <Instructions />
             <PartnersSection />
