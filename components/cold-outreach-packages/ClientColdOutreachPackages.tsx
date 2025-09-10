@@ -135,7 +135,7 @@ export default function PricingPage() {
   const addons = {
     campaign: { 
       name: "Campaign management", 
-      price:selectedPackage === 0 ? 60 : 
+      price:selectedPackage === 0 ? 80 : 
             selectedPackage === 1 ? 80 : 
             selectedPackage === 2 ? 99 : 
             selectedPackage === 3 ? 180 : 

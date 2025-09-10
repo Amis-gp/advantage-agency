@@ -5,7 +5,7 @@ import HeroSection from '../black-affiliate-marketing-2/HeroSection';
 import CourseTargetSection from '../black-affiliate-marketing-2/CourseTargetSection';
 import ProvidingSection from '../black-affiliate-marketing-2/ProvidingSection';
 import PhaseSystemSection from '../black-affiliate-marketing-2/PhaseSystemSection';
-import PricingSection from '../black-affiliate-marketing-2/PricingSection';
+import PricingSection from './PricingSection';
 import FAQSection from '../black-affiliate-marketing-2/FAQSection';
 import TwoOptionsSection from './TwoOptionsSection';
 
@@ -14,7 +14,7 @@ const TestimonialsSection = dynamic(
   () => import('./TestimonialsSection'),
   { 
     ssr: false, 
-    loading: () => <div className="mt-20 max-w-6xl mx-auto text-center"><p className="text-xl">Завантаження відгуків...</p></div> 
+    loading: () => <div className="mt-20 max-w-6xl mx-auto text-center"><p className="text-xl">loading...</p></div> 
   }
 );
 

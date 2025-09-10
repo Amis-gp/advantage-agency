@@ -18,7 +18,7 @@ export default function CtaSection() {
                             <h3 className="text-2xl font-bold text-white mb-4 text-center">New to Media Buying?</h3>
                             <p className="text-gray-300 mb-6 text-center leading-relaxed">Start from scratch and become a professional. Our course will help you master all the nuances of media buying</p>
                             <div className="text-center">
-                                <a href="/en/join-the-team/media-buyer" className="inline-flex items-center px-8 py-4 bg-red-600 hover:bg-red-700 text-white font-semibold rounded-xl transition-all duration-300 group-hover:shadow-lg group-hover:shadow-red-500/25">
+                                <a href="/en/course-aff" className="inline-flex items-center px-8 py-4 bg-red-600 hover:bg-red-700 text-white font-semibold rounded-xl transition-all duration-300 group-hover:shadow-lg group-hover:shadow-red-500/25">
                                     Start Learning
                                     <svg className="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
@@ -37,7 +37,7 @@ export default function CtaSection() {
                             <h3 className="text-2xl font-bold text-white mb-4 text-center">Already Have Experience?</h3>
                             <p className="text-gray-300 mb-6 text-center leading-relaxed">Join our team of experts. We're looking for experienced media buyers to work on top-tier projects</p>
                             <div className="text-center">
-                                <a href="/en/course-aff" className="inline-flex items-center px-8 py-4 bg-red-600 hover:bg-red-700 text-white font-semibold rounded-xl transition-all duration-300 group-hover:shadow-lg group-hover:shadow-red-500/25">
+                                <a href="/en/join-the-team/media-buyer" className="inline-flex items-center px-8 py-4 bg-red-600 hover:bg-red-700 text-white font-semibold rounded-xl transition-all duration-300 group-hover:shadow-lg group-hover:shadow-red-500/25">
                                     Apply Now
                                     <svg className="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />

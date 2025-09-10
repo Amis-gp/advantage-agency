@@ -9,6 +9,7 @@ const Swiper = dynamic(() => import('swiper/react').then(mod => mod.Swiper), { s
 const SwiperSlide = dynamic(() => import('swiper/react').then(mod => mod.SwiperSlide), { ssr: false });
 
 import { Navigation, Pagination } from 'swiper/modules';
+import VideoPlayer from '../black-affiliate-marketing-2/VideoPlayer';
 
 interface TestimonialsSectionProps {
   testimonialImages: string[];
@@ -40,8 +41,22 @@ const TestimonialsSection = ({ testimonialImages }: TestimonialsSectionProps) =>
         Testimonials
       </h2>
 
-      
-      
+      <div className="flex flex-col md:flex-row gap-4 justify-center items-center mb-8">
+        <div className="w-full md:w-1/2">
+          <VideoPlayer 
+            videoUrl="/img/black-affiliate-marketing/video-4.mp4" 
+            placeholder="/img/black-affiliate-marketing/video-4-placeholder.webp"
+            className="h-[480px]"
+          />
+        </div>
+        <div className="w-full md:w-1/2">
+          <VideoPlayer 
+            videoUrl="/img/black-affiliate-marketing/video-5.mp4" 
+            placeholder="/img/black-affiliate-marketing/video-5-placeholder.webp"
+            className="h-[480px]"
+          />
+        </div>
+      </div>
       
       <script async src="https://player.vimeo.com/api/player.js"/>
 

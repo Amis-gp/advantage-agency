@@ -39,8 +39,8 @@ export default function MediaBuyingPage({
             <StatsSection />
             <IntroductionSection />
             <PortfolioSection />
-            <CtaSection />
             <AdBlockSection />
+            <CtaSection />
             <Instructions />
             <PartnersSection />
             <HowWeWorkSection />

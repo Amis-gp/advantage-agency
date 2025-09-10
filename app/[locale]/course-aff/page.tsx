@@ -13,7 +13,7 @@ const ClientPage = dynamic(
   }
 )
 
-import Footer from '@/components/black-affiliate-marketing/Footer'
+import Footer from '@/components/course-aff/Footer'
 
 interface Props {
   params: { locale: string }
