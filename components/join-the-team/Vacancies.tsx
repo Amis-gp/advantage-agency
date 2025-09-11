@@ -37,7 +37,7 @@ const Vacancies = () => {
       icon: t('positions.1.icon'),
       gradient: t('positions.1.gradient'),
       path: 'media-buyer',
-      isActive: false
+      isActive: true
     },
     {
       title: t('positions.2.title'),

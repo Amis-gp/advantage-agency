@@ -20,7 +20,7 @@ const Choice = () => {
     {
       title: t('positions.1.title'),
       path: '/join-the-team/media-buyer',
-      isActive: false
+      isActive: true
     },
     {
       title: t('positions.2.title'),
