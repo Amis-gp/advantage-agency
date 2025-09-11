@@ -1186,6 +1186,7 @@
                     "title": "Leave your contact information",
                     "name-placeholder": "Your name",
                     "email-placeholder": "Your email",
+                    "telegram-placeholder": "Your Telegram",
                     "phone-placeholder": "Your phone",
                     "submit": "Submit",
                     "submitting": "Submitting...",

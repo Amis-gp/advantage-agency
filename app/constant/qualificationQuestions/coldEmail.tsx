@@ -131,6 +131,15 @@ export const commonQuestions: Question[] = [
 ]
 
 export const getCandidateQuestions = (experienceAnswer: string): Question[] => {
+  if (experienceAnswer === 'all') {
+    return [
+      experienceQuestion,
+      ...experiencedQuestions,
+      ...inexperiencedQuestions,
+      ...commonQuestions,
+    ];
+  }
+
   if (!experienceAnswer) {
     return [experienceQuestion];
   }

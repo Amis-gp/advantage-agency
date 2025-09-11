@@ -87,13 +87,17 @@ export const experiencedQuestions: Question[] = [
 ]
 
 export const getCandidateQuestions = (experienceAnswer: string): Question[] => {
-  if (experienceAnswer === 'Менше 1 року' || experienceAnswer === 'Less than 1 year') {
+  if (experienceAnswer === 'all') {
+    return [experienceQuestion, ...experiencedQuestions];
+  }
+
+  if (experienceAnswer === 'Менше 1 року' || experienceAnswer === 'Less than 1 year' || experienceAnswer === 'Немає досвіду' || experienceAnswer === 'No experience') {
     return [experienceQuestion];
   }
   
   const isExperienced = [
-    '1-2 роки', '2-5 років', 'Більше 5 років',
-    '1-2 years', '2-5 years', 'More than 5 years'
+    '1-3 роки', '3+ років',
+    '1-3 years', '3+ years'
   ].includes(experienceAnswer);
   
   let questions = [experienceQuestion];
