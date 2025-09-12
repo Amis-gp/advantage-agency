@@ -34,7 +34,7 @@ const ProvidingSection = () => {
             <div className="bg-gray-50 rounded-full p-6 mx-auto w-fit">
               <Image src="/img/black-affiliate-marketing/ico-1.avif" alt="Video Lessons" width={70} height={70} loading="lazy" sizes="70px" placeholder="blur" blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+P+/HgAFeAJc0aNZqgAAAABJRU5ErkJggg==" />
             </div>
-            <p>35 Video Lessons and Guides</p>
+            <p>Video Lessons and Guides</p>
           </div>
 
           <div className="text-center space-y-4">
@@ -70,19 +70,12 @@ const ProvidingSection = () => {
 
           <div className="text-center space-y-4">
             <div className="bg-gray-50 rounded-full p-6 mx-auto w-fit">
-              <Image src="/img/black-affiliate-marketing/ico-6.avif" alt="Push Notifications" width={70} height={70} loading="lazy" sizes="70px" placeholder="blur" blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+P+/HgAFeAJc0aNZqgAAAABJRU5ErkJggg==" />
-            </div>
-            <p>Push Notifications Course</p>
-          </div>
-
-          <div className="text-center space-y-4">
-            <div className="bg-gray-50 rounded-full p-6 mx-auto w-fit">
               <Image src="/img/black-affiliate-marketing/ico-7.png" alt="FB Advanced" width={70} height={70} loading="lazy" sizes="70px" placeholder="blur" blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+P+/HgAFeAJc0aNZqgAAAABJRU5ErkJggg==" />
             </div>
             <p>FB Advanced Level Ads Course</p>
           </div>
 
-          <div className="text-center space-y-4 md:hidden">
+          <div className="text-center space-y-4 hidden md:block">
             <div className="bg-gray-50 rounded-full p-6 mx-auto w-fit">
               <Image src="/img/black-affiliate-marketing/ico-8.avif" alt="Security" width={70} height={70} loading="lazy" sizes="70px" placeholder="blur" blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+P+/HgAFeAJc0aNZqgAAAABJRU5ErkJggg==" />
             </div>
@@ -90,9 +83,9 @@ const ProvidingSection = () => {
           </div>
         </div>
 
-        {/* Third Row - 4 items */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-          <div className="text-center space-y-4 hidden md:block">
+        {/* Third Row - 3 items */}
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-8 md:px-[10%]">
+          <div className="text-center space-y-4 block md:hidden">
             <div className="bg-gray-50 rounded-full p-6 mx-auto w-fit">
               <Image src="/img/black-affiliate-marketing/ico-8.avif" alt="Security" width={70} height={70} loading="lazy" sizes="70px" placeholder="blur" blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+P+/HgAFeAJc0aNZqgAAAABJRU5ErkJggg==" />
             </div>
@@ -113,18 +106,12 @@ const ProvidingSection = () => {
             <p>1:1 Mentorship</p>
           </div>
 
-          <div className="text-center space-y-4 hidden md:block">
+          <div className="text-center space-y-4">
             <div className="bg-gray-50 rounded-full p-6 mx-auto w-fit">
               <Image src="/img/black-affiliate-marketing/ico-12.avif" alt="Examples" width={70} height={70} loading="lazy" sizes="70px" placeholder="blur" blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+P+/HgAFeAJc0aNZqgAAAABJRU5ErkJggg==" />
             </div>
             <p>Examples of pre-landers, exclusive offers, direct introductions, examples of creatives</p>
           </div>
-        </div>
-        <div className="text-center space-y-4 md:hidden">
-            <div className="bg-gray-50 rounded-full p-6 mx-auto w-fit">
-              <Image src="/img/black-affiliate-marketing/ico-12.avif" alt="Examples" width={70} height={70} loading="lazy" sizes="70px" placeholder="blur" blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+P+/HgAFeAJc0aNZqgAAAABJRU5ErkJggg==" />
-            </div>
-            <p>Examples of pre-landers, exclusive offers, direct introductions, examples of creatives</p>
         </div>
       </div>
     </section>
