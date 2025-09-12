@@ -14,7 +14,7 @@ const TestimonialsSection = dynamic(
   () => import('./TestimonialsSection'),
   { 
     ssr: false, 
-    loading: () => <div className="mt-20 max-w-6xl mx-auto text-center"><p className="text-xl">loading...</p></div> 
+    loading: () => <div className="mt-20 max-w-6xl mx-auto text-center"><p className="text-xl">loading testimonial...</p></div> 
   }
 );
 
