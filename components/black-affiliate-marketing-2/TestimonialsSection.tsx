@@ -119,7 +119,7 @@ const TestimonialsSection = ({ testimonialImages }: TestimonialsSectionProps) =>
         <div className="w-full md:w-1/2">
           <VideoPlayer 
             videoUrl="/img/black-affiliate-marketing/video-5.mp4" 
-            placeholder="/img/black-affiliate-marketing/video-5-placeholder.webp"
+            poster="/img/black-affiliate-marketing/video-5-placeholder.webp"
             className="h-[480px]"
           />
         </div>
