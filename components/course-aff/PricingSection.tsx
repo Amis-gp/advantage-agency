@@ -130,10 +130,6 @@ const PricingSection = () => {
             </li>
             <li className="flex gap-2">
               <span className="text-red-500">•</span>
-              4 one-on-one strategic calls with me
-            </li>
-            <li className="flex gap-2">
-              <span className="text-red-500">•</span>
               Road Map
             </li>
             <li className="flex gap-2">
