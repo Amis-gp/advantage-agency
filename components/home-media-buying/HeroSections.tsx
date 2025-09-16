@@ -8,12 +8,12 @@ import { playSound } from '@/app/constant/sound';
 
 const videoSources = {
     uk: {
-        full: 'img/home/video-uk.mp41',
-        preview: 'img/home/preview-uk.mp41'
+        full: '/img/media-buying/vsl.mp4',
+        preview: '/img/media-buying/preview-vsl.webp'
     },
     en: {
-        full: 'img/home/video-en.mp41',
-        preview: 'img/home/preview-en.mp41'
+        full: '/img/media-buying/vsl.mp4',
+        preview: '/img/media-buying/preview-vsl.webp'
     }
 };
 
@@ -49,7 +49,7 @@ export default function HeroSection() {
             </div>
             <div className="absolute top-2/3 -left-40 xl:left-10 w-64 h-64">
                 <motion.div className="hidden xl:block absolute" >
-                   <Image src="/img/media-buying/icon6.png" alt="Star" width={64} height={64} className='opacity-40'/>
+                    <Image src="/img/media-buying/icon6.png" alt="Star" width={64} height={64} className='opacity-40'/>
                 </motion.div>
             </div>
 
@@ -92,16 +92,14 @@ export default function HeroSection() {
                 >
                     <div className="aspect-video flex items-center justify-center relative">
                         {!isPlaying ? (
-                            <video 
+                            <Image 
                                 key={`preview-${locale}`} 
-                                className="absolute inset-0 w-full h-full object-cover"
-                                autoPlay 
-                                muted 
-                                loop 
-                                playsInline
-                            >
-                                <source src={videoSources[locale as keyof typeof videoSources].preview} type="video/mp4"/>
-                            </video>
+                                src={videoSources[locale as keyof typeof videoSources].preview}
+                                alt="Video preview"
+                                fill
+                                className="object-cover"
+                                priority
+                            />
                         ) : (
                             <>
                                 <video 
@@ -140,9 +138,7 @@ export default function HeroSection() {
                             </>
                         )}
                         
-                        <div className="absolute top-4 sm:top-1/4 w-full text-center text-white/50 text-xl sm:text-4xl px-3 py-1 rounded-full font-bold z-20">
-                            COMING SOON
-                        </div>
+
                         
                         {!isPlaying && (
                             <div 
