@@ -41,7 +41,7 @@ const FaqSection = () => {
         },
         {
             question: "Which traffic channels do you work with?",
-            answer: "We work with Meta, TikTok and Moloco"
+            answer: "We work with Meta, TikTok, Native and Push"
         }
     ];
 
