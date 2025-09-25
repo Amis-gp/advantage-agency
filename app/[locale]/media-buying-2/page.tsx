@@ -1,5 +1,5 @@
 import { setRequestLocale } from 'next-intl/server';
-import HeroSection from '@/components/home-media-buying/HeroSections';
+import HeroSection from '@/components/home-media-buying/HeroSections-2';
 import FormSection from '@/components/home-media-buying/FormSection';
 import StatsSection from '@/components/home-media-buying/StatsSection';
 import IntroductionSection from '@/components/home-media-buying/IntroductionSection';
@@ -12,6 +12,7 @@ import AdBlockSection from '@/components/home-media-buying/AdBlockSection';
 import HowWeWorkSection from '@/components/home-media-buying/HowWeWorkSection';
 import Footer from '@/components/Footer';
 import CtaSection from '@/components/home-media-buying/CtaSection';
+import { from } from 'form-data';
 
 export default function MediaBuyingPage({
     params: { locale } 
@@ -30,7 +31,7 @@ export default function MediaBuyingPage({
             backgroundSize: 'cover',
             backgroundPosition: 'center',
             backgroundAttachment: 'fixed',
-            opacity: 0.6,
+            opacity: 0.2,
           }}
         />
         <div className="relative">
