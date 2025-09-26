@@ -58,7 +58,7 @@ const Footer = () => {
         </div>
 
         <div className="mt-12 text-center space-y-6">
-          <p className="text-lg">2025 © Copyrights by Advantage Agency. All Rights Reserved.</p>
+          <p className="text-lg">{new Date().getFullYear()} © Copyrights by Advantage Agency. All Rights Reserved.</p>
           
           <div className="flex justify-center gap-8">
             <a href="/privacy-policy" className="hover:text-red-500 transition-colors">Privacy Policy</a>
