@@ -3,10 +3,8 @@
 import React, { useState } from 'react';
 
 interface FormData {
-  name: string;
   email: string;
   company: string;
-  phone: string;
   audienceType: string;
   advantagePlus: string;
   sparkConcept: string;
@@ -32,10 +30,8 @@ interface FormData {
 
 const BlackhatBrief = () => {
   const [formData, setFormData] = useState<FormData>({
-    name: '',
     email: '',
     company: '',
-    phone: '',
     audienceType: '',
     advantagePlus: '',
     sparkConcept: '',
@@ -78,10 +74,8 @@ const BlackhatBrief = () => {
 🔥 *Blackhat Brief Submission*
 
 👤 *Contact Info:*
-• Name: ${data.name}
-• Email: ${data.email}
 • Company: ${data.company}
-• Phone: ${data.phone}
+• Email: ${data.email}
 
 🎯 *1. Audience & Targeting:*
 • Audience Type: ${data.audienceType}
@@ -160,10 +154,8 @@ const BlackhatBrief = () => {
       if (success) {
         setSubmitStatus('success');
         setFormData({
-          name: '',
           email: '',
           company: '',
-          phone: '',
           audienceType: '',
           advantagePlus: '',
           sparkConcept: '',
@@ -622,14 +614,14 @@ const BlackhatBrief = () => {
               </h2>
               <div className="space-y-4 md:space-y-6 ">
                 <input
-                  type="text"
-                  name="name"
-                  value={formData.name}
-                  onChange={handleInputChange}
-                  placeholder="Full Name *"
-                  className={inputClass}
-                  required
-                />
+                    type="text"
+                    name="company"
+                    value={formData.company}
+                    onChange={handleInputChange}
+                    placeholder="Company Name *"
+                    className={inputClass}
+                    required
+                  />
                 <input
                   type="email"
                   name="email"
@@ -639,24 +631,6 @@ const BlackhatBrief = () => {
                   className={inputClass}
                   required
                 />
-                <input
-                    type="text"
-                    name="company"
-                    value={formData.company}
-                    onChange={handleInputChange}
-                    placeholder="Company Name *"
-                    className={inputClass}
-                    required
-                  />
-                  <input
-                    type="tel"
-                    name="phone"
-                    value={formData.phone}
-                    onChange={handleInputChange}
-                    placeholder="Phone Number *"
-                    className={inputClass}
-                    required
-                  />
               </div>
 
               <button
