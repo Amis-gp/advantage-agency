@@ -4,7 +4,7 @@ import dynamic from 'next/dynamic'
 
 export const runtime = 'nodejs'
 export const revalidate = 3600
-import ClientPageContent from '@/components/course-aff/ClientPage'
+import ClientPageContent from '@/components/black-affiliate-marketing-3/ClientPage'
 const ClientPage = dynamic(
   () => Promise.resolve(ClientPageContent),
   {
@@ -13,7 +13,7 @@ const ClientPage = dynamic(
   }
 )
 
-import Footer from '@/components/course-aff/Footer'
+import Footer from '@/components/black-affiliate-marketing-3/Footer'
 
 interface Props {
   params: { locale: string }
