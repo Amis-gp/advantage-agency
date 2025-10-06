@@ -193,7 +193,7 @@ export default function BlackAffiliateMarketing() {
             </span>
           </div>
           <p className="text-lg md:text-xl text-gray-300 max-w-3xl mx-auto mt-8">
-            Boost Your Future: Master a Skill for Endless Earnings, Be Your Own Boss, or Team Up with Fellow Hustlers from Our Course to 4X Your Income
+            Boost Your Future: Master a Skill for Endless Earnings, Be Your Own Boss, or Team Up with Fellow Hustlers from Our Training program to 4X Your Income
           </p>
 
           <div className="mx-auto md:w-[560px] mt-8 relative">
@@ -211,7 +211,7 @@ export default function BlackAffiliateMarketing() {
           </div>
         </section>
 
-        {/* Who is this course for? */}
+        {/* Who is this training program for? */}
         <section className="mt-20">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
             <div className="space-y-4 bg-black/40 backdrop-blur-sm p-6 rounded-xl border border-red-600/30 hover:border-red-600/50 transition-all duration-300">
@@ -224,7 +224,7 @@ export default function BlackAffiliateMarketing() {
                 />
               </div>
               <p className="">
-                This course is for anyone ready to leave the{' '}
+                This training program is for anyone ready to leave the{' '}
                 <span className="text-red-600">9-to-5 grind</span> and make a real change!
               </p>
             </div>
@@ -240,7 +240,7 @@ export default function BlackAffiliateMarketing() {
               </div>
               <p className="">
                 If you want an{' '}
-                <span className="text-red-600">online income that's based on your skills</span>, not luck, this course is for you
+                <span className="text-red-600">online income that's based on your skills</span>, not luck, this training program is for you
               </p>
             </div>
 
@@ -336,7 +336,7 @@ export default function BlackAffiliateMarketing() {
 
               <li className="">
                 <span className="text-red-600 font-bold">Delivered more than 10 comprehensive </span>
-                <span>Marketing Courses to empower professionals in the field.</span>
+                <span>Marketing Training programs to empower professionals in the field.</span>
               </li>
             </ul>
           </div>
@@ -373,7 +373,7 @@ export default function BlackAffiliateMarketing() {
                 "I hail from very humble beginnings, a life marked by relentless hard work 💪. There were no safety nets; I had to rely <span className="font-bold">solely on my own efforts</span>. My family, with four children, including me as the eldest, was always facing financial constraints, making it necessary for me to take on the <span className="text-red-600 font-bold">responsibility of supporting my siblings and retiring my parents</span> so they don't have to work so hard anymore. My journey took me from a small village in Ukraine to pursuing studies in Poland 🌍, all while juggling a series of low-paying, physically demanding jobs to make ends meet.
               </p>
               <p>
-                These jobs ranged from working in kitchens, at McDonald's, in supermarkets, and in construction - any work that involved manual labor 🏗️. It was my only means of earning a meager income, and it still barely covered my modest bills. To make it all work, I often had to <span className="font-bold">juggle two jobs while attending university</span>. My life felt ascetic, dedicated to learning, completing various courses, and an <span className="text-red-600 font-bold">unending pursuit of self-improvement</span>. 📚
+                These jobs ranged from working in kitchens, at McDonald's, in supermarkets, and in construction - any work that involved manual labor 🏗️. It was my only means of earning a meager income, and it still barely covered my modest bills. To make it all work, I often had to <span className="font-bold">juggle two jobs while attending university</span>. My life felt ascetic, dedicated to learning, completing various training programs, and an <span className="text-red-600 font-bold">unending pursuit of self-improvement</span>. 📚
               </p>
             </div>
 
@@ -488,7 +488,7 @@ export default function BlackAffiliateMarketing() {
               <p>
                 Subsequently, I established a digital marketing agency, <span className="font-bold">ADvantage</span> 
                 <Link href="https://advantage-agency.co" target="_blank" className="text-blue-500 font-bold"> (here's the link)</Link>.
-                I now have a team, and we're in the process of expanding. This journey led me to create a course where I aim not only to share my secrets and help others make money online but also to provide an opportunity to join my team. The <span className="text-red-600 font-bold">best-performing students from my course have the chance to earn €5,000</span>. So don't hesitate. This is a short part of my story, just to give you my background and to show that it wasn't easy at all. But if I made it, I'm totally confident that anyone can do it, and I am here to help. 💪
+                I now have a team, and we're in the process of expanding. This journey led me to create a training program where I aim not only to share my secrets and help others make money online but also to provide an opportunity to join my team. The <span className="text-red-600 font-bold">best-performing students from my training program have the chance to earn €5,000</span>. So don't hesitate. This is a short part of my story, just to give you my background and to show that it wasn't easy at all. But if I made it, I'm totally confident that anyone can do it, and I am here to help. 💪
               </p>
             </div>
           </div>
@@ -554,14 +554,14 @@ export default function BlackAffiliateMarketing() {
                 <div className="bg-gray-50 rounded-full p-6 mx-auto w-fit">
                   <Image src="/img/black-affiliate-marketing/ico-6.avif" alt="Push Notifications" width={70} height={70} loading='lazy'/>
                 </div>
-                <p>Push Notifications Course</p>
+                <p>Push Notifications Training program</p>
               </div>
 
               <div className="text-center space-y-4">
                 <div className="bg-gray-50 rounded-full p-6 mx-auto w-fit">
                   <Image src="/img/black-affiliate-marketing/ico-7.png" alt="FB Advanced" width={70} height={70} loading='lazy'/>
                 </div>
-                <p>FB Advanced Level Ads Course</p>
+                <p>FB Advanced Level Ads Training program</p>
               </div>
 
               <div className="text-center space-y-4">
@@ -1049,39 +1049,39 @@ export default function BlackAffiliateMarketing() {
 
           <div className="space-y-4">
             {[
-              {
-                question: "How much is possible to earn per month?",
-                answer: "There is no limit as such, the more you spend on ads - the more you earn, all comes down to your ROI. I'm offering basically a hand holding until you get your first payouts. Consistency is the key."
-              },
-              {
-                question: "How quickly will I get my first payout?",
-                answer: "Depends on the offer type, there are offers that pay daily, that are offers that pay monthly, you see your sales every day, then you can withdraw your money from affiliate network and invest in ads more or buy yourself nice things. But for your first 5 payouts I would hold off shopping and invest in ads."
-              },
-              {
-                question: "The course seems to be quite expensive, why?",
-                answer: "I've done thousands of tests in order to get to what really works and build the whole system around it, the pricing is reasonable, considering I've spent more than €100k and teaching you for €1k, and higher plans cost more because I invest a lot of my time to help you."
-              },
-              {
-                question: "How much I should work per day?",
-                answer: "It is quite individual, depending how much stuff you can get done and how fast you learn. I would recommend to consider it as a part-time or full-time job, the more time you invest in this, the better you become and less you need to work. It is possible to automate many processes and work a few hours per day."
-              },
-              {
-                question: "What if I don't like the course?",
-                answer: "I guess what matters is a result, if you are making decent money working remotely from any country - it was worth it being consistent and not giving up. That's why we have a community, and teams to make sure you won't abandon it. I also offer a full refund, if you did what was required but never earned nothing."
-              },
-              {
-                question: "Why is it called \"black affiliate marketing\"?",
-                answer: "I was thinking about the name, and concerned if it wouldn't make an impression as something bad. Not at all, it is just a different side of the affiliate marketing with specific technical aspects and techniques that will give you a huge advantage over competition, bringing you more conversions and profit."
-              },
-              {
-                question: "Will it work in my country?",
-                answer: "Yes! If you are from the US, UK, CA, AU, - you should quickly get your first results. If you are from Europe - also pretty quick. If you are from other countries, it might take a bit more time, but it will work as well, as it is based on the internet."
-              },
-              {
-                question: "How long will I have access to the course?",
-                answer: "You will have access to the course for a lifetime, you can always get back to it when needed."
-              }
-            ].map((faq, index) => (
+            {
+              question: "How much is possible to earn per month?",
+              answer: "There is no limit as such, the more you spend on ads - the more you earn, all comes down to your ROI. I'm offering basically a hand holding until you get your first payouts. Consistency is the key."
+            },
+            {
+              question: "How quickly will I get my first payout?",
+              answer: "Depends on the offer type, there are offers that pay daily, that are offers that pay monthly, you see your sales every day, then you can withdraw your money from affiliate network and invest in ads more or buy yourself nice things. But for your first 5 payouts I would hold off shopping and invest in ads."
+            },
+            {
+              question: "The training program seems to be quite expensive, why?",
+              answer: "I've done thousands of tests in order to get to what really works and build the whole system around it, the pricing is reasonable, considering I've spent more than €100k and teaching you for €1k, and higher plans cost more because I invest a lot of my time to help you."
+            },
+            {
+              question: "How much I should work per day?",
+              answer: "It is quite individual, depending how much stuff you can get done and how fast you learn. I would recommend to consider it as a part-time or full-time job, the more time you invest in this, the better you become and less you need to work. It is possible to automate many processes and work a few hours per day."
+            },
+            {
+              question: "What if I don't like the training program?",
+              answer: "I guess what matters is a result, if you are making decent money working remotely from any country - it was worth it being consistent and not giving up. That's why we have a community, and teams to make sure you won't abandon it. I also offer a full refund, if you did what was required but never earned nothing."
+            },
+            {
+              question: "Why is it called \"black affiliate marketing\"?",
+              answer: "I was thinking about the name, and concerned if it wouldn't make an impression as something bad. Not at all, it is just a different side of the affiliate marketing with specific technical aspects and techniques that will give you a huge advantage over competition, bringing you more conversions and profit."
+            },
+            {
+              question: "Will it work in my country?",
+              answer: "Yes! If you are from the US, UK, CA, AU, - you should quickly get your first results. If you are from Europe - also pretty quick. If you are from other countries, it might take a bit more time, but it will work as well, as it is based on the internet."
+            },
+            {
+              question: "How long will I have access to the training program?",
+              answer: "You will have access to the training program for a lifetime, you can always get back to it when needed."
+            }
+          ];.map((faq, index) => (
               <div key={index} className="border border-white/10 rounded-lg hover:border-red-600/50 hover:bg-red-600/10 transition-all duration-300">
                 <button 
                   className="w-full p-6 text-left text-2xl flex justify-between items-center"
@@ -1132,7 +1132,7 @@ export default function BlackAffiliateMarketing() {
               <h3 className="text-3xl font-bold mb-6">Option 1:</h3>
               <div className="space-y-4 text-gray-300">
                 <p>
-                  You can choose to continue your current approach, which involves purchasing inexpensive courses, receiving generic advice, and feeling stuck while hoping for a change. However, it's essential to ask yourself: How much more willpower can you summon, and for how much longer can you persist without witnessing tangible results?
+                  You can choose to continue your current approach, which involves purchasing inexpensive training programs, receiving generic advice, and feeling stuck while hoping for a change. However, it's essential to ask yourself: How much more willpower can you summon, and for how much longer can you persist without witnessing tangible results?
                 </p>
                 <p>
                   Furthermore, by following this path, the opportunity cost is substantial. You're essentially trading the months spent on learning for the opportunity to start earning money right away.

@@ -23,7 +23,7 @@ const HeroSection = () => {
         </span>
       </div>
       {/* <p className="text-lg md:text-xl text-gray-300 max-w-3xl mx-auto mt-8">
-        Boost Your Future: Master a Skill for Endless Earnings, Be Your Own Boss, or Team Up with Fellow Hustlers from Our Course to 4X Your Income
+        Boost Your Future: Master a Skill for Endless Earnings, Be Your Own Boss, or Team Up with Fellow Hustlers from Our Training program to 4X Your Income
       </p> */}
 
       <div className="mx-auto md:w-[560px] mt-8 relative">

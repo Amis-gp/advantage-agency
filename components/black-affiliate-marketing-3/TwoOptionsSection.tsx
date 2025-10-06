@@ -27,7 +27,7 @@ const TwoOptionsSection = () => {
           <h3 className="text-3xl font-bold mb-6">Option 1:</h3>
           <div className="space-y-4 text-gray-300">
             <p>
-              You can choose to continue your current approach, which involves purchasing inexpensive courses, receiving generic advice, and feeling stuck while hoping for a change. However, it's essential to ask yourself: How much more willpower can you summon, and for how much longer can you persist without witnessing tangible results?
+              You can choose to continue your current approach, which involves purchasing inexpensive training programs, receiving generic advice, and feeling stuck while hoping for a change. However, it's essential to ask yourself: How much more willpower can you summon, and for how much longer can you persist without witnessing tangible results?
             </p>
             <p>
               Furthermore, by following this path, the opportunity cost is substantial. You're essentially trading the months spent on learning for the opportunity to start earning money right away.

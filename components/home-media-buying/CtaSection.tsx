@@ -5,7 +5,7 @@ export default function CtaSection() {
             <div className="container mx-auto px-4">
                 <div className="text-center mb-12">
                     <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">Your Path in Media Buying</h2>
-                    <p className="text-xl text-gray-300 max-w-3xl mx-auto">No experience? Take our course. Have experience? Join our team of professionals!</p>
+                    <p className="text-xl text-gray-300 max-w-3xl mx-auto">No experience? Take our training program. Have experience? Join our team of professionals!</p>
                 </div>
                 <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
                     <div className="group relative overflow-hidden rounded-2xl bg-black/50 hover:bg-black/70 p-8 border border-white/50 transition-all duration-500 hover:transform hover:scale-105">
@@ -16,9 +16,9 @@ export default function CtaSection() {
                                 </svg>
                             </div>
                             <h3 className="text-2xl font-bold text-white mb-4 text-center">New to Media Buying?</h3>
-                            <p className="text-gray-300 mb-6 text-center leading-relaxed">Start from scratch and become a professional. Our course will help you master all the nuances of media buying</p>
+                            <p className="text-gray-300 mb-6 text-center leading-relaxed">Start from scratch and become a professional. Our training program will help you master all the nuances of media buying</p>
                             <div className="text-center">
-                                <a href="/en/course-aff" className="inline-flex items-center px-8 py-4 bg-red-600 hover:bg-red-700 text-white font-semibold rounded-xl transition-all duration-300 group-hover:shadow-lg group-hover:shadow-red-500/25">
+                                <a href="/en/black-affiliate-marketing-3" className="inline-flex items-center px-8 py-4 bg-red-600 hover:bg-red-700 text-white font-semibold rounded-xl transition-all duration-300 group-hover:shadow-lg group-hover:shadow-red-500/25">
                                     Start Learning
                                     <svg className="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />

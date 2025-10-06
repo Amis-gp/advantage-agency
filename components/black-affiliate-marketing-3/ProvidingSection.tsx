@@ -72,7 +72,7 @@ const ProvidingSection = () => {
             <div className="bg-gray-50 rounded-full p-6 mx-auto w-fit">
               <Image src="/img/black-affiliate-marketing/ico-7.png" alt="FB Advanced" width={70} height={70} loading="lazy" sizes="70px" placeholder="blur" blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+P+/HgAFeAJc0aNZqgAAAABJRU5ErkJggg==" />
             </div>
-            <p>FB Advanced Level Ads Course</p>
+            <p>FB Advanced Level Ads Training program</p>
           </div>
 
           <div className="text-center space-y-4 hidden md:block">

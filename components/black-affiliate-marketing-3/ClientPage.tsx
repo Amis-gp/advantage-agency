@@ -41,7 +41,7 @@ const ClientPage = () => {
       answer: "Depends on the offer type, there are offers that pay daily, that are offers that pay monthly, you see your sales every day, then you can withdraw your money from affiliate network and invest in ads more or buy yourself nice things. But for your first 5 payouts I would hold off shopping and invest in ads."
     },
     {
-      question: "The course seems to be quite expensive, why?",
+      question: "The training program seems to be quite expensive, why?",
       answer: "I've done thousands of tests in order to get to what really works and build the whole system around it, the pricing is reasonable, considering I've spent more than €100k and teaching you for €1k, and higher plans cost more because I invest a lot of my time to help you."
     },
     {
@@ -49,7 +49,7 @@ const ClientPage = () => {
       answer: "It is quite individual, depending how much stuff you can get done and how fast you learn. I would recommend to consider it as a part-time or full-time job, the more time you invest in this, the better you become and less you need to work. It is possible to automate many processes and work a few hours per day."
     },
     {
-      question: "What if I don't like the course?",
+      question: "What if I don't like the training program?",
       answer: "I guess what matters is a result, if you are making decent money working remotely from any country - it was worth it being consistent and not giving up. That's why we have a community, and teams to make sure you won't abandon it. I also offer a full refund, if you did what was required but never earned nothing."
     },
     {
@@ -61,8 +61,8 @@ const ClientPage = () => {
       answer: "Yes! If you are from the US, UK, CA, AU, - you should quickly get your first results. If you are from Europe - also pretty quick. If you are from other countries, it might take a bit more time, but it will work as well, as it is based on the internet."
     },
     {
-      question: "How long will I have access to the course?",
-      answer: "You will have access to the course for a lifetime, you can always get back to it when needed."
+      question: "How long will I have access to the training program?",
+      answer: "You will have access to the training program for a lifetime, you can always get back to it when needed."
     }
   ];
 
