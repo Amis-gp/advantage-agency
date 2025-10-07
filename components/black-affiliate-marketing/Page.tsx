@@ -1081,7 +1081,7 @@ export default function BlackAffiliateMarketing() {
               question: "How long will I have access to the training program?",
               answer: "You will have access to the training program for a lifetime, you can always get back to it when needed."
             }
-          ];.map((faq, index) => (
+          ].map((faq, index) => (
               <div key={index} className="border border-white/10 rounded-lg hover:border-red-600/50 hover:bg-red-600/10 transition-all duration-300">
                 <button 
                   className="w-full p-6 text-left text-2xl flex justify-between items-center"

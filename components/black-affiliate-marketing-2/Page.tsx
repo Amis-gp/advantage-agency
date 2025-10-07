@@ -141,7 +141,7 @@ export default function BlackAffiliateMarketing() {
       answer: "Depends on the offer type, there are offers that pay daily, that are offers that pay monthly, you see your sales every day, then you can withdraw your money from affiliate network and invest in ads more or buy yourself nice things. But for your first 5 payouts I would hold off shopping and invest in ads."
     },
     {
-      question: "The course seems to be quite expensive, why?",
+      question: "The training program seems to be quite expensive, why?",
       answer: "I've done thousands of tests in order to get to what really works and build the whole system around it, the pricing is reasonable, considering I've spent more than €100k and teaching you for €1k, and higher plans cost more because I invest a lot of my time to help you."
     },
     {
@@ -149,7 +149,7 @@ export default function BlackAffiliateMarketing() {
       answer: "It is quite individual, depending how much stuff you can get done and how fast you learn. I would recommend to consider it as a part-time or full-time job, the more time you invest in this, the better you become and less you need to work. It is possible to automate many processes and work a few hours per day."
     },
     {
-      question: "What if I don't like the course?",
+      question: "What if I don't like the training program?",
       answer: "I guess what matters is a result, if you are making decent money working remotely from any country - it was worth it being consistent and not giving up. That's why we have a community, and teams to make sure you won't abandon it. I also offer a full refund, if you did what was required but never earned nothing."
     },
     {
@@ -161,8 +161,8 @@ export default function BlackAffiliateMarketing() {
       answer: "Yes! If you are from the US, UK, CA, AU, - you should quickly get your first results. If you are from Europe - also pretty quick. If you are from other countries, it might take a bit more time, but it will work as well, as it is based on the internet."
     },
     {
-      question: "How long will I have access to the course?",
-      answer: "You will have access to the course for a lifetime, you can always get back to it when needed."
+      question: "How long will I have access to the training program?",
+      answer: "You will have access to the training program for a lifetime, you can always get back to it when needed."
     }
   ];
 
@@ -206,7 +206,7 @@ export default function BlackAffiliateMarketing() {
             </span>
           </div>
           <p className="text-lg md:text-xl text-gray-300 max-w-3xl mx-auto mt-8">
-            Boost Your Future: Master a Skill for Endless Earnings, Be Your Own Boss, or Team Up with Fellow Hustlers from Our Course to 4X Your Income
+            Boost Your Future: Master a Skill for Endless Earnings, Be Your Own Boss, or Team Up with Fellow Hustlers from Our Training program to 4X Your Income
           </p>
 
           <div className="mx-auto md:w-[560px] mt-8 relative">
@@ -229,7 +229,7 @@ export default function BlackAffiliateMarketing() {
           </div>
         </section>
 
-        {/* Who is this course for? */}
+        {/* Who is this training program for? */}
         <section className="mt-20">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
             <div className="space-y-4 bg-black/40 backdrop-blur-sm p-6 rounded-xl border border-red-600/30 hover:border-red-600/50 transition-all duration-300">
@@ -330,7 +330,7 @@ export default function BlackAffiliateMarketing() {
 
               {/* <li className="">
                 <span className="text-red-600 font-bold">Delivered more than 10 comprehensive </span>
-                <span>Marketing Courses to empower professionals in the field.</span>
+                <span>Marketing Training programs to empower professionals in the field.</span>
               </li> */}
             </ul>
           </div>
@@ -480,7 +480,7 @@ export default function BlackAffiliateMarketing() {
               <p>
                 That success led to my agency — <span className="font-bold">ADvantage</span> 
                 <Link href="https://advantage-agency.co" target="_blank" className="text-blue-500 font-bold"> (here's the link)</Link> —
-                and now, this course. I'm not here to sell dreams. I'm here to show you the path, and if you're serious, even offer you a seat at the table. My <span className="text-red-600 font-bold">top students now earn up to €5,000/month</span> working with us. This is just a part of my story. Nothing about it was easy. But if I did it — so can you. And I'll show you how.
+                and now, this training program. I'm not here to sell dreams. I'm here to show you the path, and if you're serious, even offer you a seat at the table. My <span className="text-red-600 font-bold">top students now earn up to €5,000/month</span> working with us. This is just a part of my story. Nothing about it was easy. But if I did it — so can you. And I'll show you how.
               </p>
             </div>
           </div>
@@ -547,14 +547,14 @@ export default function BlackAffiliateMarketing() {
                 <div className="bg-gray-50 rounded-full p-6 mx-auto w-fit">
                   <Image src="/img/black-affiliate-marketing/ico-6.avif" alt="Push Notifications" width={70} height={70} loading="lazy" sizes="70px" placeholder="blur" blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+P+/HgAFeAJc0aNZqgAAAABJRU5ErkJggg==" />
                 </div>
-                <p>Push Notifications Course</p>
+                <p>Push Notifications Training program</p>
               </div>
 
               <div className="text-center space-y-4">
                 <div className="bg-gray-50 rounded-full p-6 mx-auto w-fit">
                   <Image src="/img/black-affiliate-marketing/ico-7.png" alt="FB Advanced" width={70} height={70} loading="lazy" sizes="70px" placeholder="blur" blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+P+/HgAFeAJc0aNZqgAAAABJRU5ErkJggg==" />
                 </div>
-                <p>FB Advanced Level Ads Course</p>
+                <p>FB Advanced Level Ads Training program</p>
               </div>
 
               <div className="text-center space-y-4 md:hidden">
@@ -1038,7 +1038,7 @@ export default function BlackAffiliateMarketing() {
               <h3 className="text-3xl font-bold mb-6">Option 1:</h3>
               <div className="space-y-4 text-gray-300">
                 <p>
-                  You can choose to continue your current approach, which involves purchasing inexpensive courses, receiving generic advice, and feeling stuck while hoping for a change. However, it's essential to ask yourself: How much more willpower can you summon, and for how much longer can you persist without witnessing tangible results?
+                  You can choose to continue your current approach, which involves purchasing inexpensive Training programs, receiving generic advice, and feeling stuck while hoping for a change. However, it's essential to ask yourself: How much more willpower can you summon, and for how much longer can you persist without witnessing tangible results?
                 </p>
                 <p>
                   Furthermore, by following this path, the opportunity cost is substantial. You're essentially trading the months spent on learning for the opportunity to start earning money right away.
