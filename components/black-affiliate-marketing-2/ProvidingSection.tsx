@@ -32,28 +32,28 @@ const ProvidingSection = () => {
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
           <div className="text-center space-y-4 ">
             <div className="bg-gray-50 rounded-full p-6 mx-auto w-fit">
-              <Image src="/img/black-affiliate-marketing/ico-1.avif" alt="Video Lessons" width={70} height={70} loading="lazy" sizes="70px" placeholder="blur" blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+P+/HgAFeAJc0aNZqgAAAABJRU5ErkJggg==" />
+              <Image src="/img/black-affiliate-marketing/ico-1.avif" alt="Video Lessons" width={70} height={70} loading="lazy" decoding="async" sizes="70px" quality={70} fetchPriority="low" placeholder="blur" blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+P+/HgAFeAJc0aNZqgAAAABJRU5ErkJggg==" />
             </div>
             <p>Video Lessons and Guides</p>
           </div>
 
           <div className="text-center space-y-4">
             <div className="bg-gray-50 rounded-full p-6 mx-auto w-fit">
-              <Image src="/img/black-affiliate-marketing/ico-2.avif" alt="FB Accounts" width={70} height={70} loading="lazy" sizes="70px" placeholder="blur" blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+P+/HgAFeAJc0aNZqgAAAABJRU5ErkJggg==" />
+              <Image src="/img/black-affiliate-marketing/ico-2.avif" alt="FB Accounts" width={70} height={70} loading="lazy" decoding="async" sizes="70px" quality={70} fetchPriority="low" placeholder="blur" blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+P+/HgAFeAJc0aNZqgAAAABJRU5ErkJggg==" />
             </div>
             <p>FB Accounts to run ads from</p>
           </div>
 
           <div className="text-center space-y-4">
             <div className="bg-gray-50 rounded-full p-6 mx-auto w-fit">
-              <Image src="/img/black-affiliate-marketing/ico-3.avif" alt="Advanced techniques" width={70} height={70} loading="lazy" sizes="70px" placeholder="blur" blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+P+/HgAFeAJc0aNZqgAAAABJRU5ErkJggg==" />
+              <Image src="/img/black-affiliate-marketing/ico-3.avif" alt="Advanced techniques" width={70} height={70} loading="lazy" decoding="async" sizes="70px" quality={70} fetchPriority="low" placeholder="blur" blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+P+/HgAFeAJc0aNZqgAAAABJRU5ErkJggg==" />
             </div>
             <p>Advanced techniques how to run any ads that you want</p>
           </div>
 
           <div className="text-center space-y-4">
             <div className="bg-gray-50 rounded-full p-6 mx-auto w-fit">
-              <Image src="/img/black-affiliate-marketing/ico-4.avif" alt="Funnels" width={70} height={70} loading="lazy" sizes="70px" placeholder="blur" blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+P+/HgAFeAJc0aNZqgAAAABJRU5ErkJggg==" />
+              <Image src="/img/black-affiliate-marketing/ico-4.avif" alt="Funnels" width={70} height={70} loading="lazy" decoding="async" sizes="70px" quality={70} fetchPriority="low" placeholder="blur" blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+P+/HgAFeAJc0aNZqgAAAABJRU5ErkJggg==" />
             </div>
             <p>Funnels of how to Drive Traffic</p>
           </div>
@@ -63,21 +63,21 @@ const ProvidingSection = () => {
         <div className="grid grid-cols-2 md:grid-cols-3 gap-8 md:px-[10%]">
           <div className="text-center space-y-4">
             <div className="bg-gray-50 rounded-full p-6 mx-auto w-fit">
-              <Image src="/img/black-affiliate-marketing/ico-5.png" alt="Traffic Sources" width={70} height={70} loading="lazy" sizes="70px" placeholder="blur" blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+P+/HgAFeAJc0aNZqgAAAABJRU5ErkJggg==" />
+              <Image src="/img/black-affiliate-marketing/ico-5.png" alt="Traffic Sources" width={70} height={70} loading="lazy" decoding="async" sizes="70px" quality={70} fetchPriority="low" placeholder="blur" blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+P+/HgAFeAJc0aNZqgAAAABJRU5ErkJggg==" />
             </div>
             <p>Traffic Sources Cheet Sheet</p>
           </div>
 
           <div className="text-center space-y-4">
             <div className="bg-gray-50 rounded-full p-6 mx-auto w-fit">
-              <Image src="/img/black-affiliate-marketing/ico-7.png" alt="FB Advanced" width={70} height={70} loading="lazy" sizes="70px" placeholder="blur" blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+P+/HgAFeAJc0aNZqgAAAABJRU5ErkJggg==" />
+              <Image src="/img/black-affiliate-marketing/ico-7.png" alt="FB Advanced" width={70} height={70} loading="lazy" decoding="async" sizes="70px" quality={70} fetchPriority="low" placeholder="blur" blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+P+/HgAFeAJc0aNZqgAAAABJRU5ErkJggg==" />
             </div>
             <p>FB Advanced Level Ads training program</p>
           </div>
 
           <div className="text-center space-y-4 hidden md:block">
             <div className="bg-gray-50 rounded-full p-6 mx-auto w-fit">
-              <Image src="/img/black-affiliate-marketing/ico-8.avif" alt="Security" width={70} height={70} loading="lazy" sizes="70px" placeholder="blur" blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+P+/HgAFeAJc0aNZqgAAAABJRU5ErkJggg==" />
+              <Image src="/img/black-affiliate-marketing/ico-8.avif" alt="Security" width={70} height={70} loading="lazy" decoding="async" sizes="70px" quality={70} fetchPriority="low" placeholder="blur" blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+P+/HgAFeAJc0aNZqgAAAABJRU5ErkJggg==" />
             </div>
             <p>Security in the Internet Instructions</p>
           </div>
@@ -87,28 +87,28 @@ const ProvidingSection = () => {
         <div className="grid grid-cols-2 md:grid-cols-3 gap-8 md:px-[10%]">
           <div className="text-center space-y-4 block md:hidden">
             <div className="bg-gray-50 rounded-full p-6 mx-auto w-fit">
-              <Image src="/img/black-affiliate-marketing/ico-8.avif" alt="Security" width={70} height={70} loading="lazy" sizes="70px" placeholder="blur" blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+P+/HgAFeAJc0aNZqgAAAABJRU5ErkJggg==" />
+              <Image src="/img/black-affiliate-marketing/ico-8.avif" alt="Security" width={70} height={70} loading="lazy" decoding="async" sizes="70px" quality={70} fetchPriority="low" placeholder="blur" blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+P+/HgAFeAJc0aNZqgAAAABJRU5ErkJggg==" />
             </div>
             <p>Security in the Internet Instructions</p>
           </div>
 
           <div className="text-center space-y-4">
             <div className="bg-gray-50 rounded-full p-6 mx-auto w-fit">
-              <Image src="/img/black-affiliate-marketing/ico-9.png" alt="Services" width={70} height={70} loading="lazy" sizes="70px" placeholder="blur" blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+P+/HgAFeAJc0aNZqgAAAABJRU5ErkJggg==" />
+              <Image src="/img/black-affiliate-marketing/ico-9.png" alt="Services" width={70} height={70} loading="lazy" decoding="async" sizes="70px" quality={70} fetchPriority="low" placeholder="blur" blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+P+/HgAFeAJc0aNZqgAAAABJRU5ErkJggg==" />
             </div>
             <p>List of Services to use for work</p>
           </div>
 
           <div className="text-center space-y-4">
             <div className="bg-gray-50 rounded-full p-6 mx-auto w-fit">
-              <Image src="/img/black-affiliate-marketing/ico-10.avif" alt="Mentorship" width={70} height={70} loading="lazy" sizes="70px" placeholder="blur" blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+P+/HgAFeAJc0aNZqgAAAABJRU5ErkJggg==" />
+              <Image src="/img/black-affiliate-marketing/ico-10.avif" alt="Mentorship" width={70} height={70} loading="lazy" decoding="async" sizes="70px" quality={70} fetchPriority="low" placeholder="blur" blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+P+/HgAFeAJc0aNZqgAAAABJRU5ErkJggg==" />
             </div>
             <p>1:1 Mentorship</p>
           </div>
 
           <div className="text-center space-y-4">
             <div className="bg-gray-50 rounded-full p-6 mx-auto w-fit">
-              <Image src="/img/black-affiliate-marketing/ico-12.avif" alt="Examples" width={70} height={70} loading="lazy" sizes="70px" placeholder="blur" blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+P+/HgAFeAJc0aNZqgAAAABJRU5ErkJggg==" />
+              <Image src="/img/black-affiliate-marketing/ico-12.avif" alt="Examples" width={70} height={70} loading="lazy" decoding="async" sizes="70px" quality={70} fetchPriority="low" placeholder="blur" blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+P+/HgAFeAJc0aNZqgAAAABJRU5ErkJggg==" />
             </div>
             <p>Examples of pre-landers, exclusive offers, direct introductions, examples of creatives</p>
           </div>
