@@ -9,6 +9,7 @@ import { Roboto } from 'next/font/google';
 import GoogleTagManager from '@/components/GoogleTagManager';
 import CookieConsent from '@/components/CookieConsent';
 import JsonLd from '@/components/JsonLd';
+import { SpeedInsights } from '@vercel/speed-insights/next';
 
 const roboto = Roboto({
     weight: ['300', '400', '500', '700'],
@@ -68,6 +69,7 @@ export default async function LocaleLayout({ children, params }: Props) {
           {children}
           <CookieConsent />
         </NextIntlClientProvider>
+        <SpeedInsights />
       </body>
     </html>
   );

@@ -1,7 +1,6 @@
 "use client"
 
 import React, { useState, useRef, useCallback } from 'react';
-import Image from 'next/image';
 
 interface VideoPlayerProps {
   videoUrl: string;
@@ -17,6 +16,7 @@ const VideoPlayerComponent = ({
   const videoRef = useRef<HTMLVideoElement>(null);
   const [isPlaying, setIsPlaying] = useState(false);
   const [isVideoLoaded, setIsVideoLoaded] = useState(false);
+  const [hasStartedPlaying, setHasStartedPlaying] = useState(false);
 
   const loadVideo = useCallback(() => {
     if (videoRef.current && !isVideoLoaded) {
@@ -25,6 +25,15 @@ const VideoPlayerComponent = ({
       setIsVideoLoaded(true);
     }
   }, [videoUrl, isVideoLoaded]);
+
+  const handlePlay = useCallback(() => {
+    setHasStartedPlaying(true);
+    setIsPlaying(true);
+  }, []);
+
+  const handlePause = useCallback(() => {
+    setIsPlaying(false);
+  }, []);
 
   const togglePlay = useCallback(() => {
     if (!isVideoLoaded) {
@@ -37,33 +46,32 @@ const VideoPlayerComponent = ({
       } else {
         videoRef.current.play();
       }
-      setIsPlaying(!isPlaying);
     }
   }, [isVideoLoaded, isPlaying, loadVideo]);
 
   return (
     <div className={`relative w-full overflow-hidden group cursor-pointer ${className} bg-black`} onClick={togglePlay}>
-      {!isPlaying && placeholder && (
-        <div className="absolute inset-0 w-full h-full flex items-center justify-center">
-          <Image 
+      {!hasStartedPlaying && placeholder && (
+        <div className="absolute inset-0 w-full h-full flex items-center justify-center z-10">
+          <img 
             src={placeholder}
             alt="Video preview"
-            fill
-            className="object-contain"
+            className="w-full h-full object-contain"
             loading="lazy"
-            sizes="(max-width: 768px) 100vw, 50vw"
           />
         </div>
       )}
       
       <video 
         ref={videoRef}
-        className={`w-full h-full object-contain ${!isPlaying ? 'opacity-0' : 'opacity-100'} transition-opacity duration-300`}
+        className={`w-full h-full object-contain ${!hasStartedPlaying ? 'opacity-0' : 'opacity-100'} transition-opacity duration-300`}
         playsInline
+        onPlay={handlePlay}
+        onPause={handlePause}
       />
 
-      {!isPlaying && (
-        <div className='bg-black/30 absolute inset-0 hover:bg-black/40 transition-all duration-300 group'>
+      {!hasStartedPlaying && (
+        <div className='bg-black/30 absolute inset-0 hover:bg-black/40 transition-all duration-300 group z-20'>
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex gap-4">
             <button 
               onClick={(e) => {

@@ -5,7 +5,7 @@ import Image from 'next/image';
 import { Dialog, Transition } from '@headlessui/react';
 import dynamic from 'next/dynamic';
 
-const VideoPlayer = dynamic(() => import('../black-affiliate-marketing-2/VideoPlayer'), { ssr: false, loading: () => <div className="h-[480px] w-full flex items-center justify-center bg-gray-800/40"/> });
+const VideoPlayer = dynamic(() => import('../black-affiliate-marketing-2/VideoPlayer'), { ssr: false, loading: () => <div className="h-[480px] w-full flex items-center justify-center"/> });
 
 interface TestimonialsSectionProps {
   testimonialImages: string[];
@@ -76,100 +76,98 @@ const TestimonialsSection = ({ testimonialImages }: TestimonialsSectionProps) =>
         {isGridVisible && (
         <>
         <div className="space-y-4">
-          <div className="relative cursor-pointer transition-transform duration-300 hover:scale-105 bg-gray-900" onClick={() => openImage(0)}>
+          <div className="relative cursor-pointer transition-transform duration-300 hover:scale-105" onClick={() => openImage(0)}>
             <Image 
               src="/img/black-affiliate-marketing/testimonial-1.webp" 
               alt="Testimonial 1" 
               width={500} 
               height={176} 
-              loading="lazy" decoding="async"
+              loading="lazy"
               sizes="(max-width: 768px) 100vw, 33vw"
-              quality={70} fetchPriority="low" placeholder="blur" blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMBCc5nT1gAAAAASUVORK5CYII="
-              style={{ backgroundColor: '#111827' }}
             />
           </div>
-          <div className="relative cursor-pointer transition-transform duration-300 hover:scale-105 bg-gray-900" onClick={() => openImage(7)}>
+          <div className="relative cursor-pointer transition-transform duration-300 hover:scale-105" onClick={() => openImage(7)}>
             <Image 
               src="/img/black-affiliate-marketing/testimonial-8.webp" 
               alt="8" 
               width={490} 
               height={460} 
-              loading="lazy" decoding="async" sizes="(max-width: 768px) 100vw, 33vw" quality={70} fetchPriority="low" placeholder="blur" blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMBCc5nT1gAAAAASUVORK5CYII="
-              style={{ backgroundColor: '#111827' }}
+              loading="lazy"
+              sizes="(max-width: 768px) 100vw, 33vw"
             />
           </div>
-          <div className="relative cursor-pointer transition-transform duration-300 hover:scale-105 bg-gray-900" onClick={() => openImage(2)}>
+          <div className="relative cursor-pointer transition-transform duration-300 hover:scale-105" onClick={() => openImage(2)}>
             <Image 
               src="/img/black-affiliate-marketing/testimonial-3.webp" 
               alt="3" 
               width={500} 
               height={176} 
-              loading="lazy" decoding="async" sizes="(max-width: 768px) 100vw, 33vw" quality={70} fetchPriority="low" placeholder="blur" blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMBCc5nT1gAAAAASUVORK5CYII="
-              style={{ backgroundColor: '#111827' }}
+              loading="lazy"
+              sizes="(max-width: 768px) 100vw, 33vw"
             />
           </div>
         </div>
         <div className="space-y-4 ">
-          <div className="relative cursor-pointer transition-transform duration-300 hover:scale-105 bg-gray-900" onClick={() => openImage(3)}>
+          <div className="relative cursor-pointer transition-transform duration-300 hover:scale-105" onClick={() => openImage(3)}>
             <Image 
               src="/img/black-affiliate-marketing/testimonial-4.webp" 
               alt="4" 
               width={896} 
               height={515} 
-              loading="lazy" decoding="async" sizes="(max-width: 768px) 100vw, 33vw" quality={70} fetchPriority="low" placeholder="blur" blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMBCc5nT1gAAAAASUVORK5CYII="
-              style={{ backgroundColor: '#111827' }}
+              loading="lazy"
+              sizes="(max-width: 768px) 100vw, 33vw"
             />
           </div>
-          <div className="relative cursor-pointer transition-transform duration-300 hover:scale-105 bg-gray-900" onClick={() => openImage(4)}>
+          <div className="relative cursor-pointer transition-transform duration-300 hover:scale-105" onClick={() => openImage(4)}>
             <Image 
               src="/img/black-affiliate-marketing/testimonial-5.webp" 
               alt="5" 
               width={952} 
               height={296} 
-              loading="lazy" decoding="async" sizes="(max-width: 768px) 100vw, 33vw" quality={70} fetchPriority="low" placeholder="blur" blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMBCc5nT1gAAAAASUVORK5CYII="
-              style={{ backgroundColor: '#111827' }}
+              loading="lazy"
+              sizes="(max-width: 768px) 100vw, 33vw"
             />
           </div>
-          <div className="relative cursor-pointer transition-transform duration-300 hover:scale-105 bg-gray-900" onClick={() => openImage(1)}>
+          <div className="relative cursor-pointer transition-transform duration-300 hover:scale-105" onClick={() => openImage(1)}>
             <Image 
               src="/img/black-affiliate-marketing/testimonial-2.webp" 
               alt="2" 
               width={500} 
               height={176} 
-              loading="lazy" decoding="async" sizes="(max-width: 768px) 100vw, 33vw" quality={70} fetchPriority="low" placeholder="blur" blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMBCc5nT1gAAAAASUVORK5CYII="
-              style={{ backgroundColor: '#111827' }}
+              loading="lazy"
+              sizes="(max-width: 768px) 100vw, 33vw"
             />
           </div>
         </div>
         <div className="space-y-4">
-          <div className="relative cursor-pointer transition-transform duration-300 hover:scale-105 bg-gray-900" onClick={() => openImage(6)}>
+          <div className="relative cursor-pointer transition-transform duration-300 hover:scale-105" onClick={() => openImage(6)}>
             <Image 
               src="/img/black-affiliate-marketing/testimonial-7.webp" 
               alt="7" 
               width={489} 
               height={493} 
-              loading="lazy" decoding="async" sizes="(max-width: 768px) 100vw, 33vw" quality={70} fetchPriority="low" placeholder="blur" blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMBCc5nT1gAAAAASUVORK5CYII="
-              style={{ backgroundColor: '#111827' }}
+              loading="lazy"
+              sizes="(max-width: 768px) 100vw, 33vw"
             />
           </div>
-          <div className="relative cursor-pointer transition-transform duration-300 hover:scale-105 bg-gray-900" onClick={() => openImage(5)}>
+          <div className="relative cursor-pointer transition-transform duration-300 hover:scale-105" onClick={() => openImage(5)}>
             <Image 
               src="/img/black-affiliate-marketing/testimonial-6.webp" 
               alt="6" 
               width={1656} 
               height={458} 
-              loading="lazy" decoding="async" sizes="(max-width: 768px) 100vw, 33vw" quality={70} fetchPriority="low" placeholder="blur" blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMBCc5nT1gAAAAASUVORK5CYII="
-              style={{ backgroundColor: '#111827' }}
+              loading="lazy"
+              sizes="(max-width: 768px) 100vw, 33vw"
             />
           </div>
-          <div className="relative cursor-pointer transition-transform duration-300 hover:scale-105 bg-gray-900" onClick={() => openImage(8)}>
+          <div className="relative cursor-pointer transition-transform duration-300 hover:scale-105" onClick={() => openImage(8)}>
             <Image 
               src="/img/black-affiliate-marketing/testimonial-9.webp" 
               alt="9" 
               width={500} 
               height={176} 
-              loading="lazy" decoding="async" sizes="(max-width: 768px) 100vw, 33vw" quality={70} fetchPriority="low" placeholder="blur" blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMBCc5nT1gAAAAASUVORK5CYII="
-              style={{ backgroundColor: '#111827' }}
+              loading="lazy"
+              sizes="(max-width: 768px) 100vw, 33vw"
             />
           </div>
         </div>
