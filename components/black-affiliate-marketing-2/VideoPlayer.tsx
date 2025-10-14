@@ -1,6 +1,7 @@
 "use client"
 
 import React, { useState, useRef, useCallback } from 'react';
+import Image from 'next/image';
 
 interface VideoPlayerProps {
   videoUrl: string;
@@ -14,7 +15,6 @@ const VideoPlayerComponent = ({
   className
 }: VideoPlayerProps) => {
   const videoRef = useRef<HTMLVideoElement>(null);
-  const previewRef = useRef<HTMLVideoElement>(null);
   const [isPlaying, setIsPlaying] = useState(false);
   const [isVideoLoaded, setIsVideoLoaded] = useState(false);
 
@@ -35,9 +35,6 @@ const VideoPlayerComponent = ({
       if (isPlaying) {
         videoRef.current.pause();
       } else {
-        if (previewRef.current) {
-          previewRef.current.style.display = 'none';
-        }
         videoRef.current.play();
       }
       setIsPlaying(!isPlaying);
@@ -45,22 +42,23 @@ const VideoPlayerComponent = ({
   }, [isVideoLoaded, isPlaying, loadVideo]);
 
   return (
-    <div className="relative w-full overflow-hidden group cursor-pointer" onClick={togglePlay}>
-      {!isPlaying && (
-        <video 
-          ref={previewRef}
-          src={placeholder}
-          className={`absolute inset-0 w-full ${className}`}
-          autoPlay
-          muted
-          loop
-          playsInline
-        />
+    <div className={`relative w-full overflow-hidden group cursor-pointer ${className} bg-black`} onClick={togglePlay}>
+      {!isPlaying && placeholder && (
+        <div className="absolute inset-0 w-full h-full flex items-center justify-center">
+          <Image 
+            src={placeholder}
+            alt="Video preview"
+            fill
+            className="object-contain"
+            loading="lazy"
+            sizes="(max-width: 768px) 100vw, 50vw"
+          />
+        </div>
       )}
       
       <video 
         ref={videoRef}
-        className={`w-full mx-auto ${className}`}
+        className={`w-full h-full object-contain ${!isPlaying ? 'opacity-0' : 'opacity-100'} transition-opacity duration-300`}
         playsInline
       />
 

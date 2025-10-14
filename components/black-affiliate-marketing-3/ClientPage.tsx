@@ -1,22 +1,13 @@
 "use client"
 
-import dynamic from 'next/dynamic';
 import HeroSection from '../black-affiliate-marketing-2/HeroSection';
 import CourseTargetSection from '../black-affiliate-marketing-2/CourseTargetSection';
-
-const ProvidingSection = dynamic(() => import('./ProvidingSection'), { ssr: false });
-const PhaseSystemSection = dynamic(() => import('../black-affiliate-marketing-2/PhaseSystemSection'), { ssr: false });
-const PricingSection = dynamic(() => import('./PricingSection'), { ssr: false });
-const FAQSection = dynamic(() => import('../black-affiliate-marketing-2/FAQSection'), { ssr: false });
-const TwoOptionsSection = dynamic(() => import('./TwoOptionsSection'), { ssr: false });
-
-const TestimonialsSection = dynamic(
-  () => import('./TestimonialsSection'),
-  { 
-    ssr: false, 
-    loading: () => <div className="mt-20 max-w-6xl mx-auto text-center"><p className="text-xl">loading testimonial...</p></div> 
-  }
-);
+import ProvidingSection from './ProvidingSection';
+import PhaseSystemSection from '../black-affiliate-marketing-2/PhaseSystemSection';
+import PricingSection from './PricingSection';
+import FAQSection from '../black-affiliate-marketing-2/FAQSection';
+import TwoOptionsSection from './TwoOptionsSection';
+import TestimonialsSection from './TestimonialsSection';
 
 const testimonialImages = [
   '/img/black-affiliate-marketing/testimonial-1.webp',

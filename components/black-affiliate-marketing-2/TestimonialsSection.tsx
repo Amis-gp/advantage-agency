@@ -4,10 +4,6 @@ import React, { useState, Fragment, useCallback, useEffect } from 'react';
 import Image from 'next/image';
 import { Dialog, Transition } from '@headlessui/react';
 import dynamic from 'next/dynamic';
-import 'swiper/css';
-
-const Swiper = dynamic(() => import('swiper/react').then(mod => mod.Swiper), { ssr: false });
-const SwiperSlide = dynamic(() => import('swiper/react').then(mod => mod.SwiperSlide), { ssr: false });
 
 const VideoPlayer = dynamic(() => import('./VideoPlayer'), { ssr: false, loading: () => <div className="h-[480px] w-full flex items-center justify-center bg-gray-800/40"/> });
 
@@ -17,20 +13,9 @@ interface TestimonialsSectionProps {
 
 const TestimonialsSection = ({ testimonialImages }: TestimonialsSectionProps) => {
   const [isImageOpen, setIsImageOpen] = useState(false);
-  const [selectedImage, setSelectedImage] = useState('');
-  const [isSwiperLoaded, setIsSwiperLoaded] = useState(false);
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [isGridVisible, setIsGridVisible] = useState(false);
-  const [swiperModules, setSwiperModules] = useState<any>(null);
   const gridRef = React.useRef<HTMLDivElement | null>(null);
-  
-  useEffect(() => {
-    if (isImageOpen && !isSwiperLoaded) {
-      import('swiper/modules').then(modules => {
-        setSwiperModules([modules.Navigation, modules.Pagination]);
-        setIsSwiperLoaded(true);
-      });
-    }
-  }, [isImageOpen, isSwiperLoaded]);
 
   useEffect(() => {
     if (!gridRef.current) return;
@@ -46,10 +31,18 @@ const TestimonialsSection = ({ testimonialImages }: TestimonialsSectionProps) =>
     return () => observer.disconnect();
   }, []);
 
-  const openImage = useCallback((image: string) => {
-    setSelectedImage(image);
+  const openImage = useCallback((index: number) => {
+    setCurrentImageIndex(index);
     setIsImageOpen(true);
   }, []);
+
+  const nextImage = useCallback(() => {
+    setCurrentImageIndex((prev) => (prev + 1) % testimonialImages.length);
+  }, [testimonialImages.length]);
+
+  const prevImage = useCallback(() => {
+    setCurrentImageIndex((prev) => (prev - 1 + testimonialImages.length) % testimonialImages.length);
+  }, [testimonialImages.length]);
 
   const closeImage = useCallback(() => {
     setIsImageOpen(false);
@@ -61,32 +54,6 @@ const TestimonialsSection = ({ testimonialImages }: TestimonialsSectionProps) =>
       <h2 className="text-5xl font-bold text-center mb-10 bg-gradient-to-r from-white via-red-400 to-gray-100 bg-clip-text text-transparent animate-gradient bg-[length:200%_auto]">
         Testimonials
       </h2>
-
-      
-      {/* <div className="gap-4 md:flex justify-between">
-        <div className="md:w-2/5 h-[360px] mx-auto">
-          <VideoPlayer 
-            videoUrl="/img/black-affiliate-marketing/video-1.mp4" 
-            className="h-[360px]" 
-            placeholder="/img/black-affiliate-marketing/video-1-placeholder.webp" 
-          />
-        </div>
-        <div className="md:w-2/3 h-[360px] mx-auto">
-          <VideoPlayer 
-            videoUrl="/img/black-affiliate-marketing/video-2.mp4" 
-            className="h-[360px]" 
-            placeholder="/img/black-affiliate-marketing/video-2-placeholder.webp"
-          />
-        </div>
-        <div className="aspect-[4/5] md:w-2/5 h-[360px] mx-auto mb-8 md:mb-0">
-          <VideoPlayer 
-            videoUrl="/img/black-affiliate-marketing/video-3.mp4" 
-            className="h-[360px]" 
-            placeholder="/img/black-affiliate-marketing/video-3-placeholder.webp"
-          />
-        </div>
-      </div> */}
-      {/* Vimeo відео в правильному React форматі */}
 
       <div className="flex flex-col md:flex-row gap-4 justify-between items-center mb-8">
         <div className="w-full md:w-2/5 mb-4 md:mb-0 self-start md:self-center">
@@ -145,14 +112,12 @@ const TestimonialsSection = ({ testimonialImages }: TestimonialsSectionProps) =>
           />
         </div>
       </div>
-      
-      <script async src="https://player.vimeo.com/api/player.js"/>
 
       <div ref={gridRef} className="grid grid-cols-1 md:grid-cols-3 gap-4 items-center sm:mt-4">
         {isGridVisible && (
         <>
         <div className="space-y-4">
-          <div className="relative cursor-pointer transition-transform duration-300 hover:scale-105 bg-gray-900" onClick={() => openImage('/img/black-affiliate-marketing/testimonial-1.webp')}>
+          <div className="relative cursor-pointer transition-transform duration-300 hover:scale-105 bg-gray-900" onClick={() => openImage(0)}>
             <Image 
               src="/img/black-affiliate-marketing/testimonial-1.webp" 
               alt="Testimonial 1" 
@@ -164,7 +129,7 @@ const TestimonialsSection = ({ testimonialImages }: TestimonialsSectionProps) =>
               style={{ backgroundColor: '#111827' }}
             />
           </div>
-          <div className="relative cursor-pointer transition-transform duration-300 hover:scale-105 bg-gray-900" onClick={() => openImage('/img/black-affiliate-marketing/testimonial-8.webp')}>
+          <div className="relative cursor-pointer transition-transform duration-300 hover:scale-105 bg-gray-900" onClick={() => openImage(7)}>
             <Image 
               src="/img/black-affiliate-marketing/testimonial-8.webp" 
               alt="8" 
@@ -174,7 +139,7 @@ const TestimonialsSection = ({ testimonialImages }: TestimonialsSectionProps) =>
               style={{ backgroundColor: '#111827' }}
             />
           </div>
-          <div className="relative cursor-pointer transition-transform duration-300 hover:scale-105 bg-gray-900" onClick={() => openImage('/img/black-affiliate-marketing/testimonial-3.webp')}>
+          <div className="relative cursor-pointer transition-transform duration-300 hover:scale-105 bg-gray-900" onClick={() => openImage(2)}>
             <Image 
               src="/img/black-affiliate-marketing/testimonial-3.webp" 
               alt="3" 
@@ -186,7 +151,7 @@ const TestimonialsSection = ({ testimonialImages }: TestimonialsSectionProps) =>
           </div>
         </div>
         <div className="space-y-4 ">
-          <div className="relative cursor-pointer transition-transform duration-300 hover:scale-105 bg-gray-900" onClick={() => openImage('/img/black-affiliate-marketing/testimonial-4.webp')}>
+          <div className="relative cursor-pointer transition-transform duration-300 hover:scale-105 bg-gray-900" onClick={() => openImage(3)}>
             <Image 
               src="/img/black-affiliate-marketing/testimonial-4.webp" 
               alt="4" 
@@ -196,7 +161,7 @@ const TestimonialsSection = ({ testimonialImages }: TestimonialsSectionProps) =>
               style={{ backgroundColor: '#111827' }}
             />
           </div>
-          <div className="relative cursor-pointer transition-transform duration-300 hover:scale-105 bg-gray-900" onClick={() => openImage('/img/black-affiliate-marketing/testimonial-5.webp')}>
+          <div className="relative cursor-pointer transition-transform duration-300 hover:scale-105 bg-gray-900" onClick={() => openImage(4)}>
             <Image 
               src="/img/black-affiliate-marketing/testimonial-5.webp" 
               alt="5" 
@@ -206,7 +171,7 @@ const TestimonialsSection = ({ testimonialImages }: TestimonialsSectionProps) =>
               style={{ backgroundColor: '#111827' }}
             />
           </div>
-          <div className="relative cursor-pointer transition-transform duration-300 hover:scale-105 bg-gray-900" onClick={() => openImage('/img/black-affiliate-marketing/testimonial-2.webp')}>
+          <div className="relative cursor-pointer transition-transform duration-300 hover:scale-105 bg-gray-900" onClick={() => openImage(1)}>
             <Image 
               src="/img/black-affiliate-marketing/testimonial-2.webp" 
               alt="2" 
@@ -218,7 +183,7 @@ const TestimonialsSection = ({ testimonialImages }: TestimonialsSectionProps) =>
           </div>
         </div>
         <div className="space-y-4">
-          <div className="relative cursor-pointer transition-transform duration-300 hover:scale-105 bg-gray-900" onClick={() => openImage('/img/black-affiliate-marketing/testimonial-7.webp')}>
+          <div className="relative cursor-pointer transition-transform duration-300 hover:scale-105 bg-gray-900" onClick={() => openImage(6)}>
             <Image 
               src="/img/black-affiliate-marketing/testimonial-7.webp" 
               alt="7" 
@@ -228,7 +193,7 @@ const TestimonialsSection = ({ testimonialImages }: TestimonialsSectionProps) =>
               style={{ backgroundColor: '#111827' }}
             />
           </div>
-          <div className="relative cursor-pointer transition-transform duration-300 hover:scale-105 bg-gray-900" onClick={() => openImage('/img/black-affiliate-marketing/testimonial-6.webp')}>
+          <div className="relative cursor-pointer transition-transform duration-300 hover:scale-105 bg-gray-900" onClick={() => openImage(5)}>
             <Image 
               src="/img/black-affiliate-marketing/testimonial-6.webp" 
               alt="6" 
@@ -238,7 +203,7 @@ const TestimonialsSection = ({ testimonialImages }: TestimonialsSectionProps) =>
               style={{ backgroundColor: '#111827' }}
             />
           </div>
-          <div className="relative cursor-pointer transition-transform duration-300 hover:scale-105 bg-gray-900" onClick={() => openImage('/img/black-affiliate-marketing/testimonial-9.webp')}>
+          <div className="relative cursor-pointer transition-transform duration-300 hover:scale-105 bg-gray-900" onClick={() => openImage(8)}>
             <Image 
               src="/img/black-affiliate-marketing/testimonial-9.webp" 
               alt="9" 
@@ -277,43 +242,37 @@ const TestimonialsSection = ({ testimonialImages }: TestimonialsSectionProps) =>
                   ×
                 </button>
                 <div className="relative h-[80vh]">
-                  {(isImageOpen && isSwiperLoaded && swiperModules) ? (
-                    <Swiper
-                      modules={swiperModules}
-                      spaceBetween={20}
-                      slidesPerView={1}
-                      loop={true}
-                      initialSlide={testimonialImages.indexOf(selectedImage)}
-                      className="h-full w-full"
-                    >
-                      {testimonialImages.map((image, index) => (
-                        <SwiperSlide key={index}>
-                          <div className="relative h-full w-full">
-                            <Image
-                              src={image}
-                              alt={`Testimonial ${index + 1}`}
-                              fill
-                              className="object-contain"
-                              loading="lazy"
-                              onLoad={(event) => {
-                                // Додавання обробника події для видалення анімації завантаження
-                                const target = event.target as HTMLImageElement;
-                                if (target.complete) target.classList.remove('opacity-0');
-                              }}
-                              style={{ opacity: 0, transition: 'opacity 0.3s ease-in-out' }}
-                              onLoadingComplete={(img) => {
-                                img.style.opacity = '1';
-                              }}
-                            />
-                          </div>
-                        </SwiperSlide>
-                      ))}
-                    </Swiper>
-                  ) : (
-                    <div className="h-full w-full flex items-center justify-center bg-gray-800">
-                      <div className="animate-pulse bg-gray-700 h-4/5 w-4/5 rounded opacity-30"></div>
-                    </div>
-                  )}
+                  <div className="relative h-full w-full">
+                    <Image
+                      src={testimonialImages[currentImageIndex]}
+                      alt={`Testimonial ${currentImageIndex + 1}`}
+                      fill
+                      className="object-contain"
+                      loading="lazy"
+                    />
+                  </div>
+                  
+                  <button
+                    onClick={prevImage}
+                    className="absolute left-4 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white p-3 rounded-full transition-colors z-10"
+                  >
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-6 h-6">
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
+                    </svg>
+                  </button>
+                  
+                  <button
+                    onClick={nextImage}
+                    className="absolute right-4 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white p-3 rounded-full transition-colors z-10"
+                  >
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-6 h-6">
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+                    </svg>
+                  </button>
+
+                  <div className="absolute bottom-4 left-1/2 -translate-x-1/2 text-white bg-black/50 px-4 py-2 rounded-full">
+                    {currentImageIndex + 1} / {testimonialImages.length}
+                  </div>
                 </div>
               </Dialog.Panel>
             </div>
