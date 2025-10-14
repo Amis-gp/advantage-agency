@@ -60,7 +60,6 @@ const VideoPlayerComponent = ({
       
       <video 
         ref={videoRef}
-        src={videoUrl}
         className={`w-full mx-auto ${className}`}
         playsInline
       />

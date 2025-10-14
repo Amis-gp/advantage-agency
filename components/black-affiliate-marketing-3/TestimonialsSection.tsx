@@ -4,11 +4,11 @@ import React, { useState, Fragment, useCallback, useEffect } from 'react';
 import Image from 'next/image';
 import { Dialog, Transition } from '@headlessui/react';
 import dynamic from 'next/dynamic';
+import 'swiper/css';
 
-const Swiper = dynamic(() => import('swiper/react').then(mod => mod.Swiper), { ssr: false, loading: () => <div className="h-full w-full flex items-center justify-center"><div className="animate-pulse bg-gray-300 h-full w-full opacity-30"></div></div> });
+const Swiper = dynamic(() => import('swiper/react').then(mod => mod.Swiper), { ssr: false });
 const SwiperSlide = dynamic(() => import('swiper/react').then(mod => mod.SwiperSlide), { ssr: false });
 
-import { Navigation, Pagination } from 'swiper/modules';
 const VideoPlayerLazy = dynamic(() => import('../black-affiliate-marketing-2/VideoPlayer'), { ssr: false, loading: () => <div className="h-[480px] w-full flex items-center justify-center bg-gray-800/40"/> });
 
 interface TestimonialsSectionProps {
@@ -19,12 +19,32 @@ const TestimonialsSection = ({ testimonialImages }: TestimonialsSectionProps) =>
   const [isImageOpen, setIsImageOpen] = useState(false);
   const [selectedImage, setSelectedImage] = useState('');
   const [isSwiperLoaded, setIsSwiperLoaded] = useState(false);
+  const [isGridVisible, setIsGridVisible] = useState(false);
+  const [swiperModules, setSwiperModules] = useState<any>(null);
+  const gridRef = React.useRef<HTMLDivElement | null>(null);
   
   useEffect(() => {
     if (isImageOpen && !isSwiperLoaded) {
-      setIsSwiperLoaded(true);
+      import('swiper/modules').then(modules => {
+        setSwiperModules([modules.Navigation, modules.Pagination]);
+        setIsSwiperLoaded(true);
+      });
     }
   }, [isImageOpen, isSwiperLoaded]);
+
+  useEffect(() => {
+    if (!gridRef.current) return;
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          setIsGridVisible(true);
+          observer.disconnect();
+        }
+      });
+    }, { root: null, rootMargin: '100px', threshold: 0.01 });
+    observer.observe(gridRef.current);
+    return () => observer.disconnect();
+  }, []);
 
   const openImage = useCallback((image: string) => {
     setSelectedImage(image);
@@ -57,10 +77,10 @@ const TestimonialsSection = ({ testimonialImages }: TestimonialsSectionProps) =>
           />
         </div>
       </div>
-      
-      <script async src="https://player.vimeo.com/api/player.js"/>
 
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-4 items-center sm:mt-4">
+      <div ref={gridRef} className="grid grid-cols-1 md:grid-cols-3 gap-4 items-center sm:mt-4">
+        {isGridVisible ? (
+        <>
         <div className="space-y-4">
           <div className="relative cursor-pointer transition-transform duration-300 hover:scale-105" onClick={() => openImage('/img/black-affiliate-marketing/testimonial-1.webp')}>
             <Image 
@@ -71,8 +91,10 @@ const TestimonialsSection = ({ testimonialImages }: TestimonialsSectionProps) =>
               loading="lazy"
               decoding="async"
               sizes="(max-width: 768px) 100vw, 33vw"
-              quality={70}
+              quality={60}
               fetchPriority="low"
+              placeholder="blur"
+              blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMBCc5nT1gAAAAASUVORK5CYII="
             />
           </div>
           <div className="relative cursor-pointer transition-transform duration-300 hover:scale-105" onClick={() => openImage('/img/black-affiliate-marketing/testimonial-8.webp')}>
@@ -83,8 +105,10 @@ const TestimonialsSection = ({ testimonialImages }: TestimonialsSectionProps) =>
               height={460} 
               loading="lazy" decoding="async"
               sizes="(max-width: 768px) 100vw, 33vw"
-              quality={70}
+              quality={60}
               fetchPriority="low"
+              placeholder="blur"
+              blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMBCc5nT1gAAAAASUVORK5CYII="
             />
           </div>
           <div className="relative cursor-pointer transition-transform duration-300 hover:scale-105" onClick={() => openImage('/img/black-affiliate-marketing/testimonial-3.webp')}>
@@ -95,8 +119,10 @@ const TestimonialsSection = ({ testimonialImages }: TestimonialsSectionProps) =>
               height={176} 
               loading="lazy" decoding="async"
               sizes="(max-width: 768px) 100vw, 33vw"
-              quality={70}
+              quality={60}
               fetchPriority="low"
+              placeholder="blur"
+              blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMBCc5nT1gAAAAASUVORK5CYII="
             />
           </div>
         </div>
@@ -109,8 +135,10 @@ const TestimonialsSection = ({ testimonialImages }: TestimonialsSectionProps) =>
               height={515} 
               loading="lazy" decoding="async"
               sizes="(max-width: 768px) 100vw, 33vw"
-              quality={70}
+              quality={60}
               fetchPriority="low"
+              placeholder="blur"
+              blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMBCc5nT1gAAAAASUVORK5CYII="
             />
           </div>
           <div className="relative cursor-pointer transition-transform duration-300 hover:scale-105" onClick={() => openImage('/img/black-affiliate-marketing/testimonial-5.webp')}>
@@ -121,8 +149,10 @@ const TestimonialsSection = ({ testimonialImages }: TestimonialsSectionProps) =>
               height={296} 
               loading="lazy" decoding="async"
               sizes="(max-width: 768px) 100vw, 33vw"
-              quality={70}
+              quality={60}
               fetchPriority="low"
+              placeholder="blur"
+              blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMBCc5nT1gAAAAASUVORK5CYII="
             />
           </div>
           <div className="relative cursor-pointer transition-transform duration-300 hover:scale-105" onClick={() => openImage('/img/black-affiliate-marketing/testimonial-2.webp')}>
@@ -133,8 +163,10 @@ const TestimonialsSection = ({ testimonialImages }: TestimonialsSectionProps) =>
               height={176} 
               loading="lazy" decoding="async"
               sizes="(max-width: 768px) 100vw, 33vw"
-              quality={70}
+              quality={60}
               fetchPriority="low"
+              placeholder="blur"
+              blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMBCc5nT1gAAAAASUVORK5CYII="
             />
           </div>
         </div>
@@ -147,8 +179,10 @@ const TestimonialsSection = ({ testimonialImages }: TestimonialsSectionProps) =>
               height={493} 
               loading="lazy" decoding="async"
               sizes="(max-width: 768px) 100vw, 33vw"
-              quality={70}
+              quality={60}
               fetchPriority="low"
+              placeholder="blur"
+              blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMBCc5nT1gAAAAASUVORK5CYII="
             />
           </div>
           <div className="relative cursor-pointer transition-transform duration-300 hover:scale-105" onClick={() => openImage('/img/black-affiliate-marketing/testimonial-6.webp')}>
@@ -159,8 +193,10 @@ const TestimonialsSection = ({ testimonialImages }: TestimonialsSectionProps) =>
               height={458} 
               loading="lazy" decoding="async"
               sizes="(max-width: 768px) 100vw, 33vw"
-              quality={70}
+              quality={60}
               fetchPriority="low"
+              placeholder="blur"
+              blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMBCc5nT1gAAAAASUVORK5CYII="
             />
           </div>
           <div className="relative cursor-pointer transition-transform duration-300 hover:scale-105" onClick={() => openImage('/img/black-affiliate-marketing/testimonial-9.webp')}>
@@ -171,11 +207,19 @@ const TestimonialsSection = ({ testimonialImages }: TestimonialsSectionProps) =>
               height={176} 
               loading="lazy" decoding="async"
               sizes="(max-width: 768px) 100vw, 33vw"
-              quality={70}
+              quality={60}
               fetchPriority="low"
+              placeholder="blur"
+              blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMBCc5nT1gAAAAASUVORK5CYII="
             />
           </div>
         </div>
+        </>
+        ) : (
+          <div className="col-span-3 h-[600px] flex items-center justify-center">
+            <div className="animate-pulse text-gray-500">Loading testimonials...</div>
+          </div>
+        )}
       </div>
 
       <Transition.Root show={isImageOpen} as={Fragment}>
@@ -202,9 +246,9 @@ const TestimonialsSection = ({ testimonialImages }: TestimonialsSectionProps) =>
                   ×
                 </button>
                 <div className="relative h-[80vh]">
-                  {(isImageOpen && isSwiperLoaded) ? (
+                  {(isImageOpen && isSwiperLoaded && swiperModules) ? (
                     <Swiper
-                      modules={[Navigation, Pagination]}
+                      modules={swiperModules}
                       spaceBetween={20}
                       slidesPerView={1}
                       loop={true}

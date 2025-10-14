@@ -4,11 +4,11 @@ import React, { useState, Fragment, useCallback, useEffect } from 'react';
 import Image from 'next/image';
 import { Dialog, Transition } from '@headlessui/react';
 import dynamic from 'next/dynamic';
+import 'swiper/css';
 
-const Swiper = dynamic(() => import('swiper/react').then(mod => mod.Swiper), { ssr: false, loading: () => <div className="h-full w-full flex items-center justify-center"><div className="animate-pulse bg-gray-300 h-full w-full opacity-30"></div></div> });
+const Swiper = dynamic(() => import('swiper/react').then(mod => mod.Swiper), { ssr: false });
 const SwiperSlide = dynamic(() => import('swiper/react').then(mod => mod.SwiperSlide), { ssr: false });
 
-import { Navigation, Pagination } from 'swiper/modules';
 const VideoPlayer = dynamic(() => import('./VideoPlayer'), { ssr: false, loading: () => <div className="h-[480px] w-full flex items-center justify-center bg-gray-800/40"/> });
 
 interface TestimonialsSectionProps {
@@ -20,11 +20,15 @@ const TestimonialsSection = ({ testimonialImages }: TestimonialsSectionProps) =>
   const [selectedImage, setSelectedImage] = useState('');
   const [isSwiperLoaded, setIsSwiperLoaded] = useState(false);
   const [isGridVisible, setIsGridVisible] = useState(false);
+  const [swiperModules, setSwiperModules] = useState<any>(null);
   const gridRef = React.useRef<HTMLDivElement | null>(null);
   
   useEffect(() => {
     if (isImageOpen && !isSwiperLoaded) {
-      setIsSwiperLoaded(true);
+      import('swiper/modules').then(modules => {
+        setSwiperModules([modules.Navigation, modules.Pagination]);
+        setIsSwiperLoaded(true);
+      });
     }
   }, [isImageOpen, isSwiperLoaded]);
 
@@ -273,9 +277,9 @@ const TestimonialsSection = ({ testimonialImages }: TestimonialsSectionProps) =>
                   ×
                 </button>
                 <div className="relative h-[80vh]">
-                  {(isImageOpen && isSwiperLoaded) ? (
+                  {(isImageOpen && isSwiperLoaded && swiperModules) ? (
                     <Swiper
-                      modules={[Navigation, Pagination]}
+                      modules={swiperModules}
                       spaceBetween={20}
                       slidesPerView={1}
                       loop={true}
