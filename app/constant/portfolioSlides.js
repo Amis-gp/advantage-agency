@@ -1,5 +1,21 @@
 export const portfolioSlides = [
     {
+        title: 'Slovakia Multi-Geo PWA',
+        date: '25.08.2025 - 11.09.2025',
+        image: '/img/portfolio/slovakia-pwa.webp',
+        stats: {
+            spend: '$20,052',
+            ftds: '~246',
+            roi: '47%',
+            payout: '$120/FTD'
+        },
+        location: '🇸🇰 🇭🇺 🇨🇿 Multi-Geo',
+        slug: {
+            en: 'cases/v22',
+            uk: 'cases/v22'
+        },
+    },
+    {
         title: 'Crypto Offer',
         date: '01.11.2024 - 31.01.2025',
         image: '/img/portfolio/crypto-offer.webp',

@@ -1,0 +1,119 @@
+{
+  "seo": {
+    "title": "Slovakia Multi-Geo PWA Funnel: 47% ROI iGaming Case Study",
+    "description": "Learn how we achieved 47% ROI with multi-geo PWA funnel targeting Slovakia, Hungary, and Czech Republic. $20,052 spend generated ~246 FTDs on Facebook Ads."
+  },
+  "hero": {
+    "title": "Slovakia - <span className='highlight'>Multi-Geo PWA Funnel</span>",
+    "subtitle": "How We Achieved 47% ROI with Strategic Multi-Geo Targeting"
+  },
+  "overview": {
+    "title": "Campaign Overview:",
+    "stats": [
+      {
+        "parameter": "Campaign Period",
+        "value": "August 25 – September 11, 2025"
+      },
+      {
+        "parameter": "Total Spend",
+        "value": "$20,052"
+      },
+      {
+        "parameter": "FTDs Generated",
+        "value": "~246"
+      },
+      {
+        "parameter": "ROI",
+        "value": "47%"
+      },
+      {
+        "parameter": "Offer Payout",
+        "value": "$120 per FTD"
+      }
+    ]
+  },
+  "intro": {
+    "description": "In this case, we launched targeted traffic for iGaming offers in Slovakia using a <strong>PWA (Progressive Web App)</strong> funnel on Facebook Ads. By leveraging a multi-geo strategy, we tapped into cheaper audiences while maximizing payouts. The result? <strong>Solid 47% ROI</strong> from efficient scaling without burning through budgets. Here's how we did it, step by step."
+  },
+  "multiGeo": {
+    "title": "Multi-Geo and Tracker Setup",
+    "description": "To optimize costs and reach, we set up <strong>three streams in Keitaro tracker</strong>: one each for Slovakia, Hungary, and Czech Republic. This segmented distribution let us capture Slovak-speaking users across borders, securing lower CPCs and higher payouts from varied geo rates.",
+    "points": [
+      "Customized <strong>three White Pages in PWA</strong> for each geo (Slovak, Hungarian, Czech) to warm up users with localized content.",
+      "Targeted <strong>Slovak language</strong> on Facebook, but expanded geo to multiple countries for cheaper traffic pools."
+    ],
+    "proTip": {
+      "label": "Pro Tip:",
+      "text": "This approach diversifies risk—if one geo underperforms, others pick up the slack with minimal extra spend."
+    }
+  },
+  "iosTraffic": {
+    "title": "Handling iOS Traffic",
+    "description": "We fully embraced <strong>iOS traffic</strong> via our PWA Group setup, avoiding App Store redirects. iOS users installed the PWA directly to their home screen through Safari, complete with push subscriptions for re-engagement.",
+    "points": [],
+    "insight": {
+      "label": "Insight:",
+      "text": "iOS conversion held strong at an install-to-deposit ratio of 14:1, proving PWA's edge in processing Apple traffic seamlessly."
+    }
+  },
+  "facebookCampaign": {
+    "title": "Facebook Campaign Configuration",
+    "points": [
+      "<strong>Targeting:</strong> Males 25+, Slovak language speakers across Slovakia, Hungary, Czech Republic.",
+      "<strong>Ad Copy Strategy:</strong> Packed main text, headlines, and descriptions with high RTP mentions and the €1,200 + 220 FS bonus to hook users instantly."
+    ]
+  },
+  "creatives": {
+    "title": "Creatives and Moderation Tactics",
+    "description": "We tested various formats rigorously, and <strong>static creatives outperformed videos</strong> in engagement and conversions for this audience—likely due to faster loading and simpler appeal in feed scrolling.",
+    "points": [
+      "Uniquified all assets (images, videos, texts) via specialized bots to slip past moderation.",
+      "Added unique thumbnails to any video elements for quicker approvals."
+    ]
+  },
+  "optimization": {
+    "title": "Optimization and Daily Management",
+    "description": "Aggressive filtering kept things lean:",
+    "points": [
+      "Culled ad sets with <strong>no clicks or CPCs exceeding $4-6</strong>.",
+      "Revived only those delivering <strong>deposits or cheap installs with regs</strong>.",
+      "Daily \"garbage\" audit: Retained effective sets, paused the rest.",
+      "During account freezes, we sat tight—letting algorithms self-correct without interference."
+    ],
+    "strategy": {
+      "title": "Strategic Approach = Better Results",
+      "description": "Every decision in this campaign was data-driven and strategically planned for maximum efficiency."
+    }
+  },
+  "whyMultiGeo": {
+    "title": "Why Multi-Geo Delivered Wins",
+    "points": [
+      "<strong>Cost Efficiency:</strong> Language targeting in less competitive countries slashed traffic prices.",
+      "<strong>Payout Boost:</strong> Varied CPA rates across geos meant higher overall earnings.",
+      "<strong>Resilience:</strong> Spread risk—if Slovakia traffic spiked in cost, Hungary or Czech audiences compensated."
+    ],
+    "bonusInsight": {
+      "label": "Bonus Insight:",
+      "text": "With Slovakia's growing online gaming market (fueled by a tech-savvy population and EU regulations favoring iGaming), this setup capitalized on untapped cross-border demand, turning a standard launch into a 47% ROI machine."
+    }
+  },
+  "finalResults": {
+    "roi": {
+      "percentage": "47% ROI",
+      "label": "Return on Investment",
+      "description": "From $20,052 spend to ~246 FTDs at $120 payout — efficient scaling without burning budgets"
+    }
+  },
+  "conclusion": {
+    "title": "Ready to Scale Your Offers?",
+    "description": "This Slovakia-focused launch underscores the power of PWA in iGaming arbitrage. If you're eyeing similar geos, hit us up—<strong>let's scale your offers next</strong>. 🚀"
+  },
+  "cta": {
+    "buttonText": "Book My Free Consult Now"
+  },
+  "finalCta": {
+    "title": "Want Similar Results for Your Campaigns?",
+    "description": "Let's discuss how we can replicate this success for your iGaming offers. Book a free consultation today!"
+  }
+}
+

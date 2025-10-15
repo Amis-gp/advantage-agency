@@ -1,0 +1,35 @@
+{
+  "title": "Our Cases",
+  "description": "Explore our latest successful projects and case studies",
+  "viewCase": "View Case",
+  "stats": {
+    "emailsSent": "emails sent",
+    "openRate": "open rate",
+    "replyRate": "reply rate",
+    "responses": "responses",
+    "demoCalls": "demo calls",
+    "instagram": "instagram",
+    "facebook": "facebook",
+    "linkedin": "linkedin",
+    "other": "other",
+    "leads": "leads",
+    "closedDeals": "closed deals",
+    "revenue": "revenue",
+    "adSpend": "ad spend",
+    "clicks": "clicks",
+    "pricePerPurchase": "price per purchase",
+    "amountOfBookings": "bookings",
+    "roi": "roi",
+    "pricePerLead": "price per lead",
+    "ctr": "ctr",
+    "emailResponses": "email responses",
+    "leadCalls": "lead calls",
+    "amountOfPurchases": "purchases",
+    "highTicketClients": "high ticket clients",
+    "partnerships": "partnerships",
+    "spend": "spend",
+    "ftds": "ftds",
+    "payout": "payout"
+  }
+}
+

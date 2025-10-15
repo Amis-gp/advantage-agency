@@ -1,0 +1,35 @@
+{
+  "title": "Наші кейси",
+  "description": "Ознайомтеся з нашими останніми успішними проектами та кейсами",
+  "viewCase": "Переглянути кейс",
+  "stats": {
+    "emailsSent": "відправлено листів",
+    "openRate": "відкриття",
+    "replyRate": "відповіді",
+    "responses": "відповіді",
+    "demoCalls": "демо дзвінки",
+    "instagram": "instagram",
+    "facebook": "facebook",
+    "linkedin": "linkedin",
+    "other": "інше",
+    "leads": "ліди",
+    "closedDeals": "закриті угоди",
+    "revenue": "дохід",
+    "adSpend": "витрати на рекламу",
+    "clicks": "кліки",
+    "pricePerPurchase": "ціна за покупку",
+    "amountOfBookings": "бронювання",
+    "roi": "roi",
+    "pricePerLead": "ціна за лід",
+    "ctr": "ctr",
+    "emailResponses": "відповіді на email",
+    "leadCalls": "дзвінки лідів",
+    "amountOfPurchases": "покупки",
+    "highTicketClients": "high ticket клієнти",
+    "partnerships": "партнерства",
+    "spend": "витрати",
+    "ftds": "ftd",
+    "payout": "виплата"
+  }
+}
+
