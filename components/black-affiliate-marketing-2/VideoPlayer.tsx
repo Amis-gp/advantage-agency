@@ -17,9 +17,11 @@ const VideoPlayerComponent = ({
   const [isPlaying, setIsPlaying] = useState(false);
   const [isVideoLoaded, setIsVideoLoaded] = useState(false);
   const [hasStartedPlaying, setHasStartedPlaying] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
 
   const loadVideo = useCallback(() => {
     if (videoRef.current && !isVideoLoaded) {
+      setIsLoading(true);
       videoRef.current.src = videoUrl;
       videoRef.current.load();
       setIsVideoLoaded(true);
@@ -29,10 +31,19 @@ const VideoPlayerComponent = ({
   const handlePlay = useCallback(() => {
     setHasStartedPlaying(true);
     setIsPlaying(true);
+    setIsLoading(false);
   }, []);
 
   const handlePause = useCallback(() => {
     setIsPlaying(false);
+  }, []);
+
+  const handleLoadStart = useCallback(() => {
+    setIsLoading(true);
+  }, []);
+
+  const handleCanPlay = useCallback(() => {
+    setIsLoading(false);
   }, []);
 
   const togglePlay = useCallback(() => {
@@ -68,9 +79,22 @@ const VideoPlayerComponent = ({
         playsInline
         onPlay={handlePlay}
         onPause={handlePause}
+        onLoadStart={handleLoadStart}
+        onCanPlay={handleCanPlay}
       />
 
-      {!hasStartedPlaying && (
+      {/* Loading indicator */}
+      {isLoading && (
+        <div className="absolute inset-0 bg-black/50 flex items-center justify-center z-30">
+          <div className="flex flex-col items-center gap-3">
+            <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-white"></div>
+            <span className="text-white text-sm">Loading...</span>
+          </div>
+        </div>
+      )}
+
+      {/* Play button overlay */}
+      {!hasStartedPlaying && !isLoading && (
         <div className='bg-black/30 absolute inset-0 hover:bg-black/40 transition-all duration-300 group z-20'>
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex gap-4">
             <button 
@@ -84,6 +108,17 @@ const VideoPlayerComponent = ({
                 <path strokeLinecap="round" strokeLinejoin="round" d="M5.25 5.653c0-.856.917-1.398 1.667-.986l11.54 6.347a1.125 1.125 0 0 1 0 1.972l-11.54 6.347c-.75.412-1.667-.13-1.667-.986V5.653Z" />
               </svg>
             </button>
+          </div>
+        </div>
+      )}
+
+      {/* Pause indicator */}
+      {hasStartedPlaying && !isPlaying && !isLoading && (
+        <div className="absolute inset-0 bg-black/20 flex items-center justify-center z-20">
+          <div className="bg-black/50 rounded-full p-4">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="white" className="w-8 h-8">
+              <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 5.25v13.5m-7.5-13.5v13.5" />
+            </svg>
           </div>
         </div>
       )}
