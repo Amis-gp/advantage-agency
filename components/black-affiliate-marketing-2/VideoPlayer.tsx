@@ -62,7 +62,7 @@ const VideoPlayerComponent = ({
 
   return (
     <div className={`relative w-full overflow-hidden group cursor-pointer ${className} bg-black`} onClick={togglePlay}>
-      {!hasStartedPlaying && placeholder && (
+      {(!hasStartedPlaying || isLoading) && placeholder && (
         <div className="absolute inset-0 w-full h-full flex items-center justify-center z-10">
           <img 
             src={placeholder}
@@ -75,7 +75,7 @@ const VideoPlayerComponent = ({
       
       <video 
         ref={videoRef}
-        className={`w-full h-full object-contain ${!hasStartedPlaying ? 'opacity-0' : 'opacity-100'} transition-opacity duration-300`}
+        className={`w-full h-full object-contain ${!hasStartedPlaying || isLoading ? 'opacity-0' : 'opacity-100'} transition-opacity duration-300`}
         playsInline
         onPlay={handlePlay}
         onPause={handlePause}
