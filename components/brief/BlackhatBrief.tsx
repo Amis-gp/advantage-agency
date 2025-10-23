@@ -22,6 +22,7 @@ interface FormData {
   commentsWork: string;
   casinoTypes: string;
   geos: string;
+  pixelsPerGeo: string;
   testingBudgets: string;
   dailySpend: string;
   biggestChallenge: string;
@@ -49,6 +50,7 @@ const BlackhatBrief = () => {
     commentsWork: '',
     casinoTypes: '',
     geos: '',
+    pixelsPerGeo: '',
     testingBudgets: '',
     dailySpend: '',
     biggestChallenge: '',
@@ -103,6 +105,7 @@ const BlackhatBrief = () => {
 🎰 *5. Offers & GEOs:*
 • Casino Types: ${data.casinoTypes}
 • GEOs: ${data.geos}
+• Pixels per GEO: ${data.pixelsPerGeo}
 
 💰 *6. Financial Aspects:*
 • Testing Budgets: ${data.testingBudgets}
@@ -173,6 +176,7 @@ const BlackhatBrief = () => {
           commentsWork: '',
           casinoTypes: '',
           geos: '',
+          pixelsPerGeo: '',
           testingBudgets: '',
           dailySpend: '',
           biggestChallenge: '',
@@ -529,6 +533,22 @@ const BlackhatBrief = () => {
                     value={formData.geos}
                     onChange={handleInputChange}
                     placeholder="List countries/regions you've worked with..."
+                    className={textareaClass}
+                    required
+                  />
+                </div>
+                <div>
+                  <label className="block text-base sm:text-lg font-medium mb-2 md:mb-3 text-gray-200 leading-tight">
+                    Describe how many pixels you use for each specific GEO.
+                  </label>
+                  <p className="text-xs sm:text-sm text-gray-400 mb-2 md:mb-3 leading-relaxed">
+                    For example: 3 GEOs – 1 pixel / 1 GEO – 1 pixel
+                  </p>
+                  <textarea
+                    name="pixelsPerGeo"
+                    value={formData.pixelsPerGeo}
+                    onChange={handleInputChange}
+                    placeholder="Describe your pixel setup per GEO..."
                     className={textareaClass}
                     required
                   />

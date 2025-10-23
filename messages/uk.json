@@ -56,7 +56,10 @@
             "instagram": "Instagram",
             "facebook": "Facebook",
             "linkedin": "LinkedIn",
-            "other": "Інші платформи"
+            "other": "Інші платформи",
+            "spend": "Витрати",
+            "ftds": "FTDs",
+            "payout": "Виплати"
         }
     },
     "partners": {

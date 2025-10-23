@@ -56,7 +56,10 @@
             "instagram": "Instagram",
             "facebook": "Facebook",
             "linkedin": "LinkedIn",
-            "other": "Other Platforms"
+            "other": "Other Platforms",
+            "spend": "Spend",
+            "ftds": "FTDs",
+            "payout": "Payout"
         }
     },
     "partners": {
