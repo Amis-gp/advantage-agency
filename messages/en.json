@@ -1288,6 +1288,96 @@
     },
     "brief-landing": {
         "title": "Landing Page Brief",
+        "simple": {
+            "primaryTitle": "Contact Information",
+            "sections": {
+                "about": {
+                    "title": "About Your Business",
+                    "description": {
+                        "label": "Tell us about your business and what you offer *",
+                        "placeholder": "Describe your products/services and what makes your business unique..."
+                    },
+                    "website": {
+                        "label": "Current website (if any)",
+                        "placeholder": "https://yourwebsite.com"
+                    }
+                },
+                "goals": {
+                    "title": "Landing Page Goals",
+                    "mainGoal": {
+                        "label": "Main purpose of the landing page *",
+                        "options": {
+                            "empty": "Select main goal",
+                            "sales": "Sell product/service",
+                            "leads": "Generate leads",
+                            "event": "Promote event",
+                            "subscription": "Newsletter subscription",
+                            "download": "Resource downloads",
+                            "other": "Other"
+                        }
+                    },
+                    "targetAction": {
+                        "label": "What action should visitors take? *",
+                        "placeholder": "e.g., Fill contact form, make a purchase, book a call..."
+                    }
+                },
+                "audience": {
+                    "title": "Target Audience",
+                    "description": {
+                        "label": "Who is your ideal customer? *",
+                        "placeholder": "Describe demographics, interests, profession, income level..."
+                    },
+                    "painPoints": {
+                        "label": "What problems/pain points does your audience have? *",
+                        "placeholder": "What challenges or frustrations do they face?"
+                    }
+                },
+                "usp": {
+                    "title": "What Makes You Different",
+                    "uniqueValue": {
+                        "label": "What's your unique value proposition? *",
+                        "placeholder": "What makes you different from competitors? What unique benefits do you offer? Why should customers choose you?"
+                    }
+                },
+                "design": {
+                    "title": "Design Preferences",
+                    "preferences": {
+                        "label": "Design style and preferences *",
+                        "placeholder": "Brand colors, fonts, style (modern, minimal, bold, etc.)..."
+                    },
+                    "examples": {
+                        "label": "Examples of designs you like",
+                        "placeholder": "Share links to websites or landing pages you admire..."
+                    }
+                },
+                "files": {
+                    "title": "Upload Files",
+                    "label": "Upload logo, product photos, or other materials",
+                    "clickToUpload": "Click to upload",
+                    "orDragAndDrop": "or drag and drop",
+                    "note": "PNG, JPG, PDF, AI, PSD (MAX. 10MB)",
+                    "uploaded": "Uploaded files:"
+                }
+            },
+            "primary": {
+                "businessName": {
+                    "label": "Business Name *",
+                    "placeholder": "Your business name"
+                },
+                "niche": {
+                    "label": "Industry/Niche *",
+                    "placeholder": "e.g., E-commerce, SaaS, Real Estate"
+                },
+                "email": {
+                    "label": "Email *",
+                    "placeholder": "your@email.com"
+                },
+                "phone": {
+                    "label": "Phone (optional)",
+                    "placeholder": "+1 234 567 8900"
+                }
+            }
+        },
         "primary": {
             "title": "Primary Information",
             "businessName": {
