@@ -42,7 +42,7 @@ const CourseTargetSection = () => {
             <Image src="/img/black-affiliate-marketing/4.webp" alt="Media buyers" width={100} height={100} loading='lazy'/>
           </div>
           <p className="">
-            ✅ Media buyers – <span className="text-red-600 font-bold">who want to work with high-paying, uncapped offers across iGaming, nutra, dating, and crypto niches</span>.
+            ✅ Media buyers – <span className="text-red-600 font-bold">who want to work with high-paying, uncapped offers across iGaming</span>.
           </p>
         </div>
       </div>
