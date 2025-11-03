@@ -67,7 +67,7 @@ const FormSection = () => {
         setIsSubmitting(true);
 
         try {
-            const message = `<b>Нова заявка з сайту advantage-agency.co/media-buying</b>
+            const message = `<b>Нова заявка з сайту advantage-agency.co/ (black-agency)</b>
 
 <b>Ім'я:</b> ${formData.name}
 <b>Email:</b> ${formData.email}
