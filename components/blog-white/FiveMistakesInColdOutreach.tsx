@@ -64,7 +64,7 @@ const FiveMistakesInColdOutreach = () => {
       <div className="max-w-4xl mx-auto px-5 py-24 sm:pt-32">
         <div className="mb-8">
           <Link 
-            href={`/${locale}/blog`}
+            href={`/${locale}/blog-white`}
             className="inline-flex items-center text-blue-400 hover:text-blue-300 transition-colors group"
           >
             <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-2 group-hover:-translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">

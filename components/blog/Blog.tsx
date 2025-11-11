@@ -56,10 +56,10 @@ export default function BlogIndexPage({ params }: BlogProps) {
               className="text-center mb-16"
             >
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 uppercase bg-gradient-to-r from-white to-red-400 bg-clip-text text-transparent">
-                {t('title')}
+              Blog
               </h1>
               <p className="text-xl md:text-2xl text-gray-300 max-w-3xl mx-auto">
-                {t('description')}
+                Explore our latest articles, insights, and case studies on media buying, digital marketing, and performance marketing.
               </p>
             </motion.div>
 
@@ -133,7 +133,7 @@ export default function BlogIndexPage({ params }: BlogProps) {
                           </div>
                         )}
                         <div className="mt-auto text-red-400 font-semibold group-hover:text-red-300 transition-colors">
-                          {t('readMore')} →
+                          Read More →
                         </div>
                       </div>
                     </Link>

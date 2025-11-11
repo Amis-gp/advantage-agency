@@ -128,7 +128,7 @@ export default async function BlogPostPage({ params }: Props) {
         <div className="max-w-4xl mx-auto px-5 py-24 sm:pt-32">
         <div className="mb-8">
           <Link
-            href={`/${locale}/blog`}
+            href="/blog"
             className="inline-flex items-center text-red-400 hover:text-red-300 transition-colors"
           >
             <svg

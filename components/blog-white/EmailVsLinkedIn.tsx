@@ -64,7 +64,7 @@ const EmailVsLinkedIn: React.FC = () => {
     "dateModified": "2025-06-24",
     "mainEntityOfPage": {
       "@type": "WebPage",
-      "@id": `https://advantage-agency.com/${locale}/blog-white/email-vs-linkedin`
+      "@id": `https://advantage-agency.com/${locale}/blog/email-vs-linkedin`
     },
     "articleSection": "Marketing",
     "keywords": locale === 'uk' ? "холодні листи, LinkedIn аутріч, лідогенерація, B2B маркетинг, продажі" : "cold email, LinkedIn outreach, lead generation, B2B marketing, sales"
@@ -79,13 +79,13 @@ const EmailVsLinkedIn: React.FC = () => {
         <meta property="og:title" content={t('title')} />
         <meta property="og:description" content={t('intro')} />
         <meta property="og:image" content="https://advantage-agency.com/img/blog-white/email-vs-linkedin/hero.webp" />
-        <meta property="og:url" content={`https://advantage-agency.com/${locale}/blog-white/email-vs-linkedin`} />
+        <meta property="og:url" content={`https://advantage-agency.com/${locale}/blog/email-vs-linkedin`} />
         <meta property="og:type" content="article" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content={t('title')} />
         <meta name="twitter:description" content={t('intro')} />
         <meta name="twitter:image" content="https://advantage-agency.com/img/blog-white/email-vs-linkedin/hero.webp" />
-        <link rel="canonical" href={`https://advantage-agency.com/${locale}/blog-white/email-vs-linkedin`} />
+        <link rel="canonical" href={`https://advantage-agency.com/${locale}/blog/email-vs-linkedin`} />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
@@ -94,7 +94,7 @@ const EmailVsLinkedIn: React.FC = () => {
       <article className="bg-gradient-to-br from-gray-900 to-black text-white font-sans" itemScope itemType="https://schema.org/Article">
         <div className="max-w-4xl mx-auto px-5 py-24 sm:pt-32">
       <div className="mb-6">
-        <Link href={`/${locale}/blog`} className="inline-flex items-center text-blue-400 hover:text-blue-300 transition-colors">
+        <Link href={`/${locale}/blog-white`} className="inline-flex items-center text-blue-400 hover:text-blue-300 transition-colors">
           <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 19l-7-7m0 0l7-7m-7 7h18" />
           </svg>
