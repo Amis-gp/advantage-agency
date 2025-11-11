@@ -75,7 +75,7 @@ export default function BlogIndexPage({ params }: BlogProps) {
                 transition={{ duration: 0.6 }}
                 className="text-center py-20"
               >
-                <p className="text-gray-400 text-lg">
+                <p className="text-gray-400 text-lg"> 
                   {t('noPosts')}
                 </p>
               </motion.div>
