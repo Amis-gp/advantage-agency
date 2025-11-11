@@ -1,17 +1,13 @@
-import { setRequestLocale } from 'next-intl/server'
-import BlogComponent from '@/components/blog/Blog'
-import Header from '@/components/Header'
-import Footer from '@/components/Footer'
+import { setRequestLocale } from 'next-intl/server';
+import { Metadata } from 'next';
+import BlogComponent from '@/components/blog/Blog';
+import Header from '@/components/Header';
+import Footer from '@/components/Footer';
 
 interface Props {
-  params: { locale: string }
+  params: Promise<{ locale: string }>;
 }
 
-<<<<<<< HEAD
-export default function BlogPage({ params }: Props) {
-  setRequestLocale(params.locale)
-  
-=======
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params;
 
@@ -36,12 +32,11 @@ export default async function BlogPage({ params }: Props) {
   const { locale } = await params;
   setRequestLocale(locale);
 
->>>>>>> 7bedae81c93aa6c955dd3633165e887bbb01c7a6
   return (
-    <div>
+    <div className="bg-gradient-to-br from-gray-900 to-black">
       <Header />
-      <BlogComponent params={params} />
+      <BlogComponent params={{ locale }} />
       <Footer />
     </div>
-  )
+  );
 }
