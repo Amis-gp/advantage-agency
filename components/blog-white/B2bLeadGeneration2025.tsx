@@ -16,7 +16,7 @@ export default function B2BLeadGenerationTrends() {
     const loadTranslations = async () => {
       setIsLoading(true);
       try {
-        const translations = await import(`/messages/${locale}/blog/b2b-lead-generation-trends.json`);
+        const translations = await import(`/messages/${locale}/blog-white/b2b-lead-generation-trends.json`);
         setTranslations(translations.default);
         document.title = translations.default.meta.title;
       } catch (error) {
@@ -47,7 +47,7 @@ export default function B2BLeadGenerationTrends() {
   };
   
   // Use relative paths instead of domain-based URLs
-  const canonicalUrl = `/blog/b2b-lead-generation-2025`;
+  const canonicalUrl = `/blog-white/b2b-lead-generation-2025`;
   
   if (isLoading) {
     return (
@@ -76,7 +76,7 @@ export default function B2BLeadGenerationTrends() {
         {/* OpenGraph теги для соцмереж */}
         <meta property="og:title" content={t('meta.title')} />
         <meta property="og:description" content={t('meta.description')} />
-        <meta property="og:image" content="/img/blog/b2b-lead-generation-trends-2025/hero.jpg" />
+        <meta property="og:image" content="/img/blog-white/b2b-lead-generation-trends-2025/hero.jpg" />
         <meta property="og:url" content={canonicalUrl} />
         <meta property="og:type" content="article" />
         <meta property="og:locale" content={locale} />
@@ -90,12 +90,12 @@ export default function B2BLeadGenerationTrends() {
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content={t('meta.title')} />
         <meta name="twitter:description" content={t('meta.description')} />
-        <meta name="twitter:image" content="/img/blog/b2b-lead-generation-trends-2025/hero.jpg" />
+        <meta name="twitter:image" content="/img/blog-white/b2b-lead-generation-trends-2025/hero.jpg" />
         
         {/* Альтернативні мовні версії */}
-        <link rel="alternate" hrefLang="uk" href={`/uk/blog/b2b-lead-generation-2025`} />
-        <link rel="alternate" hrefLang="en" href={`/en/blog/b2b-lead-generation-2025`} />
-        <link rel="alternate" hrefLang="x-default" href={`/en/blog/b2b-lead-generation-2025`} />
+        <link rel="alternate" hrefLang="uk" href={`/uk/blog-white/b2b-lead-generation-2025`} />
+        <link rel="alternate" hrefLang="en" href={`/en/blog-white/b2b-lead-generation-2025`} />
+        <link rel="alternate" hrefLang="x-default" href={`/en/blog-white/b2b-lead-generation-2025`} />
         
         <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet" />
         
@@ -108,7 +108,7 @@ export default function B2BLeadGenerationTrends() {
               '@type': 'BlogPosting',
               'headline': t('meta.title'),
               'description': t('meta.description'),
-              'image': '/img/blog/b2b-lead-generation-trends-2025/hero.jpg',
+              'image': '/img/blog-white/b2b-lead-generation-trends-2025/hero.jpg',
               'datePublished': '2023-11-15T10:00:00Z',
               'dateModified': currentDate,
               'author': {
@@ -171,7 +171,7 @@ export default function B2BLeadGenerationTrends() {
           
           <div className="relative w-full max-h-[500px] aspect-video mb-10 rounded-2xl overflow-hidden shadow-xl shadow-blue-900/20">
             <Image 
-              src="/img/blog/b2b-lead-generation-trends-2025/hero.jpg" 
+              src="/img/blog-white/b2b-lead-generation-trends-2025/hero.jpg" 
               alt={t('imageAlt')}
               fill
               className="object-cover hover:scale-105 transition-transform duration-700"

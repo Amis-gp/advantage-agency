@@ -7,8 +7,8 @@ import { useParams } from 'next/navigation';
 import { portfolioSlides } from '../../app/constant/portfolioSlides';
 
 // Import translations directly
-import enTranslations from '../../messages/en/blog/cold-email-automation.json';
-import ukTranslations from '../../messages/uk/blog/cold-email-automation.json';
+import enTranslations from '../../messages/en/blog-white/cold-email-automation.json';
+import ukTranslations from '../../messages/uk/blog-white/cold-email-automation.json';
 
 const ColdEmailAutomation = () => {
   const params = useParams();
@@ -100,7 +100,7 @@ const ColdEmailAutomation = () => {
           
           <div className="relative w-full max-h-[500px] aspect-video mb-10 rounded-2xl overflow-hidden shadow-xl shadow-blue-900/20">
             <Image 
-              src="/img/blog/cold-email-automation/hero.webp" 
+              src="/img/blog-white/cold-email-automation/hero.webp" 
               alt={t('title')}
               fill
               className="object-cover hover:scale-105 transition-transform duration-700"

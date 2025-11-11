@@ -1,12 +1,12 @@
 import { setRequestLocale } from 'next-intl/server';
 import { Metadata } from 'next';
-import ColdEmailAutomationComponent from '@/components/blog/ColdEmailAutomation';
+import ColdEmailAutomationComponent from '@/components/blog-white/ColdEmailAutomation';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 
 // Імпорт перекладів для метаданих
-import ukTranslations from '@/messages/uk/blog/cold-email-automation.json';
-import enTranslations from '@/messages/en/blog/cold-email-automation.json';
+import ukTranslations from '@/messages/uk/blog-white/cold-email-automation.json';
+import enTranslations from '@/messages/en/blog-white/cold-email-automation.json';
 
 interface Props {
   params: { locale: string }
@@ -20,9 +20,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const title = translations.meta?.title || 'Автоматизація холодних листів: як це працює, чому це ефективно і для кого підходить';
   const description = translations.meta?.description || 'Дізнайтеся, як холодні листи допомагають генерувати ліди, чому вони ефективні і для кого вони підходять. Кейси та поради від ADvantage Agency.';
   const publishDate = '2025-04-15T10:00:00Z';
-  const imageUrl = 'https://www.advantage-agency.co/img/blog/cold-email-automation/hero.webp';
+  const imageUrl = 'https://www.advantage-agency.co/img/blog-white/cold-email-automation/hero.webp';
   const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://www.advantage-agency.co';
-  const canonicalUrl = `${baseUrl}/${params.locale}/blog/cold-email-automation`;
+  const canonicalUrl = `${baseUrl}/${params.locale}/blog-white/cold-email-automation`;
   
   return {
     title,
@@ -55,8 +55,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     alternates: {
       canonical: canonicalUrl,
       languages: {
-        'uk': `${baseUrl}/uk/blog/cold-email-automation`,
-        'en': `${baseUrl}/en/blog/cold-email-automation`
+        'uk': `${baseUrl}/uk/blog-white/cold-email-automation`,
+        'en': `${baseUrl}/en/blog-white/cold-email-automation`
       }
     },
     authors: [{ name: 'ADvantage Agency' }],

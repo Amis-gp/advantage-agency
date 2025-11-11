@@ -7,8 +7,8 @@ import Head from 'next/head';
 import { useParams } from 'next/navigation';
 import { motion } from 'framer-motion';
 
-import enTranslations from '@/messages/en/blog/email-vs-linkedin.json';
-import ukTranslations from '@/messages/uk/blog/email-vs-linkedin.json';
+import enTranslations from '@/messages/en/blog-white/email-vs-linkedin.json';
+import ukTranslations from '@/messages/uk/blog-white/email-vs-linkedin.json';
 
 const EmailVsLinkedIn: React.FC = () => {
   const params = useParams();
@@ -46,7 +46,7 @@ const EmailVsLinkedIn: React.FC = () => {
     "@type": "Article",
     "headline": t('title'),
     "description": t('intro'),
-    "image": "https://advantage-agency.com/img/blog/email-vs-linkedin/hero.webp",
+    "image": "https://advantage-agency.com/img/blog-white/email-vs-linkedin/hero.webp",
     "author": {
       "@type": "Organization",
       "name": "Advantage Agency",
@@ -64,7 +64,7 @@ const EmailVsLinkedIn: React.FC = () => {
     "dateModified": "2025-06-24",
     "mainEntityOfPage": {
       "@type": "WebPage",
-      "@id": `https://advantage-agency.com/${locale}/blog/email-vs-linkedin`
+      "@id": `https://advantage-agency.com/${locale}/blog-white/email-vs-linkedin`
     },
     "articleSection": "Marketing",
     "keywords": locale === 'uk' ? "холодні листи, LinkedIn аутріч, лідогенерація, B2B маркетинг, продажі" : "cold email, LinkedIn outreach, lead generation, B2B marketing, sales"
@@ -78,14 +78,14 @@ const EmailVsLinkedIn: React.FC = () => {
         <meta name="keywords" content={locale === 'uk' ? "холодні листи, LinkedIn аутріч, лідогенерація, B2B маркетинг, продажі, емейл маркетинг" : "cold email, LinkedIn outreach, lead generation, B2B marketing, sales, email marketing"} />
         <meta property="og:title" content={t('title')} />
         <meta property="og:description" content={t('intro')} />
-        <meta property="og:image" content="https://advantage-agency.com/img/blog/email-vs-linkedin/hero.webp" />
-        <meta property="og:url" content={`https://advantage-agency.com/${locale}/blog/email-vs-linkedin`} />
+        <meta property="og:image" content="https://advantage-agency.com/img/blog-white/email-vs-linkedin/hero.webp" />
+        <meta property="og:url" content={`https://advantage-agency.com/${locale}/blog-white/email-vs-linkedin`} />
         <meta property="og:type" content="article" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content={t('title')} />
         <meta name="twitter:description" content={t('intro')} />
-        <meta name="twitter:image" content="https://advantage-agency.com/img/blog/email-vs-linkedin/hero.webp" />
-        <link rel="canonical" href={`https://advantage-agency.com/${locale}/blog/email-vs-linkedin`} />
+        <meta name="twitter:image" content="https://advantage-agency.com/img/blog-white/email-vs-linkedin/hero.webp" />
+        <link rel="canonical" href={`https://advantage-agency.com/${locale}/blog-white/email-vs-linkedin`} />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
@@ -123,7 +123,7 @@ const EmailVsLinkedIn: React.FC = () => {
       
       <figure className="mb-8 rounded-lg overflow-hidden border border-gray-800">
         <Image 
-          src="/img/blog/email-vs-linkedin/hero.webp" 
+          src="/img/blog-white/email-vs-linkedin/hero.webp" 
           alt={t('title')} 
           width={800} 
           height={450} 

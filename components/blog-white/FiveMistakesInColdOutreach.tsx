@@ -7,8 +7,8 @@ import { useParams } from 'next/navigation';
 import { motion } from 'framer-motion';
 
 // Import translations directly
-import enTranslations from '../../messages/en/blog/five-mistakes-in-cold-outreach.json';
-import ukTranslations from '../../messages/uk/blog/five-mistakes-in-cold-outreach.json';
+import enTranslations from '../../messages/en/blog-white/five-mistakes-in-cold-outreach.json';
+import ukTranslations from '../../messages/uk/blog-white/five-mistakes-in-cold-outreach.json';
 
 const FiveMistakesInColdOutreach = () => {
   const params = useParams();
@@ -108,7 +108,7 @@ const FiveMistakesInColdOutreach = () => {
           </div>
           <div className="mb-8 relative">
             <Image
-              src="/img/blog/five-mistakes-in-cold-outreach/hero.webp"
+              src="/img/blog-white/five-mistakes-in-cold-outreach/hero.webp"
               alt={t('title')}
               width={1200}
               height={630}

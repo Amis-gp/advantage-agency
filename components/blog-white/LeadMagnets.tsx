@@ -6,8 +6,8 @@ import Image from 'next/image';
 import { useParams } from 'next/navigation';
 import Head from 'next/head';
 
-import enTranslations from '../../messages/en/blog/lead-magnets-for-cold-emails.json';
-import ukTranslations from '../../messages/uk/blog/lead-magnets-for-cold-emails.json';
+import enTranslations from '../../messages/en/blog-white/lead-magnets-for-cold-emails.json';
+import ukTranslations from '../../messages/uk/blog-white/lead-magnets-for-cold-emails.json';
 
 export default function LeadMagnetsForColdEmails() {
   const params = useParams();
@@ -64,7 +64,7 @@ export default function LeadMagnetsForColdEmails() {
     }
   };
   
-  const canonicalUrl = `/blog/lead-magnets-for-cold-emails`;
+  const canonicalUrl = `/blog-white/lead-magnets-for-cold-emails`;
   
   if (isLoading) {
     return (
@@ -91,7 +91,7 @@ export default function LeadMagnetsForColdEmails() {
         
         <meta property="og:title" content={t('meta.title')} />
         <meta property="og:description" content={t('meta.description')} />
-        <meta property="og:image" content="/img/blog/lead-magnets-for-cold-emails/hero.webp" />
+        <meta property="og:image" content="/img/blog-white/lead-magnets-for-cold-emails/hero.webp" />
         <meta property="og:url" content={canonicalUrl} />
         <meta property="og:type" content="article" />
         <meta property="og:locale" content={locale} />
@@ -103,11 +103,11 @@ export default function LeadMagnetsForColdEmails() {
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content={t('meta.title')} />
         <meta name="twitter:description" content={t('meta.description')} />
-        <meta name="twitter:image" content="/img/blog/lead-magnets-for-cold-emails/hero.webp" />
+        <meta name="twitter:image" content="/img/blog-white/lead-magnets-for-cold-emails/hero.webp" />
         
-        <link rel="alternate" hrefLang="uk" href={`/uk/blog/lead-magnets-for-cold-emails`} />
-        <link rel="alternate" hrefLang="en" href={`/en/blog/lead-magnets-for-cold-emails`} />
-        <link rel="alternate" hrefLang="x-default" href={`/en/blog/lead-magnets-for-cold-emails`} />
+        <link rel="alternate" hrefLang="uk" href={`/uk/blog-white/lead-magnets-for-cold-emails`} />
+        <link rel="alternate" hrefLang="en" href={`/en/blog-white/lead-magnets-for-cold-emails`} />
+        <link rel="alternate" hrefLang="x-default" href={`/en/blog-white/lead-magnets-for-cold-emails`} />
         
         <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet" />
         
@@ -119,7 +119,7 @@ export default function LeadMagnetsForColdEmails() {
               '@type': 'BlogPosting',
               'headline': t('meta.title'),
               'description': t('meta.description'),
-              'image': '/img/blog/lead-magnets-for-cold-emails/hero.webp',
+              'image': '/img/blog-white/lead-magnets-for-cold-emails/hero.webp',
               'datePublished': '2025-05-15T10:00:00Z',
               'dateModified': currentDate,
               'publisher': {
@@ -177,7 +177,7 @@ export default function LeadMagnetsForColdEmails() {
           
           <div className="relative w-full max-h-[500px] aspect-video mb-10 rounded-2xl overflow-hidden shadow-xl shadow-blue-900/20">
             <Image 
-              src="/img/blog/lead-magnets/hero.webp" 
+              src="/img/blog-white/lead-magnets/hero.webp" 
               alt={t('imageAlt')}
               fill
               className="object-cover hover:scale-105 transition-transform duration-700"
