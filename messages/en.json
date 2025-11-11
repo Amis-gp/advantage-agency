@@ -2201,5 +2201,11 @@
         "loading": "Loading...",
         "noSubmissions": "No submissions found",
         "fetchError": "Error fetching data"
+    },
+    "blog": {
+        "title": "Blog",
+        "description": "Explore our latest articles, insights, and case studies",
+        "readMore": "Read More",
+        "noPosts": "Articles will be added soon"
     }
 }

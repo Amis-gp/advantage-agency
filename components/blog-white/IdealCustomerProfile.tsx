@@ -5,8 +5,8 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { useParams } from 'next/navigation';
 
-import enTranslations from '../../messages/en/blog/ideal-customer-profile.json';
-import ukTranslations from '../../messages/uk/blog/ideal-customer-profile.json';
+import enTranslations from '../../messages/en/blog-white/ideal-customer-profile.json';
+import ukTranslations from '../../messages/uk/blog-white/ideal-customer-profile.json';
 
 export default function IdealCustomerProfile() {
   const params = useParams();
@@ -67,7 +67,7 @@ export default function IdealCustomerProfile() {
     return { __html: htmlContent };
   };
   
-  const canonicalUrl = `/blog/ideal-customer-profile`;
+  const canonicalUrl = `/blog-white/ideal-customer-profile`;
   
   if (isLoading) {
     return (
@@ -94,7 +94,7 @@ export default function IdealCustomerProfile() {
         
         <meta property="og:title" content={t('meta.title')} />
         <meta property="og:description" content={t('meta.description')} />
-        <meta property="og:image" content="/img/blog/ideal-customer-profile/hero.webp" />
+        <meta property="og:image" content="/img/blog-white/ideal-customer-profile/hero.webp" />
         <meta property="og:url" content={canonicalUrl} />
         <meta property="og:type" content="article" />
         <meta property="og:locale" content={locale} />
@@ -106,11 +106,11 @@ export default function IdealCustomerProfile() {
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content={t('meta.title')} />
         <meta name="twitter:description" content={t('meta.description')} />
-        <meta name="twitter:image" content="/img/blog/ideal-customer-profile/hero.webp" />
+        <meta name="twitter:image" content="/img/blog-white/ideal-customer-profile/hero.webp" />
         
-        <link rel="alternate" hrefLang="uk" href={`/uk/blog/ideal-customer-profile`} />
-        <link rel="alternate" hrefLang="en" href={`/en/blog/ideal-customer-profile`} />
-        <link rel="alternate" hrefLang="x-default" href={`/en/blog/ideal-customer-profile`} />
+        <link rel="alternate" hrefLang="uk" href={`/uk/blog-white/ideal-customer-profile`} />
+        <link rel="alternate" hrefLang="en" href={`/en/blog-white/ideal-customer-profile`} />
+        <link rel="alternate" hrefLang="x-default" href={`/en/blog-white/ideal-customer-profile`} />
         
         <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet" />
         
@@ -122,7 +122,7 @@ export default function IdealCustomerProfile() {
               '@type': 'BlogPosting',
               'headline': t('meta.title'),
               'description': t('meta.description'),
-              'image': '/img/blog/ideal-customer-profile/hero.webp',
+              'image': '/img/blog-white/ideal-customer-profile/hero.webp',
               'datePublished': '2024-05-15T10:00:00Z',
               'dateModified': currentDate,
               'publisher': {
@@ -167,7 +167,7 @@ export default function IdealCustomerProfile() {
             </div>
             <div className="relative h-[400px] w-full rounded-xl overflow-hidden">
               <Image
-                src="/img/blog/ideal-customer-profile/hero.webp"
+                src="/img/blog-white/ideal-customer-profile/hero.webp"
                 alt={t('imageAlt')}
                 fill
                 className="object-cover"
@@ -340,12 +340,12 @@ export default function IdealCustomerProfile() {
           </h3>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <Link 
-              href={`/${locale}/blog/lead-magnets-for-cold-emails`}
+              href={`/${locale}/blog-white/lead-magnets-for-cold-emails`}
               className="bg-gray-800/50 rounded-xl overflow-hidden shadow-lg hover:shadow-blue-500/20 transition-all duration-300 hover:translate-y-[-5px] flex flex-col h-full"
             >
               <div className="relative h-48 w-full">
                 <Image
-                  src="/img/blog/lead-magnets/hero.webp"
+                  src="/img/blog-white/lead-magnets/hero.webp"
                   alt="Lead Magnets for Cold Emails"
                   fill
                   className="object-cover"
@@ -367,12 +367,12 @@ export default function IdealCustomerProfile() {
             </Link>
             
             <Link 
-              href={`/${locale}/blog/lead-scraping`}
+              href={`/${locale}/blog-white/lead-scraping`}
               className="bg-gray-800/50 rounded-xl overflow-hidden shadow-lg hover:shadow-blue-500/20 transition-all duration-300 hover:translate-y-[-5px] flex flex-col h-full"
             >
               <div className="relative h-48 w-full">
                 <Image
-                  src="/img/blog/lead-scraping/hero.webp"
+                  src="/img/blog-white/lead-scraping/hero.webp"
                   alt="Lead Scraping"
                   fill
                   className="object-cover"

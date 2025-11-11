@@ -10,31 +10,20 @@ interface Props {
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params;
-  const isUkrainian = locale === 'uk';
 
   return {
-    title: isUkrainian
-      ? 'Блог | Advantage Agency'
-      : 'Blog | Advantage Agency',
-    description: isUkrainian
-      ? 'Досліджуйте наші останні статті, інсайти та кейси з media buying, digital marketing та performance marketing.'
-      : 'Explore our latest articles, insights, and case studies on media buying, digital marketing, and performance marketing.',
+    title: 'Blog | Advantage Agency',
+    description: 'Explore our latest articles, insights, and case studies on media buying, digital marketing, and performance marketing.',
     openGraph: {
-      title: isUkrainian ? 'Блог | Advantage Agency' : 'Blog | Advantage Agency',
-      description: isUkrainian
-        ? 'Досліджуйте наші останні статті, інсайти та кейси'
-        : 'Explore our latest articles, insights, and case studies',
+      title: 'Blog | Advantage Agency',
+      description: 'Explore our latest articles, insights, and case studies',
       url: `https://www.advantage-agency.co/${locale}/blog`,
       siteName: 'Advantage Agency',
-      locale: isUkrainian ? 'uk_UA' : 'en_US',
+      locale: 'en_US',
       type: 'website',
     },
     alternates: {
       canonical: `https://www.advantage-agency.co/${locale}/blog`,
-      languages: {
-        'en-US': 'https://www.advantage-agency.co/en/blog',
-        'uk-UA': 'https://www.advantage-agency.co/uk/blog',
-      },
     },
   };
 }

@@ -10,6 +10,7 @@ export interface BlogPost {
   image?: string;
   author?: string;
   tags?: string[];
+  keywords?: string;
   content: string;
   locale: string;
 }
@@ -29,7 +30,7 @@ export function getBlogPosts(locale: string = 'en'): BlogPost[] {
       try {
         const fullPath = path.join(postsDirectory, fileName);
         if (fs.statSync(fullPath).isDirectory()) {
-          const localePath = path.join(fullPath, `${locale}.md`);
+          const localePath = path.join(fullPath, 'en.md');
           if (fs.existsSync(localePath)) {
             const fileContents = fs.readFileSync(localePath, 'utf8');
             const { data, content } = matter(fileContents);
@@ -42,8 +43,9 @@ export function getBlogPosts(locale: string = 'en'): BlogPost[] {
               image: data.image,
               author: data.author || 'Advantage Agency',
               tags: data.tags || [],
+              keywords: data.keywords,
               content,
-              locale,
+              locale: 'en',
             });
           }
         }
@@ -67,7 +69,7 @@ export function getBlogPosts(locale: string = 'en'): BlogPost[] {
 
 export function getBlogPost(slug: string, locale: string = 'en'): BlogPost | null {
   try {
-    const postPath = path.join(postsDirectory, slug, `${locale}.md`);
+    const postPath = path.join(postsDirectory, slug, 'en.md');
     
     if (!fs.existsSync(postPath)) {
       return null;
@@ -84,8 +86,9 @@ export function getBlogPost(slug: string, locale: string = 'en'): BlogPost | nul
       image: data.image,
       author: data.author || 'Advantage Agency',
       tags: data.tags || [],
+      keywords: data.keywords,
       content,
-      locale,
+      locale: 'en',
     };
   } catch (error) {
     console.error(`Error reading blog post ${slug}:`, error);

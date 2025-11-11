@@ -1,12 +1,12 @@
 import { setRequestLocale } from 'next-intl/server';
 import { Metadata } from 'next';
-import B2BLeadGenerationTrends from '@/components/blog/B2bLeadGeneration2025';
+import B2BLeadGenerationTrends from '@/components/blog-white/B2bLeadGeneration2025';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 
 // Імпорт перекладів для метаданих
-import ukTranslations from '@/messages/uk/blog/b2b-lead-generation-trends.json';
-import enTranslations from '@/messages/en/blog/b2b-lead-generation-trends.json';
+import ukTranslations from '@/messages/uk/blog-white/b2b-lead-generation-trends.json';
+import enTranslations from '@/messages/en/blog-white/b2b-lead-generation-trends.json';
 
 interface Props {
   params: { locale: string }
@@ -20,9 +20,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const title = translations.meta?.title || 'Тренди B2B лід-генерації на 2025 рік';
   const description = translations.meta?.description || 'Дізнайтеся про найновіші тренди та стратегії в B2B лід-генерації, які домінуватимуть на ринку в 2025 році.';
   const publishDate = '2025-03-24T10:00:00Z';
-  const imageUrl = 'https://www.advantage-agency.co/img/blog/b2b-lead-generation-trends-2025/hero.jpg';
+  const imageUrl = 'https://www.advantage-agency.co/img/blog-white/b2b-lead-generation-trends-2025/hero.jpg';
   const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://www.advantage-agency.co';
-  const canonicalUrl = `${baseUrl}/${params.locale}/blog/b2b-lead-generation-2025`;
+  const canonicalUrl = `${baseUrl}/${params.locale}/blog-white/b2b-lead-generation-2025`;
   
   return {
     title,
@@ -55,8 +55,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     alternates: {
       canonical: canonicalUrl,
       languages: {
-        'uk': `${baseUrl}/uk/blog/b2b-lead-generation-2025`,
-        'en': `${baseUrl}/en/blog/b2b-lead-generation-2025`
+        'uk': `${baseUrl}/uk/blog-white/b2b-lead-generation-2025`,
+        'en': `${baseUrl}/en/blog-white/b2b-lead-generation-2025`
       }
     },
     authors: [{ name: 'ADvantage Agency' }],

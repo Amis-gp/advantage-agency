@@ -65,6 +65,8 @@ export default function Header(): JSX.Element {
         }
     };
 
+    const isBlogPage = pathname?.includes('/blog');
+
     return (
         <header 
             ref={headerRef}
@@ -82,48 +84,49 @@ export default function Header(): JSX.Element {
 
 
                 <div className="flex items-center gap-4">
-                    <div className="relative" ref={dropdownRef}>
-                        <button 
-                            onClick={() => setIsDropdownOpen(!isDropdownOpen)} 
-                            type="button" 
-                            aria-label="Change language" 
-                            className={`flex items-center gap-2 px-3 py-2 sm:px-7 sm:py-2 border border-white bg-black backdrop-blur-sm hover:bg-gray-800 transition-colors duration-300
-                                ${isDropdownOpen ? 'rounded-t-[20px] sm:rounded-t-[24px] rounded-b-none' : 'rounded-[20px] sm:rounded-[24px]'}`}
-                        >
-                            {locale === 'uk' ? 'UA' : 'EN'} 
-                            <svg
-                                className={`w-4 h-4 transition-transform ${isDropdownOpen ? 'rotate-180' : ''}`}
-                                xmlns="http://www.w3.org/2000/svg"
-                                fill="none"
-                                viewBox="0 0 24 24"
-                                stroke="currentColor"
+                    {!isBlogPage && (
+                        <div className="relative" ref={dropdownRef}>
+                            <button 
+                                onClick={() => setIsDropdownOpen(!isDropdownOpen)} 
+                                type="button" 
+                                aria-label="Change language" 
+                                className={`flex items-center gap-2 px-3 py-2 sm:px-7 sm:py-2 border border-white bg-black backdrop-blur-sm hover:bg-gray-800 transition-colors duration-300
+                                    ${isDropdownOpen ? 'rounded-t-[20px] sm:rounded-t-[24px] rounded-b-none' : 'rounded-[20px] sm:rounded-[24px]'}`}
                             >
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                            </svg>
-                        </button>
-                        
-                        {isDropdownOpen && (
-                            <div className="absolute top-[calc(100%-1px)] left-0 right-0 bg-black border border-white rounded-b-[20px] sm:rounded-b-[24px] overflow-hidden border-t-0">
-                                {locale.toUpperCase() !== 'EN' && (
-                                    <button 
-                                        onClick={() => toggleLanguage('en')} 
-                                        className="w-full px-3 py-2 sm:px-7 sm:py-4 text-left hover:bg-gray/20 transition-colors"
-                                    >
-                                        EN
-                                    </button>
-                                )}
-                                {locale.toUpperCase() !== 'UA' && (
-                                    <button 
-                                        onClick={() => toggleLanguage('uk')} 
-                                        className="w-full px-3 py-2 sm:px-7 sm:py-4 text-left hover:bg-gray/20 transition-colors"
-                                    >
-                                        UA
-                                    </button>
-                                )}
-                            </div>
-                        )}
-                    </div>
-
+                                {locale === 'uk' ? 'UA' : 'EN'} 
+                                <svg
+                                    className={`w-4 h-4 transition-transform ${isDropdownOpen ? 'rotate-180' : ''}`}
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    fill="none"
+                                    viewBox="0 0 24 24"
+                                    stroke="currentColor"
+                                >
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                                </svg>
+                            </button>
+                            
+                            {isDropdownOpen && (
+                                <div className="absolute top-[calc(100%-1px)] left-0 right-0 bg-black border border-white rounded-b-[20px] sm:rounded-b-[24px] overflow-hidden border-t-0">
+                                    {locale.toUpperCase() !== 'EN' && (
+                                        <button 
+                                            onClick={() => toggleLanguage('en')} 
+                                            className="w-full px-3 py-2 sm:px-7 sm:py-4 text-left hover:bg-gray/20 transition-colors"
+                                        >
+                                            EN
+                                        </button>
+                                    )}
+                                    {locale.toUpperCase() !== 'UA' && (
+                                        <button 
+                                            onClick={() => toggleLanguage('uk')} 
+                                            className="w-full px-3 py-2 sm:px-7 sm:py-4 text-left hover:bg-gray/20 transition-colors"
+                                        >
+                                            UA
+                                        </button>
+                                    )}
+                                </div>
+                            )}
+                        </div>
+                    )}
 
                     <div className="gap-4 items-center hidden sm:flex">
                         {[
@@ -149,13 +152,15 @@ export default function Header(): JSX.Element {
                             </Link>
                         ))}
                     </div>
-                    <Link 
-                        href='/#services' 
-                        onClick={handleServicesClick}
-                        className="bg-white text-black px-4 py-2 border border-white sm:px-12 sm:py-3 rounded-[20px] sm:rounded-[24px] font-medium hover:bg-gray-300 transition-colors"
-                    >
-                        {t('pricing')}
-                    </Link>
+                    {!isBlogPage && (
+                        <Link 
+                            href='/#services' 
+                            onClick={handleServicesClick}
+                            className="bg-white text-black px-4 py-2 border border-white sm:px-12 sm:py-3 rounded-[20px] sm:rounded-[24px] font-medium hover:bg-gray-300 transition-colors"
+                        >
+                            {t('pricing')}
+                        </Link>
+                    )}
                 </div>
             </div>
         </header>

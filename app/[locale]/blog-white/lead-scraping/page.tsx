@@ -1,12 +1,12 @@
 import { setRequestLocale } from 'next-intl/server';
 import { Metadata } from 'next';
-import LeadScraping from '@/components/blog/LeadScraping';
+import LeadScraping from '@/components/blog-white/LeadScraping';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 
 // Імпорт перекладів для метаданих
-import ukTranslations from '@/messages/uk/blog/lead-scraping.json';
-import enTranslations from '@/messages/en/blog/lead-scraping.json';
+import ukTranslations from '@/messages/uk/blog-white/lead-scraping.json';
+import enTranslations from '@/messages/en/blog-white/lead-scraping.json';
 
 interface Props {
   params: { locale: string }
@@ -20,9 +20,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const title = translations.meta?.title || 'Lead Scraping: Як знайти ідеальних клієнтів для вашого бізнесу';
   const description = translations.meta?.description || 'Дізнайтеся, як lead scraping може допомогти вашому бізнесу знайти ідеальних клієнтів.';
   const publishDate = '2025-04-23T10:00:00Z';
-  const imageUrl = 'https://www.advantage-agency.co/img/blog/lead-scraping/hero.webp';
+  const imageUrl = 'https://www.advantage-agency.co/img/blog-white/lead-scraping/hero.webp';
   const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://www.advantage-agency.co';
-  const canonicalUrl = `${baseUrl}/${params.locale}/blog/lead-scraping`;
+  const canonicalUrl = `${baseUrl}/${params.locale}/blog-white/lead-scraping`;
   
   return {
     title,
@@ -55,8 +55,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     alternates: {
       canonical: canonicalUrl,
       languages: {
-        'uk': `${baseUrl}/uk/blog/lead-scraping`,
-        'en': `${baseUrl}/en/blog/lead-scraping`
+        'uk': `${baseUrl}/uk/blog-white/lead-scraping`,
+        'en': `${baseUrl}/en/blog-white/lead-scraping`
       }
     },
     authors: [{ name: 'ADvantage Agency' }],

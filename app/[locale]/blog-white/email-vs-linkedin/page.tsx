@@ -2,11 +2,11 @@ import { setRequestLocale } from 'next-intl/server';
 import { Metadata } from 'next';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
-import EmailVsLinkedIn from '@/components/blog/EmailVsLinkedIn';
+import EmailVsLinkedIn from '@/components/blog-white/EmailVsLinkedIn';
 
 // Імпорт перекладів для метаданих
-import ukTranslations from '@/messages/uk/blog/email-vs-linkedin.json';
-import enTranslations from '@/messages/en/blog/email-vs-linkedin.json';
+import ukTranslations from '@/messages/uk/blog-white/email-vs-linkedin.json';
+import enTranslations from '@/messages/en/blog-white/email-vs-linkedin.json';
 
 interface Props {
   params: { locale: string }
@@ -24,9 +24,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     ? 'Дізнайтеся про ключові відмінності між холодними листами та LinkedIn outreach для B2B лідогенерації, їхні переваги, недоліки та як обрати правильний канал для вашого бізнесу.' 
     : 'Learn the key differences between cold emails and LinkedIn outreach for B2B lead generation, their advantages, disadvantages, and how to choose the right channel for your business.';
   const publishDate = '2025-07-15T10:00:00Z';
-  const imageUrl = 'https://www.advantage-agency.co/img/blog/email-vs-linkedin/hero.webp';
+  const imageUrl = 'https://www.advantage-agency.co/img/blog-white/email-vs-linkedin/hero.webp';
   const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://www.advantage-agency.co';
-  const canonicalUrl = `${baseUrl}/${params.locale}/blog/email-vs-linkedin`;
+  const canonicalUrl = `${baseUrl}/${params.locale}/blog-white/email-vs-linkedin`;
   
   return {
     title,
@@ -59,8 +59,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     alternates: {
       canonical: canonicalUrl,
       languages: {
-        'uk': `${baseUrl}/uk/blog/email-vs-linkedin`,
-        'en': `${baseUrl}/en/blog/email-vs-linkedin`
+        'uk': `${baseUrl}/uk/blog-white/email-vs-linkedin`,
+        'en': `${baseUrl}/en/blog-white/email-vs-linkedin`
       }
     },
     authors: [{ name: 'ADvantage Agency' }],

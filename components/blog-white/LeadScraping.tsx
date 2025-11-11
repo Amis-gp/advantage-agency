@@ -6,8 +6,8 @@ import Link from 'next/link';
 import { useParams } from 'next/navigation';
 
 // Імпортуємо файли перекладів напряму
-import enTranslations from '../../messages/en/blog/lead-scraping.json';
-import ukTranslations from '../../messages/uk/blog/lead-scraping.json';
+import enTranslations from '../../messages/en/blog-white/lead-scraping.json';
+import ukTranslations from '../../messages/uk/blog-white/lead-scraping.json';
 
 export default function LeadScraping() {
   const params = useParams();
@@ -71,7 +71,7 @@ export default function LeadScraping() {
   };
   
   // Use relative paths instead of domain-based URLs
-  const canonicalUrl = `/blog/lead-scraping`;
+  const canonicalUrl = `/blog-white/lead-scraping`;
   
   if (isLoading) {
     return (
@@ -100,7 +100,7 @@ export default function LeadScraping() {
         {/* OpenGraph теги для соцмереж */}
         <meta property="og:title" content={t('meta.title')} />
         <meta property="og:description" content={t('meta.description')} />
-        <meta property="og:image" content="/img/blog/lead-scraping/hero.webp" />
+        <meta property="og:image" content="/img/blog-white/lead-scraping/hero.webp" />
         <meta property="og:url" content={canonicalUrl} />
         <meta property="og:type" content="article" />
         <meta property="og:locale" content={locale} />
@@ -113,12 +113,12 @@ export default function LeadScraping() {
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content={t('meta.title')} />
         <meta name="twitter:description" content={t('meta.description')} />
-        <meta name="twitter:image" content="/img/blog/lead-scraping/hero.webp" />
+        <meta name="twitter:image" content="/img/blog-white/lead-scraping/hero.webp" />
         
         {/* Альтернативні мовні версії */}
-        <link rel="alternate" hrefLang="uk" href={`/uk/blog/lead-scraping`} />
-        <link rel="alternate" hrefLang="en" href={`/en/blog/lead-scraping`} />
-        <link rel="alternate" hrefLang="x-default" href={`/en/blog/lead-scraping`} />
+        <link rel="alternate" hrefLang="uk" href={`/uk/blog-white/lead-scraping`} />
+        <link rel="alternate" hrefLang="en" href={`/en/blog-white/lead-scraping`} />
+        <link rel="alternate" hrefLang="x-default" href={`/en/blog-white/lead-scraping`} />
         
         <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet" />
         
@@ -131,7 +131,7 @@ export default function LeadScraping() {
               '@type': 'BlogPosting',
               'headline': t('meta.title'),
               'description': t('meta.description'),
-              'image': '/img/blog/lead-scraping/hero.webp',
+              'image': '/img/blog-white/lead-scraping/hero.webp',
               'datePublished': '2023-12-15T10:00:00Z',
               'dateModified': currentDate,
               'publisher': {
@@ -189,7 +189,7 @@ export default function LeadScraping() {
           
           <div className="relative w-full max-h-[500px] aspect-video mb-10 rounded-2xl overflow-hidden shadow-xl shadow-blue-900/20">
             <Image 
-              src="/img/blog/lead-scraping/hero.webp" 
+              src="/img/blog-white/lead-scraping/hero.webp" 
               alt={t('imageAlt')}
               fill
               className="object-cover hover:scale-105 transition-transform duration-700"

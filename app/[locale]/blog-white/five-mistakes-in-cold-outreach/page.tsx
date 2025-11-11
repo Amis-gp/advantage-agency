@@ -2,11 +2,11 @@ import { setRequestLocale } from 'next-intl/server';
 import { Metadata } from 'next';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
-import FiveMistakesInColdOutreach from '@/components/blog/FiveMistakesInColdOutreach';
+import FiveMistakesInColdOutreach from '@/components/blog-white/FiveMistakesInColdOutreach';
 
 // Імпорт перекладів для метаданих
-import ukTranslations from '@/messages/uk/blog/five-mistakes-in-cold-outreach.json';
-import enTranslations from '@/messages/en/blog/five-mistakes-in-cold-outreach.json';
+import ukTranslations from '@/messages/uk/blog-white/five-mistakes-in-cold-outreach.json';
+import enTranslations from '@/messages/en/blog-white/five-mistakes-in-cold-outreach.json';
 
 interface Props {
   params: { locale: string }
@@ -24,9 +24,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     ? 'Дізнайтеся про найпоширеніші помилки в холодних листах, які знижують ефективність ваших кампаній, та як їх уникнути' 
     : 'Discover the most common mistakes in cold emails that reduce the effectiveness of your campaigns and how to avoid them');
   const publishDate = '2025-06-02T10:00:00Z';
-  const imageUrl = 'https://www.advantage-agency.co/img/blog/five-mistakes-in-cold-outreach/hero.webp';
+  const imageUrl = 'https://www.advantage-agency.co/img/blog-white/five-mistakes-in-cold-outreach/hero.webp';
   const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://www.advantage-agency.co';
-  const canonicalUrl = `${baseUrl}/${params.locale}/blog/five-mistakes-in-cold-outreach`;
+  const canonicalUrl = `${baseUrl}/${params.locale}/blog-white/five-mistakes-in-cold-outreach`;
   
   return {
     title,
@@ -59,8 +59,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     alternates: {
       canonical: canonicalUrl,
       languages: {
-        'uk': `${baseUrl}/uk/blog/five-mistakes-in-cold-outreach`,
-        'en': `${baseUrl}/en/blog/five-mistakes-in-cold-outreach`
+        'uk': `${baseUrl}/uk/blog-white/five-mistakes-in-cold-outreach`,
+        'en': `${baseUrl}/en/blog-white/five-mistakes-in-cold-outreach`
       }
     },
     authors: [{ name: 'ADvantage Agency' }],

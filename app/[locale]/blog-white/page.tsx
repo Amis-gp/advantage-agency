@@ -1,5 +1,5 @@
 import { setRequestLocale } from 'next-intl/server'
-import BlogComponent from '@/components/blog/Blog'
+import BlogComponent from '@/components/blog-white/Blog'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 
