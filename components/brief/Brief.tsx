@@ -6,6 +6,14 @@ import { useLocale, useTranslations } from 'next-intl'
 import LanguageSwitcher from '../LanguageSwitcher'
 import { logFormSubmission, updateFormStatus } from '@/utils/formLogger'
 
+const contactOptions = [
+  'Telegram',
+  'WhatsApp',
+  'Phone call',
+  'Email',
+  'Viber'
+]
+
 interface BudgetDistribution {
   googleAds: number | null;
   facebookAds: number | null;
@@ -24,6 +32,7 @@ const BriefPage = () => {
       niche: '',
       email: '',
       phone: '',
+      contactMethod: contactOptions[0],
     },
     companyInfo: {
       overview: '',
@@ -191,6 +200,7 @@ const BriefPage = () => {
 <b>Ніша:</b> ${formData.primary.niche}
 <b>Пошта:</b> ${formData.primary.email}
 <b>Номер:</b> ${formData.primary.phone}
+<b>Бажаний канал зв'язку:</b> ${formData.primary.contactMethod}
 
 1️⃣ <b>Інформація про компанію</b>
 Огляд: ${formData.companyInfo.overview}
@@ -356,17 +366,30 @@ KPI: ${formData.expectations.kpi}
                 />
               </div>
               <div>
-                <label className="block mb-2 text-gray-300 font-medium">
-                  {t('primary.phone.label')}
-                </label>
+                <label className="block text-sm font-medium text-gray-300 mb-2">{t('primary.phone.label')}</label>
                 <input
                   type="tel"
                   value={formData.primary.phone}
                   onChange={e => handleChange('primary', 'phone', e.target.value)}
                   onKeyDown={handleKeyDown}
-                  className="w-full p-3 bg-gray-900/50 border border-gray-700 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
+                  className="w-full p-3 bg-gray-900/80 border border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500 transition-all duration-300 text-white placeholder-gray-400"
                   placeholder={t('primary.phone.placeholder')}
                 />
+              </div>
+              <div>
+                <label className="block text-sm font-medium text-gray-300 mb-2">{t('primary.contactMethod.label')}</label>
+                <select
+                  value={formData.primary.contactMethod}
+                  onChange={(e) => handleChange('primary', 'contactMethod', e.target.value)}
+                  className="appearance-none w-full p-3 bg-gray-900/80 border border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-transparent transition-all duration-300 text-white"
+                  required
+                >
+                  {contactOptions.map((option) => (
+                    <option key={option} value={option} className="text-black">
+                      {option}
+                    </option>
+                  ))}
+                </select>
               </div>
             </div>
           </section>

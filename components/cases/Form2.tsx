@@ -11,8 +11,17 @@ interface FormData {
     name: string;
     email: string;
     phone: string;
+    contactMethod: string;
     purpose: string;
 }
+
+const contactOptions = [
+    'Telegram',
+    'WhatsApp',
+    'Phone call',
+    'Email',
+    'Viber'
+];
 
 export default function V22Form() {
     const t = useTranslations('contact');
@@ -21,12 +30,13 @@ export default function V22Form() {
         name: '',
         email: '',
         phone: '',
+        contactMethod: contactOptions[0],
         purpose: ''
     });
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [phoneValue, setPhoneValue] = useState<string>();
 
-    const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
         const { name, value } = e.target;
         setFormData(prev => ({
             ...prev,
@@ -71,6 +81,7 @@ export default function V22Form() {
 <b>Name:</b> ${formData.name}
 <b>Email:</b> ${formData.email}
 <b>Phone:</b> ${formData.phone}
+<b>Preferred contact:</b> ${formData.contactMethod}
 <b>Project Description:</b> ${formData.purpose || 'Not specified'}
 
 <b>Date:</b> ${new Date().toLocaleString('en-US')}`;
@@ -100,6 +111,14 @@ export default function V22Form() {
             }
             
             router.push('/thank-you');
+            setFormData({
+                name: '',
+                email: '',
+                phone: '',
+                contactMethod: contactOptions[0],
+                purpose: ''
+            });
+            setPhoneValue('');
         } catch (error) {
             console.error('Error submitting form:', error);
         } finally {
@@ -159,6 +178,9 @@ export default function V22Form() {
                                 }}
                                 placeholder={t('form.phone')}
                                 className="pl-6 w-full border border-white/40 rounded-xl focus-within:border-white/60"
+                                inputclassname="bg-transparent px-6 py-4 w-full text-white placeholder-white/60 focus:outline-none h-[56px]"
+                                countryselectclassname="bg-black text-white px-4 py-4 border-r border-white/40 h-[56px]"
+                                buttonclassname="!bg-transparent !border-0"
                                 required
                             />
                             <style jsx global>{`
@@ -188,6 +210,24 @@ export default function V22Form() {
                                     background-color: transparent !important;
                                 }
                             `}</style>
+                        </div>
+                        <div>
+                            <label className="block text-white/80 text-sm font-medium mb-2">
+                                {t('form.contactMethod')}
+                            </label>
+                            <select
+                                name="contactMethod"
+                                value={formData.contactMethod}
+                                onChange={handleChange}
+                                className="w-full bg-transparent border border-white/40 rounded-xl px-6 py-4 text-white focus:outline-none focus:border-white/60 transition-colors"
+                                required
+                            >
+                                {contactOptions.map((option) => (
+                                    <option key={option} value={option} className="text-black">
+                                        {option}
+                                    </option>
+                                ))}
+                            </select>
                         </div>
                         <div>
                             <textarea 

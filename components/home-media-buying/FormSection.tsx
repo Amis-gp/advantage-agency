@@ -7,27 +7,39 @@ import Image from 'next/image';
 import { useRouter } from 'next/navigation';
 import PhoneInput from 'react-phone-number-input';
 import 'react-phone-number-input/style.css';
+import { useTranslations } from 'next-intl';
 
 interface FormData {
     name: string;
     email: string;
     phone: string;
+    contactMethod: string;
     purpose: string;
 }
+
+const contactOptions = [
+    'Telegram',
+    'WhatsApp',
+    'Phone call',
+    'Email',
+    'Viber'
+];
 
 const FormSection = () => {
 
     const router = useRouter();
+    const t = useTranslations('contact');
     const [formData, setFormData] = useState<FormData>({
         name: '',
         email: '',
         phone: '',
+        contactMethod: contactOptions[0],
         purpose: ''
     });
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [phoneValue, setPhoneValue] = useState<string>();
 
-    const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
         const { name, value } = e.target;
         setFormData(prev => ({
             ...prev,
@@ -72,6 +84,7 @@ const FormSection = () => {
 <b>Ім'я:</b> ${formData.name}
 <b>Email:</b> ${formData.email}
 <b>Телефон:</b> ${formData.phone}
+<b>Preferred contact:</b> ${formData.contactMethod}
 <b>Опис проєкту:</b> ${formData.purpose || 'Не вказано'}
 
 <b>Дата:</b> ${new Date().toLocaleString('uk-UA')}`;
@@ -104,6 +117,14 @@ const FormSection = () => {
             }
             
             router.push('/thank-you');
+            setFormData({
+                name: '',
+                email: '',
+                phone: '',
+                contactMethod: contactOptions[0],
+                purpose: ''
+            });
+            setPhoneValue('');
         } catch (error) {
             console.error('Error submitting form:', error);
         } finally {
@@ -206,6 +227,24 @@ const FormSection = () => {
                                     background-color: transparent !important;
                                 }
                             `}</style>
+                        </div>
+                        <div>
+                            <label className="block text-white/80 text-sm font-medium mb-2">
+                                {t('contactMethod')}
+                            </label>
+                            <select
+                                name="contactMethod"
+                                value={formData.contactMethod}
+                                onChange={handleChange}
+                                className="w-full bg-transparent border border-white/40 rounded-xl px-6 py-4 text-white focus:outline-none focus:border-white/60 transition-colors"
+                                required
+                            >
+                                {contactOptions.map((option) => (
+                                    <option key={option} value={option} className="text-black">
+                                        {option}
+                                    </option>
+                                ))}
+                            </select>
                         </div>
                         <div>
                             <textarea 

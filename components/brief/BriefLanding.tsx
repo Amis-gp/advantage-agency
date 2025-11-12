@@ -12,6 +12,7 @@ interface FormData {
     niche: string;
     email: string;
     phone: string;
+    contactMethod: string;
   };
   business: {
     description: string;
@@ -35,6 +36,14 @@ interface FormData {
   files: File[];
 }
 
+const contactOptions = [
+  'Telegram',
+  'WhatsApp',
+  'Phone call',
+  'Email',
+  'Viber'
+]
+
 // Change the component name to match the file name or export it properly
 const BriefLanding = () => {
   const locale = useLocale()
@@ -48,6 +57,7 @@ const BriefLanding = () => {
       niche: '',
       email: '',
       phone: '',
+      contactMethod: contactOptions[0],
     },
     business: {
       description: '',
@@ -181,6 +191,7 @@ Business: ${formData.primary.businessName}
 Niche: ${formData.primary.niche}
 Email: ${formData.primary.email}
 Phone: ${formData.primary.phone || 'Not provided'}
+Preferred contact: ${formData.primary.contactMethod}
 
 1️⃣ <b>About Business:</b>
 Description: ${formData.business.description}
@@ -319,6 +330,21 @@ ${formData.files.length > 0 ? formData.files.map(f => f.name).join('\n') : 'No f
                   className="w-full p-3 bg-black border border-gray-800 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all text-white"
                   placeholder={s('primary.phone.placeholder')}
                 />
+              </div>
+              <div>
+                <label className="block mb-2 text-gray-300 font-medium">{s('primary.contactMethod.label')}</label>
+                <select
+                  value={formData.primary.contactMethod}
+                  onChange={(e) => handleChange('primary', 'contactMethod', e.target.value)}
+                  className="w-full p-3 bg-black border border-gray-800 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all text-white"
+                  required
+                >
+                  {contactOptions.map((option) => (
+                    <option key={option} value={option} className="text-black">
+                      {option}
+                    </option>
+                  ))}
+                </select>
               </div>
             </div>
           </section>

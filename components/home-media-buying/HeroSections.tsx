@@ -5,6 +5,12 @@ import { motion, useTransform, useScroll } from 'framer-motion';
 import Image from 'next/image';
 import Link from 'next/link';
 import { playSound } from '@/app/constant/sound';
+import dynamic from 'next/dynamic';
+
+const VideoPlayer = dynamic(() => import('@/components/black-affiliate-marketing-2/VideoPlayer'), {
+    ssr: false,
+    loading: () => <div className="aspect-video bg-black/40 flex items-center justify-center rounded-2xl md:rounded-3xl"><div className="animate-spin rounded-full h-12 w-12 border-b-2 border-white"/></div>
+});
 
 const videoSources = {
     uk: {
@@ -20,27 +26,9 @@ const videoSources = {
 export default function HeroSection() {
     const t = useTranslations();
     const locale = useLocale();
-    const [isPlaying, setIsPlaying] = useState(false);
-    const [isVideoPaused, setIsVideoPaused] = useState(false);
-    const videoRef = useRef<HTMLVideoElement>(null);
     const { scrollY } = useScroll();
     const rotate1 = useTransform(scrollY, [0, 3000], [0, 360]);
     const rotate2 = useTransform(scrollY, [0, 3000], [0, -360]);
-
-    const handlePlayClick = () => {
-        playSound('click');
-        setIsPlaying(true);
-    };
-
-    const toggleVideoPlayback = () => {
-        if (videoRef.current) {
-            if (videoRef.current.paused) {
-                videoRef.current.play();
-            } else {
-                videoRef.current.pause();
-            }
-        }
-    };
 
     return (
         <section className="px-6 relative" id="hero">
@@ -90,71 +78,11 @@ export default function HeroSection() {
                     transition={{ duration: 0.6, delay: 0.2 }}
                     className="relative rounded-2xl md:rounded-3xl overflow-hidden max-w-[740px] mx-auto"
                 >
-                    <div className="aspect-video flex items-center justify-center relative">
-                        {!isPlaying ? (
-                            <Image 
-                                key={`preview-${locale}`} 
-                                src={videoSources[locale as keyof typeof videoSources].preview}
-                                alt="Video preview"
-                                fill
-                                className="object-cover"
-                                priority
-                            />
-                        ) : (
-                            <>
-                                <video 
-                                    key={`full-${locale}`} 
-                                    ref={videoRef}
-                                    className="w-full h-full object-cover" 
-                                    autoPlay 
-                                    playsInline
-                                    onClick={toggleVideoPlayback}
-                                    onPlay={() => setIsVideoPaused(false)}
-                                    onPause={() => setIsVideoPaused(true)}
-                                >
-                                    <source src={videoSources[locale as keyof typeof videoSources].full} type="video/mp4"/>
-                                    Your browser does not support the video tag.
-                                </video>
-                                {isVideoPaused && (
-                                    <div 
-                                        className="absolute inset-0 flex items-center justify-center"
-                                        onClick={toggleVideoPlayback}
-                                    >
-                                        <button 
-                                            onClick={(e) => { e.stopPropagation(); toggleVideoPlayback(); }} 
-                                            className="bg-black/40 p-4 rounded-full"
-                                        >
-                                            <svg 
-                                                className="w-8 h-8 text-white" 
-                                                viewBox="0 0 24 24" 
-                                                fill="currentColor" 
-                                                xmlns="http://www.w3.org/2000/svg"
-                                            >
-                                                <path d="M8 5v14l11-7z" />
-                                            </svg>
-                                        </button>
-                                    </div>
-                                )}
-                            </>
-                        )}
-                        
-
-                        
-                        {!isPlaying && (
-                            <div 
-                                onMouseEnter={() => playSound('hover_1')} 
-                                className="absolute inset-0 flex items-center justify-center cursor-pointer group" 
-                                onClick={handlePlayClick}
-                            >
-                                <div className="absolute inset-0 bg-black/30 transition-colors duration-300 group-hover:bg-black/50"></div>
-                                <div className="flex items-center justify-center w-16 h-16 rounded-full bg-white z-10 transition-transform duration-300 group-hover:scale-110">
-                                    <svg className="ml-1 transition-transform duration-300" width="19" height="20" viewBox="0 0 86 97" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M80.1258 40.5562L13.9878 2.50912C7.98783 -0.942487 0.5 3.38842 0.5 10.3104V87.4713C0.5 94.4415 8.08185 98.7661 14.0814 95.218L80.2193 56.1042C86.1521 52.5955 86.1003 43.9932 80.1258 40.5562Z" fill="#000"/>
-                                    </svg>
-                                </div>
-                            </div>
-                        )}
-                    </div>
+                    <VideoPlayer
+                        videoUrl={videoSources[locale as keyof typeof videoSources].full}
+                        placeholder={videoSources[locale as keyof typeof videoSources].preview}
+                        className="aspect-video"
+                    />
                 </motion.div>
 
                 

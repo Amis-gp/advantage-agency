@@ -9,8 +9,17 @@ interface FormData {
   name: string;
   email: string;
   phone: string;
+  contactMethod: string;
   quizAnswers: string[];
 }
+
+const contactOptions = [
+  'Telegram',
+  'WhatsApp',
+  'Phone call',
+  'Email',
+  'Viber'
+];
 
 const questions = [
   {
@@ -65,12 +74,13 @@ export default function FormPage() {
     name: '',
     email: '',
     phone: '',
+    contactMethod: contactOptions[0],
     quizAnswers: new Array(5).fill(''),
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [phoneValue, setPhoneValue] = useState<string | undefined>('');
 
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
     setFormData({
       ...formData,
       [e.target.name]: e.target.value
@@ -106,6 +116,7 @@ export default function FormPage() {
 Name: ${formData.name}
 Email: ${formData.email}
 Phone: ${formData.phone}
+Preferred contact: ${formData.contactMethod}
 
 Quiz Answers:
 ${questions.map((q, i) => `
@@ -154,8 +165,10 @@ Answer: ${formData.quizAnswers[i]}`).join('\n')}
           name: '',
           email: '',
           phone: '',
+          contactMethod: contactOptions[0],
           quizAnswers: new Array(5).fill(''),
         });
+        setPhoneValue('');
       } else {
           // Помилка відправки
         throw new Error('Failed to submit form');
@@ -310,6 +323,21 @@ Answer: ${formData.quizAnswers[i]}`).join('\n')}
                   padding-left: 12px !important;
                 }
               `}</style>
+            </div>
+            <div>
+              <select
+                name="contactMethod"
+                value={formData.contactMethod}
+                onChange={handleInputChange}
+                className="w-full p-3 bg-black/20 border border-white/80 text-white rounded-lg focus:border-red-600/50 focus:outline-none"
+                required
+              >
+                {contactOptions.map((option) => (
+                  <option key={option} value={option} className="text-black">
+                    {option}
+                  </option>
+                ))}
+              </select>
             </div>
           </div>
 

@@ -275,6 +275,7 @@
             "name": "Your Name",
             "email": "Your Email",
             "phone": "Phone Number",
+            "contactMethod": "Preferred contact channel",
             "purpose": "Tell Us About Your Project",
             "submit": "Get a Consultation"
         }
@@ -639,6 +640,10 @@
             "phone": {
                 "label": "Phone (optional)",
                 "placeholder": "Your phone number"
+            },
+            "contactMethod": {
+                "label": "Preferred contact channel",
+                "placeholder": "Select how we should reach you"
             },
             "validation": "Please fill in all required fields: business name, niche, email."
         },
@@ -1375,6 +1380,10 @@
                 "phone": {
                     "label": "Phone (optional)",
                     "placeholder": "+1 234 567 8900"
+                },
+                "contactMethod": {
+                    "label": "Preferred contact channel",
+                    "placeholder": "Select how we should reach you"
                 }
             }
         },
