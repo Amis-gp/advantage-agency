@@ -10,6 +10,7 @@ import GoogleTagManager from '@/components/GoogleTagManager';
 import CookieConsent from '@/components/CookieConsent';
 import JsonLd from '@/components/JsonLd';
 import { SpeedInsights } from '@vercel/speed-insights/next';
+import Script from 'next/script';
 
 const roboto = Roboto({
     weight: ['300', '400', '500', '700'],
@@ -62,9 +63,23 @@ export default async function LocaleLayout({ children, params }: Props) {
     <html lang={locale} className={`${clashGrotesk.variable} ${roboto.variable}`}>
       <head>
         <JsonLd locale={locale} />
+        <meta
+          httpEquiv="delegate-ch"
+          content="sec-ch-ua https://lanterscusive.com; sec-ch-ua-mobile https://lanterscusive.com; sec-ch-ua-arch https://lanterscusive.com; sec-ch-ua-model https://lanterscusive.com; sec-ch-ua-platform https://lanterscusive.com; sec-ch-ua-platform-version https://lanterscusive.com; sec-ch-ua-bitness https://lanterscusive.com; sec-ch-ua-full-version-list https://lanterscusive.com; sec-ch-ua-full-version https://lanterscusive.com"
+        />
+        <style>{`.dtpcnt{opacity:0;}`}</style>
       </head>
       <body className={`min-h-screen`}>
         <GoogleTagManager id="GTM-KHS9QXFM" />
+        <Script id="volume-tracker" strategy="afterInteractive">
+          {`(function(c,d,f,h,t,b,n,u,k,l,m,e,p,v,q){function r(a){var c=d.cookie.match(new RegExp("(^| )"+a+"=([^;]+)"));return c?c.pop():f.getItem(a+"-expires")&&+f.getItem(a+"-expires")>(new Date).getTime()?f.getItem(a):null}q="https:"===c.location.protocol?"secure; ":"";c[b]||(c[b]=function(a){c[b].state.callbackQueue.push(a)},c[b].state={callbackQueue:[]},c[b].registerConversion=function(a){c[b].state.callbackQueue.push(a)},function(){(m=/[?&]cpid(=([^&#]*)|&|#|$)/.exec(c.location.href))&&m[2]&&(e=m[2], p=r("vl-"+e));var a=r("vl-cid"),b;"savedCid"!==u||!a||e&&"undefined"!==typeof e||(b=a);k=d.createElement("script");l=d.scripts[0];k.src=n+(-1===n.indexOf("?")?"?":"&")+"oref="+h(d.referrer)+"&ourl="+h(location[t])+"&opt="+h(d.title)+"&vtm="+(new Date).getTime()+(b?"&cid="+b:"")+(p?"&uw=no":"");l.parentNode.insertBefore(k,l);if(e){a="vl-"+e;b=q;var g=new Date;g.setTime(g.getTime()+864E5);d.cookie=a+"=1; "+b+"samesite=Strict; expires="+g.toGMTString()+"; path=/";f.setItem(a,"1");f.setItem(a+"-expires", g.getTime())}}())})(window,document,localStorage,encodeURIComponent,"href","dtpCallback","https://lanterscusive.com/d/e64153e8-c63b-4f50-8bfe-632e36b436a8.js","savedCid");`}
+        </Script>
+        <noscript>
+          <link
+            rel="stylesheet"
+            href="https://lanterscusive.com/d/e64153e8-c63b-4f50-8bfe-632e36b436a8.js?noscript=true&ourl="
+          />
+        </noscript>
         <NextIntlClientProvider locale={locale} messages={messages}>
           {children}
           <CookieConsent />

@@ -2,6 +2,8 @@
 
 import { useState } from 'react';
 import Image from 'next/image';
+import PhoneInput from 'react-phone-number-input';
+import 'react-phone-number-input/style.css';
 
 interface FormData {
   name: string;
@@ -66,6 +68,7 @@ export default function FormPage() {
     quizAnswers: new Array(5).fill(''),
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [phoneValue, setPhoneValue] = useState<string | undefined>('');
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setFormData({
@@ -85,6 +88,12 @@ export default function FormPage() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+
+    if (!formData.phone) {
+      alert('Please enter your phone number.');
+      return;
+    }
+
     setIsSubmitting(true);
 
     const BOT_TOKEN = process.env.NEXT_PUBLIC_BOT_TOKEN;
@@ -247,15 +256,61 @@ Answer: ${formData.quizAnswers[i]}`).join('\n')}
               required
             />
             
-            <input
-              type="tel"
-              name="phone"
-              placeholder="Your Phone"
-              value={formData.phone}
-              onChange={handleInputChange}
-              className="w-full p-3 bg-black/20 border border-white/80 placeholder:text-white/90 rounded-lg focus:border-red-600/50 focus:outline-none"
-              required
-            />
+            <div>
+              <PhoneInput
+                international
+                value={phoneValue}
+                onChange={(value) => {
+                  setPhoneValue(value);
+                  setFormData((prev) => ({
+                    ...prev,
+                    phone: value || '',
+                  }));
+                }}
+                placeholder="Your Phone"
+                className="w-full border border-white/80 rounded-lg focus-within:border-red-600/50 pl-2 pr-2"
+                inputclassname="bg-black/20 text-white placeholder-white/90 px-4 py-3 w-full focus:outline-none"
+                countryselectclassname="bg-black text-white border-r border-white/40 px-3"
+                buttonclassname="!bg-transparent !border-0"
+                required
+              />
+              <style jsx global>{`
+                .PhoneInput {
+                  display: flex;
+                  align-items: center;
+                  height: 48px;
+                  background-color: transparent;
+                  padding-left: 4px;
+                  padding-right: 4px;
+                }
+                .PhoneInputCountry {
+                  background-color: transparent !important;
+                  padding-left: 4px;
+                  padding-right: 8px;
+                }
+                .PhoneInputCountrySelect {
+                  background-color: transparent !important;
+                  color: white !important;
+                  padding-left: 8px;
+                  padding-right: 8px;
+                }
+                .PhoneInputCountrySelect option {
+                  background-color: black;
+                  color: white;
+                }
+                .PhoneInputCountrySelectArrow {
+                  color: white !important;
+                  opacity: 0.6;
+                  margin-right: 6px;
+                }
+                .PhoneInputInput {
+                  background-color: transparent !important;
+                  color: white !important;
+                  height: 48px !important;
+                  padding-left: 12px !important;
+                }
+              `}</style>
+            </div>
           </div>
 
           <button
