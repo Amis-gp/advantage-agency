@@ -47,7 +47,7 @@ export default function Footer() {
                             {[
                                 { href: "https://www.linkedin.com/company/advantage-agencyuk/posts/?feedView=all", icon: "/img/cold-email/linkedin.svg", alt: "LinkedIn" },
                                 { href: "https://www.instagram.com/_advantage_agency_/", icon: "/img/cold-email/instagram.svg", alt: "Instagram" },
-                                { href: "https://t.me/stepan_potichnyi", icon: "/img/cold-email/telegram.svg", alt: "Telegram" }
+                                { href: "https://t.me/nayborovskiy", icon: "/img/cold-email/telegram.svg", alt: "Telegram" }
                             ].map((social) => (
                                 <Link 
                                     key={social.alt}

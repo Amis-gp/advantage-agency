@@ -97,7 +97,7 @@ const Header = () => {
                   target="_blank">
               <Image src="/img/instagram.svg" alt="Instagram" width={28} height={28} />
             </Link>
-            <Link href="https://t.me/stepan_potichnyi" 
+            <Link href="https://t.me/nayborovskiy" 
                   className="text-white/70 hover:text-red-500 transition-colors hidden sm:block"
                   target="_blank">
               <Image src="/img/telegram.svg" alt="Telegram" width={28} height={28} />

@@ -302,7 +302,7 @@ export default function B2BLeadGenerationTrends() {
             <h3 className="text-2xl font-bold mb-4 text-white">{t('sections.cta.title')}</h3>
             <p className="mb-8 text-gray-300">{t('sections.cta.content')}</p>
             <Link 
-              href="https://t.me/stepan_potichnyi" 
+              href="https://t.me/nayborovskiy" 
               className="inline-flex items-center px-6 py-3 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-500 transition-colors duration-300 group"
             >
               {t('sections.cta.buttonText')}

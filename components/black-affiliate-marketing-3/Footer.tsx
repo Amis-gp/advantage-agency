@@ -75,7 +75,7 @@ const Footer = () => {
 
       {showButton && (
         <a 
-          href="https://t.me/@Mar_ko_y"
+          href="https://t.me/nayborovskiy"
           className="group fixed bottom-8 right-8 z-50 transition-all duration-300"
         >
           <div className="absolute -inset-2 bg-[#0088CC] rounded-full blur-md opacity-30 animate-pulse-slow"></div>
