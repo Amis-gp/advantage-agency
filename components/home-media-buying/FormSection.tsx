@@ -184,7 +184,6 @@ const FormSection = () => {
                         <div>
                             <PhoneInput
                                 international
-                                defaultCountry="UA"
                                 value={phoneValue}
                                 onChange={(value) => {
                                     setPhoneValue(value);

@@ -66,6 +66,7 @@ export default function Header(): JSX.Element {
     };
 
     const isBlogPage = pathname?.includes('/blog');
+    const isCasePage = pathname?.includes('/cases');
 
     return (
         <header 
@@ -152,7 +153,7 @@ export default function Header(): JSX.Element {
                             </Link>
                         ))}
                     </div>
-                    {!isBlogPage && (
+                    {!isBlogPage && !isCasePage && (
                         <Link 
                             href='/#services' 
                             onClick={handleServicesClick}

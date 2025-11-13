@@ -1,5 +1,4 @@
 'use client';
-import { useState, useRef } from 'react';
 import { useTranslations, useLocale } from 'next-intl';
 import { motion, useTransform, useScroll } from 'framer-motion';
 import Image from 'next/image';
@@ -14,12 +13,12 @@ const VideoPlayer = dynamic(() => import('@/components/black-affiliate-marketing
 
 const videoSources = {
     uk: {
-        full: 'img/home/video-uk.mp4',
-        preview: 'img/home/preview-uk.mp4'
+        full: '/img/home/video-uk.mp4',
+        preview: '/img/home/preview.webp'
     },
     en: {
-        full: 'img/home/video-en.mp4',
-        preview: 'img/home/preview-en.mp4'
+        full: '/img/home/video-en.mp4',
+        preview: '/img/home/preview.webp'
     }
 };
 
