@@ -292,8 +292,17 @@
     <loc>https://www.advantage-agency.co/en/blog/choose-geo-gambling</loc>
     <lastmod>2025-11-11</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>1.0</priority>
     <xhtml:link rel="alternate" hreflang="en-US" href="https://www.advantage-agency.co/en/blog/choose-geo-gambling"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.advantage-agency.co/en/blog/choose-geo-gambling"/>
   </url>
 </urlset>
+ <!-- New Blog Post: 5 Mistakes in Casino Campaigns -->
+  <url>
+    <loc>https://www.advantage-agency.co/en/blog/5-mistakes-casino-campaigns</loc>
+    <lastmod>2025-11-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://www.advantage-agency.co/en/blog/5-mistakes-casino-campaigns"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.advantage-agency.co/en/blog/5-mistakes-casino-campaigns"/>
+  </url>

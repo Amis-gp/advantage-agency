@@ -1,7 +1,7 @@
 ---
 title: "Top 5 Mistakes Media Buyers Make When Running Casino Campaigns: How to Avoid Losses in 2025"
 description: "Learn the 5 most common mistakes that kill ROI in casino campaigns. Discover practical solutions for creative-landing-offer fit, metrics analysis, account diversification, GEO selection, and scaling strategies from the ADvantage team."
-date: "2025-01-15"
+date: "2025-11-17"
 image: "/img/blog/5-mistakes-casino-campaigns/hero.webp"
 author: "Advantage Agency"
 tags: ["media buying", "casino campaigns", "iGaming", "facebook ads", "affiliate marketing", "ROI", "campaign optimization", "mistakes"]
