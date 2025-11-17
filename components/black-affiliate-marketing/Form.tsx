@@ -1,6 +1,7 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { useSearchParams } from 'next/navigation';
 import Image from 'next/image';
 import PhoneInput from 'react-phone-number-input';
 import 'react-phone-number-input/style.css';
@@ -16,8 +17,7 @@ interface FormData {
 const contactOptions = [
   'Telegram',
   'WhatsApp',
-  'Phone call',
-  'Email',
+  
   'Viber'
 ];
 
@@ -70,6 +70,21 @@ const questions = [
 ];
 
 export default function FormPage() {
+  const searchParams = useSearchParams();
+  const [selectedPackage, setSelectedPackage] = useState<string>('');
+  const [selectedPage, setSelectedPage] = useState<string>('');
+  
+  useEffect(() => {
+    const packageParam = searchParams.get('package');
+    const pageParam = searchParams.get('page');
+    if (packageParam) {
+      setSelectedPackage(decodeURIComponent(packageParam));
+    }
+    if (pageParam) {
+      setSelectedPage(decodeURIComponent(pageParam));
+    }
+  }, [searchParams]);
+
   const [formData, setFormData] = useState<FormData>({
     name: '',
     email: '',
@@ -111,12 +126,14 @@ export default function FormPage() {
     const url = `https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`;
 
     const message = `
-    New Lead black-affiliate-marketing-2:
+    New Lead black-affiliate-marketing:
           
 Name: ${formData.name}
 Email: ${formData.email}
 Phone: ${formData.phone}
 Preferred contact: ${formData.contactMethod}
+${selectedPage ? `Page: ${selectedPage}` : ''}
+${selectedPackage ? `Selected Package: ${selectedPackage}` : ''}
 
 Quiz Answers:
 ${questions.map((q, i) => `

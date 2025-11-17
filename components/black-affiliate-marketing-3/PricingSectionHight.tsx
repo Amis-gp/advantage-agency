@@ -7,10 +7,9 @@ const PricingSection = () => {
   const packages = {
     strategicAudit: 'Strategic Audit',
     auditRoadMap: 'Audit & Road Map',
-    knowledgeBase: 'Knowledge Base',
     mentorship: 'Mentorship'
   };
-  const pageName = 'black-affiliate-marketing-2';
+  const pageName = 'black-affiliate-marketing-3-hight';
   return (
     <section className="mt-20 max-w-7xl mx-auto">
       <h2 className={`
@@ -29,14 +28,14 @@ const PricingSection = () => {
       `}>
         Choose Your Path to Success
       </h2>
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
         {/* Strategic Audit Package */}
         <div className="bg-black/40 backdrop-blur-sm p-8 rounded-2xl border border-white/10 hover:border-red-600/50 transition-all duration-300 hover:shadow-2xl hover:shadow-red-600/20 group">
           <h3 className="text-2xl font-bold mb-2">Strategic Audit</h3>
           <p className="text-gray-400 mb-4 ">One-time in-depth setup analysis</p>
           <p className="text-gray-500 mb-6 text-sm">For experienced media buyers who have hit a plateau or are facing unpredictable losses. You are running campaigns, but the results are unstable.</p>
           
-          <div className="text-4xl font-bold mb-8 group-hover:text-red-500 transition-colors">€300</div>
+          <div className="text-4xl font-bold mb-8 group-hover:text-red-500 transition-colors">€600</div>
           
           <div className="mt-6 mb-8 text-center">
             <Link href={`/black-affiliate-marketing-2/form?package=${encodeURIComponent(packages.strategicAudit)}&page=${encodeURIComponent(pageName)}`} className="w-full bg-red-800 hover:bg-red-700 text-white py-3 px-6 rounded-lg transition-colors">
@@ -67,7 +66,7 @@ const PricingSection = () => {
           <p className="text-gray-400 mb-4 ">Comprehensive Starter Package</p>
           <p className="text-gray-500 mb-6 text-sm">For those who want a powerful boost for their business. We will identify weak spots in your current workflow and provide you with the tools to fix them and ensure future growth.</p>
           
-          <div className="text-4xl font-bold mb-8 group-hover:text-red-500 transition-colors">€650</div>
+          <div className="text-4xl font-bold mb-8 group-hover:text-red-500 transition-colors">€1550</div>
           
           <div className="mt-6 mb-8 text-center">
             <Link href={`/black-affiliate-marketing-2/form?package=${encodeURIComponent(packages.auditRoadMap)}&page=${encodeURIComponent(pageName)}`} className="w-full bg-red-800 hover:bg-red-700 text-white py-3 px-6 rounded-lg transition-colors">
@@ -96,45 +95,14 @@ const PricingSection = () => {
           <p className="mt-4 text-sm text-gray-400 italic">You will eliminate chaos and start working like a well-oiled machine: systematically testing, analyzing, and scaling with a clear and understandable system.</p>
         </div>
 
-        {/* Knowledge Base Package */}
-        <div className="bg-black/40 backdrop-blur-sm p-8 rounded-2xl border border-white/10 hover:border-red-600/50 transition-all duration-300 hover:shadow-2xl hover:shadow-red-600/20 group">
-          <h3 className="text-2xl font-bold mb-2">Knowledge Base</h3>
-          <p className="text-gray-400 mb-4 ">Self-Paced Learning on Our Platform</p>
-          <p className="text-gray-500 mb-6 text-sm">For those who prefer to learn at their own pace and want access to our complete, concentrated knowledge base-all in one place.</p>
-          
-          <div className="text-4xl font-bold mb-8 group-hover:text-red-500 transition-colors">€950</div>
-          
-          <div className="mt-6 mb-8 text-center">
-            <Link href={`/black-affiliate-marketing-2/form?package=${encodeURIComponent(packages.knowledgeBase)}&page=${encodeURIComponent(pageName)}`} className="w-full bg-red-800 hover:bg-red-700 text-white py-3 px-6 rounded-lg transition-colors">
-              Get It Now
-            </Link>
-          </div>
-
-          <ul className="space-y-3 ">
-            <li className="flex gap-2">
-              <span className="text-red-500">•</span>
-              <span>Full access to our private platform: Structured modules covering everything from the fundamentals to advanced scaling techniques.</span>
-            </li>
-            <li className="flex gap-2">
-              <span className="text-red-500">•</span>
-              <span>Library of bonus materials: A collection of high-performing creatives, proven technical guides, and a vetted list of reliable services.</span>
-            </li>
-            <li className="flex gap-2">
-              <span className="text-red-500">•</span>
-              <span>Constant updates: All materials are regularly updated to reflect changes in Facebook's policies and market trends.</span>
-            </li>
-          </ul>
-          <p className="mt-4 text-sm text-gray-400 italic">You will always have the answer to any question about traffic arbitrage at your fingertips, eliminating the need to search for fragmented information across the internet.</p>
-        </div>
-
         {/* Mentorship Package */}
         <div className="bg-black/40 backdrop-blur-sm p-8 rounded-2xl border border-white/10 hover:border-red-600/50 transition-all duration-300 hover:shadow-2xl hover:shadow-red-600/20 group">
           <h3 className="text-2xl font-bold mb-2">Mentorship</h3>
           <p className="text-gray-400 mb-4 ">For serious specialists who want to launch quickly and avoid any mistakes</p>
           <p className="text-gray-500 mb-6 text-sm">This is the fastest path from your current results to stable profit.</p>
           
-          <div className="text-4xl font-bold mb-2 group-hover:text-red-500 transition-colors">€1300</div>
-          <div className=" text-gray-400 mb-6">+ €1300 (2 payments)</div>
+          <div className="text-4xl font-bold mb-2 group-hover:text-red-500 transition-colors">€2000</div>
+          <div className=" text-gray-400 mb-6">+ €2000 (2 платежі)</div>
           
           <div className="mt-6 mb-8 text-center">
             <Link href={`/black-affiliate-marketing-2/form?package=${encodeURIComponent(packages.mentorship)}&page=${encodeURIComponent(pageName)}`} className="w-full bg-red-800 hover:bg-red-700 text-white py-3 px-6 rounded-lg transition-colors">
@@ -143,10 +111,6 @@ const PricingSection = () => {
           </div>
 
           <ul className="space-y-3 ">
-            <li className="flex gap-2">
-              <span className="text-red-500">•</span>
-              <span>Everything included in the «Knowledge Base» package.</span>
-            </li>
             <li className="flex gap-2">
               <span className="text-red-500">•</span>
               <span>Archive of 163 ready-to-use pre-landings: Unique gaming landings that can be quickly adapted to your offer. This is a "turnkey" solution for scaling.</span>

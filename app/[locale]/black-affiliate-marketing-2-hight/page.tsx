@@ -6,14 +6,16 @@ export const revalidate = 3600
 
 import HeroSection from '@/components/black-affiliate-marketing-2/HeroSection'
 import CourseTargetSection from '@/components/black-affiliate-marketing-2/CourseTargetSection'
-import ProvidingSection from '@/components/black-affiliate-marketing-3/ProvidingSection'
+import MentorSection from '@/components/black-affiliate-marketing-2/MentorSection'
+import StorySection from '@/components/black-affiliate-marketing-2/StorySection'
+import ProvidingSection from '@/components/black-affiliate-marketing-2/ProvidingSection'
 import PhaseSystemSection from '@/components/black-affiliate-marketing-2/PhaseSystemSection'
-import PricingSection from '@/components/black-affiliate-marketing-3/PricingSection'
+import PricingSection from '@/components/black-affiliate-marketing-2/PricingSectionHight'
 import FAQSection from '@/components/black-affiliate-marketing-2/FAQSection'
-import TwoOptionsSection from '@/components/black-affiliate-marketing-3/TwoOptionsSection'
-import TestimonialsSection from '@/components/black-affiliate-marketing-3/TestimonialsSection'
+import TwoOptionsSection from '@/components/black-affiliate-marketing-2/TwoOptionsSection'
+import TestimonialsSection from '@/components/black-affiliate-marketing-2/TestimonialsSection'
 
-import Footer from '@/components/black-affiliate-marketing-3/Footer'
+import Footer from '@/components/black-affiliate-marketing/Footer'
 
 interface Props {
   params: { locale: string }
@@ -55,6 +57,8 @@ export default async function BlackAffiliatePage({ params: { locale } }: Props) 
         <main className="max-w-6xl mx-auto relative z-10">
           <HeroSection />
           <CourseTargetSection />
+          <MentorSection />
+          <StorySection />
           <ProvidingSection />
           <PhaseSystemSection />
           <TestimonialsSection />

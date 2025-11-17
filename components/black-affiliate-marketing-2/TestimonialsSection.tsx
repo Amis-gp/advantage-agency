@@ -7,11 +7,19 @@ import dynamic from 'next/dynamic';
 
 const VideoPlayer = dynamic(() => import('./VideoPlayer'), { ssr: false, loading: () => <div className="h-[480px] w-full flex items-center justify-center"/> });
 
-interface TestimonialsSectionProps {
-  testimonialImages: string[];
-}
+const testimonialImages = [
+  '/img/black-affiliate-marketing/testimonial-1.webp',
+  '/img/black-affiliate-marketing/testimonial-2.webp',
+  '/img/black-affiliate-marketing/testimonial-3.webp',
+  '/img/black-affiliate-marketing/testimonial-4.webp',
+  '/img/black-affiliate-marketing/testimonial-5.webp',
+  '/img/black-affiliate-marketing/testimonial-6.webp',
+  '/img/black-affiliate-marketing/testimonial-7.webp',
+  '/img/black-affiliate-marketing/testimonial-8.webp',
+  '/img/black-affiliate-marketing/testimonial-9.webp'
+];
 
-const TestimonialsSection = ({ testimonialImages }: TestimonialsSectionProps) => {
+const TestimonialsSection = () => {
   const [isImageOpen, setIsImageOpen] = useState(false);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [isGridVisible, setIsGridVisible] = useState(false);

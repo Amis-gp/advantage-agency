@@ -1,17 +1,19 @@
 import { setRequestLocale } from 'next-intl/server'
 import { Metadata } from 'next'
-import dynamic from 'next/dynamic'
 
 export const runtime = 'nodejs'
 export const revalidate = 3600
-import ClientPageContent from '@/components/black-affiliate-marketing-2/ClientPage'
-const ClientPage = dynamic(
-  () => Promise.resolve(ClientPageContent),
-  {
-    ssr: true,
-    loading: () => <div className="min-h-screen bg-black flex items-center justify-center"><p className="text-white text-xl">Завантаження...</p></div>
-  }
-)
+
+import HeroSection from '@/components/black-affiliate-marketing-2/HeroSection'
+import CourseTargetSection from '@/components/black-affiliate-marketing-2/CourseTargetSection'
+import MentorSection from '@/components/black-affiliate-marketing-2/MentorSection'
+import StorySection from '@/components/black-affiliate-marketing-2/StorySection'
+import ProvidingSection from '@/components/black-affiliate-marketing-2/ProvidingSection'
+import PhaseSystemSection from '@/components/black-affiliate-marketing-2/PhaseSystemSection'
+import PricingSection from '@/components/black-affiliate-marketing-2/PricingSection'
+import FAQSection from '@/components/black-affiliate-marketing-2/FAQSection'
+import TwoOptionsSection from '@/components/black-affiliate-marketing-2/TwoOptionsSection'
+import TestimonialsSection from '@/components/black-affiliate-marketing-2/TestimonialsSection'
 
 import Footer from '@/components/black-affiliate-marketing/Footer'
 
@@ -46,7 +48,25 @@ export default async function BlackAffiliatePage({ params: { locale } }: Props) 
   
   return (
     <>
-      <ClientPage />
+      <div className="min-h-screen bg-black text-white text-center px-4 pt-10 pb-14 overflow-hidden font-sans relative">
+        <div 
+          className="absolute left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] md:w-[700px] md:h-[700px] rounded-full bg-red-600/30 blur-[150px] -z-10"
+          style={{ filter: 'blur(150px)' }}
+        />
+        
+        <main className="max-w-6xl mx-auto relative z-10">
+          <HeroSection />
+          <CourseTargetSection />
+          <MentorSection />
+          <StorySection />
+          <ProvidingSection />
+          <PhaseSystemSection />
+          <TestimonialsSection />
+          <PricingSection />
+          <FAQSection />
+          <TwoOptionsSection />
+        </main>
+      </div>
       <Footer />
     </>
   )

@@ -5,7 +5,13 @@ export const defaultLocale: Locale = 'en';
 
 export default async function getRequestConfig({ requestLocale }: { requestLocale: Locale | Promise<Locale> }) {
     const locale = await requestLocale || defaultLocale;
-    const messages = (await import(`@/messages/${locale}.json`)).default;
+    
+    let messages;
+    if (locale === 'en') {
+        messages = (await import('../messages/en.json')).default;
+    } else {
+        messages = (await import('../messages/uk.json')).default;
+    }
     
     return {
         locale,
