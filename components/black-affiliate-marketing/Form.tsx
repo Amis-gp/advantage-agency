@@ -17,7 +17,6 @@ interface FormData {
 const contactOptions = [
   'Telegram',
   'WhatsApp',
-  
   'Viber'
 ];
 

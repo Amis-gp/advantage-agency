@@ -275,16 +275,6 @@ export default function BlackAffiliateMarketing() {
               </p>
             </div>
           </div>
-          <div className="mt-20 space-y-10">
-            <h2 className="text-3xl font-bold">
-                Get free samples of pre-landers, ads and traffic sources!
-            </h2>
-            <div className="animate-bounce pt-8">
-              <Link href="/black-affiliate-marketing/form" className="bg-red-800 hover:bg-red-700 text-white text-xl font-bold py-4 px-8 uppercase">
-                TAKE A QUIZ NOW
-              </Link>
-            </div>
-          </div>
         </section>
 
         {/* Who Am I Section */}
