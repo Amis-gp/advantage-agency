@@ -52,7 +52,7 @@ export default function CourseAdBlock() {
             </div>
             
             <Link
-              href="/black-affiliate-marketing-2"
+              href="/black-affiliate-marketing-3"
               className="group inline-flex items-center gap-2 bg-gradient-to-r from-red-600 to-red-700 hover:from-red-700 hover:to-red-800 text-white font-bold py-4 px-8 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg shadow-red-600/50 hover:shadow-red-600/70"
             >
               <span>Learn More</span>
