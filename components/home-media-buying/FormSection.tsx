@@ -229,7 +229,7 @@ const FormSection = () => {
                         </div>
                         <div>
                             <label className="block text-white/80 text-sm font-medium mb-2">
-                                {t('contactMethod')}
+                                {t('form.contactMethod')}
                             </label>
                             <select
                                 name="contactMethod"

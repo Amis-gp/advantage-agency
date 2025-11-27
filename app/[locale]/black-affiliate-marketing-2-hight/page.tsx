@@ -14,6 +14,7 @@ import PricingSection from '@/components/black-affiliate-marketing-2/PricingSect
 import FAQSection from '@/components/black-affiliate-marketing-2/FAQSection'
 import TwoOptionsSection from '@/components/black-affiliate-marketing-2/TwoOptionsSection'
 import TestimonialsSection from '@/components/black-affiliate-marketing-2/TestimonialsSection'
+import PWATrafficPopunder from '@/components/black-affiliate-marketing-2/PWATrafficPopunder'
 
 import Footer from '@/components/black-affiliate-marketing/Footer'
 
@@ -67,6 +68,7 @@ export default async function BlackAffiliatePage({ params: { locale } }: Props) 
           <TwoOptionsSection />
         </main>
       </div>
+      <PWATrafficPopunder />
       <Footer />
     </>
   )

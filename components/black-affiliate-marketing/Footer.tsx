@@ -1,8 +1,10 @@
 'use client';
 import { useEffect, useState } from 'react';
 import Image from 'next/image';
+import { useLocale } from 'next-intl';
 
 const Footer = () => {
+  const locale = useLocale();
   const [showButton, setShowButton] = useState(false);
 
   useEffect(() => {
@@ -67,6 +69,7 @@ const Footer = () => {
           <p className="text-lg">{new Date().getFullYear()} © Copyrights by Advantage Agency. All Rights Reserved.</p>
           
           <div className="flex justify-center gap-8">
+            <a href={`/${locale}/blog`} className="hover:text-red-500 transition-colors">Blog</a>
             <a href="/privacy-policy" className="hover:text-red-500 transition-colors">Privacy Policy</a>
           </div>
 

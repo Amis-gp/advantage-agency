@@ -153,6 +153,13 @@ export default function Header(): JSX.Element {
                             </Link>
                         ))}
                     </div>
+                    <Link 
+                        href={`/${locale}/blog`}
+                        className="text-white px-4 py-2 sm:px-6 sm:py-2 hover:text-red-500 transition-colors hidden sm:block"
+                        onMouseEnter={() => playSound('hover_2')}
+                    >
+                        Blog
+                    </Link>
                     {!isBlogPage && !isCasePage && (
                         <Link 
                             href='/#services' 
