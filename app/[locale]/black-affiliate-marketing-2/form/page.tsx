@@ -14,7 +14,7 @@ export default function BriefPage({ params: { locale } }: Props) {
   return (
     <>
       <Suspense fallback={<div>Loading...</div>}>
-        <FormSection />
+      <FormSection />
       </Suspense>
       <Footer />
     </>

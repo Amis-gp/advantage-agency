@@ -200,6 +200,38 @@
     <xhtml:link rel="alternate" hreflang="uk" href="https://www.advantage-agency.co/uk/black-affiliate-marketing-2"/>
   </url>
 
+  <!-- Black Affiliate Marketing 2.0 Hight -->
+  <url>
+    <loc>https://www.advantage-agency.co/black-affiliate-marketing-2-hight</loc>
+    <lastmod>2025-05-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.advantage-agency.co/en/black-affiliate-marketing-2-hight"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://www.advantage-agency.co/uk/black-affiliate-marketing-2-hight"/>
+    <xhtml:link rel="canonical" href="https://www.advantage-agency.co/black-affiliate-marketing-2"/>
+  </url>
+
+  <!-- Black Affiliate Marketing 3.0 -->
+  <url>
+    <loc>https://www.advantage-agency.co/black-affiliate-marketing-3</loc>
+    <lastmod>2025-05-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.advantage-agency.co/en/black-affiliate-marketing-3"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://www.advantage-agency.co/uk/black-affiliate-marketing-3"/>
+  </url>
+
+  <!-- Black Affiliate Marketing 3.0 Hight -->
+  <url>
+    <loc>https://www.advantage-agency.co/black-affiliate-marketing-3-hight</loc>
+    <lastmod>2025-05-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.advantage-agency.co/en/black-affiliate-marketing-3-hight"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://www.advantage-agency.co/uk/black-affiliate-marketing-3-hight"/>
+    <xhtml:link rel="canonical" href="https://www.advantage-agency.co/black-affiliate-marketing-3"/>
+  </url>
+
   <!-- Media Buying -->
   <url>
     <loc>https://www.advantage-agency.co/media-buying</loc>
@@ -208,6 +240,16 @@
     <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.advantage-agency.co/en/media-buying"/>
     <xhtml:link rel="alternate" hreflang="uk" href="https://www.advantage-agency.co/uk/media-buying"/>
+  </url>
+
+  <!-- Bypass Moderation Lead Magnet -->
+  <url>
+    <loc>https://www.advantage-agency.co/bypass-moderation</loc>
+    <lastmod>2025-12-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.advantage-agency.co/en/bypass-moderation"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://www.advantage-agency.co/uk/bypass-moderation"/>
   </url>
 
   <!-- Career Pages -->
@@ -230,7 +272,6 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.advantage-agency.co/en/blog/lead-magnets"/>
   </url>
 
-  
   <url>
     <loc>https://www.advantage-agency.co/blog/b2b-lead-generation-2025</loc>
     <lastmod>2025-01-27</lastmod>
@@ -296,8 +337,8 @@
     <xhtml:link rel="alternate" hreflang="en-US" href="https://www.advantage-agency.co/en/blog/choose-geo-gambling"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.advantage-agency.co/en/blog/choose-geo-gambling"/>
   </url>
-</urlset>
- <!-- New Blog Post: 5 Mistakes in Casino Campaigns -->
+
+  <!-- New Blog Post: 5 Mistakes in Casino Campaigns -->
   <url>
     <loc>https://www.advantage-agency.co/en/blog/5-mistakes-casino-campaigns</loc>
     <lastmod>2025-11-17</lastmod>
@@ -306,3 +347,14 @@
     <xhtml:link rel="alternate" hreflang="en-US" href="https://www.advantage-agency.co/en/blog/5-mistakes-casino-campaigns"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.advantage-agency.co/en/blog/5-mistakes-casino-campaigns"/>
   </url>
+
+  <!-- New Blog Post: How to Cloak Links -->
+  <url>
+    <loc>https://www.advantage-agency.co/en/blog/how-to-cloak-links-facebook-ads</loc>
+    <lastmod>2025-11-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://www.advantage-agency.co/en/blog/how-to-cloak-links-facebook-ads"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.advantage-agency.co/en/blog/how-to-cloak-links-facebook-ads"/>
+  </url>
+</urlset>

@@ -67,6 +67,7 @@ export default function Header(): JSX.Element {
 
     const isBlogPage = pathname?.includes('/blog');
     const isCasePage = pathname?.includes('/cases');
+    const isBypassModerationPage = pathname?.includes('/bypass-moderation');
 
     return (
         <header 
@@ -85,7 +86,7 @@ export default function Header(): JSX.Element {
 
 
                 <div className="flex items-center gap-4">
-                    {!isBlogPage && (
+                    {!isBlogPage && !isBypassModerationPage && (
                         <div className="relative" ref={dropdownRef}>
                             <button 
                                 onClick={() => setIsDropdownOpen(!isDropdownOpen)} 
@@ -153,14 +154,7 @@ export default function Header(): JSX.Element {
                             </Link>
                         ))}
                     </div>
-                    <Link 
-                        href={`/${locale}/blog`}
-                        className="text-white px-4 py-2 sm:px-6 sm:py-2 hover:text-red-500 transition-colors hidden sm:block"
-                        onMouseEnter={() => playSound('hover_2')}
-                    >
-                        Blog
-                    </Link>
-                    {!isBlogPage && !isCasePage && (
+                    {!isBlogPage && !isCasePage && !isBypassModerationPage && (
                         <Link 
                             href='/#services' 
                             onClick={handleServicesClick}

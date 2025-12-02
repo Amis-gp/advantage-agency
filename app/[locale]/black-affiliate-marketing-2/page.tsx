@@ -41,6 +41,10 @@ export const metadata: Metadata = {
   },
   alternates: {
     canonical: 'https://www.advantage-agency.co/black-affiliate-marketing-2',
+    languages: {
+      'en-US': 'https://www.advantage-agency.co/en/black-affiliate-marketing-2',
+      'uk-UA': 'https://www.advantage-agency.co/uk/black-affiliate-marketing-2',
+    },
   },
 }
 

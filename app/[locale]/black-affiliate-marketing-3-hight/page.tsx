@@ -38,7 +38,11 @@ export const metadata: Metadata = {
     description: 'Professional Black Affiliate Marketing services. Start scaling your affiliate business today.',
   },
   alternates: {
-    canonical: 'https://www.advantage-agency.co/black-affiliate-marketing-2',
+    canonical: 'https://www.advantage-agency.co/black-affiliate-marketing-3',
+    languages: {
+      'en-US': 'https://www.advantage-agency.co/en/black-affiliate-marketing-3-hight',
+      'uk-UA': 'https://www.advantage-agency.co/uk/black-affiliate-marketing-3-hight',
+    },
   },
 }
 
