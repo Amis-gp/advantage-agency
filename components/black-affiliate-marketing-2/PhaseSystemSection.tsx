@@ -118,7 +118,7 @@ const PhaseSystemSection = () => {
       </div>
 
       <div className="pt-8 animate-bounce !mt-10">
-        <Link href="/black-affiliate-marketing-2/form" className="bg-red-800 hover:bg-red-700 text-white text-xl font-bold py-4 px-8 uppercase">
+        <Link href="#pricing" className="bg-red-800 hover:bg-red-700 text-white text-xl font-bold py-4 px-8 uppercase">
           SECURE YOUR SPOT NOW
         </Link>
       </div>

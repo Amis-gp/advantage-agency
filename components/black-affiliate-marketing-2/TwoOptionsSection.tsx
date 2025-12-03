@@ -45,7 +45,7 @@ const TwoOptionsSection = () => {
               It may not be a simple endeavor, but I am committed to ensuring your success in the most effective and efficient manner possible.
             </p>
             <div className="mt-8">
-              <Link href="/black-affiliate-marketing-2/form" className="bg-red-800 hover:bg-red-700 text-white py-4 px-8 rounded-lg inline-block transition-colors">
+              <Link href="#pricing" className="bg-red-800 hover:bg-red-700 text-white py-4 px-8 rounded-lg inline-block transition-colors">
                 SECURE YOUR SPOT NOW
               </Link>
             </div>

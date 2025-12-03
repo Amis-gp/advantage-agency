@@ -10,9 +10,9 @@ const PricingSection = () => {
     knowledgeBase: 'Knowledge Base',
     mentorship: 'Mentorship'
   };
-  const pageName = 'black-affiliate-marketing-3';
+  const pageUrl = 'black-affiliate-marketing-3-s';
   return (
-    <section className="mt-20 max-w-7xl mx-auto">
+    <section className="mt-20 max-w-7xl mx-auto" id="pricing">
       <h2 className={`
         text-5xl 
         font-bold 
@@ -39,7 +39,7 @@ const PricingSection = () => {
           <div className="text-4xl font-bold mb-8 group-hover:text-red-500 transition-colors">€300</div>
           
           <div className="mt-6 mb-8 text-center">
-            <Link href={`/black-affiliate-marketing-2/form?package=${encodeURIComponent(packages.strategicAudit)}&page=${encodeURIComponent(pageName)}`} className="w-full bg-red-800 hover:bg-red-700 text-white py-3 px-6 rounded-lg transition-colors">
+            <Link href={`/black-affiliate-marketing-2/form?package=${encodeURIComponent(packages.strategicAudit)}&page=${encodeURIComponent(pageUrl)}`} className="w-full bg-red-800 hover:bg-red-700 text-white py-3 px-6 rounded-lg transition-colors">
               Get It Now
             </Link>
           </div>
@@ -70,7 +70,7 @@ const PricingSection = () => {
           <div className="text-4xl font-bold mb-8 group-hover:text-red-500 transition-colors">€650</div>
           
           <div className="mt-6 mb-8 text-center">
-            <Link href={`/black-affiliate-marketing-2/form?package=${encodeURIComponent(packages.auditRoadMap)}&page=${encodeURIComponent(pageName)}`} className="w-full bg-red-800 hover:bg-red-700 text-white py-3 px-6 rounded-lg transition-colors">
+            <Link href={`/black-affiliate-marketing-2/form?package=${encodeURIComponent(packages.auditRoadMap)}&page=${encodeURIComponent(pageUrl)}`} className="w-full bg-red-800 hover:bg-red-700 text-white py-3 px-6 rounded-lg transition-colors">
               Get It Now
             </Link>
           </div>
@@ -105,7 +105,7 @@ const PricingSection = () => {
           <div className="text-4xl font-bold mb-8 group-hover:text-red-500 transition-colors">€950</div>
           
           <div className="mt-6 mb-8 text-center">
-            <Link href={`/black-affiliate-marketing-2/form?package=${encodeURIComponent(packages.knowledgeBase)}&page=${encodeURIComponent(pageName)}`} className="w-full bg-red-800 hover:bg-red-700 text-white py-3 px-6 rounded-lg transition-colors">
+            <Link href={`/black-affiliate-marketing-2/form?package=${encodeURIComponent(packages.knowledgeBase)}&page=${encodeURIComponent(pageUrl)}`} className="w-full bg-red-800 hover:bg-red-700 text-white py-3 px-6 rounded-lg transition-colors">
               Get It Now
             </Link>
           </div>
@@ -137,7 +137,7 @@ const PricingSection = () => {
           <div className=" text-gray-400 mb-6">+ €1300 (2 payments)</div>
           
           <div className="mt-6 mb-8 text-center">
-            <Link href={`/black-affiliate-marketing-2/form?package=${encodeURIComponent(packages.mentorship)}&page=${encodeURIComponent(pageName)}`} className="w-full bg-red-800 hover:bg-red-700 text-white py-3 px-6 rounded-lg transition-colors">
+            <Link href={`/black-affiliate-marketing-2/form?package=${encodeURIComponent(packages.mentorship)}&page=${encodeURIComponent(pageUrl)}`} className="w-full bg-red-800 hover:bg-red-700 text-white py-3 px-6 rounded-lg transition-colors">
               Get It Now
             </Link>
           </div>

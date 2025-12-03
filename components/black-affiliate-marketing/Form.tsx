@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { useSearchParams } from 'next/navigation';
+import { useSearchParams, usePathname } from 'next/navigation';
 import Image from 'next/image';
 import PhoneInput from 'react-phone-number-input';
 import 'react-phone-number-input/style.css';
@@ -70,19 +70,38 @@ const questions = [
 
 export default function FormPage() {
   const searchParams = useSearchParams();
+  const pathname = usePathname();
   const [selectedPackage, setSelectedPackage] = useState<string>('');
   const [selectedPage, setSelectedPage] = useState<string>('');
   
   useEffect(() => {
     const packageParam = searchParams.get('package');
     const pageParam = searchParams.get('page');
+    
     if (packageParam) {
       setSelectedPackage(decodeURIComponent(packageParam));
     }
+    
     if (pageParam) {
       setSelectedPage(decodeURIComponent(pageParam));
+    } else {
+      let resolvedPage = '';
+      
+      if (pathname.includes('black-affiliate-marketing-2-s')) {
+        resolvedPage = 'https://www.advantage-agency.co/black-affiliate-marketing-2-s';
+      } else if (pathname.includes('black-affiliate-marketing-2')) {
+        resolvedPage = 'https://www.advantage-agency.co/black-affiliate-marketing-2';
+      } else if (pathname.includes('black-affiliate-marketing-3-s')) {
+        resolvedPage = 'https://www.advantage-agency.co/black-affiliate-marketing-3-s';
+      } else if (pathname.includes('black-affiliate-marketing-3')) {
+        resolvedPage = 'https://www.advantage-agency.co/black-affiliate-marketing-3';
+      }
+
+      if (resolvedPage) {
+        setSelectedPage(resolvedPage);
+      }
     }
-  }, [searchParams]);
+  }, [searchParams, pathname]);
 
   const [formData, setFormData] = useState<FormData>({
     name: '',
@@ -125,20 +144,20 @@ export default function FormPage() {
     const url = `https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`;
 
     const message = `
-    New Lead black-affiliate-marketing:
-          
+New Lead black-affiliate-marketing:
+
 Name: ${formData.name}
 Email: ${formData.email}
 Phone: ${formData.phone}
 Preferred contact: ${formData.contactMethod}
-${selectedPage ? `Page: ${selectedPage}` : ''}
-${selectedPackage ? `Selected Package: ${selectedPackage}` : ''}
+Page: ${selectedPage || 'Not specified'}
+${selectedPackage ? `Selected package: ${selectedPackage}` : ''}
 
 Quiz Answers:
 ${questions.map((q, i) => `
 ${i + 1}. ${q.question}
 Answer: ${formData.quizAnswers[i]}`).join('\n')}
-    `;
+`;
 
     try {
       // Відправка в основний чат
