@@ -8,7 +8,7 @@ import HeroSection from '@/components/black-affiliate-marketing-2/HeroSection'
 import CourseTargetSection from '@/components/black-affiliate-marketing-2/CourseTargetSection'
 import ProvidingSection from '@/components/black-affiliate-marketing-3/ProvidingSection'
 import PhaseSystemSection from '@/components/black-affiliate-marketing-2/PhaseSystemSection'
-import PricingSection from '@/components/black-affiliate-marketing-3/PricingSectionHight'
+import PricingSection from '@/components/black-affiliate-marketing-3/PricingSection'
 import FAQSection from '@/components/black-affiliate-marketing-2/FAQSection'
 import TwoOptionsSection from '@/components/black-affiliate-marketing-3/TwoOptionsSection'
 import TestimonialsSection from '@/components/black-affiliate-marketing-3/TestimonialsSection'
@@ -40,8 +40,8 @@ export const metadata: Metadata = {
   alternates: {
     canonical: 'https://www.advantage-agency.co/black-affiliate-marketing-3',
     languages: {
-      'en-US': 'https://www.advantage-agency.co/en/black-affiliate-marketing-3-hight',
-      'uk-UA': 'https://www.advantage-agency.co/uk/black-affiliate-marketing-3-hight',
+      'en-US': 'https://www.advantage-agency.co/en/black-affiliate-marketing-3-s',
+      'uk-UA': 'https://www.advantage-agency.co/uk/black-affiliate-marketing-3-s',
     },
   },
 }

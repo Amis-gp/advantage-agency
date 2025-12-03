@@ -101,8 +101,7 @@ const PricingSection = () => {
           <p className="text-gray-400 mb-4 ">For serious specialists who want to launch quickly and avoid any mistakes</p>
           <p className="text-gray-500 mb-6 text-sm">This is the fastest path from your current results to stable profit.</p>
           
-          <div className="text-4xl font-bold mb-2 group-hover:text-red-500 transition-colors">€2000</div>
-          <div className="text-gray-400 mb-6">+ €2000 (after 30 days)</div>
+          <div className="text-4xl font-bold mb-2 group-hover:text-red-500 transition-colors">€4000</div>
           
           <div className="mt-6 mb-8 text-center">
             <Link href={`/black-affiliate-marketing-2/form?package=${encodeURIComponent(packages.mentorship)}&page=${encodeURIComponent(pageName)}`} className="w-full bg-red-800 hover:bg-red-700 text-white py-3 px-6 rounded-lg transition-colors">
