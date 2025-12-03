@@ -10,7 +10,7 @@ import MentorSection from '@/components/black-affiliate-marketing-2/MentorSectio
 import StorySection from '@/components/black-affiliate-marketing-2/StorySection'
 import ProvidingSection from '@/components/black-affiliate-marketing-2/ProvidingSection'
 import PhaseSystemSection from '@/components/black-affiliate-marketing-2/PhaseSystemSection'
-import PricingSection from '@/components/black-affiliate-marketing-2/PricingSection'
+import PricingSection from '@/components/black-affiliate-marketing-2/PricingSectionHight'
 import FAQSection from '@/components/black-affiliate-marketing-2/FAQSection'
 import TwoOptionsSection from '@/components/black-affiliate-marketing-2/TwoOptionsSection'
 import TestimonialsSection from '@/components/black-affiliate-marketing-2/TestimonialsSection'

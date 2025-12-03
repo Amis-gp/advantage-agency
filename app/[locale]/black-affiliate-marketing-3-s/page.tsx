@@ -27,7 +27,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Black Affiliate Marketing | Advantage Agency',
     description: 'Professional Black Affiliate Marketing services. High-converting campaigns and proven results.',
-    url: 'https://www.advantage-agency.co/black-affiliate-marketing-2',
+    url: 'https://www.advantage-agency.co/black-affiliate-marketing-3-s',
     siteName: 'Advantage Agency',
     locale: 'en_US',
     type: 'website',

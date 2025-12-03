@@ -10,7 +10,7 @@ import MentorSection from '@/components/black-affiliate-marketing-2/MentorSectio
 import StorySection from '@/components/black-affiliate-marketing-2/StorySection'
 import ProvidingSection from '@/components/black-affiliate-marketing-2/ProvidingSection'
 import PhaseSystemSection from '@/components/black-affiliate-marketing-2/PhaseSystemSection'
-import PricingSection from '@/components/black-affiliate-marketing-2/PricingSectionHight'
+import PricingSection from '@/components/black-affiliate-marketing-2/PricingSection'
 import FAQSection from '@/components/black-affiliate-marketing-2/FAQSection'
 import TwoOptionsSection from '@/components/black-affiliate-marketing-2/TwoOptionsSection'
 import TestimonialsSection from '@/components/black-affiliate-marketing-2/TestimonialsSection'
@@ -29,7 +29,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Black Affiliate Marketing | Advantage Agency',
     description: 'Professional Black Affiliate Marketing services. High-converting campaigns and proven results.',
-    url: 'https://www.advantage-agency.co/black-affiliate-marketing-2',
+    url: 'https://www.advantage-agency.co/black-affiliate-marketing-2-s',
     siteName: 'Advantage Agency',
     locale: 'en_US',
     type: 'website',
@@ -42,8 +42,8 @@ export const metadata: Metadata = {
   alternates: {
     canonical: 'https://www.advantage-agency.co/black-affiliate-marketing-2',
     languages: {
-      'en-US': 'https://www.advantage-agency.co/en/black-affiliate-marketing-2-hight',
-      'uk-UA': 'https://www.advantage-agency.co/uk/black-affiliate-marketing-2-hight',
+      'en-US': 'https://www.advantage-agency.co/en/black-affiliate-marketing-2-s',
+      'uk-UA': 'https://www.advantage-agency.co/uk/black-affiliate-marketing-2-s',
     },
   },
 }
