@@ -9,6 +9,7 @@ import type { BlogPost } from '@/lib/blog';
 
 interface BlogProps {
   params: { locale: string };
+  initialPosts?: BlogPost[];
 }
 
 const whiteBlogFallback = {
@@ -83,9 +84,9 @@ interface WhiteBlogContent {
   posts: WhiteBlogPostCard[];
 }
 
-export default function BlogIndexPage({ params }: BlogProps) {
-  const [posts, setPosts] = useState<BlogPost[]>([]);
-  const [isLoading, setIsLoading] = useState(true);
+export default function BlogIndexPage({ params, initialPosts }: BlogProps) {
+  const [posts, setPosts] = useState<BlogPost[]>(initialPosts || []);
+  const [isLoading, setIsLoading] = useState(!initialPosts || initialPosts.length === 0);
   const [whiteBlogContent, setWhiteBlogContent] = useState<WhiteBlogContent>({
     headline: whiteBlogFallback.headline,
     description: whiteBlogFallback.description,
@@ -100,9 +101,17 @@ export default function BlogIndexPage({ params }: BlogProps) {
   const t = useTranslations('blog');
 
   useEffect(() => {
+    // Якщо вже є initialPosts – не робимо додатковий запит
+    if (initialPosts && initialPosts.length > 0) {
+      setIsLoading(false);
+      return;
+    }
+
     const fetchPosts = async () => {
       try {
-        const response = await fetch(`/api/blog?locale=${params.locale}`);
+        const response = await fetch(`/api/blog?locale=${params.locale}`, {
+          next: { revalidate: 300 },
+        });
         const data = await response.json();
         setPosts(data.posts || []);
       } catch (error) {
@@ -114,7 +123,7 @@ export default function BlogIndexPage({ params }: BlogProps) {
     };
 
     fetchPosts();
-  }, [params.locale]);
+  }, [params.locale, initialPosts]);
 
   useEffect(() => {
     const loadWhiteBlogTranslations = async () => {

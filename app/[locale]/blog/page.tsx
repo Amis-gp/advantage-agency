@@ -3,6 +3,7 @@ import { Metadata } from 'next';
 import BlogComponent from '@/components/blog/Blog';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import { getBlogPosts } from '@/lib/blog';
 
 interface Props {
   params: Promise<{ locale: string }>;
@@ -31,11 +32,12 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 export default async function BlogPage({ params }: Props) {
   const { locale } = await params;
   setRequestLocale(locale);
+  const posts = getBlogPosts(locale);
 
   return (
     <div className="bg-gradient-to-br from-gray-900 to-black">
       <Header />
-      <BlogComponent params={{ locale }} />
+      <BlogComponent params={{ locale }} initialPosts={posts} />
       <Footer />
     </div>
   );
