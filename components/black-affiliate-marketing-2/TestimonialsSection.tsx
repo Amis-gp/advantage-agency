@@ -105,17 +105,24 @@ const TestimonialsSection = () => {
       </div>
 
       <div className="flex flex-col md:flex-row gap-4 justify-center items-center mb-8">
-        <div className="w-full md:w-1/2">
+        <div className="w-full md:w-1/3">
           <VideoPlayer 
             videoUrl="/img/black-affiliate-marketing/video-4.mp4" 
             placeholder="/img/black-affiliate-marketing/video-4-placeholder.webp"
             className="h-[480px]"
           />
         </div>
-        <div className="w-full md:w-1/2">
+        <div className="w-full md:w-1/3">
           <VideoPlayer 
             videoUrl="/img/black-affiliate-marketing/video-5.MP4" 
             placeholder="/img/black-affiliate-marketing/video-5-placeholder.webp"
+            className="h-[480px]"
+          />
+        </div>
+        <div className="w-full md:w-1/3">
+          <VideoPlayer 
+            videoUrl="/img/black-affiliate-marketing/video-6.mp4" 
+            placeholder="/img/black-affiliate-marketing/video-6-placeholder.webp"
             className="h-[480px]"
           />
         </div>

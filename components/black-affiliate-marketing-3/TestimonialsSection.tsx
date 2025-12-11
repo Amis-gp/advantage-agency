@@ -64,14 +64,29 @@ const TestimonialsSection = () => {
       </h2>
 
       <div className="flex flex-col md:flex-row gap-4 justify-center items-center mb-8">
-        <div className="w-full md:w-1/2">
+        <div className="w-full md:w-1/3">
           <VideoPlayer 
             videoUrl="/img/black-affiliate-marketing/video-4.mp4" 
             placeholder="/img/black-affiliate-marketing/video-4-placeholder.webp"
             className="h-[480px]"
           />
+        </div><div className="w-full md:w-1/3">
+          <VideoPlayer 
+            videoUrl="/img/black-affiliate-marketing/video-6.mp4" 
+            placeholder="/img/black-affiliate-marketing/video-6-placeholder.webp"
+            className="h-[480px]"
+          />
         </div>
-        <div className="w-full md:w-2/3 mb-4 md:mb-0 flex items-center justify-center h-full">
+        
+        <div className="w-full md:w-1/3">
+          <VideoPlayer 
+            videoUrl="/img/black-affiliate-marketing/video-5.MP4" 
+            placeholder="/img/black-affiliate-marketing/video-5-placeholder.webp"
+            className="h-[480px]"
+          />
+        </div>
+      </div>
+      <div className="mx-auto md:w-1/2 mb-4 md:mb-0 flex items-center justify-center h-full">
           <div style={{ padding: '56.25% 0 0 0', position: 'relative' }} className="rounded-md overflow-hidden w-full">
             <iframe 
               src="https://player.vimeo.com/video/881769577?title=0&byline=0&portrait=0&badge=0&autopause=0&player_id=0&app_id=58479&transparent=0&dnt=1&playsinline=1&autopause=0&quality=720p&controls=1" 
@@ -83,14 +98,6 @@ const TestimonialsSection = () => {
             />
           </div>
         </div>
-        <div className="w-full md:w-1/2">
-          <VideoPlayer 
-            videoUrl="/img/black-affiliate-marketing/video-5.MP4" 
-            placeholder="/img/black-affiliate-marketing/video-5-placeholder.webp"
-            className="h-[480px]"
-          />
-        </div>
-      </div>
      
 
       <div ref={gridRef} className="grid grid-cols-1 md:grid-cols-3 gap-4 items-center sm:mt-4">
